@@ -33,6 +33,7 @@ data.each do |uri, v|
     name: v["http://schema.org/name"],
     editor: v["http://schema.org/editor"],
     publisher: v["http://schema.org/publisher"],
+    bookEdition: v["http://schema.org/bookEdition"],
     curriculum: curriculum,
     curriculum_year: curriculum.last_part,
     subject: subject,

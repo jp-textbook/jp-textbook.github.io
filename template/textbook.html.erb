@@ -32,6 +32,9 @@
     <div class="jumbotron">
       <div class="container">
         <h1><%=h param[:name] %>
+        <% if param[:bookEdition] %>
+          <small><%= param[:bookEdition] %></small>
+        <% end %>
         <div class="btn-group" role="group" aria-label="教科書記号・教科書番号">
           <span type="button" class="btn btn-default btn-lg"><%=h param[:textbookSymbol] %></span>
           <span type="button" class="btn btn-default btn-lg"><%=h param[:textbookNumber] %></span>
