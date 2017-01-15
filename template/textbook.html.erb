@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title><%=h param[:title] %> - <%=h param[:site_title] %></title>
+    <title><%=h param[:name] %> - <%=h param[:site_title] %></title>
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -31,7 +31,7 @@
   <body>
     <div class="jumbotron">
       <div class="container">
-        <h1><%=h param[:title] %>
+        <h1><%=h param[:name] %>
         <div class="btn-group" role="group" aria-label="教科書記号・教科書番号">
           <span type="button" class="btn btn-default btn-lg"><%=h param[:textbookSymbol] %></span>
           <span type="button" class="btn btn-default btn-lg"><%=h param[:textbookNumber] %></span>
@@ -56,6 +56,7 @@
             <dt>使用年度</dt><dd><%=h param[:usageYear] %></dd>
             <dt>検定年度</dt><dd><%=h param[:authorizedYear] %></dd>
             <dt>教科書目録掲載年度</dt><dd><%=h param[:recorded_by_year] %></dd>
+            <dt>学習指導要領</dt><dd><a href="<%=h param[:curriculum] %>"><%=h param[:curriculum_year] %></a></dd>
           </dl>
         </div>
       </div>
