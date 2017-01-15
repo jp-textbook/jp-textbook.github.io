@@ -31,14 +31,14 @@
   <body>
     <div class="jumbotron">
       <div class="container">
+        <div class="btn-group pull-right" role="group" aria-label="教科書記号・教科書番号">
+          <span type="button" class="btn btn-default btn-lg"><%=h param[:textbookSymbol] %></span>
+          <span type="button" class="btn btn-default btn-lg"><%=h param[:textbookNumber] %></span>
+        </div>
         <h1><%=h param[:name] %>
         <% if param[:bookEdition] %>
           <small><%= param[:bookEdition] %></small>
         <% end %>
-        <div class="btn-group" role="group" aria-label="教科書記号・教科書番号">
-          <span type="button" class="btn btn-default btn-lg"><%=h param[:textbookSymbol] %></span>
-          <span type="button" class="btn btn-default btn-lg"><%=h param[:textbookNumber] %></span>
-        </div>
         </h1>
         <p><%=h param[:publisher] %></p>
         <p><%=h param[:school_name] %> - <%=h param[:subject_name] %>
