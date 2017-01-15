@@ -15,9 +15,19 @@ g.each do |s, v, o|
 end
 p data.keys.size
 
+
+#textbook = RDF::Repository.load("textbook.ttl")
+
 data.each do |uri, v|
   p uri
   p v
+  #q = SPARQL.parse("SELECT * WHERE {
+  #                   ?s <https://w3id.org/jp-textbook/curriculum> <#{uri}>.
+  #                   ?s <https://w3id.org/jp-textbook/school> <http://ja.dbpedia.org/resource/小学校>.
+  #                 }")
+  #textbook.query(q) do |result|
+  #  p result
+  #end
   param = {
     uri: uri,
     site_title: "教科書 Linked Open Data (LOD)",
