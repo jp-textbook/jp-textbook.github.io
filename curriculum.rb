@@ -5,16 +5,11 @@ require "erb"
 require "rdf/turtle"
 require "linkeddata"
 
+require_relative "util.rb"
+
 include ERB::Util
 
-g = RDF::Graph.load("curriculum.ttl", format:  :ttl)
-data = {}
-g.each do |s, v, o|
-  data[s] ||= {}
-  data[s][v.to_s] = o.to_s
-end
-p data.keys.size
-
+data = load_turtle("curriculum.ttl")
 
 #textbook = RDF::Repository.load("textbook.ttl")
 

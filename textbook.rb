@@ -5,22 +5,11 @@ require "erb"
 require "rdf/turtle"
 require "linkeddata"
 
+require_relative "util.rb"
+
 include ERB::Util
 
-  class String
-    def last_part
-      self.split(/\//).last.gsub(/%20/, " ")
-    end
-  end
-
-g = RDF::Graph.load("textbook.ttl", format:  :ttl)
-data = {}
-g.each do |s, v, o|
-  data[s] ||= {}
-  data[s][v.to_s] = o.to_s
-end
-p data.keys.size
-
+data = load_turtle("textbook.ttl")
 curriculums = {}
 
 data.each do |uri, v|
