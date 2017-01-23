@@ -6,6 +6,27 @@ class String
   end
 end
 
+class Sitemap
+  def initialize
+    @urlset = []
+  end
+  def <<(file)
+    url = "https://jp-textbook.github.io/#{file.sub(/\.html\Z/, "")}"
+    @urlset << url
+  end
+  def to_xml
+    result = <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+EOF
+    @urlset.each do |url|
+      result << "<url><loc>#{url}</loc></url>\n"
+    end
+    result << "</urlset>"
+    result
+  end
+end
+
 def load_turtle(filename)
   file = nil
   if File.exist? filename

@@ -10,6 +10,7 @@ require_relative "util.rb"
 include ERB::Util
 
 data = load_turtle("curriculum.ttl")
+sitemap = Sitemap.new
 
 #textbook = RDF::Repository.load("textbook.ttl")
 
@@ -42,4 +43,7 @@ data.each do |uri, v|
   open(file, "w") do |io|
     io.print ERB.new(template).result(binding)
   end
+  sitemap << file
 end
+
+open("sitemaps-curriculum.xml", "w"){|io| io.print sitemap.to_xml }

@@ -9,8 +9,30 @@ require_relative "util.rb"
 
 include ERB::Util
 
+class Sitemap
+  def initialize
+    @urlset = []
+  end
+  def <<(file)
+    url = "https://jp-textbook.github.io/#{file.sub(/\.html\Z/, "")}"
+    @urlset << url
+  end
+  def to_xml
+    result = <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+EOF
+    @urlset.each do |url|
+      result << "<url><loc>#{url}</loc></url>\n"
+    end
+    result << "</urlset>"
+    result
+  end
+end
+
 data = load_turtle("textbook.ttl")
 curriculums = {}
+sitemap = Sitemap.new
 
 data.each do |uri, v|
   p uri
@@ -47,6 +69,7 @@ data.each do |uri, v|
   open(file, "w") do |io|
     io.print ERB.new(template).result(binding)
   end
+  sitemap << file
 
   curriculums[curriculum] ||= {}
   curriculums[curriculum][subject] ||= []
@@ -73,5 +96,8 @@ curriculums.each do |curriculum, e|
     open(file, "w") do |io|
       io.print ERB.new(template).result(binding)
     end
+    sitemap << file
   end
 end
+
+open("sitemaps-textbook.xml", "w"){|io| io.print sitemap.to_xml }
