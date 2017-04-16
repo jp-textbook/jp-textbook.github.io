@@ -43,6 +43,7 @@ data.each do |uri, v|
     recorded_by_year: v["https://w3id.org/jp-textbook/recordedBy"].split(/\//).last,
     #catalogue_year: v["https://w3id.org/jp-textbook/catalogue"].split(/\//).last,
     recordID: v["http://dl.nier.go.jp/library/vocab/recordID"],
+    callNumber: v["http://dl.nier.go.jp/library/vocab/callNumber"],
   }
   template = open("template/textbook.html.erb"){|io| io.read }
   file = uri.path.sub(/\A\/jp-textbook\//, "") + ".html"
