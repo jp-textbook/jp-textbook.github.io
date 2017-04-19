@@ -25,7 +25,7 @@ CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
   subject_area = row["検索用教科"] if subject_area.nil? or subject_area.empty?
   subject = row["種目"]
   subject = row["検索用種目"] if subject.nil? or subject.empty?
-  subject = NKF.nkf("-wZ1", subject)
+  subject = NKF.nkf("-wZ1", subject).gsub(/\s+/, "")
   puts <<-EOF
 <#{uri}> a schema:Book;
   schema:name "#{row["書名"]}";
