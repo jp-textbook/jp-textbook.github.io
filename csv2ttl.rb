@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require "csv"
+require "nkf"
 
 BASE_URI = "https://w3id.org/jp-textbook"
 
@@ -19,9 +20,12 @@ CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
   uri = [BASE_URI, row["学校種別"], row["検定年(西暦)"], row["教科書記号"], row["教科書番号"]].join("/")
   #curriculum = [BASE_URI, "curriculum", row["学校種別"], row["検定年(西暦)"]].join("/") #TODO
   curriculum = row["学習指導URI"]
-  next if not curriculum =~ %r[https://w3id.org/jp-textbook/curriculum/.+]
+  next if not curriculum =~ %r|https://w3id.org/jp-textbook/curriculum/.+|
+  subject_area = row["教科"]
+  subject_area = row["検索用教科"] if subject_area.nil? or subject_area.empty?
   subject = row["種目"]
   subject = row["検索用種目"] if subject.nil? or subject.empty?
+  subject = NKF.nkf("-wZ1", subject)
   puts <<-EOF
 <#{uri}> a schema:Book;
   schema:name "#{row["書名"]}";
@@ -29,10 +33,10 @@ CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
   schema:publisher "#{row["発行者"]}";
   nier:callNumber "#{row["請求記号"]}";
   nier:recordID "#{row["書誌ID"]}";
-  textbook:recordedBy <#{BASE_URI}/catalogue/#{row["学校種別"]}/#{row["★教科書目録掲載年度"]}>;
+  textbook:catalogue <#{BASE_URI}/catalogue/#{row["学校種別"]}/#{row["★教科書目録掲載年度"]}>;
   textbook:school <http://ja.dbpedia.org/resource/#{row["学校種別"]}>;
-  textbook:subject <#{curriculum}/#{subject}>;
-  textbook:subjectArea <#{curriculum}/#{subject}>;
+  textbook:subjectArea <#{curriculum}/#{subject_area}>;
+  textbook:subject <#{curriculum}/#{subject_area}/#{subject}>;
   EOF
   if row["学年"] and not row["学年"].strip.empty?
     puts %Q[  textbook:grade "#{row["学年"]}";]
