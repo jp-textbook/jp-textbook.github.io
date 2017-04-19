@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
-# tsv2ttl.rb
-
 require "csv"
 
 BASE_URI = "https://w3id.org/jp-textbook"
@@ -11,12 +9,19 @@ if ARGV.size < 1
   exit
 end
 
+puts <<EOF
+@prefix schema:    <http://schema.org/>.
+@prefix nier:      <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook:  <https://w3id.org/jp-textbook/>.
+EOF
+
 CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
-  #puts row.headers
   uri = [BASE_URI, row["学校種別"], row["検定年(西暦)"], row["教科書記号"], row["教科書番号"]].join("/")
-  curriculum = [BASE_URI, "curriculum", row["学校種別"], row["検定年(西暦)"]].join("/") #TODO
+  #curriculum = [BASE_URI, "curriculum", row["学校種別"], row["検定年(西暦)"]].join("/") #TODO
+  curriculum = row["学習指導URI"]
+  next if not curriculum =~ %r[https://w3id.org/jp-textbook/curriculum/.+]
   subject = row["種目"]
-  subject = row["検索用種目"] if subject.empty?
+  subject = row["検索用種目"] if subject.nil? or subject.empty?
   puts <<-EOF
 <#{uri}> a schema:Book;
   schema:name "#{row["書名"]}";
@@ -37,6 +42,6 @@ CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
   textbook:authorizedYear "#{row["検定年(西暦)"]}";
   textbook:usageYear "#{row["使用年"]}";
   textbook:textbookSymbol "#{row["教科書記号"]}";
-  textbook:textbookNumber "#{row["教科書番号"]}"."
+  textbook:textbookNumber "#{row["教科書番号"]}".
   EOF
 end
