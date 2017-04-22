@@ -26,6 +26,7 @@ CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
   subject = row["種目"]
   subject = row["検索用種目"] if subject.nil? or subject.empty?
   subject = NKF.nkf("-wZ1", subject).gsub(/\s+/, "")
+  grade = row["学年"].to_s.gsub(/　/, "")
   puts <<-EOF
 <#{uri}> a schema:Book;
   schema:name "#{row["書名"]}";
@@ -38,8 +39,8 @@ CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
   textbook:subjectArea <#{curriculum}/#{subject_area}>;
   textbook:subject <#{curriculum}/#{subject_area}/#{subject}>;
   EOF
-  if row["学年"] and not row["学年"].strip.empty?
-    puts %Q[  textbook:grade "#{row["学年"]}";]
+  if not grade.strip.empty?
+    puts %Q[  textbook:grade "#{grade}";]
   end
   puts <<-EOF
   textbook:curriculum <#{curriculum}>;
