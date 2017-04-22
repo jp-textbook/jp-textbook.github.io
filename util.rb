@@ -20,7 +20,7 @@ class Sitemap
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 EOF
-    @urlset.each do |url|
+    @urlset.sort.each do |url|
       result << "<url><loc>#{url}</loc></url>\n"
     end
     result << "</urlset>"
