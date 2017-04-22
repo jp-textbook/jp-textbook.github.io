@@ -39,8 +39,8 @@ data.each do |uri, v|
     textbookNumber: v["https://w3id.org/jp-textbook/textbookNumber"],
     usageYear: v["https://w3id.org/jp-textbook/usageYear"],
     authorizedYear: v["https://w3id.org/jp-textbook/authorizedYear"],
-    recorded_by: v["https://w3id.org/jp-textbook/recordedBy"],
-    recorded_by_year: v["https://w3id.org/jp-textbook/recordedBy"].split(/\//).last,
+    catalogue: v["https://w3id.org/jp-textbook/catalogue"],
+    catalogue_year: v["https://w3id.org/jp-textbook/catalogue"].split(/\//).last,
     #catalogue_year: v["https://w3id.org/jp-textbook/catalogue"].split(/\//).last,
     recordID: v["http://dl.nier.go.jp/library/vocab/recordID"],
     callNumber: v["http://dl.nier.go.jp/library/vocab/callNumber"],
@@ -58,8 +58,8 @@ data.each do |uri, v|
   curriculums[curriculum][subject] << param
 end
 
-curriculums.each do |curriculum, e|
-  e.each do |subject, textbooks|
+curriculums.sort_by{|k,v| k }.each do |curriculum, e|
+  e.sort_by{|k,v| k }.each do |subject, textbooks|
     #p subject
     file = curriculum.sub("https://w3id.org/jp-textbook/", "")
     file << "s/#{ subject.last_part }.html"
@@ -70,7 +70,7 @@ curriculums.each do |curriculum, e|
       startDate_str: curriculum.last_part,
       subject: subject,
       subject_name: subject.last_part,
-      textbooks: textbooks,
+      textbooks: textbooks.sort_by{|e| e[:uri] },
       school_name: textbooks.first[:school_name],
     }
     template = open("template/textbook-list.html.erb"){|io| io.read }
