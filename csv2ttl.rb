@@ -44,7 +44,7 @@ CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
   puts <<-EOF
   textbook:curriculum <#{curriculum}>;
   textbook:authorizedYear "#{row["検定年(西暦)"]}";
-  textbook:usageYear "#{row["使用年"]}";
+  textbook:usageYear "#{row["使用年度(西暦)"]}";
   textbook:textbookSymbol "#{row["教科書記号"]}";
   textbook:textbookNumber "#{row["教科書番号"]}".
   EOF
