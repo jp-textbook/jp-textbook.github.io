@@ -27,7 +27,7 @@ data.each do |uri, v|
   param = {
     uri: uri,
     site_title: "教科書 Linked Open Data (LOD)",
-    name: v["http://schema.org/name"],
+    name: v["http://schema.org/name"].first,
     datePublished: v["http://schema.org/datePublished"].first,
     startDate: v["http://schema.org/startDate"].first,
     startDate_str: Date.parse(v["http://schema.org/startDate"].first).strftime("%Y年%m月"),
