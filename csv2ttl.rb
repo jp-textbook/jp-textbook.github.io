@@ -58,6 +58,7 @@ CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
   subject = row["種目"]
   subject = row["検索用種目"] if subject.nil? or subject.empty?
   subject = NKF.nkf("-wZ1", subject).gsub(/\s+/, "")
+  subject = subject.gsub(/1/, "I").gsub(/2/, "II").gsub(/3/, "III")
   grade = row["学年"].to_s.gsub(/　/, "")
   data = {
     "schema:name" => row["書名"],
