@@ -40,10 +40,13 @@ def load_turtle(filename)
   STDERR.puts "loading #{file}..."
   g = RDF::Graph.load(file, format:  :turtle)
   data = {}
+  count = 0
   g.each do |s, v, o|
+    count += 1
     data[s] ||= {}
     data[s][v.to_s] ||= []
     data[s][v.to_s] << o.to_s
   end
+  STDERR.puts "#{count} triples."
   data
 end
