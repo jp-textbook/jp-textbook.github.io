@@ -42,7 +42,7 @@ data.each do |uri, v|
     catalogue: v["https://w3id.org/jp-textbook/catalogue"],
     catalogue_year: v["https://w3id.org/jp-textbook/catalogue"].first.split(/\//).last,
     #catalogue_year: v["https://w3id.org/jp-textbook/catalogue"].split(/\//).last,
-    note: v["https://w3id.org/jp-textbook/note"],
+    note: v["https://w3id.org/jp-textbook/note"] ? v["https://w3id.org/jp-textbook/note"].first : nil,
     recordID: v["http://dl.nier.go.jp/library/vocab/recordID"],
     callNumber: v["http://dl.nier.go.jp/library/vocab/callNumber"],
   }
@@ -71,7 +71,7 @@ curriculums.sort_by{|k,v| k }.each do |curriculum, e|
       startDate_str: curriculum.last_part,
       subject: subject,
       subject_name: subject.last_part,
-      textbooks: textbooks.sort_by{|e| e[:textbookNumber] },
+      textbooks: textbooks.sort_by{|e| [ e[:textbookNumber], e[:url] ] },
       school_name: textbooks.first[:school_name],
     }
     template = open("template/textbook-list.html.erb"){|io| io.read }
