@@ -28,11 +28,10 @@ data.each do |uri, v|
     uri: uri,
     site_title: "教科書 Linked Open Data (LOD)",
     name: v["http://schema.org/name"],
-    datePublished: v["http://schema.org/datePublished"],
-    startDate: v["http://schema.org/startDate"],
-    datePublished_str: Date.parse(v["http://schema.org/datePublished"]).strftime("%Y年%m月"),
-    startDate_str: Date.parse(v["http://schema.org/startDate"]).strftime("%Y年%m月"),
-    seeAlso: v["http://www.w3.org/2000/01/rdf-schema#seeAlso"],
+    datePublished: v["http://schema.org/datePublished"].first,
+    startDate: v["http://schema.org/startDate"].first,
+    startDate_str: Date.parse(v["http://schema.org/startDate"].first).strftime("%Y年%m月"),
+    seeAlso: v["http://www.w3.org/2000/01/rdf-schema#seeAlso"].first,
   }
   p param
   template = open("template/curriculum.html.erb"){|io| io.read }
