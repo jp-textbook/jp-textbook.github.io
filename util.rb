@@ -38,11 +38,12 @@ def load_turtle(filename)
     file = files.sort.last
   end
   STDERR.puts "loading #{file}..."
-  g = RDF::Graph.load(file, format:  :ttl)
+  g = RDF::Graph.load(file, format:  :turtle)
   data = {}
   g.each do |s, v, o|
     data[s] ||= {}
-    data[s][v.to_s] = o.to_s
+    data[s][v.to_s] ||= []
+    data[s][v.to_s] << o.to_s
   end
   data
 end

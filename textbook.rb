@@ -17,31 +17,32 @@ sitemap << "/about.html"
 
 data.each do |uri, v|
   p uri
-  curriculum = v["https://w3id.org/jp-textbook/curriculum"]
-  subject = v["https://w3id.org/jp-textbook/subject"]
+  curriculum = v["https://w3id.org/jp-textbook/curriculum"].first
+  subject = v["https://w3id.org/jp-textbook/subject"].first
   param = {
     uri: uri,
     site_title: "教科書 Linked Open Data (LOD)",
-    name: v["http://schema.org/name"],
-    editor: v["http://schema.org/editor"],
-    publisher: v["http://schema.org/publisher"],
-    bookEdition: v["http://schema.org/bookEdition"],
+    name: v["http://schema.org/name"].first,
+    editor: v["http://schema.org/editor"].first,
+    publisher: v["http://schema.org/publisher"].first,
+    bookEdition: v["http://schema.org/bookEdition"] ? v["http://schema.org/bookEdition"].first : nil,
     curriculum: curriculum,
     curriculum_year: curriculum.last_part,
     subject: subject,
-    subjectArea: v["https://w3id.org/jp-textbook/subjectArea"],
+    subjectArea: v["https://w3id.org/jp-textbook/subjectArea"].first,
     subject_name: subject.split(/\//).last.gsub(/%20/, " "),
-    subjectArea_name: v["https://w3id.org/jp-textbook/subjectArea"].split(/\//).last.gsub(/%20/, " "),
-    grade: v["https://w3id.org/jp-textbook/grade"],
-    school: v["https://w3id.org/jp-textbook/school"],
-    school_name: v["https://w3id.org/jp-textbook/school"].split(/\//).last,
-    textbookSymbol: v["https://w3id.org/jp-textbook/textbookSymbol"],
-    textbookNumber: v["https://w3id.org/jp-textbook/textbookNumber"],
-    usageYear: v["https://w3id.org/jp-textbook/usageYear"],
-    authorizedYear: v["https://w3id.org/jp-textbook/authorizedYear"],
+    subjectArea_name: v["https://w3id.org/jp-textbook/subjectArea"].first.split(/\//).last.gsub(/%20/, " "),
+    grade: v["https://w3id.org/jp-textbook/grade"] ? v["https://w3id.org/jp-textbook/grade"].first : nil,
+    school: v["https://w3id.org/jp-textbook/school"].first,
+    school_name: v["https://w3id.org/jp-textbook/school"].first.split(/\//).last,
+    textbookSymbol: v["https://w3id.org/jp-textbook/textbookSymbol"].first,
+    textbookNumber: v["https://w3id.org/jp-textbook/textbookNumber"].first,
+    usageYear: v["https://w3id.org/jp-textbook/usageYear"].first,
+    authorizedYear: v["https://w3id.org/jp-textbook/authorizedYear"].first,
     catalogue: v["https://w3id.org/jp-textbook/catalogue"],
-    catalogue_year: v["https://w3id.org/jp-textbook/catalogue"].split(/\//).last,
+    catalogue_year: v["https://w3id.org/jp-textbook/catalogue"].first.split(/\//).last,
     #catalogue_year: v["https://w3id.org/jp-textbook/catalogue"].split(/\//).last,
+    note: v["https://w3id.org/jp-textbook/note"],
     recordID: v["http://dl.nier.go.jp/library/vocab/recordID"],
     callNumber: v["http://dl.nier.go.jp/library/vocab/callNumber"],
   }
