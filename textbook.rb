@@ -71,7 +71,7 @@ curriculums.sort_by{|k,v| k }.each do |curriculum, e|
       startDate_str: curriculum.last_part,
       subject: subject,
       subject_name: subject.last_part,
-      textbooks: textbooks.sort_by{|e| [ e[:textbookNumber], e[:url] ] },
+      textbooks: textbooks.sort_by{|e| [ e[:textbookNumber], e[:uri] ] },
       school_name: textbooks.first[:school_name],
     }
     template = open("template/textbook-list.html.erb"){|io| io.read }
