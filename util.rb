@@ -47,6 +47,6 @@ def load_turtle(filename)
     data[s][v.to_s] ||= []
     data[s][v.to_s] << o.to_s
   end
-  STDERR.puts "#{count} triples."
+  STDERR.puts "#{count} triples. #{data.size} subjects."
   data
 end
