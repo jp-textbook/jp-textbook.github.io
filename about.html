@@ -67,6 +67,8 @@
           なお、教科書LODモデルのベースURIは https://w3id.org/jp-textbook/ で、下図では <code>textbook:</code> のプレフィックスで表示しています。
           </p>
           <p><img class="img-responsive img-rounded" src="lod-model.png" alt="教科書LODのモデル"></p>
+          <h3>教科書をあらわすリソース</h3>
+          <h4>教科書をあらわすリソースのURI</h4>
           <p>
           教科書をあらわすリソースは以下のようなURIにより表現されます。
           <br>
@@ -77,6 +79,7 @@
           <br>
           <code>textbook:<var>学校種別</var>/<var>検定年</var>/<var>教科書記号</var>/<var>教科書番号</var></code>
           </p>
+          <h4>教科書リソースの持つプロパティ</h4>
           <p>教科書リソースが持つプロパティを下表に示します</p>
           <table class="table">
             <tr>
@@ -187,9 +190,65 @@
             </tr>
             </tbody>
           </table>
+          <h3>学習指導要領をあらわすリソース</h3>
+          <h4>学習指導要領をあらわすリソースのURI</h4>
+          <p>
+          学習指導要領をあらわすリソースは以下のようなURIにより表現されます。
+          <br>
+          <code>https://w3id.org/jp-textbook/curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var></code>
+          </p>
+          <p>
+          または、プレフィックスを用いて表現すると以下のようになります。
+          <br>
+          <code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var></code>
+          </p>
+          <h4>学習指導要領リソースが持つプロパティ</h4>
+          <p>学習指導要領リソースが持つプロパティを下表に示します</p>
+          <table class="table">
+            <tr>
+              <th>プロパティ名</th><th>説明</th><th>プロパティ値の例</th><th>備考</th>
+            </tr>
+            <tbody>
+            <tr>
+              <td>schema:name</td>
+              <td>名称</td>
+              <td>高等学校学習指導要領</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>textbook:hasSubjectArea</td>
+              <td>教科</td>
+              <td>textbook:curriculum/高等学校/1994/国語</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>schema:datePublished</td>
+              <td>発行年</td>
+              <td>1989</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>schema:startDate</td>
+              <td>施行年月日</td>
+              <td>1994-04-01</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>textbook:school</td>
+              <td>学校種別</td>
+              <td>http://ja.dbpedia.org/resource/高等学校</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>rdfs:seeAlso</td>
+              <td>文科省ウェブサイト</td>
+              <td>http://www.mext.go.jp/a_menu/shotou/old-cs/1322503.htm</td>
+              <td></td>
+            </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-
       <!--
       <div class="row">
         <div class="col-md-12">
