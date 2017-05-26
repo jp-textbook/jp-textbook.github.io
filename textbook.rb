@@ -9,6 +9,14 @@ require_relative "util.rb"
 
 include ERB::Util
 
+class String
+  def unescape_unicode
+    self.gsub(/◆U([0-9A-F]+)◆/).each do |c|
+      $1.to_i(16).chr("utf-8")
+    end
+  end
+end
+
 data = load_turtle("textbook.ttl")
 curriculums = {}
 sitemap = Sitemap.new
@@ -23,7 +31,7 @@ data.each do |uri, v|
     uri: uri,
     site_title: "教科書 Linked Open Data (LOD)",
     name: v["http://schema.org/name"].first,
-    editor: v["http://schema.org/editor"].first,
+    editor: v["http://schema.org/editor"].first.unescape_unicode,
     publisher: v["http://schema.org/publisher"].first,
     bookEdition: v["http://schema.org/bookEdition"] ? v["http://schema.org/bookEdition"].first : nil,
     curriculum: curriculum,
