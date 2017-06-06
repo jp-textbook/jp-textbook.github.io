@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+require "rdf/turtle"
+
 class String
   def last_part
     self.split(/\//).last.gsub(/%20/, " ")
@@ -28,15 +30,20 @@ EOF
   end
 end
 
-def load_turtle(filename)
+def find_turtle(filename)
   file = nil
-  if File.exist? filename
+  if File.exist? filename and File.file? filename
     file = filename
   else
     basename = File.basename(filename, ".ttl")
     files = Dir.glob("#{basename}-*.ttl")
     file = files.sort.last
   end
+  file
+end
+
+def load_turtle(filename)
+  file = find_turtle(filename)
   STDERR.puts "loading #{file}..."
   g = RDF::Graph.load(file, format:  :turtle)
   data = {}
