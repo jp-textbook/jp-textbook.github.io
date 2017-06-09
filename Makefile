@@ -1,4 +1,4 @@
-default: clean textbook curriculum all
+default: clean curriculum textbook all
 
 all:
 	./catttl.rb textbook curriculum subject subjectArea > all-`date +%Y%m%d`.ttl
@@ -10,4 +10,4 @@ textbook:
 	ruby ./textbook.rb
 
 curriculum:
-	ruby ./curricurum.rb
+	ruby ./curriculum.rb
