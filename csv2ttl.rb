@@ -59,6 +59,7 @@ CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
   subject = row["検索用種目"] if subject.nil? or subject.empty?
   subject = NKF.nkf("-wZ1", subject).gsub(/\s+/, "")
   subject = subject.gsub(/1/, "I").gsub(/2/, "II").gsub(/3/, "III")
+  school = row["学校種別"]
   grade = row["学年"].to_s.gsub(/　/, "")
   data = {
     "schema:name" => row["書名"],
@@ -68,7 +69,7 @@ CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
     "nier:callNumber" => row["請求記号"],
     "nier:recordID" => row["書誌ID"],
     "textbook:catalogue" => "#{BASE_URI}/catalogue/#{row["学校種別"]}/#{row["★教科書目録掲載年度"]}",
-    "textbook:school" => "http://ja.dbpedia.org/resource/#{row["学校種別"]}",
+    "textbook:school" => "http://ja.dbpedia.org/resource/#{school}",
     "textbook:subjectArea" => "#{curriculum}/#{subject_area}",
     "textbook:subject" => "#{curriculum}/#{subject_area}/#{subject}",
     "textbook:grade" => grade,
@@ -78,6 +79,15 @@ CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
     "textbook:textbookSymbol" => row["教科書記号"],
     "textbook:textbookNumber" => row["教科書番号"],
   }
+  if school == "高等学校" and subject == subject_area
+    case row["検定年(西暦)"]
+    when "1994", "2003"
+      if subject_area != "保健体育"
+        data.delete("textbook:subject")
+        STDERR.puts "REMOVE subject: "+ [uri, subject, subject_area].inspect
+      end
+    end
+  end
   if done[uri]
     STDERR.puts "WARN: #{uri} duplicates! [#{done[uri]["nier:recordID"]}/#{data["nier:recordID"]}] (#{done[uri]["textbook:usageYear"]} vs #{data["textbook:usageYear"]})"
     if done[uri]["textbook:usageYear"] > data["textbook:usageYear"]
