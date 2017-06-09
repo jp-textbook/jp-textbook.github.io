@@ -42,7 +42,7 @@
         <% end %>
         </h1>
         <p><%=h param[:publisher] %></p>
-        <p><%=h param[:school_name] %> - <%=h param[:subject_name] %>
+        <p><%=h param[:school_name] %> - <%=h param[:subject_name] || param[:subjectArea_name] %>
           <% if param[:grade] %>
             (<%= param[:grade] %>年生)
           <% end %>
@@ -55,7 +55,7 @@
         <div class="col-md-12">
           <ol class="breadcrumb">
             <li><a href="../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
-            <li><a href="../../../<%=h param[:curriculum].sub("https://w3id.org/jp-textbook/", "") %>s/<%=h param[:subject_name] %>"><%=h param[:school_name] %> <%=h param[:subject_name] %> 教科書一覧 (<%=h param[:curriculum].last_part %>年度以降)</a></li>
+            <li><a href="../../../<%=h param[:curriculum].sub("https://w3id.org/jp-textbook/", "") %>s/<%=h param[:subject_name] || param[:subjectArea_name] %>"><%=h param[:school_name] %> <%=h param[:subject_name] || param[:subjectArea_name] %> 教科書一覧 (<%=h param[:curriculum].last_part %>年度以降)</a></li>
             <li class="active"><%=h param[:name] %></li>
           </ol>
         </div>
@@ -65,7 +65,7 @@
           <h2>詳細情報</h2>
           <dl class="dl-horizontal">
             <dt>編著者<dd><%=h param[:editor] %></dd>
-            <dt>教科 / 種目</dt><dd><%=h param[:subjectArea_name] %> / <%=h param[:subject_name] %></dd>
+            <dt>教科 / 種目</dt><dd><%=h param[:subjectArea_name] %><% if param[:subject_name] %> / <%=h param[:subject_name] %><% end %></dd>
             <dt>使用年度</dt><dd><%=h param[:usageYear] %></dd>
             <dt>検定年度</dt><dd><%=h param[:authorizedYear] %></dd>
             <dt>教科書目録掲載年度</dt><dd><%=h param[:catalogue_year] %></dd>

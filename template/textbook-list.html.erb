@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title><%=h param[:school_name] %> <%=h param[:subject_name] %> 教科書一覧 - <%=h param[:site_title] %></title>
+    <title><%=h param[:school_name] %> <%=h param[:subject_name] || param[:subjectArea_name] %> 教科書一覧 - <%=h param[:site_title] %></title>
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -31,7 +31,7 @@
   <body>
     <div class="jumbotron">
       <div class="container">
-        <h1><%=h param[:school_name] %> <%=h param[:subject_name] %> 教科書一覧</h1>
+        <h1><%=h param[:school_name] %> <%=h param[:subject_name] || param[:subjectArea_name] %> 教科書一覧</h1>
         <p><%=h param[:startDate_str] %>年度施行 学習指導要領</p>
       </div>
     </div>

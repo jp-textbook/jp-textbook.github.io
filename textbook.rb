@@ -27,6 +27,7 @@ data.each do |uri, v|
   #p uri
   curriculum = v["https://w3id.org/jp-textbook/curriculum"].first
   subject = v["https://w3id.org/jp-textbook/subject"] ? v["https://w3id.org/jp-textbook/subject"].first : nil
+  subject_name = subject ? subject.last_part : nil
   subjectArea = v["https://w3id.org/jp-textbook/subjectArea"].first
   param = {
     uri: uri,
@@ -39,7 +40,7 @@ data.each do |uri, v|
     curriculum_year: curriculum.last_part,
     subject: subject,
     subjectArea: subjectArea,
-    subject_name: subject ? subject.last_part : nil,
+    subject_name: subject_name,
     subjectArea_name: subjectArea.last_part,
     grade: v["https://w3id.org/jp-textbook/grade"] ? v["https://w3id.org/jp-textbook/grade"].first : nil,
     school: v["https://w3id.org/jp-textbook/school"].first,
@@ -64,22 +65,22 @@ data.each do |uri, v|
   sitemap << file
 
   curriculums[curriculum] ||= {}
-  curriculums[curriculum][subject || subjectArea] ||= []
-  curriculums[curriculum][subject || subjectArea] << param
+  name = subject_name || subjectArea.last_part
+  curriculums[curriculum][name] ||= []
+  curriculums[curriculum][name] << param
 end
 
 curriculums.sort_by{|k,v| k }.each do |curriculum, e|
-  e.sort_by{|k,v| k }.each do |subject, textbooks|
+  e.sort_by{|k,v| k }.each do |name, textbooks|
     #p subject
     file = curriculum.sub("https://w3id.org/jp-textbook/", "")
-    file << "s/#{ subject.last_part }.html"
+    file << "s/#{ name }.html"
     p file
     param = {
       curriculum: curriculum,
       curriculum_name: curriculum.last_part,
       startDate_str: curriculum.last_part,
-      subject: subject,
-      subject_name: subject.last_part,
+      subject_name: name,
       textbooks: textbooks.sort_by{|e| [ e[:textbookNumber], e[:uri] ] },
       school_name: textbooks.first[:school_name],
     }
