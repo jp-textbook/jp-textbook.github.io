@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>教科書Linked Open Data (LOD)</title>
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-389547-11', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>教科書LOD</h1>
+        <p>教科書LODプロジェクトでは、初等教育、中等教育で使われている学習指導要領と現行使用教科書の出版情報を Linked Open Data (LOD) として公開します。</p>
+        <p><a class="btn btn-primary" href="about.html">教科書LODについて &raquo;</a></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h2>現行学習指導要領（2011年度以降）</h2>
+          <dl>
+            <dt>小学校
+            <dd><ul class="list-inline">
+              <%- param["https://w3id.org/jp-textbook/curriculum/小学校/2011"].each do |name| -%>
+                <li><a href="./curriculum/小学校/2011s/<%=h name %>"><%=h name %></a></li>
+              <%- end -%>
+              </ul></dd>
+            <dt>中学校</dt>
+            <dd><ul class="list-inline">
+              <%- param["https://w3id.org/jp-textbook/curriculum/中学校/2012"].each do |name| -%>
+                <li><a href="./curriculum/中学校/2012s/<%=h name %>"><%=h name %></a></li>
+              <%- end -%>
+            </ul></dd>
+            <dt>高等学校</dt>
+            <dd><ul class="list-inline">
+              <%- param["https://w3id.org/jp-textbook/curriculum/高等学校/2013"].each do |name| -%>
+                <li><a href="./curriculum/高等学校/2013s/<%=h name %>"><%=h name %></a></li>
+              <%- end -%>
+            </ul></dd>
+          </dl>
+        </div>
+        <div class="col-md-4">
+          <h2>旧学習指導要領（2002年度以降）</h2>
+          <dl>
+            <dt>小学校</dt>
+            <dd><ul class="list-inline">
+              <%- param["https://w3id.org/jp-textbook/curriculum/小学校/2002"].each do |name| -%>
+                <li><a href="./curriculum/小学校/2002s/<%=h name %>"><%=h name %></a></li>
+              <%- end -%>
+            </ul></dd>
+            <dt>中学校</dt>
+            <dd><ul class="list-inline">
+              <%- param["https://w3id.org/jp-textbook/curriculum/中学校/2002"].each do |name| -%>
+                <li><a href="./curriculum/中学校/2002s/<%=h name %>"><%=h name %></a></li>
+              <%- end -%>
+            </ul></dd>
+            <dt>高等学校</dt>
+            <dd><ul class="list-inline">
+              <%- param["https://w3id.org/jp-textbook/curriculum/高等学校/2003"].each do |name| -%>
+                <li><a href="./curriculum/高等学校/2003s/<%=h name %>"><%=h name %></a></li>
+              <%- end -%>
+            </ul></dd>
+          </dl>
+        </div>
+        <div class="col-md-4">
+          <h2>旧学習指導要領（1992年度以降）</h2>
+          <dl>
+            <dt>小学校</dt>
+            <dd><ul class="list-inline">
+              <%- param["https://w3id.org/jp-textbook/curriculum/小学校/1992"].each do |name| -%>
+                <li><a href="./curriculum/小学校/1992s/<%=h name %>"><%=h name %></a></li>
+              <%- end -%>
+            </ul></dd>
+            <dt>中学校</dt>
+            <dd><ul class="list-inline">
+              <%- param["https://w3id.org/jp-textbook/curriculum/中学校/1993"].each do |name| -%>
+                <li><a href="./curriculum/中学校/1993s/<%=h name %>"><%=h name %></a></li>
+              <%- end -%>
+            </ul></dd>
+            <dt>高等学校</dt>
+            <dd><ul class="list-inline">
+              <%- param["https://w3id.org/jp-textbook/curriculum/高等学校/1994"].each do |name| -%>
+                <li><a href="./curriculum/高等学校/1994s/<%=h name %>"><%=h name %></a></li>
+              <%- end -%>
+            </ul></dd>
+          </dl>
+        </div>
+      </div>
+
+      <hr>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>LODデータセット <small><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></small></h2>
+          <p>本データセットの最新版をTurtle形式のファイルとしてダウンロードできます。</p>
+          <ul>
+            <li><a href="all-20170606.ttl">all-20170606.ttl</a> （全データ: 6.1MB, 112,441トリプル）
+              <ul>
+                <li><a href="textbook-20170606.ttl">textbook-201700606.ttl</a></li>
+                <li><a href="curriculum-20170606.ttl">curriculum-201700606.ttl</a></li>
+                <li><a href="subject-20170606.ttl">subject-201700606.ttl</a></li>
+                <li><a href="subjectArea-20170606.ttl">subjectArea-201700606.ttl</a></li>
+              </ul>
+            </li>
+          </ul>
+          <p>本データセットは <a rel="license" href="http://creativecommons.org/publicdomain/zero/1.0/deed.ja">パブリックドメイン (CC0)</a> として自由に利用できます。</p>
+        </div>
+      </div>
+
+      <hr>
+      <footer>
+        <p>&copy; 2017 教科書LODプロジェクト</p>
+      </footer>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+</html>
