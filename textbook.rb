@@ -4,6 +4,7 @@ require "fileutils"
 require "erb"
 require "rdf/turtle"
 require "linkeddata"
+require "nokogiri"
 
 require_relative "util.rb"
 
@@ -133,6 +134,8 @@ data.keys.select{|uri| data[uri].has_key? "https://w3id.org/jp-textbook/hasSubje
     end
   end
 end
+doc = Nokogiri::HTML(open "about.html")
+param[:download] = doc.css("#history + dl dd ul > li").first
 template = open("template/index.html.erb"){|io| io.read }
 open("index.html", "w") do |io|
   io.print ERB.new(template, $SAFE, "-").result(binding)
