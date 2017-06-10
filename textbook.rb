@@ -93,4 +93,50 @@ curriculums.sort_by{|k,v| k }.each do |curriculum, e|
   end
 end
 
+data = load_turtle("subjectArea.ttl")
+subjects = load_turtle("subject.ttl")
+param = {}
+done = {}
+data.keys.select{|uri| data[uri].has_key? "https://w3id.org/jp-textbook/hasSubjectArea" }.each do |uri|
+  uri_s = uri.to_s
+  param[uri_s] = []
+  v = data[uri]
+  areas = v["https://w3id.org/jp-textbook/hasSubjectArea"]
+  areas.sort_by{|e|
+    area_uri = RDF::URI.new(e)
+    data[area_uri]["http://purl.org/linked-data/cube#order"].first.to_i
+  }.each do |area|
+    p uri
+    key = [uri_s, area.last_part]
+    if curriculums[uri_s][area.last_part] and not done[key]
+      param[uri_s] << area.last_part
+      done[key] = true
+    else
+      STDERR.puts "WARN: #{area} is duplicate or not found in subjects list."
+    end
+    area_uri = RDF::URI.new(area)
+    if subjects[area_uri]
+     # next if area =~ /高等学校/ and data[area_uri]["https://w3id.org/jp-textbook/subjectAreaType"].first == "https://w3id.org/jp-textbook/curriculum/SubjectArea/Special"
+      subjects[area_uri]["https://w3id.org/jp-textbook/hasSubject"].sort_by{|s|
+        subject_uri = RDF::URI.new(s)
+        subjects[subject_uri]["http://purl.org/linked-data/cube#order"].first.to_i
+      }.each do |subject|
+        key = [uri_s, subject.last_part]
+        if curriculums[uri_s][subject.last_part] and not done[key]
+          param[uri_s] << subject.last_part
+          done[key] = true
+        else
+          STDERR.puts "WARN: #{subject} is duplicate or not found in subjects list."
+        end
+      end
+    else
+    end
+  end
+end
+template = open("template/index.html.erb"){|io| io.read }
+open("index.html", "w") do |io|
+  io.print ERB.new(template, $SAFE, "-").result(binding)
+end
+p param
+
 open("sitemaps-textbook.xml", "w"){|io| io.print sitemap.to_xml }
