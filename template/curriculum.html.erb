@@ -4,6 +4,26 @@
         <p><%=h param[:datePublished] %>年発行, <%=h param[:startDate_str] %>施行</p>
       </div>
     </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>教科一覧</h2>
+          <ul>
+            <%- param[:subjectArea].each do |area| -%>
+              <li><%=h area[:name] %>
+                <%- if area[:subjects].size > 0 -%>
+                  <ul class="list-inline subjects">
+                    <%- area[:subjects].each do |subject| -%>
+                      <li><%=h subject.last_part %></li>
+                    <%- end -%>
+                  </ul>
+                <%- end -%>
+              </li>
+            <%- end -%>
+          </ul>
+        </div>
+      </div>
+    </div>
 
     <hr>
     <div class="container">
