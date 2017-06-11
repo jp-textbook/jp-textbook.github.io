@@ -51,7 +51,7 @@ data.each do |uri, v|
     usageYear: v["https://w3id.org/jp-textbook/usageYear"].first,
     authorizedYear: v["https://w3id.org/jp-textbook/authorizedYear"].first,
     catalogue: v["https://w3id.org/jp-textbook/catalogue"],
-    catalogue_year: v["https://w3id.org/jp-textbook/catalogue"].first.last_part,
+    catalogue_year: v["https://w3id.org/jp-textbook/catalogue"].sort.first.last_part,
     #catalogue_year: v["https://w3id.org/jp-textbook/catalogue"].split(/\//).last,
     note: v["https://w3id.org/jp-textbook/note"] ? v["https://w3id.org/jp-textbook/note"].first : nil,
     recordID: v["http://dl.nier.go.jp/library/vocab/recordID"],
