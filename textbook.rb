@@ -104,7 +104,6 @@ data.keys.select{|uri| data[uri].has_key? "https://w3id.org/jp-textbook/hasSubje
     area_uri = RDF::URI.new(e)
     data[area_uri]["http://purl.org/linked-data/cube#order"].sort_by{|i| i.to_i }.first.to_i
   }.each do |area|
-    p uri
     key = [uri_s, area.last_part]
     if curriculums[uri_s][area.last_part] and not done[key]
       param[uri_s] << area.last_part
@@ -120,11 +119,17 @@ data.keys.select{|uri| data[uri].has_key? "https://w3id.org/jp-textbook/hasSubje
         subjects[subject_uri]["http://purl.org/linked-data/cube#order"].first.to_i
       }.each do |subject|
         key = [uri_s, subject.last_part]
+        subject_type = subjects[RDF::URI.new(subject)]["https://w3id.org/jp-textbook/subjectType"]
+        #p [area, subject, subject_type]
         if curriculums[uri_s][subject.last_part] and not done[key]
           param[uri_s] << subject.last_part
           done[key] = true
         else
-          STDERR.puts "WARN: #{subject} is duplicate or not found in subjects list."
+          if area.last_part == subject.last_part # obvious duplicates.
+          elsif subject_type and subject_type == ["https://w3id.org/jp-textbook/curriculum/Subject/Special"] #ignore special subject.
+          else
+            STDERR.puts "WARN: #{subject} is duplicate or not found in subjects list."
+          end
         end
       end
     else
