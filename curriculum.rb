@@ -1,13 +1,7 @@
 #!/usr/bin/env ruby
 
 require "fileutils"
-require "erb"
-require "rdf/turtle"
-require "linkeddata"
-
 require_relative "util.rb"
-
-include ERB::Util
 
 data = load_turtle("curriculum.ttl")
 sitemap = Sitemap.new

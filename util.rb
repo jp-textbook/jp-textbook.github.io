@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require "rdf/turtle"
+require "erb"
 
 class String
   def last_part
@@ -9,6 +10,7 @@ class String
 end
 
 class PageTemplate
+  include ERB::Util
   def initialize(template)
     @template = template
   end

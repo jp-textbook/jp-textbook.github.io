@@ -1,0 +1,44 @@
+    <div class="jumbotron">
+      <div class="container">
+        <h1><%=h param[:name] %></h1>
+        <p><small><span class="glyphicon glyphicon-link"></span> <a href="<%=h param[:uri] %>"><%=h param[:uri] %></a></small></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ol class="breadcrumb">
+            <li><a href="../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+            <li class="active"><%=h param[:name] %></li>
+          </ol>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>詳細情報</h2>
+          <dl class="dl-horizontal">
+            <dt>発行年</dt><dd><%=h param[:datePublished] %></dd>
+            <dt>使用年度</dt><dd><%=h param[:usageYear] %></dd>
+            <dt>学校種別</dt><dd><%=h param[:school].last_part %></dd>
+          </dl>
+        </div>
+      </div>
+
+      <hr>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>関連リンク</h2>
+          <ul>
+            <%- if param[:seeAlso] -%>
+              <%- param[:seeAlso].each do |url| -%>
+              <li><a href="<%=h url %>">教科書目録（文部科学省サイト）</a></li>
+              <%- end -%>
+            <%- end -%>
+            <li><a href="https://nieropac.nier.go.jp/ebopac/<%=h param[:recordID] %>">国立教育政策研究所 教育図書館 OPAC</a>
+                <span class="callNumber" title="請求記号"><%=h param[:callNumber] %></span>
+                <span class="itemID" title="資料ID"><%=h param[:itemID] %></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>

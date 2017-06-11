@@ -1,14 +1,9 @@
 #!/usr/bin/env ruby
 
 require "fileutils"
-require "erb"
-require "rdf/turtle"
-require "linkeddata"
 require "nokogiri"
 
 require_relative "util.rb"
-
-include ERB::Util
 
 class String
   def unescape_unicode
