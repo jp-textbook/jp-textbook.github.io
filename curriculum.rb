@@ -21,12 +21,12 @@ data.each do |uri, v|
     subjectArea: [],
   }
   area_data[uri]["https://w3id.org/jp-textbook/hasSubjectArea"].sort_by{|area|
-    area_data[area]["http://purl.org/linked-data/cube#order"].first.to_i
+    area_data[area]["http://purl.org/linked-data/cube#order"].sort.first.to_i
   }.each do |area|
     subjects = []
     if subject_data[area] and subject_data[area]["https://w3id.org/jp-textbook/hasSubject"]
       subjects = subject_data[area]["https://w3id.org/jp-textbook/hasSubject"].sort_by{|subject|
-        subject_data[subject]["http://purl.org/linked-data/cube#order"].first.to_i
+        subject_data[subject]["http://purl.org/linked-data/cube#order"].sort.first.to_i
       }
     end
     param[:subjectArea] << { name: area.last_part, subjects: subjects }
