@@ -2,6 +2,7 @@
 
 require "csv"
 require "nkf"
+require_relative "util.rb"
 
 BASE_URI = "https://w3id.org/jp-textbook"
 PROPERTY_LABEL = {
@@ -47,6 +48,17 @@ def format_property(property, value)
 end
 
 done = {}
+c = load_turtle("curriculum.ttl")
+fix_curriculums = c.keys.select do |k| # cf. #59
+  if c[k]["https://w3id.org/jp-textbook/school"].first == "http://ja.dbpedia.org/resource/高等学校"
+    case c[k]["http://schema.org/startDate"].first
+    when "1994-04-01", "2003-04-01"
+      true
+    else
+      false
+    end
+  end
+end
 
 CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
   uri = [BASE_URI, row["学校種別"], row["検定年(西暦)"], row["教科書記号"], row["教科書番号"]].join("/")
@@ -79,13 +91,10 @@ CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
     "textbook:textbookSymbol" => row["教科書記号"],
     "textbook:textbookNumber" => row["教科書番号"],
   }
-  if school == "高等学校" and subject == subject_area
-    case row["検定年(西暦)"]
-    when "1994", "2003"
-      if subject_area != "保健体育"
-        data.delete("textbook:subject")
-        STDERR.puts "REMOVE subject: "+ [uri, subject, subject_area].inspect
-      end
+  if subject == subject_area and fix_curriculums.include?( curriculum )
+    if subject_area != "保健体育"
+      data.delete("textbook:subject")
+      STDERR.puts "REMOVE subject: "+ [uri, subject, subject_area].inspect
     end
   end
   if done[uri]
@@ -97,9 +106,6 @@ CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
     end
     prev_years = done[uri]["textbook:usageYear"].split(/\D+/).map{|i| i.to_i }
     next_years = data["textbook:usageYear"].split(/\D+/).map{|i| i.to_i }
-    #if prev_years[-1] == next_years[0] or prev_years[-1] = next_years[0]-1
-    #  done[uri]["textbook:usageYear"] = "#{prev_years[0]}-#{next_years[-1]}"
-    #end
     done[uri]["textbook:usageYear"] << ", #{data["textbook:usageYear"]}"
     note = "#{next_years[0]}年度より"
     %w[ schema:publisher schema:name schema:editor schema:bookEdition
