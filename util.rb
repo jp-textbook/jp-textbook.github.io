@@ -64,9 +64,9 @@ def load_turtle(filename)
   count = 0
   g.each do |s, v, o|
     count += 1
-    data[s] ||= {}
-    data[s][v.to_s] ||= []
-    data[s][v.to_s] << o.to_s
+    data[s.to_s] ||= {}
+    data[s.to_s][v.to_s] ||= []
+    data[s.to_s][v.to_s] << o.to_s
   end
   STDERR.puts "#{count} triples. #{data.size} subjects."
   data

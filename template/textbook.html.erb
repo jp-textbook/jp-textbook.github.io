@@ -55,8 +55,8 @@
         <div class="col-md-12">
           <h2>関連リンク</h2>
           <ul>
-            <%- param[:recordID].each_with_index do |recordID, idx| -%>
-            <li><a href="https://nieropac.nier.go.jp/ebopac/<%=h recordID %>">国立教育政策研究所 教育図書館 OPAC</a> <span class="callNumber" title="請求記号"><%=h param[:callNumber][idx] %></span></li>
+            <%- param[:item].each do |item| -%>
+            <li><a href="https://nieropac.nier.go.jp/ebopac/<%=h item[:recordID] %>">国立教育政策研究所 教育図書館 OPAC</a> <span class="callNumber" title="請求記号"><%=h item[:callNumber] %></span></li>
             <%- end -%>
           </ul>
         </div>

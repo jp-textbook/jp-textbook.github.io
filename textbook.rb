@@ -20,8 +20,11 @@ sitemap = Sitemap.new
 sitemap << "/"
 sitemap << "/about.html"
 
+#p data
 data.each do |uri, v|
   #p uri
+  next if v["https://w3id.org/jp-textbook/curriculum"].nil?
+  #p v["https://w3id.org/jp-textbook/item"]
   curriculum = v["https://w3id.org/jp-textbook/curriculum"].first
   subject = v["https://w3id.org/jp-textbook/subject"] ? v["https://w3id.org/jp-textbook/subject"].first : nil
   subject_name = subject ? subject.last_part : nil
@@ -50,10 +53,18 @@ data.each do |uri, v|
     catalogue_year: v["https://w3id.org/jp-textbook/catalogue"].sort.first.last_part,
     #catalogue_year: v["https://w3id.org/jp-textbook/catalogue"].split(/\//).last,
     note: v["https://w3id.org/jp-textbook/note"] ? v["https://w3id.org/jp-textbook/note"].first : nil,
-    recordID: v["http://dl.nier.go.jp/library/vocab/recordID"],
-    callNumber: v["http://dl.nier.go.jp/library/vocab/callNumber"],
+    #recordID: v["http://dl.nier.go.jp/library/vocab/recordID"],
+    #callNumber: v["http://dl.nier.go.jp/library/vocab/callNumber"],
   }
-  file = uri.path.sub(/\A\/jp-textbook\//, "") + ".html"
+  param[:item] = v["https://w3id.org/jp-textbook/item"].sort_by{|item|
+    data[item]["http://dl.nier.go.jp/library/vocab/recordID"]
+  }.map{|item|
+    {
+      recordID: data[item]["http://dl.nier.go.jp/library/vocab/recordID"].first,
+      callNumber: data[item]["http://dl.nier.go.jp/library/vocab/callNumber"].first,
+    }
+  }
+  file = uri.sub("https://w3id.org/jp-textbook/", "") + ".html"
   FileUtils.mkdir_p(File.dirname(file))
   open(file, "w") do |io|
     io.print template.to_html(param)
@@ -96,33 +107,29 @@ subjects = load_turtle("subject.ttl")
 param = {}
 done = {}
 data.keys.select{|uri| data[uri].has_key? "https://w3id.org/jp-textbook/hasSubjectArea" }.each do |uri|
-  uri_s = uri.to_s
-  param[uri_s] = []
+  param[uri] = []
   v = data[uri]
   areas = v["https://w3id.org/jp-textbook/hasSubjectArea"]
   areas.sort_by{|e|
-    area_uri = RDF::URI.new(e)
-    data[area_uri]["http://purl.org/linked-data/cube#order"].sort_by{|i| i.to_i }.first.to_i
+    data[e]["http://purl.org/linked-data/cube#order"].sort_by{|i| i.to_i }.first.to_i
   }.each do |area|
-    key = [uri_s, area.last_part]
-    if curriculums[uri_s][area.last_part] and not done[key]
-      param[uri_s] << area.last_part
+    key = [uri, area.last_part]
+    if curriculums[uri][area.last_part] and not done[key]
+      param[uri] << area.last_part
       done[key] = true
     else
       STDERR.puts "WARN: #{area} is duplicate or not found in subjects list."
     end
-    area_uri = RDF::URI.new(area)
-    if subjects[area_uri]
-     # next if area =~ /高等学校/ and data[area_uri]["https://w3id.org/jp-textbook/subjectAreaType"].first == "https://w3id.org/jp-textbook/curriculum/SubjectArea/Special"
-      subjects[area_uri]["https://w3id.org/jp-textbook/hasSubject"].sort_by{|s|
-        subject_uri = RDF::URI.new(s)
-        subjects[subject_uri]["http://purl.org/linked-data/cube#order"].first.to_i
+    if subjects[area]
+     # next if area =~ /高等学校/ and data[area]["https://w3id.org/jp-textbook/subjectAreaType"].first == "https://w3id.org/jp-textbook/curriculum/SubjectArea/Special"
+      subjects[area]["https://w3id.org/jp-textbook/hasSubject"].sort_by{|subject|
+        subjects[subject]["http://purl.org/linked-data/cube#order"].first.to_i
       }.each do |subject|
-        key = [uri_s, subject.last_part]
-        subject_type = subjects[RDF::URI.new(subject)]["https://w3id.org/jp-textbook/subjectType"]
+        key = [uri, subject.last_part]
+        subject_type = subjects[subject]["https://w3id.org/jp-textbook/subjectType"]
         #p [area, subject, subject_type]
-        if curriculums[uri_s][subject.last_part] and not done[key]
-          param[uri_s] << subject.last_part
+        if curriculums[uri][subject.last_part] and not done[key]
+          param[uri] << subject.last_part
           done[key] = true
         else
           if area.last_part == subject.last_part # obvious duplicates.

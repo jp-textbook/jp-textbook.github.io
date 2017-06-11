@@ -21,7 +21,7 @@ data.each do |uri, v|
     recordID: v["http://dl.nier.go.jp/library/vocab/recordID"].first,
     itemID: v["http://dl.nier.go.jp/library/vocab/itemID"].first,
   }
-  file = uri.path.sub(/\A\/jp-textbook\//, "") + ".html"
+  file = uri.sub("https://w3id.org/jp-textbook/", "") + ".html"
   p file
   dir = File.dirname(file)
   FileUtils.mkdir_p(dir) if not File.exist?(dir)

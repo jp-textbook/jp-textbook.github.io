@@ -29,11 +29,22 @@ def compare_ignorespaces(str1, str2)  # 氏名等を空白を無視して比較�
 end
 
 def format_pvalue(value)
-  if value =~ /\Ahttps?:\/\//
-    %Q|<#{value}>|
+  str = ""
+  if value.is_a? Hash
+    result = ["["]
+    array = []
+    value.keys.sort.each do |k|
+      array << format_property(k, value[k])
+    end
+    result << array.join(";\n")
+    result << "  ]"
+    str = result.join("\n")
+  elsif value =~ /\Ahttps?:\/\//
+    str = %Q|<#{value}>|
   else
-    %Q|"#{value}"|
+    str = %Q|"#{value}"|
   end
+  str
 end
 def format_property(property, value)
   if value.is_a? Array
@@ -78,8 +89,10 @@ CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
     "schema:editor" => row["編著者"],
     "schema:publisher" => row["発行者"],
     "schema:bookEdition" => row["版"],
-    "nier:callNumber" => row["請求記号"],
-    "nier:recordID" => row["書誌ID"],
+    "textbook:item" => {
+      "nier:callNumber" => row["請求記号"],
+      "nier:recordID" => row["書誌ID"],
+    },
     "textbook:catalogue" => "#{BASE_URI}/catalogue/#{row["学校種別"]}/#{row["★教科書目録掲載年度"]}",
     "textbook:school" => "http://ja.dbpedia.org/resource/#{school}",
     "textbook:subjectArea" => "#{curriculum}/#{subject_area}",
@@ -116,7 +129,7 @@ CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
         note << %Q[#{PROPERTY_LABEL[property]}を「#{data[property]}」に変更。]
       end
     end
-    %w[ textbook:catalogue nier:recordID nier:callNumber ].each do |property|
+    %w[ textbook:catalogue textbook:item ].each do |property|
       done[uri][property] = [ done[uri][property] ]
       done[uri][property] << data[property]
     end
@@ -128,7 +141,7 @@ end
 
 done.sort_by{|k,v| k }.each do |uri, data|
   str = [ "<#{uri}> a schema:Book" ]
-  %w[ schema:name schema:editor schema:publisher schema:bookEdition nier:callNumber nier:recordID
+  %w[ schema:name schema:editor schema:publisher schema:bookEdition textbook:item
       textbook:catalogue textbook:school textbook:subjectArea textbook:subject textbook:grade textbook:curriculum
       textbook:authorizedYear textbook:usageYear textbook:textbookSymbol textbook:textbookNumber textbook:note ].each do |property|
     if data[property] and not data[property].empty?
