@@ -8,6 +8,18 @@ class String
   end
 end
 
+class PageTemplate
+  def initialize(template)
+    @template = template
+  end
+  def to_html(param)
+    tmpl = open(@template){|io| io.read }
+    layout = open("template/layout.html.erb"){|io| io.read }
+    param[:content] = ERB.new(tmpl, $SAFE, "-").result(binding)
+    ERB.new(layout, $SAFE, "-").result(binding)
+  end
+end
+
 class Sitemap
   def initialize
     @urlset = []

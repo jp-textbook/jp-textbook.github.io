@@ -20,6 +20,7 @@ end
 
 data = load_turtle("textbook.ttl")
 curriculums = {}
+template = PageTemplate.new("template/textbook.html.erb")
 sitemap = Sitemap.new
 sitemap << "/"
 sitemap << "/about.html"
@@ -32,7 +33,7 @@ data.each do |uri, v|
   subjectArea = v["https://w3id.org/jp-textbook/subjectArea"].first
   param = {
     uri: uri,
-    site_title: "教科書 Linked Open Data (LOD)",
+    style: "../../../style.css",
     name: v["http://schema.org/name"].first,
     editor: v["http://schema.org/editor"].first.unescape_unicode,
     publisher: v["http://schema.org/publisher"].first,
@@ -57,11 +58,10 @@ data.each do |uri, v|
     recordID: v["http://dl.nier.go.jp/library/vocab/recordID"],
     callNumber: v["http://dl.nier.go.jp/library/vocab/callNumber"],
   }
-  template = open("template/textbook.html.erb"){|io| io.read }
   file = uri.path.sub(/\A\/jp-textbook\//, "") + ".html"
   FileUtils.mkdir_p(File.dirname(file))
   open(file, "w") do |io|
-    io.print ERB.new(template).result(binding)
+    io.print template.to_html(param)
   end
   sitemap << file
 
@@ -71,13 +71,16 @@ data.each do |uri, v|
   curriculums[curriculum][name] << param
 end
 
+template = PageTemplate.new("template/textbook-list.html.erb")
 curriculums.sort_by{|k,v| k }.each do |curriculum, e|
   e.sort_by{|k,v| k }.each do |name, textbooks|
     #p subject
     file = curriculum.sub("https://w3id.org/jp-textbook/", "")
     file << "s/#{ name }.html"
     p file
+    title = [ textbooks.first[:school_name], name, "教科書一覧" ].join(" ")
     param = {
+      name: title,
       curriculum: curriculum,
       curriculum_name: curriculum.last_part,
       startDate_str: curriculum.last_part,
@@ -85,10 +88,9 @@ curriculums.sort_by{|k,v| k }.each do |curriculum, e|
       textbooks: textbooks.sort_by{|e| [ e[:textbookNumber], e[:uri] ] },
       school_name: textbooks.first[:school_name],
     }
-    template = open("template/textbook-list.html.erb"){|io| io.read }
     FileUtils.mkdir_p(File.dirname(file))
     open(file, "w") do |io|
-      io.print ERB.new(template).result(binding)
+      io.print template.to_html(param)
     end
     sitemap << file
   end
@@ -136,10 +138,10 @@ data.keys.select{|uri| data[uri].has_key? "https://w3id.org/jp-textbook/hasSubje
 end
 doc = Nokogiri::HTML(open "about.html")
 param[:download] = doc.css("#history + dl dd ul > li").first
-template = open("template/index.html.erb"){|io| io.read }
+p param[:download]
+template = PageTemplate.new("template/index.html.erb")
 open("index.html", "w") do |io|
-  io.print ERB.new(template, $SAFE, "-").result(binding)
+  io.print template.to_html(param)
 end
-p param
 
 open("sitemaps-textbook.xml", "w"){|io| io.print sitemap.to_xml }
