@@ -105,7 +105,7 @@ data.keys.select{|uri| data[uri].has_key? "https://w3id.org/jp-textbook/hasSubje
   areas = v["https://w3id.org/jp-textbook/hasSubjectArea"]
   areas.sort_by{|e|
     area_uri = RDF::URI.new(e)
-    data[area_uri]["http://purl.org/linked-data/cube#order"].first.to_i
+    data[area_uri]["http://purl.org/linked-data/cube#order"].sort_by{|i| i.to_i }.first.to_i
   }.each do |area|
     p uri
     key = [uri_s, area.last_part]
