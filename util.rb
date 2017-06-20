@@ -16,9 +16,13 @@ class PageTemplate
   end
   def to_html(param)
     tmpl = open(@template){|io| io.read }
+    erb = ERB.new(tmpl, $SAFE, "-")
+    erb.filename = @template
+    param[:content] = erb.result(binding)
     layout = open("template/layout.html.erb"){|io| io.read }
-    param[:content] = ERB.new(tmpl, $SAFE, "-").result(binding)
-    ERB.new(layout, $SAFE, "-").result(binding)
+    erb = ERB.new(layout, $SAFE, "-")
+    erb.filename = "template/layout.html.erb"
+    erb.result(binding)
   end
 end
 
