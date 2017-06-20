@@ -1,0 +1,30 @@
+    <div class="jumbotron">
+      <div class="container">
+        <h1><%=h param[:name] %></h1>
+        <p><%=h param[:school].last_part %> 学習指導要領 (<%=h param[:curriculum].last_part %>年度以降)</p>
+        <p><small><span class="glyphicon glyphicon-link"></span> <a href="<%=h param[:uri] %>"><%=h param[:uri] %></a></small></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ol class="breadcrumb">
+            <li><a href="../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+            <li><a href="../"><%=h param[:school].last_part %> 学習指導要領 (<%=h param[:curriculum].last_part %>年度以降)</a></li>
+            <li class="active"><%=h param[:name] %></li>
+          </ol>
+        </div>
+      </div>
+      <%- if not param[:subjects].empty? -%>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>種目一覧</h2>
+          <ul>
+            <%- param[:subjects].each do |subject| -%>
+              <li><a href="<%=h subject %>"><%=h subject.last_part %></a>
+            <%- end -%>
+          </ul>
+        </div>
+      </div>
+      <%- end -%>
+    </div>

@@ -10,7 +10,7 @@
           <h2>教科一覧</h2>
           <ul>
             <%- param[:subjectArea].each do |area| -%>
-              <li><%=h area[:name] %>
+              <li><a href="<%=h area[:uri].last_part %>"><%=h area[:name] %></a>
                 <%- if area[:subjects].size > 0 -%>
                   <ul class="list-inline subjects">
                     <%- area[:subjects].each do |subject| -%>

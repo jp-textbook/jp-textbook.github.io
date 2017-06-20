@@ -31,7 +31,7 @@ class Sitemap
     @urlset = []
   end
   def <<(file)
-    file = file.sub(/\A\//, "").sub(/\.html\Z/, "")
+    file = file.sub(/\A\//, "").sub(/\/index.html\Z/, "").sub(/\.html\Z/, "")
     url = "https://jp-textbook.github.io/#{file}"
     @urlset << url
   end

@@ -33,7 +33,7 @@
           <h2>詳細情報</h2>
           <dl class="dl-horizontal">
             <dt>編著者<dd><%=h param[:editor] %></dd>
-            <dt>教科 / 種目</dt><dd><%=h param[:subjectArea_name] %><% if param[:subject_name] %> / <%=h param[:subject_name] %><% end %></dd>
+            <dt>教科 / 種目</dt><dd><a href="<%=h param[:subjectArea].sub("https://w3id.org/jp-textbook/", "../../../") %>"><%=h param[:subjectArea_name] %></a><% if param[:subject_name] %> / <%=h param[:subject_name] %><% end %></dd>
             <dt>使用年度</dt><dd><%=h param[:usageYear] %></dd>
             <dt>検定年度</dt><dd><%=h param[:authorizedYear] %></dd>
             <dt>教科書目録掲載年度</dt>
