@@ -1,4 +1,4 @@
-default: clean curriculum catalogue textbook all
+default: clean catalogue textbook all
 
 all:
 	./catttl.rb textbook curriculum catalogue subject subjectArea > all-`date +%Y%m%d`.ttl

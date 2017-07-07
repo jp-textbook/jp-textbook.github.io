@@ -27,4 +27,16 @@
         </div>
       </div>
       <%- end -%>
+      <%- if param[:textbooks] -%>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>教科書一覧</h2>
+            <ul>
+              <%- param[:textbooks].each do |textbook| -%>
+                <li><a href="<%=h textbook[:uri].to_s.sub("https://w3id.org/jp-textbook/", "../../../../") %>"><%=h textbook[:name] %> (<%=h textbook[:publisher] %>)</a></li>
+              <%- end -%>
+            </ul>
+          </div>
+        </div>
+      <%- end -%>
     </div>
