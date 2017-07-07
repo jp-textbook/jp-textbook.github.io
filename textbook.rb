@@ -72,40 +72,55 @@ data.each do |uri, v|
   sitemap << file
 
   curriculums[curriculum] ||= {}
-  name = subject_name || subjectArea.last_part
-  curriculums[curriculum][name] ||= []
-  curriculums[curriculum][name] << param
-end
-
-template = PageTemplate.new("template/textbook-list.html.erb")
-curriculums.sort_by{|k,v| k }.each do |curriculum, e|
-  e.sort_by{|k,v| k }.each do |name, textbooks|
-    #p subject
-    file = curriculum.sub("https://w3id.org/jp-textbook/", "")
-    file << "s/#{ name }.html"
-    p file
-    title = [ textbooks.first[:school_name], name, "教科書一覧" ].join(" ")
-    param = {
-      name: title,
-      curriculum: curriculum,
-      curriculum_name: curriculum.last_part,
-      startDate_str: curriculum.last_part,
-      subject_name: name,
-      textbooks: textbooks.sort_by{|e| [ e[:textbookNumber], e[:uri] ] },
-      school_name: textbooks.first[:school_name],
-    }
-    FileUtils.mkdir_p(File.dirname(file))
-    open(file, "w") do |io|
-      io.print template.to_html(param)
-    end
-    sitemap << file
+  if subject
+    curriculums[curriculum][subject] ||= []
+    curriculums[curriculum][subject] << param
+  else
+    curriculums[curriculum][subjectArea] ||= []
+    curriculums[curriculum][subjectArea] << param
   end
 end
 
-data = load_turtle("subjectArea.ttl")
 subjects = load_turtle("subject.ttl")
+template = PageTemplate.new("template/subject.html.erb")
+subjects.sort_by{|k,v| k }.each do |subject, v|
+#curriculums.sort_by{|k,v| k }.each do |curriculum, e|
+#  e.sort_by{|k,v| k }.each do |subject, textbooks|
+#    next if not subjects.has_key? subject
+  p subject
+  #p v
+  #p v["http://www.w3.org/1999/02/22-rdf-syntax-ns#type"]
+  next if not v.has_key? "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+  file = subject.sub("https://w3id.org/jp-textbook/", "")
+  file << ".html"
+  p file
+  school_name = v["https://w3id.org/jp-textbook/school"].first.last_part
+  curriculum = subject.sub(/\/[^\/]+\/[^\/]+\Z/, "")
+  textbooks = curriculums[curriculum][subject]
+  textbooks = [] if textbooks.nil?
+  subject_area = subject.sub(/\/[^\/]+\Z/, "")
+  param = {
+    uri: subject,
+    name: [ school_name, subject.last_part ].join(" "),
+    curriculum: curriculum,
+    startDate_str: curriculum.last_part,
+    subject_name: subject.last_part,
+    subjectArea: subject_area,
+    subjectArea_name: subject_area.last_part,
+    textbooks: textbooks.sort_by{|t| [ t[:textbookNumber], t[:uri] ] },
+    school_name: school_name,
+    citation: v["http://schema.org/citation"].first,
+  }
+  FileUtils.mkdir_p(File.dirname(file))
+  open(file, "w") do |io|
+    io.print template.to_html(param)
+  end
+  sitemap << file
+#  end
+end
+
+data = load_turtle("subjectArea.ttl")
 param = {}
-done = {}
 data.keys.select{|uri| data[uri].has_key? "https://w3id.org/jp-textbook/hasSubjectArea" }.each do |uri|
   param[uri] = []
   v = data[uri]
@@ -113,33 +128,27 @@ data.keys.select{|uri| data[uri].has_key? "https://w3id.org/jp-textbook/hasSubje
   areas.sort_by{|e|
     data[e]["http://purl.org/linked-data/cube#order"].sort_by{|i| i.to_i }.first.to_i
   }.each do |area|
-    key = [uri, area.last_part]
-    if curriculums[uri][area.last_part] and not done[key]
-      param[uri] << area.last_part
-      done[key] = true
-    else
-      STDERR.puts "WARN: #{area} is duplicate or not found in subjects list."
-    end
+    count_subjects = 0
     if subjects[area]
-     # next if area =~ /高等学校/ and data[area]["https://w3id.org/jp-textbook/subjectAreaType"].first == "https://w3id.org/jp-textbook/curriculum/SubjectArea/Special"
       subjects[area]["https://w3id.org/jp-textbook/hasSubject"].sort_by{|subject|
         subjects[subject]["http://purl.org/linked-data/cube#order"].first.to_i
       }.each do |subject|
-        key = [uri, subject.last_part]
         subject_type = subjects[subject]["https://w3id.org/jp-textbook/subjectType"]
         #p [area, subject, subject_type]
-        if curriculums[uri][subject.last_part] and not done[key]
-          param[uri] << subject.last_part
-          done[key] = true
+        if curriculums[uri][subject]
+          param[uri] << subject
+          count_subjects += 1
         else
-          if area.last_part == subject.last_part # obvious duplicates.
-          elsif subject_type and subject_type == ["https://w3id.org/jp-textbook/curriculum/Subject/Special"] #ignore special subject.
+          if subject_type and subject_type == ["https://w3id.org/jp-textbook/curriculum/Subject/Special"] #ignore special subject.
           else
-            STDERR.puts "WARN: #{subject} is duplicate or not found in subjects list."
+            STDERR.puts "WARN: #{subject} is not found in subjects list."
           end
         end
       end
-    else
+    end
+    if count_subjects == 0 and curriculums[uri][area]
+      param[uri] << area
+      STDERR.puts "WARN: Area #{area} is used in a list."
     end
   end
 end

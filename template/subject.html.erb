@@ -1,0 +1,42 @@
+    <div class="jumbotron">
+      <div class="container">
+        <h1><%=h param[:school_name] %> <%=h param[:subject_name] %></h1>
+        <p><%=h param[:startDate_str] %>年度施行 学習指導要領</p>
+        <p><small><span class="glyphicon glyphicon-link"></span> <a href="<%=h param[:uri] %>"><%=h param[:uri] %></a></small></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ol class="breadcrumb">
+            <li><a href="../../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+            <li><a href="../../<%=h param[:curriculum].last_part %>"><%=h param[:school_name] %> 学習指導要領 (<%=h param[:curriculum].last_part %>年度以降)</a></li>
+            <li><a href="../<%=h param[:subjectArea_name] %>"><%=h param[:subjectArea_name] %></a></li>
+            <li class="active"><%=h param[:subject_name ] %></a></li>
+          </ol>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>詳細情報</h2>
+          <dl class="dl-horizontal">
+            <dt>学校種別</dt><dd><%=h param[:school_name] %></dd>
+            <dt>学習指導要領</dt><dd><a href="../../<%=h param[:curriculum].last_part %>"><%=h param[:curriculum].last_part %></a></dd>
+            <dt>教科</dt><dd><a href="../<%=h param[:subjectArea_name] %>"><%=h param[:subjectArea_name] %></a></dd>
+            <dt>出典</dt><dd><%=h param[:citation] %></dd>
+          </dl>
+        </div>
+      </div>
+      <%- if param[:textbooks] -%>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>教科書一覧</h2>
+          <ul>
+            <%- param[:textbooks].each do |textbook| -%>
+              <li><a href="<%=h textbook[:uri].to_s.sub("https://w3id.org/jp-textbook/", "../../../../") %>"><%=h textbook[:name] %> (<%=h textbook[:publisher] %>)</a></li>
+            <%- end -%>
+          </ul>
+        </div>
+      </div>
+      <%- end -%>
+    </div>
