@@ -23,7 +23,11 @@
         <div class="col-md-12">
           <ol class="breadcrumb">
             <li><a href="../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
-            <li><a href="../../../<%=h param[:curriculum].sub("https://w3id.org/jp-textbook/", "") %>s/<%=h param[:subject_name] || param[:subjectArea_name] %>"><%=h param[:school_name] %> <%=h param[:subject_name] || param[:subjectArea_name] %> 教科書一覧 (<%=h param[:curriculum].last_part %>年度以降)</a></li>
+            <li><a href="../../../<%=h param[:curriculum].sub("https://w3id.org/jp-textbook/", "") %>"><%=h param[:school_name] %> 学習指導要領 (<%=h param[:curriculum].last_part %>年度以降)</a></li>
+            <li><a href="../../../<%=h param[:subjectArea].sub("https://w3id.org/jp-textbook/", "") %>"><%=h param[:subjectArea_name] %></a></li>
+            <%- if param[:subject] -%>
+            <li><a href="../../../<%=h param[:subject].sub("https://w3id.org/jp-textbook/", "") %>"><%=h param[:subject_name ] %></a></li>
+            <%- end -%>
             <li class="active"><%=h param[:name] %></li>
           </ol>
         </div>
