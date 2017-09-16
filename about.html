@@ -253,6 +253,52 @@
             </tr>
             </tbody>
           </table>
+          <h3>教科をあらわすリソース</h3>
+          <h4>教科をあらわすリソースのURI</h4>
+          <p>
+          教科をあらわすリソースは以下のようなURIにより表現されます。
+          <br>
+          <code>https://w3id.org/jp-textbook/curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科名</var></code>
+          </p>
+          <p>
+          または、プレフィックスを用いて表現すると以下のようになります。
+          <br>
+          <code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科名</var></code>
+          </p>
+          <h4>教科リソースが持つプロパティ</h4>
+          <p>教科リソースが持つプロパティを下表に示します</p>
+          <table class="table">
+            <tr>
+              <th>プロパティ名</th><th>説明</th><th>プロパティ値の例</th><th>備考</th>
+            </tr>
+            <tbody>
+            <tr>
+              <td>schema:name</td>
+              <td>教科名</td>
+              <td>理数</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>textbook:school</td>
+              <td>学校種別</td>
+              <td>dbpedia:高等学校</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>qb:order</td>
+              <td>学習指導要領掲載順</td>
+              <td>19</td>
+              <td>表示順を決める場合などで利用</td>
+            </tr>
+            <tr>
+              <td>textbook:subjectAreaType</td>
+              <td>教科種別</td>
+              <td>textbook:curriculum/SubjectArea/Special</td>
+              <td>Common:「各学科に共通する各教科」「普通教育に関する各教科」, Special: 「主として専門学科において開設される各教科」「専門教育に関する各教科」</td>
+            </tr>
+            </tbody>
+          </table>
+          （* 教科リソースは、掲載されている学習指導要領から textbook:hasSubjectArea でつながっています）
         </div>
       </div>
       <!--
