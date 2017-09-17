@@ -298,13 +298,72 @@
             </tr>
             <tr>
               <td>textbook:hasSubject</td>
-              <td>科目がある</td>
+              <td>種目（科目）がある</td>
               <td>textbook:curriculum/高等学校/2013/国語/国語総合</td>
               <td></td>
             </tr>
             </tbody>
           </table>
           （* 教科リソースは、掲載されている学習指導要領から textbook:hasSubjectArea でつながっています）
+          <h3>種目をあらわすリソース</h3>
+          種目は、ほぼ、科目と同等ですが、厳密には科目とは異なります（高等学校の地図、小学校の書写など）。教科書作成者が、検定時に申請する教科書の種目をさしています。
+          <h4>種目をあらわすリソースのURI</h4>
+          <p>
+          種目をあらわすリソースは以下のようなURIにより表現されます。
+          <br>
+          <code>https://w3id.org/jp-textbook/curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科名</var>/<var>種目名</var></code>
+          </p>
+          <p>
+          または、プレフィックスを用いて表現すると以下のようになります。
+          <br>
+          <code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科名</var>/<var>種目名</var></code>
+          </p>
+          <h4>種目リソースが持つプロパティ</h4>
+          <p>種目リソースが持つプロパティを下表に示します</p>
+          <table class="table">
+            <tr>
+              <th>プロパティ名</th><th>説明</th><th>プロパティ値の例</th><th>備考</th>
+            </tr>
+            <tbody>
+            <tr>
+              <td>schema:name</td>
+              <td>種目名</td>
+              <td>国語総合</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>textbook:school</td>
+              <td>学校種別</td>
+              <td>dbpedia:高等学校</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>qb:order</td>
+              <td>教科用図書検定申請受理種目掲載順</td>
+              <td>1</td>
+              <td>表示順を決める場合などで利用</td>
+            </tr>
+            <tr>
+              <td>textbook:subjectAreaType</td>
+              <td>種目種別</td>
+              <td>textbook:curriculum/SubjectArea/Common</td>
+              <td>学習指導要領2003,2013の高等学校の教科の種目のみ。Common:「各学科に共通する各教科」「普通教育に関する各教科」, Special: 「主として専門学科において開設される各教科」「専門教育に関する各教科」</td>
+            </tr>
+            <tr>
+              <td>rdfs:seeAlso</td>
+              <td>参照</td>
+              <td>http://www.mext.go.jp/a_menu/shotou/kyoukasho/kentei/1293732.htm</td>
+              <td>教科用図書検定申請受理種目のWebページ</td>
+            </tr>
+            <tr>
+              <td>schema:citation</td>
+              <td>出典</td>
+              <td>『教科用図書検定申請受理種目』平成22年5月14日号外文部科学省告示第83号(平成元年6月9日文部省告示第89号の改正)</td>
+              <td>種目の出典となる表。検定教科書の検定時の申請に使われる種目表。</td>
+            </tr>
+            </tbody>
+          </table>
+          （* 種目リソースは、教科からtextbook:hasSubject でつながっています）
         </div>
       </div>
       <!--
