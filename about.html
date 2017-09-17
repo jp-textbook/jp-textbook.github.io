@@ -364,6 +364,82 @@
             </tbody>
           </table>
           （* 種目リソースは、教科からtextbook:hasSubject でつながっています）
+          <h3>教科書目録をあらわすリソース</h3>
+          文部科学省が毎年発行している、当該年度に利用できる教科書のリストです。
+          <h4>教科書目録をあらわすリソースのURI</h4>
+          <p>
+          教科書目録をあらわすリソースは以下のようなURIにより表現されます。
+          <br>
+          <code>https://w3id.org/jp-textbook/catalogue/<var>学校種別</var>/<var>発行年</code>
+          </p>
+          <p>
+          または、プレフィックスを用いて表現すると以下のようになります。
+          <br>
+          <code>textbook:catalogue/<var>学校種別</var>/<var>発行年</code>
+          </p>
+          <h4>教科書目録リソースが持つプロパティ</h4>
+          <p>教科書目録リソースが持つプロパティを下表に示します</p>
+          <table class="table">
+            <tr>
+              <th>プロパティ名</th><th>説明</th><th>プロパティ値の例</th><th>備考</th>
+            </tr>
+            <tbody>
+            <tr>
+              <td>schema:name</td>
+              <td>書名</td>
+              <td>高等学校用教科書目録(平成29年度使用)</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>textbook:school</td>
+              <td>学校種別</td>
+              <td>dbpedia:高等学校</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>schema:datePublished</td>
+              <td>発行年</td>
+              <td>2016</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>textbook:usageYear</td>
+              <td>使用年度</td>
+              <td>textbook:curriculum/SubjectArea/Common</td>
+              <td>掲載している教科書の使用年度を表す。</td>
+            </tr>
+            <tr>
+              <td>schema:url</td>
+              <td>本文URL</td>
+              <td>http://www.mext.go.jp/a_menu/shotou/kyoukasho/__icsFiles/afieldfile/2016/04/26/1369944_3.pdf</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>rdfs:seeAlso</td>
+              <td>本文URL（アーカイブ）</td>
+              <td>https://web.archive.org/web/*/http://www.mext.go.jp/a_menu/shotou/kyoukasho/__icsFiles/afieldfile/2016/04/26/1369944_3.pdf</td>
+              <td>WayBackMachin, WARPなどに本文がある場合</td>
+            </tr>
+            <tr>
+              <td><code>nier:itemID</code></td>
+              <td>国立教育政策研究所教育図書館の蔵書データベースにおける所蔵資料ID</td>
+              <td>400008926</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>nier:recordID</code></td>
+              <td>国立教育政策研究所教育図書館の蔵書データベースにおけるレコードID</td>
+              <td>BB00014905</td>
+              <td><a href="https://nieropac.nier.go.jp/ebopac/BB00014905">https://nieropac.nier.go.jp/ebopac/BB00014905</a>の形式で参照可能</td>
+            </tr>
+            <tr>
+              <td><code>nier:callNumber</code></td>
+              <td>国立教育政策研究所教育図書館の所蔵資料に対する請求記号</td>
+              <td>375.9||27||2017</td>
+              <td>区切り記号は、「||」である。 </td>
+            </tr>
+            </tbody>
+          </table>
         </div>
       </div>
       <!--
