@@ -171,6 +171,12 @@
               <td>対応する学校種別をDBpediaリソースに対応するものとして関連付ける</td>
             </tr>
             <tr>
+              <td><code>textbook:item</code></td>
+              <td>所蔵情報</td>
+              <td>（ブランクリソース）</td>
+              <td><code>nier:recordID</code>と<code>nier:callNumber</code>の2つの所蔵情報のためのプロパティを持つ</td>
+            </tr>
+            <tr>
               <td><code>nier:recordID</code></td>
               <td>国立教育政策研究所教育図書館の戦後教科書データベースにおけるレコードID</td>
               <td>EB10015334</td>
@@ -210,40 +216,227 @@
             </tr>
             <tbody>
             <tr>
-              <td>schema:name</td>
+              <td><code>schema:name</code></td>
               <td>名称</td>
               <td>高等学校学習指導要領</td>
               <td></td>
             </tr>
             <tr>
-              <td>textbook:hasSubjectArea</td>
+              <td><code>textbook:hasSubjectArea</code></td>
               <td>教科がある</td>
               <td>textbook:curriculum/高等学校/1994/国語</td>
               <td></td>
             </tr>
             <tr>
-              <td>schema:datePublished</td>
+              <td><code>schema:datePublished</code></td>
               <td>発行年</td>
               <td>1989</td>
               <td></td>
             </tr>
             <tr>
-              <td>schema:startDate</td>
+              <td><code>schema:startDate</code></td>
               <td>施行年月日</td>
               <td>1994-04-01</td>
               <td></td>
             </tr>
             <tr>
-              <td>textbook:school</td>
+              <td><code>textbook:school</code></td>
               <td>学校種別</td>
               <td>http://ja.dbpedia.org/resource/高等学校</td>
               <td></td>
             </tr>
             <tr>
-              <td>rdfs:seeAlso</td>
+              <td><code>rdfs:seeAlso</code></td>
               <td>本文URL</td>
               <td>http://www.mext.go.jp/a_menu/shotou/old-cs/1322503.htm</td>
               <td></td>
+            </tr>
+            </tbody>
+          </table>
+          <h3>教科をあらわすリソース</h3>
+          <h4>教科をあらわすリソースのURI</h4>
+          <p>
+          教科をあらわすリソースは以下のようなURIにより表現されます。
+          <br>
+          <code>https://w3id.org/jp-textbook/curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科名</var></code>
+          </p>
+          <p>
+          または、プレフィックスを用いて表現すると以下のようになります。
+          <br>
+          <code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科名</var></code>
+          </p>
+          <h4>教科リソースが持つプロパティ</h4>
+          <p>教科リソースが持つプロパティを下表に示します</p>
+          <table class="table">
+            <tr>
+              <th>プロパティ名</th><th>説明</th><th>プロパティ値の例</th><th>備考</th>
+            </tr>
+            <tbody>
+            <tr>
+              <td><code>schema:name</code></td>
+              <td>教科名</td>
+              <td>国語</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>textbook:school</code></td>
+              <td>学校種別</td>
+              <td>dbpedia:高等学校</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>qb:order</code></td>
+              <td>学習指導要領掲載順</td>
+              <td>1</td>
+              <td>表示順を決める場合などで利用</td>
+            </tr>
+            <tr>
+              <td><code>textbook:subjectAreaType</code></td>
+              <td>教科種別</td>
+              <td>textbook:curriculum/SubjectArea/Common</td>
+              <td>学習指導要領2003,2013の高等学校の教科のみ。Common:「各学科に共通する各教科」「普通教育に関する各教科」, Special: 「主として専門学科において開設される各教科」「専門教育に関する各教科」</td>
+            </tr>
+            <tr>
+              <td><code>textbook:hasSubject</code></td>
+              <td>種目（科目）がある</td>
+              <td>textbook:curriculum/高等学校/2013/国語/国語総合</td>
+              <td></td>
+            </tr>
+            </tbody>
+          </table>
+          （* 教科リソースは、掲載されている学習指導要領から <code>textbook:hasSubjectArea</code> でつながっています）
+          <h3>種目をあらわすリソース</h3>
+          種目は、ほぼ、科目と同等ですが、厳密には科目とは異なります（高等学校の地図、小学校の書写など）。教科書作成者が、検定時に申請する教科書の種目をさしています。
+          <h4>種目をあらわすリソースのURI</h4>
+          <p>
+          種目をあらわすリソースは以下のようなURIにより表現されます。
+          <br>
+          <code>https://w3id.org/jp-textbook/curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科名</var>/<var>種目名</var></code>
+          </p>
+          <p>
+          または、プレフィックスを用いて表現すると以下のようになります。
+          <br>
+          <code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科名</var>/<var>種目名</var></code>
+          </p>
+          <h4>種目リソースが持つプロパティ</h4>
+          <p>種目リソースが持つプロパティを下表に示します</p>
+          <table class="table">
+            <tr>
+              <th>プロパティ名</th><th>説明</th><th>プロパティ値の例</th><th>備考</th>
+            </tr>
+            <tbody>
+            <tr>
+              <td><code>schema:name</code></td>
+              <td>種目名</td>
+              <td>国語総合</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>textbook:school</code></td>
+              <td>学校種別</td>
+              <td>dbpedia:高等学校</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>qb:order</code></td>
+              <td>教科用図書検定申請受理種目掲載順</td>
+              <td>1</td>
+              <td>表示順を決める場合などで利用</td>
+            </tr>
+            <tr>
+              <td><code>textbook:subjectAreaType</code></td>
+              <td>種目種別</td>
+              <td>textbook:curriculum/SubjectArea/Common</td>
+              <td>学習指導要領2003,2013の高等学校の教科の種目のみ。Common:「各学科に共通する各教科」「普通教育に関する各教科」, Special: 「主として専門学科において開設される各教科」「専門教育に関する各教科」</td>
+            </tr>
+            <tr>
+              <td><code>rdfs:seeAlso</code></td>
+              <td>参照</td>
+              <td>http://www.mext.go.jp/a_menu/shotou/kyoukasho/kentei/1293732.htm</td>
+              <td>教科用図書検定申請受理種目のWebページ</td>
+            </tr>
+            <tr>
+              <td><code>schema:citation</code></td>
+              <td>出典</td>
+              <td>『教科用図書検定申請受理種目』平成22年5月14日号外文部科学省告示第83号(平成元年6月9日文部省告示第89号の改正)</td>
+              <td>種目の出典となる表。検定教科書の検定時の申請に使われる種目表。</td>
+            </tr>
+            </tbody>
+          </table>
+          （* 種目リソースは、教科から<code>textbook:hasSubject</code> でつながっています）
+          <h3>教科書目録をあらわすリソース</h3>
+          文部科学省が毎年発行している、当該年度に利用できる教科書のリストです。
+          <h4>教科書目録をあらわすリソースのURI</h4>
+          <p>
+          教科書目録をあらわすリソースは以下のようなURIにより表現されます。
+          <br>
+          <code>https://w3id.org/jp-textbook/catalogue/<var>学校種別</var>/<var>発行年</code>
+          </p>
+          <p>
+          または、プレフィックスを用いて表現すると以下のようになります。
+          <br>
+          <code>textbook:catalogue/<var>学校種別</var>/<var>発行年</code>
+          </p>
+          <h4>教科書目録リソースが持つプロパティ</h4>
+          <p>教科書目録リソースが持つプロパティを下表に示します</p>
+          <table class="table">
+            <tr>
+              <th>プロパティ名</th><th>説明</th><th>プロパティ値の例</th><th>備考</th>
+            </tr>
+            <tbody>
+            <tr>
+              <td><code>schema:name</code></td>
+              <td>書名</td>
+              <td>高等学校用教科書目録(平成29年度使用)</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>textbook:school</code></td>
+              <td>学校種別</td>
+              <td>dbpedia:高等学校</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>schema:datePublished</code></td>
+              <td>発行年</td>
+              <td>2016</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>textbook:usageYear</code></td>
+              <td>使用年度</td>
+              <td>textbook:curriculum/SubjectArea/Common</td>
+              <td>掲載している教科書の使用年度を表す。</td>
+            </tr>
+            <tr>
+              <td><code>schema:url</code></td>
+              <td>本文URL</td>
+              <td>http://www.mext.go.jp/a_menu/shotou/kyoukasho/__icsFiles/afieldfile/2016/04/26/1369944_3.pdf</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>rdfs:seeAlso</code></td>
+              <td>本文URL（アーカイブ）</td>
+              <td>https://web.archive.org/web/*/http://www.mext.go.jp/a_menu/shotou/kyoukasho/__icsFiles/afieldfile/2016/04/26/1369944_3.pdf</td>
+              <td>WayBackMachin, WARPなどに本文がある場合</td>
+            </tr>
+            <tr>
+              <td><code>nier:itemID</code></td>
+              <td>国立教育政策研究所教育図書館の蔵書データベースにおける所蔵資料ID</td>
+              <td>400008926</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>nier:recordID</code></td>
+              <td>国立教育政策研究所教育図書館の蔵書データベースにおけるレコードID</td>
+              <td>BB00014905</td>
+              <td><a href="https://nieropac.nier.go.jp/ebopac/BB00014905">https://nieropac.nier.go.jp/ebopac/BB00014905</a>の形式で参照可能</td>
+            </tr>
+            <tr>
+              <td><code>nier:callNumber</code></td>
+              <td>国立教育政策研究所教育図書館の所蔵資料に対する請求記号</td>
+              <td>375.9||27||2017</td>
+              <td>区切り記号は、「||」である。 </td>
             </tr>
             </tbody>
           </table>
