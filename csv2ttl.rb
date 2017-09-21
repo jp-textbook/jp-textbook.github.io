@@ -84,7 +84,7 @@ CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
   subject = NKF.nkf("-wZ1", subject).gsub(/\s+/, "")
   subject = subject.gsub(/1/, "I").gsub(/2/, "II").gsub(/3/, "III")
   school = row["学校種別"]
-  grade = row["学年"].to_s.gsub(/　/, "")
+  grade = row["学年"].to_s.gsub(/　/, "").strip
   pages = row["ページ数・大きさ"].to_s.strip
   unless pages.empty?
     pages = pages.split(/\s*;\s*/)
