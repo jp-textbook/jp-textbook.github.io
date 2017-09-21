@@ -20,6 +20,7 @@ end
 
 puts <<EOF
 @prefix schema:    <http://schema.org/>.
+@prefix bf:        <http://id.loc.gov/ontologies/bibframe/>.
 @prefix nier:      <http://dl.nier.go.jp/library/vocab/>.
 @prefix textbook:  <https://w3id.org/jp-textbook/>.
 EOF
@@ -84,6 +85,15 @@ CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
   subject = subject.gsub(/1/, "I").gsub(/2/, "II").gsub(/3/, "III")
   school = row["学校種別"]
   grade = row["学年"].to_s.gsub(/　/, "")
+  pages = row["ページ数・大きさ"].to_s.strip
+  unless pages.empty?
+    pages = pages.split(/\s*;\s*/)
+    if /\A\d+\Z/ =~ pages[0]
+      extent, dimensions = pages
+    else
+      dimensions, extent = pages
+    end
+  end
   data = {
     "schema:name" => row["書名"],
     "schema:editor" => row["編著者"],
@@ -103,6 +113,8 @@ CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
     "textbook:usageYear" => row["使用年度(西暦)"],
     "textbook:textbookSymbol" => row["教科書記号"],
     "textbook:textbookNumber" => row["教科書番号"],
+    "bf:extent" => extent,
+    "bf:dimensions" => dimensions,
   }
   if subject == subject_area and fix_curriculums.include?( curriculum )
     if subject_area != "保健体育"
@@ -123,7 +135,8 @@ CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
     note = "#{next_years[0]}年度より"
     %w[ schema:publisher schema:name schema:editor schema:bookEdition
         textbook:school textbook:subjectArea textbook:subject textbook:grade textbook:curriculum
-        textbook:authorizedYear textbook:textbookSymbol textbook:textbookNumber ].each do |property|
+        textbook:authorizedYear textbook:textbookSymbol textbook:textbookNumber
+    ].each do |property|
       if not compare_ignorespaces(done[uri][property], data[property])
         STDERR.puts "  #{property}: #{done[uri][property]} vs #{data[property]}" 
         note << %Q[#{PROPERTY_LABEL[property]}を「#{data[property]}」に変更。]
@@ -143,7 +156,11 @@ done.sort_by{|k,v| k }.each do |uri, data|
   str = [ "<#{uri}> a schema:Book" ]
   %w[ schema:name schema:editor schema:publisher schema:bookEdition textbook:item
       textbook:catalogue textbook:school textbook:subjectArea textbook:subject textbook:grade textbook:curriculum
-      textbook:authorizedYear textbook:usageYear textbook:textbookSymbol textbook:textbookNumber textbook:note ].each do |property|
+      textbook:authorizedYear textbook:usageYear
+      bf:extent bf:dimensions
+      textbook:textbookSymbol textbook:textbookNumber 
+      textbook:note
+  ].each do |property|
     if data[property] and not data[property].empty?
       str << format_property(property, data[property])
     end
