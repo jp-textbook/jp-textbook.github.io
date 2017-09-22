@@ -130,7 +130,9 @@ CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
     end
   end
   if done[uri]
-    logger.warn "#{uri} duplicates! [#{done[uri]["nier:recordID"]}/#{data["nier:recordID"]}] (#{done[uri]["textbook:usageYear"]} vs #{data["textbook:usageYear"]})"
+    done_items = done[uri]["textbook:item"]
+    record_ids = done_items.respond_to?(:key?) ? done_items["nier:recordID"] : done_items.map{|e| e["nier:recordID"] }.join(",")
+    logger.warn "#{uri} duplicates! [#{record_ids}/#{data["textbook:item"]["nier:recordID"]}] (#{done[uri]["textbook:usageYear"]} vs #{data["textbook:usageYear"]})"
     if done[uri]["textbook:usageYear"] > data["textbook:usageYear"]
       tmp = done[uri].dup
       done[uri] = data.dup
