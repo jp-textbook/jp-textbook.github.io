@@ -2,6 +2,7 @@
 
 require "csv"
 require "nkf"
+require "logger"
 require_relative "util.rb"
 
 BASE_URI = "https://w3id.org/jp-textbook"
@@ -17,6 +18,8 @@ if ARGV.size < 1
   puts "USAGE: #$0 data.csv"
   exit
 end
+
+logger = Logger.new(STDERR, level: :info)
 
 puts <<EOF
 @prefix schema:    <http://schema.org/>.
@@ -84,7 +87,11 @@ CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
   subject = NKF.nkf("-wZ1", subject).gsub(/\s+/, "")
   subject = subject.gsub(/1/, "I").gsub(/2/, "II").gsub(/3/, "III")
   school = row["学校種別"]
-  grade = row["学年"].to_s.gsub(/　/, "").strip
+  grade = row["学年"].to_s.gsub(/　/, "")
+  if not grade.empty? and grade.strip.empty?
+    logger.warn "Space included at grade data: #{grade.inspect}: #{uri}"
+    grade = nil
+  end
   pages = row["ページ数・大きさ"].to_s.strip
   unless pages.empty?
     pages = pages.split(/\s*;\s*/)
@@ -119,11 +126,11 @@ CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
   if subject == subject_area and fix_curriculums.include?( curriculum )
     if subject_area != "保健体育"
       data.delete("textbook:subject")
-      STDERR.puts "REMOVE subject: "+ [uri, subject, subject_area].inspect
+      logger.debug "REMOVE subject: "+ [uri, subject, subject_area].inspect
     end
   end
   if done[uri]
-    STDERR.puts "WARN: #{uri} duplicates! [#{done[uri]["nier:recordID"]}/#{data["nier:recordID"]}] (#{done[uri]["textbook:usageYear"]} vs #{data["textbook:usageYear"]})"
+    logger.warn "#{uri} duplicates! [#{done[uri]["nier:recordID"]}/#{data["nier:recordID"]}] (#{done[uri]["textbook:usageYear"]} vs #{data["textbook:usageYear"]})"
     if done[uri]["textbook:usageYear"] > data["textbook:usageYear"]
       tmp = done[uri].dup
       done[uri] = data.dup
@@ -138,7 +145,7 @@ CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
         textbook:authorizedYear textbook:textbookSymbol textbook:textbookNumber
     ].each do |property|
       if not compare_ignorespaces(done[uri][property], data[property])
-        STDERR.puts "  #{property}: #{done[uri][property]} vs #{data[property]}" 
+        logger.warn "  #{property}: #{done[uri][property]} vs #{data[property]}" 
         note << %Q[#{PROPERTY_LABEL[property]}を「#{data[property]}」に変更。]
       end
     end
