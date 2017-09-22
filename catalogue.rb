@@ -16,6 +16,7 @@ data.each do |uri, v|
     datePublished: v["http://schema.org/datePublished"].first,
     usageYear: v["https://w3id.org/jp-textbook/usageYear"].first,
     school: v["https://w3id.org/jp-textbook/school"].first,
+    url: v["http://schema.org/url"],
     seeAlso: v["http://www.w3.org/2000/01/rdf-schema#seeAlso"],
     callNumber: v["http://dl.nier.go.jp/library/vocab/callNumber"].first,
     recordID: v["http://dl.nier.go.jp/library/vocab/recordID"].first,

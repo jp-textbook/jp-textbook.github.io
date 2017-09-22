@@ -29,9 +29,14 @@
         <div class="col-md-12">
           <h2>関連リンク</h2>
           <ul>
+            <%- if param[:url] -%>
+              <%- param[:url].each do |url| -%>
+              <li><a href="<%=h url %>">教科書目録（文部科学省サイト）</a></li>
+              <%- end -%>
+            <%- end -%>
             <%- if param[:seeAlso] -%>
               <%- param[:seeAlso].each do |url| -%>
-              <li><a href="<%=h url %>">教科書目録（文部科学省サイト）</a></li>
+              <li><a href="<%=h url %>">教科書目録（ウェブアーカイブサイト）</a></li>
               <%- end -%>
             <%- end -%>
             <li><a href="https://nieropac.nier.go.jp/ebopac/<%=h param[:recordID] %>">国立教育政策研究所 教育図書館 OPAC</a>
