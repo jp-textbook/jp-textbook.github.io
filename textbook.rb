@@ -203,7 +203,7 @@ data.each do |uri, v|
   sitemap << file
 end
 doc = Nokogiri::HTML(open "about.html")
-index_param[:download] = doc.css("#history + dl dd ul > li").first
+index_param[:download] = doc.css("#history + dl dd ul > li").find{|e| e.to_s =~ /all-\d+\.ttl/ }
 p index_param[:download]
 template = PageTemplate.new("template/index.html.erb")
 open("index.html", "w") do |io|
