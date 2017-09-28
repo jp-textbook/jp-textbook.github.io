@@ -7,6 +7,9 @@ class String
   def last_part
     self.split(/\//).last.gsub(/%20/, " ")
   end
+  def to_year_era
+    Date.new(self.to_i).to_era("%O%E").gsub(/\d+/){|y| y.to_i } + "年"
+  end
 end
 
 class PageTemplate

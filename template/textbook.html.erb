@@ -44,15 +44,15 @@
                 / <a href="<%=h param[:subject].sub("https://w3id.org/jp-textbook/", "../../../") %>"><%=h param[:subject_name] %></a>
               <%- end -%>
             </dd>
-            <dt>使用年度</dt><dd><%=h param[:usageYear] %></dd>
-            <dt>検定年度</dt><dd><%=h param[:authorizedYear] %></dd>
+            <dt>使用年度</dt><dd><%=h param[:usageYear] %> (<%=h param[:usageYear].gsub(/\d\d\d\d/){|y| y.to_year_era } %>)</dd>
+            <dt>検定年度</dt><dd><%=h param[:authorizedYear] %> (<%=h param[:authorizedYear].to_year_era %>)</dd>
             <dt>教科書目録掲載年度</dt>
             <dd><% catalogues = param[:catalogue].sort.map do |catalogue|
-                     %Q|<a href="#{h catalogue }">#{h catalogue.last_part }</a>|
+                     %Q|<a href="#{h catalogue }">#{h catalogue.last_part } (#{h catalogue.last_part.to_year_era})</a>|
                    end -%>
                  <%= catalogues.join(", ") -%>
             </dd>
-            <dt>学習指導要領</dt><dd><a href="<%=h param[:curriculum] %>"><%=h param[:curriculum_year] %></a></dd>
+            <dt>学習指導要領</dt><dd><a href="<%=h param[:curriculum] %>"><%=h param[:curriculum_year] %> (<%=h param[:curriculum_year].to_year_era %>)</a></dd>
             <%- if param[:note] -%>
             <dt>注記</dt><dd><%=h param[:note] %></dd>
             <%- end -%>

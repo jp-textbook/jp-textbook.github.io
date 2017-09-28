@@ -2,6 +2,7 @@
 
 require "fileutils"
 require "nokogiri"
+require "era_ja"
 
 require_relative "util.rb"
 
