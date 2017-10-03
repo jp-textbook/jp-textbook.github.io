@@ -54,6 +54,8 @@ data.each do |uri, v|
     catalogue_year: v["https://w3id.org/jp-textbook/catalogue"].sort.first.last_part,
     #catalogue_year: v["https://w3id.org/jp-textbook/catalogue"].split(/\//).last,
     note: v["https://w3id.org/jp-textbook/note"] ? v["https://w3id.org/jp-textbook/note"].first : nil,
+    extent: v["http://id.loc.gov/ontologies/bibframe/extent"] ? v["http://id.loc.gov/ontologies/bibframe/extent"].first : nil,
+    dimensions: v["http://id.loc.gov/ontologies/bibframe/dimensions"] ? v["http://id.loc.gov/ontologies/bibframe/dimensions"].first : nil,
     #recordID: v["http://dl.nier.go.jp/library/vocab/recordID"],
     #callNumber: v["http://dl.nier.go.jp/library/vocab/callNumber"],
   }

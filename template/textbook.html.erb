@@ -47,6 +47,12 @@
             <%- if param[:grade] -%>
             <dt>使用学年</dt><dd><%= param[:grade] %>年生</dd>
             <%- end -%>
+            <%- if param[:dimensions] -%>
+            <dt>大きさ</dt><dd><%= param[:dimensions] %></dd>
+            <%- end -%>
+            <%- if param[:extent] -%>
+            <dt>ページ数</dt><dd><%= param[:extent] %></dd>
+            <%- end -%>
             <dt>使用年度</dt><dd><%=h param[:usageYear] %> (<%=h param[:usageYear].gsub(/\d\d\d\d/){|y| y.to_year_era } %>)</dd>
             <dt>検定年</dt><dd><%=h param[:authorizedYear] %> (<%=h param[:authorizedYear].to_year_era %>)</dd>
             <dt>教科書目録掲載年度</dt>
