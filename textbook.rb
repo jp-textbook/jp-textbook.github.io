@@ -150,7 +150,7 @@ data.each do |uri, v|
       uri: area,
       style: "../../../style.css",
       curriculum: uri,
-      name: area_data[area]["http://schema.org/name"].first,
+      name: area_data[area]["http://schema.org/name"][:ja],
       school: area_data[area]["https://w3id.org/jp-textbook/school"].first,
       subjects: [],
     }
