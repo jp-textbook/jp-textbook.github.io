@@ -1,6 +1,10 @@
     <div class="jumbotron">
       <div class="container">
+        <%- if param[:name_yomi] -%>
+        <h1><ruby><%=h param[:name] %><rt><%=h param[:name_yomi] %></rt></ruby></h1>
+        <%- else -%>
         <h1><%=h param[:name] %></h1>
+        <%- end -%>
         <p><%=h param[:school].last_part %> 学習指導要領 (<%=h param[:curriculum].last_part %>年度以降)</p>
         <p><small><span class="glyphicon glyphicon-link"></span> <a href="<%=h param[:uri] %>"><%=h param[:uri] %></a></small></p>
       </div>
