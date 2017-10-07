@@ -135,6 +135,7 @@ data.each do |uri, v|
     uri: uri,
     style: "../../../style.css",
     name: v["http://schema.org/name"][:ja],
+    name_yomi: v["http://schema.org/name"][:"ja-hira"],
     datePublished: v["http://schema.org/datePublished"].first,
     startDate: v["http://schema.org/startDate"].first,
     startDate_str: Date.parse(v["http://schema.org/startDate"].first).strftime("%Y年%m月"),
@@ -151,6 +152,7 @@ data.each do |uri, v|
       style: "../../../style.css",
       curriculum: uri,
       name: area_data[area]["http://schema.org/name"][:ja],
+      name_yomi: area_data[area]["http://schema.org/name"][:"ja-hira"],
       school: area_data[area]["https://w3id.org/jp-textbook/school"].first,
       subjects: [],
     }
