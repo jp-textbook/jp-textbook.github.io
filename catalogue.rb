@@ -12,7 +12,7 @@ data.each do |uri, v|
   param = {
     uri: uri,
     style: "../../style.css",
-    name: v["http://schema.org/name"].first,
+    name: v["http://schema.org/name"][:ja],
     datePublished: v["http://schema.org/datePublished"].first,
     usageYear: v["https://w3id.org/jp-textbook/usageYear"].first,
     school: v["https://w3id.org/jp-textbook/school"].first,
