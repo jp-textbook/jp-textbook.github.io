@@ -134,7 +134,7 @@ data.each do |uri, v|
   param = {
     uri: uri,
     style: "../../../style.css",
-    name: v["http://schema.org/name"].first,
+    name: v["http://schema.org/name"][:ja],
     datePublished: v["http://schema.org/datePublished"].first,
     startDate: v["http://schema.org/startDate"].first,
     startDate_str: Date.parse(v["http://schema.org/startDate"].first).strftime("%Y年%m月"),
