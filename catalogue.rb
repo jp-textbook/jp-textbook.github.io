@@ -13,6 +13,7 @@ data.each do |uri, v|
     uri: uri,
     style: "../../style.css",
     name: v["http://schema.org/name"][:ja],
+    name_yomi: v["http://schema.org/name"][:"ja-hira"],
     datePublished: v["http://schema.org/datePublished"].first,
     usageYear: v["https://w3id.org/jp-textbook/usageYear"].first,
     school: v["https://w3id.org/jp-textbook/school"].first,
