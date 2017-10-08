@@ -108,6 +108,7 @@ subjects.sort_by{|k,v| k }.each do |subject, v|
     curriculum: curriculum,
     startDate_str: curriculum.last_part,
     subject_name: subject.last_part,
+    subject_name_yomi: v["http://schema.org/name"][:"ja-hira"],
     subjectArea: subject_area,
     subjectArea_name: subject_area.last_part,
     textbooks: textbooks.sort_by{|t| [ t[:textbookNumber], t[:uri] ] },

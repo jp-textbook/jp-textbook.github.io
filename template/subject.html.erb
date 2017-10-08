@@ -1,7 +1,13 @@
     <div class="jumbotron">
       <div class="container">
-        <h1><%=h param[:school_name] %> <%=h param[:subject_name] %></h1>
-        <p><%=h param[:startDate_str] %>年度施行 学習指導要領</p>
+        <h1>
+          <%- if param[:subject_name_yomi] -%>
+          <ruby><%=h param[:subject_name] %><rt><%=h param[:subject_name_yomi] %></rt></ruby>
+          <%- else -%>
+          <%=h param[:subject_name] %>
+          <%- end -%>
+        </h1>
+        <p><%=h param[:startDate_str] %>年度施行 <%=h param[:school_name] %> 学習指導要領</p>
         <p><small><span class="glyphicon glyphicon-link"></span> <a href="<%=h param[:uri] %>"><%=h param[:uri] %></a></small></p>
       </div>
     </div>
