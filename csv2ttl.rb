@@ -129,6 +129,9 @@ CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
       logger.debug "REMOVE subject: "+ [uri, subject, subject_area].inspect
     end
   end
+  if data["textbook:usageYear"].split(/\D+/).find{|i| i.to_i > Date.today.year }
+    logger.warn "Year (#{ data["textbook:usageYear"]}) is greater than today. <#{uri}>"
+  end
   if done[uri]
     done_items = done[uri]["textbook:item"]
     record_ids = done_items.respond_to?(:key?) ? done_items["nier:recordID"] : done_items.map{|e| e["nier:recordID"] }.join(",")
