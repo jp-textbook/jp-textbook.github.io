@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require "fileutils"
+require "era_ja"
 
 require_relative "util.rb"
 
