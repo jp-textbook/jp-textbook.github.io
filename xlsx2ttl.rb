@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require "csv"
+require "roo"
 require "nkf"
 require "logger"
 require_relative "util.rb"
@@ -75,7 +76,16 @@ fix_curriculums = c.keys.select do |k| # cf. #59
   end
 end
 
-CSV.foreach(ARGV[0], encoding: "CP932:utf-8", headers: true) do |row|
+tempfile = "temp-#{$$}.txt"
+io = File.open(tempfile, "w")
+xlsx = Roo::Excelx.new(ARGV[0])
+xlsx.each_row_streaming(pad_cells: true) do |row|
+  io.puts row.join("\t")
+end
+xlsx.close
+io.close
+
+CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
   uri = [BASE_URI, row["学校種別"], row["検定年(西暦)"], row["教科書記号"], row["教科書番号"]].join("/")
   #curriculum = [BASE_URI, "curriculum", row["学校種別"], row["検定年(西暦)"]].join("/") #TODO
   curriculum = row["学習指導URI"]
