@@ -21,7 +21,7 @@ if $0 == __FILE__
   puts <<EOF
 @prefix schema:    <http://schema.org/>.
 @prefix textbook:  <https://w3id.org/jp-textbook/>.
-@prefix textbook-rc:  <https://w3id.org/jp-textbook/>.
+@prefix textbook-rc:  <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
 EOF
 
   done = {}
