@@ -70,7 +70,7 @@ def find_turtle(filename)
     file = filename
   else
     basename = File.basename(filename, ".ttl")
-    files = Dir.glob("#{basename}-*.ttl")
+    files = Dir.glob("#{basename}-[0-9]*.ttl")
     file = files.sort.last
   end
   file
@@ -129,5 +129,13 @@ def format_property(property, value)
     value = format_pvalue(value)
     %Q|  #{property} #{value}|
   end
+end
+
+def map_xlsx_row_headers(data_row, headers)
+  hash = {}
+  headers.each_with_index do |h, idx|
+    hash[h] = data_row[idx].to_s
+  end
+  hash
 end
 end
