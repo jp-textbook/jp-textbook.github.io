@@ -14,6 +14,7 @@ class String
   end
 end
 
+include Textbook
 data = load_turtle("textbook.ttl")
 curriculums = {}
 template = PageTemplate.new("template/textbook.html.erb")
@@ -139,9 +140,11 @@ data.each do |uri, v|
     name_yomi: v["http://schema.org/name"][:"ja-hira"],
     datePublished: v["http://schema.org/datePublished"].first,
     startDate: v["http://schema.org/startDate"].first,
-    startDate_str: Date.parse(v["http://schema.org/startDate"].first).strftime("%Y年%m月"),
+    startDate_date: Date.parse(v["http://schema.org/startDate"].first),
+    startDate_str: Date.parse(v["http://schema.org/startDate"].first).strftime("%Y年%m月").squeez_date,
     seeAlso: v["http://www.w3.org/2000/01/rdf-schema#seeAlso"].first,
     subjectArea: [],
+    school: v["https://w3id.org/jp-textbook/school"].first,
   }
   area_data[uri]["https://w3id.org/jp-textbook/hasSubjectArea"].sort_by{|area|
     area_data[area]["http://purl.org/linked-data/cube#order"].sort.first.to_i

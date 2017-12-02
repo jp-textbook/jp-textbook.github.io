@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require_relative "util.rb"
+include Textbook
 
 prefix = []
 ttl = []

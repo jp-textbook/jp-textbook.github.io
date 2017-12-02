@@ -5,6 +5,7 @@ require "era_ja"
 
 require_relative "util.rb"
 
+include Textbook
 data = load_turtle("catalogue.ttl")
 sitemap = Sitemap.new
 template = PageTemplate.new("template/catalogue.html.erb")

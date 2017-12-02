@@ -7,8 +7,11 @@ class String
   def last_part
     self.split(/\//).last.gsub(/%20/, " ")
   end
+  def squeez_date
+    self.gsub(/\d+/){|i| i.to_i }
+  end
   def to_year_era
-    Date.new(self.to_i).to_era("%O%E").gsub(/\d+/){|y| y.to_i } + "年"
+    Date.new(self.to_i).to_era("%O%E").squeez_date + "年"
   end
 end
 
