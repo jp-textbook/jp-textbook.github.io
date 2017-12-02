@@ -83,3 +83,37 @@ def load_turtle(filename)
   STDERR.puts "#{count} triples. #{data.size} subjects."
   data
 end
+
+def compare_ignorespaces(str1, str2)  # 氏名等を空白を無視して比較する
+  str1.to_s.gsub(/[\s,]+/, "") == str2.to_s.gsub(/[\s,]+/, "")
+end
+
+def format_pvalue(value)
+  str = ""
+  if value.is_a? Hash
+    result = ["["]
+    array = []
+    value.keys.sort.each do |k|
+      array << format_property(k, value[k])
+    end
+    result << array.join(";\n")
+    result << "  ]"
+    str = result.join("\n")
+  elsif value =~ /\Ahttps?:\/\//
+    str = %Q|<#{value}>|
+  else
+    str = %Q|"#{value}"|
+  end
+  str
+end
+def format_property(property, value)
+  if value.is_a? Array
+    value = value.map do |e|
+      format_pvalue(e)
+    end
+    %Q|  #{property} #{ value.join(", ") }|
+  else
+    value = format_pvalue(value)
+    %Q|  #{property} #{value}|
+  end
+end
