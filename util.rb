@@ -51,6 +51,16 @@ EOF
   end
 end
 
+module Textbook
+  BASE_URI = "https://w3id.org/jp-textbook"
+  PROPERTY_LABEL = {
+    "schema:name" => "書名",
+    "schema:editor" => "編著者",
+    "schema:publisher" => "出版社",
+    "schema:bookEdition" => "版",
+    "textbook:grade" => "学年",
+  }
+
 def find_turtle(filename)
   file = nil
   if File.exist? filename and File.file? filename
@@ -116,4 +126,5 @@ def format_property(property, value)
     value = format_pvalue(value)
     %Q|  #{property} #{value}|
   end
+end
 end

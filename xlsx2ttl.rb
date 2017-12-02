@@ -6,16 +6,8 @@ require "nkf"
 require "logger"
 require_relative "util.rb"
 
-BASE_URI = "https://w3id.org/jp-textbook"
-PROPERTY_LABEL = {
-  "schema:name" => "書名", 
-  "schema:editor" => "編著者", 
-  "schema:publisher" => "出版社", 
-  "schema:bookEdition" => "版",
-  "textbook:grade" => "学年",
-}
-
 if $0 == __FILE__
+  include Textbook
 if ARGV.size < 1
   puts "USAGE: #$0 data.csv"
   exit
