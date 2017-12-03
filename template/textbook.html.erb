@@ -53,6 +53,9 @@
             <%- if param[:extent] -%>
             <dt>ページ数</dt><dd><%= param[:extent] %></dd>
             <%- end -%>
+            <%- if param[:isbn] -%>
+            <dt>ISBN</dt><dd><%= param[:isbn] %></dd>
+            <%- end -%>
             <dt>使用年度</dt><dd><%=h param[:usageYear] %> (<%=h param[:usageYear].gsub(/\d\d\d\d/){|y| y.to_year_era } %>)</dd>
             <dt>検定年</dt><dd><%=h param[:authorizedYear] %> (<%=h param[:authorizedYear].to_year_era %>)</dd>
             <dt>初出教科書目録の発行年</dt>
@@ -75,7 +78,12 @@
           <h2>関連リンク</h2>
           <ul>
             <%- param[:item].each do |item| -%>
-            <li><a href="https://nieropac.nier.go.jp/ebopac/<%=h item[:recordID] %>">国立教育政策研究所 教育図書館 OPAC</a> <span class="callNumber" title="請求記号"><%=h item[:callNumber] %></span></li>
+              <%- case item[:holding] -%>
+              <%- when :nier -%>
+              <li><a href="https://nieropac.nier.go.jp/ebopac/<%=h item[:recordID] %>">国立教育政策研究所 教育図書館 OPAC</a> <span class="callNumber" title="請求記号"><%=h item[:callNumber] %></span></li>
+              <%- when :textbook_rc -%>
+              <li><a href="http://textbook-rc-lib.net/Opac/search.htm?s=SsaOkobBIBy2ftPelVbXwTJqTVi&ncid=<%=h item[:recordID] %>">教科書研究センター附属教科書図書館 OPAC</a> <span class="callNumber" title="請求記号"><%=h item[:callNumber] %></span></li>
+              <%- end -%>
             <%- end -%>
           </ul>
         </div>

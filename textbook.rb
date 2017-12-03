@@ -16,6 +16,7 @@ end
 
 include Textbook
 data = load_turtle("textbook.ttl")
+data_rc = load_turtle("textbook-rc.ttl")
 curriculums = {}
 template = PageTemplate.new("template/textbook.html.erb")
 sitemap = Sitemap.new
@@ -64,10 +65,23 @@ data.each do |uri, v|
     data[item]["http://dl.nier.go.jp/library/vocab/recordID"]
   }.map{|item|
     {
+      holding: :nier,
       recordID: data[item]["http://dl.nier.go.jp/library/vocab/recordID"].first,
       callNumber: data[item]["http://dl.nier.go.jp/library/vocab/callNumber"].first,
     }
   }
+  if data_rc[uri]
+    #p data_rc[uri]
+    param[:isbn] = data_rc[uri]["http://schema.org/isbn"].first
+    item = data_rc[uri]["https://w3id.org/jp-textbook/item"].first
+    #p item
+    #p data_rc[item]
+    param[:item] << {
+      holding: :textbook_rc,
+      recordID: data_rc[item]["http://dl.nier.go.jp/library/vocab/textbook-rc/recordID"].first,
+      callNumber: data_rc[item]["http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber"].first,
+    }
+  end
   file = uri.sub("https://w3id.org/jp-textbook/", "") + ".html"
   FileUtils.mkdir_p(File.dirname(file))
   open(file, "w") do |io|
