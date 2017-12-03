@@ -86,6 +86,12 @@
               <%- end -%>
             <%- end -%>
           </ul>
+          <%- if param[:isbn] -%>
+            <ul>
+              <li><a href="http://iss.ndl.go.jp/api/openurl?isbn=<%=h param[:isbn] %>">国立国会図書館サーチ</li>
+              <li><a href="http://ci.nii.ac.jp/books/openurl/query?isbn=<%=h param[:isbn] %>">CiNii Books</li>
+            </ul>
+          <%- end -%>
         </div>
       </div>
     </div>
