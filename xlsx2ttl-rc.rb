@@ -44,14 +44,17 @@ EOF
       },
       "schema:isbn" => row["ISBN_ttl作成用"].strip,
     }
-    done[uri] = data
+    done[uri] ||= []
+    done[uri] << data
   end
 
-  done.sort_by{|k,v| k }.each do |uri, data|
+  done.sort_by{|k,v| k }.each do |uri, array|
     str = [ "<#{uri}> a schema:Book" ]
-    %w[ textbook:item schema:isbn ].each do |property|
-      if data[property] and not data[property].empty?
-        str << format_property(property, data[property])
+    array.each do |data|
+      %w[ textbook:item schema:isbn ].each do |property|
+        if data[property] and not data[property].empty?
+          str << format_property(property, data[property])
+        end
       end
     end
     print str.join(";\n")
