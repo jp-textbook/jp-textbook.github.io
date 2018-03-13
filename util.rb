@@ -82,7 +82,10 @@ def load_turtle(filename)
   g = RDF::Graph.load(file, format:  :turtle)
   data = {}
   count = 0
-  g.each do |s, v, o|
+  g.each_statement do |statement|
+    s = statement.subject
+    v = statement.predicate
+    o = statement.object
     count += 1
     data[s.to_s] ||= {}
     if o.respond_to?(:has_language?) and o.has_language?
