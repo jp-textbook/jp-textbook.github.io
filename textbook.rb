@@ -74,7 +74,7 @@ data.each do |uri, v|
     #p data_rc[uri]
     param[:isbn] = data_rc[uri]["http://schema.org/isbn"].sort
     items = data_rc[uri]["https://w3id.org/jp-textbook/item"]
-    items.sort.each do |item|
+    items.sort_by{|e| data_rc[e]["http://dl.nier.go.jp/library/vocab/textbook-rc/recordID"] }.each do |item|
       #p [item, data_rc[item]]
       param[:item] << {
         holding: :textbook_rc,
