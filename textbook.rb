@@ -72,7 +72,7 @@ data.each do |uri, v|
   }
   if data_rc[uri]
     #p data_rc[uri]
-    param[:isbn] = data_rc[uri]["http://schema.org/isbn"].first
+    param[:isbn] = data_rc[uri]["http://schema.org/isbn"]
     item = data_rc[uri]["https://w3id.org/jp-textbook/item"].first
     #p item
     #p data_rc[item]
