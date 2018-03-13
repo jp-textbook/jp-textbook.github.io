@@ -72,15 +72,16 @@ data.each do |uri, v|
   }
   if data_rc[uri]
     #p data_rc[uri]
-    param[:isbn] = data_rc[uri]["http://schema.org/isbn"]
-    item = data_rc[uri]["https://w3id.org/jp-textbook/item"].first
-    #p item
-    #p data_rc[item]
-    param[:item] << {
-      holding: :textbook_rc,
-      recordID: data_rc[item]["http://dl.nier.go.jp/library/vocab/textbook-rc/recordID"].first,
-      callNumber: data_rc[item]["http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber"].first,
-    }
+    param[:isbn] = data_rc[uri]["http://schema.org/isbn"].sort
+    items = data_rc[uri]["https://w3id.org/jp-textbook/item"]
+    items.sort.each do |item|
+      #p [item, data_rc[item]]
+      param[:item] << {
+        holding: :textbook_rc,
+        recordID: data_rc[item]["http://dl.nier.go.jp/library/vocab/textbook-rc/recordID"].first,
+        callNumber: data_rc[item]["http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber"].first,
+      }
+    end
   end
   file = uri.sub("https://w3id.org/jp-textbook/", "") + ".html"
   FileUtils.mkdir_p(File.dirname(file))

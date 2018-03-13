@@ -90,11 +90,11 @@
           </ul>
           <%- if param[:isbn] -%>
             <ul>
-              <%- param[:isbn].each do |isbn| -%>
-                <%-
-                { "国立国会図書館サーチ": "http://iss.ndl.go.jp/api/openurl?isbn=",
+              <%-
+              { "国立国会図書館サーチ": "http://iss.ndl.go.jp/api/openurl?isbn=",
                   "CiNii Books": "http://ci.nii.ac.jp/books/openurl/query?isbn=",
-                }.each do |label, url| -%>
+              }.each do |label, url| -%>
+                <%- param[:isbn].each do |isbn| -%>
                 <li><a href="<%= url %><%=h isbn %>"><%=h label %></a><%=h param[:isbn].size > 1 ? " (#{isbn})" : "" %></li>
                 <%- end -%>
               <%- end -%>
