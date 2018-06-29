@@ -20,14 +20,16 @@ class PageTemplate
   def initialize(template)
     @template = template
   end
-  def to_html(param)
+  def to_html(param, lang = :ja)
     tmpl = open(@template){|io| io.read }
     erb = ERB.new(tmpl, $SAFE, "-")
     erb.filename = @template
     param[:content] = erb.result(binding)
-    layout = open("template/layout.html.erb"){|io| io.read }
+    layout_fname = "template/layout.html.erb"
+    layout_fname = "template/layout.html.#{lang}.erb" if lang != :ja
+    layout = open(layout_fname){|io| io.read }
     erb = ERB.new(layout, $SAFE, "-")
-    erb.filename = "template/layout.html.erb"
+    erb.filename = layout_fname
     erb.result(binding)
   end
 end

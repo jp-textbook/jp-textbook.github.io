@@ -143,7 +143,7 @@ data = load_turtle("curriculum.ttl")
 area_data = load_turtle("subjectArea.ttl")
 template = PageTemplate.new("template/curriculum.html.erb")
 template_area = PageTemplate.new("template/subject-area.html.erb")
-index_param = {}
+index_param = { subjects: subjects, areas: area_data }
 param = {}
 #data.keys.select{|uri| data[uri].has_key? "https://w3id.org/jp-textbook/hasSubjectArea" }.each do |uri|
 data.each do |uri, v|
@@ -230,8 +230,12 @@ doc = Nokogiri::HTML(open "about.html")
 index_param[:download] = doc.css("#history + dl dd ul > li").find{|e| e.to_s =~ /all-\d+\.ttl/ }
 p index_param[:download]
 template = PageTemplate.new("template/index.html.erb")
-open("index.html", "w") do |io|
+open("index.html.ja", "w") do |io|
   io.print template.to_html(index_param)
+end
+template = PageTemplate.new("template/index.html.en.erb")
+open("index.html.en", "w") do |io|
+  io.print template.to_html(index_param, :en)
 end
 
 open("sitemaps-textbook.xml", "w"){|io| io.print sitemap.to_xml }

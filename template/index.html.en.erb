@@ -1,0 +1,98 @@
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Japanese Textbook LOD</h1>
+        <p>Japanese Textbook Linked Open Data (LOD) is a dataset which includes bibliographic information for textbooks published up to now since the 7th curriculum guideline enforced in 1992, as well as the related information such as the subject areas, the subjects, and the curriculum guidelines.</p>
+        <p><a class="btn btn-primary" href="about.html">About Japanese Textbook LOD&raquo;</a></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Current Curriculum Guideline (Since AY2011)</h2>
+          <dl>
+            <dt>Elementary School</dt>
+            <dd><ul class="list-inline">
+              <%- param["https://w3id.org/jp-textbook/curriculum/小学校/2011"].each do |name| -%>
+                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h param[:subjects][name]["http://schema.org/name"][:en] %></a></li>
+              <%- end -%>
+              </ul></dd>
+            <dt>Lower Secondary School</dt>
+            <dd><ul class="list-inline">
+              <%- param["https://w3id.org/jp-textbook/curriculum/中学校/2012"].each do |name| -%>
+                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h param[:subjects][name]["http://schema.org/name"][:en] %></a></li>
+              <%- end -%>
+            </ul></dd>
+            <dt>Upper Secondary School</dt>
+            <dd><ul class="list-inline">
+              <%- param["https://w3id.org/jp-textbook/curriculum/高等学校/2013"].each do |name| -%>
+                <% subject = param[:subjects][name] %>
+                <% subject = param[:areas][name] if param[:areas][name] %>
+                <% STDERR.puts name %>
+                <% STDERR.puts subject %>
+                <% STDERR.puts subject["http://schema.org/name"][:en] %>
+                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h subject["http://schema.org/name"][:en] %></a></li>
+              <%- end -%>
+            </ul></dd>
+          </dl>
+        </div>
+        <div class="col-md-4">
+          <h2>Old Curriculum Guideline (Since AY2002)</h2>
+          <dl>
+            <dt>Elementary School</dt>
+            <dd><ul class="list-inline">
+              <%- param["https://w3id.org/jp-textbook/curriculum/小学校/2002"].each do |name| -%>
+                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h param[:subjects][name]["http://schema.org/name"][:en] %></a></li>
+              <%- end -%>
+            </ul></dd>
+            <dt>Lower Secondary School</dt>
+            <dd><ul class="list-inline">
+              <%- param["https://w3id.org/jp-textbook/curriculum/中学校/2002"].each do |name| -%>
+                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h param[:subjects][name]["http://schema.org/name"][:en] %></a></li>
+              <%- end -%>
+            </ul></dd>
+            <dt>Upper Secondary School</dt>
+            <dd><ul class="list-inline">
+              <%- param["https://w3id.org/jp-textbook/curriculum/高等学校/2003"].each do |name| -%>
+                <% subject = param[:areas][name] ? param[:areas][name] : param[:subjects][name] %>
+                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h subject["http://schema.org/name"][:en] %></a></li>
+              <%- end -%>
+            </ul></dd>
+          </dl>
+        </div>
+        <div class="col-md-4">
+          <h2>Old Curriculum Guideline (Since AY1992)</h2>
+          <dl>
+            <dt>Elementary School</dt>
+            <dd><ul class="list-inline">
+              <%- param["https://w3id.org/jp-textbook/curriculum/小学校/1992"].each do |name| -%>
+                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h param[:subjects][name]["http://schema.org/name"][:en] %></a></li>
+              <%- end -%>
+            </ul></dd>
+            <dt>Lower Secondary School</dt>
+            <dd><ul class="list-inline">
+              <%- param["https://w3id.org/jp-textbook/curriculum/中学校/1993"].each do |name| -%>
+                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h param[:subjects][name]["http://schema.org/name"][:en] %></a></li>
+              <%- end -%>
+            </ul></dd>
+            <dt>Upper Secondary School</dt>
+            <dd><ul class="list-inline">
+              <%- param["https://w3id.org/jp-textbook/curriculum/高等学校/1994"].each do |name| -%>
+                <% subject = param[:areas][name] ? param[:areas][name] : param[:subjects][name] %>
+                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h subject["http://schema.org/name"][:en] %></a></li>
+              <%- end -%>
+            </ul></dd>
+          </dl>
+        </div>
+      </div>
+
+      <hr>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>LOD Dataset<small><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></small></h2>
+          <p>Latest version of the dataset is available as Turtle format.</p>
+          <ul><%= param[:download] %></ul>
+          <ul style="list-style-type:none"><li><a href="about.html#history">&raquo; Revision histories</a></ul>
+          <p><a rel="license" href="http://creativecommons.org/publicdomain/zero/1.0/deed.en"><img src="http://i.creativecommons.org/p/zero/1.0/88x31.png" style="border-style: none;" alt="CC0"></a> The dataset is freely usable as <a rel="license" href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">Public Domain (CC0)</a>.</p>
+        </div>
+      </div>
+    </div>
