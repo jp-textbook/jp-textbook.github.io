@@ -23,7 +23,7 @@ sitemap = Sitemap.new
 sitemap << "/"
 sitemap << "/about.html"
 sitemap << "/en/"
-#sitemap << "/about.html"
+sitemap << "/en/about.html"
 
 #p data
 data.each do |uri, v|
@@ -235,6 +235,9 @@ template = PageTemplate.new("template/index.html.erb")
 open("index.html", "w") do |io|
   io.print template.to_html(index_param)
 end
+doc = Nokogiri::HTML(open "en/about.html")
+index_param[:download] = doc.css("#history + dl dd ul > li").find{|e| e.to_s =~ /all-\d+\.ttl/ }
+p index_param[:download]
 template = PageTemplate.new("template/index.html.en.erb")
 open("en/index.html", "w") do |io|
   io.print template.to_html(index_param, :en)
