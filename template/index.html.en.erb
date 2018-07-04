@@ -27,9 +27,6 @@
               <%- param["https://w3id.org/jp-textbook/curriculum/高等学校/2013"].each do |name| -%>
                 <% subject = param[:subjects][name] %>
                 <% subject = param[:areas][name] if param[:areas][name] %>
-                <% STDERR.puts name %>
-                <% STDERR.puts subject %>
-                <% STDERR.puts subject["http://schema.org/name"][:en] %>
                 <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h subject["http://schema.org/name"][:en] %></a></li>
               <%- end -%>
             </ul></dd>

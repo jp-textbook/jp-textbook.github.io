@@ -22,6 +22,8 @@ template = PageTemplate.new("template/textbook.html.erb")
 sitemap = Sitemap.new
 sitemap << "/"
 sitemap << "/about.html"
+sitemap << "/en/"
+#sitemap << "/about.html"
 
 #p data
 data.each do |uri, v|
@@ -234,7 +236,7 @@ open("index.html", "w") do |io|
   io.print template.to_html(index_param)
 end
 template = PageTemplate.new("template/index.html.en.erb")
-open("index-en.html", "w") do |io|
+open("en/index.html", "w") do |io|
   io.print template.to_html(index_param, :en)
 end
 
