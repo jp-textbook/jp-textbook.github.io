@@ -122,6 +122,7 @@ subjects.sort_by{|k,v| k }.each do |subject, v|
   subject_area = subject.sub(/\/[^\/]+\Z/, "")
   param = {
     uri: subject,
+    style: "../../../../style.css",
     name: [ school_name, subject.last_part ].join(" "),
     curriculum: curriculum,
     startDate_str: curriculum.last_part,
@@ -170,7 +171,7 @@ data.each do |uri, v|
     areas = v["https://w3id.org/jp-textbook/hasSubjectArea"]
     area_param = {
       uri: area,
-      style: "../../../style.css",
+      style: "../../../../style.css",
       curriculum: uri,
       name: area_data[area]["http://schema.org/name"][:ja],
       name_yomi: area_data[area]["http://schema.org/name"][:"ja-hira"],
