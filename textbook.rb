@@ -232,6 +232,7 @@ doc = Nokogiri::HTML(open "about.html")
 index_param[:download] = doc.css("#history + dl dd ul > li").find{|e| e.to_s =~ /all-\d+\.ttl/ }
 p index_param[:download]
 template = PageTemplate.new("template/index.html.erb")
+index_param[:style] = "style.css"
 open("index.html", "w") do |io|
   io.print template.to_html(index_param)
 end
@@ -239,6 +240,7 @@ doc = Nokogiri::HTML(open "en/about.html")
 index_param[:download] = doc.css("#history + dl dd ul > li").find{|e| e.to_s =~ /all-\d+\.ttl/ }
 p index_param[:download]
 template = PageTemplate.new("template/index.html.en.erb")
+index_param[:style] = "../style.css"
 open("en/index.html", "w") do |io|
   io.print template.to_html(index_param, :en)
 end
