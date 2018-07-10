@@ -146,7 +146,7 @@ data = load_turtle("curriculum.ttl")
 area_data = load_turtle("subjectArea.ttl")
 template = PageTemplate.new("template/curriculum.html.erb")
 template_area = PageTemplate.new("template/subject-area.html.erb")
-index_param = { subjects: subjects, areas: area_data }
+index_param = { subjects: subjects, areas: area_data, active: :home }
 param = {}
 #data.keys.select{|uri| data[uri].has_key? "https://w3id.org/jp-textbook/hasSubjectArea" }.each do |uri|
 data.each do |uri, v|
