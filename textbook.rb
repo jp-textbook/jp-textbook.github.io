@@ -104,6 +104,9 @@ end
 
 subjects = load_turtle("subject.ttl")
 template = PageTemplate.new("template/subject.html.erb")
+template_en = PageTemplate.new("template/subject.html.en.erb")
+area_data = load_turtle("subjectArea.ttl")
+school_data = load_turtle("school.ttl")
 subjects.sort_by{|k,v| k }.each do |subject, v|
 #curriculums.sort_by{|k,v| k }.each do |curriculum, e|
 #  e.sort_by{|k,v| k }.each do |subject, textbooks|
@@ -114,8 +117,11 @@ subjects.sort_by{|k,v| k }.each do |subject, v|
   next if not v.has_key? "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
   file = subject.sub("https://w3id.org/jp-textbook/", "")
   file << ".html"
+  file_en = File.join("en", file)
   p file
-  school_name = v["https://w3id.org/jp-textbook/school"].first.last_part
+  school = v["https://w3id.org/jp-textbook/school"].first
+  school_name = school.last_part
+  school_name_en = school_data[school]["http://schema.org/name"][:en]
   curriculum = subject.sub(/\/[^\/]+\/[^\/]+\Z/, "")
   textbooks = curriculums[curriculum][subject]
   textbooks = [] if textbooks.nil?
@@ -127,11 +133,14 @@ subjects.sort_by{|k,v| k }.each do |subject, v|
     curriculum: curriculum,
     startDate_str: curriculum.last_part,
     subject_name: subject.last_part,
+    subject_name_en: v["http://schema.org/name"][:en],
     subject_name_yomi: v["http://schema.org/name"][:"ja-hira"],
     subjectArea: subject_area,
     subjectArea_name: subject_area.last_part,
+    subjectArea_name_en: area_data[subject_area]["http://schema.org/name"][:en],
     textbooks: textbooks.sort_by{|t| [ t[:textbookNumber], t[:uri] ] },
     school_name: school_name,
+    school_name_en: school_name_en,
     citation: v["http://schema.org/citation"].first,
   }
   FileUtils.mkdir_p(File.dirname(file))
@@ -139,11 +148,15 @@ subjects.sort_by{|k,v| k }.each do |subject, v|
     io.print template.to_html(param)
   end
   sitemap << file
+  FileUtils.mkdir_p(File.dirname(file_en))
+  open(file_en, "w") do |io|
+    io.print template_en.to_html(param, :en)
+  end
+  sitemap << file_en
 #  end
 end
 
 data = load_turtle("curriculum.ttl")
-area_data = load_turtle("subjectArea.ttl")
 template = PageTemplate.new("template/curriculum.html.erb")
 template_area = PageTemplate.new("template/subject-area.html.erb")
 index_param = { subjects: subjects, areas: area_data, active: :home }

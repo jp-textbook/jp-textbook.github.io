@@ -1,0 +1,44 @@
+    <div class="jumbotron">
+      <div class="container">
+        <h1>
+          <%=h param[:subject_name_en] %>
+        </h1>
+        <p>Curriculum Guidelines for <%=h param[:school_name_en] %> (since AY<%=h param[:startDate_str] %>)</p>
+        <p><small><span class="glyphicon glyphicon-link"></span> <a href="<%=h param[:uri] %>"><%=h param[:uri] %></a></small></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ol class="breadcrumb">
+            <li><a href="../../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+            <li><a href="../../<%=h param[:curriculum].last_part %>">Curriculum Guidelines for <%=h param[:school_name_en] %> (since AY<%=h param[:curriculum].last_part %>)</a></li>
+            <li><a href="../<%=h param[:subjectArea_name] %>"><%=h param[:subjectArea_name_en] %></a></li>
+            <li class="active"><%=h param[:subject_name_en] %></li>
+          </ol>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Details</h2>
+          <dl class="dl-horizontal">
+            <dt>Type of school</dt><dd><%=h param[:school_name] %></dd>
+            <dt>Curriculum guidelines</dt><dd><a href="../../<%=h param[:curriculum].last_part %>"><%=h param[:curriculum].last_part %></a></dd>
+            <dt>Subject area</dt><dd><a href="../<%=h param[:subjectArea_name] %>"><%=h param[:subjectArea_name_en] %></a></dd>
+            <dt>References</dt><dd><%=h param[:citation] %></dd>
+          </dl>
+        </div>
+      </div>
+      <%- if param[:textbooks] and not param[:textbooks].empty? -%>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>List of textbooks</h2>
+          <ul>
+            <%- param[:textbooks].each do |textbook| -%>
+              <li><a href="<%=h textbook[:uri].to_s.sub("https://w3id.org/jp-textbook/", "../../../../") %>"><%=h textbook[:name] %> (<%=h textbook[:publisher] %>)</a></li>
+            <%- end -%>
+          </ul>
+        </div>
+      </div>
+      <%- end -%>
+    </div>
