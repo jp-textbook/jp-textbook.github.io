@@ -2,6 +2,7 @@
 
 require "rdf/turtle"
 require "erb"
+require "active_support"
 
 class String
   def last_part
@@ -17,6 +18,7 @@ end
 
 class PageTemplate
   include ERB::Util
+  include ActiveSupport::Inflector
   def initialize(template)
     @template = template
   end

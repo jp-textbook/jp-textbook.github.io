@@ -1,0 +1,106 @@
+    <div class="jumbotron">
+      <div class="container">
+        <div class="btn-group pull-right" role="group" aria-label="Textbook symbol / Textbook number">
+          <button type="button" class="btn btn-default btn-lg"><%=h param[:textbookSymbol] %></button>
+          <button type="button" class="btn btn-default btn-lg"><%=h param[:textbookNumber] %></button>
+        </div>
+        <h1><%=h param[:name] %>
+        <%- if param[:bookEdition] -%>
+          <small><%= param[:bookEdition] %></small>
+        <%- end -%>
+        </h1>
+        <p><%=h param[:publisher] %></p>
+        <p><%=h param[:school_name_en] %> - <%=h param[:subject_name_en] || param[:subjectArea_name_en] %>
+          <%- if param[:grade] -%>
+            (<%= param[:grade].gsub(/\d+/){|i| ordinalize(i) } %> grade<%= "s" if param[:grade] =~ /\D/ %>)
+          <%- end -%>
+        </p>
+        <p><small><span class="glyphicon glyphicon-link"></span> <a href="<%=h param[:uri] %>"><%=h param[:uri] %></a></small></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ol class="breadcrumb">
+            <li><a href="../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+            <li><a href="../../../<%=h param[:curriculum].last_part %>">Curriculum Guidelines for <%=h param[:school_name_en] %> (since AY<%=h param[:curriculum].last_part %>)</a></li>
+            <li><a href="../../../<%=h param[:subjectArea].sub("https://w3id.org/jp-textbook/", "") %>"><%=h param[:subjectArea_name_en] %></a></li>
+            <%- if param[:subject] -%>
+            <li><a href="../../../<%=h param[:subject].sub("https://w3id.org/jp-textbook/", "") %>"><%=h param[:subject_name_en] %></a></li>
+            <%- end -%>
+            <li class="active"><%=h param[:name] %></li>
+          </ol>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Details</h2>
+          <dl class="dl-horizontal">
+            <dt>Authors &amp; editors</dt><dd><%=h param[:editor] %></dd>
+            <dt>Subject area / subject</dt>
+            <dd>
+              <a href="<%=h param[:subjectArea].sub("https://w3id.org/jp-textbook/", "../../../") %>"><%=h param[:subjectArea_name_en] %></a>
+              <%- if param[:subject_name] -%>
+                / <a href="<%=h param[:subject].sub("https://w3id.org/jp-textbook/", "../../../") %>"><%=h param[:subject_name_en] %></a>
+              <%- end -%>
+            </dd>
+            <%- if param[:grade] -%>
+            <dt>Grade</dt><dd><%= param[:grade].gsub(/\d+/){|i| ordinalize(i) } %> grade<%= "s" if param[:grade] =~ /\D/ %></dd>
+            <%- end -%>
+            <%- if param[:dimensions] -%>
+            <dt>Dimensions</dt><dd><%= param[:dimensions] %></dd>
+            <%- end -%>
+            <%- if param[:extent] -%>
+            <dt>Total number of pages</dt><dd><%= param[:extent] %></dd>
+            <%- end -%>
+            <%- if param[:isbn] -%>
+              <%- param[:isbn].each do |isbn| -%>
+              <dt>ISBN</dt><dd><%= isbn %></dd>
+              <%- end -%>
+            <%- end -%>
+            <dt>Usage year(s)</dt><dd><%=h param[:usageYear] %></dd>
+            <dt>Authorized year</dt><dd><%=h param[:authorizedYear] %></dd>
+            <dt>First issued catalogue</dt>
+            <dd><% catalogues = param[:catalogue].sort.map do |catalogue|
+                     %Q|<a href="#{h catalogue }">#{h catalogue.last_part }</a>|
+                   end -%>
+                 <%= catalogues.join(", ") -%>
+            </dd>
+            <dt>Curriculum guideline</dt><dd><a href="<%=h param[:curriculum] %>"><%=h param[:curriculum_year] %></a></dd>
+            <%- if param[:note] -%>
+            <dt>Notes</dt><dd><%=h param[:note] %></dd>
+            <%- end -%>
+          </dl>
+        </div>
+      </div>
+
+      <hr>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Links</h2>
+          <ul>
+            <%- param[:item].each do |item| -%>
+              <%- case item[:holding] -%>
+              <%- when :nier -%>
+              <li><a href="https://nieropac.nier.go.jp/ebopac/<%=h item[:recordID] %>">NIER Library of Education OPAC</a> <span class="callNumber" title="call number"><%=h item[:callNumber] %></span></li>
+              <%- when :textbook_rc -%>
+              <li><a href="http://textbook-rc-lib.net/Opac/search.htm?s=SsaOkobBIBy2ftPelVbXwTJqTVi&ncid=<%=h item[:recordID] %>">Textbook Library, Japan Textbook Research Center OPAC</a> <span class="callNumber" title="call number"><%=h item[:callNumber] %></span></li>
+              <%- end -%>
+            <%- end -%>
+          </ul>
+          <%- if param[:isbn] -%>
+            <ul>
+              <%-
+              { "NDL Search": "http://iss.ndl.go.jp/api/openurl?isbn=",
+                "CiNii Books": "http://ci.nii.ac.jp/books/openurl/query?isbn=",
+                "Calil": "http://api.calil.jp/openurl?rft.isbn=",
+              }.each do |label, url| -%>
+                <%- param[:isbn].each do |isbn| -%>
+                <li><a href="<%= url %><%=h isbn %>"><%=h label %></a><%=h param[:isbn].size > 1 ? " (#{isbn})" : "" %></li>
+                <%- end -%>
+              <%- end -%>
+            </ul>
+          <%- end -%>
+        </div>
+      </div>
+    </div>

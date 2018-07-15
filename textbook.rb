@@ -17,8 +17,12 @@ end
 include Textbook
 data = load_turtle("textbook.ttl")
 data_rc = load_turtle("textbook-rc.ttl")
+subjects = load_turtle("subject.ttl")
+area_data = load_turtle("subjectArea.ttl")
+school_data = load_turtle("school.ttl")
 curriculums = {}
 template = PageTemplate.new("template/textbook.html.erb")
+template_en = PageTemplate.new("template/textbook.html.en.erb")
 sitemap = Sitemap.new
 sitemap << "/"
 sitemap << "/about.html"
@@ -32,8 +36,12 @@ data.each do |uri, v|
   #p v["https://w3id.org/jp-textbook/item"]
   curriculum = v["https://w3id.org/jp-textbook/curriculum"].first
   subject = v["https://w3id.org/jp-textbook/subject"] ? v["https://w3id.org/jp-textbook/subject"].first : nil
-  subject_name = subject ? subject.last_part : nil
+  subject_name = subject.last_part if subject
+  #p subject
+  #p subjects[subject]
+  subject_name_en = subjects[subject]["http://schema.org/name"][:en] if subject and subjects[subject]
   subjectArea = v["https://w3id.org/jp-textbook/subjectArea"].first
+  school = v["https://w3id.org/jp-textbook/school"].first
   param = {
     uri: uri,
     style: "../../../style.css",
@@ -46,10 +54,13 @@ data.each do |uri, v|
     subject: subject,
     subjectArea: subjectArea,
     subject_name: subject_name,
+    subject_name_en: subject_name_en,
     subjectArea_name: subjectArea.last_part,
+    subjectArea_name_en: area_data[subjectArea]["http://schema.org/name"][:en],
     grade: v["https://w3id.org/jp-textbook/grade"] ? v["https://w3id.org/jp-textbook/grade"].first : nil,
     school: v["https://w3id.org/jp-textbook/school"].first,
-    school_name: v["https://w3id.org/jp-textbook/school"].first.last_part,
+    school_name: school.last_part,
+    school_name_en: school_data[school]["http://schema.org/name"][:en],
     textbookSymbol: v["https://w3id.org/jp-textbook/textbookSymbol"].first,
     textbookNumber: v["https://w3id.org/jp-textbook/textbookNumber"].first,
     usageYear: v["https://w3id.org/jp-textbook/usageYear"].first,
@@ -91,6 +102,12 @@ data.each do |uri, v|
     io.print template.to_html(param)
   end
   sitemap << file
+  file = File.join("en", file)
+  param[:style] = File.join("..", param[:style])
+  FileUtils.mkdir_p(File.dirname(file))
+  open(file, "w") do |io|
+    io.print template_en.to_html(param, :en)
+  end
 
   curriculums[curriculum] ||= {}
   if subject
@@ -102,11 +119,8 @@ data.each do |uri, v|
   end
 end
 
-subjects = load_turtle("subject.ttl")
 template = PageTemplate.new("template/subject.html.erb")
 template_en = PageTemplate.new("template/subject.html.en.erb")
-area_data = load_turtle("subjectArea.ttl")
-school_data = load_turtle("school.ttl")
 subjects.sort_by{|k,v| k }.each do |subject, v|
 #curriculums.sort_by{|k,v| k }.each do |curriculum, e|
 #  e.sort_by{|k,v| k }.each do |subject, textbooks|
