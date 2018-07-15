@@ -23,7 +23,7 @@
         <div class="col-md-12">
           <ol class="breadcrumb">
             <li><a href="../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
-            <li><a href="../../../<%=h param[:curriculum].last_part %>">Curriculum Guidelines for <%=h param[:school_name_en] %> (since AY<%=h param[:curriculum].last_part %>)</a></li>
+            <li><a href="../../../<%=h param[:curriculum].sub("https://w3id.org/jp-textbook/", "") %>">Curriculum Guidelines for <%=h param[:school_name_en] %> (since AY<%=h param[:curriculum].last_part %>)</a></li>
             <li><a href="../../../<%=h param[:subjectArea].sub("https://w3id.org/jp-textbook/", "") %>"><%=h param[:subjectArea_name_en] %></a></li>
             <%- if param[:subject] -%>
             <li><a href="../../../<%=h param[:subject].sub("https://w3id.org/jp-textbook/", "") %>"><%=h param[:subject_name_en] %></a></li>
@@ -66,7 +66,7 @@
                    end -%>
                  <%= catalogues.join(", ") -%>
             </dd>
-            <dt>Curriculum guideline</dt><dd><a href="<%=h param[:curriculum] %>"><%=h param[:curriculum_year] %></a></dd>
+            <dt>Curriculum guideline</dt><dd><a href="../../../<%=h param[:curriculum].sub("https://w3id.org/jp-textbook/", "") %>"><%=h param[:curriculum_year] %></a></dd>
             <%- if param[:note] -%>
             <dt>Notes</dt><dd><%=h param[:note] %></dd>
             <%- end -%>
