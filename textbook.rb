@@ -171,6 +171,7 @@ end
 
 data = load_turtle("curriculum.ttl")
 template = PageTemplate.new("template/curriculum.html.erb")
+template_en = PageTemplate.new("template/curriculum.html.en.erb")
 template_area = PageTemplate.new("template/subject-area.html.erb")
 template_area_en = PageTemplate.new("template/subject-area.html.en.erb")
 index_param = { subjects: subjects, areas: area_data, active: :home }
@@ -178,18 +179,22 @@ param = {}
 #data.keys.select{|uri| data[uri].has_key? "https://w3id.org/jp-textbook/hasSubjectArea" }.each do |uri|
 data.each do |uri, v|
   index_param[uri] = []
+  school = v["https://w3id.org/jp-textbook/school"].first
   param = {
     uri: uri,
     style: "../../../style.css",
     name: v["http://schema.org/name"][:ja],
+    name_en: v["http://schema.org/name"][:en],
     name_yomi: v["http://schema.org/name"][:"ja-hira"],
     datePublished: v["http://schema.org/datePublished"].first,
     startDate: v["http://schema.org/startDate"].first,
     startDate_date: Date.parse(v["http://schema.org/startDate"].first),
     startDate_str: Date.parse(v["http://schema.org/startDate"].first).strftime("%Y年%m月").squeez_date,
+    startDate_str_en: Date.parse(v["http://schema.org/startDate"].first).strftime("%Y-%m"),
     seeAlso: v["http://www.w3.org/2000/01/rdf-schema#seeAlso"].first,
     subjectArea: [],
-    school: v["https://w3id.org/jp-textbook/school"].first,
+    school: school,
+    school_name_en: school_data[school]["http://schema.org/name"][:en],
   }
   area_data[uri]["https://w3id.org/jp-textbook/hasSubjectArea"].sort_by{|area|
     area_data[area]["http://purl.org/linked-data/cube#order"].sort.first.to_i
@@ -268,6 +273,13 @@ data.each do |uri, v|
     io.print template.to_html(param)
   end
   sitemap << file
+  file = File.join("en", file)
+  dir = File.dirname(file)
+  FileUtils.mkdir_p(dir) if not File.exist?(dir)
+  param[:style] = File.join("..", param[:style])
+  open(file, "w") do |io|
+    io.print template_en.to_html(param, :en)
+  end
 end
 doc = Nokogiri::HTML(open "about.html")
 index_param[:download] = doc.css("#history + dl dd ul > li").find{|e| e.to_s =~ /all-\d+\.ttl/ }

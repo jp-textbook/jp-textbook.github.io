@@ -1,0 +1,51 @@
+    <div class="jumbotron">
+      <div class="container">
+        <h1><%=h param[:name_en] %></h1>
+        <p>Published in <%=h param[:datePublished] %>, and enforced in <%=h param[:startDate_str_en] %></p>
+        <p><small><span class="glyphicon glyphicon-link"></span> <a href="<%=h param[:uri] %>"><%=h param[:uri] %></a></small></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Details</h2>
+          <dl class="dl-horizontal">
+            <dt>Type of school</dt><dd><%=h param[:school_name_en] %></dd>
+            <dt>Published</dt><dd><%=h param[:datePublished] %></dd>
+            <dt>Enforced</dt><dd><%=h param[:startDate_date] %></dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>List of subject areas</h2>
+          <ul>
+            <%- param[:subjectArea].each do |area| -%>
+              <li><a href="<%=h area[:uri].last_part %>"><%=h area[:name_en] %></a>
+                <%- if area[:subjects].size > 0 -%>
+                  <ul class="list-inline subjects">
+                    <%- area[:subjects].each do |subject| -%>
+                      <li><%=h subject[:name_en] %></li>
+                    <%- end -%>
+                  </ul>
+                <%- end -%>
+              </li>
+            <%- end -%>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Related links</h2>
+          <ul>
+            <li><a href="<%=h param[:seeAlso] %>">Curriculum guidelines at MEXT website</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
