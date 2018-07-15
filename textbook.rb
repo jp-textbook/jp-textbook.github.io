@@ -39,7 +39,7 @@ data.each do |uri, v|
   subject_name = subject.last_part if subject
   #p subject
   #p subjects[subject]
-  subject_name_en = subjects[subject]["http://schema.org/name"][:en] if subject and subjects[subject]
+  subject_name_en = subjects[subject]["http://schema.org/name"][:en] if subject and subjects[subject] # FIXME: correct subject name. #217
   subjectArea = v["https://w3id.org/jp-textbook/subjectArea"].first
   school = v["https://w3id.org/jp-textbook/school"].first
   param = {
@@ -172,6 +172,7 @@ end
 data = load_turtle("curriculum.ttl")
 template = PageTemplate.new("template/curriculum.html.erb")
 template_area = PageTemplate.new("template/subject-area.html.erb")
+template_area_en = PageTemplate.new("template/subject-area.html.en.erb")
 index_param = { subjects: subjects, areas: area_data, active: :home }
 param = {}
 #data.keys.select{|uri| data[uri].has_key? "https://w3id.org/jp-textbook/hasSubjectArea" }.each do |uri|
@@ -194,18 +195,26 @@ data.each do |uri, v|
     area_data[area]["http://purl.org/linked-data/cube#order"].sort.first.to_i
   }.each do |area|
     areas = v["https://w3id.org/jp-textbook/hasSubjectArea"]
+    school = area_data[area]["https://w3id.org/jp-textbook/school"].first
     area_param = {
       uri: area,
       style: "../../../../style.css",
       curriculum: uri,
       name: area_data[area]["http://schema.org/name"][:ja],
+      name_en: area_data[area]["http://schema.org/name"][:en],
       name_yomi: area_data[area]["http://schema.org/name"][:"ja-hira"],
-      school: area_data[area]["https://w3id.org/jp-textbook/school"].first,
+      school: school,
+      school_name_en: school_data[school]["http://schema.org/name"][:en],
       subjects: [],
     }
     if subjects[area] and subjects[area]["https://w3id.org/jp-textbook/hasSubject"]
       area_param[:subjects] = subjects[area]["https://w3id.org/jp-textbook/hasSubject"].sort_by{|subject|
         subjects[subject]["http://purl.org/linked-data/cube#order"].sort.first.to_i
+      }.map{|subject|
+        { uri: subject,
+          name: subjects[subject]["http://schema.org/name"][:ja],
+          name_en: subjects[subject]["http://schema.org/name"][:en],
+        }
       }
     end
     if curriculums[uri][area]
@@ -217,6 +226,14 @@ data.each do |uri, v|
     FileUtils.mkdir_p(dir) if not File.exist?(dir)
     open(file, "w") do |io|
       io.print template_area.to_html(area_param)
+    end
+    sitemap << file
+    file = File.join("en", file)
+    dir = File.dirname(file)
+    FileUtils.mkdir_p(dir) if not File.exist?(dir)
+    area_param[:style] = File.join("..", area_param[:style])
+    open(file, "w") do |io|
+      io.print template_area_en.to_html(area_param, :en)
     end
     sitemap << file
 
