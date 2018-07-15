@@ -111,14 +111,11 @@ subjects.sort_by{|k,v| k }.each do |subject, v|
 #curriculums.sort_by{|k,v| k }.each do |curriculum, e|
 #  e.sort_by{|k,v| k }.each do |subject, textbooks|
 #    next if not subjects.has_key? subject
-  p subject
-  #p v
   #p v["http://www.w3.org/1999/02/22-rdf-syntax-ns#type"]
   next if not v.has_key? "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
   file = subject.sub("https://w3id.org/jp-textbook/", "")
   file << ".html"
   file_en = File.join("en", file)
-  p file
   school = v["https://w3id.org/jp-textbook/school"].first
   school_name = school.last_part
   school_name_en = school_data[school]["http://schema.org/name"][:en]
@@ -148,6 +145,7 @@ subjects.sort_by{|k,v| k }.each do |subject, v|
     io.print template.to_html(param)
   end
   sitemap << file
+  param[:style] = "../" + param[:style]
   FileUtils.mkdir_p(File.dirname(file_en))
   open(file_en, "w") do |io|
     io.print template_en.to_html(param, :en)
@@ -180,7 +178,6 @@ data.each do |uri, v|
   area_data[uri]["https://w3id.org/jp-textbook/hasSubjectArea"].sort_by{|area|
     area_data[area]["http://purl.org/linked-data/cube#order"].sort.first.to_i
   }.each do |area|
-    p area
     areas = v["https://w3id.org/jp-textbook/hasSubjectArea"]
     area_param = {
       uri: area,
@@ -201,7 +198,6 @@ data.each do |uri, v|
     end
     param[:subjectArea] << area_param
     file = File.join(area.sub("https://w3id.org/jp-textbook/", ""), "index.html")
-    p file
     dir = File.dirname(file)
     FileUtils.mkdir_p(dir) if not File.exist?(dir)
     open(file, "w") do |io|
@@ -234,7 +230,6 @@ data.each do |uri, v|
   end
   # curriculum
   file = File.join(uri.sub("https://w3id.org/jp-textbook/", ""), "index.html")
-  p file
   dir = File.dirname(file)
   FileUtils.mkdir_p(dir) if not File.exist?(dir)
   open(file, "w") do |io|
