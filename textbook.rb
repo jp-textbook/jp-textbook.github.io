@@ -146,6 +146,7 @@ subjects.sort_by{|k,v| k }.each do |subject, v|
   end
   sitemap << file
   param[:style] = "../" + param[:style]
+  param[:name] = "#{param[:subject_name_en]} in #{school_name_en}"
   FileUtils.mkdir_p(File.dirname(file_en))
   open(file_en, "w") do |io|
     io.print template_en.to_html(param, :en)
