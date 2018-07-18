@@ -5,15 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title><% if param[:name_en] %><%=h param[:name_en] %> - <% elsif param[:name] %><%=h param[:name] %> - <% end %>Japanese Textbook Linked Open Data (LOD)</title>
+    <title>Textbook Catalogue for Upper Secondary School of 2006 School Year - Japanese Textbook Linked Open Data (LOD)</title>
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <%- if param[:style] -%>
-    <link rel="stylesheet" href="<%=h param[:style] %>">
-    <%- end -%>
+    <link rel="stylesheet" href="../../../style.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,16 +33,56 @@
     <nav class="navbar navbar-default">
       <div class="container">
         <ul class="nav navbar-nav navbar-right">
-          <li<%= ' class="active"' if param[:active] == :home %>><a class="navbar-brand" href="/en/">Home</a></li>
+          <li><a class="navbar-brand" href="/en/">Home</a></li>
           <li><a href="/en/about">About</a></li>
           <li><a href="/">日本語</a></li>
         </ul>
       </div>
     </nav>
-    <%= param[:content] %>
+        <div class="jumbotron">
+      <div class="container">
+        <h1>Textbook Catalogue for Upper Secondary School of 2006 School Year</h1>
+        <p><small><span class="glyphicon glyphicon-link"></span> <a href="https://w3id.org/jp-textbook/catalogue/高等学校/2005">https://w3id.org/jp-textbook/catalogue/高等学校/2005</a></small></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ol class="breadcrumb">
+            <li><a href="../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+            <li class="active">Textbook Catalogue for Upper Secondary School of 2006 School Year</li>
+          </ol>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Details</h2>
+          <dl class="dl-horizontal">
+            <dt>Published year</dt><dd>2005</dd>
+            <dt>Usage year</dt><dd>2006</dd>
+            <dt>Type of school</dt><dd>Upper Secondary School</dd>
+          </dl>
+        </div>
+      </div>
+
+      <hr>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Related links</h2>
+          <ul>
+              <li><a href="https://web.archive.org/web/20071029215910/http://www.mext.go.jp:80/a_menu/shotou/kyoukasho/mokuroku/17/index.htm">Textbook Catalogues (Wayback Machine by Internet Archive)</a></li>
+            <li><a href="https://nieropac.nier.go.jp/ebopac/BB00014905">NIER Education of Library OPAC</a>
+                <span class="callNumber" title="Call number">375.9||27||2006</span>
+                <span class="itemID" title="Record ID">051201353</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <hr>
     <footer>
-      <p>&copy; 2017-<%= Date.today.year %> <a href="/about">Japanese Textbook LOD Project</a></p>
+      <p>&copy; 2017-2018 <a href="/about">Japanese Textbook LOD Project</a></p>
     </footer>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
