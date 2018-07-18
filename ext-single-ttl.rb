@@ -16,12 +16,9 @@ data.each do |key, val|
   file = key.sub(PREFIX, "")
   file << ".ttl"
   p file
-  sparql = SPARQL.parse("
-  prefix textbook:  <https://w3id.org/jp-textbook/>
-  DESCRIBE <#{key}>
-  ")
+  sparql = SPARQL.parse("DESCRIBE <#{key}>")
   g2 = sparql.execute(g)
   open(file, "w") do |io|
-    io.puts g2.dump(:turtle)
+    io.puts g2.dump(:turtle).strip
   end
 end
