@@ -7,20 +7,21 @@ require_relative "util.rb"
 bar = ProgressBar.create(format: "%a %e %P% Processed: %c from %C")
 
 include Textbook
-data = load_turtle(find_turtle("textbook.ttl"))
-bar.total = data.keys.size
 file = find_turtle("all.ttl")
 STDERR.puts "loading #{file}..."
 g = RDF::Graph.load(file, format:  :turtle)
+bar.total = g.subjects.size
 
 PREFIX = /\Ahttps:\/\/w3id.org\/jp-textbook\//
-data.each do |key, val|
-  next if not key =~ PREFIX
-  #p key
-  file = key.sub(PREFIX, "")
+g.subjects.each do |subject|
+  uri = subject.to_s
+  if not uri =~ PREFIX
+    bar.total -= 1
+    next
+  end
+  file = uri.sub(PREFIX, "")
   file << ".ttl"
-  #p file
-  sparql = SPARQL.parse("DESCRIBE <#{key}>")
+  sparql = SPARQL.parse("DESCRIBE <#{uri}>")
   g2 = sparql.execute(g)
   open(file, "w") do |io|
     io.puts g2.dump(:turtle).strip
