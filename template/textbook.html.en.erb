@@ -62,9 +62,9 @@
             <dt>Authorized year</dt><dd><%=h param[:authorizedYear] %></dd>
             <dt>First issued catalogue</dt>
             <dd><% catalogues = param[:catalogue].sort.map do |catalogue|
-                     %Q|<a href="#{h catalogue }">#{h catalogue.last_part }</a>|
+                     %Q|<a href="#{h catalogue.sub("https://w3id.org/jp-textbook/", "../../../") }">#{h catalogue.last_part }</a>|
                    end -%>
-                 <%= catalogues.join(", ") -%>
+                <%= catalogues.join(", ") -%>
             </dd>
             <dt>Curriculum guideline</dt><dd><a href="../../../<%=h param[:curriculum].sub("https://w3id.org/jp-textbook/", "") %>"><%=h param[:curriculum_year] %></a></dd>
             <%- if param[:note] -%>
