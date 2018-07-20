@@ -260,7 +260,7 @@ data.each do |uri, v|
         end
       end
     end
-    if count_subjects == 0 and curriculums[uri][area]
+    if curriculums[uri][area]
       index_param[uri] << area
       STDERR.puts "WARN: Area #{area} is used in a list."
     end
