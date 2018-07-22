@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
+require "pathname"
 require "rdf/turtle"
 require "erb"
 require "active_support"
@@ -13,6 +14,9 @@ class String
   end
   def to_year_era
     Date.new(self.to_i).to_era("%O%E").squeez_date + "年"
+  end
+  def omit_suffix
+    self.sub(/\A\//, "").sub(/\/index.html\Z/, "").sub(/\.html\Z/, "")
   end
 end
 
@@ -41,8 +45,7 @@ class Sitemap
     @urlset = []
   end
   def <<(file)
-    file = file.sub(/\A\//, "").sub(/\/index.html\Z/, "").sub(/\.html\Z/, "")
-    url = "https://jp-textbook.github.io/#{file}"
+    url = "https://jp-textbook.github.io/#{file.omit_suffix}"
     @urlset << url
   end
   def to_xml

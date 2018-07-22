@@ -44,6 +44,8 @@ data.each do |uri, v|
   school = v["https://w3id.org/jp-textbook/school"].first
   param = {
     uri: uri,
+    file: uri.sub("https://w3id.org/jp-textbook/", "") + ".html",
+    file_en: uri.sub("https://w3id.org/jp-textbook/", "en/") + ".html",
     style: "../../../style.css",
     name: v["http://schema.org/name"].first,
     editor: v["http://schema.org/editor"].first.unescape_unicode,
@@ -96,18 +98,17 @@ data.each do |uri, v|
       }
     end
   end
-  file = uri.sub("https://w3id.org/jp-textbook/", "") + ".html"
-  FileUtils.mkdir_p(File.dirname(file))
-  open(file, "w") do |io|
+  FileUtils.mkdir_p(File.dirname(param[:file]))
+  open(param[:file], "w") do |io|
     io.print template.to_html(param)
   end
-  sitemap << file
-  file = File.join("en", file)
+  sitemap << param[:file]
   param[:style] = File.join("..", param[:style])
-  FileUtils.mkdir_p(File.dirname(file))
-  open(file, "w") do |io|
+  FileUtils.mkdir_p(File.dirname(param[:file_en]))
+  open(param[:file_en], "w") do |io|
     io.print template_en.to_html(param, :en)
   end
+  sitemap << param[:file_en]
 
   curriculums[curriculum] ||= {}
   if subject
@@ -127,9 +128,6 @@ subjects.sort_by{|k,v| k }.each do |subject, v|
 #    next if not subjects.has_key? subject
   #p v["http://www.w3.org/1999/02/22-rdf-syntax-ns#type"]
   next if not v.has_key? "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
-  file = subject.sub("https://w3id.org/jp-textbook/", "")
-  file << ".html"
-  file_en = File.join("en", file)
   school = v["https://w3id.org/jp-textbook/school"].first
   school_name = school.last_part
   school_name_en = school_data[school]["http://schema.org/name"][:en]
@@ -139,6 +137,8 @@ subjects.sort_by{|k,v| k }.each do |subject, v|
   subject_area = subject.sub(/\/[^\/]+\Z/, "")
   param = {
     uri: subject,
+    file: subject.sub("https://w3id.org/jp-textbook/", "") + ".html",
+    file_en: subject.sub("https://w3id.org/jp-textbook/", "en/") + ".html",
     style: "../../../../style.css",
     name: [ school_name, subject.last_part ].join(" "),
     curriculum: curriculum,
@@ -154,18 +154,18 @@ subjects.sort_by{|k,v| k }.each do |subject, v|
     school_name_en: school_name_en,
     citation: v["http://schema.org/citation"].first,
   }
-  FileUtils.mkdir_p(File.dirname(file))
-  open(file, "w") do |io|
+  FileUtils.mkdir_p(File.dirname(param[:file]))
+  open(param[:file], "w") do |io|
     io.print template.to_html(param)
   end
-  sitemap << file
+  sitemap << param[:file]
   param[:style] = "../" + param[:style]
   param[:name] = "#{param[:subject_name_en]} in #{school_name_en}"
-  FileUtils.mkdir_p(File.dirname(file_en))
-  open(file_en, "w") do |io|
+  FileUtils.mkdir_p(File.dirname(param[:file_en]))
+  open(param[:file_en], "w") do |io|
     io.print template_en.to_html(param, :en)
   end
-  sitemap << file_en
+  sitemap << param[:file_en]
 #  end
 end
 
@@ -182,6 +182,8 @@ data.each do |uri, v|
   school = v["https://w3id.org/jp-textbook/school"].first
   param = {
     uri: uri,
+    file: uri.sub("https://w3id.org/jp-textbook/", "") + "/index.html",
+    file_en: uri.sub("https://w3id.org/jp-textbook/", "en/") + "/index.html",
     style: "../../../style.css",
     name: v["http://schema.org/name"][:ja],
     name_en: v["http://schema.org/name"][:en],
@@ -203,6 +205,8 @@ data.each do |uri, v|
     school = area_data[area]["https://w3id.org/jp-textbook/school"].first
     area_param = {
       uri: area,
+      file: File.join(area.sub("https://w3id.org/jp-textbook/", ""), "index.html"),
+      file_en: File.join(area.sub("https://w3id.org/jp-textbook/", "en/"), "index.html"),
       style: "../../../../style.css",
       curriculum: uri,
       name: area_data[area]["http://schema.org/name"][:ja],
@@ -226,21 +230,19 @@ data.each do |uri, v|
       area_param[:textbooks] = curriculums[uri][area].sort_by{|t| [ t[:textbookNumber], t[:uri] ] }
     end
     param[:subjectArea] << area_param
-    file = File.join(area.sub("https://w3id.org/jp-textbook/", ""), "index.html")
-    dir = File.dirname(file)
+    dir = File.dirname(area_param[:file])
     FileUtils.mkdir_p(dir) if not File.exist?(dir)
-    open(file, "w") do |io|
+    open(area_param[:file], "w") do |io|
       io.print template_area.to_html(area_param)
     end
-    sitemap << file
-    file = File.join("en", file)
-    dir = File.dirname(file)
+    sitemap << area_param[:file]
+    dir = File.dirname(area_param[:file_en])
     FileUtils.mkdir_p(dir) if not File.exist?(dir)
     area_param[:style] = File.join("..", area_param[:style])
-    open(file, "w") do |io|
+    open(area_param[:file_en], "w") do |io|
       io.print template_area_en.to_html(area_param, :en)
     end
-    sitemap << file
+    sitemap << area_param[:file_en]
 
     count_subjects = 0
     if subjects[area]
@@ -266,18 +268,16 @@ data.each do |uri, v|
     end
   end
   # curriculum
-  file = File.join(uri.sub("https://w3id.org/jp-textbook/", ""), "index.html")
-  dir = File.dirname(file)
+  dir = File.dirname(param[:file])
   FileUtils.mkdir_p(dir) if not File.exist?(dir)
-  open(file, "w") do |io|
+  open(param[:file], "w") do |io|
     io.print template.to_html(param)
   end
-  sitemap << file
-  file = File.join("en", file)
-  dir = File.dirname(file)
+  sitemap << param[:file]
+  dir = File.dirname(param[:file_en])
   FileUtils.mkdir_p(dir) if not File.exist?(dir)
   param[:style] = File.join("..", param[:style])
-  open(file, "w") do |io|
+  open(param[:file_en], "w") do |io|
     io.print template_en.to_html(param, :en)
   end
 end

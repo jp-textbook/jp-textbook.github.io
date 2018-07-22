@@ -37,7 +37,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li<%= ' class="active"' if param[:active] == :home %>><a class="navbar-brand" href="/">ホーム</a></li>
           <li><a href="/about">教科書LODについて</a></li>
-          <li><a href="/en/">English</a></li>
+          <li><a href="<%=h param[:file_en] ? Pathname(param[:file_en].omit_suffix).relative_path_from(Pathname(File.dirname param[:file])) : "/en/" %>">English</a></li>
         </ul>
       </div>
     </nav>

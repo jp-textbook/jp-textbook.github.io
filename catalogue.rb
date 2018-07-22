@@ -16,6 +16,8 @@ data.each do |uri, v|
   school =  v["https://w3id.org/jp-textbook/school"].first
   param = {
     uri: uri,
+    file: uri.sub("https://w3id.org/jp-textbook/", "") + ".html",
+    file_en: uri.sub("https://w3id.org/jp-textbook/", "en/") + ".html",
     style: "../../style.css",
     name: v["http://schema.org/name"][:ja],
     name_en: v["http://schema.org/name"][:en],
@@ -30,22 +32,20 @@ data.each do |uri, v|
     recordID: v["http://dl.nier.go.jp/library/vocab/recordID"].first,
     itemID: v["http://dl.nier.go.jp/library/vocab/itemID"].first,
   }
-  file = uri.sub("https://w3id.org/jp-textbook/", "") + ".html"
-  p file
-  dir = File.dirname(file)
+  p param[:file]
+  dir = File.dirname(param[:file])
   FileUtils.mkdir_p(dir) if not File.exist?(dir)
-  open(file, "w") do |io|
+  open(param[:file], "w") do |io|
     io.print template.to_html(param)
   end
-  sitemap << file
-  file = File.join("en", file)
+  sitemap << param[:file]
   param[:style] = File.join("..", param[:style])
-  dir = File.dirname(file)
+  dir = File.dirname(param[:file_en])
   FileUtils.mkdir_p(dir) if not File.exist?(dir)
-  open(file, "w") do |io|
+  open(param[:file_en], "w") do |io|
     io.print template_en.to_html(param, :en)
   end
-  sitemap << file
+  sitemap << param[:file_en]
 end
 
 open("sitemaps-catalogue.xml", "w"){|io| io.print sitemap.to_xml }
