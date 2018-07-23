@@ -44,6 +44,9 @@
     <%= param[:content] %>
     <hr>
     <footer>
+      <%- if param[:uri] -%>
+      <p class="pull-right"><a href="<%=h param[:uri] %>.ttl"><img src="https://www.w3.org/RDF/icons/rdf_flyer.24"></a></p>
+      <%- end -%>
       <p>&copy; 2017-<%= Date.today.year %> <a href="/about">教科書LODプロジェクト</a></p>
     </footer>
 
