@@ -24,6 +24,8 @@ if $0 == __FILE__
 @prefix textbook-rc:  <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
 EOF
 
+  textbook_master = load_turtle("textbook.ttl")
+
   done = {}
   xlsx = Roo::Excelx.new(ARGV[0])
   xlsx.default_sheet = SHEET_NAME
@@ -32,6 +34,7 @@ EOF
     row = map_xlsx_row_headers(x_row, headers)
     #uri = [BASE_URI, row["学校種別"], row["検定年(西暦)"], row["教科書記号"], row["教科書番号"]].join("/")
     uri = row["教科書リソースURI_ttl作成用"]
+    logger.warn("#{uri} is missing in the master data.") if not textbook_master[uri]
     call_number = [
       row["当館分類番号1段目"].strip,
       row["当館分類番号2段目"].strip,
