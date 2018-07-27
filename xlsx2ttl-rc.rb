@@ -34,6 +34,7 @@ EOF
     row = map_xlsx_row_headers(x_row, headers)
     #uri = [BASE_URI, row["学校種別"], row["検定年(西暦)"], row["教科書記号"], row["教科書番号"]].join("/")
     uri = row["教科書リソースURI_ttl作成用"]
+    next if row["フラグ_ttl作成用（「NIERレコードなし」以外をttlに）"] =~ /\ANIERレコードなし/
     logger.warn("#{uri} is missing in the master data.") if not textbook_master[uri]
     call_number = [
       row["当館分類番号1段目"].strip,
