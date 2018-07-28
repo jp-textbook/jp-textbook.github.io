@@ -12,6 +12,15 @@ sitemap = Sitemap.new
 template = PageTemplate.new("template/catalogue.html.erb")
 template_en = PageTemplate.new("template/catalogue.html.en.erb")
 
+module Textbook::Catalogue
+  RELATED_LINKS = {
+    /web.archive.org/ => :_waybackmachine,
+    /warp.da.ndl.go.jp/ => :_warp,
+    /ci.nii.ac.jp/ => :ncid,
+    /id.ndl.go.jp/ => :jpno,
+  }
+end
+
 data.each do |uri, v|
   school =  v["https://w3id.org/jp-textbook/school"].first
   param = {
@@ -27,7 +36,14 @@ data.each do |uri, v|
     school_name: school_data[school]["http://schema.org/name"][:ja],
     school_name_en: school_data[school]["http://schema.org/name"][:en],
     url: v["http://schema.org/url"],
-    seeAlso: v["http://www.w3.org/2000/01/rdf-schema#seeAlso"],
+    seeAlso: v["http://www.w3.org/2000/01/rdf-schema#seeAlso"].map{|url|
+      key = Textbook::Catalogue::RELATED_LINKS.keys.find do |r|
+        r.match(url)
+      end
+      { key: Textbook::Catalogue::RELATED_LINKS[key], url: url }
+    }.sort_by{|h|
+      h[:key]
+    },
     callNumber: v["http://dl.nier.go.jp/library/vocab/callNumber"].first,
     recordID: v["http://dl.nier.go.jp/library/vocab/recordID"].first,
     itemID: v["http://dl.nier.go.jp/library/vocab/itemID"].first,

@@ -39,15 +39,16 @@
               <%- end -%>
             <%- end -%>
             <%- if param[:seeAlso] -%>
-              <%- param[:seeAlso].each do |url| -%>
-                <%- case url -%>
-                <%- when /archive.org/ -%>
+              <%- param[:seeAlso].each do |hash| -%>
+                <%- url = hash[:url] -%>
+                <%- case hash[:key] -%>
+                <%- when :_waybackmachine -%>
                 <li><a href="<%=h url %>">教科書目録（ウェブアーカイブ / Internet Archive）</a></li>
-                <%- when /warp.da.ndl.go.jp/ -%>
+                <%- when :_warp -%>
                 <li><a href="<%=h url %>">教科書目録（ウェブアーカイブ / NDL WARP）</a></li>
-                <%- when /jpno/ -%>
+                <%- when :jpno -%>
                 <li><a href="<%=h url %>">国立国会図書館 (JPNO)</a></li>
-                <%- when /ncid/ -%>
+                <%- when :ncid -%>
                 <li><a href="<%=h url %>">CiNii Books (NCID)</a></li>
                 <%- else -%>
                 <li><a href="<%=h url %>">関連リンク</a></li>
