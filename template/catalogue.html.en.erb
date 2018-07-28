@@ -36,7 +36,18 @@
             <%- end -%>
             <%- if param[:seeAlso] -%>
               <%- param[:seeAlso].each do |url| -%>
-              <li><a href="<%=h url %>">Textbook Catalogues (Wayback Machine by Internet Archive)</a></li>
+                <%- case url -%>
+                <%- when /archive.org/ -%>
+                <li><a href="<%=h url %>">Textbook Catalogues (Web Archive by Internet Archive)</a></li>
+                <%- when /warp.da.ndl.go.jp/ -%>
+                <li><a href="<%=h url %>">Textbook Catalogues (Web Archive by NDL WARP)</a></li>
+                <%- when /jpno/ -%>
+                <li><a href="<%=h url %>">National Bibliographic Record (JPNO)</a></li>
+                <%- when /ncid/ -%>
+                <li><a href="<%=h url %>">CiNii Books (NCID)</a></li>
+                <%- else -%>
+                <li><a href="<%=h url %>">Related link</a></li>
+                <%- end -%>
               <%- end -%>
             <%- end -%>
             <li><a href="https://nieropac.nier.go.jp/ebopac/<%=h param[:recordID] %>">NIER Education of Library OPAC</a>
