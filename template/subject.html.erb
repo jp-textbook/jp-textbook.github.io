@@ -29,7 +29,11 @@
             <dt>学校種別</dt><dd><%=h param[:school_name] %></dd>
             <dt>学習指導要領</dt><dd><a href="../../<%=h param[:curriculum].last_part %>"><%=h param[:curriculum].last_part %> (<%=h param[:curriculum].last_part.to_year_era %>)</a></dd>
             <dt>教科</dt><dd><a href="../<%=h param[:subjectArea_name] %>"><%=h param[:subjectArea_name] %></a></dd>
+            <%- if param[:seeAlso] -%>
+            <dt>出典</dt><dd><a href="<%=h param[:seeAlso].first %>"><%=h param[:citation] %></a></dd>
+            <%- else -%>
             <dt>出典</dt><dd><%=h param[:citation] %></dd>
+            <%- end -%>
           </dl>
         </div>
       </div>

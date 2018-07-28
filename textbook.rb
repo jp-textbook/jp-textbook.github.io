@@ -153,6 +153,7 @@ subjects.sort_by{|k,v| k }.each do |subject, v|
     school_name: school_name,
     school_name_en: school_name_en,
     citation: v["http://schema.org/citation"].first,
+    seeAlso: v["http://www.w3.org/2000/01/rdf-schema#seeAlso"],
   }
   FileUtils.mkdir_p(File.dirname(param[:file]))
   open(param[:file], "w") do |io|
