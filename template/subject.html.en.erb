@@ -25,7 +25,11 @@
             <dt>Type of school</dt><dd><%=h param[:school_name_en] %></dd>
             <dt>Curriculum guidelines</dt><dd><a href="../../<%=h param[:curriculum].last_part %>"><%=h param[:curriculum].last_part %></a></dd>
             <dt>Subject area</dt><dd><a href="../<%=h param[:subjectArea_name] %>"><%=h param[:subjectArea_name_en] %></a></dd>
+            <%- if param[:seeAlso] -%>
+            <dt>References</dt><dd><a href="<%=h param[:seeAlso].first %>"><%=h param[:citation] %></a></dd>
+            <%- else -%>
             <dt>References</dt><dd><%=h param[:citation] %></dd>
+            <%- end -%>
           </dl>
         </div>
       </div>
