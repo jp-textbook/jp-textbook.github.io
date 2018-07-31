@@ -1,0 +1,44 @@
+    <div class="jumbotron">
+      <div class="container">
+        <h1><ruby><%=h param[:name] %><rt><%=h param[:name_yomi] %></rt></ruby></h1>
+        <p><small><span class="glyphicon glyphicon-link"></span> <a href="<%=h param[:uri] %>"><%=h param[:uri] %></a></small></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ol class="breadcrumb">
+            <li><a href="../../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+            <li class="active"><%=h param[:name] %></li>
+          </ol>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>詳細情報</h2>
+          <dl class="dl-horizontal">
+            <dt>学校種別</dt><dd><ruby><%=h param[:name] %><rt><%=h param[:name_yomi] %></rt></ruby></dd>
+            <dt>名称（英語表記）</dt><dd><%=h param[:name_en] %></dd>
+          </dl>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>学習指導要領一覧</h2>
+          <ul>
+            <%- param[:curriculums].each do |curriculum| -%>
+              <li><a href="<%=h curriculum[:uri].to_s.sub("https://w3id.org/jp-textbook/", "../") %>"><%=h curriculum[:name] %>
+                  (<%=h curriculum[:datePublished] %>年発行, <%=h curriculum[:startDate_str] %>施行)</a></li>
+            <%- end -%>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>関連リンク</h2>
+          <ul>
+            <li><a href="<%=h param[:sameAs] %>"><%=h param[:sameAs] %></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>

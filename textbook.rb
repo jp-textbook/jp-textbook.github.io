@@ -282,6 +282,52 @@ data.each do |uri, v|
     io.print template_en.to_html(param, :en)
   end
 end
+
+template = PageTemplate.new("template/school.html.erb")
+template_en = PageTemplate.new("template/school.html.en.erb")
+school_data.each do |uri, v|
+  name = v["http://schema.org/name"][:ja]
+  curs = curriculums.keys.sort.reverse.select do |cur_uri|
+    cur_uri.match name
+  end.map do |cur_uri|
+    { uri: cur_uri,
+      name: data[cur_uri]["http://schema.org/name"][:ja],
+      name_yomi: data[cur_uri]["http://schema.org/name"][:"ja-hira"],
+      name_en: data[cur_uri]["http://schema.org/name"][:en],
+      datePublished: data[cur_uri]["http://schema.org/datePublished"].first,
+      startDate_str: Date.parse(data[cur_uri]["http://schema.org/startDate"].first).strftime("%Y年%m月").squeez_date,
+      startDate_str_en: Date.parse(data[cur_uri]["http://schema.org/startDate"].first).strftime("%Y-%m"),
+    }
+  end
+  file = uri.sub("https://w3id.org/jp-textbook/", "")
+  file << ".html"
+  param = {
+    uri: uri,
+    style: "../style.css",
+    file: file,
+    file_en: File.join("en", file),
+    name: name,
+    name_yomi: v["http://schema.org/name"][:"ja-hira"],
+    name_en: v["http://schema.org/name"][:en],
+    sameAs: v["http://www.w3.org/2002/07/owl#sameAs"].first,
+    curriculums: curs,
+  }
+  p v["http://schema.org/name"]
+  sitemap << param[:file]
+  dir = File.dirname(param[:file])
+  FileUtils.mkdir_p(dir) if not File.exist?(dir)
+  open(param[:file], "w") do |io|
+    io.print template.to_html(param)
+  end
+  param[:style] = File.join("..", param[:style])
+  sitemap << param[:file_en]
+  dir = File.dirname(param[:file_en])
+  FileUtils.mkdir_p(dir) if not File.exist?(dir)
+  open(param[:file_en], "w") do |io|
+    io.print template_en.to_html(param, :en)
+  end
+end
+
 doc = Nokogiri::HTML(open "about.html")
 index_param[:download] = doc.css("#history + dl dd ul > li").find{|e| e.to_s =~ /all-\d+\.ttl/ }
 p index_param[:download]
