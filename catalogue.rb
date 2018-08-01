@@ -33,6 +33,7 @@ data.each do |uri, v|
     name_yomi: v["http://schema.org/name"][:"ja-hira"],
     datePublished: v["http://schema.org/datePublished"].first,
     usageYear: v["https://w3id.org/jp-textbook/usageYear"].first,
+    school: school,
     school_name: school_data[school]["http://schema.org/name"][:ja],
     school_name_en: school_data[school]["http://schema.org/name"][:en],
     url: v["http://schema.org/url"],
