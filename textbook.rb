@@ -150,6 +150,7 @@ subjects.sort_by{|k,v| k }.each do |subject, v|
     subjectArea_name: subject_area.last_part,
     subjectArea_name_en: area_data[subject_area]["http://schema.org/name"][:en],
     textbooks: textbooks.sort_by{|t| [ t[:textbookNumber], t[:uri] ] },
+    school: school,
     school_name: school_name,
     school_name_en: school_name_en,
     citation: v["http://schema.org/citation"].first,
