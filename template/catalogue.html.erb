@@ -21,6 +21,8 @@
         <div class="col-md-12">
           <h2>詳細情報</h2>
           <dl class="dl-horizontal">
+            <dt>書名</dt><dd><ruby><%=h param[:name] %><rt><%=h param[:name_yomi] %></rt></ruby></dd>
+            <dt>書名（英語表記）</dt><dd><%=h param[:name_en] %></dd>
             <dt>発行年</dt><dd><%=h param[:datePublished] %>年 (<%=h param[:datePublished].to_year_era %>)</dd>
             <dt>使用年度</dt><dd><%=h param[:usageYear] %>年 (<%=h param[:usageYear].to_year_era %>)</dd>
             <dt>学校種別</dt><dd><a href="<%=h param[:school].sub("https://w3id.org/jp-textbook/", "../../") %>"><%=h param[:school_name] %></a></dd>
