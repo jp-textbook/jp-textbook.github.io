@@ -39,7 +39,9 @@
           <h2>List of textbooks</h2>
           <ul>
             <%- param[:textbooks].each do |textbook| -%>
-              <li><a href="<%=h textbook[:uri].to_s.sub("https://w3id.org/jp-textbook/", "../../../../") %>"><%=h textbook[:name] %> (<%=h textbook[:publisher] %>)</a></li>
+              <li><a href="<%=h textbook[:uri].to_s.sub("https://w3id.org/jp-textbook/", "../../../../") %>"><%=h textbook[:name] %> (<%=h textbook[:publisher] %>)</a>
+              (<%=h textbook[:usageYear] %>)
+              </li>
             <%- end -%>
           </ul>
         </div>
