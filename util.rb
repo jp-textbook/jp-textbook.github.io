@@ -10,10 +10,10 @@ class String
     self.split(/\//).last.gsub(/%20/, " ")
   end
   def squeez_date
-    self.gsub(/\d+/){|i| i.to_i }
+    self.gsub(/\d+/){|i| i.to_i }.gsub(/(?<=\D)1年/, "元年")
   end
   def to_year_era
-    Date.new(self.to_i).to_era("%O%E").squeez_date + "年"
+    Date.new(self.to_i).to_era("%O%E年").squeez_date
   end
   def omit_suffix
     self.sub(/\A\//, "").sub(/\/index.html\Z/, "").sub(/\.html\Z/, "")
