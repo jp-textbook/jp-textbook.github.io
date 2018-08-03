@@ -178,10 +178,13 @@ template_area = PageTemplate.new("template/subject-area.html.erb")
 template_area_en = PageTemplate.new("template/subject-area.html.en.erb")
 index_param = { subjects: subjects, areas: area_data, active: :home }
 param = {}
+cur_param = {}
 #data.keys.select{|uri| data[uri].has_key? "https://w3id.org/jp-textbook/hasSubjectArea" }.each do |uri|
 data.each do |uri, v|
   index_param[uri] = []
   school = v["https://w3id.org/jp-textbook/school"].first
+  datePublished = Date.parse(v["http://schema.org/datePublished"].first)
+  startDate = Date.parse(v["http://schema.org/startDate"].first)
   param = {
     uri: uri,
     file: uri.sub("https://w3id.org/jp-textbook/", "") + "/index.html",
@@ -190,16 +193,20 @@ data.each do |uri, v|
     name: v["http://schema.org/name"][:ja],
     name_en: v["http://schema.org/name"][:en],
     name_yomi: v["http://schema.org/name"][:"ja-hira"],
-    datePublished: v["http://schema.org/datePublished"].first,
-    startDate: v["http://schema.org/startDate"].first,
-    startDate_date: Date.parse(v["http://schema.org/startDate"].first),
-    startDate_str: Date.parse(v["http://schema.org/startDate"].first).strftime("%Y年%m月").squeez_date,
-    startDate_str_en: Date.parse(v["http://schema.org/startDate"].first).strftime("%Y-%m"),
+    datePublished: datePublished,
+    datePublished_ymd: datePublished.strftime("%Y年%m月%d日").squeez_date,
+    datePublished_ym: datePublished.strftime("%Y年%m月").squeez_date,
+    datePublished_ym_en: datePublished.strftime("%Y-%m"),
+    startDate: startDate,
+    startDate_ymd: startDate.strftime("%Y年%m月%d日").squeez_date,
+    startDate_ym: startDate.strftime("%Y年%m月").squeez_date,
+    startDate_ym_en: startDate.strftime("%Y-%m"),
     seeAlso: v["http://www.w3.org/2000/01/rdf-schema#seeAlso"].first,
     subjectArea: [],
     school: school,
     school_name_en: school_data[school]["http://schema.org/name"][:en],
   }
+  cur_param[uri] = param
   area_data[uri]["https://w3id.org/jp-textbook/hasSubjectArea"].sort_by{|area|
     area_data[area]["http://purl.org/linked-data/cube#order"].sort.first.to_i
   }.each do |area|
@@ -291,14 +298,7 @@ school_data.each do |uri, v|
   curs = curriculums.keys.sort.reverse.select do |cur_uri|
     cur_uri.match name
   end.map do |cur_uri|
-    { uri: cur_uri,
-      name: data[cur_uri]["http://schema.org/name"][:ja],
-      name_yomi: data[cur_uri]["http://schema.org/name"][:"ja-hira"],
-      name_en: data[cur_uri]["http://schema.org/name"][:en],
-      datePublished: data[cur_uri]["http://schema.org/datePublished"].first,
-      startDate_str: Date.parse(data[cur_uri]["http://schema.org/startDate"].first).strftime("%Y年%m月").squeez_date,
-      startDate_str_en: Date.parse(data[cur_uri]["http://schema.org/startDate"].first).strftime("%Y-%m"),
-    }
+    cur_param[cur_uri]
   end
   file = uri.sub("https://w3id.org/jp-textbook/", "")
   file << ".html"

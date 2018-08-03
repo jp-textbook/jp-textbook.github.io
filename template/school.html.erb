@@ -28,7 +28,7 @@
           <ul>
             <%- param[:curriculums].each do |curriculum| -%>
               <li><a href="<%=h curriculum[:uri].to_s.sub("https://w3id.org/jp-textbook/", "../") %>"><%=h curriculum[:name] %>
-                  (<%=h curriculum[:datePublished] %>年発行, <%=h curriculum[:startDate_str] %>施行)</a></li>
+                  (<%=h curriculum[:datePublished_ym] %>告示, <%=h curriculum[:startDate_ym] %>施行)</a></li>
             <%- end -%>
           </ul>
         </div>

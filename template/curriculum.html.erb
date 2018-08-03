@@ -5,7 +5,7 @@
         <%- else -%>
           <h1><%=h param[:name] %></h1>
         <%- end -%>
-        <p><%=h param[:datePublished] %>年発行, <%=h param[:startDate_str] %>施行</p>
+        <p><%=h param[:datePublished_ym] %>告示, <%=h param[:startDate_ym] %>施行</p>
         <p><small><span class="glyphicon glyphicon-link"></span> <a href="<%=h param[:uri] %>"><%=h param[:uri] %></a></small></p>
       </div>
     </div>
@@ -17,8 +17,8 @@
             <dt>名称</dt><dd><ruby><%=h param[:name] %><rt><%=h param[:name_yomi] %></dd>
             <dt>名称（英語表記）</dt><dd><%=h param[:name_en] %></dd>
             <dt>学校種別</dt><dd><a href="<%=h param[:school].sub("https://w3id.org/jp-textbook/", "../../../") %>"><%=h param[:school].last_part %></a></dd>
-            <dt>発行年</dt><dd><%=h param[:datePublished] %>年 (<%=h param[:datePublished].to_year_era %>)</dd>
-            <dt>施行年</dt><dd><%=h param[:startDate_date].strftime("%Y年%m月%d日").squeez_date %> (<%=h param[:startDate_date].to_era("%O%E年%m月%d日").squeez_date %>)</dd>
+            <dt>告示日</dt><dd><%=h param[:datePublished_ymd] %> (<%=h param[:datePublished].to_era("%O%E年%m月%d日").squeez_date %>)</dd>
+            <dt>施行日</dt><dd><%=h param[:startDate_ymd] %> (<%=h param[:startDate].to_era("%O%E年%m月%d日").squeez_date %>)</dd>
           </dl>
         </div>
       </div>

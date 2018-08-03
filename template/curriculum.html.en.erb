@@ -1,7 +1,7 @@
     <div class="jumbotron">
       <div class="container">
         <h1><%=h param[:name_en] %></h1>
-        <p>Published in <%=h param[:datePublished] %>, and enforced in <%=h param[:startDate_str_en] %></p>
+        <p>Published in <%=h param[:datePublished_ym_en] %>, and enforced in <%=h param[:startDate_ym_en] %></p>
         <p><small><span class="glyphicon glyphicon-link"></span> <a href="<%=h param[:uri] %>"><%=h param[:uri] %></a></small></p>
       </div>
     </div>
@@ -14,7 +14,7 @@
             <dt>Name in Japanese</dt><dd><ruby><%=h param[:name] %><rt><%=h param[:name_yomi] %></dd>
             <dt>Type of school</dt><dd><a href="<%=h param[:school].sub("https://w3id.org/jp-textbook/", "../../../") %>"><%=h param[:school_name_en] %></a></dd>
             <dt>Published</dt><dd><%=h param[:datePublished] %></dd>
-            <dt>Enforced</dt><dd><%=h param[:startDate_date] %></dd>
+            <dt>Enforced</dt><dd><%=h param[:startDate] %></dd>
           </dl>
         </div>
       </div>
