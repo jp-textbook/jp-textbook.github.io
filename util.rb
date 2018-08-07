@@ -70,6 +70,10 @@ module Textbook
     "schema:bookEdition" => "版",
     "textbook:grade" => "学年",
   }
+  RELATED_LINKS = {
+    _mext: /mext.go.jp/,
+    nier: /nier.go.jp\/guideline\//,
+  }
 
 def find_turtle(filename)
   file = nil

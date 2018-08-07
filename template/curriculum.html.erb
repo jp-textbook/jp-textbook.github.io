@@ -50,7 +50,16 @@
         <div class="col-md-12">
           <h2>関連リンク</h2>
           <ul>
-            <li><a href="<%=h param[:seeAlso] %>">学習指導要領（文部科学省サイト）</a></li>
+            <%- param[:url].each do |e| -%>
+              <%- case e[:key] -%>
+              <%- when :mext, :_mext -%>
+                <li><a href="<%=h e[:url] %>">学習指導要領（文部科学省サイト）</a></li>
+              <%- when :nier -%>
+                <li><a href="<%=h e[:url] %>">学習指導要領（国立教育政策研究所）</a></li>
+              <%- else -%>
+                <li><a href="<%=h e[:url] %>">学習指導要領</a></li>
+              <%- end -%>
+            <%- end -%>
           </ul>
         </div>
       </div>

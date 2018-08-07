@@ -46,7 +46,16 @@
         <div class="col-md-12">
           <h2>Related links</h2>
           <ul>
-            <li><a href="<%=h param[:seeAlso] %>">Curriculum guidelines at MEXT website</a></li>
+            <%- param[:url].each do |e| -%>
+              <%- case e[:key] -%>
+              <%- when :mext, :_mext -%>
+                <li><a href="<%=h e[:url] %>">Curriculum guidelines at MEXT website</a></li>
+              <%- when :nier -%>
+                <li><a href="<%=h e[:url] %>">Curriculum guidelines at NIER website</a></li>
+              <%- else -%>
+                <li><a href="<%=h e[:url] %>">Curriculum guidelines</a></li>
+              <%- end -%>
+            <%- end -%>
           </ul>
         </div>
       </div>

@@ -201,7 +201,12 @@ data.each do |uri, v|
     startDate_ymd: startDate.strftime("%Y年%m月%d日").squeez_date,
     startDate_ym: startDate.strftime("%Y年%m月").squeez_date,
     startDate_ym_en: startDate.strftime("%Y-%m"),
-    seeAlso: v["http://www.w3.org/2000/01/rdf-schema#seeAlso"].first,
+    url: v["http://schema.org/url"].map{|url|
+      key = Textbook::RELATED_LINKS.keys.find{|e|
+        Textbook::RELATED_LINKS[e].match url
+      }
+      { key: key, url: url }
+    }.sort_by{|e| e[:key] },
     subjectArea: [],
     school: school,
     school_name_en: school_data[school]["http://schema.org/name"][:en],
