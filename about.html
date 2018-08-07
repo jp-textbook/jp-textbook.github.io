@@ -450,8 +450,8 @@
             <tr>
               <td><code>textbook:subjectType</code></td>
               <td>教科種別</td>
-              <td>textbook:curriculum/高等学校/2013/Common　</td>
-              <td>学習指導要領1994,2003,2013の高等学校の教科のみ。Common:「各学科に共通する各教科・科目」「普通教育に関する各教科・科目」, Special: 「主として専門学科において開設される各教科・科目」「専門教育に関する各教科・科目」</td>
+              <td>textbook:curriculum/高等学校/2013/Common</td>
+              <td>学習指導要領1994,2003,2013の高等学校の教科のみ。</td>
             </tr>
             <tr>
               <td><code>textbook:hasSubject</code></td>
@@ -527,8 +527,8 @@
             <tr>
               <td><code>textbook:subjectAreaType</code></td>
               <td>種目種別</td>
-              <td><span class="url">textbook:curriculum/高等学校/2013/Common　</span></td>
-              <td>学習指導要領1994,2003,2013の高等学校の教科の種目のみ。Common:「各学科に共通する各教科・科目」「普通教育に関する各教科・科目」, Special: 「主として専門学科において開設される各教科・科目」「専門教育に関する各教科・科目」</td>
+              <td><span class="url">textbook:curriculum/高等学校/2013/Common</span></td>
+              <td>学習指導要領1994,2003,2013の高等学校の教科の種目のみ。</td>
             </tr>
             <tr>
               <td><code>rdfs:seeAlso</code></td>
@@ -694,7 +694,54 @@
             </tr>
             </tbody>
           </table>
-
+          <h3 id="subjecttype-resource">教科・種目種別をあらわすリソース</h3>
+          <p>
+          教科・種目種別を示すリソースです。
+          </p>
+          <h4>教科・種目種別をあらわすリソースのURI</h4>
+          <p>
+          教科・種目種別をあらわすリソースは以下のようなURIにより表現されます。
+          <br>
+           <code>https://w3id.org/jp-textbook/curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>種別</var></code>
+          </p>
+          <p>
+          または、プレフィックスを用いて表現すると以下のようになります。
+          <br>
+          <code>textbook:school/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>種別</var></code>
+          </p>
+          <p>種別は<var>Common</var>と<var>Special</var>があります。</p>
+          <h4>教科・種目種別リソースが持つプロパティ</h4>
+          <p>教科・種目種別リソースが持つプロパティを下表に示します</p>
+          <table class="table">
+            <tr>
+              <th>プロパティ名</th><th>説明</th><th>プロパティ値の例</th><th>備考</th>
+            </tr>
+            <tbody>
+            <tr>
+              <td><code>schema:name</code></td>
+              <td>名称</td>
+              <td>
+                <ul>
+                  <li>"各学科に共通する各教科"@ja;</li>
+                  <li>"かくがっかにきょうつうするかくきょうか"@ja-Hira;</li>
+                </ul>
+              </td>
+              <td>
+                言語コードを用いて、名称に加え、そのよみを示します。言語コードとその意味は以下の通りです。
+                <dl>
+                  <dt>@ja</dt><dd>名称（漢字表記）</dd>
+                  <dt>@ja-Hira</dt><dd>名称（ひらがな表記）。名称のよみをひらがな表記で示します。</dd>
+                </dl>
+              </td>
+            </tr>
+            <tr>
+              <td><code>schema:citation</code></td>
+              <td>出典</td>
+              <td>"学習指導要領の章タイトルなど（「第２章 各学科に共通する各教科」「第３章 主として専門学科において開設される各教科」）や、学習指導要領冒頭の「学 校 教 育 法 施 行 規 則（抄）」の表題（pp. iii-iv ）など"</td>
+              <td></td>
+            </tr>
+            </tbody>
+          </table>
           <h2 id="history">更新履歴</h2>
           <dl>
             <dt>2018年7月28日</dt>
