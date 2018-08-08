@@ -1,7 +1,7 @@
 default: clean catalogue textbook all
 
 all:
-	./catttl.rb textbook textbook-rc curriculum curriculum-versions catalogue subject subjectArea school > all-`date +%Y%m%d`.ttl
+	./catttl.rb textbook textbook-rc curriculum curriculum-versions catalogue subject subjectArea subjectType school > all-`date +%Y%m%d`.ttl
 
 clean:
 	-rm -rf catalogue/ curriculum/ *学校/
