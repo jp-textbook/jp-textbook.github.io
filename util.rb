@@ -73,7 +73,16 @@ module Textbook
   RELATED_LINKS = {
     _mext: /mext.go.jp/,
     nier: /nier.go.jp\/guideline\//,
+    ncid: /\/ncid\//,
+    jpno: /\/jpno\//,
   }
+  def map_links(urls, links)
+    urls = [] if urls.nil?
+    urls.map{|url|
+      key = links.keys.find{|e| links[e].match url }
+      { key: key, url: url }
+    }.sort_by{|e| e[:key] }
+  end
 
 def find_turtle(filename)
   file = nil

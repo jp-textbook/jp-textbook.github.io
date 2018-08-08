@@ -8,20 +8,6 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2>Details</h2>
-          <dl class="dl-horizontal">
-            <dt>Name</dt><dd><%=h param[:name_en] %></dd>
-            <dt>Name in Japanese</dt><dd><ruby><%=h param[:name] %><rt><%=h param[:name_yomi] %></dd>
-            <dt>Type of school</dt><dd><a href="<%=h param[:school].sub("https://w3id.org/jp-textbook/", "../../../") %>"><%=h param[:school_name_en] %></a></dd>
-            <dt>Published</dt><dd><%=h param[:datePublished] %></dd>
-            <dt>Enforced</dt><dd><%=h param[:startDate] %></dd>
-          </dl>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
           <h2>List of subject areas</h2>
           <ul>
             <%- param[:subjectArea].each do |area| -%>
@@ -36,6 +22,65 @@
               </li>
             <%- end -%>
           </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Details</h2>
+          <dl class="dl-horizontal">
+            <dt>Name</dt><dd><%=h param[:name_en] %></dd>
+            <dt>Name in Japanese</dt><dd><ruby><%=h param[:name] %><rt><%=h param[:name_yomi] %></dd>
+            <dt>Type of school</dt><dd><a href="<%=h param[:school].sub("https://w3id.org/jp-textbook/", "../../../") %>"><%=h param[:school_name_en] %></a></dd>
+            <dt>Published</dt><dd><%=h param[:datePublished] %></dd>
+            <dt>Enforced</dt><dd><%=h param[:startDate] %></dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Revisions</h2>
+          <%- param[:versions].each do |version| -%>
+            <h3><%=h version[:name] %></h3>
+            <dl class="dl-horizontal">
+              <dt>Published</dt><dd><%=h version[:datePublished] %></dd>
+              <dt>Source</dt><dd><%=h version[:citation] %></dd>
+              <%- if version[:isbn] -%>
+              <dt>ISBN</dt><dd><%=h version[:isbn] %></dd>
+              <%- end -%>
+              <%- if not (version[:url] + version[:seeAlso]).empty? -%>
+              <dt>Links</dt><dd>
+              <ul>
+              <%- [:url, :seeAlso].each do |k| -%>
+                <%- version[k].each do |e| -%>
+                  <%- case e[:key] -%>
+                  <%- when :_mext -%>
+                  <li><a href="<%=h e[:url] %>">Curriculum guidelines at MEXT website</a></li>
+                  <%- when :nier -%>
+                  <li><a href="<%=h e[:url] %>">Curriculum guidelines at NIER website</a></li>
+                  <%- when :jpno -%>
+                  <li><a href="<%=h e[:url] %>">Curriculum guidelines (JPNO)</a></li>
+                  <%- when :ncid -%>
+                  <li><a href="<%=h e[:url] %>">Curriculum guidelines (NCID)</a></li>
+                  <%- else -%>
+                  <li><a href="<%=h e[:url] %>">Curriculum guidelines</a></li>
+                  <%- end -%>
+                <%- end -%>
+              <%- end -%>
+              <%- if version[:recordID] -%>
+                <li><a href="https://nieropac.nier.go.jp/ebopac/<%=h version[:recordID] %>">NIER Education Library OPAC</a>
+                    <span class="callNumber" title="call number"><%=h version[:callNumber] %></span>
+                    <span class="itemID" title="item ID"><%=h version[:itemID] %></span>
+                </li>
+              <%- end -%>
+              </ul>
+              </dd>
+              <%- end -%>
+            </dl>
+          <%- end -%>
         </div>
       </div>
     </div>

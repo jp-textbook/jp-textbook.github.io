@@ -12,20 +12,6 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2>詳細情報</h2>
-          <dl class="dl-horizontal">
-            <dt>名称</dt><dd><ruby><%=h param[:name] %><rt><%=h param[:name_yomi] %></dd>
-            <dt>名称（英語表記）</dt><dd><%=h param[:name_en] %></dd>
-            <dt>学校種別</dt><dd><a href="<%=h param[:school].sub("https://w3id.org/jp-textbook/", "../../../") %>"><%=h param[:school].last_part %></a></dd>
-            <dt>告示日</dt><dd><%=h param[:datePublished_ymd] %> (<%=h param[:datePublished].to_era("%O%E年%m月%d日").squeez_date %>)</dd>
-            <dt>施行日</dt><dd><%=h param[:startDate_ymd] %> (<%=h param[:startDate].to_era("%O%E年%m月%d日").squeez_date %>)</dd>
-          </dl>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
           <h2>教科一覧</h2>
           <ul>
             <%- param[:subjectArea].each do |area| -%>
@@ -40,6 +26,65 @@
               </li>
             <%- end -%>
           </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>詳細情報</h2>
+          <dl class="dl-horizontal">
+            <dt>名称</dt><dd><ruby><%=h param[:name] %><rt><%=h param[:name_yomi] %></dd>
+            <dt>名称（英語表記）</dt><dd><%=h param[:name_en] %></dd>
+            <dt>学校種別</dt><dd><a href="<%=h param[:school].sub("https://w3id.org/jp-textbook/", "../../../") %>"><%=h param[:school].last_part %></a></dd>
+            <dt>告示日</dt><dd><%=h param[:datePublished_ymd] %> (<%=h param[:datePublished].to_era("%O%E年%m月%d日").squeez_date %>)</dd>
+            <dt>施行日</dt><dd><%=h param[:startDate_ymd] %> (<%=h param[:startDate].to_era("%O%E年%m月%d日").squeez_date %>)</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>改正情報</h2>
+          <%- param[:versions].each do |version| -%>
+            <h3><%=h version[:name] %></h3>
+            <dl class="dl-horizontal">
+            <dt>告示日</dt><dd><%=h version[:datePublished_ymd] %> (<%=h version[:datePublished].to_era("%O%E年%m月%d日").squeez_date %>)</dd>
+            <dt>出典</dt><dd><%=h version[:citation] %></dd>
+            <%- if version[:isbn] -%>
+            <dt>ISBN</dt><dd><%=h version[:isbn] %></dd>
+            <%- end -%>
+            <%- if not (version[:url] + version[:seeAlso]).empty? -%>
+            <dt>関連リンク</dt><dd>
+            <ul>
+            <%- [:url, :seeAlso].each do |k| -%>
+              <%- version[k].each do |e| -%>
+                <%- case e[:key] -%>
+                <%- when :_mext -%>
+                <li><a href="<%=h e[:url] %>">学習指導要領（文部科学省サイト）</a></li>
+                <%- when :nier -%>
+                <li><a href="<%=h e[:url] %>">学習指導要領（国立教育政策研究所）</a></li>
+                <%- when :jpno -%>
+                <li><a href="<%=h e[:url] %>">学習指導要領 所蔵情報（JPNO）</a></li>
+                <%- when :ncid -%>
+                <li><a href="<%=h e[:url] %>">学習指導要領 所蔵情報（NCID）</a></li>
+                <%- else -%>
+                <li><a href="<%=h e[:url] %>">学習指導要領</a></li>
+                <%- end -%>
+              <%- end -%>
+            <%- end -%>
+            <%- if version[:recordID] -%>
+              <li><a href="https://nieropac.nier.go.jp/ebopac/<%=h version[:recordID] %>">国立教育政策研究所 教育図書館 OPAC</a>
+              <span class="callNumber" title="請求記号"><%=h version[:callNumber] %></span>
+              <span class="itemID" title="資料ID"><%=h version[:itemID] %></span>
+              </li>
+            <%- end -%>
+            </ul>
+            </dd>
+            <%- end -%>
+            </dl>
+          <%- end -%>
         </div>
       </div>
     </div>

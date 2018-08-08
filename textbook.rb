@@ -172,6 +172,7 @@ subjects.sort_by{|k,v| k }.each do |subject, v|
 end
 
 data = load_turtle("curriculum.ttl")
+data_version = load_turtle("curriculum-versions.ttl")
 template = PageTemplate.new("template/curriculum.html.erb")
 template_en = PageTemplate.new("template/curriculum.html.en.erb")
 template_area = PageTemplate.new("template/subject-area.html.erb")
@@ -179,12 +180,30 @@ template_area_en = PageTemplate.new("template/subject-area.html.en.erb")
 index_param = { subjects: subjects, areas: area_data, active: :home }
 param = {}
 cur_param = {}
-#data.keys.select{|uri| data[uri].has_key? "https://w3id.org/jp-textbook/hasSubjectArea" }.each do |uri|
 data.each do |uri, v|
   index_param[uri] = []
   school = v["https://w3id.org/jp-textbook/school"].first
   datePublished = Date.parse(v["http://schema.org/datePublished"].first)
   startDate = Date.parse(v["http://schema.org/startDate"].first)
+  versions = []
+  if data_version[uri]["http://purl.org/dc/terms/hasVersion"]
+    versions = data_version[uri]["http://purl.org/dc/terms/hasVersion"].map{|e|
+      val = data_version[e]
+      date = Date.parse(val["http://schema.org/datePublished"].first)
+      {
+        name: val["http://schema.org/name"].first,
+        datePublished: date,
+        datePublished_ymd: date.strftime("%Y年%m月%d日").squeez_date,
+        citation: val["http://schema.org/citation"].first,
+        url: map_links(val["http://schema.org/url"], Textbook::RELATED_LINKS),
+        seeAlso: map_links(val["http://www.w3.org/2000/01/rdf-schema#seeAlso"], Textbook::RELATED_LINKS),
+        isbn: val["http://schema.org/isbn"] ? val["http://schema.org/isbn"].first : nil,
+        itemID: val["http://dl.nier.go.jp/library/vocab/itemID"] ? val["http://dl.nier.go.jp/library/vocab/itemID"].first : nil,
+        callNumber: val["http://dl.nier.go.jp/library/vocab/callNumber"] ? val["http://dl.nier.go.jp/library/vocab/callNumber"].first : nil,
+        recordID: val["http://dl.nier.go.jp/library/vocab/recordID"] ? val["http://dl.nier.go.jp/library/vocab/recordID"].first : nil,
+      }
+    }.sort_by{|e| e[:datePublished] }
+  end
   param = {
     uri: uri,
     file: uri.sub("https://w3id.org/jp-textbook/", "") + "/index.html",
@@ -207,6 +226,7 @@ data.each do |uri, v|
       }
       { key: key, url: url }
     }.sort_by{|e| e[:key] },
+    versions: versions,
     subjectArea: [],
     school: school,
     school_name_en: school_data[school]["http://schema.org/name"][:en],
@@ -318,7 +338,6 @@ school_data.each do |uri, v|
     sameAs: v["http://www.w3.org/2002/07/owl#sameAs"].first,
     curriculums: curs,
   }
-  p v["http://schema.org/name"]
   sitemap << param[:file]
   dir = File.dirname(param[:file])
   FileUtils.mkdir_p(dir) if not File.exist?(dir)
