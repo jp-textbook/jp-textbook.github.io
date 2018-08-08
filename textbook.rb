@@ -173,6 +173,7 @@ end
 
 data = load_turtle("curriculum.ttl")
 data_version = load_turtle("curriculum-versions.ttl")
+data_subjectType = load_turtle("subjectType.ttl")
 template = PageTemplate.new("template/curriculum.html.erb")
 template_en = PageTemplate.new("template/curriculum.html.en.erb")
 template_area = PageTemplate.new("template/subject-area.html.erb")
@@ -237,6 +238,14 @@ data.each do |uri, v|
   }.each do |area|
     areas = v["https://w3id.org/jp-textbook/hasSubjectArea"]
     school = area_data[area]["https://w3id.org/jp-textbook/school"].first
+    if area_data[area]["https://w3id.org/jp-textbook/subjectType"]
+      subjectType_uri = area_data[area]["https://w3id.org/jp-textbook/subjectType"].first
+      subjectType = {
+        uri: subjectType_uri,
+        name: data_subjectType[subjectType_uri]["http://schema.org/name"][:ja],
+        name_en: data_subjectType[subjectType_uri]["http://schema.org/name"][:en],
+      }
+    end
     area_param = {
       uri: area,
       file: File.join(area.sub("https://w3id.org/jp-textbook/", ""), "index.html"),
@@ -249,6 +258,7 @@ data.each do |uri, v|
       school: school,
       school_name_en: school_data[school]["http://schema.org/name"][:en],
       subjects: [],
+      subjectType: subjectType,
     }
     if subjects[area] and subjects[area]["https://w3id.org/jp-textbook/hasSubject"]
       area_param[:subjects] = subjects[area]["https://w3id.org/jp-textbook/hasSubject"].sort_by{|subject|
