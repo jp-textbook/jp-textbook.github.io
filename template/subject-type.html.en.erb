@@ -1,0 +1,26 @@
+    <div class="jumbotron">
+      <div class="container">
+        <h1><ruby><%=h param[:name] %><rt><%=h param[:name_yomi] %></rt></ruby></h1>
+        <p><small><span class="glyphicon glyphicon-link"></span> <a href="<%=h param[:uri] %>"><%=h param[:uri] %></a></small></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ol class="breadcrumb">
+            <li><a href="../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+            <li><a href="./">Curriculum Guidelines for <%=h param[:school_name_en] %> (since AY<%=h param[:uri].split(/\//)[-2] %>)</a></li>
+            <li class="active"><%=h param[:name] %></li>
+          </ol>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Details</h2>
+          <dl class="dl-horizontal">
+            <dt>Name</dt><dd><ruby><%=h param[:name] %><rt><%=h param[:name_yomi] %></rt></ruby></dd>
+            <dt>Refenrece</dt><dd><%=h param[:citation] %></dd>
+          </dl>
+        </div>
+      </div>
+    </div>

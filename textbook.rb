@@ -329,6 +329,9 @@ end
 template = PageTemplate.new("template/subject-type.html.erb")
 template_en = PageTemplate.new("template/subject-type.html.en.erb")
 data_subjectType.each do |uri, v|
+  curriculum = uri.split(/\//)[0..-2].join("/")
+  school = data[curriculum]["https://w3id.org/jp-textbook/school"].first
+  p school
   file = uri.sub("https://w3id.org/jp-textbook/", "")
   file << ".html"
   param = {
@@ -339,6 +342,7 @@ data_subjectType.each do |uri, v|
     name: v["http://schema.org/name"][:ja],
     name_yomi: v["http://schema.org/name"][:"ja-hira"],
     citation: v["http://schema.org/citation"].first,
+    school_name_en: school_data[school]["http://schema.org/name"][:en],
   }
   sitemap << param[:file]
   dir = File.dirname(file)
@@ -351,7 +355,7 @@ data_subjectType.each do |uri, v|
   param[:style] = File.join("..", param[:style])
   FileUtils.mkdir_p(dir) if not File.exist?(dir)
   open(param[:file_en], "w") do |io|
-    io.print template.to_html(param, :en)
+    io.print template_en.to_html(param, :en)
   end
 end
 
