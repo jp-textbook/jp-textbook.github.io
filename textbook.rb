@@ -239,12 +239,13 @@ data.each do |uri, v|
     areas = v["https://w3id.org/jp-textbook/hasSubjectArea"]
     school = area_data[area]["https://w3id.org/jp-textbook/school"].first
     if area_data[area]["https://w3id.org/jp-textbook/subjectType"]
-      subjectType_uri = area_data[area]["https://w3id.org/jp-textbook/subjectType"].first
-      subjectType = {
-        uri: subjectType_uri,
-        name: data_subjectType[subjectType_uri]["http://schema.org/name"][:ja],
-        name_en: data_subjectType[subjectType_uri]["http://schema.org/name"][:en],
-      }
+      subjectTypes = area_data[area]["https://w3id.org/jp-textbook/subjectType"].sort.map do |subjectType_uri|
+        {
+          uri: subjectType_uri,
+          name: data_subjectType[subjectType_uri]["http://schema.org/name"][:ja],
+          name_en: data_subjectType[subjectType_uri]["http://schema.org/name"][:en],
+        }
+      end
     end
     area_param = {
       uri: area,
@@ -258,7 +259,7 @@ data.each do |uri, v|
       school: school,
       school_name_en: school_data[school]["http://schema.org/name"][:en],
       subjects: [],
-      subjectType: subjectType,
+      subjectType: subjectTypes,
     }
     if subjects[area] and subjects[area]["https://w3id.org/jp-textbook/hasSubject"]
       area_param[:subjects] = subjects[area]["https://w3id.org/jp-textbook/hasSubject"].sort_by{|subject|
@@ -323,6 +324,34 @@ data.each do |uri, v|
   param[:style] = File.join("..", param[:style])
   open(param[:file_en], "w") do |io|
     io.print template_en.to_html(param, :en)
+  end
+end
+template = PageTemplate.new("template/subject-type.html.erb")
+template_en = PageTemplate.new("template/subject-type.html.en.erb")
+data_subjectType.each do |uri, v|
+  file = uri.sub("https://w3id.org/jp-textbook/", "")
+  file << ".html"
+  param = {
+    uri: uri,
+    style: "../../../style.css",
+    file: file,
+    file_en: File.join("en", file),
+    name: v["http://schema.org/name"][:ja],
+    name_yomi: v["http://schema.org/name"][:"ja-hira"],
+    citation: v["http://schema.org/citation"].first,
+  }
+  sitemap << param[:file]
+  dir = File.dirname(file)
+  FileUtils.mkdir_p(dir) if not File.exist?(dir)
+  open(param[:file], "w") do |io|
+    io.print template.to_html(param)
+  end
+  sitemap << param[:file_en]
+  dir = File.dirname(param[:file_en])
+  param[:style] = File.join("..", param[:style])
+  FileUtils.mkdir_p(dir) if not File.exist?(dir)
+  open(param[:file_en], "w") do |io|
+    io.print template.to_html(param, :en)
   end
 end
 

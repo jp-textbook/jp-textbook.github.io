@@ -28,7 +28,9 @@
           <dt>学校種別</dt><dd><a href="<%=h param[:school].sub("https://w3id.org/jp-textbook/", "../../../../") %>"><%=h param[:school].last_part %></a></dd>
           <dt>学習指導要領</dt><dd><a href="../../<%=h param[:curriculum].last_part %>"><%=h param[:curriculum].last_part %>年 (<%=h param[:curriculum].last_part.to_year_era %>) 施行</a></dd>
           <%- if param[:subjectType] -%>
-          <dt>教科種別</dt><dd><a href="<%=h param[:subjectType][:uri].sub("https://w3id.org/jp-textbook/", "../../../../") %>"><%=h param[:subjectType][:name] %></a></dd>
+          <%- param[:subjectType].each do |type| -%>
+          <dt>教科種別</dt><dd><a href="<%=h type[:uri].sub("https://w3id.org/jp-textbook/", "../../../../") %>"><%=h type[:name] %></a></dd>
+          <%- end -%>
           <%- end -%>
           </dl>
         </div>
