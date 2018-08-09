@@ -341,7 +341,6 @@ template_en = PageTemplate.new("template/subject-type.html.en.erb")
 data_subjectType.each do |uri, v|
   curriculum = uri.split(/\//)[0..-2].join("/")
   school = data[curriculum]["https://w3id.org/jp-textbook/school"].first
-  p school
   file = uri.sub("https://w3id.org/jp-textbook/", "")
   file << ".html"
   param = {
