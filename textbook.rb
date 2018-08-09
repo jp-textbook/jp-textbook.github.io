@@ -120,6 +120,7 @@ data.each do |uri, v|
   end
 end
 
+data_subjectType = load_turtle("subjectType.ttl")
 template = PageTemplate.new("template/subject.html.erb")
 template_en = PageTemplate.new("template/subject.html.en.erb")
 subjects.sort_by{|k,v| k }.each do |subject, v|
@@ -135,6 +136,15 @@ subjects.sort_by{|k,v| k }.each do |subject, v|
   textbooks = curriculums[curriculum][subject]
   textbooks = [] if textbooks.nil?
   subject_area = subject.sub(/\/[^\/]+\Z/, "")
+  if v["https://w3id.org/jp-textbook/subjectType"]
+    subjectTypes = v["https://w3id.org/jp-textbook/subjectType"].sort.map do |subjectType_uri|
+      {
+        uri: subjectType_uri,
+        name: data_subjectType[subjectType_uri]["http://schema.org/name"][:ja],
+        name_en: data_subjectType[subjectType_uri]["http://schema.org/name"][:en],
+      }
+    end
+  end
   param = {
     uri: subject,
     file: subject.sub("https://w3id.org/jp-textbook/", "") + ".html",
@@ -155,6 +165,7 @@ subjects.sort_by{|k,v| k }.each do |subject, v|
     school_name_en: school_name_en,
     citation: v["http://schema.org/citation"].first,
     seeAlso: v["http://www.w3.org/2000/01/rdf-schema#seeAlso"],
+    subjectType: subjectTypes,
   }
   FileUtils.mkdir_p(File.dirname(param[:file]))
   open(param[:file], "w") do |io|
@@ -173,7 +184,6 @@ end
 
 data = load_turtle("curriculum.ttl")
 data_version = load_turtle("curriculum-versions.ttl")
-data_subjectType = load_turtle("subjectType.ttl")
 template = PageTemplate.new("template/curriculum.html.erb")
 template_en = PageTemplate.new("template/curriculum.html.en.erb")
 template_area = PageTemplate.new("template/subject-area.html.erb")

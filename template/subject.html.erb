@@ -36,6 +36,11 @@
             <%- else -%>
             <dt>出典</dt><dd><%=h param[:citation] %></dd>
             <%- end -%>
+            <%- if param[:subjectType] -%>
+            <%- param[:subjectType].each do |type| -%>
+            <dt>種目種別</dt><dd><a href="<%=h type[:uri].sub("https://w3id.org/jp-textbook/", "../../../../") %>"><%=h type[:name] %></a></dd>
+            <%- end -%>
+            <%- end -%>
           </dl>
         </div>
       </div>
