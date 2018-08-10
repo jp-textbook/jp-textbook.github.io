@@ -12,7 +12,7 @@
         <p><%=h param[:publisher] %></p>
         <p><%=h param[:school_name_en] %> - <%=h param[:subject_name_en] || param[:subjectArea_name_en] %>
           <%- if param[:grade] -%>
-            (<%= param[:grade].gsub(/\d+/){|i| ordinalize(i) } %> grade<%= "s" if param[:grade] =~ /\D/ %>)
+            (<%= param[:grade].sort.map{|i| ordinalize(i) }.join(", ") %> grade<%= "s" if param[:grade].size > 1 %>)
           <%- end -%>
         </p>
         <p><small><span class="glyphicon glyphicon-link"></span> <a href="<%=h param[:uri] %>"><%=h param[:uri] %></a></small></p>
@@ -53,7 +53,7 @@
               <%- end -%>
             </dd>
             <%- if param[:grade] -%>
-            <dt>Grade</dt><dd><%= param[:grade].gsub(/\d+/){|i| ordinalize(i) } %> grade<%= "s" if param[:grade] =~ /\D/ %></dd>
+            <dt>Grade</dt><dd><%= param[:grade].map{|i| ordinalize(i) }.join(", ") %> grade<%= "s" if param[:grade].size > 1 %></dd>
             <%- end -%>
             <%- if param[:dimensions] -%>
             <dt>Dimensions</dt><dd><%= param[:dimensions] %></dd>
@@ -76,7 +76,10 @@
             </dd>
             <dt>Curriculum guideline</dt><dd><a href="../../../<%=h param[:curriculum].sub("https://w3id.org/jp-textbook/", "") %>"><%=h param[:curriculum_year] %></a></dd>
             <%- if param[:note] -%>
-            <dt>Notes</dt><dd><%=h param[:note] %></dd>
+            <dt>注記</dt>
+              <%- param[:note].each do |note| -%>
+              <dd><%=h note %></dd>
+              <%- end -%>
             <%- end -%>
           </dl>
         </div>
