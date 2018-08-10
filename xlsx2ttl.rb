@@ -57,11 +57,16 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
   subject = NKF.nkf("-wZ1", subject).gsub(/\s+/, "")
   subject = subject.gsub(/1/, "I").gsub(/2/, "II").gsub(/3/, "III")
   school = row["学校種別"]
-  grade = row["学年"].to_s.gsub(/　/, "")
   note_orig = row["備考"]
-  if not grade.empty? and grade.strip.empty?
-    logger.warn "Space included at grade data: #{grade.inspect}: #{uri}"
-    grade = nil
+  grades = []
+  row["検索用学年"].to_s.strip.split.each do |e|
+    if ("1".."6") === e
+      grades << e.to_i
+    elsif e == "0"
+      # skip
+    else
+      logger.warn "Grade #{e.inspect} not supported: #{uri}"
+    end
   end
   pages = row["ページ数・大きさ"].to_s.strip
   unless pages.empty?
@@ -85,7 +90,7 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
     "textbook:school" => "#{BASE_URI}/school/#{school}",
     "textbook:subjectArea" => "#{curriculum}/#{subject_area}",
     "textbook:subject" => "#{curriculum}/#{subject_area}/#{subject}",
-    "textbook:grade" => grade,
+    "textbook:grade" => grades,
     "textbook:curriculum" => "#{curriculum}",
     "textbook:authorizedYear" => row["検定年(西暦)"],
     "textbook:usageYear" => row["使用年度(西暦)"],

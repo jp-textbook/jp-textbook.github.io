@@ -135,6 +135,8 @@ def format_pvalue(value)
     result << array.join(";\n")
     result << "  ]"
     str = result.join("\n")
+  elsif value.is_a? Integer
+    str = value
   elsif value =~ /\Ahttps?:\/\//
     str = %Q|<#{value}>|
   else
@@ -144,7 +146,9 @@ def format_pvalue(value)
 end
 def format_property(property, value)
   if value.is_a? Array
-    value = value.map do |e|
+    value = value.sort_by{|e|
+      format_pvalue(e)
+    }.map do |e|
       format_pvalue(e)
     end
     %Q|  #{property} #{ value.join(", ") }|
