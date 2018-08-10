@@ -271,7 +271,7 @@ data.each do |uri, v|
       school_name_en: school_data[school]["http://schema.org/name"][:en],
       subjects: [],
       subjectType: subjectTypes,
-      order: area_data[area]["http://purl.org/linked-data/cube#order"].first,
+      order: area_data[area]["http://purl.org/linked-data/cube#order"].sort_by{|e| e.to_i },
     }
     if subjects[area] and subjects[area]["https://w3id.org/jp-textbook/hasSubject"]
       area_param[:subjects] = subjects[area]["https://w3id.org/jp-textbook/hasSubject"].sort_by{|subject|
