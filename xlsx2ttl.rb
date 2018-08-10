@@ -131,8 +131,8 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
       done[uri][property] = [ done[uri][property] ]
       done[uri][property] << data[property]
     end
-    done[uri]["textbook:note"] = [ note ]
-    done[uri]["textbook:note"] << note_orig if not note_orig.nil? and not note_orig.empty?
+    done[uri]["bf:note"] = [ note ]
+    done[uri]["bf:note"] << note_orig if not note_orig.nil? and not note_orig.empty?
   else
     done[uri] = data
   end
@@ -145,7 +145,7 @@ done.sort_by{|k,v| k }.each do |uri, data|
       textbook:authorizedYear textbook:usageYear
       bf:extent bf:dimensions
       textbook:textbookSymbol textbook:textbookNumber 
-      textbook:note
+      bf:note
   ].each do |property|
     if data[property] and not data[property].empty?
       str << format_property(property, data[property])
