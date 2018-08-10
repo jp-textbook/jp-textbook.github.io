@@ -36,7 +36,7 @@ fix_curriculums = c.keys.select do |k| # cf. #59
   end
 end
 
-tempfile = "temp-#{$$}.txt"
+tempfile = "/tmp/temp-#{$$}.txt"
 io = File.open(tempfile, "w")
 xlsx = Roo::Excelx.new(ARGV[0])
 xlsx.each_row_streaming(pad_cells: true) do |row|
