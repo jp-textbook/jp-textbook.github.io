@@ -58,6 +58,7 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
   subject = subject.gsub(/1/, "I").gsub(/2/, "II").gsub(/3/, "III")
   school = row["学校種別"]
   grade = row["学年"].to_s.gsub(/　/, "")
+  note_orig = row["備考"]
   if not grade.empty? and grade.strip.empty?
     logger.warn "Space included at grade data: #{grade.inspect}: #{uri}"
     grade = nil
@@ -130,7 +131,8 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
       done[uri][property] = [ done[uri][property] ]
       done[uri][property] << data[property]
     end
-    done[uri]["textbook:note"] = note
+    done[uri]["textbook:note"] = [ note ]
+    done[uri]["textbook:note"] << note_orig if not note_orig.nil? and not note_orig.empty?
   else
     done[uri] = data
   end
