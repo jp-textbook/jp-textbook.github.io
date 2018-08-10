@@ -139,7 +139,7 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
 end
 
 done.sort_by{|k,v| k }.each do |uri, data|
-  str = [ "<#{uri}> a schema:Book" ]
+  str = [ "<#{uri}> a textbook:Textbook" ]
   %w[ schema:name schema:editor schema:publisher schema:bookEdition textbook:item
       textbook:catalogue textbook:school textbook:subjectArea textbook:subject textbook:grade textbook:curriculum
       textbook:authorizedYear textbook:usageYear
