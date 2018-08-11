@@ -9,7 +9,7 @@
         <div class="col-md-12">
           <ol class="breadcrumb">
             <li><a href="../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
-            <li><a href="./"><%=h param[:uri].split(/\//)[-3] %> 学習指導要領 (<%=h param[:uri].split(/\//)[-2] %>年度以降)</a></li>
+            <li><a href="<%=h param[:curriculum].sub("https://w3id.org/jp-textbook/", "../../../") %>"><%=h param[:curriculum_name] %> (<%=h param[:curriculum].last_part %>年度以降)</a></li>
             <li class="active"><%=h param[:name] %></li>
           </ol>
         </div>
@@ -20,6 +20,8 @@
           <dl class="dl-horizontal">
             <dt>種別名称</dt><dd><ruby><%=h param[:name] %><rt><%=h param[:name_yomi] %></rt></ruby></dd>
             <dt>出典</dt><dd><%=h param[:citation] %></dd>
+            <dt>学習指導要領</dt><dd><a href="<%=h param[:curriculum].sub("https://w3id.org/jp-textbook/", "../../../") %>"><%=h param[:curriculum_name] %></a></dd>
+            <dt>学校種別</dt><dd><a href="<%=h param[:school].sub("https://w3id.org/jp-textbook/", "../../../") %>"><%=h param[:school_name] %></a></dd>
           </dl>
         </div>
       </div>

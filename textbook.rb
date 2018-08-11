@@ -343,8 +343,8 @@ end
 template = PageTemplate.new("template/subject-type.html.erb")
 template_en = PageTemplate.new("template/subject-type.html.en.erb")
 data_subjectType.each do |uri, v|
-  curriculum = uri.split(/\//)[0..-2].join("/")
-  school = data[curriculum]["https://w3id.org/jp-textbook/school"].first
+  curriculum = v["https://w3id.org/jp-textbook/curriculum"].first
+  school = v["https://w3id.org/jp-textbook/school"].first
   file = uri.sub("https://w3id.org/jp-textbook/", "")
   file << ".html"
   param = {
@@ -354,7 +354,13 @@ data_subjectType.each do |uri, v|
     file_en: File.join("en", file),
     name: v["http://schema.org/name"][:ja],
     name_yomi: v["http://schema.org/name"][:"ja-hira"],
+    name_en: v["http://schema.org/name"][:en],
     citation: v["http://schema.org/citation"].first,
+    curriculum: curriculum,
+    curriculum_name: data[curriculum]["http://schema.org/name"][:ja],
+    curriculum_name_en: data[curriculum]["http://schema.org/name"][:en],
+    school: school,
+    school_name: school_data[school]["http://schema.org/name"][:ja],
     school_name_en: school_data[school]["http://schema.org/name"][:en],
   }
   sitemap << param[:file]
