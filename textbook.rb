@@ -409,7 +409,12 @@ end
 
 doc = Nokogiri::HTML(open "about.html")
 index_param[:download] = doc.css("#history + dl dd ul > li").find{|e| e.to_s =~ /all-\d+\.ttl/ }
-p index_param[:download]
+recent_list = doc.css("#history + dl")
+index_param[:recent_history] = {
+  date: recent_list.xpath("./dt").first.text,
+  description: recent_list.xpath("./dd").first.children.find_all{|e| not e.to_s =~ /all-\d+\.ttl/ }.map{|e| e.to_s }.join.strip,
+}
+p index_param[:recent_history]
 template = PageTemplate.new("template/index.html.erb")
 index_param[:style] = "style.css"
 open("index.html", "w") do |io|
@@ -417,7 +422,11 @@ open("index.html", "w") do |io|
 end
 doc = Nokogiri::HTML(open "en/about.html")
 index_param[:download] = doc.css("#history + dl dd ul > li").find{|e| e.to_s =~ /all-\d+\.ttl/ }
-p index_param[:download]
+recent_list = doc.css("#history + dl")
+index_param[:recent_history] = {
+  date: recent_list.xpath("./dt").first.text,
+  description: recent_list.xpath("./dd").first.children.find_all{|e| not e.to_s =~ /all-\d+\.ttl/ }.map{|e| e.to_s }.join.strip,
+}
 template = PageTemplate.new("template/index.html.en.erb")
 index_param[:style] = "../style.css"
 open("en/index.html", "w") do |io|
