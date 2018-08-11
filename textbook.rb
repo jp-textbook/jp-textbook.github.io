@@ -203,10 +203,12 @@ data.each do |uri, v|
       val = data_version[e]
       date = Date.parse(val["http://schema.org/datePublished"].first)
       {
-        name: val["http://schema.org/name"].first,
+        name: val["http://schema.org/name"][:ja],
+        name_en: val["http://schema.org/name"][:en],
         datePublished: date,
         datePublished_ymd: date.strftime("%Y年%m月%d日").squeez_date,
-        citation: val["http://schema.org/citation"].first,
+        citation: val["http://schema.org/citation"][:ja],
+        citation_en: val["http://schema.org/citation"][:en],
         url: map_links(val["http://schema.org/url"], Textbook::RELATED_LINKS),
         seeAlso: map_links(val["http://www.w3.org/2000/01/rdf-schema#seeAlso"], Textbook::RELATED_LINKS),
         isbn: val["http://schema.org/isbn"] ? val["http://schema.org/isbn"].first : nil,
