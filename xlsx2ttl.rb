@@ -57,7 +57,6 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
   subject = NKF.nkf("-wZ1", subject).gsub(/\s+/, "")
   subject = subject.gsub(/1/, "I").gsub(/2/, "II").gsub(/3/, "III")
   school = row["学校種別"]
-  note_orig = row["備考"]
   grades = []
   row["検索用学年"].to_s.strip.split.each do |e|
     if ("1".."6") === e
@@ -98,7 +97,9 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
     "textbook:textbookNumber" => row["教科書番号"],
     "bf:extent" => extent,
     "bf:dimensions" => dimensions,
+    "bf:note" => [],
   }
+  data["bf:note"] << row["備考"] if row["備考"]
   if subject == subject_area and fix_curriculums.include?( curriculum )
     if subject_area != "保健体育"
       data.delete("textbook:subject")
@@ -132,12 +133,12 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
         note << %Q[#{PROPERTY_LABEL[property]}を「#{data[property]}」に変更。]
       end
     end
-    %w[ textbook:catalogue textbook:item ].each do |property|
+    %w[ textbook:catalogue textbook:item bf:note ].each do |property|
       done[uri][property] = [ done[uri][property] ]
       done[uri][property] << data[property]
     end
-    done[uri]["bf:note"] = [ note ]
-    done[uri]["bf:note"] << note_orig if not note_orig.nil? and not note_orig.empty?
+    done[uri]["bf:note"] << note
+    done[uri]["bf:note"].flatten!
   else
     done[uri] = data
   end
