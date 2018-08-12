@@ -8,7 +8,7 @@
       <div class="row">
         <div class="col-md-12">
           <ol class="breadcrumb">
-            <li><a href="../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+            <li><a href="<%=h relative_path("./en/") %>"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
             <li class="active"><%=h param[:name_en] %></li>
           </ol>
         </div>
@@ -21,7 +21,7 @@
             <dt>Original title</dt><dd><ruby><%=h param[:name] %><rt><%=h param[:name_yomi] %></rt></ruby></dd>
             <dt>Published year</dt><dd><%=h param[:datePublished] %></dd>
             <dt>Usage year</dt><dd><%=h param[:usageYear] %></dd>
-            <dt>Type of school</dt><dd><a href="<%=h param[:school].sub("https://w3id.org/jp-textbook/", "../../") %>"><%=h param[:school_name_en] %></a></dd>
+            <dt>Type of school</dt><dd><a href="<%=h relative_path_uri(param[:school], :en) %>"><%=h param[:school_name_en] %></a></dd>
           </dl>
         </div>
       </div>

@@ -12,7 +12,7 @@
       <div class="row">
         <div class="col-md-12">
           <ol class="breadcrumb">
-            <li><a href="../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+            <li><a href="<%=h relative_path("./") %>"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
             <li class="active"><%=h param[:name] %></li>
           </ol>
         </div>
@@ -25,7 +25,7 @@
             <dt>書名（英語表記）</dt><dd><%=h param[:name_en] %></dd>
             <dt>発行年</dt><dd><%=h param[:datePublished] %>年 (<%=h param[:datePublished].to_year_era %>)</dd>
             <dt>使用年度</dt><dd><%=h param[:usageYear] %>年 (<%=h param[:usageYear].to_year_era %>)</dd>
-            <dt>学校種別</dt><dd><a href="<%=h param[:school].sub("https://w3id.org/jp-textbook/", "../../") %>"><%=h param[:school_name] %></a></dd>
+            <dt>学校種別</dt><dd><a href="<%=h relative_path_uri(param[:school]) %>"><%=h param[:school_name] %></a></dd>
           </dl>
         </div>
       </div>

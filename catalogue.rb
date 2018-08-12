@@ -49,19 +49,9 @@ data.each do |uri, v|
     recordID: v["http://dl.nier.go.jp/library/vocab/recordID"].first,
     itemID: v["http://dl.nier.go.jp/library/vocab/itemID"].first,
   }
-  p param[:file]
-  dir = File.dirname(param[:file])
-  FileUtils.mkdir_p(dir) if not File.exist?(dir)
-  open(param[:file], "w") do |io|
-    io.print template.to_html(param)
-  end
+  template.output_to(param[:file], param)
   sitemap << param[:file]
-  param[:style] = File.join("..", param[:style])
-  dir = File.dirname(param[:file_en])
-  FileUtils.mkdir_p(dir) if not File.exist?(dir)
-  open(param[:file_en], "w") do |io|
-    io.print template_en.to_html(param, :en)
-  end
+  template_en.output_to(param[:file_en], param, :en)
   sitemap << param[:file_en]
 end
 
