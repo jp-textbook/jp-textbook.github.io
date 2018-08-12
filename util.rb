@@ -26,8 +26,15 @@ class PageTemplate
   def initialize(template)
     @template = template
   end
+  def output_to(file, param, lang = :ja)
+    dir = File.dirname(file)
+    FileUtils.mkdir_p(dir) if not File.exist?(dir)
+    open(file, "w") do |io|
+      io.print to_html(param, lang)
+    end
+  end
   def to_html(param, lang = :ja)
-    @param = param
+    @param = param.merge(param)
     tmpl = open(@template){|io| io.read }
     erb = ERB.new(tmpl, $SAFE, "-")
     erb.filename = @template
@@ -44,8 +51,8 @@ class PageTemplate
   def relative_path(dest, lang = :ja)
     key = :file
     key = :file_en if lang == :en
-    file = @param[key] || ""
-    Pathname(dest).relative_path_from(Pathname(File.dirname file))
+    src = @param[key] || ""
+    Pathname(dest).relative_path_from(Pathname(File.dirname src))
   end
 end
 

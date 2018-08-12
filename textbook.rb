@@ -189,7 +189,10 @@ template = PageTemplate.new("template/curriculum.html.erb")
 template_en = PageTemplate.new("template/curriculum.html.en.erb")
 template_area = PageTemplate.new("template/subject-area.html.erb")
 template_area_en = PageTemplate.new("template/subject-area.html.en.erb")
-index_param = { subjects: subjects, areas: area_data, active: :home }
+index_param = {
+  file: "index.html", file_en: "en/index.html",
+  subjects: subjects, areas: area_data, active: :home,
+}
 param = {}
 cur_param = {}
 data.each do |uri, v|
@@ -424,10 +427,8 @@ index_param[:recent_history] = {
 }
 p index_param[:recent_history]
 template = PageTemplate.new("template/index.html.erb")
-index_param[:style] = "style.css"
-open("index.html", "w") do |io|
-  io.print template.to_html(index_param)
-end
+template.output_to("index.html", index_param)
+
 doc = Nokogiri::HTML(open "en/about.html")
 index_param[:download] = doc.css("#history + dl dd ul > li").find{|e| e.to_s =~ /all-\d+\.ttl/ }
 recent_list = doc.css("#history + dl")
@@ -436,9 +437,6 @@ index_param[:recent_history] = {
   description: recent_list.xpath("./dd").first.children.find_all{|e| not e.to_s =~ /all-\d+\.ttl/ }.map{|e| e.to_s }.join.strip,
 }
 template = PageTemplate.new("template/index.html.en.erb")
-index_param[:style] = "../style.css"
-open("en/index.html", "w") do |io|
-  io.print template.to_html(index_param, :en)
-end
+template.output_to("en/index.html", index_param, :en)
 
 open("sitemaps-textbook.xml", "w"){|io| io.print sitemap.to_xml }
