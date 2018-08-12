@@ -20,9 +20,12 @@ def format(graph, subject, depth = 1)
   result << graph.query([subject, nil, nil]).predicates.sort.map do |predicate|
     str = "<#{predicate}> "
     str << graph.query([subject, predicate, nil]).objects.sort_by do |object|
-      case object
-      when RDF::Node
-        graph.query([object, nil, nil]).statements.map{|e| [ e.predicate, e.object ] }
+      if object.resource? and not object.iri? # blank node:
+        graph.query([object, nil, nil]).statements.sort_by{|e|
+          [ e.predicate, e.object ]
+        }.map{|e|
+          [ e.predicate, e.object ]
+        }
       else
         object
       end
