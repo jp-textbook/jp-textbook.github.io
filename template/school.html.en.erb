@@ -27,7 +27,7 @@
           <h2>List of curriculum guidelines</h2>
           <ul>
             <%- param[:curriculums].each do |curriculum| -%>
-              <li><a href="<%=h curriculum[:uri].to_s.sub("https://w3id.org/jp-textbook/", "../") %>"><%=h curriculum[:name_en] %>
+              <li><a href="<%=h relative_path_uri(curriculum[:uri], :en) %>"><%=h curriculum[:name_en] %>
                   (Published in <%=h curriculum[:datePublished_ym_en] %>, and enforced in <%=h curriculum[:startDate_ym_en] %>)</a></li>
             <%- end -%>
           </ul>

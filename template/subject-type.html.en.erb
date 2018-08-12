@@ -9,7 +9,7 @@
         <div class="col-md-12">
           <ol class="breadcrumb">
             <li><a href="../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
-            <li><a href="<%=h param[:curriculum].sub("https://w3id.org/jp-textbook/", "../../../") %>"><%=h param[:curriculum_name_en] %> (since AY<%=h param[:curriculum].last_part %>)</a></li>
+            <li><a href="<%=h relative_path_uri(param[:curriculum], :en) %>"><%=h param[:curriculum_name_en] %> (since AY<%=h param[:curriculum].last_part %>)</a></li>
             <li class="active"><%=h param[:name] %></li>
           </ol>
         </div>
@@ -20,8 +20,8 @@
           <dl class="dl-horizontal">
             <dt>Name</dt><dd><ruby><%=h param[:name] %><rt><%=h param[:name_yomi] %></rt></ruby></dd>
             <dt>References</dt><dd><%=h param[:citation] %></dd>
-            <dt>Curriculum guideline</dt><dd><a href="<%=h param[:curriculum].sub("https://w3id.org/jp-textbook/", "../../../") %>"><%=h param[:curriculum_name_en] %></a></dd>
-            <dt>Type of school</dt><dd><a href="<%=h param[:school].sub("https://w3id.org/jp-textbook/", "../../../") %>"><%=h param[:school_name_en] %></a></dd>
+            <dt>Curriculum guideline</dt><dd><a href="<%=h relative_path_uri(param[:curriculum], :en) %>"><%=h param[:curriculum_name_en] %></a></dd>
+            <dt>Type of school</dt><dd><a href="<%=h relative_path_uri(param[:school], :en) %>"><%=h param[:school_name_en] %></a></dd>
           </dl>
         </div>
       </div>

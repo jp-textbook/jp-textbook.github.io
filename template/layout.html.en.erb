@@ -33,11 +33,15 @@
     <nav class="navbar navbar-inverse">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-left" href="/"><img src="<%=h relative_path("textbookLOD-logo-no-bg.png") %>" style="height:50px"></a>
+          <a class="navbar-left" href="<%=h relative_path("en") %>"><img src="<%=h relative_path("textbookLOD-logo-no-bg.png") %>" style="height:50px"></a>
         </div>
         <ul class="nav navbar-nav navbar-right">
-          <li<%= ' class="active"' if param[:active] == :home %>><a class="navbar-brand" href="/en/">Home</a></li>
-          <li><a href="/en/about">About</a></li>
+          <%- if param[:file_en] == "en/index.html" -%>
+          <li class="active"><a class="navbar-brand" href="<%=h relative_path("en") %>">Home</a></li>
+          <%- else -%>
+          <li><a class="navbar-brand" href="<%=h relative_path("en") %>">Home</a></li>
+          <%- end -%>
+          <li><a href="<%=h relative_path("en/about") %>">About</a></li>
           <li><a href="<%=h relative_path(param[:file].omit_suffix) %>">日本語</a></li>
         </ul>
       </div>
@@ -45,10 +49,10 @@
     <%= param[:content] %>
     <hr>
     <footer>
-    <%- if param[:uri] -%>
-    <p class="pull-right"><a href="<%=h param[:uri] %>.ttl"><img src="https://www.w3.org/RDF/icons/rdf_flyer.24"></a></p>
-    <%- end -%>
-      <p>&copy; 2017-<%= Date.today.year %> <a href="/about">Japanese Textbook LOD Project</a></p>
+      <%- if param[:uri] -%>
+      <p class="pull-right"><a href="<%=h param[:uri] %>.ttl"><img src="https://www.w3.org/RDF/icons/rdf_flyer.24"></a></p>
+      <%- end -%>
+      <p>&copy; 2017-<%= Date.today.year %> <a href="<%=h relative_path("en/about") %>">Japanese Textbook LOD Project</a></p>
     </footer>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

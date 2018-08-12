@@ -54,7 +54,9 @@ class PageTemplate
   # helper method:
   def relative_path(dest)
     src = @param[:output_file]
-    Pathname(dest).relative_path_from(Pathname(File.dirname src))
+    path = Pathname(dest).relative_path_from(Pathname(File.dirname src))
+    path = path.to_s + "/" if File.directory? path
+    path
   end
   def relative_path_uri(dest_uri, lang = :ja)
     dest = dest_uri.sub("https://w3id.org/jp-textbook/", "")

@@ -23,10 +23,10 @@
         <div class="col-md-12">
           <ol class="breadcrumb">
             <li><a href="../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
-            <li><a href="../../../<%=h param[:curriculum].sub("https://w3id.org/jp-textbook/", "") %>">Curriculum Guidelines for <%=h param[:school_name_en] %> (since AY<%=h param[:curriculum].last_part %>)</a></li>
-            <li><a href="../../../<%=h param[:subjectArea].sub("https://w3id.org/jp-textbook/", "") %>"><%=h param[:subjectArea_name_en] %></a></li>
+            <li><a href="<%=h relative_path_uri(param[:curriculum], :en) %>">Curriculum Guidelines for <%=h param[:school_name_en] %> (since AY<%=h param[:curriculum].last_part %>)</a></li>
+            <li><a href="<%=h relative_path_uri(param[:subjectArea], :en) %>"><%=h param[:subjectArea_name_en] %></a></li>
             <%- if param[:subject] -%>
-            <li><a href="../../../<%=h param[:subject].sub("https://w3id.org/jp-textbook/", "") %>"><%=h param[:subject_name_en] %></a></li>
+            <li><a href="<%=h relative_path_uri(param[:subject], :en) %>"><%=h param[:subject_name_en] %></a></li>
             <%- end -%>
             <li class="active"><%=h param[:name] %></li>
           </ol>
@@ -42,14 +42,14 @@
             <%- if param[:bookEdition] -%>
             <dt>Edition</dt><dd><%=h param[:bookEdition] %></dd>
             <%- end -%>
-            <dt>Type of school</dt><dd><a href="<%=h param[:school].sub("https://w3id.org/jp-textbook/", "../../../") %>"><%=h param[:school_name_en] %></a></dd>
+            <dt>Type of school</dt><dd><a href="<%=h relative_path_uri(param[:school], :en) %>"><%=h param[:school_name_en] %></a></dd>
             <dt>Textbook Symbol</dt><dd><%=h param[:textbookSymbol] %></dd>
             <dt>Textbook Number</dt><dd><%=h param[:textbookNumber] %></dd>
             <dt>Subject area / subject</dt>
             <dd>
-              <a href="<%=h param[:subjectArea].sub("https://w3id.org/jp-textbook/", "../../../") %>"><%=h param[:subjectArea_name_en] %></a>
+              <a href="<%=h relative_path_uri(param[:subjectArea], :en) %>"><%=h param[:subjectArea_name_en] %></a>
               <%- if param[:subject_name] -%>
-                / <a href="<%=h param[:subject].sub("https://w3id.org/jp-textbook/", "../../../") %>"><%=h param[:subject_name_en] %></a>
+                / <a href="<%=h relative_path_uri(param[:subject], :en) %>"><%=h param[:subject_name_en] %></a>
               <%- end -%>
             </dd>
             <%- if param[:grade] -%>
@@ -70,11 +70,11 @@
             <dt>Authorized year</dt><dd><%=h param[:authorizedYear] %></dd>
             <dt>First issued catalogue</dt>
             <dd><% catalogues = param[:catalogue].sort.map do |catalogue|
-                     %Q|<a href="#{h catalogue.sub("https://w3id.org/jp-textbook/", "../../../") }">#{h catalogue.last_part }</a>|
+                     %Q|<a href="#{h relative_path_uri(catalogue, :en) }">#{h catalogue.last_part }</a>|
                    end -%>
                 <%= catalogues.join(", ") -%>
             </dd>
-            <dt>Curriculum guideline</dt><dd><a href="../../../<%=h param[:curriculum].sub("https://w3id.org/jp-textbook/", "") %>"><%=h param[:curriculum_year] %></a></dd>
+            <dt>Curriculum guideline</dt><dd><a href="<%=h relative_path_uri(param[:curriculum], :en) %>"><%=h param[:curriculum_year] %></a></dd>
             <%- if param[:note] -%>
             <dt>注記</dt>
               <%- param[:note].each do |note| -%>

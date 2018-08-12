@@ -27,7 +27,7 @@
           <h2>学習指導要領一覧</h2>
           <ul>
             <%- param[:curriculums].each do |curriculum| -%>
-              <li><a href="<%=h curriculum[:uri].to_s.sub("https://w3id.org/jp-textbook/", "../") %>"><%=h curriculum[:name] %>
+              <li><a href="<%=h relative_path_uri(curriculum[:uri], :en) %>"><%=h curriculum[:name] %>
                   (<%=h curriculum[:datePublished_ym] %>告示, <%=h curriculum[:startDate_ym] %>施行)</a></li>
             <%- end -%>
           </ul>

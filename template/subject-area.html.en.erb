@@ -21,11 +21,11 @@
           <dl class="dl-horizontal">
           <dt>Subject area</dt><dd><%=h param[:name_en] %></dd>
           <dt>Name in Japanese</dt><dd><ruby><%=h param[:name] %><rt><%=h param[:name_yomi] %></rt></ruby></dd>
-          <dt>Type of school</dt><dd><a href="<%=h param[:school].sub("https://w3id.org/jp-textbook/", "../../../../") %>"><%=h param[:school_name_en] %></a></dd>
-          <dt>Curriculum guideline</dt><dd><a href="../../<%=h param[:curriculum].last_part %>"><%=h param[:school_name_en] %> (since AY<%=h param[:curriculum].last_part %>)</a></dd>
+          <dt>Type of school</dt><dd><a href="<%=h relative_path_uri(param[:school], :en) %>"><%=h param[:school_name_en] %></a></dd>
+          <dt>Curriculum guideline</dt><dd><a href="<%=h relative_path_uri(param[:curriculum], :en) %>"><%=h param[:school_name_en] %> (since AY<%=h param[:curriculum].last_part %>)</a></dd>
           <%- if param[:subjectType] -%>
           <%- param[:subjectType].each do |type| -%>
-          <dt>Type of Subject area</dt><dd><a href="<%=h type[:uri].sub("https://w3id.org/jp-textbook/", "../../../../") %>"><%=h type[:name] %></a></dd>
+          <dt>Type of Subject area</dt><dd><a href="<%=h relative_path_uri(type[:uri], :en) %>"><%=h type[:name] %></a></dd>
           <%- end -%>
           <%- end -%>
           <dt>Sort order of subjects</dt><dd><%=h param[:order].join(", ") %></dd>
@@ -50,7 +50,7 @@
           <h2>List of textbooks</h2>
             <ul>
               <%- param[:textbooks].each do |textbook| -%>
-                <li><a href="<%=h textbook[:uri].to_s.sub("https://w3id.org/jp-textbook/", "../../../../") %>"><%=h textbook[:name] %> (<%=h textbook[:publisher] %>)</a></li>
+                <li><a href="<%=h relative_path_uri(textbook[:uri], :en) %>"><%=h textbook[:name] %> (<%=h textbook[:publisher] %>)</a></li>
               <%- end -%>
             </ul>
           </div>
