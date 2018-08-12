@@ -98,16 +98,9 @@ data.each do |uri, v|
       }
     end
   end
-  FileUtils.mkdir_p(File.dirname(param[:file]))
-  open(param[:file], "w") do |io|
-    io.print template.to_html(param)
-  end
+  template.output_to(param[:file], param)
   sitemap << param[:file]
-  param[:style] = File.join("..", param[:style])
-  FileUtils.mkdir_p(File.dirname(param[:file_en]))
-  open(param[:file_en], "w") do |io|
-    io.print template_en.to_html(param, :en)
-  end
+  template_en.output_to(param[:file_en], param, :en)
   sitemap << param[:file_en]
 
   curriculums[curriculum] ||= {}
@@ -151,6 +144,7 @@ subjects.sort_by{|k,v| k }.each do |subject, v|
     file_en: subject.sub("https://w3id.org/jp-textbook/", "en/") + ".html",
     style: "../../../../style.css",
     name: [ school_name, subject.last_part ].join(" "),
+    name_en: "#{v["http://schema.org/name"][:en]} in #{school_name_en}",
     curriculum: curriculum,
     startDate_str: curriculum.last_part,
     subject_name: subject.last_part,
@@ -168,17 +162,9 @@ subjects.sort_by{|k,v| k }.each do |subject, v|
     subjectType: subjectTypes,
     order: v["http://purl.org/linked-data/cube#order"].first,
   }
-  FileUtils.mkdir_p(File.dirname(param[:file]))
-  open(param[:file], "w") do |io|
-    io.print template.to_html(param)
-  end
+  template.output_to(param[:file], param)
   sitemap << param[:file]
-  param[:style] = "../" + param[:style]
-  param[:name] = "#{param[:subject_name_en]} in #{school_name_en}"
-  FileUtils.mkdir_p(File.dirname(param[:file_en]))
-  open(param[:file_en], "w") do |io|
-    io.print template_en.to_html(param, :en)
-  end
+  template_en.output_to(param[:file_en], param, :en)
   sitemap << param[:file_en]
 #  end
 end
@@ -292,18 +278,9 @@ data.each do |uri, v|
       area_param[:textbooks] = curriculums[uri][area].sort_by{|t| [ t[:textbookNumber], t[:uri] ] }
     end
     param[:subjectArea] << area_param
-    dir = File.dirname(area_param[:file])
-    FileUtils.mkdir_p(dir) if not File.exist?(dir)
-    open(area_param[:file], "w") do |io|
-      io.print template_area.to_html(area_param)
-    end
+    template_area.output_to(area_param[:file], area_param)
     sitemap << area_param[:file]
-    dir = File.dirname(area_param[:file_en])
-    FileUtils.mkdir_p(dir) if not File.exist?(dir)
-    area_param[:style] = File.join("..", area_param[:style])
-    open(area_param[:file_en], "w") do |io|
-      io.print template_area_en.to_html(area_param, :en)
-    end
+    template_area_en.output_to(area_param[:file_en], area_param, :en)
     sitemap << area_param[:file_en]
 
     count_subjects = 0
@@ -330,18 +307,10 @@ data.each do |uri, v|
     end
   end
   # curriculum
-  dir = File.dirname(param[:file])
-  FileUtils.mkdir_p(dir) if not File.exist?(dir)
-  open(param[:file], "w") do |io|
-    io.print template.to_html(param)
-  end
+  template.output_to(param[:file], param)
   sitemap << param[:file]
-  dir = File.dirname(param[:file_en])
-  FileUtils.mkdir_p(dir) if not File.exist?(dir)
-  param[:style] = File.join("..", param[:style])
-  open(param[:file_en], "w") do |io|
-    io.print template_en.to_html(param, :en)
-  end
+  template_en.output_to(param[:file_en], param, :en)
+  sitemap << param[:file_en]
 end
 template = PageTemplate.new("template/subject-type.html.erb")
 template_en = PageTemplate.new("template/subject-type.html.en.erb")
@@ -366,19 +335,10 @@ data_subjectType.each do |uri, v|
     school_name: school_data[school]["http://schema.org/name"][:ja],
     school_name_en: school_data[school]["http://schema.org/name"][:en],
   }
+  template.output_to(param[:file], param)
   sitemap << param[:file]
-  dir = File.dirname(file)
-  FileUtils.mkdir_p(dir) if not File.exist?(dir)
-  open(param[:file], "w") do |io|
-    io.print template.to_html(param)
-  end
+  template_en.output_to(param[:file_en], param, :en)
   sitemap << param[:file_en]
-  dir = File.dirname(param[:file_en])
-  param[:style] = File.join("..", param[:style])
-  FileUtils.mkdir_p(dir) if not File.exist?(dir)
-  open(param[:file_en], "w") do |io|
-    io.print template_en.to_html(param, :en)
-  end
 end
 
 template = PageTemplate.new("template/school.html.erb")
@@ -403,19 +363,10 @@ school_data.each do |uri, v|
     sameAs: v["http://www.w3.org/2002/07/owl#sameAs"].first,
     curriculums: curs,
   }
+  template.output_to(param[:file], param)
   sitemap << param[:file]
-  dir = File.dirname(param[:file])
-  FileUtils.mkdir_p(dir) if not File.exist?(dir)
-  open(param[:file], "w") do |io|
-    io.print template.to_html(param)
-  end
-  param[:style] = File.join("..", param[:style])
+  template_en.output_to(param[:file_en], param, :en)
   sitemap << param[:file_en]
-  dir = File.dirname(param[:file_en])
-  FileUtils.mkdir_p(dir) if not File.exist?(dir)
-  open(param[:file_en], "w") do |io|
-    io.print template_en.to_html(param, :en)
-  end
 end
 
 doc = Nokogiri::HTML(open "about.html")

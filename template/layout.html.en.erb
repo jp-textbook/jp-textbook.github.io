@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <link rel="stylesheet" href="<%=h relative_path("style.css", :en) %>">
+    <link rel="stylesheet" href="<%=h relative_path("style.css") %>">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,12 +33,12 @@
     <nav class="navbar navbar-inverse">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-left" href="/"><img src="<%=h relative_path("textbookLOD-logo-no-bg.png", :en) %>" style="height:50px"></a>
+          <a class="navbar-left" href="/"><img src="<%=h relative_path("textbookLOD-logo-no-bg.png") %>" style="height:50px"></a>
         </div>
         <ul class="nav navbar-nav navbar-right">
           <li<%= ' class="active"' if param[:active] == :home %>><a class="navbar-brand" href="/en/">Home</a></li>
           <li><a href="/en/about">About</a></li>
-          <li><a href="<%=h param[:file_en] ? Pathname(param[:file].omit_suffix).relative_path_from(Pathname(File.dirname param[:file_en])) : "/" %>">日本語</a></li>
+          <li><a href="<%=h relative_path(param[:file].omit_suffix) %>">日本語</a></li>
         </ul>
       </div>
     </nav>

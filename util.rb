@@ -25,16 +25,20 @@ class PageTemplate
   include ActiveSupport::Inflector
   def initialize(template)
     @template = template
+    @param = {}
   end
+  attr_reader :param
   def output_to(file, param, lang = :ja)
+    @param = param
+    @param[:output_file] = file
     dir = File.dirname(file)
     FileUtils.mkdir_p(dir) if not File.exist?(dir)
     open(file, "w") do |io|
-      io.print to_html(param, lang)
+      io.print to_html(@param, lang)
     end
   end
   def to_html(param, lang = :ja)
-    @param = param.merge(param)
+    @param = @param.merge(param)
     tmpl = open(@template){|io| io.read }
     erb = ERB.new(tmpl, $SAFE, "-")
     erb.filename = @template
@@ -48,16 +52,14 @@ class PageTemplate
   end
 
   # helper method:
-  def relative_path(dest, lang = :ja)
-    key = :file
-    key = :file_en if lang == :en
-    src = @param[key] || ""
+  def relative_path(dest)
+    src = @param[:output_file]
     Pathname(dest).relative_path_from(Pathname(File.dirname src))
   end
   def relative_path_uri(dest_uri, lang = :ja)
     dest = dest_uri.sub("https://w3id.org/jp-textbook/", "")
     dest = File.join("en", dest) if lang == :en
-    relative_path(dest, lang)
+    relative_path(dest)
   end
 end
 
