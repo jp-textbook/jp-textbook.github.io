@@ -54,6 +54,11 @@ class PageTemplate
     src = @param[key] || ""
     Pathname(dest).relative_path_from(Pathname(File.dirname src))
   end
+  def relative_path_uri(dest_uri, lang = :ja)
+    dest = dest_uri.sub("https://w3id.org/jp-textbook/", "")
+    dest = File.join("en", dest) if lang == :en
+    relative_path(dest, lang)
+  end
 end
 
 class Sitemap
