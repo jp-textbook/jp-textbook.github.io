@@ -18,6 +18,7 @@ ARGV.each do |file|
       ttl << line
     end
   end
+  STDERR.puts "<li><a href=\"#{filename}\">#{filename}</a></li>"
 end
 
 puts prefix.uniq
