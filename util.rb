@@ -27,6 +27,7 @@ class PageTemplate
     @template = template
   end
   def to_html(param, lang = :ja)
+    @param = param
     tmpl = open(@template){|io| io.read }
     erb = ERB.new(tmpl, $SAFE, "-")
     erb.filename = @template
@@ -37,6 +38,14 @@ class PageTemplate
     erb = ERB.new(layout, $SAFE, "-")
     erb.filename = layout_fname
     erb.result(binding)
+  end
+
+  # helper method:
+  def relative_path(dest, lang = :ja)
+    key = :file
+    key = :file_en if lang == :en
+    file = @param[key] || ""
+    Pathname(dest).relative_path_from(Pathname(File.dirname file))
   end
 end
 
