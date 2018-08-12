@@ -53,7 +53,7 @@ EOF
   end
 
   done.sort_by{|k,v| k }.each do |uri, array|
-    str = [ "<#{uri}> a schema:Book" ]
+    str = [ "<#{uri}> a schema:Textbook" ]
     array.each do |data|
       %w[ textbook:item schema:isbn ].each do |property|
         if data[property] and not data[property].empty?
