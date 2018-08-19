@@ -9,7 +9,7 @@
           <small><%= param[:bookEdition] %></small>
         <%- end -%>
         </h1>
-        <p><%=h param[:publisher] %></p>
+        <p><%=h param[:publisher_name] %></p>
         <p><%=h param[:school_name] %> - <%=h param[:subject_name] || param[:subjectArea_name] %>
           <%- if param[:grade] -%>
             (<%= param[:grade].join(", ") %>年生)
@@ -38,7 +38,7 @@
           <dl class="dl-horizontal">
             <dt>書名</dt><dd><%=h param[:name] %></dd>
             <dt>編著者</dt><dd><%=h param[:editor] %></dd>
-            <dt>出版社名</dt><dd><%=h param[:publisher] %></dd>
+            <dt>出版社名</dt><dd><a href="<%=h relative_path_uri(param[:publisher]) %>"><%=h param[:publisher_name] %></a></dd>
             <%- if param[:bookEdition] -%>
             <dt>版</dt><dd><%=h param[:bookEdition] %></dd>
             <%- end -%>

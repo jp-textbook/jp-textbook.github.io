@@ -100,11 +100,14 @@ module Textbook
     nier: /nier.go.jp\/guideline\//,
     ncid: /\/ncid\//,
     jpno: /\/jpno\//,
+    ndla: /id.ndl.go.jp\/auth\/ndlna\//,
+    dbpedia: /dbpedia.org/,
   }
   def map_links(urls, links)
     urls = [] if urls.nil?
     urls.map{|url|
       key = links.keys.find{|e| links[e].match url }
+      p url if key.nil?
       { key: key, url: url }
     }.sort_by{|e| e[:key] }
   end
@@ -124,21 +127,25 @@ end
 def load_turtle(filename)
   file = find_turtle(filename)
   STDERR.puts "loading #{file}..."
-  g = RDF::Graph.load(file, format:  :turtle)
   data = {}
   count = 0
-  g.each_statement do |statement|
-    s = statement.subject
-    v = statement.predicate
-    o = statement.object
-    count += 1
-    data[s.to_s] ||= {}
-    if o.respond_to?(:has_language?) and o.has_language?
-      data[s.to_s][v.to_s] ||= {}
-      data[s.to_s][v.to_s][o.language] = o.to_s
-    else
-      data[s.to_s][v.to_s] ||= []
-      data[s.to_s][v.to_s] << o.to_s
+  RDF::Turtle::Reader.open(file) do |reader|
+    reader.each_statement do |statement|
+      s = statement.subject
+      v = statement.predicate
+      o = statement.object
+      if s.iri? and reader.prefixes.keys.include? s.scheme.intern
+        s = s.to_s.sub(/\A#{s.scheme}:/, reader.prefixes[s.scheme.intern])
+      end
+      count += 1
+      data[s.to_s] ||= {}
+      if o.respond_to?(:has_language?) and o.has_language?
+        data[s.to_s][v.to_s] ||= {}
+        data[s.to_s][v.to_s][o.language] = o.to_s
+      else
+        data[s.to_s][v.to_s] ||= []
+        data[s.to_s][v.to_s] << o.to_s
+      end
     end
   end
   STDERR.puts "#{count} triples. #{data.size} subjects."

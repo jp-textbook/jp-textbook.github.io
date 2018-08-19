@@ -7,7 +7,6 @@ prefix = []
 ttl = []
 
 ARGV.each do |file|
-  load_turtle(file)
   filename = find_turtle(file)
   File.readlines(filename).each do |line|
     line = line.chomp
@@ -18,6 +17,9 @@ ARGV.each do |file|
       ttl << line
     end
   end
+end
+ARGV.each do |file|
+  filename = find_turtle(file)
   STDERR.puts "<li><a href=\"#{filename}\">#{filename}</a></li>"
 end
 

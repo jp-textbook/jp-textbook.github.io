@@ -1,0 +1,66 @@
+    <div class="jumbotron">
+      <div class="container">
+        <h1>
+          <%- if param[:name_yomi] -%>
+          <ruby><%=h param[:name] %><rt><%=h param[:_name_yomi] %></rt></ruby>
+          <%- else -%>
+          <%=h param[:name] %>
+          <%- end -%>
+        </h1>
+        <p>appeared in Textbook Catalogue published in <%=h param[:catalogueYear] %></p>
+        <p><small><span class="glyphicon glyphicon-link"></span> <a href="<%=h param[:uri] %>"><%=h param[:uri] %></a></small></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ol class="breadcrumb">
+            <li><a href="../../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+            <li class="active"><%=h param[:name] %></li>
+          </ol>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Details</h2>
+          <dl class="dl-horizontal">
+            <dt>Publisher name</dt><dd><ruby><%=h param[:name] %><rt><%=h param[:name_yomi] %></rt></ruby></dd>
+            <dt>Name in Latin scripts</dt><dd><%=h param[:name_latin] %></dd>
+            <dt>Abbriviated form</dt><dd><%=h param[:publisher_abbr] %></dd>
+            <dt>Publisher number</dt><dd><%=h param[:publisher_number] %></dd>
+            <dt>Appeared in Catalogue</dt><dd><a href="../../catalogue/<%=h param[:catalogueYear] %>"><%=h param[:catalogueYear] %></a></dd>
+          </dl>
+        </div>
+      </div>
+      <%- if param[:textbooks] and not param[:textbooks].empty? -%>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>List of textbooks</h2>
+          <ul>
+            <%- param[:textbooks].each do |textbook| -%>
+              <li><a href="<%=h relative_path_uri(textbook[:uri]) %>"><%=h textbook[:name] %> (<%=h textbook[:publisher_name] %>)</a>
+              （<%=h textbook[:usageYear] %>）
+              </li>
+            <%- end -%>
+          </ul>
+        </div>
+      </div>
+      <%- end -%>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Related links</h2>
+          <ul>
+            <%- param[:seeAlso].each do |link| -%>
+              <%- case link[:key] -%>
+              <%- when :dbpedia -%>
+              <li><a href="<%=h link[:url] %>">DBpedia: <%=h link[:url].last_part %></a></li>
+              <%- when :ndla -%>
+              <li><a href="<%=h link[:url] %>">NDL Name Authority Data (<%=h link[:url].last_part %>)</a></li>
+              <%- else -%>
+              <li><a href="<%=h link[:url] %>"><%=h link[:url] %></a></li>
+              <%- end -%>
+            <%- end -%>
+          </ul>
+        </div>
+      </div>
+    </div>

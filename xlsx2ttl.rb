@@ -24,6 +24,7 @@ EOF
 
 done = {}
 c = load_turtle("curriculum.ttl")
+publisher_data = load_turtle("publisher.ttl")
 fix_curriculums = c.keys.select do |k| # cf. #59
   if c[k]["https://w3id.org/jp-textbook/school"].first == "http://ja.dbpedia.org/resource/高等学校" or
      c[k]["https://w3id.org/jp-textbook/school"].first == "https://w3id.org/jp-textbook/school/高等学校"
@@ -79,7 +80,7 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
   data = {
     "schema:name" => row["書名"],
     "schema:editor" => row["編著者"],
-    "schema:publisher" => row["発行者"],
+    "schema:publisher" => "#{BASE_URI}/publisher/#{row["★教科書目録掲載年度"]}/#{row["発行者略称"]}",
     "schema:bookEdition" => row["版"],
     "textbook:item" => {
       "nier:callNumber" => row["請求記号"],
@@ -130,7 +131,11 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
     ].each do |property|
       if not compare_ignorespaces(done[uri][property], data[property])
         logger.warn "  #{property}: #{done[uri][property]} vs #{data[property]}" 
-        note << %Q[#{PROPERTY_LABEL[property]}を「#{data[property]}」に変更。]
+        value = data[property]
+        if property == "schema:publisher"
+          value = publisher_data[data[property]]["http://schema.org/name"][:ja]
+        end
+        note << %Q[#{PROPERTY_LABEL[property]}を「#{value}」に変更。]
       end
     end
     %w[ textbook:catalogue textbook:item bf:note ].each do |property|

@@ -20,6 +20,8 @@ data_rc = load_turtle("textbook-rc.ttl")
 subjects = load_turtle("subject.ttl")
 area_data = load_turtle("subjectArea.ttl")
 school_data = load_turtle("school.ttl")
+publisher_data = load_turtle("publisher.ttl")
+publishers = {}
 curriculums = {}
 template = PageTemplate.new("template/textbook.html.erb")
 template_en = PageTemplate.new("template/textbook.html.en.erb")
@@ -33,15 +35,13 @@ sitemap << "/en/about.html"
 data.each do |uri, v|
   #p uri
   next if v["https://w3id.org/jp-textbook/curriculum"].nil?
-  #p v["https://w3id.org/jp-textbook/item"]
   curriculum = v["https://w3id.org/jp-textbook/curriculum"].first
   subject = v["https://w3id.org/jp-textbook/subject"] ? v["https://w3id.org/jp-textbook/subject"].first : nil
   subject_name = subject.last_part if subject
-  #p subject
-  #p subjects[subject]
   subject_name_en = subjects[subject]["http://schema.org/name"][:en] if subject and subjects[subject] # FIXME: correct subject name. #217
   subjectArea = v["https://w3id.org/jp-textbook/subjectArea"].first
   school = v["https://w3id.org/jp-textbook/school"].first
+  publisher = v["http://schema.org/publisher"].first
   param = {
     uri: uri,
     file: uri.sub("https://w3id.org/jp-textbook/", "") + ".html",
@@ -49,7 +49,9 @@ data.each do |uri, v|
     style: "../../../style.css",
     name: v["http://schema.org/name"].first,
     editor: v["http://schema.org/editor"].first.unescape_unicode,
-    publisher: v["http://schema.org/publisher"].first,
+    publisher: publisher,
+    publisher_name: publisher_data[publisher]["http://schema.org/name"][:ja],
+    publisher_name_yomi: publisher_data[publisher]["http://schema.org/name"][:"ja-hira"],
     bookEdition: v["http://schema.org/bookEdition"] ? v["http://schema.org/bookEdition"].first : nil,
     curriculum: curriculum,
     curriculum_year: curriculum.last_part,
@@ -98,6 +100,8 @@ data.each do |uri, v|
       }
     end
   end
+  publishers[publisher] ||= []
+  publishers[publisher] << param
   template.output_to(param[:file], param)
   sitemap << param[:file]
   template_en.output_to(param[:file_en], param, :en)
@@ -111,6 +115,29 @@ data.each do |uri, v|
     curriculums[curriculum][subjectArea] ||= []
     curriculums[curriculum][subjectArea] << param
   end
+end
+template = PageTemplate.new("template/publisher.html.erb")
+template_en = PageTemplate.new("template/publisher.html.en.erb")
+publisher_data.each do |uri, v|
+  file = uri.sub("https://w3id.org/jp-textbook/", "")
+  file << ".html"
+  param = {
+    uri: uri,
+    file: file,
+    file_en: File.join("en", file),
+    textbooks: publishers[uri],
+    name: v["http://schema.org/name"][:ja],
+    name_yomi: v["http://schema.org/name"][:"ja-hira"],
+    name_latin: v["http://schema.org/name"][:"ja-latn"],
+    seeAlso: map_links(v["http://www.w3.org/2000/01/rdf-schema#seeAlso"], Textbook::RELATED_LINKS),
+    catalogueYear: v["https://w3id.org/jp-textbook/catalogueYear"].first,
+    publisher_abbr: v["https://w3id.org/jp-textbook/publisherAbbreviation"].first,
+    publisher_number: v["https://w3id.org/jp-textbook/publisherNumber"].first,
+  }
+  template.output_to(param[:file], param)
+  sitemap << param[:file]
+  template_en.output_to(param[:file_en], param)
+  sitemap << param[:file_en]
 end
 
 data_subjectType = load_turtle("subjectType.ttl")
