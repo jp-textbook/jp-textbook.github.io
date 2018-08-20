@@ -133,7 +133,8 @@ publisher_data.each do |uri, v|
     seeAlso: map_links(v["http://www.w3.org/2000/01/rdf-schema#seeAlso"], Textbook::RELATED_LINKS),
     catalogueYear: v["https://w3id.org/jp-textbook/catalogueYear"].first,
     publisher_abbr: v["https://w3id.org/jp-textbook/publisherAbbreviation"].first,
-    publisher_number: v["https://w3id.org/jp-textbook/publisherNumber"].first,
+    publisher_number: v["https://w3id.org/jp-textbook/publisherNumber"],
+    note: v["http://id.loc.gov/ontologies/bibframe/note"] ? v["http://id.loc.gov/ontologies/bibframe/note"].first : nil,
   }
   template.output_to(param[:file], param)
   sitemap << param[:file]

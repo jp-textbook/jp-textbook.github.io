@@ -29,8 +29,11 @@
             <dt>Publisher name</dt><dd><ruby><%=h param[:name] %><rt><%=h param[:name_yomi] %></rt></ruby></dd>
             <dt>Name in Latin scripts</dt><dd><%=h param[:name_latin] %></dd>
             <dt>Abbriviated form</dt><dd><%=h param[:publisher_abbr] %></dd>
-            <dt>Publisher number</dt><dd><%=h param[:publisher_number] %></dd>
+            <dt>Publisher number</dt><dd><%=h param[:publisher_number].join(", ") %></dd>
             <dt>Appeared in Catalogue</dt><dd><%=h param[:catalogueYear] %></dd>
+            <%- if param[:note] -%>
+            <dt>Notes</dt><dd><%=h param[:note] %></dd>
+            <%- end -%>
           </dl>
         </div>
       </div>
