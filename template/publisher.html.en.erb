@@ -31,6 +31,10 @@
             <dt>Abbriviated form</dt><dd><%=h param[:publisher_abbr] %></dd>
             <dt>Publisher number</dt><dd><%=h param[:publisher_number].join(", ") %></dd>
             <dt>Appeared in Catalogue</dt><dd><%=h param[:catalogueYear] %></dd>
+            <dt>Textbook catalogue</dt>
+            <%- param[:catalogue].each do |catalogue| -%>
+            <dd><a href="<%=h relative_path_uri(catalogue[:uri]) %>"><%=h catalogue[:name_en] %></a></dd>
+            <%- end -%>
             <%- if param[:note] -%>
             <dt>Notes</dt><dd><%=h param[:note] %></dd>
             <%- end -%>

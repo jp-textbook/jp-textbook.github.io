@@ -117,11 +117,24 @@ data.each do |uri, v|
     curriculums[curriculum][subjectArea] << param
   end
 end
+catalogue_data = load_turtle("catalogue.ttl")
 template = PageTemplate.new("template/publisher.html.erb")
 template_en = PageTemplate.new("template/publisher.html.en.erb")
 publisher_data.each do |uri, v|
   file = uri.sub("https://w3id.org/jp-textbook/", "")
   file << ".html"
+  catalogue = []
+  if catalogue
+    v["https://w3id.org/jp-textbook/catalogue"].sort_by{|c|
+      %w[小 中 高].index{|i| c.match(i) }
+    }.each do |c|
+      catalogue << {
+        uri: c,
+        name: catalogue_data[c]["http://schema.org/name"][:ja],
+        name_en: catalogue_data[c]["http://schema.org/name"][:en],
+      }
+    end
+  end
   param = {
     uri: uri,
     file: file,
@@ -132,6 +145,7 @@ publisher_data.each do |uri, v|
     name_latin: v["http://schema.org/name"][:"ja-latn"],
     seeAlso: map_links(v["http://www.w3.org/2000/01/rdf-schema#seeAlso"], Textbook::RELATED_LINKS),
     catalogueYear: v["https://w3id.org/jp-textbook/catalogueYear"].first,
+    catalogue: catalogue,
     publisher_abbr: v["https://w3id.org/jp-textbook/publisherAbbreviation"].first,
     publisher_number: v["https://w3id.org/jp-textbook/publisherNumber"],
     note: v["http://id.loc.gov/ontologies/bibframe/note"] ? v["http://id.loc.gov/ontologies/bibframe/note"].first : nil,
