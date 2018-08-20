@@ -27,7 +27,6 @@ data.each do |uri, v|
     uri: uri,
     file: uri.sub("https://w3id.org/jp-textbook/", "") + ".html",
     file_en: uri.sub("https://w3id.org/jp-textbook/", "en/") + ".html",
-    style: "../../style.css",
     name: v["http://schema.org/name"][:ja],
     name_en: v["http://schema.org/name"][:en],
     name_yomi: v["http://schema.org/name"][:"ja-hira"],
