@@ -137,7 +137,7 @@ publisher_data.each do |uri, v|
   }
   template.output_to(param[:file], param)
   sitemap << param[:file]
-  template_en.output_to(param[:file_en], param)
+  template_en.output_to(param[:file_en], param, :en)
   sitemap << param[:file_en]
 end
 
