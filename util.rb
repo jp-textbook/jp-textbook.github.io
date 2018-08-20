@@ -130,7 +130,7 @@ def load_turtle(filename)
   data = {}
   count = 0
   RDF::Turtle::Reader.open(file) do |reader|
-    reader.each_statement do |statement|
+    reader.statements.each do |statement|
       s = statement.subject
       v = statement.predicate
       o = statement.object

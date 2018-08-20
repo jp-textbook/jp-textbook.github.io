@@ -78,15 +78,16 @@ data.each do |uri, v|
     #recordID: v["http://dl.nier.go.jp/library/vocab/recordID"],
     #callNumber: v["http://dl.nier.go.jp/library/vocab/callNumber"],
   }
-  param[:item] = v["https://w3id.org/jp-textbook/item"].sort_by{|item|
+  param[:item] = []
+  v["https://w3id.org/jp-textbook/item"].sort_by{|item|
     data[item]["http://dl.nier.go.jp/library/vocab/recordID"]
-  }.map{|item|
-    {
+  }.each do |item|
+    param[:item] << {
       holding: :nier,
       recordID: data[item]["http://dl.nier.go.jp/library/vocab/recordID"].first,
       callNumber: data[item]["http://dl.nier.go.jp/library/vocab/callNumber"].first,
     }
-  }
+  end
   if data_rc[uri]
     #p data_rc[uri]
     param[:isbn] = data_rc[uri]["http://schema.org/isbn"].sort
