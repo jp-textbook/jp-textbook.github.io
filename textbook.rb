@@ -46,7 +46,6 @@ data.each do |uri, v|
     uri: uri,
     file: uri.sub("https://w3id.org/jp-textbook/", "") + ".html",
     file_en: uri.sub("https://w3id.org/jp-textbook/", "en/") + ".html",
-    style: "../../../style.css",
     name: v["http://schema.org/name"].first,
     editor: v["http://schema.org/editor"].first.unescape_unicode,
     publisher: publisher,
@@ -185,7 +184,6 @@ subjects.sort_by{|k,v| k }.each do |subject, v|
     uri: subject,
     file: subject.sub("https://w3id.org/jp-textbook/", "") + ".html",
     file_en: subject.sub("https://w3id.org/jp-textbook/", "en/") + ".html",
-    style: "../../../../style.css",
     name: [ school_name, subject.last_part ].join(" "),
     name_en: "#{v["http://schema.org/name"][:en]} in #{school_name_en}",
     curriculum: curriculum,
@@ -254,7 +252,6 @@ data.each do |uri, v|
     uri: uri,
     file: uri.sub("https://w3id.org/jp-textbook/", "") + "/index.html",
     file_en: uri.sub("https://w3id.org/jp-textbook/", "en/") + "/index.html",
-    style: "../../../style.css",
     name: v["http://schema.org/name"][:ja],
     name_en: v["http://schema.org/name"][:en],
     name_yomi: v["http://schema.org/name"][:"ja-hira"],
@@ -296,7 +293,6 @@ data.each do |uri, v|
       uri: area,
       file: File.join(area.sub("https://w3id.org/jp-textbook/", ""), "index.html"),
       file_en: File.join(area.sub("https://w3id.org/jp-textbook/", "en/"), "index.html"),
-      style: "../../../../style.css",
       curriculum: uri,
       name: area_data[area]["http://schema.org/name"][:ja],
       name_en: area_data[area]["http://schema.org/name"][:en],
@@ -364,7 +360,6 @@ data_subjectType.each do |uri, v|
   file << ".html"
   param = {
     uri: uri,
-    style: "../../../style.css",
     file: file,
     file_en: File.join("en", file),
     name: v["http://schema.org/name"][:ja],
@@ -397,7 +392,6 @@ school_data.each do |uri, v|
   file << ".html"
   param = {
     uri: uri,
-    style: "../style.css",
     file: file,
     file_en: File.join("en", file),
     name: name,
