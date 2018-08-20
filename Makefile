@@ -5,7 +5,7 @@ all:
 	rapper -i turtle all-`date +%Y%m%d`.ttl -c
 
 clean:
-	-rm -rf catalogue/ curriculum/ *学校/
+	-rm -rf catalogue/ curriculum/ publisher/ *学校/
 
 textbook:
 	ruby ./textbook.rb

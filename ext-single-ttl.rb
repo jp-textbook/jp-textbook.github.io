@@ -52,17 +52,23 @@ end
 include Textbook
 file = find_turtle("all.ttl")
 STDERR.puts "loading #{file}..."
-g = RDF::Graph.load(file, format:  :turtle)
 PREFIX = /\Ahttps:\/\/w3id.org\/jp-textbook\//
-g.subjects.each.with_progressbar(format: "%a %e %P% Processed: %c from %C") do |subject|
-  uri = subject.to_s
-  next if not uri =~ PREFIX
-  file = uri.sub(PREFIX, "")
-  file << ".ttl"
-  dir = File.dirname(file)
-  FileUtils.mkdir_p(dir) if not File.exist? dir
-  str = format(g, subject)
-  open(file, "w") do |io|
-    io.puts str.strip
+g = RDF::Graph.new
+reader = RDF::Turtle::Reader.open(file) do |reader|
+  g.insert_statements(reader.statements)
+  g.subjects.each.with_progressbar(format: "%a %e %P% Processed: %c from %C") do |subject|
+    uri = subject.to_s
+    if subject.iri? and reader.prefixes.keys.include? subject.scheme.intern
+      uri = subject.to_s.sub(/\A#{subject.scheme}:/, reader.prefixes[subject.scheme.intern])
+    end
+    next if not uri =~ PREFIX
+    file = uri.sub(PREFIX, "")
+    file << ".ttl"
+    dir = File.dirname(file)
+    FileUtils.mkdir_p(dir) if not File.exist? dir
+    str = format(g, subject)
+    open(file, "w") do |io|
+      io.puts str.strip
+    end
   end
 end
