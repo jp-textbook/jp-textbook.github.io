@@ -1,7 +1,9 @@
     <div class="jumbotron">
       <div class="container">
         <h1>
-          <%- if param[:name_yomi] -%>
+          <%- if param[:name_latin] -%>
+          <%=h param[:name_latin] %>
+          <%- elsif param[:name_yomi] -%>
           <ruby><%=h param[:name] %><rt><%=h param[:_name_yomi] %></rt></ruby>
           <%- else -%>
           <%=h param[:name] %>
