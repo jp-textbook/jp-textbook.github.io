@@ -28,6 +28,9 @@
           <dl class="dl-horizontal">
             <dt>種目名</dt><dd><ruby><%=h param[:subject_name] %><rt><%=h param[:subject_name_yomi] %></rt></ruby></dd>
             <dt>種目名（英語表記）</dt><dd><%=h param[:subject_name_en] %></dd>
+            <%- if param[:source_of_english_name] -%>
+            <dd><ul><li><small>英語表記出典: <a href="<%=h param[:source_of_english_name][:seeAlso] %>"><%=h param[:source_of_english_name][:name] %></a></small></li></ul></dd>
+            <%- end -%>
             <dt>学校種別</dt><dd><a href="<%=h relative_path_uri(param[:school]) %>"><%=h param[:school_name] %></a></dd>
             <dt>学習指導要領</dt><dd><a href="../../<%=h param[:curriculum].last_part %>"><%=h param[:curriculum].last_part %> (<%=h param[:curriculum].last_part.to_year_era %>)</a></dd>
             <dt>教科</dt><dd><a href="../<%=h param[:subjectArea_name] %>"><%=h param[:subjectArea_name] %></a></dd>

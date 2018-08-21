@@ -3,6 +3,7 @@
 require "fileutils"
 require "nokogiri"
 require "era_ja"
+require 'ruby-progressbar'
 
 require_relative "util.rb"
 
@@ -31,8 +32,10 @@ sitemap << "/about.html"
 sitemap << "/en/"
 sitemap << "/en/about.html"
 
+using ProgressBar::Refinements::Enumerator
+
 #p data
-data.each do |uri, v|
+data.each.with_progressbar(format: "%a %e %P% Processed: %c from %C") do |uri, v|
   #p uri
   next if v["https://w3id.org/jp-textbook/curriculum"].nil?
   curriculum = v["https://w3id.org/jp-textbook/curriculum"].first
@@ -203,6 +206,14 @@ subjects.sort_by{|k,v| k }.each do |subject, v|
     subjectType: subjectTypes,
     order: v["http://purl.org/linked-data/cube#order"].first,
   }
+  if v["https://w3id.org/jp-textbook/sourceOfEnglishName"]
+    source_of_english_name = subjects[v["https://w3id.org/jp-textbook/sourceOfEnglishName"].first]
+    param[:source_of_english_name] = {
+      name: source_of_english_name["http://schema.org/name"][:ja],
+      name_en: source_of_english_name["http://schema.org/name"][:en],
+      seeAlso: source_of_english_name["http://www.w3.org/2000/01/rdf-schema#seeAlso"].first,
+    }
+  end
   template.output_to(param[:file], param)
   sitemap << param[:file]
   template_en.output_to(param[:file_en], param, :en)
