@@ -122,6 +122,15 @@ end
 catalogue_data = load_turtle("catalogue.ttl")
 template = PageTemplate.new("template/publisher.html.erb")
 template_en = PageTemplate.new("template/publisher.html.en.erb")
+publisher_group = {}
+publisher_data.each do |k, v|
+  if v["http://www.w3.org/2000/01/rdf-schema#seeAlso"]
+    v["http://www.w3.org/2000/01/rdf-schema#seeAlso"].each do |url|
+      publisher_group[url] ||= []
+      publisher_group[url] << k
+    end
+  end
+end
 publisher_data.each do |uri, v|
   file = uri.sub("https://w3id.org/jp-textbook/", "")
   file << ".html"
@@ -151,6 +160,17 @@ publisher_data.each do |uri, v|
     publisher_abbr: v["https://w3id.org/jp-textbook/publisherAbbreviation"].first,
     publisher_number: v["https://w3id.org/jp-textbook/publisherNumber"],
     note: v["http://id.loc.gov/ontologies/bibframe/note"] ? v["http://id.loc.gov/ontologies/bibframe/note"].first : nil,
+  }
+  param[:publisher_group] = []
+  if v["http://www.w3.org/2000/01/rdf-schema#seeAlso"]
+    v["http://www.w3.org/2000/01/rdf-schema#seeAlso"].each do |related_url|
+      param[:publisher_group] << publisher_group[related_url]
+    end
+  end
+  param[:publisher_group] = param[:publisher_group].flatten.sort.uniq.map{|e|
+    { uri: e,
+      year: publisher_data[e]["https://w3id.org/jp-textbook/catalogueYear"].first,
+    }
   }
   template.output_to(param[:file], param)
   sitemap << param[:file]

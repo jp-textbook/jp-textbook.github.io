@@ -72,4 +72,24 @@
           </ul>
         </div>
       </div>
+      <%- if param[:publisher_group] -%>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Link to other years</h2>
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <ul class="list-inline">
+                <%- param[:publisher_group].each do |publisher| -%>
+                  <%- if publisher[:uri] == param[:uri] -%>
+                  <li class="active"><%=h publisher[:year] %></a>
+                  <%- else -%>
+                  <li><a href="<%=h relative_path_uri(publisher[:uri]) %>"><%=h publisher[:year] %></a>
+                  <%- end -%>
+                <%- end -%>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%- end -%>
     </div>
