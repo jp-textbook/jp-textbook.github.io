@@ -488,9 +488,52 @@
               <td>textbook:curriculum/高等学校/2013/国語/国語総合</td>
               <td></td>
             </tr>
+            <tr>
+              <td><code>textbook:sourceOfEnglishName</code></td>
+              <td>英語表記出典</td>
+              <td>（ブランクリソース）</td>
+              <td><code>schema:name</code>, <code>textbook:curriculum</code>, <code>rdfs:seeAlso</code> の3つのプロパティを持つ。</td>
+            </tr>
+           </tbody>
+          </table>
+                    （* 教科リソースは、掲載されている学習指導要領から <code>textbook:hasSubjectArea</code> でつながっています）
+          <h5>教科リソースおよび種目リソースの英語表記出典リソースが持つプロパティ</h5>
+          <p>教科リソースおよび種目リソースの英語表記出典リソースが持つプロパティを下表に示します</p>
+          <table class="table">
+            <tr>
+              <th>プロパティ名</th><th>説明</th><th>プロパティ値の例</th><th>備考</th>
+            </tr>
+            <tbody>
+            <tr>
+              <td><code>schema:name</code></td>
+              <td>英語表記出典の名称</td>
+              <td>
+                <ul>
+                  <li>"小学校学習指導要領英訳版（仮訳）(平成20年3月)"@ja</li>
+                  <li>"Elementary School Curriculum Guideline English Version (Tentative Translation) (2008-03)"@en</li>
+                </ul>
+              </td>
+              <td>言語コードを用いて、名称に加え、英語名称を示します。言語コードとその意味は以下の通りです。
+                <dl>
+                  <dt>@ja</dt><dd>日本語名称（漢字表記）</dd>
+                  <dt>@en</dt><dd>英語名称</dd>
+                </dl>
+              </td>
+            </tr>
+            <tr>
+              <td><code>textbook:curriculum</code></td>
+              <td>対応学習指導要領</td>
+              <td>curriculum/小学校/2012</td>
+              <td>学習指導要領の仮訳が出典となっている場合は、対応する学習指導要領リソースのURIを示す。</td>
+            </tr>
+            <tr>
+              <td><code>rdfs:seeAlso</code></td>
+              <td>関連リンク</td>
+              <td>http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1261037.htm</td>
+              <td>出典した本文を参照できるWebページへのリンクや、出典が本の場合は書誌データ（<a href="https://ci.nii.ac.jp/books/">CiNii Books</a>）へのリンクなど。</td>
+            </tr>
             </tbody>
           </table>
-          （* 教科リソースは、掲載されている学習指導要領から <code>textbook:hasSubjectArea</code> でつながっています）
           <h3 id="subject-resource">種目をあらわすリソース</h3>
           種目は、教科書作成者が、検定時に申請する教科書の種目をさしています。これは、学習指導要領における科目とほぼ同一のものをさしますが、厳密には科目とは異なるものをさすこととなります。たとえば、地図、書写などの科目としては存在しないものが含まれ、保健体育のように複数の科目に対応する種目が追加されるなどしています。
           <h4>種目をあらわすリソースのURI</h4>
@@ -570,6 +613,12 @@
               <td>出典</td>
               <td>『教科用図書検定申請受理種目』平成22年5月14日号外文部科学省告示第83号(平成元年6月9日文部省告示第89号の改正)</td>
               <td>種目の出典となる表。検定教科書の検定時の申請に使われる種目表。</td>
+            </tr>
+            <tr>
+              <td><code>textbook:sourceOfEnglishName</code></td>
+              <td>英語表記出典</td>
+              <td>（ブランクリソース）</td>
+              <td><code>schema:name</code>, <code>textbook:curriculum</code>, <code>rdfs:seeAlso</code> の3つのプロパティを持つ。</td>
             </tr>
             </tbody>
           </table>
