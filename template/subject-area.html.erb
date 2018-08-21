@@ -25,6 +25,9 @@
           <dl class="dl-horizontal">
           <dt>教科名</dt><dd><ruby><%=h param[:name] %><rt><%=h param[:name_yomi] %></rt></ruby></dd>
           <dt>教科名（英語表記）</dt><dd><%=h param[:name_en] %></dd>
+          <%- if param[:source_of_english_name] -%>
+          <dd><ul><li><small>英語表記出典: <a href="<%=h param[:source_of_english_name][:seeAlso] %>"><%=h param[:source_of_english_name][:name] %></a></small></li></ul></dd>
+          <%- end -%>
           <dt>学校種別</dt><dd><a href="<%=h relative_path_uri(param[:school]) %>"><%=h param[:school].last_part %></a></dd>
           <dt>学習指導要領</dt><dd><a href="<%=h relative_path_uri(param[:curriculum]) %>"><%=h param[:curriculum].last_part %>年 (<%=h param[:curriculum].last_part.to_year_era %>) 施行</a></dd>
           <%- if param[:subjectType] -%>

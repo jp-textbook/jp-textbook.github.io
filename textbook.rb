@@ -327,6 +327,14 @@ data.each do |uri, v|
     if curriculums[uri][area]
       area_param[:textbooks] = curriculums[uri][area].sort_by{|t| [ t[:textbookNumber], t[:uri] ] }
     end
+    if area_data[area]["https://w3id.org/jp-textbook/sourceOfEnglishName"]
+      source_of_english_name = area_data[area_data[area]["https://w3id.org/jp-textbook/sourceOfEnglishName"].first]
+      area_param[:source_of_english_name] = {
+        name: source_of_english_name["http://schema.org/name"][:ja],
+        name_en: source_of_english_name["http://schema.org/name"][:en],
+        seeAlso: source_of_english_name["http://www.w3.org/2000/01/rdf-schema#seeAlso"].first,
+      }
+    end
     param[:subjectArea] << area_param
     template_area.output_to(area_param[:file], area_param)
     sitemap << area_param[:file]
