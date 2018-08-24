@@ -134,9 +134,6 @@ def load_turtle(filename)
       s = statement.subject
       v = statement.predicate
       o = statement.object
-      if s.iri? and reader.prefixes.keys.include? s.scheme.intern
-        s = s.to_s.sub(/\A#{s.scheme}:/, reader.prefixes[s.scheme.intern])
-      end
       count += 1
       data[s.to_s] ||= {}
       if o.respond_to?(:has_language?) and o.has_language?
