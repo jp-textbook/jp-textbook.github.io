@@ -58,9 +58,6 @@ reader = RDF::Turtle::Reader.open(file) do |reader|
   g.insert_statements(reader.statements)
   g.subjects.each.with_progressbar(format: "%a %e %P% Processed: %c from %C") do |subject|
     uri = subject.to_s
-    if subject.iri? and reader.prefixes.keys.include? subject.scheme.intern
-      uri = subject.to_s.sub(/\A#{subject.scheme}:/, reader.prefixes[subject.scheme.intern])
-    end
     next if not uri =~ PREFIX
     file = uri.sub(PREFIX, "")
     file << ".ttl"
