@@ -63,6 +63,8 @@
               <li><a href="<%=h link[:url] %>">DBpedia: <%=h link[:url].last_part %></a></li>
               <%- when :ndla -%>
               <li><a href="<%=h link[:url] %>">国立国会図書館 名称典拠データ (<%=h link[:url].last_part %>)</a></li>
+              <%- when :hojin_info -%>
+              <li><a href="<%=h link[:url] %>">法人インフォ (<%=h URI(link[:url]).query.split(/=/).last %>)</a></li>
               <%- else -%>
               <li><a href="<%=h link[:url] %>"><%=h link[:url] %></a></li>
               <%- end -%>

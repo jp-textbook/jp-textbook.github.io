@@ -102,6 +102,7 @@ module Textbook
     jpno: /\/jpno\//,
     ndla: /id.ndl.go.jp\/auth\/ndlna\//,
     dbpedia: /dbpedia.org/,
+    hojin_info: /hojin-info\.go\.jp/
   }
   def map_links(urls, links)
     urls = [] if urls.nil?
