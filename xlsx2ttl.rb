@@ -138,7 +138,7 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
         note << %Q[#{PROPERTY_LABEL[property]}を「#{value}」に変更。]
       end
     end
-    %w[ textbook:catalogue textbook:item bf:note ].each do |property|
+    %w[ textbook:catalogue textbook:item bf:note schema:publisher ].each do |property|
       done[uri][property] = [ done[uri][property] ]
       done[uri][property] << data[property]
     end

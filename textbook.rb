@@ -44,16 +44,19 @@ data.each.with_progressbar(format: "%a %e %P% Processed: %c from %C") do |uri, v
   subject_name_en = subjects[subject]["http://schema.org/name"][:en] if subject and subjects[subject] # FIXME: correct subject name. #217
   subjectArea = v["https://w3id.org/jp-textbook/subjectArea"].first
   school = v["https://w3id.org/jp-textbook/school"].first
-  publisher = v["http://schema.org/publisher"].first
+  publisher_list = v["http://schema.org/publisher"].sort.map do |e|
+    { uri: e,
+      name: publisher_data[e]["http://schema.org/name"][:ja],
+      name_yomi: publisher_data[e]["http://schema.org/name"][:"ja-hira"],
+    }
+  end
   param = {
     uri: uri,
     file: uri.sub("https://w3id.org/jp-textbook/", "") + ".html",
     file_en: uri.sub("https://w3id.org/jp-textbook/", "en/") + ".html",
     name: v["http://schema.org/name"].first,
     editor: v["http://schema.org/editor"].first.unescape_unicode,
-    publisher: publisher,
-    publisher_name: publisher_data[publisher]["http://schema.org/name"][:ja],
-    publisher_name_yomi: publisher_data[publisher]["http://schema.org/name"][:"ja-hira"],
+    publishers: publisher_list,
     bookEdition: v["http://schema.org/bookEdition"] ? v["http://schema.org/bookEdition"].first : nil,
     curriculum: curriculum,
     curriculum_year: curriculum.last_part,
@@ -103,8 +106,10 @@ data.each.with_progressbar(format: "%a %e %P% Processed: %c from %C") do |uri, v
       }
     end
   end
-  publishers[publisher] ||= []
-  publishers[publisher] << param
+  publisher_list.each do |publisher|
+    publishers[publisher[:uri]] ||= []
+    publishers[publisher[:uri]] << param
+  end
   template.output_to(param[:file], param)
   sitemap << param[:file]
   template_en.output_to(param[:file_en], param, :en)
