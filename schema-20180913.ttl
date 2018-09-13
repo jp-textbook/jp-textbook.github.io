@@ -1,0 +1,155 @@
+@prefix schema: <http://schema.org/>.
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix curriculum:  <https://w3id.org/jp-textbook/curriculum/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dc: <http://purl.org/dc/terms/>.
+
+textbook:Catalogue a rdfs:Class;
+        rdfs:subClassOf schema:Book;
+        rdfs:label "教科書目録"@ja, "Textbook Catalogue"@en;
+        rdfs:comment "検定教科書の一覧を示す教科書目録を表現するクラス"@ja.
+
+textbook:CurriculumGuideline a rdfs:Class;
+        rdfs:subClassOf schema:CreativeWork;
+        rdfs:label "学習指導要領"@ja, "Curriculum Guideline"@en;
+        rdfs:comment "学習指導要領そのものを表現するクラス。"@ja;
+        rdfs:seeAlso <http://ja.dbpedia.org/resource/学習指導要領>.
+
+textbook:Publisher a rdfs:Class;
+        rdfs:subClassOf schema:Organization, schema:Person;
+        rdfs:label "発行者"@ja, "Publisher"@en;
+        rdfs:comment "発行者を表現するクラス"@ja.
+
+textbook:School a rdfs:Class;
+        owl:sameAs schema:School;
+        rdfs:label "学校種別"@ja, "Type of school"@en;
+        rdfs:comment "日本における学校制度上の初等・中等教育組織を表現するクラス"@ja.
+
+textbook:SubjectType a rdfs:Class;
+        rdfs:label "教科・種目種別"@ja, "Type of subject areas and subjects"@en;
+        rdfs:comment "高等学校における専門教育または共通教育のいずれに属するかを示すクラス"@ja.
+
+textbook:Textbook a rdfs:Class;
+        rdfs:subClassOf schema:Book;
+        rdfs:label "教科書"@ja, "Textbook"@en;
+        rdfs:comment "教科書を表現するクラス"@ja.
+
+curriculum:SubjectArea a rdfs:Class;
+        rdfs:label "教科"@ja, "Subject area"@en;
+        rdfs:comment "教科を表現するクラス"@ja.
+
+curriculum:Subject a rdfs:Class;
+        rdfs:label "種目"@ja, "Subject"@en;
+        rdfs:comment "種目を表現するクラス"@ja.
+
+textbook:authorizedYear a rdf:Property;
+        rdfs:subPropertyOf dc:date;
+        rdfs:label "検定年"@ja, "Authorized year"@en;
+        rdfs:comment "検定が実施された年を表現するプロパティ"@ja;
+        rdfs:domain textbook:Textbook;
+        rdfs:range rdfs:Literal, schema:Date .
+
+textbook:catalogue a rdf:Property;
+        rdfs:label "教科書目録"@ja, "Textbook catalogue(s)"@en;
+        rdfs:comment "教科書が掲載された教科書目録を表現するプロパティ"@ja;
+        rdfs:domain textbook:Textbook;
+        rdfs:range textbook:Catalogue .
+
+textbook:catalogueYear a rdf:Property;
+        rdfs:subPropertyOf dc:date;
+        rdfs:label "教科書目録掲載年"@ja;
+        rdfs:comment "教科書目録に掲載された年を表現するプロパティ"@ja;
+        rdfs:domain textbook:Textbook, textbook:Publisher;
+        rdfs:range rdfs:Literal, schema:Date .
+
+textbook:curriculum a rdf:Property;
+        rdfs:label "学習指導要領"@ja, "Curriculum guideline"@en;
+        rdfs:comment "対応する学習指導要領を表現するプロパティ"@ja;
+        rdfs:domain textbook:Textbook, textbook:SubjectType;
+        rdfs:range textbook:CurriculumGuideline .
+
+textbook:grade a rdf:Property;
+        rdfs:label "学年"@ja, "Grade"@en;
+        rdfs:comment "学年を表現するプロパティ"@ja;
+        rdfs:domain textbook:Textbook;
+        rdfs:range rdfs:Literal .
+
+textbook:hasSubject a rdf:Property;
+        rdfs:label "種目をもつ"@ja, "has subject(s)"@en;
+        rdfs:comment "対応する種目を表現するプロパティ"@ja;
+        rdfs:domain curriculum:SubjectArea;
+        rdfs:range curriculum:Subject .
+
+textbook:hasSubjectArea a rdf:Property;
+        rdfs:label "教科をもつ"@ja, "has subject area(s)"@en;
+        rdfs:comment "対応する教科を表現するプロパティ"@ja;
+        rdfs:domain textbook:CurriculumGuideline;
+        rdfs:range curriculum:SubjectArea .
+
+textbook:item a rdf:Property;
+        rdfs:label "所蔵資料"@ja, "Holding item"@en;
+        rdfs:comment "所蔵資料を表現するプロパティ"@ja;
+        rdfs:domain textbook:Textbook .
+
+textbook:publisherAbbreviation a rdf:Property;
+        rdfs:label "発行者略称"@ja, "Abbreviation form of publisher"@en;
+        rdfs:comment "発行者の略表記を示すプロパティ"@ja;
+        rdfs:domain textbook:Publisher;
+        rdfs:range rdfs:Literal .
+
+textbook:publisherNumber a rdf:Property;
+        rdfs:label "発行者番号"@ja, "Publisher number"@en;
+        rdfs:comment "発行者番号を示すプロパティ"@ja;
+        rdfs:domain textbook:Publisher;
+        rdfs:range rdfs:Literal .
+
+textbook:school a rdf:Property;
+        rdfs:label "学校種別"@ja, "Type of schools"@en;
+        rdfs:comment "学校種別を表現するプロパティ"@ja;
+        rdfs:domain textbook:Textbook, curriculum:Subject, curriculum:SubjectArea, textbook:SubjectType;
+        rdfs:range textbook:School .
+
+textbook:sourceOfEnglishName a rdf:Property;
+        rdfs:subPropertyOf dc:source;
+        rdfs:label "英表記出典"@ja, "Source of English name"@en;
+        rdfs:comment "英語表記名称の出典を示すプロパティ"@ja;
+        rdfs:domain curriculum:Subject, curriculum:SubjectArea .
+
+textbook:subject a rdf:Property;
+        rdfs:label "種目"@ja, "Subject"@en;
+        rdfs:comment "対応する種目を表現するプロパティ"@ja;
+        rdfs:domain textbook:Textbook;
+        rdfs:range curriculum:Subject .
+
+textbook:subjectArea a rdfs:Property;
+        rdfs:label "教科"@ja, "Subject area"@en;
+        rdfs:comment "対応する教科を示すプロパティ"@ja;
+        rdfs:domain textbook:Textbook;
+        rdfs:range curriculum:SubjectArea .
+
+textbook:subjectType a rdfs:Property;
+        rdfs:label "教科・種目種別"@ja, "Type of subject and subject area"@en;
+        rdfs:comment "対応する教科または種目の種別を示すプロパティ"@ja;
+        rdfs:domain curriculum:SubjectArea, curriculum:Subject;
+        rdfs:range textbook:SubjectType .
+
+textbook:textbookNumber a rdfs:Property;
+        rdfs:label "教科書番号"@ja, "Textbook number"@en;
+        rdfs:comment "教科書番号を表現するプロパティ"@ja;
+        rdfs:domain textbook:Textbook;
+        rdfs:range rdf:Literal .
+
+textbook:textbookSymbol a rdfs:Property;
+        rdfs:label "教科書記号"@ja, "Textbook symbol"@en;
+        rdfs:comment "教科書記号を表現するプロパティ"@ja;
+        rdfs:domain textbook:Textbook;
+        rdfs:range rdf:Literal .
+
+textbook:usageYear a rdfs:Prperty;
+        rdfs:subPropertyOf dc:date;
+        rdfs:label "使用年"@ja, "Usage year"@en;
+        rdfs:comment "教科書の使用年を表現するプロパティ"@ja;
+        rdfs:domain textbook:Textbook;
+        rdfs:range rdf:Literal .

@@ -7,21 +7,27 @@ if $0 == __FILE__
   filename = find_turtle("all.ttl")
   STDERR.puts "loading #{filename}..."
   g = RDF::Graph.load(filename, format: :turtle)
-  puts "Missing usage for subject(s):"
-  ( g.subjects - g.objects ).sort.each do |subject|
-    next if not subject.to_s.match(BASE_URI)
-    rdf_type = g.query([subject, RDF::URI("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"), nil]).first.object
-    next if rdf_type == RDF::URI("https://w3id.org/jp-textbook/Textbook")
-    p subject
+  missing = ( g.subjects - g.objects - g.predicates ).select{|e| e.to_s.match(BASE_URI) }
+  if not missing.empty?
+    puts "Missing usage for subject(s):"
+    missing.sort.each do |subject|
+      rdf_type = g.query([subject, RDF::URI("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"), nil]).first.object
+      next if rdf_type == RDF::URI("https://w3id.org/jp-textbook/Textbook")
+      p subject
+    end
   end
-  puts "Missing definition for object(s):"
-  ( g.objects - g.subjects ).sort.each do |object|
-    next if not object.to_s.match(BASE_URI)
-    p object
+  missing = (g.objects - g.subjects).select{|e| e.to_s.match(BASE_URI) }
+  if not missing.empty?
+    puts "Missing definition for object(s):"
+    missing.sort.each do |object|
+      p object
+    end
   end
-  puts "Missing definition for predicate(s):"
-  ( g.predicates - g.subjects ).sort.each do |predicate|
-    next if not predicate.to_s.match(BASE_URI)
-    p predicate
+  missing = (g.predicates - g.subjects).select{|e| e.to_s.match(BASE_URI) }
+  if not missing.empty?
+    puts "Missing definition for predicate(s):"
+    missing.sort.each do |predicate|
+      p predicate
+    end
   end
 end
