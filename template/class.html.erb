@@ -1,0 +1,49 @@
+    <div class="jumbotron">
+      <div class="container">
+        <h1><%=h param[:label] %></h1>
+        <p><%=h param[:comment] %></p>
+        <p><small><span class="glyphicon glyphicon-link"></span> <a href="<%=h param[:uri] %>"><%=h param[:uri] %></a></small></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ol class="breadcrumb">
+            <li><a href="../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+            <li class="active"><%=h param[:label] %></li>
+          </ol>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>詳細情報</h2>
+          <dl class="dl-horizontal">
+            <%- if param[:sameAs] -%>
+            <dt>同一クラス</dt><dd><a href="<%=h param[:sameAs] %>"><%=h param[:sameAs] %></a></dd>
+            <%- end -%>
+            <%- if param[:subClassOf] -%>
+            <dt>上位クラス</dt>
+            <%- param[:subClassOf].each do |klass| -%>
+            <dd><a href="<%=h klass %>"><%=h klass %></a></dd>
+            <%- end -%>
+            <%- end -%>
+            <dt>名称</dt><dd><%=h param[:label] %></dd>
+            <dt>名称（英語表記）</dt><dd><%=h param[:label_en] %></dd>
+            <dt>説明</dt><dd><%=h param[:comment] %></dd>
+          </dl>
+        </div>
+      </div>
+      <%- if param[:seeAlso] -%>
+      <hr>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>関連リンク</h2>
+          <ul>
+            <%- param[:seeAlso].each do |url| -%>
+            <li><a href="<%=h url %>"><%=h url %></a></li>
+            <%- end -%>
+          </ul>
+        </div>
+      </div>
+      <%- end -%>
+    </div>
