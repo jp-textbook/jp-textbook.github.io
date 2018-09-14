@@ -115,13 +115,9 @@ module Textbook
 
 def find_turtle(filename)
   file = nil
-  if File.exist? filename and File.file? filename
-    file = filename
-  else
-    basename = File.basename(filename, ".ttl")
-    files = Dir.glob("#{basename}-[0-9]*.ttl")
-    file = files.sort.last
-  end
+  basename = File.basename(filename, ".ttl")
+  files = Dir.glob("#{basename}-[0-9]*.ttl")
+  file = files.sort.last
   file
 end
 
