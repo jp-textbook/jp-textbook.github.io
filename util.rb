@@ -146,6 +146,43 @@ def load_turtle(filename)
   data
 end
 
+def load_idlists(*files)
+  hash = {}
+  files.each do |file|
+    STDERR.puts "loading #{file}..."
+    open(file) do |io|
+      io.gets
+      io.each do |line|
+        ndlbib, jpno, isbn_list, pid, = line.chomp.split(/\t/)
+        if isbn_list and not isbn_list.empty?
+          isbn_list.split(/,/).each do |isbn|
+            hash[isbn] ||= {
+              ndlbib: [],
+              jpno: [],
+              pid: [],
+            }
+            ndlbib.split(/,/).uniq.each do |ndlbib_id|
+              hash[isbn][:ndlbib] << ndlbib_id
+            end
+            jpno.split(/,/).uniq.each do |jpno_id|
+              hash[isbn][:jpno] << jpno_id
+            end
+            if pid
+              pid.split(/,/).uniq.each do |pid_id|
+                hash[isbn][:pid] << pid_id
+              end
+            end
+            hash[isbn][:ndlbib].uniq!
+            hash[isbn][:jpno].uniq!
+            hash[isbn][:pid].uniq!
+          end
+        end
+      end
+    end
+  end
+  hash
+end
+
 def compare_ignorespaces(str1, str2)  # 氏名等を空白を無視して比較する
   str1.to_s.gsub(/[\s,]+/, "") == str2.to_s.gsub(/[\s,]+/, "")
 end

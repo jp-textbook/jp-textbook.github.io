@@ -4,6 +4,7 @@ require "csv"
 require "roo"
 require "nkf"
 require "logger"
+require "lisbn"
 require_relative "util.rb"
 
 if $0 == __FILE__
@@ -22,9 +23,11 @@ if $0 == __FILE__
 @prefix schema:    <http://schema.org/>.
 @prefix textbook:  <https://w3id.org/jp-textbook/>.
 @prefix textbook-rc:  <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 EOF
 
   textbook_master = load_turtle("textbook.ttl")
+  isbn_data = load_idlists("IDLists_1_2.tsv", "IDLists_2_2.tsv")
 
   done = {}
   xlsx = Roo::Excelx.new(ARGV[0])
@@ -58,6 +61,20 @@ EOF
       %w[ textbook:item schema:isbn ].each do |property|
         if data[property] and not data[property].empty?
           str << format_property(property, data[property])
+        end
+      end
+      if data["schema:isbn"] and not data["schema:isbn"].empty?
+        isbn = Lisbn.new(data["schema:isbn"])
+        if isbn_data[isbn.isbn13]
+          isbn_data[isbn.isbn13][:jpno].each do |jpno|
+            str << format_property("rdfs:seeAlso", "http://id.ndl.go.jp/jpno/#{jpno}")
+          end
+          isbn_data[isbn.isbn13][:ndlbib].each do |ndlbib|
+            str << format_property("rdfs:seeAlso", "http://iss.ndl.go.jp/books/R100000002-I#{ndlbib}-00")
+          end
+          isbn_data[isbn.isbn13][:pid].each do |pid|
+            str << format_property("rdfs:seeAlso", "http://dl.ndl.go.jp/#{pid}")
+          end
         end
       end
     end
