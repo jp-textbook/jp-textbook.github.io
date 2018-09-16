@@ -4,7 +4,6 @@ require "csv"
 require "roo"
 require "nkf"
 require "logger"
-require "lisbn"
 require_relative "util.rb"
 
 if $0 == __FILE__
@@ -28,6 +27,7 @@ EOF
 
   textbook_master = load_turtle("textbook.ttl")
   isbn_data = load_idlists("IDLists_1_2.tsv", "IDLists_2_2.tsv")
+  isbn_ncid = load_books_rdf("books.rdf")
 
   done = {}
   xlsx = Roo::Excelx.new(ARGV[0])
@@ -75,6 +75,9 @@ EOF
           isbn_data[isbn.isbn13][:pid].each do |pid|
             str << format_property("rdfs:seeAlso", "http://dl.ndl.go.jp/#{pid}")
           end
+        end
+        if isbn_ncid[isbn.isbn13]
+          str << format_property("rdfs:seeAlso", "https://ci.nii.ac.jp/ncid/#{isbn_ncid[isbn.isbn13]}")
         end
       end
     end

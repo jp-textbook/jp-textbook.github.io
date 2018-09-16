@@ -4,6 +4,8 @@ require "pathname"
 require "rdf/turtle"
 require "erb"
 require "active_support"
+require "nokogiri"
+require "lisbn"
 
 class String
   def last_part
@@ -177,6 +179,33 @@ def load_idlists(*files)
             hash[isbn][:pid].uniq!
           end
         end
+      end
+    end
+  end
+  hash
+end
+def load_books_rdf(file)
+  hash = {}
+  ncid = nil
+  isbn = []
+  STDERR.puts "loading #{file}..."
+  reader = Nokogiri::XML::Reader(open(file))
+  reader.each do |node|
+    if node.name == "rdf:Description" and node.node_type == Nokogiri::XML::Reader::TYPE_END_ELEMENT
+      if ncid and not isbn.empty?
+        isbn.each do |e|
+          isbn13 = Lisbn.new(e).isbn13
+          hash[isbn13] = ncid
+        end
+      end
+      ncid = nil
+      isbn = []
+    elsif node.name == "cinii:ncid" and node.node_type == Nokogiri::XML::Reader::TYPE_ELEMENT
+      ncid = node.inner_xml
+    elsif node.name == "dcterms:hasPart" and node.node_type == Nokogiri::XML::Reader::TYPE_ELEMENT
+      #<dcterms:hasPart rdf:resource="urn:isbn:9784889241778"/>
+      if node.attributes["resource"] and node.attributes["resource"].match(/\Aurn:isbn:(\w+)\z/)
+        isbn << $1
       end
     end
   end
