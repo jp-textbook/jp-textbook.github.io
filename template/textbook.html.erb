@@ -108,14 +108,32 @@
               <%- end -%>
             <%- end -%>
           </ul>
+          <%- if param[:seeAlso] and not param[:seeAlso].empty? -%>
+            <ul>
+              <%- param[:seeAlso].each do |link| -%>
+                <%- case link[:key] -%>
+                <%- when :ndl_jpno -%>
+                  <li><a href="<%=h link[:url] %>">国立国会図書館サーチ (JPNO: <%=h link[:url].last_part %>)</a></li>
+                <%- when :ndl_bibid -%>
+                  <li><a href="<%=h link[:url] %>">国立国会図書館オンライン (NDLBibID: <%=h link[:url].last_part %>)</a></li>
+                <%- when :ncid -%>
+                  <li><a href="<%=h link[:url] %>">CiNii Books (NCID: <%=h link[:url].last_part %>)</a></li>
+                <%- else -%>
+                  <li><a href="<%=h link[:url] %>"><%=h link[:url] %></a></li>
+                <%- end -%>
+              <%- end -%>
+            </ul>
+          <%- end -%>
           <%- if param[:isbn] -%>
             <ul>
               <%-
               { "国立国会図書館サーチ": "http://iss.ndl.go.jp/api/openurl?isbn=",
                 "CiNii Books": "http://ci.nii.ac.jp/books/openurl/query?isbn=",
                 "カーリル": "http://api.calil.jp/openurl?rft.isbn=",
-              }.each do |label, url| -%>
-                <%- param[:isbn].each do |isbn| -%>
+              }.each do |label, url|
+                next if url == "http://iss.ndl.go.jp/api/openurl?isbn=" and param[:seeAlso] and param[:seeAlso].find{|e| e[:key] == :ndl_jpno or e[:key] == :ndl_bibid }
+                next if url == "http://ci.nii.ac.jp/books/openurl/query?isbn=" and param[:seeAlso] and param[:seeAlso].find{|e| e[:key] == :ncid }
+                param[:isbn].each do |isbn| -%>
                 <li><a href="<%= url %><%=h isbn %>"><%=h label %></a><%=h param[:isbn].size > 1 ? " (#{isbn})" : "" %></li>
                 <%- end -%>
               <%- end -%>

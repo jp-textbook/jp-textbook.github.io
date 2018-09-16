@@ -96,6 +96,7 @@ data.each.with_progressbar(format: "%a %e %P% Processed: %c from %C") do |uri, v
   if data_rc[uri]
     #p data_rc[uri]
     param[:isbn] = data_rc[uri]["http://schema.org/isbn"].sort
+    param[:seeAlso] = map_links(data_rc[uri]["http://www.w3.org/2000/01/rdf-schema#seeAlso"], Textbook::RELATED_LINKS)
     items = data_rc[uri]["https://w3id.org/jp-textbook/item"]
     items.sort_by{|e| data_rc[e]["http://dl.nier.go.jp/library/vocab/textbook-rc/recordID"] }.each do |item|
       #p [item, data_rc[item]]

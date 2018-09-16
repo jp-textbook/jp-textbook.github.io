@@ -101,7 +101,9 @@ module Textbook
     _mext: /mext.go.jp/,
     nier: /nier.go.jp\/guideline\//,
     ncid: /\/ncid\//,
-    jpno: /\/jpno\//,
+    ndl_jpno: /\/jpno\//,
+    ndl_bibid: /ndl.go.jp\/bib\//,
+    ndl_search: /iss.ndl.go.jp/,
     ndla: /id.ndl.go.jp\/auth\/ndlna\//,
     dbpedia: /dbpedia.org/,
     hojin_info: /hojin-info\.go\.jp/
