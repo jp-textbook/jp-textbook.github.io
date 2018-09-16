@@ -70,7 +70,7 @@ EOF
             str << format_property("rdfs:seeAlso", "http://id.ndl.go.jp/jpno/#{jpno}")
           end
           isbn_data[isbn.isbn13][:ndlbib].each do |ndlbib|
-            str << format_property("rdfs:seeAlso", "http://iss.ndl.go.jp/books/R100000002-I#{ndlbib}-00")
+            str << format_property("rdfs:seeAlso", "http://id.ndl.go.jp/bib/#{ndlbib}")
           end
           isbn_data[isbn.isbn13][:pid].each do |pid|
             str << format_property("rdfs:seeAlso", "http://dl.ndl.go.jp/#{pid}")
