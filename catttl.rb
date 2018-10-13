@@ -23,5 +23,10 @@ ARGV.each do |file|
   STDERR.puts "<li><a href=\"#{filename}\">#{filename}</a></li>"
 end
 
+dups = prefix.uniq.group_by{|e| e.match(/<(.+)>\s*\.\s*\z/)[1] }.select{|k, v| v.size > 1 }
+unless dups.empty?
+  STDERR.puts "Duplicate prefixes: #{dups}"
+end
+
 puts prefix.uniq
 puts ttl
