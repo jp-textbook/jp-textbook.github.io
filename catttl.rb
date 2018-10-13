@@ -3,7 +3,7 @@
 require_relative "util.rb"
 include Textbook
 
-prefix = []
+prefix = {}
 ttl = []
 
 ARGV.each do |file|
@@ -11,8 +11,9 @@ ARGV.each do |file|
   File.readlines(filename).each do |line|
     line = line.chomp
     next if line.empty?
-    if line =~ /^@prefix\s+/
-      prefix << line.gsub(/\s+/, " ").strip
+    if line =~ /^@prefix\s+(\w[\w\-]*):\s*<(.+)>/
+      prefix[$1] ||= []
+      prefix[$1] << $2
     else
       ttl << line
     end
@@ -23,10 +24,19 @@ ARGV.each do |file|
   STDERR.puts "<li><a href=\"#{filename}\">#{filename}</a></li>"
 end
 
-dups = prefix.uniq.group_by{|e| e.match(/<(.+)>\s*\.\s*\z/)[1] }.select{|k, v| v.size > 1 }
+prefix.each do |k, v|
+  STDERR.puts "Duplicate prefixes: #{k}: #{v}" if v.uniq.size > 1
+  prefix[k] = v.sort.first
+end
+dups = prefix.values.group_by{|e| e }.select{|k, v| v.size > 1 }.keys
 unless dups.empty?
-  STDERR.puts "Duplicate prefixes: #{dups}"
+  dups.each do |uri|
+    uris = prefix.keys.select{|e| prefix[e] == uri }
+    STDERR.puts "Duplicate prefixes: #{uri} (#{uris.join(",")})"
+  end
 end
 
-puts prefix.uniq
+prefix.sort.each do |prefix, uri|
+  puts "@prefix #{prefix}: <#{uri}>."
+end
 puts ttl
