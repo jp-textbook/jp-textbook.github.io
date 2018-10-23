@@ -77,6 +77,10 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
       dimensions, extent = pages
     end
   end
+  catalogues = []
+  usage_years = row["使用年度(西暦)"].split(/-/)
+  logger.warn "#{uri}: catalogue and usage year mismatch (#{row["★教科書目録掲載年度"]} vs #{row["使用年度(西暦)"]})" if row["★教科書目録掲載年度"].to_i != usage_years.first.to_i - 1
+  usage_years = (usage_years.first.to_i .. usage_years.last.to_i)
   data = {
     "schema:name" => row["書名"],
     "schema:editor" => row["編著者"],
@@ -86,7 +90,7 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
       "nier:callNumber" => row["請求記号"],
       "nier:recordID" => row["書誌ID"],
     },
-    "textbook:catalogue" => "#{BASE_URI}/catalogue/#{row["学校種別"]}/#{row["★教科書目録掲載年度"]}",
+    "textbook:catalogue" => usage_years.map{|y| "#{BASE_URI}/catalogue/#{row["学校種別"]}/#{y-1}" },
     "textbook:school" => "#{BASE_URI}/school/#{school}",
     "textbook:subjectArea" => "#{curriculum}/#{subject_area}",
     "textbook:subject" => "#{curriculum}/#{subject_area}/#{subject}",
@@ -141,6 +145,7 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
     %w[ textbook:catalogue textbook:item bf:note schema:publisher ].each do |property|
       done[uri][property] = [ done[uri][property] ]
       done[uri][property] << data[property]
+      done[uri][property].flatten!
     end
     done[uri]["bf:note"] << note
     done[uri]["bf:note"].flatten!
