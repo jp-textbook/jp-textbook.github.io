@@ -146,6 +146,7 @@ publisher_data.each do |uri, v|
     v["https://w3id.org/jp-textbook/catalogue"].sort_by{|c|
       %w[小 中 高].index{|i| c.match(i) }
     }.each do |c|
+      warn "catalogue [#{c}] not found in catalogue.ttl." if not catalogue_data[c]
       catalogue << {
         uri: c,
         name: catalogue_data[c]["http://schema.org/name"][:ja],
