@@ -45,6 +45,7 @@ data.each.with_progressbar(format: "%a %e %P% Processed: %c from %C") do |uri, v
   subjectArea = v["https://w3id.org/jp-textbook/subjectArea"].first
   school = v["https://w3id.org/jp-textbook/school"].first
   publisher_list = v["http://schema.org/publisher"].sort.map do |e|
+    warn "publisher [#{e}] not found in publisher.ttl." if not publisher_data[e]
     { uri: e,
       name: publisher_data[e]["http://schema.org/name"][:ja],
       name_yomi: publisher_data[e]["http://schema.org/name"][:"ja-hira"],
