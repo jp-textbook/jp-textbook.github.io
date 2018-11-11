@@ -6,6 +6,7 @@ require "erb"
 require "active_support"
 require "nokogiri"
 require "lisbn"
+require "zlib"
 
 class String
   def last_part
@@ -190,8 +191,16 @@ def load_books_rdf(file)
   hash = {}
   ncid = nil
   isbn = []
+  io = nil
+  case file
+  when /\.gz\Z/
+    f = File.open(file)
+    io = Zlib::GzipReader.new(f)
+  else
+    io = File.open(file)
+  end
   STDERR.puts "loading #{file}..."
-  reader = Nokogiri::XML::Reader(open(file))
+  reader = Nokogiri::XML::Reader(io)
   reader.each do |node|
     if node.name == "rdf:Description" and node.node_type == Nokogiri::XML::Reader::TYPE_END_ELEMENT
       if ncid and not isbn.empty?

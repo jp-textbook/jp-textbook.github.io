@@ -27,7 +27,7 @@ EOF
 
   textbook_master = load_turtle("textbook.ttl")
   isbn_data = load_idlists("IDLists_1_2.tsv", "IDLists_2_2.tsv")
-  isbn_ncid = load_books_rdf("books.rdf")
+  isbn_ncid = load_books_rdf("books.rdf.gz")
 
   done = {}
   xlsx = Roo::Excelx.new(ARGV[0])
