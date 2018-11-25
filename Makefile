@@ -6,6 +6,7 @@ all:
 
 clean:
 	-rm -rf catalogue/ curriculum/ publisher/ *学校/
+	-rm -rf en/catalogue/ en/curriculum/ en/publisher/ en/*学校/
 
 textbook:
 	ruby ./textbook.rb
