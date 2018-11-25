@@ -71,7 +71,7 @@
             <%- end -%>
             <dt>使用年度</dt><dd><%=h param[:usageYear] %> (<%=h param[:usageYear].gsub(/\d\d\d\d/){|y| y.to_year_era } %>)</dd>
             <dt>検定年</dt><dd><%=h param[:authorizedYear] %> (<%=h param[:authorizedYear].to_year_era %>)</dd>
-            <dt>初出教科書目録の発行年</dt>
+            <dt>掲載教科書目録</dt>
             <%- catalogues = param[:catalogue].sort.map do |catalogue|
                   %Q|<a href="#{h relative_path_uri(catalogue) }">#{h catalogue.last_part } (#{h catalogue.last_part.to_year_era})</a>|
                 end -%>
