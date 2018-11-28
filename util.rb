@@ -99,6 +99,8 @@ module Textbook
     "textbook:grade" => "学年",
   }
   RELATED_LINKS = {
+    _waybackmachine: /web.archive.org/,
+    _warp: /warp.da.ndl.go.jp/,
     _mext: /mext.go.jp/,
     nier: /nier.go.jp\/guideline\//,
     ncid: /\/ncid\//,
@@ -107,7 +109,7 @@ module Textbook
     ndl_search: /iss.ndl.go.jp/,
     ndla: /id.ndl.go.jp\/auth\/ndlna\//,
     dbpedia: /dbpedia.org/,
-    hojin_info: /hojin-info\.go\.jp/
+    hojin_info: /hojin-info\.go\.jp/,
   }
   def map_links(urls, links)
     urls = [] if urls.nil?

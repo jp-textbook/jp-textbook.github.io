@@ -24,6 +24,7 @@ school_data = load_turtle("school.ttl")
 publisher_data = load_turtle("publisher.ttl")
 publishers = {}
 curriculums = {}
+catalogue_list = {}
 template = PageTemplate.new("template/textbook.html.erb")
 template_en = PageTemplate.new("template/textbook.html.en.erb")
 sitemap = Sitemap.new
@@ -50,6 +51,10 @@ data.each.with_progressbar(format: "%a %e %P% Processed: %c from %C") do |uri, v
       name: publisher_data[e]["http://schema.org/name"][:ja],
       name_yomi: publisher_data[e]["http://schema.org/name"][:"ja-hira"],
     }
+  end
+  v["https://w3id.org/jp-textbook/catalogue"].each do |catalogue|
+    catalogue_list[catalogue] ||= []
+    catalogue_list[catalogue] << uri
   end
   param = {
     uri: uri,
@@ -126,7 +131,36 @@ data.each.with_progressbar(format: "%a %e %P% Processed: %c from %C") do |uri, v
     curriculums[curriculum][subjectArea] << param
   end
 end
+
 catalogue_data = load_turtle("catalogue.ttl")
+template = PageTemplate.new("template/catalogue.html.erb")
+template_en = PageTemplate.new("template/catalogue.html.en.erb")
+catalogue_data.each do |uri, v|
+  school =  v["https://w3id.org/jp-textbook/school"].first
+  param = {
+    uri: uri,
+    file: uri.sub("https://w3id.org/jp-textbook/", "") + ".html",
+    file_en: uri.sub("https://w3id.org/jp-textbook/", "en/") + ".html",
+    name: v["http://schema.org/name"][:ja],
+    name_en: v["http://schema.org/name"][:en],
+    name_yomi: v["http://schema.org/name"][:"ja-hira"],
+    datePublished: v["http://schema.org/datePublished"].first,
+    usageYear: v["https://w3id.org/jp-textbook/usageYear"].first,
+    school: school,
+    school_name: school_data[school]["http://schema.org/name"][:ja],
+    school_name_en: school_data[school]["http://schema.org/name"][:en],
+    url: v["http://schema.org/url"],
+    seeAlso: map_links(v["http://www.w3.org/2000/01/rdf-schema#seeAlso"], RELATED_LINKS),
+    callNumber: v["http://dl.nier.go.jp/library/vocab/callNumber"].first,
+    recordID: v["http://dl.nier.go.jp/library/vocab/recordID"].first,
+    itemID: v["http://dl.nier.go.jp/library/vocab/itemID"].first,
+  }
+  template.output_to(param[:file], param)
+  sitemap << param[:file]
+  template_en.output_to(param[:file_en], param, :en)
+  sitemap << param[:file_en]
+end
+
 template = PageTemplate.new("template/publisher.html.erb")
 template_en = PageTemplate.new("template/publisher.html.en.erb")
 publisher_group = {}

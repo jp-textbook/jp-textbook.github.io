@@ -1,4 +1,4 @@
-default: clean catalogue textbook schema all ext-single-ttl check
+default: clean textbook schema all ext-single-ttl check
 
 all:
 	./catttl.rb textbook textbook-rc curriculum curriculum-versions catalogue subject subjectArea subjectType school publisher schema > all-`date +%Y%m%d`.ttl
@@ -13,9 +13,6 @@ textbook:
 
 ext-single-ttl:
 	./ext-single-ttl.rb
-
-catalogue:
-	ruby ./catalogue.rb
 
 check:
 	./check.rb
