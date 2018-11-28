@@ -52,10 +52,6 @@ data.each.with_progressbar(format: "%a %e %P% Processed: %c from %C") do |uri, v
       name_yomi: publisher_data[e]["http://schema.org/name"][:"ja-hira"],
     }
   end
-  v["https://w3id.org/jp-textbook/catalogue"].each do |catalogue|
-    catalogue_list[catalogue] ||= []
-    catalogue_list[catalogue] << uri
-  end
   param = {
     uri: uri,
     file: uri.sub("https://w3id.org/jp-textbook/", "") + ".html",
@@ -117,6 +113,10 @@ data.each.with_progressbar(format: "%a %e %P% Processed: %c from %C") do |uri, v
     publishers[publisher[:uri]] ||= []
     publishers[publisher[:uri]] << param
   end
+  v["https://w3id.org/jp-textbook/catalogue"].each do |catalogue|
+    catalogue_list[catalogue] ||= []
+    catalogue_list[catalogue] << param
+  end
   template.output_to(param[:file], param)
   sitemap << param[:file]
   template_en.output_to(param[:file_en], param, :en)
@@ -154,6 +154,7 @@ catalogue_data.each do |uri, v|
     callNumber: v["http://dl.nier.go.jp/library/vocab/callNumber"].first,
     recordID: v["http://dl.nier.go.jp/library/vocab/recordID"].first,
     itemID: v["http://dl.nier.go.jp/library/vocab/itemID"].first,
+    textbooks: catalogue_list[uri],
   }
   template.output_to(param[:file], param)
   sitemap << param[:file]
