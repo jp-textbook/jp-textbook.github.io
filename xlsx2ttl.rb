@@ -79,8 +79,9 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
   end
   catalogues = []
   usage_years = row["使用年度(西暦)"].split(/-/)
+  usage_years << CURRENT_YEAR if row["使用年度(西暦)"][-1] == "-"
   logger.warn "#{uri}: catalogue and usage year mismatch (#{row["★教科書目録掲載年度"]} vs #{row["使用年度(西暦)"]})" if row["★教科書目録掲載年度"].to_i != usage_years.first.to_i - 1
-  logger.warn "#{uri}: usage year possible typo (#{row["使用年度(西暦)"]})" if usage_years.first > usage_years.last
+  logger.warn "#{uri}: usage year possible typo (#{row["使用年度(西暦)"]})" if usage_years.first.to_i > usage_years.last.to_i
   usage_years = (usage_years.first.to_i .. usage_years.last.to_i)
   data = {
     "schema:name" => row["書名"],

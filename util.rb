@@ -111,6 +111,7 @@ module Textbook
     dbpedia: /dbpedia.org/,
     hojin_info: /hojin-info\.go\.jp/,
   }
+  CURRENT_YEAR= 2018
   def map_links(urls, links)
     urls = [] if urls.nil?
     urls.map{|url|
