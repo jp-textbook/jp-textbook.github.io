@@ -137,6 +137,14 @@ template = PageTemplate.new("template/catalogue.html.erb")
 template_en = PageTemplate.new("template/catalogue.html.en.erb")
 catalogue_data.each do |uri, v|
   school =  v["https://w3id.org/jp-textbook/school"].first
+  textbooks = catalogue_list[uri].to_a.sort_by do |e|
+    area_order = area_data[e[:subjectArea]]["http://purl.org/linked-data/cube#order"].first.to_i
+    subject_order = e[:subject] ? subjects[e[:subject]]["http://purl.org/linked-data/cube#order"].first.to_i : 0
+    publisher_names = e[:publishers].map{|publisher|
+      [ publisher[:name],  publisher[:uri] ]
+    }
+    [area_order, subject_order, publisher_names, e[:uri]]
+  end
   param = {
     uri: uri,
     file: uri.sub("https://w3id.org/jp-textbook/", "") + ".html",
@@ -154,7 +162,7 @@ catalogue_data.each do |uri, v|
     callNumber: v["http://dl.nier.go.jp/library/vocab/callNumber"].first,
     recordID: v["http://dl.nier.go.jp/library/vocab/recordID"].first,
     itemID: v["http://dl.nier.go.jp/library/vocab/itemID"].first,
-    textbooks: catalogue_list[uri],
+    textbooks: textbooks,
   }
   template.output_to(param[:file], param)
   sitemap << param[:file]
