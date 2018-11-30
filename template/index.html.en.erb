@@ -82,6 +82,38 @@
           </dl>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>List of Textbook Catalogues</h2>
+          <p>The following lists represents the usage year for the textbooks.</p>
+          <dl>
+            <dt>Elementary School</dt>
+            <dd>
+              <ul class="list-inline">
+                <%- param[:catalogues].keys.grep(/小学校/).sort.each do |catalogue| -%>
+                <li><a href="<%=h relative_path_uri(catalogue) %>"><%=h catalogue.last_part.to_i + 1 %></a></li>
+                <%- end -%>
+              </ul>
+            </dd>
+            <dt>Lower Secondary School</dt>
+            <dd>
+              <ul class="list-inline">
+                <%- param[:catalogues].keys.grep(/中学校/).sort.each do |catalogue| -%>
+                <li><a href="<%=h relative_path_uri(catalogue) %>"><%=h catalogue.last_part.to_i + 1 %></a></li>
+                <%- end -%>
+              </ul>
+            </dd>
+            <dt>Upper Secondary School</dt>
+            <dd>
+              <ul class="list-inline">
+                <%- param[:catalogues].keys.grep(/高等学校/).sort.each do |catalogue| -%>
+                <li><a href="<%=h relative_path_uri(catalogue) %>"><%=h catalogue.last_part.to_i + 1 %></a></li>
+                <%- end -%>
+              </ul>
+            </dd>
+          </dl>
+        </div>
+      </div>
 
       <hr>
       <div class="row">

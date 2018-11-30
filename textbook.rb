@@ -293,6 +293,7 @@ template_area_en = PageTemplate.new("template/subject-area.html.en.erb")
 index_param = {
   file: "index.html", file_en: "en/index.html",
   subjects: subjects, areas: area_data, active: :home,
+  catalogues: catalogue_data,
 }
 param = {}
 cur_param = {}

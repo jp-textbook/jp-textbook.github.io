@@ -78,6 +78,38 @@
           </dl>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>教科書目録</h2>
+          <p>以下のリンクは掲載教科書の使用年度を示しています。</p>
+          <dl>
+            <dt>小学校</dt>
+            <dd>
+            <ul class="list-inline">
+              <%- param[:catalogues].keys.grep(/小学校/).sort.each do |catalogue| -%>
+                <li><a href="<%=h relative_path_uri(catalogue) %>"><%=h catalogue.last_part.to_i + 1 %></a></li>
+              <%- end -%>
+            </ul>
+            </dd>
+            <dt>中学校</dt>
+            <dd>
+            <ul class="list-inline">
+              <%- param[:catalogues].keys.grep(/中学校/).sort.each do |catalogue| -%>
+                <li><a href="<%=h relative_path_uri(catalogue) %>"><%=h catalogue.last_part.to_i + 1 %></a></li>
+              <%- end -%>
+            </ul>
+            </dd>
+            <dt>高等学校</dt>
+            <dd>
+            <ul class="list-inline">
+              <%- param[:catalogues].keys.grep(/高等学校/).sort.each do |catalogue| -%>
+                <li><a href="<%=h relative_path_uri(catalogue) %>"><%=h catalogue.last_part.to_i + 1 %></a></li>
+              <%- end -%>
+            </ul>
+            </dd>
+          </dl>
+        </div>
+      </div>
 
       <hr>
       <div class="row">
