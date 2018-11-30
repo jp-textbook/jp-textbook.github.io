@@ -348,6 +348,7 @@ data.each do |uri, v|
     school: school,
     school_name_en: school_data[school]["http://schema.org/name"][:en],
   }
+  done_subject = {}
   cur_param[uri] = param
   area_data[uri]["https://w3id.org/jp-textbook/hasSubjectArea"].sort_by{|area|
     area_data[area]["http://purl.org/linked-data/cube#order"].sort.first.to_i
@@ -404,26 +405,26 @@ data.each do |uri, v|
     template_area_en.output_to(area_param[:file_en], area_param, :en)
     sitemap << area_param[:file_en]
 
-    count_subjects = 0
     if subjects[area]
       subjects[area]["https://w3id.org/jp-textbook/hasSubject"].sort_by{|subject|
         subjects[subject]["http://purl.org/linked-data/cube#order"].first.to_i
       }.each do |subject|
         subject_type = subjects[subject]["https://w3id.org/jp-textbook/subjectType"]
         #p [area, subject, subject_type]
-        if curriculums[uri][subject]
+        if curriculums[uri][subject] and not done_subject[subject]
           index_param[uri] << subject
-          count_subjects += 1
+          done_subject[subject] = true
         else
-          if subject_type and subject_type == ["https://w3id.org/jp-textbook/curriculum/Subject/Special"] #ignore special subject.
+          if subject_type and subject_type.map{|e| e.last_part } == ["Special"] #ignore special subject.
           else
             STDERR.puts "WARN: #{subject} is not found in subjects list."
           end
         end
       end
     end
-    if curriculums[uri][area]
+    if curriculums[uri][area] and not done_subject[area]
       index_param[uri] << area
+      done_subject[area] = true
       STDERR.puts "WARN: Area #{area} is used in a list."
     end
   end
