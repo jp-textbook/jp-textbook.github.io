@@ -90,7 +90,7 @@
             <dt>Elementary School</dt>
             <dd>
               <ul class="list-inline">
-                <%- param[:catalogues].keys.grep(/小学校/).sort.each do |catalogue| -%>
+                <%- param[:catalogues].keys.grep(/小学校/).sort.reverse.each do |catalogue| -%>
                 <li><a href="<%=h relative_path_uri(catalogue) %>"><%=h catalogue.last_part.to_i + 1 %></a></li>
                 <%- end -%>
               </ul>
@@ -98,7 +98,7 @@
             <dt>Lower Secondary School</dt>
             <dd>
               <ul class="list-inline">
-                <%- param[:catalogues].keys.grep(/中学校/).sort.each do |catalogue| -%>
+                <%- param[:catalogues].keys.grep(/中学校/).sort.reverse.each do |catalogue| -%>
                 <li><a href="<%=h relative_path_uri(catalogue) %>"><%=h catalogue.last_part.to_i + 1 %></a></li>
                 <%- end -%>
               </ul>
@@ -106,7 +106,7 @@
             <dt>Upper Secondary School</dt>
             <dd>
               <ul class="list-inline">
-                <%- param[:catalogues].keys.grep(/高等学校/).sort.each do |catalogue| -%>
+                <%- param[:catalogues].keys.grep(/高等学校/).sort.reverse.each do |catalogue| -%>
                 <li><a href="<%=h relative_path_uri(catalogue) %>"><%=h catalogue.last_part.to_i + 1 %></a></li>
                 <%- end -%>
               </ul>

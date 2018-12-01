@@ -86,7 +86,7 @@
             <dt>小学校</dt>
             <dd>
             <ul class="list-inline">
-              <%- param[:catalogues].keys.grep(/小学校/).sort.each do |catalogue| -%>
+              <%- param[:catalogues].keys.grep(/小学校/).sort.reverse.each do |catalogue| -%>
                 <li><a href="<%=h relative_path_uri(catalogue) %>"><%=h catalogue.last_part.to_i + 1 %></a></li>
               <%- end -%>
             </ul>
@@ -94,7 +94,7 @@
             <dt>中学校</dt>
             <dd>
             <ul class="list-inline">
-              <%- param[:catalogues].keys.grep(/中学校/).sort.each do |catalogue| -%>
+              <%- param[:catalogues].keys.grep(/中学校/).sort.reverse.each do |catalogue| -%>
                 <li><a href="<%=h relative_path_uri(catalogue) %>"><%=h catalogue.last_part.to_i + 1 %></a></li>
               <%- end -%>
             </ul>
@@ -102,7 +102,7 @@
             <dt>高等学校</dt>
             <dd>
             <ul class="list-inline">
-              <%- param[:catalogues].keys.grep(/高等学校/).sort.each do |catalogue| -%>
+              <%- param[:catalogues].keys.grep(/高等学校/).sort.reverse.each do |catalogue| -%>
                 <li><a href="<%=h relative_path_uri(catalogue) %>"><%=h catalogue.last_part.to_i + 1 %></a></li>
               <%- end -%>
             </ul>
