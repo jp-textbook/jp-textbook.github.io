@@ -7,7 +7,9 @@ if $0 == __FILE__
   filename = find_turtle("all.ttl")
   STDERR.puts "loading #{filename}..."
   g = RDF::Graph.load(filename, format: :turtle)
-  missing = ( g.subjects - g.objects - g.predicates ).select{|e| e.to_s.match(BASE_URI) }
+  missing = ( g.subjects - g.objects - g.predicates ).select{|e|
+    e.is_a?(RDF::URI) and e.to_s.match(BASE_URI)
+  }
   if not missing.empty?
     puts "Missing usage for subject(s):"
     missing.sort.each do |subject|
@@ -16,14 +18,18 @@ if $0 == __FILE__
       p subject
     end
   end
-  missing = (g.objects - g.subjects).select{|e| e.to_s.match(BASE_URI) }
+  missing = (g.objects - g.subjects).select{|e|
+    e.is_a?(RDF::URI) and e.to_s.match(BASE_URI)
+  }
   if not missing.empty?
     puts "Missing definition for object(s):"
     missing.sort.each do |object|
       p object
     end
   end
-  missing = (g.predicates - g.subjects).select{|e| e.to_s.match(BASE_URI) }
+  missing = (g.predicates - g.subjects).select{|e|
+    e.is_a?(RDF::URI) and e.to_s.match(BASE_URI)
+  }
   if not missing.empty?
     puts "Missing definition for predicate(s):"
     missing.sort.each do |predicate|

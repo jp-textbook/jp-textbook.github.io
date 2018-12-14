@@ -702,7 +702,8 @@ textbook:TextbookShape a sh:NodeShape;
         ];
 .
 
-curriculum:SubjectArea a sh:NodeShape;
+curriculum:SubjectAreaShape a sh:NodeShape;
+        sh:targetClass curriculum:SubjectArea;
         sh:property [
           sh:path schema:name;
           sh:order 1;
@@ -789,7 +790,7 @@ textbook:SourceOfEnglishNameShape a sh:NodeShape;
           sh:path textbook:curriculum;
           sh:order 2;
           sh:maxCount 1;
-          sh:class textbook:Curriculum;
+          sh:class textbook:CurriculumGuideline;
           sh:name "対応学習指導要領"@ja;
           sh:name "Reference to a curriculum guideline"@en;
           skos:example "curriculum/小学校/2012";
@@ -808,7 +809,8 @@ textbook:SourceOfEnglishNameShape a sh:NodeShape;
         ];
 .
 
-curriculum:Subject a sh:NodeShape;
+curriculum:SubjectShape a sh:NodeShape;
+        sh:targetClass curriculum:Subject;
         sh:property [
           sh:path schema:name;
           sh:order 1;
@@ -886,6 +888,6 @@ curriculum:Subject a sh:NodeShape;
           skos:example "（ブランクリソース）";
           sh:description "<code>schema:name</code>, <code>textbook:curriculum</code>, <code>rdfs:seeAlso</code>の3つのプロパティを持つ。"@ja;
           sh:description "This has a blank node which consists of three properties: <code>schema:name</code>, <code>textbook:curriculum</code> and <code>rdfs:seeAlso</code>."@en;
-          sh:node textbook:SourceOfEnglishName;
+          sh:node textbook:SourceOfEnglishNameShape;
         ];
 .
