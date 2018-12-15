@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <%- if param[:file] =="about.html" -%>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.4.1/dist/bootstrap-toc.min.css">
+    <%- end -%>
     <link rel="stylesheet" href="<%=h relative_path("style.css") %>">
     <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
     <meta property="og:image" content="https://jp-textbook.github.io/textbook-LOD-logo-FB.png">
@@ -34,7 +37,11 @@
       ga('send', 'pageview');
     </script>
   </head>
+  <%- if param[:file] == "about.html" -%>
+  <body data-spy="scroll" data-target="#toc">
+  <%- else -%>
   <body>
+  <%- end -%>
     <nav class="navbar navbar-inverse">
       <div class="container">
         <div class="navbar-header">
@@ -42,7 +49,7 @@
         </div>
         <ul class="nav navbar-nav navbar-right">
           <li<%= ' class="active"' if param[:active] == :home %>><a class="navbar-brand" href="/">ホーム</a></li>
-          <li><a href="/about">教科書LODについて</a></li>
+          <li<%= ' class="active"' if param[:active] == :about %>><a href="/about">教科書LODについて</a></li>
           <li><a href="<%=h param[:file_en] ? Pathname(param[:file_en].omit_suffix).relative_path_from(Pathname(File.dirname param[:file])) : "/en/" %>">English</a></li>
           <li class="searchbar">
 <script>
@@ -74,5 +81,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <%- if param[:file] == "about.html" -%>
+    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.4.1/dist/bootstrap-toc.min.js"></script>
+    <%- end -%>
   </body>
 </html>

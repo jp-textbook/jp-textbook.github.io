@@ -46,4 +46,22 @@ data.each do |uri, v|
   sitemap << param[:file_en]
 end
 
+template = PageTemplate.new("template/about.html.erb")
+template_en = PageTemplate.new("template/about.html.en.erb")
+param = {
+  name: "プロジェクトについて",
+  name_en: "About",
+  active: :about,
+  file: "about.html",
+  file_en: "en/about.html",
+}
+data = load_turtle("shape.ttl")
+prefix = load_prefixes("shape.ttl")
+%w( CatalogueShape CurriculumGuidelineShape curriculum/SubjectAreaShape curriculum/SubjectShape PublisherShape SchoolShape SubjectTypeShape TextbookShape ).each do |klass|
+  param[klass] = expand_shape(data, "https://w3id.org/jp-textbook/#{klass}", prefix)
+  param[klass + "_en"] = expand_shape(data, "https://w3id.org/jp-textbook/#{klass}", prefix, :en)
+end
+template.output_to(param[:file], param, :ja)
+template_en.output_to(param[:file_en], param, :en)
+
 open("sitemaps-schema.xml", "w"){|io| io.print sitemap.to_xml }

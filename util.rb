@@ -41,16 +41,16 @@ class PageTemplate
     end
   end
   def to_html(param, lang = :ja)
-    @param = @param.merge(param)
-    tmpl = open(@template){|io| io.read }
-    erb = ERB.new(tmpl, $SAFE, "-")
-    erb.filename = @template
-    param[:content] = erb.result(binding)
+    param[:content] = to_html_raw(@template, param, lang)
     layout_fname = "template/layout.html.erb"
     layout_fname = "template/layout.html.#{lang}.erb" if lang != :ja
-    layout = open(layout_fname){|io| io.read }
-    erb = ERB.new(layout, $SAFE, "-")
-    erb.filename = layout_fname
+    to_html_raw(layout_fname, param, lang)
+  end
+  def to_html_raw(template, param, lang = :ja)
+    @param = @param.merge(param)
+    tmpl = open(template){|io| io.read }
+    erb = ERB.new(tmpl, $SAFE, "-")
+    erb.filename = template
     erb.result(binding)
   end
 
@@ -152,6 +152,71 @@ def load_turtle(filename)
   end
   STDERR.puts "#{count} triples. #{data.size} subjects."
   data
+end
+
+def load_prefixes(filename)
+  file = find_turtle(filename)
+  prefixes = {}
+  open(file) do |io|
+    io.each do |line|
+      if /\A\s*\@prefix\s+([\w-]+):\s+<(.+?)>\s*\.\s*\z/i =~ line
+        prefixes[$1] = $2
+      end
+    end
+  end
+  prefixes
+end
+
+def expand_shape(data, uri, prefixes = {}, lang = :ja)
+  #p uri
+  result = data[uri]["http://www.w3.org/ns/shacl#property"].sort_by do |e|
+    e["http://www.w3.org/ns/shacl#order"]
+  end.map do |property|
+    path = data[property]["http://www.w3.org/ns/shacl#path"].first
+    shorten_path = path.dup
+    prefixes.each do |prefix, val|
+      if path.index(val) == 0
+        shorten_path = path.sub(/\A#{val}/, "#{prefix}:")
+      end
+    end
+    nodes = nil
+    if data[property]["http://www.w3.org/ns/shacl#node"]
+      node = data[property]["http://www.w3.org/ns/shacl#node"].first
+      if data[node]["http://www.w3.org/ns/shacl#or"]
+        node_or = data[data[node]["http://www.w3.org/ns/shacl#or"].first]
+        node_mode = :or
+        nodes = []
+        nodes << expand_shape(data, node_or["http://www.w3.org/1999/02/22-rdf-syntax-ns#first"].first, prefixes, lang)
+        rest = node_or["http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"].first
+        while data[rest] do
+          nodes << expand_shape(data, data[rest]["http://www.w3.org/1999/02/22-rdf-syntax-ns#first"].first, prefixes, lang)
+          rest = data[rest]["http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"].first
+        end
+      else
+        nodes = expand_shape(data, node, prefixes, lang)
+      end
+      #p nodes
+    end
+    {
+      path: path,
+      shorten_path: shorten_path,
+      name_ja: data[property]["http://www.w3.org/ns/shacl#name"][:ja],
+      name_en: data[property]["http://www.w3.org/ns/shacl#name"][:en],
+      example: data[property]["http://www.w3.org/2004/02/skos/core#example"] ? data[property]["http://www.w3.org/2004/02/skos/core#example"].first : nil,
+      description_ja: data[property]["http://www.w3.org/ns/shacl#description"] ? data[property]["http://www.w3.org/ns/shacl#description"][:ja] : nil,
+      description_en: data[property]["http://www.w3.org/ns/shacl#description"] ? data[property]["http://www.w3.org/ns/shacl#description"][:en] : nil,
+      nodeKind: data[property]["http://www.w3.org/ns/shacl#nodeKind"] ? data[property]["http://www.w3.org/ns/shacl#nodeKind"].first : nil,
+      nodes: nodes,
+      node_mode: node_mode,
+    }
+  end
+  if lang == :en
+    template = "template/shape-table.html.en.erb"
+  else
+    template = "template/shape-table.html.erb"
+  end
+  tmpl = PageTemplate.new(template)
+  tmpl.to_html_raw(template, {properties: result}, lang)
 end
 
 def load_idlists(*files)

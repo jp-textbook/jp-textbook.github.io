@@ -1,0 +1,39 @@
+<table class="table">
+  <tr>
+    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Notes</th>
+  </tr>
+  <tbody>
+  <%- param[:properties].each do |property| -%>
+    <tr>
+      <%- if property[:nodeKind] == "http://www.w3.org/ns/shacl#BlankNode" -%>
+      <td rowspan="2"><code><%=h property[:shorten_path] %></code></td>
+      <%- else -%>
+      <td><code><%=h property[:shorten_path] %></code></td>
+      <%- end -%>
+      <td><%= property[:name_en] %></td>
+      <%- if property[:nodeKind] == "http://www.w3.org/ns/shacl#IRI" -%>
+      <td class="url"><%= property[:example] %></td>
+      <%- else -%>
+      <td><%= property[:example] %></td>
+      <%- end -%>
+      <td><%= property[:description_en] %></td>
+    </tr>
+    <%- if property[:nodeKind] == "http://www.w3.org/ns/shacl#BlankNode" -%>
+    <tr>
+      <td colspan="3">
+        <%- if property[:node_mode] == :or -%>
+        The structural contents of a blank node are either of the followings:
+        <%- property[:nodes].each do |e| -%>
+          <div class="blank_node"><%= e.sub(/class="table"/, 'class="table table-condensed"') %></div>
+        <%- end -%>
+        <%- else -%>
+        The structural contents of a blank node are as follows:
+        <div class="blank_node"><%= property[:nodes].sub(/class="table"/, 'class="table table-condensed"') %></div>
+        <%- end -%>
+      </td>
+    </tr>
+    <%- end -%>
+  <%- end -%>
+  </tbody>
+</table>
+
