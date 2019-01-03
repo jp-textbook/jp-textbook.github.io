@@ -33,13 +33,20 @@
       <div class="row">
         <div class="col-md-12">
           <h2>掲載教科書一覧</h2>
-          <ul>
-            <%- param[:textbooks].each do |textbook| -%>
-              <li><a href="<%=h relative_path_uri(textbook[:uri]) %>"><%=h textbook[:name] %> (<%=h textbook[:publishers].first[:name] %>)</a>
-              （<%=h textbook[:usageYear] %>）
-              </li>
+          <dl>
+            <%- param[:textbooks].keys.sort.each do |guideline| -%>
+            <dt>学習指導要領 (<%=h guideline.last_part %>年度）</dt>
+            <dd>
+              <ul>
+                <%- param[:textbooks][guideline].each do |textbook| -%>
+                <li><a href="<%=h relative_path_uri(textbook[:uri]) %>"><%=h textbook[:name] %> (<%=h textbook[:publishers].first[:name] %>)</a>
+                （<%=h textbook[:usageYear] %>）
+                </li>
+                <%- end -%>
+              </ul>
+            </dd>
             <%- end -%>
-          </ul>
+          </dl>
         </div>
       </div>
       <%- end -%>
