@@ -11,70 +11,61 @@
         <div class="col-md-4">
           <h2>現行学習指導要領（2011年度以降）</h2>
           <dl>
-            <dt>小学校
+            <%-
+            [ "https://w3id.org/jp-textbook/curriculum/小学校/2011",
+              "https://w3id.org/jp-textbook/curriculum/中学校/2012",
+              "https://w3id.org/jp-textbook/curriculum/高等学校/2013",
+            ].each do |uri|
+              dir, year, = File.split(uri)
+              base, school, = File.split(dir)
+            -%>
+            <dt><%=h school %> <small><a href="<%= relative_path_uri(uri) %>"><span class="glyphicon glyphicon-book"></span> 学習指導要領</a></small>
             <dd><ul class="list-inline">
-              <%- param["https://w3id.org/jp-textbook/curriculum/小学校/2011"].each do |name| -%>
-                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h name.last_part %></a></li>
+              <%- param[uri].each do |name| -%>
+                <li><a href="<%=h relative_path_uri(name) %>"><%=h name.last_part %></a></li>
               <%- end -%>
               </ul></dd>
-            <dt>中学校</dt>
-            <dd><ul class="list-inline">
-              <%- param["https://w3id.org/jp-textbook/curriculum/中学校/2012"].each do |name| -%>
-                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h name.last_part %></a></li>
-              <%- end -%>
-            </ul></dd>
-            <dt>高等学校</dt>
-            <dd><ul class="list-inline">
-              <%- param["https://w3id.org/jp-textbook/curriculum/高等学校/2013"].each do |name| -%>
-                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h name.last_part %></a></li>
-              <%- end -%>
-            </ul></dd>
+            <%- end -%>
           </dl>
         </div>
         <div class="col-md-4">
           <h2>旧学習指導要領（2002年度以降）</h2>
           <dl>
-            <dt>小学校</dt>
+            <%-
+            [ "https://w3id.org/jp-textbook/curriculum/小学校/2002",
+              "https://w3id.org/jp-textbook/curriculum/中学校/2002",
+              "https://w3id.org/jp-textbook/curriculum/高等学校/2003",
+            ].each do |uri|
+              dir, year, = File.split(uri)
+              base, school, = File.split(dir)
+            -%>
+            <dt><%=h school %> <small><a href="<%= relative_path_uri(uri) %>"><span class="glyphicon glyphicon-book"></span> 学習指導要領</a></small>
             <dd><ul class="list-inline">
-              <%- param["https://w3id.org/jp-textbook/curriculum/小学校/2002"].each do |name| -%>
-                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h name.last_part %></a></li>
+              <%- param[uri].each do |name| -%>
+                <li><a href="<%=h relative_path_uri(name) %>"><%=h name.last_part %></a></li>
               <%- end -%>
-            </ul></dd>
-            <dt>中学校</dt>
-            <dd><ul class="list-inline">
-              <%- param["https://w3id.org/jp-textbook/curriculum/中学校/2002"].each do |name| -%>
-                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h name.last_part %></a></li>
-              <%- end -%>
-            </ul></dd>
-            <dt>高等学校</dt>
-            <dd><ul class="list-inline">
-              <%- param["https://w3id.org/jp-textbook/curriculum/高等学校/2003"].each do |name| -%>
-                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h name.last_part %></a></li>
-              <%- end -%>
-            </ul></dd>
+              </ul></dd>
+            <%- end -%>
           </dl>
         </div>
         <div class="col-md-4">
           <h2>旧学習指導要領（1992年度以降）</h2>
           <dl>
-            <dt>小学校</dt>
+            <%-
+            [ "https://w3id.org/jp-textbook/curriculum/小学校/1992",
+              "https://w3id.org/jp-textbook/curriculum/中学校/1993",
+              "https://w3id.org/jp-textbook/curriculum/高等学校/1994",
+            ].each do |uri|
+              dir, year, = File.split(uri)
+              base, school, = File.split(dir)
+            -%>
+            <dt><%=h school %> <small><a href="<%= relative_path_uri(uri) %>"><span class="glyphicon glyphicon-book"></span> 学習指導要領</a></small>
             <dd><ul class="list-inline">
-              <%- param["https://w3id.org/jp-textbook/curriculum/小学校/1992"].each do |name| -%>
-                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h name.last_part %></a></li>
+              <%- param[uri].each do |name| -%>
+                <li><a href="<%=h relative_path_uri(name) %>"><%=h name.last_part %></a></li>
               <%- end -%>
-            </ul></dd>
-            <dt>中学校</dt>
-            <dd><ul class="list-inline">
-              <%- param["https://w3id.org/jp-textbook/curriculum/中学校/1993"].each do |name| -%>
-                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h name.last_part %></a></li>
-              <%- end -%>
-            </ul></dd>
-            <dt>高等学校</dt>
-            <dd><ul class="list-inline">
-              <%- param["https://w3id.org/jp-textbook/curriculum/高等学校/1994"].each do |name| -%>
-                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h name.last_part %></a></li>
-              <%- end -%>
-            </ul></dd>
+              </ul></dd>
+            <%- end -%>
           </dl>
         </div>
       </div>

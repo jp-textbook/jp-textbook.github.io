@@ -11,74 +11,58 @@
         <div class="col-md-4">
           <h2>Current Curriculum Guideline (Since AY2011)</h2>
           <dl>
-            <dt>Elementary School</dt>
+            <%-
+              [ "https://w3id.org/jp-textbook/curriculum/小学校/2011",
+                "https://w3id.org/jp-textbook/curriculum/中学校/2012",
+                "https://w3id.org/jp-textbook/curriculum/高等学校/2013",
+              ].each do |uri|
+            -%>
+            <dt><%=h param[:curriculums][uri][:school_name_en] %> <small><a href="<%= relative_path_uri(uri, :en) %>"><span class="glyphicon glyphicon-book"></span> Curriculum guideline</a></small>
             <dd><ul class="list-inline">
-              <%- param["https://w3id.org/jp-textbook/curriculum/小学校/2011"].each do |name| -%>
-                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h param[:subjects][name]["http://schema.org/name"][:en] %></a></li>
-              <%- end -%>
-              </ul></dd>
-            <dt>Lower Secondary School</dt>
-            <dd><ul class="list-inline">
-              <%- param["https://w3id.org/jp-textbook/curriculum/中学校/2012"].each do |name| -%>
-                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h param[:subjects][name]["http://schema.org/name"][:en] %></a></li>
-              <%- end -%>
-            </ul></dd>
-            <dt>Upper Secondary School</dt>
-            <dd><ul class="list-inline">
-              <%- param["https://w3id.org/jp-textbook/curriculum/高等学校/2013"].each do |name| -%>
-                <%- subject = param[:subjects][name] -%>
-                <%- subject = param[:areas][name] if param[:areas][name] -%>
-                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h subject["http://schema.org/name"][:en] %></a></li>
+              <%- param[uri].each do |name| -%>
+                <%- subject = param[:areas][name] || param[:subjects][name] -%>
+                <li><a href="<%=h relative_path_uri(name, :en) %>"><%=h subject["http://schema.org/name"][:en] %></a></li>
               <%- end -%>
             </ul></dd>
+            <%- end -%>
           </dl>
         </div>
         <div class="col-md-4">
           <h2>Old Curriculum Guideline (Since AY2002)</h2>
           <dl>
-            <dt>Elementary School</dt>
+            <%-
+              [ "https://w3id.org/jp-textbook/curriculum/小学校/2002",
+                "https://w3id.org/jp-textbook/curriculum/中学校/2002",
+                "https://w3id.org/jp-textbook/curriculum/高等学校/2003",
+              ].each do |uri|
+            -%>
+            <dt><%=h param[:curriculums][uri][:school_name_en] %> <small><a href="<%= relative_path_uri(uri, :en) %>"><span class="glyphicon glyphicon-book"></span> Curriculum guideline</a></small>
             <dd><ul class="list-inline">
-              <%- param["https://w3id.org/jp-textbook/curriculum/小学校/2002"].each do |name| -%>
-                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h param[:subjects][name]["http://schema.org/name"][:en] %></a></li>
+              <%- param[uri].each do |name| -%>
+                <%- subject = param[:areas][name] || param[:subjects][name] -%>
+                <li><a href="<%=h relative_path_uri(name) %>"><%=h subject["http://schema.org/name"][:en] %></a></li>
               <%- end -%>
             </ul></dd>
-            <dt>Lower Secondary School</dt>
-            <dd><ul class="list-inline">
-              <%- param["https://w3id.org/jp-textbook/curriculum/中学校/2002"].each do |name| -%>
-                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h param[:subjects][name]["http://schema.org/name"][:en] %></a></li>
-              <%- end -%>
-            </ul></dd>
-            <dt>Upper Secondary School</dt>
-            <dd><ul class="list-inline">
-              <%- param["https://w3id.org/jp-textbook/curriculum/高等学校/2003"].each do |name| -%>
-                <% subject = param[:areas][name] ? param[:areas][name] : param[:subjects][name] %>
-                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h subject["http://schema.org/name"][:en] %></a></li>
-              <%- end -%>
-            </ul></dd>
+            <%- end -%>
           </dl>
         </div>
         <div class="col-md-4">
           <h2>Old Curriculum Guideline (Since AY1992)</h2>
           <dl>
-            <dt>Elementary School</dt>
+            <%-
+              [ "https://w3id.org/jp-textbook/curriculum/小学校/1992",
+                "https://w3id.org/jp-textbook/curriculum/中学校/1993",
+                "https://w3id.org/jp-textbook/curriculum/高等学校/1994",
+              ].each do |uri|
+            -%>
+            <dt><%=h param[:curriculums][uri][:school_name_en] %> <small><a href="<%= relative_path_uri(uri, :en) %>"><span class="glyphicon glyphicon-book"></span> Curriculum guideline</a></small>
             <dd><ul class="list-inline">
-              <%- param["https://w3id.org/jp-textbook/curriculum/小学校/1992"].each do |name| -%>
-                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h param[:subjects][name]["http://schema.org/name"][:en] %></a></li>
+              <%- param[uri].each do |name| -%>
+                <%- subject = param[:areas][name] || param[:subjects][name] -%>
+                <li><a href="<%=h relative_path_uri(name, :en) %>"><%=h subject["http://schema.org/name"][:en] %></a></li>
               <%- end -%>
             </ul></dd>
-            <dt>Lower Secondary School</dt>
-            <dd><ul class="list-inline">
-              <%- param["https://w3id.org/jp-textbook/curriculum/中学校/1993"].each do |name| -%>
-                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h param[:subjects][name]["http://schema.org/name"][:en] %></a></li>
-              <%- end -%>
-            </ul></dd>
-            <dt>Upper Secondary School</dt>
-            <dd><ul class="list-inline">
-              <%- param["https://w3id.org/jp-textbook/curriculum/高等学校/1994"].each do |name| -%>
-                <% subject = param[:areas][name] ? param[:areas][name] : param[:subjects][name] %>
-                <li><a href="<%=h name.sub("https://w3id.org/jp-textbook/", "./") %>"><%=h subject["http://schema.org/name"][:en] %></a></li>
-              <%- end -%>
-            </ul></dd>
+            <%- end -%>
           </dl>
         </div>
       </div>
@@ -91,7 +75,7 @@
             <dd>
               <ul class="list-inline">
                 <%- param[:catalogues].keys.grep(/小学校/).sort.reverse.each do |catalogue| -%>
-                <li><a href="<%=h relative_path_uri(catalogue) %>"><%=h catalogue.last_part.to_i + 1 %></a></li>
+                <li><a href="<%=h relative_path_uri(catalogue, :en) %>"><%=h catalogue.last_part.to_i + 1 %></a></li>
                 <%- end -%>
               </ul>
             </dd>
@@ -99,7 +83,7 @@
             <dd>
               <ul class="list-inline">
                 <%- param[:catalogues].keys.grep(/中学校/).sort.reverse.each do |catalogue| -%>
-                <li><a href="<%=h relative_path_uri(catalogue) %>"><%=h catalogue.last_part.to_i + 1 %></a></li>
+                <li><a href="<%=h relative_path_uri(catalogue, :en) %>"><%=h catalogue.last_part.to_i + 1 %></a></li>
                 <%- end -%>
               </ul>
             </dd>
@@ -107,7 +91,7 @@
             <dd>
               <ul class="list-inline">
                 <%- param[:catalogues].keys.grep(/高等学校/).sort.reverse.each do |catalogue| -%>
-                <li><a href="<%=h relative_path_uri(catalogue) %>"><%=h catalogue.last_part.to_i + 1 %></a></li>
+                <li><a href="<%=h relative_path_uri(catalogue, :en) %>"><%=h catalogue.last_part.to_i + 1 %></a></li>
                 <%- end -%>
               </ul>
             </dd>

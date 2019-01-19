@@ -305,6 +305,7 @@ index_param = {
   file: "index.html", file_en: "en/index.html",
   subjects: subjects, areas: area_data, active: :home,
   catalogues: catalogue_data,
+  curriculums: {},
 }
 param = {}
 cur_param = {}
@@ -445,6 +446,7 @@ data.each do |uri, v|
   sitemap << param[:file]
   template_en.output_to(param[:file_en], param, :en)
   sitemap << param[:file_en]
+  index_param[:curriculums][uri] = param
 end
 template = PageTemplate.new("template/subject-type.html.erb")
 template_en = PageTemplate.new("template/subject-type.html.en.erb")
