@@ -119,137 +119,257 @@
           </p>
           <h4>Properties for the Textbook Resources</h4>
           <p>The properties for the textbook resources are as follows:</p>
-          <table class="table">
+          <table class="table table-condensed">
   <tr>
-    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Notes</th>
+    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Required? / Repeatable?</th><th>Notes</th>
   </tr>
   <tbody>
     <tr>
       <td><code>schema:name</code></td>
       <td>Title</td>
       <td>NEW CROWN ENGLISH SERIES 3</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>schema:editor</code></td>
       <td>Editor(s)</td>
       <td>森住衛 ほか29名</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>schema:publisher</code></td>
       <td>Publisher</td>
       <td>textbook:publisher/2003/三省堂</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Repeatable
+      property
+      </td>
       <td>Link to the publisher resource, represented as <code>textbook:publisher/<var>catalogue publication year</var>/<var>publisher's abbriviated name</var></code></td>
     </tr>
     <tr>
       <td><code>schema:bookEdition</code></td>
       <td>Edition</td>
       <td>改訂版</td>
+      <td>
+        Optional
+      and
+        Repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>schema:isbn</code></td>
       <td>ISBN</td>
       <td>978-4-385-70190-5</td>
+      <td>
+        Optional
+      and
+        Repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>bf:extent</code></td>
       <td>The total pages</td>
       <td>120</td>
+      <td>
+        Optional
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>bf:dimensions</code></td>
       <td>Dimensions</td>
       <td>B4</td>
+      <td>
+        Optional
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>textbook:grade</code></td>
       <td>Target grade</td>
       <td>1, 2, 3</td>
+      <td>
+        Optional
+      and
+        Repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>textbook:authorizedYear</code></td>
       <td>Authorized year</td>
       <td>2001</td>
+      <td>
+        Optional
+      and
+        Repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>textbook:catalogue</code></td>
       <td>Textbook catalogue</td>
       <td>textbook:catalogue/中学校/2004</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Repeatable
+      property
+      </td>
       <td>Link to the catalogue resources, represented as <code>textbook:catalogue/<var>type of school</var>/<var>first published year</var></code>. Since version 11.0, this property has changed to link to all the related catalogues.</td>
     </tr>
     <tr>
       <td><code>textbook:usageYear</code></td>
       <td>Usage year</td>
       <td>2005-2005</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>textbook:textbookSymbol</code></td>
       <td>Texbook symbol</td>
       <td>英語</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>textbook:textbookNumber</code></td>
       <td>Textbook number</td>
       <td>904</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>textbook:subject</code></td>
       <td>Subject</td>
       <td>textbook:curriculum/中学校/2002/外国語/英語</td>
+      <td>
+        Optional
+      and
+        Non-repeatable
+      property
+      </td>
       <td>Link to the subject resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var>/<var>subject</var></code>.</td>
     </tr>
     <tr>
       <td><code>textbook:subjectArea</code></td>
       <td>Subject area</td>
       <td>textbook:curriculum/中学校/2002/外国語</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td>Link to the subject area resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var></code>.</td>
     </tr>
     <tr>
       <td><code>textbook:curriculum</code></td>
       <td>Curriculum Guideline</td>
       <td>textbook:curriculum/中学校/2002</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td>Link to the curriculum guideline resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var></code>.</td>
     </tr>
     <tr>
       <td><code>textbook:school</code></td>
       <td></td>
       <td>textbook:school/中学校</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td>Link to the type resource of schools, represented as <code>textbook:school/<var>type of school</var></code>.</td>
     </tr>
     <tr>
       <td rowspan="2"><code>textbook:item</code></td>
       <td>Holding item(s)</td>
       <td></td>
+      <td>
+        <strong>Required</strong>
+      and
+        Repeatable
+      property
+      </td>
       <td>Link to the blank node resource(s), which consist of either of properties 1) <code>nier:recordID</code> and <code>nier:callNumber</code>, or 2) <code>textbook-rc:recordID</code> and <code>textbook-rc:callNumber</code>. If there are multiple holdings in a library, this property values are repeated according to the number of holdings times.</td>
     </tr>
     <tr>
-      <td colspan="3">
+      <td colspan="4">
         The structural contents of a blank node are either of the followings:
           <div class="blank_node"><table class="table table-condensed">
   <tr>
-    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Notes</th>
+    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Required? / Repeatable?</th><th>Notes</th>
   </tr>
   <tbody>
     <tr>
       <td><code>nier:recordID</code></td>
       <td>Record identifier at the NIER Education Library Textbook Database</td>
       <td>EB10015334</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td>It is possible to refer to the record at the website as follows: <code>https://nieropac.nier.go.jp/ebopac/<var>record ID</var></code></td>
     </tr>
     <tr>
       <td><code>nier:callNumber</code></td>
       <td>Call number for the item at the NIER Education Library.</td>
       <td>K260.91||S12U||01/05</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td>Delimiter characters are "||". Two types of call numbers are used: The current one and the old one. <dl><dt>The current rule for call numbers</dt><dd>Textbook classification numbers - publisher number - authorized years + book number (Ex. K170.8||K10||2010)</dd><dt>The old rule for call numbers</dt><dd>Textbook classification numbers - publisher number + administrative number - authorized / usage year (Ex. K260.91||S12U||01/05). Textbook classification, publisher number, administrative number and book number are originally assign by Education Library. Usage year is derived from the item holdings of Ducation Library, so some of the year might be different from the original usage year. If year numbers are four digits, they are Gregorian calendar years. In the other cases, the numbers from 21 to 64 corresponds to 1964 to 1989 (Showa Era), the ones from 88 to 99 are 1988 to 1999, and the ones from 00 to 05 means 2000 to 2005.</dd></dl></td>
     </tr>
   </tbody>
@@ -258,19 +378,31 @@
 </div>
           <div class="blank_node"><table class="table table-condensed">
   <tr>
-    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Notes</th>
+    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Required? / Repeatable?</th><th>Notes</th>
   </tr>
   <tbody>
     <tr>
       <td><code>textbook-rc:recordID</code></td>
       <td>Record identifier at the Textbook Library of Textbook Research Center Textbook Catalogue Information Database.</td>
       <td>220050110</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td>It is possible to refer to the record at the website as follows: <code>http://textbook-rc-lib.net/Opac/search.htm?s=SsaOkobBIBy2ftPelVbXwTJqTVi&ncid=<var>record ID</var></code></td>
     </tr>
     <tr>
       <td><code>textbook-rc:callNumber</code></td>
       <td>Call number for the item at the Textbook Library of Textbook Research Center.</td>
       <td>B2|600|H17/18</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
   </tbody>
@@ -283,12 +415,24 @@
       <td><code>rdfs:seeAlso</code></td>
       <td>Related link(s)</td>
       <td class="url">http://id.ndl.go.jp/jpno/89034331</td>
+      <td>
+        Optional
+      and
+        Repeatable
+      property
+      </td>
       <td>Repeatable. Links to <a href="http://iss.ndl.go.jp/">NDL Search</a> (via NDLBibID and JPNO) and <a href="https://ci.nii.ac.jp/books/">CiNii Books</a> (via NCID).</td>
     </tr>
     <tr>
       <td><code>bf:note</code></td>
       <td>Notes</td>
       <td>2009年度より出版社を「日本文教出版株式会社」に変更。</td>
+      <td>
+        Optional
+      and
+        Repeatable
+      property
+      </td>
       <td></td>
     </tr>
   </tbody>
@@ -309,113 +453,209 @@
           </p>
           <h4>Properties for the Curriculum Guidelines Resources</h4>
           <p>The properties for the curriculum guidelines resources are as follows:</p>
-          <table class="table">
+          <table class="table table-condensed">
   <tr>
-    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Notes</th>
+    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Required? / Repeatable?</th><th>Notes</th>
   </tr>
   <tbody>
     <tr>
       <td><code>schema:name</code></td>
       <td>Name</td>
       <td><ul><li>"高等学校学習指導要領"@ja</li><li>"こうとうがっこうがくしゅうしどうようりょう"@ja-Hira</li><li>"Upper Secondary School Curriculum Guideline"@en</li></ul></td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td>Using language tags, this property represents an original name as well as transcription and English name. Language codes are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@ja-Hira</dt><dd>Japanese name (Hiragana). Presented a transcription of the name in Hiragana.</dd><dt>@en</dt><dd>English name</dd></dl></td>
     </tr>
     <tr>
       <td><code>textbook:hasSubjectArea</code></td>
       <td>has a subject area</td>
       <td>textbook:curriculum/高等学校/1994/国語</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>schema:datePublished</code></td>
       <td>Date of announcement</td>
       <td>1989-03-15</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>schema:startDate</code></td>
       <td>Date of enforcement</td>
       <td>1994-04-01</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>textbook:school</code></td>
       <td>Type of schools</td>
       <td>textbook:school/高等学校</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>schema:url</code></td>
       <td>Fulltext URL</td>
       <td class="url">http://www.mext.go.jp/a_menu/shotou/old-cs/1322503.htm</td>
+      <td>
+        Optional
+      and
+        Repeatable
+      property
+      </td>
       <td>Repeatable. Link to the fulltext possibly at the MEXT website and Curriculum guidelines database at NIER</td>
     </tr>
     <tr>
       <td rowspan="2"><code>dct:hasVersion</code></td>
       <td>Other versions</td>
       <td></td>
+      <td>
+        Optional
+      and
+        Repeatable
+      property
+      </td>
       <td>Repeatable. It corresponds to the revisions of the curriculum guideline. A revision information consists of a blank node, which has nine properties <code>schema:name</code>, <code>schema:datePublished</code>, <code>schema:citation</code>, <code>schema:url</code>, <code>rdfs:seeAlso</code>, <code>schema:isbn</code>, <code>nier:itemID</code>, <code>nier:callNumber</code>, and <code>nier:recordID</code>.</td>
     </tr>
     <tr>
-      <td colspan="3">
+      <td colspan="4">
         The structural contents of a blank node are as follows:
         <div class="blank_node"><table class="table table-condensed">
   <tr>
-    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Notes</th>
+    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Required? / Repeatable?</th><th>Notes</th>
   </tr>
   <tbody>
     <tr>
       <td><code>schema:name</code></td>
       <td>Name of the revision</td>
       <td><ul><li>"平成元年3月 告示"@ja</li><li>"1989-03 Notification"@en</li></ul></td>
+      <td>
+        <strong>Required</strong>
+      and
+        Repeatable
+      property
+      </td>
       <td>If the revision is on a part of a guideline, the name of the revision will be assigned such as "Partial revision in December 2003". Using language tags, Japanese and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@en</dt><dd>English name</dd></dl></td>
     </tr>
     <tr>
       <td><code>schema:datePublished</code></td>
       <td>Date of announcement (date of revision)</td>
       <td>1989-03-15</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>schema:citation</code></td>
       <td>Reference</td>
       <td><ul><li>"『平成元年 文部省告示第二十四号』（官報. 平成元年3月15日, 号外特第4号, pp.9-50）"@ja</li><li>"\"Notification No. 24 in 1989 of the Ministry of Education, Science and Culture\" (Official Gazette, 1989-03-15, Special Extra Edition No. 4, pp.9-50)"@en</li></ul></td>
+      <td>
+        <strong>Required</strong>
+      and
+        Repeatable
+      property
+      </td>
       <td>Refer to the official announcement and its publication. Using language tags, Japanese and English names shown. The meanings of language tags are as follows: <dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@en</dt><dd>English name</dd></dl></td>
     </tr>
     <tr>
       <td><code>schema:url</code></td>
       <td>Fulltext URL</td>
       <td class="url">http://www.mext.go.jp/a_menu/shotou/old-cs/1322235.htm</td>
+      <td>
+        Optional
+      and
+        Repeatable
+      property
+      </td>
       <td>Repeatable. Links to the fulltext(s), such as MEXT website and <a href="http://www.nier.go.jp/guideline/">NIER Curriculum Guidelines Database</a>.</td>
     </tr>
     <tr>
       <td><code>rdfs:seeAlso</code></td>
       <td>Related links</td>
       <td class="url">http://id.ndl.go.jp/jpno/89034331</td>
+      <td>
+        Optional
+      and
+        Repeatable
+      property
+      </td>
       <td>Repeatable. Links to <a href="http://iss.ndl.go.jp/">NDL Search</a> and <a href="https://ci.nii.ac.jp/books/">CiNii Books</a>.</td>
     </tr>
     <tr>
       <td><code>schema:isbn</code></td>
       <td>ISBN</td>
       <td>4171533104</td>
+      <td>
+        Optional
+      and
+        Repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>nier:itemID</code></td>
       <td>Item identifier at the NIER Education Library</td>
       <td>071221843</td>
+      <td>
+        Optional
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>nier:callNumber</code></td>
       <td>Call number at the NIER Education Library</td>
       <td>375.92||1||1989d</td>
+      <td>
+        Optional
+      and
+        Non-repeatable
+      property
+      </td>
       <td>Delimiter for a call number is "||"</td>
     </tr>
     <tr>
       <td><code>nier:recordID</code></td>
       <td>Record identifier at the NIER Education Library</td>
       <td>BB80025218</td>
+      <td>
+        Optional
+      and
+        Non-repeatable
+      property
+      </td>
       <td>Link is available as <code>https://nieropac.nier.go.jp/ebopac/<var>record identifier</var></code>.</td>
     </tr>
   </tbody>
@@ -441,71 +681,125 @@
           </p>
           <h4>Properties for the Subject Area Resources</h4>
           <p>The properties for the subject area resources are as follows:</p>
-          <table class="table">
+          <table class="table table-condensed">
   <tr>
-    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Notes</th>
+    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Required? / Repeatable?</th><th>Notes</th>
   </tr>
   <tbody>
     <tr>
       <td><code>schema:name</code></td>
       <td></td>
       <td><ul><li>"国語"@ja</li><li>"こくご"@ja-Hira</li><li>"Japanese Language"@en</li></ul></td>
+      <td>
+        <strong>Required</strong>
+      and
+        Repeatable
+      property
+      </td>
       <td>Using language tags, Japanese name, transcription of the name, and English name are shown. The meanings of language tags are as follows:  <dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@ja-Hira</dt><dd>Japanese name (Hiragana). The name of the subject area is transcribed in Hiragana.</dd><dt>@en</dt><dd>English name of the subject area</dd></dl>Note that English names are unfficial one. Translation is done by the maintainers of this dataset. While we could not find the official English translations for the subject area, we refer to the tentative translations in the curriculum guidelines, and the English guide entitled "Education in Japan" published by the MEXT.</td>
     </tr>
     <tr>
       <td><code>textbook:school</code></td>
       <td>Type of school</td>
       <td>textbook:school/高等学校</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>qb:order</code></td>
       <td>Listing order of the curriculum guideline</td>
       <td>1</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td>This is used in the order of the listings.</td>
     </tr>
     <tr>
       <td><code>textbook:subjectType</code></td>
       <td>Type of the subject area</td>
       <td>textbook:curriculum/高等学校/2013/Common</td>
+      <td>
+        Optional
+      and
+        Non-repeatable
+      property
+      </td>
       <td>Used only in the subject areas at the curriculum guidelines 1994, 2003 and 2013 for the high schools.</td>
     </tr>
     <tr>
       <td><code>textbook:hasSubject</code></td>
       <td>has a subject</td>
       <td>textbook:curriculum/高等学校/2013/国語/国語総合</td>
+      <td>
+        Optional
+      and
+        Repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td rowspan="2"><code>textbook:sourceOfEnglishName</code></td>
       <td>Source for the English name</td>
       <td></td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td>This has a blank node which consists of three properties: <code>schema:name</code>, <code>textbook:curriculum</code> and <code>rdfs:seeAlso</code>.</td>
     </tr>
     <tr>
-      <td colspan="3">
+      <td colspan="4">
         The structural contents of a blank node are as follows:
         <div class="blank_node"><table class="table table-condensed">
   <tr>
-    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Notes</th>
+    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Required? / Repeatable?</th><th>Notes</th>
   </tr>
   <tbody>
     <tr>
       <td><code>schema:name</code></td>
       <td>Name for the source</td>
       <td><ul><li>"小学校学習指導要領英訳版（仮訳）(平成20年3月)"@ja</li><li>"Elementary School Curriculum Guideline English Version (Tentative Translation) (2008-03)"@en</li></ul></td>
+      <td>
+        <strong>Required</strong>
+      and
+        Repeatable
+      property
+      </td>
       <td>Using language tags, Japanese and English names are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@en</dt><dd>English name</dd></dl></td>
     </tr>
     <tr>
       <td><code>textbook:curriculum</code></td>
       <td>Reference to a curriculum guideline</td>
       <td>curriculum/小学校/2012</td>
+      <td>
+        Optional
+      and
+        Non-repeatable
+      property
+      </td>
       <td>If the source is the English translation of the curriculum guideline, this property refer to the corresponding guideline.</td>
     </tr>
     <tr>
       <td><code>rdfs:seeAlso</code></td>
       <td>Related links</td>
       <td class="url">http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1261037.htm</td>
+      <td>
+        Optional
+      and
+        Repeatable
+      property
+      </td>
       <td>Links to the referenced website and the bibliographic information such as <a href="https://ci.nii.ac.jp/books/">CiNii Books</a> when the source is a book.</td>
     </tr>
   </tbody>
@@ -537,77 +831,137 @@
           </p>
           <h4>Properties for the Subject Resources</h4>
           <p>The properties for the subject resources are as follows:</p>
-          <table class="table">
+          <table class="table table-condensed">
   <tr>
-    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Notes</th>
+    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Required? / Repeatable?</th><th>Notes</th>
   </tr>
   <tbody>
     <tr>
       <td><code>schema:name</code></td>
       <td>Subject name</td>
       <td><ul><li>"国語総合"@ja</li><li>"こくごそうごう"@ja-Hira</li><li>"Integrated Japanese Language"@en</li></ul></td>
+      <td>
+        <strong>Required</strong>
+      and
+        Repeatable
+      property
+      </td>
       <td>Using language tags, Japanese name and its transcription (Yomi) and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@ja-Hira</dt><dd>Japanese name (Hiragana).</dd><dt>@en</dt><dd>English name of the subject</dd><dd><small>Note: English names are unofficial one. The errors in its translations are resposible for the maintainers of this dataset. We could not find any of official translations of the subject names, even though we ask the Education Library to find them. Some of the translations are origined from the tentative translations of the curriculum guidelines, such as <a href="http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1261037.htm">Elementary schools</a>、<a href="http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1298356.htm">Lower secondary schools</a>、<a href="http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1298353.htm">Upper secondary schols</a>. We also refer to the English guide "<a href="http://ci.nii.ac.jp/ncid/BA06708576">Education in JAPAN, 13th ed.</a>" by MEXT for the subject names of elementary and lower secondary schools, and the chapter eight "The Content of Each Subject and Subject Area" (p.107-195) of <a href="https://www.nier.go.jp/04_kenkyu_annai/pdf/improvement_of_the_courses_of_study.pdf">Concerning improvements to the courses of study for elementary, lower secondary and upper secondary schools</a>.</small></dd></dl></td>
     </tr>
     <tr>
       <td><code>textbook:school</code></td>
       <td>Type of schools</td>
       <td>textbook:school/高等学校</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>qb:order</code></td>
       <td>Listing order of the subject in the document on textbook authorization</td>
       <td>1</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td>Used in display orders</td>
     </tr>
     <tr>
       <td><code>textbook:subjectType</code></td>
       <td>Type of the subjects</td>
       <td>textbook:curriculum/高等学校/2013/Common</td>
+      <td>
+        Optional
+      and
+        Repeatable
+      property
+      </td>
       <td>Used only in the curriculum guidelines 1994, 2003 and 2013 for the upper secondary schools</td>
     </tr>
     <tr>
       <td><code>rdfs:seeAlso</code></td>
       <td>Reference</td>
       <td class="url">http://www.mext.go.jp/a_menu/shotou/kyoukasho/kentei/1293732.htm</td>
+      <td>
+        Optional
+      and
+        Repeatable
+      property
+      </td>
       <td>Links to the website for the document on textbook authorization</td>
     </tr>
     <tr>
       <td><code>schema:citation</code></td>
       <td>Citation</td>
       <td>『教科用図書検定申請受理種目』平成22年5月14日号外文部科学省告示第83号(平成元年6月9日文部省告示第89号の改正)</td>
+      <td>
+        Optional
+      and
+        Non-repeatable
+      property
+      </td>
       <td>Source citation for the subject name.</td>
     </tr>
     <tr>
       <td rowspan="2"><code>textbook:sourceOfEnglishName</code></td>
       <td>Source of English name</td>
       <td></td>
+      <td>
+        Optional
+      and
+        Non-repeatable
+      property
+      </td>
       <td>This has a blank node which consists of three properties: <code>schema:name</code>, <code>textbook:curriculum</code> and <code>rdfs:seeAlso</code>.</td>
     </tr>
     <tr>
-      <td colspan="3">
+      <td colspan="4">
         The structural contents of a blank node are as follows:
         <div class="blank_node"><table class="table table-condensed">
   <tr>
-    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Notes</th>
+    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Required? / Repeatable?</th><th>Notes</th>
   </tr>
   <tbody>
     <tr>
       <td><code>schema:name</code></td>
       <td>Name for the source</td>
       <td><ul><li>"小学校学習指導要領英訳版（仮訳）(平成20年3月)"@ja</li><li>"Elementary School Curriculum Guideline English Version (Tentative Translation) (2008-03)"@en</li></ul></td>
+      <td>
+        <strong>Required</strong>
+      and
+        Repeatable
+      property
+      </td>
       <td>Using language tags, Japanese and English names are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@en</dt><dd>English name</dd></dl></td>
     </tr>
     <tr>
       <td><code>textbook:curriculum</code></td>
       <td>Reference to a curriculum guideline</td>
       <td>curriculum/小学校/2012</td>
+      <td>
+        Optional
+      and
+        Non-repeatable
+      property
+      </td>
       <td>If the source is the English translation of the curriculum guideline, this property refer to the corresponding guideline.</td>
     </tr>
     <tr>
       <td><code>rdfs:seeAlso</code></td>
       <td>Related links</td>
       <td class="url">http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1261037.htm</td>
+      <td>
+        Optional
+      and
+        Repeatable
+      property
+      </td>
       <td>Links to the referenced website and the bibliographic information such as <a href="https://ci.nii.ac.jp/books/">CiNii Books</a> when the source is a book.</td>
     </tr>
   </tbody>
@@ -640,63 +994,117 @@
           </p>
           <h4>Properties for the Textbook Catalogue Resources</h4>
           <p>The properties for the textbook catalogue resources are as follows:</p>
-          <table class="table">
+          <table class="table table-condensed">
   <tr>
-    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Notes</th>
+    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Required? / Repeatable?</th><th>Notes</th>
   </tr>
   <tbody>
     <tr>
       <td><code>schema:name</code></td>
       <td>Title</td>
       <td><ul><li>"高等学校用教科書目録(平成29年度使用)"@ja</li><li>"こうとうがっこうようきょうかしょもくろく（へいせい29ねんどしよう）"@ja-Hira</li><li>"Textbook Catalogue for Upper Secondary School of 2017 School Year"@en</li></ul></td>
+      <td>
+        <strong>Required</strong>
+      and
+        Repeatable
+      property
+      </td>
       <td>Using language tags, Japanese name, its transcription (Yomi) and English name are shown. The meanings of the language tags are as follows: <dl><dt>@ja</dt><dd>Japanese title (Kanji)</dd><dt>@ja-Hira</dt><dd>Japanese title (Hiragana)</dd><dt>@en</dt><dd>English title</dd></dl></td>
     </tr>
     <tr>
       <td><code>textbook:school</code></td>
       <td>Type of schools</td>
       <td>textbook:school/高等学校</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>schema:datePublished</code></td>
       <td>Publication date</td>
       <td>2016</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>textbook:usageYear</code></td>
       <td>Usage year</td>
       <td></td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td>Usage year for textbooks listed in the catalogue.</td>
     </tr>
     <tr>
       <td><code>schema:url</code></td>
       <td>Fulltext URL</td>
       <td class="url">http://www.mext.go.jp/a_menu/shotou/kyoukasho/__icsFiles/afieldfile/2016/04/26/1369944_3.pdf</td>
+      <td>
+        Optional
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>rdfs:seeAlso</code></td>
       <td>Related links</td>
       <td class="url"><ul><li>https://web.archive.org/web/*/http://www.mext.go.jp/a_menu/shotou/kyoukasho/__icsFiles/afieldfile/2016/04/26/1369944_3.pdf</li><li>http://id.ndl.go.jp/jpno/000000045845</li><li>https://ci.nii.ac.jp/ncid/AN10586986</li></ul></td>
+      <td>
+        Optional
+      and
+        Repeatable
+      property
+      </td>
       <td>Repeatable. Links to web archiving services (<a href="https://archive.org/web/">Wayback Machine</a> and <a href="http://warp.ndl.go.jp/">WARP</a> etc.), <a href="http://iss.ndl.go.jp">NDL Search</a>, and <a href="https://ci.nii.ac.jp/books/">CiNii Books</a>.</td>
     </tr>
     <tr>
       <td><code>nier:itemID</code></td>
       <td>Item identifier at the NIER Education Library</td>
       <td>400008926</td>
+      <td>
+        Optional
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>nier:callNumber</code></td>
       <td>Call number at the NIER Education Library</td>
       <td>375.9||27||2017</td>
+      <td>
+        Optional
+      and
+        Non-repeatable
+      property
+      </td>
       <td>Delimiter for a call number is "||"</td>
     </tr>
     <tr>
       <td><code>nier:recordID</code></td>
       <td>Record identifier at the NIER Education Library</td>
       <td>BB00014905</td>
+      <td>
+        Optional
+      and
+        Non-repeatable
+      property
+      </td>
       <td>Link is available as <code>https://nieropac.nier.go.jp/ebopac/<var>record identifier</var></code>.</td>
     </tr>
   </tbody>
@@ -719,51 +1127,93 @@
           </p>
           <h4>Properties for the Publisher Resources</h4>
           <p>The properties for the publisher resources are as follows:</p>
-          <table class="table">
+          <table class="table table-condensed">
   <tr>
-    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Notes</th>
+    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Required? / Repeatable?</th><th>Notes</th>
   </tr>
   <tbody>
     <tr>
       <td><code>schema:name</code></td>
       <td>Name</td>
       <td><ul><li>"音楽之友社"@ja;</li><li>"おんがく の ともしゃ"@ja-Hira;</li><li>"Ongaku No Tomosha"@ja-Latn;</li></ul></td>
+      <td>
+        <strong>Required</strong>
+      and
+        Repeatable
+      property
+      </td>
       <td>Using language tags, the name and its transcription (Yomi) in Hiragana and in Alphabetical form. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@ja-Hira</dt><dd>Japanese name in Hiragana.</dd><dt>@ja-Latn</dt><dd>Japanese name in an alphabetical form.</dd></dl></td>
     </tr>
     <tr>
       <td><code>rdfs:seeAlso</code></td>
       <td>Related links</td>
       <td class="url">https://id.ndl.go.jp/auth/ndlna/00258007</td>
+      <td>
+        Optional
+      and
+        Repeatable
+      property
+      </td>
       <td>Repeatable. Links to <a href="https://hojin-info.go.jp/hojin/TopPage">Houjin Info</a>, <a href="https://id.ndl.go.jp/auth/ndla">Web NDL Authorities</a> and <a href="http://ja.dbpedia.org/">DBpedia</a>.</td>
     </tr>
     <tr>
       <td><code>textbook:catalogueYear</code></td>
       <td>Publication year for a textbook catalogue where the publisher is listed</td>
       <td>2017</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>textbook:catalogue</code></td>
       <td>Textbook catalogue listed</td>
       <td>textbook:catalogue/高等学校/2017</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Repeatable
+      property
+      </td>
       <td>Repeatable. Add link to the textbook catalogue resource represented as <code>textbook:catalogue/<var>type of schools</var>/<var>catalogue publication year</var></code></td>
     </tr>
     <tr>
       <td><code>textbook:publisherAbbreviation</code></td>
       <td>Abbreviation for the publisher</td>
       <td>友社</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>textbook:publisherNumber</code></td>
       <td>Publisher number</td>
       <td>89</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Repeatable
+      property
+      </td>
       <td>Repeatable. ex. <a href="https://w3id.org/jp-textbook/publisher/2009/日文">textbook:publisher/2009/日文</a>.</td>
     </tr>
     <tr>
       <td><code>bf:note</code></td>
       <td>Notes</td>
       <td>発行者番号が2種類ある（大阪書籍の教科書は発行者番号：3）。</td>
+      <td>
+        Optional
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
   </tbody>
@@ -787,21 +1237,33 @@
           </p>
           <h4>Properties for the School Resources</h4>
           <p>The properties for the school resources are as follows:</p>
-          <table class="table">
+          <table class="table table-condensed">
   <tr>
-    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Notes</th>
+    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Required? / Repeatable?</th><th>Notes</th>
   </tr>
   <tbody>
     <tr>
       <td><code>schema:name</code></td>
       <td>Name</td>
       <td><ul><li>"小学校"@ja;</li><li>"しょうがっこう"@ja-Hira;</li><li>"Elementary School"@en;</li></ul></td>
+      <td>
+        <strong>Required</strong>
+      and
+        Repeatable
+      property
+      </td>
       <td>Using language tags, Japanese name and its transcription and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@ja-Hira</dt><dd>Japanese name (Hiragana)</dd><dt>@en</dt><dd>English name</dd></dl></td>
     </tr>
     <tr>
       <td><code>owl:sameAs</code></td>
       <td>Equivalent resource</td>
       <td class="url">http://ja.dbpedia.org/resource/特別支援学校</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
   </tbody>
@@ -826,33 +1288,57 @@
           <p>The type values are either of <var>Common</var> or <var>Special</var>.</p>
           <h4>Properties for the Type of Subject/Subject Area Resources</h4>
           <p>The properties for the type of subject/subject area resources are as follows:</p>
-          <table class="table">
+          <table class="table table-condensed">
   <tr>
-    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Notes</th>
+    <th>Property name</th><th>Description</th><th>Example of the property value(s)</th><th>Required? / Repeatable?</th><th>Notes</th>
   </tr>
   <tbody>
     <tr>
       <td><code>schema:name</code></td>
       <td>Name</td>
       <td><ul><li>"各学科に共通する各教科"@ja;</li><li>"かくがっかにきょうつうするかくきょうか"@ja-Hira;</li></ul></td>
+      <td>
+        <strong>Required</strong>
+      and
+        Repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>textbook:school</code></td>
       <td>Type of schools</td>
       <td>textbook:school/高等学校</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>textbook:curriculum</code></td>
       <td>Curriculum guideline</td>
       <td>textbook:curriculum/高等学校/2013</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
     <tr>
       <td><code>schema:citation</code></td>
       <td>Reference</td>
       <td>学習指導要領の章タイトルなど（「第２章 各学科に共通する各教科」「第３章 主として専門学科において開設される各教科」）や、学習指導要領冒頭の「学 校 教 育 法 施 行 規 則（抄）」の表題（pp. iii-iv ）など</td>
+      <td>
+        <strong>Required</strong>
+      and
+        Non-repeatable
+      property
+      </td>
       <td></td>
     </tr>
   </tbody>

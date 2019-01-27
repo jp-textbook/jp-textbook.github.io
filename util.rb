@@ -179,6 +179,15 @@ def expand_shape(data, uri, prefixes = {}, lang = :ja)
         shorten_path = path.sub(/\A#{val}/, "#{prefix}:")
       end
     end
+    repeatable = false
+    if data[property]["http://www.w3.org/ns/shacl#maxCount"]
+      max_count = data[property]["http://www.w3.org/ns/shacl#maxCount"].first.to_i
+      if max_count > 1
+        repeatable = true
+      end
+    else
+      repeatable = true
+    end
     nodes = nil
     if data[property]["http://www.w3.org/ns/shacl#node"]
       node = data[property]["http://www.w3.org/ns/shacl#node"].first
@@ -205,6 +214,8 @@ def expand_shape(data, uri, prefixes = {}, lang = :ja)
       example: data[property]["http://www.w3.org/2004/02/skos/core#example"] ? data[property]["http://www.w3.org/2004/02/skos/core#example"].first : nil,
       description_ja: data[property]["http://www.w3.org/ns/shacl#description"] ? data[property]["http://www.w3.org/ns/shacl#description"][:ja] : nil,
       description_en: data[property]["http://www.w3.org/ns/shacl#description"] ? data[property]["http://www.w3.org/ns/shacl#description"][:en] : nil,
+      required: data[property]["http://www.w3.org/ns/shacl#minCount"] ? data[property]["http://www.w3.org/ns/shacl#minCount"].first.to_i > 0 : false,
+      repeatable: repeatable,
       nodeKind: data[property]["http://www.w3.org/ns/shacl#nodeKind"] ? data[property]["http://www.w3.org/ns/shacl#nodeKind"].first : nil,
       nodes: nodes,
       node_mode: node_mode,

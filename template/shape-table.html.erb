@@ -1,6 +1,6 @@
-<table class="table">
+<table class="table table-condensed">
   <tr>
-    <th>プロパティ名</th><th>説明</th><th>プロパティ値の例</th><th>備考</th>
+    <th>プロパティ名</th><th>説明</th><th>プロパティ値の例</th><th>必須・省略の別<br>繰り返しの有無</th><th>備考</th>
   </tr>
   <tbody>
   <%- param[:properties].each do |property| -%>
@@ -16,11 +16,27 @@
       <%- else -%>
       <td><%= property[:example] %></td>
       <%- end -%>
+      <td>
+        <div>
+        <%- if property[:required] -%>
+          <strong>必須</strong>
+        <%- else -%>
+          省略可能
+        <%- end -%>
+        </div>
+        <div>
+        <%- if property[:repeatable] -%>
+          繰り返し有り
+        <%- else -%>
+          繰り返し無し
+        <%- end -%>
+        </div>
+      </td>
       <td><%= property[:description_ja] %></td>
     </tr>
     <%- if property[:nodeKind] == "http://www.w3.org/ns/shacl#BlankNode" -%>
     <tr>
-      <td colspan="3">
+      <td colspan="4">
         <%- if property[:node_mode] == :or -%>
         ブランクノードの内容は以下のいずれかの内容からなる構造を持ちます。
         <%- property[:nodes].each do |e| -%>
