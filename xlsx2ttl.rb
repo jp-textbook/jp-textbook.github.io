@@ -41,34 +41,38 @@ tempfile = "/tmp/temp-#{$$}.txt"
 io = File.open(tempfile, "w")
 xlsx = Roo::Excelx.new(ARGV[0])
 xlsx.each_row_streaming(pad_cells: true) do |row|
-  io.puts row.join("\t")
+  io.puts row.map{|e|
+    # p e if e.to_s.include? "\"" or e.to_s.include? "\t"
+    e.to_s.gsub(/[\t\"]/, "")
+  }.join("\t")
 end
 xlsx.close
 io.close
 
 CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
-  uri = [BASE_URI, row["学校種別"], row["検定年(西暦)"], row["教科書記号"], row["教科書番号"]].join("/")
-  #curriculum = [BASE_URI, "curriculum", row["学校種別"], row["検定年(西暦)"]].join("/") #TODO
+  uri = [BASE_URI, row["/SCLASS#1"], row["/ADATE#1"], row["/TXSIGN#1"], row["/TXC#1"]].join("/")
+  p uri if row["/ADATE#1"].nil?
   curriculum = row["学習指導URI"]
   next if not curriculum =~ %r|https://w3id.org/jp-textbook/curriculum/.+|
-  subject_area = row["教科"]
-  subject_area = row["検索用教科"] if subject_area.nil? or subject_area.empty?
-  subject = row["種目"]
-  subject = row["検索用種目"] if subject.nil? or subject.empty?
+  subject_area = row["/SUBJECT#1"]
+  subject = row["/ITEM#1"].to_s
+  p uri if subject.nil?
+  p row["メタデータID"] if subject.nil?
   subject = NKF.nkf("-wZ1", subject).gsub(/\s+/, "")
   subject = subject.gsub(/1/, "I").gsub(/2/, "II").gsub(/3/, "III")
-  school = row["学校種別"]
+  school = row["/SCLASS#1"]
   grades = []
-  row["検索用学年"].to_s.strip.split.each do |e|
-    if ("1".."6") === e
-      grades << e.to_i
-    elsif e == "0"
-      # skip
+  (1..6).each do |i|
+    grade = row["/GRADE##{i}"]
+    if grade.to_i > 0
+      grades << grade
+    elsif grade.nil?
+      #skip
     else
-      logger.warn "Grade #{e.inspect} not supported: #{uri}"
+      logger.warn "Grade #{row["/GRADE##{i}"].inspect} not supported: #{uri}"
     end
   end
-  pages = row["ページ数・大きさ"].to_s.strip
+  pages = row["/PAGE#1"].to_s.strip
   unless pages.empty?
     pages = pages.split(/\s*;\s*/)
     if /\A\d+\Z/ =~ pages[0]
@@ -78,35 +82,36 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
     end
   end
   catalogues = []
-  usage_years = row["使用年度(西暦)"].split(/-/)
-  usage_years << CURRENT_YEAR if row["使用年度(西暦)"][-1] == "-"
-  logger.warn "#{uri}: catalogue and usage year mismatch (#{row["★教科書目録掲載年度"]} vs #{row["使用年度(西暦)"]})" if row["★教科書目録掲載年度"].to_i != usage_years.first.to_i - 1
-  logger.warn "#{uri}: usage year possible typo (#{row["使用年度(西暦)"]})" if usage_years.first.to_i > usage_years.last.to_i
-  usage_years = (usage_years.first.to_i .. usage_years.last.to_i)
+  usage_year_start = row["/SDATE#1"].to_i
+  usage_year_end   = row["/EDATE#1"].to_i
+  usage_year_end = CURRENT_YEAR if usage_year_end == 9999
+  logger.warn "#{uri}: catalogue and usage year mismatch (#{row["/PDATE#1"]} vs #{row["/SDATE#1"]})" if row["/PDATE#1"].to_i != usage_year_start-1
+  logger.warn "#{uri}: usage year possible typo (#{row["/SDATE#1"]}-#{row["/EDATE#1"]})" if usage_year_start > usage_year_end
+  usage_years = (usage_year_start .. usage_year_end)
   data = {
-    "schema:name" => row["書名"],
-    "schema:editor" => row["編著者"],
-    "schema:publisher" => "#{BASE_URI}/publisher/#{usage_years.first-1}/#{row["発行者略称"]}",
-    "schema:bookEdition" => row["版"],
+    "schema:name" => row["/TITLE#1"],
+    "schema:editor" => row["/CREATOR#1"],
+    "schema:publisher" => "#{BASE_URI}/publisher/#{usage_years.first-1}/#{row["/PUA#1"]}",
+    "schema:bookEdition" => row["/EDITION#1"],
     "textbook:item" => {
-      "nier:callNumber" => row["請求記号"],
-      "nier:recordID" => row["書誌ID"],
+      "nier:callNumber" => row["/CALLN#1"],
+      "nier:recordID" => row["メタデータID"],
     },
-    "textbook:catalogue" => usage_years.map{|y| "#{BASE_URI}/catalogue/#{row["学校種別"]}/#{y-1}" },
+    "textbook:catalogue" => usage_years.map{|y| "#{BASE_URI}/catalogue/#{row["/SCLASS#1"]}/#{y-1}" },
     "textbook:school" => "#{BASE_URI}/school/#{school}",
     "textbook:subjectArea" => "#{curriculum}/#{subject_area}",
     "textbook:subject" => "#{curriculum}/#{subject_area}/#{subject}",
     "textbook:grade" => grades,
     "textbook:curriculum" => "#{curriculum}",
-    "textbook:authorizedYear" => row["検定年(西暦)"],
-    "textbook:usageYear" => row["使用年度(西暦)"],
-    "textbook:textbookSymbol" => row["教科書記号"],
-    "textbook:textbookNumber" => row["教科書番号"],
+    "textbook:authorizedYear" => row["/ADATE#1"],
+    "textbook:usageYear" => "#{usage_year_start}-#{usage_year_end}",
+    "textbook:textbookSymbol" => row["/TXSIGN#1"],
+    "textbook:textbookNumber" => row["/TXC#1"],
     "bf:extent" => extent,
     "bf:dimensions" => dimensions,
     "bf:note" => [],
   }
-  data["bf:note"] << row["備考"] if row["備考"]
+  data["bf:note"] << row["/NOTE#1"] if row["/NOTE#1"]
   if subject == subject_area and fix_curriculums.include?( curriculum )
     if subject_area != "保健体育"
       data.delete("textbook:subject")
