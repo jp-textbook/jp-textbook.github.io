@@ -42,7 +42,6 @@ io = File.open(tempfile, "w")
 xlsx = Roo::Excelx.new(ARGV[0])
 xlsx.each_row_streaming(pad_cells: true) do |row|
   io.puts row.map{|e|
-    # p e if e.to_s.include? "\"" or e.to_s.include? "\t"
     e.to_s.gsub(/[\t\"]/, "")
   }.join("\t")
 end
@@ -51,12 +50,10 @@ io.close
 
 CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
   uri = [BASE_URI, row["/SCLASS#1"], row["/ADATE#1"], row["/TXSIGN#1"], row["/TXC#1"]].join("/")
-  p uri if row["/ADATE#1"].nil?
   curriculum = row["学習指導URI"]
   next if not curriculum =~ %r|https://w3id.org/jp-textbook/curriculum/.+|
   subject_area = row["/SUBJECT#1"]
   subject = row["/ITEM#1"].to_s
-  p uri if subject.nil?
   p row["メタデータID"] if subject.nil?
   subject = NKF.nkf("-wZ1", subject).gsub(/\s+/, "")
   subject = subject.gsub(/1/, "I").gsub(/2/, "II").gsub(/3/, "III")
@@ -65,7 +62,7 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
   (1..6).each do |i|
     grade = row["/GRADE##{i}"]
     if grade.to_i > 0
-      grades << grade
+      grades << grade.to_i
     elsif grade.nil?
       #skip
     else
@@ -104,7 +101,7 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
     "textbook:grade" => grades,
     "textbook:curriculum" => "#{curriculum}",
     "textbook:authorizedYear" => row["/ADATE#1"],
-    "textbook:usageYear" => "#{usage_year_start}-#{usage_year_end}",
+    "textbook:usageYear" => ( usage_years.size == 1 ) ? usage_year_start.to_s : "#{usage_year_start}-#{row["/EDATE#1"] == "9999" ? "" : usage_year_end }",
     "textbook:textbookSymbol" => row["/TXSIGN#1"],
     "textbook:textbookNumber" => row["/TXC#1"],
     "bf:extent" => extent,
@@ -144,7 +141,9 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
         logger.warn "  #{property}: #{done[uri][property]} vs #{data[property]}" 
         value = data[property]
         if property == "schema:publisher"
-          value = publisher_data[data[property]]["http://schema.org/name"][:ja]
+          tmp_value = data[property]
+          tmp_value = data[property].first if data[property].is_a?(Array)
+          value = publisher_data[tmp_value]["http://schema.org/name"][:ja]
         end
         note << %Q[#{PROPERTY_LABEL[property]}を「#{value}」に変更。]
       end
@@ -153,9 +152,11 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
       done[uri][property] = [ done[uri][property] ]
       done[uri][property] << data[property]
       done[uri][property].flatten!
+      done[uri][property].uniq!
     end
     done[uri]["bf:note"] << note
     done[uri]["bf:note"].flatten!
+    done[uri]["bf:note"].uniq!
   else
     done[uri] = data
   end

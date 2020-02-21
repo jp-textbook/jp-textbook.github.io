@@ -111,7 +111,7 @@ module Textbook
     dbpedia: /dbpedia.org/,
     hojin_info: /hojin-info\.go\.jp/,
   }
-  CURRENT_YEAR= 2018
+  CURRENT_YEAR= 2019
   def map_links(urls, links)
     urls = [] if urls.nil?
     urls.map{|url|
@@ -122,11 +122,15 @@ module Textbook
   end
 
 def find_turtle(filename)
-  file = nil
-  basename = File.basename(filename, ".ttl")
-  files = Dir.glob("#{basename}-[0-9]*.ttl")
-  file = files.sort.last
-  file
+  if File.exists? filename
+    filename
+  else
+    file = nil
+    basename = File.basename(filename, ".ttl")
+    files = Dir.glob("#{basename}-[0-9]*.ttl")
+    file = files.sort.last
+    file
+  end
 end
 
 def load_turtle(filename)
