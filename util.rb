@@ -121,9 +121,11 @@ module Textbook
     }.sort_by{|e| e[:key] }
   end
 
-def find_turtle(filename)
-  if File.exists? filename
-    filename
+def find_turtle(filename, params = {})
+  if params[:noexpand] == true
+    if File.exists? filename
+      filename
+    end
   else
     file = nil
     basename = File.basename(filename, ".ttl")
@@ -133,8 +135,8 @@ def find_turtle(filename)
   end
 end
 
-def load_turtle(filename)
-  file = find_turtle(filename)
+def load_turtle(filename, params = {})
+  file = find_turtle(filename, params)
   STDERR.puts "loading #{file}..."
   data = {}
   count = 0

@@ -10,8 +10,8 @@ end
 require_relative "util.rb"
 include Textbook
 
-data1 = load_turtle ARGV[0]
-data2 = load_turtle ARGV[1]
+data1 = load_turtle(ARGV[0], noexpand: true)
+data2 = load_turtle(ARGV[1], noexpand: true)
 
 data1.each do |k,v|
   if data2[k]
