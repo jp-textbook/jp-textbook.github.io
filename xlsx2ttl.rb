@@ -49,6 +49,7 @@ xlsx.close
 io.close
 
 CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
+  next if row["状態区分名称"] == "取り下げ"
   uri = [BASE_URI, row["/SCLASS#1"], row["/ADATE#1"], row["/TXSIGN#1"], row["/TXC#1"]].join("/")
   curriculum = row["学習指導URI"]
   next if not curriculum =~ %r|https://w3id.org/jp-textbook/curriculum/.+|
