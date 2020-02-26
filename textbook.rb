@@ -44,6 +44,7 @@ data.each.with_progressbar(format: "%a %e %P% Processed: %c from %C") do |uri, v
   subject_name = subject.last_part if subject
   subject_name_en = subjects[subject]["http://schema.org/name"][:en] if subject and subjects[subject] # FIXME: correct subject name. #217
   subjectArea = v["https://w3id.org/jp-textbook/subjectArea"].first
+  p subjectArea if not area_data.has_key? subjectArea
   school = v["https://w3id.org/jp-textbook/school"].first
   publisher_list = v["http://schema.org/publisher"].sort.map do |e|
     warn "publisher [#{e}] not found in publisher.ttl." if not publisher_data[e]
@@ -141,6 +142,7 @@ catalogue_data.each do |uri, v|
   catalogue_list[uri].to_a.map{|e| e[:curriculum] }.uniq.each do |curriculum|
     textbooks[curriculum] = catalogue_list[uri].select{|e| e[:curriculum] == curriculum }.sort_by do |e|
       area_order = area_data[e[:subjectArea]]["http://purl.org/linked-data/cube#order"].first.to_i
+      p e[:subject] if not subjects[e[:subject]]
       subject_order = e[:subject] ? subjects[e[:subject]]["http://purl.org/linked-data/cube#order"].first.to_i : 0
       publisher_names = e[:publishers].map{|publisher|
         [ publisher[:name],  publisher[:uri] ]
