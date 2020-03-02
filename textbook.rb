@@ -142,7 +142,6 @@ catalogue_data.each do |uri, v|
   catalogue_list[uri].to_a.map{|e| e[:curriculum] }.uniq.each do |curriculum|
     textbooks[curriculum] = catalogue_list[uri].select{|e| e[:curriculum] == curriculum }.sort_by do |e|
       area_order = area_data[e[:subjectArea]]["http://purl.org/linked-data/cube#order"].first.to_i
-      p e[:subject] if not subjects[e[:subject]]
       subject_order = e[:subject] ? subjects[e[:subject]]["http://purl.org/linked-data/cube#order"].first.to_i : 0
       publisher_names = e[:publishers].map{|publisher|
         [ publisher[:name],  publisher[:uri] ]
@@ -317,7 +316,9 @@ data.each do |uri, v|
   datePublished = Date.parse(v["http://schema.org/datePublished"].first)
   startDate = Date.parse(v["http://schema.org/startDate"].first)
   versions = []
-  if data_version[uri]["http://purl.org/dc/terms/hasVersion"]
+  if not data_version[uri]
+    STDERR.puts "WARN: data_version not found: #{uri}"
+  elsif data_version[uri]["http://purl.org/dc/terms/hasVersion"]
     versions = data_version[uri]["http://purl.org/dc/terms/hasVersion"].map{|e|
       val = data_version[e]
       date = Date.parse(val["http://schema.org/datePublished"].first)
@@ -365,82 +366,84 @@ data.each do |uri, v|
   }
   done_subject = {}
   cur_param[uri] = param
-  area_data[uri]["https://w3id.org/jp-textbook/hasSubjectArea"].sort_by{|area|
-    area_data[area]["http://purl.org/linked-data/cube#order"].sort.first.to_i
-  }.each do |area|
-    areas = v["https://w3id.org/jp-textbook/hasSubjectArea"]
-    school = area_data[area]["https://w3id.org/jp-textbook/school"].first
-    if area_data[area]["https://w3id.org/jp-textbook/subjectType"]
-      subjectTypes = area_data[area]["https://w3id.org/jp-textbook/subjectType"].sort.map do |subjectType_uri|
-        {
-          uri: subjectType_uri,
-          name: data_subjectType[subjectType_uri]["http://schema.org/name"][:ja],
-          name_en: data_subjectType[subjectType_uri]["http://schema.org/name"][:en],
+  if area_data[uri]
+    area_data[uri]["https://w3id.org/jp-textbook/hasSubjectArea"].sort_by{|area|
+      area_data[area]["http://purl.org/linked-data/cube#order"].sort.first.to_i
+    }.each do |area|
+      areas = v["https://w3id.org/jp-textbook/hasSubjectArea"]
+      school = area_data[area]["https://w3id.org/jp-textbook/school"].first
+      if area_data[area]["https://w3id.org/jp-textbook/subjectType"]
+        subjectTypes = area_data[area]["https://w3id.org/jp-textbook/subjectType"].sort.map do |subjectType_uri|
+          {
+            uri: subjectType_uri,
+            name: data_subjectType[subjectType_uri]["http://schema.org/name"][:ja],
+            name_en: data_subjectType[subjectType_uri]["http://schema.org/name"][:en],
+          }
+        end
+      end
+      area_param = {
+        uri: area,
+        file: File.join(area.sub("https://w3id.org/jp-textbook/", ""), "index.html"),
+        file_en: File.join(area.sub("https://w3id.org/jp-textbook/", "en/"), "index.html"),
+        curriculum: uri,
+        name: area_data[area]["http://schema.org/name"][:ja],
+        name_en: area_data[area]["http://schema.org/name"][:en],
+        name_yomi: area_data[area]["http://schema.org/name"][:"ja-hira"],
+        school: school,
+        school_name_en: school_data[school]["http://schema.org/name"][:en],
+        subjects: [],
+        subjectType: subjectTypes,
+        order: area_data[area]["http://purl.org/linked-data/cube#order"].sort_by{|e| e.to_i },
+      }
+      if subjects[area] and subjects[area]["https://w3id.org/jp-textbook/hasSubject"]
+        area_param[:subjects] = subjects[area]["https://w3id.org/jp-textbook/hasSubject"].sort_by{|subject|
+          subjects[subject]["http://purl.org/linked-data/cube#order"].sort.first.to_i
+        }.map{|subject|
+          { uri: subject,
+            name: subjects[subject]["http://schema.org/name"][:ja],
+            name_en: subjects[subject]["http://schema.org/name"][:en],
+          }
         }
       end
-    end
-    area_param = {
-      uri: area,
-      file: File.join(area.sub("https://w3id.org/jp-textbook/", ""), "index.html"),
-      file_en: File.join(area.sub("https://w3id.org/jp-textbook/", "en/"), "index.html"),
-      curriculum: uri,
-      name: area_data[area]["http://schema.org/name"][:ja],
-      name_en: area_data[area]["http://schema.org/name"][:en],
-      name_yomi: area_data[area]["http://schema.org/name"][:"ja-hira"],
-      school: school,
-      school_name_en: school_data[school]["http://schema.org/name"][:en],
-      subjects: [],
-      subjectType: subjectTypes,
-      order: area_data[area]["http://purl.org/linked-data/cube#order"].sort_by{|e| e.to_i },
-    }
-    if subjects[area] and subjects[area]["https://w3id.org/jp-textbook/hasSubject"]
-      area_param[:subjects] = subjects[area]["https://w3id.org/jp-textbook/hasSubject"].sort_by{|subject|
-        subjects[subject]["http://purl.org/linked-data/cube#order"].sort.first.to_i
-      }.map{|subject|
-        { uri: subject,
-          name: subjects[subject]["http://schema.org/name"][:ja],
-          name_en: subjects[subject]["http://schema.org/name"][:en],
+      if curriculums[uri][area]
+        area_param[:textbooks] = curriculums[uri][area].sort_by{|t| [ t[:textbookNumber], t[:uri] ] }
+      end
+      if area_data[area]["https://w3id.org/jp-textbook/sourceOfEnglishName"]
+        source_of_english_name = area_data[area_data[area]["https://w3id.org/jp-textbook/sourceOfEnglishName"].first]
+        area_param[:source_of_english_name] = {
+          name: source_of_english_name["http://schema.org/name"][:ja],
+          name_en: source_of_english_name["http://schema.org/name"][:en],
+          seeAlso: source_of_english_name["http://www.w3.org/2000/01/rdf-schema#seeAlso"].first,
         }
-      }
-    end
-    if curriculums[uri][area]
-      area_param[:textbooks] = curriculums[uri][area].sort_by{|t| [ t[:textbookNumber], t[:uri] ] }
-    end
-    if area_data[area]["https://w3id.org/jp-textbook/sourceOfEnglishName"]
-      source_of_english_name = area_data[area_data[area]["https://w3id.org/jp-textbook/sourceOfEnglishName"].first]
-      area_param[:source_of_english_name] = {
-        name: source_of_english_name["http://schema.org/name"][:ja],
-        name_en: source_of_english_name["http://schema.org/name"][:en],
-        seeAlso: source_of_english_name["http://www.w3.org/2000/01/rdf-schema#seeAlso"].first,
-      }
-    end
-    param[:subjectArea] << area_param
-    template_area.output_to(area_param[:file], area_param)
-    sitemap << area_param[:file]
-    template_area_en.output_to(area_param[:file_en], area_param, :en)
-    sitemap << area_param[:file_en]
+      end
+      param[:subjectArea] << area_param
+      template_area.output_to(area_param[:file], area_param)
+      sitemap << area_param[:file]
+      template_area_en.output_to(area_param[:file_en], area_param, :en)
+      sitemap << area_param[:file_en]
 
-    if subjects[area]
-      subjects[area]["https://w3id.org/jp-textbook/hasSubject"].sort_by{|subject|
-        subjects[subject]["http://purl.org/linked-data/cube#order"].first.to_i
-      }.each do |subject|
-        subject_type = subjects[subject]["https://w3id.org/jp-textbook/subjectType"]
-        #p [area, subject, subject_type]
-        if curriculums[uri][subject] and not done_subject[subject]
-          index_param[uri] << subject
-          done_subject[subject] = true
-        else
-          if subject_type and subject_type.map{|e| e.last_part } == ["Special"] #ignore special subject.
+      if subjects[area]
+        subjects[area]["https://w3id.org/jp-textbook/hasSubject"].sort_by{|subject|
+          subjects[subject]["http://purl.org/linked-data/cube#order"].first.to_i
+        }.each do |subject|
+          subject_type = subjects[subject]["https://w3id.org/jp-textbook/subjectType"]
+          #p [area, subject, subject_type]
+          if curriculums[uri][subject] and not done_subject[subject]
+            index_param[uri] << subject
+            done_subject[subject] = true
           else
-            STDERR.puts "WARN: #{subject} is not found in subjects list."
+            if subject_type and subject_type.map{|e| e.last_part } == ["Special"] #ignore special subject.
+            else
+              STDERR.puts "WARN: #{subject} is not found in subjects list."
+            end
           end
         end
       end
-    end
-    if curriculums[uri][area] and not done_subject[area]
-      index_param[uri] << area
-      done_subject[area] = true
-      STDERR.puts "WARN: Area #{area} is used in a list."
+      if curriculums[uri][area] and not done_subject[area]
+        index_param[uri] << area
+        done_subject[area] = true
+        STDERR.puts "WARN: Area #{area} is used in a list."
+      end
     end
   end
   # curriculum

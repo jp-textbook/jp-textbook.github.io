@@ -49,7 +49,7 @@ class PageTemplate
   def to_html_raw(template, param, lang = :ja)
     @param = @param.merge(param)
     tmpl = open(template){|io| io.read }
-    erb = ERB.new(tmpl, $SAFE, "-")
+    erb = ERB.new(tmpl, nil, "-")
     erb.filename = template
     erb.result(binding)
   end
