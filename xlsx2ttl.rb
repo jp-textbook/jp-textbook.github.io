@@ -109,6 +109,7 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
     "bf:dimensions" => dimensions,
     "bf:note" => [],
   }
+  data.delete("textbook:subject") if subject.empty?
   data["bf:note"] << row["/NOTE#1"] if row["/NOTE#1"]
   if subject == subject_area and fix_curriculums.include?( curriculum )
     if subject_area != "保健体育"
