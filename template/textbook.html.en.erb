@@ -96,7 +96,7 @@
             <%- param[:item].each do |item| -%>
               <%- case item[:holding] -%>
               <%- when :nier -%>
-              <li><a href="https://nieropac.nier.go.jp/ebopac/<%=h item[:recordID] %>">NIER Library of Education OPAC</a> <span class="callNumber" title="call number"><%=h item[:callNumber] %></span></li>
+              <li><a href="https://nieropac.nier.go.jp/lib/database/TEXTBOOK/<%=h item[:recordID] %>/">NIER Library of Education OPAC</a> <span class="callNumber" title="call number"><%=h item[:callNumber] %></span></li>
               <%- when :textbook_rc -%>
               <li><a href="javascript:document.getElementById('textbook_rc_lib_<%=h item[:recordID] %>').submit()">Textbook Library, Japan Textbook Research Center OPAC</a> <span class="callNumber" title="call number"><%=h item[:callNumber] %></span></li>
               <form action="http://textbook-rc-lib.net/Opac/search.htm" id="textbook_rc_lib_<%=h item[:recordID] %>" method="post">

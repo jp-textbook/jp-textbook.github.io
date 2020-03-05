@@ -29,7 +29,7 @@ data.each do |uri, v|
       end
     end
     nier_ids.each do |record_id|
-      puts [ record_id, "https://nieropac.nier.go.jp/ebopac/#{record_id}", uri, rc_ids.join(", ") ].join("\t")
+      puts [ record_id, "https://nieropac.nier.go.jp/lib/database/TEXTBOOK/#{record_id}/", uri, rc_ids.join(", ") ].join("\t")
     end
   end
 end
