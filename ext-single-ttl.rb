@@ -27,7 +27,7 @@ def format(graph, subject, depth = 1)
           [ e.predicate, e.object ]
         }
       elsif object.literal?
-        [ object.value, object.language ]
+        [ object, object.language ]
       else
         object
       end
