@@ -26,6 +26,8 @@ def format(graph, subject, depth = 1)
         }.map{|e|
           [ e.predicate, e.object ]
         }
+      elsif object.literal?
+        [ object.value, object.language ]
       else
         object
       end
