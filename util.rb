@@ -62,7 +62,7 @@ class PageTemplate
     path
   end
   def relative_path_uri(dest_uri, lang = :ja)
-    dest = dest_uri.sub("https://w3id.org/jp-textbook/", "")
+    dest = dest_uri.sub(BASE_URI, "")
     dest = File.join("en", dest) if lang == :en
     relative_path(dest)
   end
@@ -90,7 +90,7 @@ EOF
 end
 
 module Textbook
-  BASE_URI = "https://w3id.org/jp-textbook"
+  BASE_URI = "https://w3id.org/jp-textbook/"
   PROPERTY_LABEL = {
     "schema:name" => "書名",
     "schema:editor" => "編著者",
