@@ -327,6 +327,8 @@ def format_pvalue(value)
     str = value
   elsif value =~ /\Ahttps?:\/\//
     str = %Q|<#{value}>|
+  elsif value =~ /\A\w+:[\w\-\.]+\Z/
+    str = value
   else
     str = %Q|"#{value}"|
   end

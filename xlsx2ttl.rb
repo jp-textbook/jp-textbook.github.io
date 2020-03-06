@@ -50,7 +50,7 @@ io.close
 
 CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
   next if row["状態区分名称"] == "取り下げ"
-  uri = [BASE_URI, row["/SCLASS#1"], row["/ADATE#1"], row["/TXSIGN#1"], row["/TXC#1"]].join("/")
+  uri = "#{BASE_URI}#{row["/SCLASS#1"]}/#{row["/ADATE#1"]}/#{row["/TXSIGN#1"]}/#{row["/TXC#1"]}"
   curriculum = row["学習指導URI"]
   next if not curriculum =~ %r|https://w3id.org/jp-textbook/curriculum/.+|
   subject_area = row["/SUBJECT#1"]
@@ -89,14 +89,15 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
   data = {
     "schema:name" => row["/TITLE#1"],
     "schema:editor" => row["/CREATOR#1"],
-    "schema:publisher" => "#{BASE_URI}/publisher/#{usage_years.first-1}/#{row["/PUA#1"]}",
+    "schema:publisher" => "#{BASE_URI}publisher/#{usage_years.first-1}/#{row["/PUA#1"]}",
     "schema:bookEdition" => row["/EDITION#1"],
     "textbook:item" => {
+      "a" => "bf:Item",
       "nier:callNumber" => row["/CALLN#1"],
       "nier:recordID" => row["メタデータID"],
     },
-    "textbook:catalogue" => usage_years.map{|y| "#{BASE_URI}/catalogue/#{row["/SCLASS#1"]}/#{y-1}" },
-    "textbook:school" => "#{BASE_URI}/school/#{school}",
+    "textbook:catalogue" => usage_years.map{|y| "#{BASE_URI}catalogue/#{row["/SCLASS#1"]}/#{y-1}" },
+    "textbook:school" => "#{BASE_URI}school/#{school}",
     "textbook:subjectArea" => "#{curriculum}/#{subject_area}",
     "textbook:subject" => "#{curriculum}/#{subject_area}/#{subject}",
     "textbook:grade" => grades,

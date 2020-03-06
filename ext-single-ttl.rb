@@ -17,8 +17,14 @@ def format(graph, subject, depth = 1)
   else
     result << "[\n#{"  "*depth}"
   end
-  result << graph.query([subject, nil, nil]).predicates.sort.map do |predicate|
-    str = "<#{predicate}> "
+  rdf_type = RDF::URI.new("http://www.w3.org/1999/02/22-rdf-syntax-ns#type")
+  result << graph.query([subject, nil, nil]).predicates.sort_by{|e| e == rdf_type ? "a" : e }.map do |predicate|
+    str = ""
+    if predicate == rdf_type
+      str << "a "
+    else
+      str << "<#{predicate}> "
+    end
     str << graph.query([subject, predicate, nil]).objects.sort_by do |object|
       if object.resource? and not object.iri? # blank node:
         graph.query([object, nil, nil]).statements.sort_by{|e|
