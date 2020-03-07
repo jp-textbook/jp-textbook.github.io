@@ -24,6 +24,7 @@ EOF
 
 done = {}
 c = load_turtle("curriculum.ttl")
+subject_data = load_turtle("subject.ttl")
 publisher_data = load_turtle("publisher.ttl")
 fix_curriculums = c.keys.select do |k| # cf. #59
   if c[k]["https://w3id.org/jp-textbook/school"].first == "http://ja.dbpedia.org/resource/高等学校" or
@@ -118,9 +119,23 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
       logger.debug "REMOVE subject: "+ [uri, subject, subject_area].inspect
     end
   end
+  if not data.has_key? "textbook:subject"
+    subject_candidates = subject_data[data["textbook:subjectArea"]]["https://w3id.org/jp-textbook/hasSubject"].sort_by{|e| -(e.size) }
+    subject = subject_candidates.find{|e|
+      data["schema:name"].include? e.last_part
+    }
+    if subject
+      data["textbook:subject"] = subject
+    elsif %w(https://w3id.org/jp-textbook/高等学校/1995/商業/570 https://w3id.org/jp-textbook/高等学校/1995/商業/565 https://w3id.org/jp-textbook/高等学校/1999/商業/617 ).include? uri
+      #adhoc. cf. #390
+      data["textbook:subject"] = "#{curriculum}/#{subject_area}/経営情報"
+    else
+      logger.warn "Subject not found in titles: #{uri} (#{data["schema:name"]})"
+    end
+  end
   %w[ textbook:usageYear textbook:authorizedYear ].each do |year|
     if data[year].split(/\D+/).find{|i| i.to_i > Date.today.year }
-      logger.warn "Year (#{year}=#{ data["textbook:usageYear"]}) is greater than today. cf. <#{uri}>"
+      #logger.warn "Year (#{year}=#{ data["textbook:usageYear"]}) is greater than today. cf. <#{uri}>"
     end
   end
   if done[uri]
