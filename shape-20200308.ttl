@@ -575,8 +575,8 @@ textbook:TextbookShape a sh:NodeShape;
           sh:name "種目（科目）"@ja;
           sh:name "Subject"@en;
           skos:example "textbook:curriculum/中学校/2002/外国語/英語";
-          sh:description "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科</var>/<var>科目</var></code>として示される種目（科目）リソースと関連付ける。textbook:subjectTypeがSpecialの場合、少数の例外を除いて、プログラムによって書名から種目名の最長一致で、種目を類推して追加したものであり、教育図書館が追加したデータではないことに注意。最長一致で解決できない例外については、江草・高久によって追加。"@ja;
-          sh:description "Link to the subject resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var>/<var>subject</var></code>.Note that if the textbook:subjectType is Special, with a few exceptions, the longest match of the Subject name from the title of the textbook will be added by analogy to the Subject, not the data added by the Library of Education. Exceptions that cannot be resolved by the longest match are added by Egusa and Takaku."@en;
+          sh:description "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科</var>/<var>科目</var></code>として示される種目（科目）リソースと関連付ける。専門教科 (<code>textbook:subjectType = Special</code>) の場合、少数の例外を除いて、機械的に書名と種目名との一致により種目を類推して追加したものであり、教育図書館が追加したデータではないことに注意。最長一致で解決できない例外は、江草・高久によって追加。"@ja;
+          sh:description "Link to the subject resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var>/<var>subject</var></code>. Note that if the type of the subject is Special (<code>textbook:subjectType</code>), the subject is deternmined automatically by the longest match of the Subject name from the title of the textbook, and it does not added by the Library of Education. Some exceptional data is resolved by Drs. Egusa and Takaku."@en;
         ];
         sh:property [
           sh:path textbook:subjectArea;
