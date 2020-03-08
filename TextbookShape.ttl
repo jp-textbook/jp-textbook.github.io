@@ -15,8 +15,8 @@
     <http://www.w3.org/ns/shacl#order> 6;
     <http://www.w3.org/ns/shacl#path> <http://id.loc.gov/ontologies/bibframe/extent>
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> "2001";
-    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#integer>;
+    <http://www.w3.org/2004/02/skos/core#example> "2001"^^<http://www.w3.org/2001/XMLSchema#date>;
+    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#date>;
     <http://www.w3.org/ns/shacl#name> "Authorized year"@en, "検定年"@ja;
     <http://www.w3.org/ns/shacl#order> 11;
     <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/authorizedYear>
@@ -100,7 +100,7 @@
   ], [
     <http://www.w3.org/2004/02/skos/core#example> "textbook:curriculum/中学校/2002/外国語/英語";
     <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/curriculum/Subject>;
-    <http://www.w3.org/ns/shacl#description> "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科</var>/<var>科目</var></code>として示される種目（科目）リソースと関連付ける"@ja, "Link to the subject resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var>/<var>subject</var></code>."@en;
+    <http://www.w3.org/ns/shacl#description> "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科</var>/<var>科目</var></code>として示される種目（科目）リソースと関連付ける。textbook:subjectTypeがSpecialの場合、少数の例外を除いて、プログラムによって書名から種目名の最長一致で、種目を類推して追加したものであり、教育図書館が追加したデータではないことに注意。最長一致で解決できない例外については、江草・高久によって追加。"@ja, "Link to the subject resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var>/<var>subject</var></code>.Note that if the textbook:subjectType is Special, with a few exceptions, the longest match of the Subject name from the title of the textbook will be added by analogy to the Subject, not the data added by the Library of Education. Exceptions that cannot be resolved by the longest match are added by Egusa and Takaku."@en;
     <http://www.w3.org/ns/shacl#maxCount> 1;
     <http://www.w3.org/ns/shacl#name> "Subject"@en, "種目（科目）"@ja;
     <http://www.w3.org/ns/shacl#order> 16;
@@ -146,7 +146,7 @@
     <http://www.w3.org/ns/shacl#order> 14;
     <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/textbookSymbol>
   ], [
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/School>;
+    <http://www.w3.org/ns/shacl#class> <http://id.loc.gov/ontologies/bibframe/Item>;
     <http://www.w3.org/ns/shacl#description> "<code>nier:recordID</code>と<code>nier:callNumber</code>、もしくは、<code>textbook-rc:recordID</code>と<code>textbook-rc:callNumber</code>の2つの所蔵情報用プロパティを持つ。複数の所蔵情報がある場合、所蔵情報の件数分、繰り返される。"@ja, "Link to the blank node resource(s), which consist of either of properties 1) <code>nier:recordID</code> and <code>nier:callNumber</code>, or 2) <code>textbook-rc:recordID</code> and <code>textbook-rc:callNumber</code>. If there are multiple holdings in a library, this property values are repeated according to the number of holdings times."@en;
     <http://www.w3.org/ns/shacl#minCount> 1;
     <http://www.w3.org/ns/shacl#name> "Holding item(s)"@en, "所蔵情報"@ja;

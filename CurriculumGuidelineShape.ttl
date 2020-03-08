@@ -1,7 +1,7 @@
 <https://w3id.org/jp-textbook/CurriculumGuidelineShape>
   a <http://www.w3.org/ns/shacl#NodeShape>;
   <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/2004/02/skos/core#example> "1989-03-15";
+    <http://www.w3.org/2004/02/skos/core#example> "1989-03-15"^^<http://www.w3.org/2001/XMLSchema#date>;
     <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#date>;
     <http://www.w3.org/ns/shacl#maxCount> 1;
     <http://www.w3.org/ns/shacl#minCount> 1;
@@ -9,7 +9,7 @@
     <http://www.w3.org/ns/shacl#order> 3;
     <http://www.w3.org/ns/shacl#path> <http://schema.org/datePublished>
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> "1994-04-01";
+    <http://www.w3.org/2004/02/skos/core#example> "1994-04-01"^^<http://www.w3.org/2001/XMLSchema#date>;
     <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#date>;
     <http://www.w3.org/ns/shacl#maxCount> 1;
     <http://www.w3.org/ns/shacl#minCount> 1;
@@ -18,9 +18,19 @@
     <http://www.w3.org/ns/shacl#path> <http://schema.org/startDate>
   ], [
     <http://www.w3.org/2004/02/skos/core#example> "<ul><li>\"高等学校学習指導要領\"@ja</li><li>\"こうとうがっこうがくしゅうしどうようりょう\"@ja-Hira</li><li>\"Upper Secondary School Curriculum Guideline\"@en</li></ul>";
-    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string>;
+    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString>;
     <http://www.w3.org/ns/shacl#description> "Using language tags, this property represents an original name as well as transcription and English name. Language codes are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@ja-Hira</dt><dd>Japanese name (Hiragana). Presented a transcription of the name in Hiragana.</dd><dt>@en</dt><dd>English name</dd></dl>"@en, "言語コードを用いて、名称に加え、そのよみ、英語名称を示します。言語コードとその意味は以下の通りです。<dl><dt>@ja</dt><dd>日本語名称（漢字表記）</dd><dt>@ja-Hira</dt><dd>日本語名称（ひらがな表記）。名称のよみをひらがな表記で示します。</dd><dt>@en</dt><dd>英語名称</dd></dl>"@ja;
-    <http://www.w3.org/ns/shacl#maxCount> 1;
+    <http://www.w3.org/ns/shacl#languageIn> [
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "ja";
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> [
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "ja-Hira";
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> [
+          <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "en";
+          <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil>
+        ]
+      ]
+    ];
+    <http://www.w3.org/ns/shacl#maxCount> 3;
     <http://www.w3.org/ns/shacl#minCount> 1;
     <http://www.w3.org/ns/shacl#name> "Name"@en, "名称"@ja;
     <http://www.w3.org/ns/shacl#order> 1;
@@ -56,11 +66,11 @@
         <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string>;
         <http://www.w3.org/ns/shacl#maxCount> 1;
         <http://www.w3.org/ns/shacl#name> "Item identifier at the NIER Education Library"@en, "国立教育政策研究所教育図書館の蔵書データベースにおける所蔵資料ID"@ja;
-        <http://www.w3.org/ns/shacl#order> 6;
+        <http://www.w3.org/ns/shacl#order> 7;
         <http://www.w3.org/ns/shacl#path> <http://dl.nier.go.jp/library/vocab/itemID>
       ], [
-        <http://www.w3.org/2004/02/skos/core#example> "1989-03-15";
-        <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string>;
+        <http://www.w3.org/2004/02/skos/core#example> "1989-03-15"^^<http://www.w3.org/2001/XMLSchema#date>;
+        <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#date>;
         <http://www.w3.org/ns/shacl#maxCount> 1;
         <http://www.w3.org/ns/shacl#minCount> 1;
         <http://www.w3.org/ns/shacl#name> "Date of announcement (date of revision)"@en, "告示日（改正日）"@ja;
@@ -72,7 +82,7 @@
         <http://www.w3.org/ns/shacl#description> "Delimiter for a call number is \"||\""@en, "区切り記号は、「||」である。"@ja;
         <http://www.w3.org/ns/shacl#maxCount> 1;
         <http://www.w3.org/ns/shacl#name> "Call number at the NIER Education Library"@en, "国立教育政策研究所教育図書館の所蔵資料に対する請求記号"@ja;
-        <http://www.w3.org/ns/shacl#order> 6;
+        <http://www.w3.org/ns/shacl#order> 8;
         <http://www.w3.org/ns/shacl#path> <http://dl.nier.go.jp/library/vocab/callNumber>
       ], [
         <http://www.w3.org/2004/02/skos/core#example> "4171533104";
@@ -99,7 +109,7 @@
         <http://www.w3.org/ns/shacl#uniqueLang> true
       ], [
         <http://www.w3.org/2004/02/skos/core#example> "<ul><li>\"平成元年3月 告示\"@ja</li><li>\"1989-03 Notification\"@en</li></ul>";
-        <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string>;
+        <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString>;
         <http://www.w3.org/ns/shacl#description> "If the revision is on a part of a guideline, the name of the revision will be assigned such as \"Partial revision in December 2003\". Using language tags, Japanese and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@en</dt><dd>English name</dd></dl>"@en, "一部改正であれば、「平成15年12月 一部改正」のような表現となります。また、言語コードを用いて、名称に加え、英語名称を示します。言語コードとその意味は以下の通りです。<dl><dt>@ja</dt><dd>日本語名称（漢字表記）</dd><dt>@en</dt><dd>英語名称</dd></dl>"@ja;
         <http://www.w3.org/ns/shacl#languageIn> [
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "ja";
@@ -120,7 +130,7 @@
         <http://www.w3.org/ns/shacl#description> "<code>https://nieropac.nier.go.jp/ebopac/<var>レコードID</var></code>の形式で参照可能"@ja, "Link is available as <code>https://nieropac.nier.go.jp/ebopac/<var>record identifier</var></code>."@en;
         <http://www.w3.org/ns/shacl#maxCount> 1;
         <http://www.w3.org/ns/shacl#name> "Record identifier at the NIER Education Library"@en, "国立教育政策研究所教育図書館の蔵書データベースにおけるレコードID"@ja;
-        <http://www.w3.org/ns/shacl#order> 7;
+        <http://www.w3.org/ns/shacl#order> 9;
         <http://www.w3.org/ns/shacl#path> <http://dl.nier.go.jp/library/vocab/recordID>
       ], [
         <http://www.w3.org/2004/02/skos/core#example> "http://id.ndl.go.jp/jpno/89034331";

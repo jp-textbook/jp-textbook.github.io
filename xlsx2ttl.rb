@@ -20,6 +20,7 @@ puts <<EOF
 @prefix bf:        <http://id.loc.gov/ontologies/bibframe/>.
 @prefix nier:      <http://dl.nier.go.jp/library/vocab/>.
 @prefix textbook:  <https://w3id.org/jp-textbook/>.
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#>.
 EOF
 
 done = {}
