@@ -103,7 +103,7 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
     "textbook:subject" => "#{curriculum}/#{subject_area}/#{subject}",
     "textbook:grade" => grades,
     "textbook:curriculum" => "#{curriculum}",
-    "textbook:authorizedYear" => row["/ADATE#1"],
+    "textbook:authorizedYear" => "#{row["/ADATE#1"]}^^xsd:date",
     "textbook:usageYear" => ( usage_years.size == 1 ) ? usage_year_start.to_s : "#{usage_year_start}-#{row["/EDATE#1"] == "9999" ? "" : usage_year_end }",
     "textbook:textbookSymbol" => row["/TXSIGN#1"],
     "textbook:textbookNumber" => row["/TXC#1"],

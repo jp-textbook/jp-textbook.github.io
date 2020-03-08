@@ -329,6 +329,8 @@ def format_pvalue(value)
     str = %Q|<#{value}>|
   elsif value =~ /\A\w+:[\w\-\.]+\Z/
     str = value
+  elsif value =~ /\A(.+?)\^\^(\w+:\w+)\z/
+    str = %Q|"#{$1}"^^#{$2}|
   else
     str = %Q|"#{value}"|
   end
