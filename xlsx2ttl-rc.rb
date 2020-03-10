@@ -27,8 +27,8 @@ if $0 == __FILE__
 EOF
 
   textbook_master = load_turtle("textbook.ttl")
-  isbn_data = load_idlists("IDList1_2.tsv", "IDList2_2.tsv") # cf. https://www.ndl.go.jp/jp/dlib/standards/opendataset/#ids
-  isbn_ncid = load_books_rdf("books.rdf.gz") # cf. https://www.nii.ac.jp/CAT-ILL/about/infocat/od/
+  isbn_data = load_idlists #("IDList1_2.tsv", "IDList2_2.tsv") # cf. https://www.ndl.go.jp/jp/dlib/standards/opendataset/#ids
+  isbn_ncid = load_books_rdf # ("books.rdf.gz") # cf. https://www.nii.ac.jp/CAT-ILL/about/infocat/od/
 
   done = {}
   xlsx = Roo::Excelx.new(ARGV[0])

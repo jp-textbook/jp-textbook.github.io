@@ -236,55 +236,90 @@ def expand_shape(data, uri, prefixes = {}, lang = :ja)
   tmpl.to_html_raw(template, {properties: result}, lang)
 end
 
-def load_idlists(*files)
+def load_idlists
   hash = {}
-  files.each do |file|
-    STDERR.puts "loading #{file}..."
-    open(file) do |io|
-      io.gets
-      io.each do |line|
-        ndlbib, jpno, isbn_list, pid, = line.chomp.split(/\t/)
-        if isbn_list and not isbn_list.empty?
-          isbn_list.split(/,/).each do |isbn|
-            hash[isbn] ||= {
-              ndlbib: [],
-              jpno: [],
-              pid: [],
-            }
-            ndlbib.split(/,/).uniq.each do |ndlbib_id|
-              hash[isbn][:ndlbib] << ndlbib_id
-            end
-            jpno.split(/,/).uniq.each do |jpno_id|
-              hash[isbn][:jpno] << jpno_id
-            end
-            if pid
-              pid.split(/,/).uniq.each do |pid_id|
-                hash[isbn][:pid] << pid_id
-              end
-            end
-            hash[isbn][:ndlbib].uniq!
-            hash[isbn][:jpno].uniq!
-            hash[isbn][:pid].uniq!
+  [ { tsv: "IDList1_2.tsv", zip: "IDLists1_2.zip"},
+    { tsv: "IDList2_2.tsv", zip: "IDLists2_2.zip"}
+  ].each do |files|
+    if File.exists? files[:tsv]
+      STDERR.puts "loading #{files[:tsv]}..."
+      open(files[:tsv]) do |io|
+        hash.merge load_idlist(io)
+      end
+    elsif File.exists? files[:zip]
+      STDERR.puts "loading #{files[:zip]}..."
+      Zip::File.open(files[:zip]) do |zip|
+        zip.read(files[:tsv]) do |io|
+          hash.merge load_idlist(io)
+        end
+      end
+    else
+      raise "file not found: IDList1_2.tsv"
+    end
+  end
+  hash
+end
+def load_idlist(io)
+  hash = {}
+  open(file) do |io|
+    io.gets
+    io.each do |line|
+      ndlbib, jpno, isbn_list, pid, = line.chomp.split(/\t/)
+      if isbn_list and not isbn_list.empty?
+        isbn_list.split(/,/).each do |isbn|
+          hash[isbn] ||= {
+            ndlbib: [],
+            jpno: [],
+            pid: [],
+          }
+          ndlbib.split(/,/).uniq.each do |ndlbib_id|
+            hash[isbn][:ndlbib] << ndlbib_id
           end
+          jpno.split(/,/).uniq.each do |jpno_id|
+            hash[isbn][:jpno] << jpno_id
+          end
+          if pid
+            pid.split(/,/).uniq.each do |pid_id|
+              hash[isbn][:pid] << pid_id
+            end
+          end
+          hash[isbn][:ndlbib].uniq!
+          hash[isbn][:jpno].uniq!
+          hash[isbn][:pid].uniq!
         end
       end
     end
   end
   hash
 end
-def load_books_rdf(file)
+def load_books_rdf
   hash = {}
   ncid = nil
   isbn = []
-  io = nil
-  case file
-  when /\.gz\Z/
-    f = File.open(file)
-    io = Zlib::GzipReader.new(f)
+  if File.exists? "books.rdf"
+    STDERR.puts "loading books.rdf..."
+    open("books.rdf") do |io|
+      hash = _load_books_rdf(io)
+    end
+  elsif File.exists? "books.rdf.zip"
+    STDERR.puts "loading books.rdf.zip..."
+    Zip::File.open("books.rdf.zip") do |zip|
+      zip.read("books.rdf") do |io|
+        hash = _load_books_rdf(io)
+      end
+    end
+  elsif File.exists? "books.rdf.gz"
+    STDERR.puts "loading books.rdf.gz..."
+    f = File.open("books.rdf.gz")
+    Zlib::GzipReader.new(f) do |io|
+      hash = _load_books_rdf(io)
+    end
   else
-    io = File.open(file)
+    raise "file not found: books.rdf"
   end
-  STDERR.puts "loading #{file}..."
+  hash
+end
+def _load_books_rdf(io)
   reader = Nokogiri::XML::Reader(io)
   reader.each do |node|
     if node.name == "rdf:Description" and node.node_type == Nokogiri::XML::Reader::TYPE_END_ELEMENT
