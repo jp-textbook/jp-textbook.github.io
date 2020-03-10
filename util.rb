@@ -244,13 +244,13 @@ def load_idlists
     if File.exists? files[:tsv]
       STDERR.puts "loading #{files[:tsv]}..."
       open(files[:tsv]) do |io|
-        hash.merge load_idlist(io)
+        hash.merge! load_idlist(io)
       end
     elsif File.exists? files[:zip]
       STDERR.puts "loading #{files[:zip]}..."
       Zip::File.open(files[:zip]) do |zip|
-        zip.read(files[:tsv]) do |io|
-          hash.merge load_idlist(io)
+        zip.get_input_stream(files[:tsv]) do |io|
+          hash.merge! load_idlist(io)
         end
       end
     else
@@ -261,32 +261,30 @@ def load_idlists
 end
 def load_idlist(io)
   hash = {}
-  open(file) do |io|
-    io.gets
-    io.each do |line|
-      ndlbib, jpno, isbn_list, pid, = line.chomp.split(/\t/)
-      if isbn_list and not isbn_list.empty?
-        isbn_list.split(/,/).each do |isbn|
-          hash[isbn] ||= {
-            ndlbib: [],
-            jpno: [],
-            pid: [],
-          }
-          ndlbib.split(/,/).uniq.each do |ndlbib_id|
-            hash[isbn][:ndlbib] << ndlbib_id
-          end
-          jpno.split(/,/).uniq.each do |jpno_id|
-            hash[isbn][:jpno] << jpno_id
-          end
-          if pid
-            pid.split(/,/).uniq.each do |pid_id|
-              hash[isbn][:pid] << pid_id
-            end
-          end
-          hash[isbn][:ndlbib].uniq!
-          hash[isbn][:jpno].uniq!
-          hash[isbn][:pid].uniq!
+  io.gets
+  io.each do |line|
+    ndlbib, jpno, isbn_list, pid, = line.chomp.split(/\t/)
+    if isbn_list and not isbn_list.empty?
+      isbn_list.split(/,/).each do |isbn|
+        hash[isbn] ||= {
+          ndlbib: [],
+          jpno: [],
+          pid: [],
+        }
+        ndlbib.split(/,/).uniq.each do |ndlbib_id|
+          hash[isbn][:ndlbib] << ndlbib_id
         end
+        jpno.split(/,/).uniq.each do |jpno_id|
+          hash[isbn][:jpno] << jpno_id
+        end
+        if pid
+          pid.split(/,/).uniq.each do |pid_id|
+            hash[isbn][:pid] << pid_id
+          end
+        end
+        hash[isbn][:ndlbib].uniq!
+        hash[isbn][:jpno].uniq!
+        hash[isbn][:pid].uniq!
       end
     end
   end
@@ -294,8 +292,6 @@ def load_idlist(io)
 end
 def load_books_rdf
   hash = {}
-  ncid = nil
-  isbn = []
   if File.exists? "books.rdf"
     STDERR.puts "loading books.rdf..."
     open("books.rdf") do |io|
@@ -304,7 +300,7 @@ def load_books_rdf
   elsif File.exists? "books.rdf.zip"
     STDERR.puts "loading books.rdf.zip..."
     Zip::File.open("books.rdf.zip") do |zip|
-      zip.read("books.rdf") do |io|
+      zip.get_input_stream("books.rdf") do |io|
         hash = _load_books_rdf(io)
       end
     end
@@ -320,6 +316,9 @@ def load_books_rdf
   hash
 end
 def _load_books_rdf(io)
+  hash = {}
+  ncid = nil
+  isbn = []
   reader = Nokogiri::XML::Reader(io)
   reader.each do |node|
     if node.name == "rdf:Description" and node.node_type == Nokogiri::XML::Reader::TYPE_END_ELEMENT
