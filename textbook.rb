@@ -18,6 +18,7 @@ end
 include Textbook
 data = load_turtle("textbook.ttl")
 data_rc = load_turtle("textbook-rc.ttl")
+data_rc_bib = load_turtle("textbook-rc-bib.ttl")
 subjects = load_turtle("subject.ttl")
 area_data = load_turtle("subjectArea.ttl")
 school_data = load_turtle("school.ttl")
@@ -109,6 +110,11 @@ data.each.with_progressbar(format: "%a %e %P% Processed: %c from %C") do |uri, v
         callNumber: data_rc[item]["http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber"].first,
       }
     end
+  end
+  if data_rc_bib[uri]
+    param[:isbn] = data_rc_bib[uri]["http://schema.org/isbn"].sort
+    param[:seeAlso] ||= []
+    param[:seeAlso] += map_links(data_rc_bib[uri]["http://www.w3.org/2000/01/rdf-schema#seeAlso"], Textbook::RELATED_LINKS)
   end
   publisher_list.each do |publisher|
     publishers[publisher[:uri]] ||= []
