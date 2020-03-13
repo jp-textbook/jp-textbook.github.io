@@ -294,6 +294,21 @@ def load_idlist(io)
   end
   hash
 end
+def load_books_rdf_tsv
+  if not File.exists? "books.rdf"
+    STDERR.puts "books_rdf.tsv not found. Please execute books_rdf2tsv.rb."
+    STDERR.puts "  USAGE: ./books_rdf2tsv.rb > books_rdf.tsv"
+    exit
+  end
+  hash = {}
+  open("books_rdf.tsv") do |io|
+    io.each do |line|
+      isbn, ncid, = line.chomp.split(/\t/)
+      hash[isbn] = ncid
+    end
+  end
+  hash
+end
 def load_books_rdf
   hash = {}
   if File.exists? "books.rdf"
