@@ -7,6 +7,7 @@ require "active_support"
 require "nokogiri"
 require "lisbn"
 require "zlib"
+require "nkf"
 
 class String
   def last_part
@@ -20,6 +21,9 @@ class String
   end
   def omit_suffix
     self.sub(/\A\//, "").sub(/\/index.html\Z/, "").sub(/\.html\Z/, "")
+  end
+  def normalize
+    NKF.nkf("-wWZ1", self).gsub(/Ⅰ/, "I").gsub(/Ⅱ/, "II").gsub(/Ⅲ/, "III")
   end
 end
 

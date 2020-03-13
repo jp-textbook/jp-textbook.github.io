@@ -2,7 +2,6 @@
 
 require "csv"
 require "roo"
-require "nkf"
 require "logger"
 require_relative "util.rb"
 
@@ -58,8 +57,7 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
   subject_area = row["/SUBJECT#1"]
   subject = row["/ITEM#1"].to_s
   p row["メタデータID"] if subject.nil?
-  subject = NKF.nkf("-wZ1", subject).gsub(/\s+/, "")
-  subject = subject.gsub(/1/, "I").gsub(/2/, "II").gsub(/3/, "III")
+  subject = subject.normalize.gsub(/\s+/, "").gsub(/1/, "I").gsub(/2/, "II").gsub(/3/, "III")
   school = row["/SCLASS#1"]
   grades = []
   (1..6).each do |i|
@@ -123,7 +121,7 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
   if not data.has_key? "textbook:subject"
     subject_candidates = subject_data[data["textbook:subjectArea"]]["https://w3id.org/jp-textbook/hasSubject"].sort_by{|e| -(e.size) }
     subject = subject_candidates.find{|e|
-      data["schema:name"].include? e.last_part
+      data["schema:name"].normalize.include? e.last_part
     }
     if subject
       data["textbook:subject"] = subject
@@ -131,7 +129,7 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
       #adhoc. cf. #390
       data["textbook:subject"] = "#{curriculum}/#{subject_area}/経営情報"
     else
-      logger.warn "Subject not found in titles: #{uri} (#{data["schema:name"]})"
+      logger.warn "Subject not found in titles: #{uri} (#{data["schema:name"].normalize})"
     end
   end
   %w[ textbook:usageYear textbook:authorizedYear ].each do |year|
