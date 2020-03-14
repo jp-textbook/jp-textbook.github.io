@@ -39,7 +39,7 @@ EOF
     textbook_symbol = row["教科書記号"].normalize.gsub(/\d+/){|m| "I" * m.to_i }
     uri = "#{BASE_URI}#{row["学校種類"]}/#{row["検定済年･著作年西暦"]}/#{textbook_symbol}/#{row["教科書番号"]}"
     next if row["ISBN"].nil? or row["ISBN"].strip.empty?
-    logger.warn("#{uri} is missing in the master data.") if not textbook_master[uri]
+    next if not textbook_master[uri]
     call_number = [
       row["当館分類番号1段目"].strip,
       row["当館分類番号2段目"].strip,
