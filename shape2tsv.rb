@@ -5,7 +5,6 @@ require_relative "util.rb"
 include Textbook
 
 HEADERS = [
-  nil,
   "sh:path",
   "sh:name@ja", "sh:name@en",
   "sh:description@ja", "sh:description@en",
@@ -15,7 +14,7 @@ HEADERS = [
   "sh:node", "sh:nodeKind",
   "sh:languageIn", "sh:uniqueLang",
 ]
-puts HEADERS.join("\t")
+#puts HEADERS.join("\t")
 
 data = load_turtle "shape.ttl"
 props = []
@@ -25,7 +24,7 @@ data.sort_by{|k,v| k }.each do |uri, v|
   if v["http://www.w3.org/1999/02/22-rdf-syntax-ns#type"] and v["http://www.w3.org/1999/02/22-rdf-syntax-ns#type"].first == "http://www.w3.org/ns/shacl#NodeShape"
     puts
     #STDERR.puts [uri, v].inspect
-    puts uri
+    puts ([uri] + HEADERS).join("\t")
     target_class = v["http://www.w3.org/ns/shacl#targetClass"].first if v["http://www.w3.org/ns/shacl#targetClass"]
     puts [ "sh:targetClass", target_class ].join("\t")
     props = []
@@ -34,10 +33,10 @@ data.sort_by{|k,v| k }.each do |uri, v|
         #data[p].each do |prop, val|
         #  props << prop
         #end
-        puts "sh:property\t"+HEADERS[1..-1].map{|e|
+        puts "sh:property\t"+HEADERS.map{|e|
           lang = nil
           e = e.to_s.sub(/\@(\w+)\Z/) do |m|
-            lang = $1
+            lang = $1.intern
             ""
           end
           property_uri = e.sub("sh:", "http://www.w3.org/ns/shacl#").sub("skos:", "http://www.w3.org/2004/02/skos/core#")
@@ -45,8 +44,9 @@ data.sort_by{|k,v| k }.each do |uri, v|
             ""
           elsif lang
             data[p][property_uri][lang]
+          elsif data[p][property_uri].first =~ /^_:/
+            parse_rdf_list(data[p][property_uri].first, data).join(" ")
           else
-            p e  if data[p][property_uri].first =~ /^_:/
             data[p][property_uri].first
           end
         }.join("\t")

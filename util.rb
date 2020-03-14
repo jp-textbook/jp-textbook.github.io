@@ -25,6 +25,9 @@ class String
   def normalize
     NKF.nkf("-wWZ1", self).gsub(/Ⅰ/, "I").gsub(/Ⅱ/, "II").gsub(/Ⅲ/, "III")
   end
+  def escape_turtle
+    self.gsub(/\\/){ '\\\\' }.gsub(/"/){ '\"' }
+  end
 end
 
 class PageTemplate
@@ -178,7 +181,7 @@ def load_prefixes(filename)
 end
 
 def expand_shape(data, uri, prefixes = {}, lang = :ja)
-  #p uri
+  p uri
   result = data[uri]["http://www.w3.org/ns/shacl#property"].sort_by do |e|
     e["http://www.w3.org/ns/shacl#order"]
   end.map do |property|
@@ -365,7 +368,7 @@ def compare_ignorespaces(str1, str2)  # 氏名等を空白を無視して比較�
   str1.to_s.gsub(/[\s,]+/, "") == str2.to_s.gsub(/[\s,]+/, "")
 end
 
-def format_pvalue(value)
+def format_pvalue(value, lang = nil)
   str = ""
   if value.is_a? Hash
     result = ["["]
@@ -383,13 +386,15 @@ def format_pvalue(value)
   elsif value =~ /\A\w+:[\w\-\.]+\Z/
     str = value
   elsif value =~ /\A(.+?)\^\^(\w+:\w+)\z/
-    str = %Q|"#{$1}"^^#{$2}|
+    str = %Q|"#{$1.escape_turtle}"^^#{$2}|
+  elsif lang
+    str = %Q|"#{value.escape_turtle}"@#{lang}|
   else
-    str = %Q|"#{value}"|
+    str = %Q|"#{value.escape_turtle}"|
   end
   str
 end
-def format_property(property, value)
+def format_property(property, value, lang = nil)
   if value.is_a? Array
     value = value.sort_by{|e|
       format_pvalue(e)
@@ -398,7 +403,7 @@ def format_property(property, value)
     end
     %Q|  #{property} #{ value.join(", ") }|
   else
-    value = format_pvalue(value)
+    value = format_pvalue(value, lang)
     %Q|  #{property} #{value}|
   end
 end
@@ -409,5 +414,19 @@ def map_xlsx_row_headers(data_row, headers)
     hash[h] = data_row[idx].to_s
   end
   hash
+end
+
+def parse_rdf_list(resource, global)
+  result = []
+  return [] if global[resource].nil?
+  if global[resource]["http://www.w3.org/1999/02/22-rdf-syntax-ns#first"]
+    result << global[resource]["http://www.w3.org/1999/02/22-rdf-syntax-ns#first"].first
+  end
+  if global[resource]["http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"]
+    global[resource]["http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"].each do |res|
+      result += parse_rdf_list(res, global)
+    end
+  end
+  result
 end
 end
