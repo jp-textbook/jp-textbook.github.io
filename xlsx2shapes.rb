@@ -54,6 +54,15 @@ EOF
             prop_values << format_property(prop, row_h[prop].to_i)
           when "sh:languageIn"
             prop_values << "  sh:languageIn (#{row_h[prop].split.map{|e| format_pvalue(e) }.join(" ")})"
+          when "sh:uniqueLang"
+            case row_h[prop]
+            when "true"
+              prop_values << "  sh:uniqueLang true"
+            when "false"
+              prop_values << "  sh:uniqueLang false"
+            else
+              logger.warn "sh:uniqueLang value unknown: #{row_h[prop]} at #{uri}"
+            end
           else
             prop_values << format_property(prop, row_h[prop])
           end
