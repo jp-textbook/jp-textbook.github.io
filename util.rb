@@ -181,7 +181,6 @@ def load_prefixes(filename)
 end
 
 def expand_shape(data, uri, prefixes = {}, lang = :ja)
-  p uri
   result = data[uri]["http://www.w3.org/ns/shacl#property"].sort_by do |e|
     e["http://www.w3.org/ns/shacl#order"]
   end.map do |property|
