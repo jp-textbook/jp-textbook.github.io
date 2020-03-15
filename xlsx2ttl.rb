@@ -82,14 +82,21 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
   catalogues = []
   usage_year_start = row["/SDATE#1"].to_i
   usage_year_end   = row["/EDATE#1"].to_i
-  usage_year_end = CURRENT_YEAR if usage_year_end == 9999
+  usage_year_end = nil if usage_year_end == 9999
+  usage_years = (usage_year_start .. (usage_year_end or CURRENT_YEAR))
+  usage_year_str = if usage_year_end.nil?
+                     "#{usage_year_start}-"
+                   elsif usage_years.size == 1
+                     usage_year_start.to_s
+                   else
+                     [usage_year_start, usage_year_end].join("-")
+                   end
   logger.warn "#{uri}: catalogue and usage year mismatch (#{row["/PDATE#1"]} vs #{row["/SDATE#1"]})" if row["/PDATE#1"].to_i != usage_year_start-1
-  logger.warn "#{uri}: usage year possible typo (#{row["/SDATE#1"]}-#{row["/EDATE#1"]})" if usage_year_start > usage_year_end
-  usage_years = (usage_year_start .. usage_year_end)
+  logger.warn "#{uri}: usage year possible typo (#{row["/SDATE#1"]}-#{row["/EDATE#1"]})" if usage_year_end and usage_year_start > usage_year_end
   data = {
     "schema:name" => row["/TITLE#1"],
     "schema:editor" => row["/CREATOR#1"],
-    "schema:publisher" => "#{BASE_URI}publisher/#{usage_years.first-1}/#{row["/PUA#1"]}",
+    "schema:publisher" => "#{BASE_URI}publisher/#{usage_year_start-1}/#{row["/PUA#1"]}",
     "schema:bookEdition" => row["/EDITION#1"],
     "textbook:item" => {
       "a" => "bf:Item",
@@ -103,7 +110,7 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
     "textbook:grade" => grades,
     "textbook:curriculum" => "#{curriculum}",
     "textbook:authorizedYear" => "#{row["/ADATE#1"]}^^xsd:date",
-    "textbook:usageYear" => ( usage_years.size == 1 ) ? usage_year_start.to_s : "#{usage_year_start}-#{row["/EDATE#1"] == "9999" ? "" : usage_year_end }",
+    "textbook:usageYear" => usage_year_str,
     "textbook:textbookSymbol" => row["/TXSIGN#1"],
     "textbook:textbookNumber" => row["/TXC#1"],
     "bf:extent" => extent,
