@@ -58,10 +58,6 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
   subject = row["/ITEM#1"].to_s
   p row["メタデータID"] if subject.nil?
   subject = subject.normalize.gsub(/\s+/, "").gsub(/1/, "I").gsub(/2/, "II").gsub(/3/, "III")
-  if subject.empty? and ( subject_area == "家庭" or subject_area == "情報" )
-    STDERR.puts [uri, subject_area, subject].inspect
-    subject_area << "(専門)"
-  end
   school = row["/SCLASS#1"]
   grades = []
   (1..6).each do |i|
@@ -131,16 +127,21 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
   end
   if not data.has_key? "textbook:subject"
     subject_candidates = subject_data[data["textbook:subjectArea"]]["https://w3id.org/jp-textbook/hasSubject"].sort_by{|e| -(e.size) }
+    if %w(情報 家庭 外国語).include? subject_area
+      subject_candidates += subject_data[data["textbook:subjectArea"]+"(専門)"]["https://w3id.org/jp-textbook/hasSubject"]
+      subject_candidates = subject_candidates.sort_by{|e| -(e.size) }
+    end
     subject = subject_candidates.find{|e|
       data["schema:name"].normalize.include? e.last_part
     }
     if subject
       data["textbook:subject"] = subject
+      data["textbook:subjectArea"] = subject.sub(/\/[^\/]+\z/, "")
     elsif %w(https://w3id.org/jp-textbook/高等学校/1995/商業/570 https://w3id.org/jp-textbook/高等学校/1995/商業/565 https://w3id.org/jp-textbook/高等学校/1999/商業/617 ).include? uri
       #adhoc. cf. #390
       data["textbook:subject"] = "#{curriculum}/#{subject_area}/経営情報"
     else
-      logger.warn "Subject not found in titles: #{uri} (#{data["schema:name"].normalize})"
+      logger.warn "Subject not found in titles: #{uri} (#{data["schema:name"].normalize} :: #{subject_area})"
     end
   end
   %w[ textbook:usageYear textbook:authorizedYear ].each do |year|
