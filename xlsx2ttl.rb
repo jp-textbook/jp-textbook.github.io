@@ -58,6 +58,10 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
   subject = row["/ITEM#1"].to_s
   p row["メタデータID"] if subject.nil?
   subject = subject.normalize.gsub(/\s+/, "").gsub(/1/, "I").gsub(/2/, "II").gsub(/3/, "III")
+  if subject.empty? and ( subject_area == "家庭" or subject_area == "情報" )
+    STDERR.puts [uri, subject_area, subject].inspect
+    subject_area << "(専門)"
+  end
   school = row["/SCLASS#1"]
   grades = []
   (1..6).each do |i|
