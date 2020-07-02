@@ -69,7 +69,7 @@
               <dt>ISBN</dt><dd><%= isbn %></dd>
               <%- end -%>
             <%- end -%>
-            <dt>使用年度</dt><dd><%=h param[:usageYear] %> (<%=h param[:usageYear].gsub(/\d\d\d\d/){|y| y.to_year_era } %>)</dd>
+            <dt>使用年度</dt><dd><%=h param[:usageYearRange] %> (<%=h param[:usageYearRange].gsub(/\d\d\d\d/){|y| y.to_year_era } %>)</dd>
             <dt>検定年</dt><dd><%=h param[:authorizedYear] %> (<%=h param[:authorizedYear].to_year_era %>)</dd>
             <dt>掲載教科書目録</dt>
             <%- catalogues = param[:catalogue].sort.map do |catalogue|

@@ -110,7 +110,8 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
     "textbook:grade" => grades,
     "textbook:curriculum" => "#{curriculum}",
     "textbook:authorizedYear" => "#{row["/ADATE#1"]}^^xsd:date",
-    "textbook:usageYear" => usage_year_str,
+    "textbook:usageYearRange" => usage_year_str,
+    "textbook:usageYear" => usage_years.to_a.map{|e| "#{e}^^xsd:date" },
     "textbook:textbookSymbol" => row["/TXSIGN#1"],
     "textbook:textbookNumber" => row["/TXC#1"],
     "bf:extent" => extent,
@@ -144,7 +145,7 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
       logger.warn "Subject not found in titles: #{uri} (#{data["schema:name"].normalize} :: #{subject_area})"
     end
   end
-  %w[ textbook:usageYear textbook:authorizedYear ].each do |year|
+  %w[ textbook:usageYearRange textbook:authorizedYear ].each do |year|
     if data[year].split(/\D+/).find{|i| i.to_i > Date.today.year }
       #logger.warn "Year (#{year}=#{ data["textbook:usageYear"]}) is greater than today. cf. <#{uri}>"
     end
@@ -153,14 +154,15 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
     done_items = done[uri]["textbook:item"]
     record_ids = done_items.respond_to?(:key?) ? done_items["nier:recordID"] : done_items.map{|e| e["nier:recordID"] }.join(",")
     logger.warn "#{uri} duplicates! [#{record_ids}/#{data["textbook:item"]["nier:recordID"]}] (#{done[uri]["textbook:usageYear"]} vs #{data["textbook:usageYear"]})"
-    if done[uri]["textbook:usageYear"] > data["textbook:usageYear"]
+    if done[uri]["textbook:usageYearRange"] > data["textbook:usageYearRange"]
       tmp = done[uri].dup
       done[uri] = data.dup
       data = tmp
     end
-    prev_years = done[uri]["textbook:usageYear"].split(/\D+/).map{|i| i.to_i }
-    next_years = data["textbook:usageYear"].split(/\D+/).map{|i| i.to_i }
-    done[uri]["textbook:usageYear"] << ", #{data["textbook:usageYear"]}"
+    prev_years = done[uri]["textbook:usageYearRange"].split(/\D+/).map{|i| i.to_i }
+    next_years = data["textbook:usageYearRange"].split(/\D+/).map{|i| i.to_i }
+    done[uri]["textbook:usageYearRange"] << ", #{data["textbook:usageYearRange"]}"
+    done[uri]["textbook:usageYear"] += data["textbook:usageYear"]
     note = "#{next_years[0]}年度より"
     %w[ schema:publisher schema:name schema:editor schema:bookEdition
         textbook:school textbook:subjectArea textbook:subject textbook:grade textbook:curriculum
@@ -195,7 +197,7 @@ done.sort_by{|k,v| k }.each do |uri, data|
   str = [ "<#{uri}> a textbook:Textbook" ]
   %w[ schema:name schema:editor schema:publisher schema:bookEdition textbook:item
       textbook:catalogue textbook:school textbook:subjectArea textbook:subject textbook:grade textbook:curriculum
-      textbook:authorizedYear textbook:usageYear
+      textbook:authorizedYear textbook:usageYear textbook:usageYearRange
       bf:extent bf:dimensions
       textbook:textbookSymbol textbook:textbookNumber 
       bf:note

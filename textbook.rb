@@ -76,7 +76,7 @@ data.each.with_progressbar(format: "%a %e %P% Processed: %c from %C") do |uri, v
     school_name_en: school_data[school]["http://schema.org/name"][:en],
     textbookSymbol: v["https://w3id.org/jp-textbook/textbookSymbol"].first,
     textbookNumber: v["https://w3id.org/jp-textbook/textbookNumber"].first,
-    usageYear: v["https://w3id.org/jp-textbook/usageYear"].first,
+    usageYearRange: v["https://w3id.org/jp-textbook/usageYearRange"].first,
     authorizedYear: v["https://w3id.org/jp-textbook/authorizedYear"].first,
     catalogue: v["https://w3id.org/jp-textbook/catalogue"],
     catalogue_year: v["https://w3id.org/jp-textbook/catalogue"].sort.first.last_part,
