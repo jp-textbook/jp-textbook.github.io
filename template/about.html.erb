@@ -186,35 +186,15 @@
             <h3 id="original-vocabulary">独自語彙のスキーマ</h3>
               <h4 id="original-class">独自クラス</h4>
                 <ul>
-                  <li><a href="https://w3id.org/jp-textbook/Catalogue">https://w3id.org/jp-textbook/Catalogue</a></li>
-                  <li><a href="https://w3id.org/jp-textbook/CurriculumGuideline">https://w3id.org/jp-textbook/CurriculumGuideline</a></li>
-                  <li><a href="https://w3id.org/jp-textbook/Publisher">https://w3id.org/jp-textbook/Publisher</a></li>
-                  <li><a href="https://w3id.org/jp-textbook/School">https://w3id.org/jp-textbook/School</a></li>
-                  <li><a href="https://w3id.org/jp-textbook/SubjectType">https://w3id.org/jp-textbook/SubjectType</a></li>
-                  <li><a href="https://w3id.org/jp-textbook/Textbook">https://w3id.org/jp-textbook/Textbook</a></li>
-                  <li><a href="https://w3id.org/jp-textbook/SubjectArea">https://w3id.org/jp-textbook/SubjectArea</a></li>
-                  <li><a href="https://w3id.org/jp-textbook/Subject">https://w3id.org/jp-textbook/Subject</a></li>
+                  <%- param[:original_classes].each do |klass| -%>
+                  <li><a href="<%=h klass %>"><%=h klass %></a></li>
+                  <%- end -%>
                 </ul>
               <h4 id="original-property">独自プロパティ</h4>
                 <ul>
-                  <li><a href="https://w3id.org/jp-textbook/authorizedYear">https://w3id.org/jp-textbook/authorizedYear</a></li>
-                  <li><a href="https://w3id.org/jp-textbook/catalogue">https://w3id.org/jp-textbook/catalogue</a></li>
-                  <li><a href="https://w3id.org/jp-textbook/catalogueYear">https://w3id.org/jp-textbook/catalogueYear</a></li>
-                  <li><a href="https://w3id.org/jp-textbook/curriculum">https://w3id.org/jp-textbook/curriculum</a></li>
-                  <li><a href="https://w3id.org/jp-textbook/grade">https://w3id.org/jp-textbook/grade</a></li>
-                  <li><a href="https://w3id.org/jp-textbook/hasSubject">https://w3id.org/jp-textbook/hasSubject</a></li>
-                  <li><a href="https://w3id.org/jp-textbook/hasSubjectArea">https://w3id.org/jp-textbook/hasSubjectArea</a></li>
-                  <li><a href="https://w3id.org/jp-textbook/item">https://w3id.org/jp-textbook/item</a></li>
-                  <li><a href="https://w3id.org/jp-textbook/publisherAbbreviation">https://w3id.org/jp-textbook/publisherAbbreviation</a></li>
-                  <li><a href="https://w3id.org/jp-textbook/publisherNumber">https://w3id.org/jp-textbook/publisherNumber</a></li>
-                  <li><a href="https://w3id.org/jp-textbook/school">https://w3id.org/jp-textbook/school</a></li>
-                  <li><a href="https://w3id.org/jp-textbook/sourceOfEnglishName">https://w3id.org/jp-textbook/sourceOfEnglishName</a></li>
-                  <li><a href="https://w3id.org/jp-textbook/subject">https://w3id.org/jp-textbook/subject</a></li>
-                  <li><a href="https://w3id.org/jp-textbook/subjectArea">https://w3id.org/jp-textbook/subjectArea</a></li>
-                  <li><a href="https://w3id.org/jp-textbook/subjectType">https://w3id.org/jp-textbook/subjectType</a></li>
-                  <li><a href="https://w3id.org/jp-textbook/textbookNumber">https://w3id.org/jp-textbook/textbookNumber</a></li>
-                  <li><a href="https://w3id.org/jp-textbook/textbookSymbol">https://w3id.org/jp-textbook/textbookSymbol</a></li>
-                  <li><a href="https://w3id.org/jp-textbook/usageYear">https://w3id.org/jp-textbook/usageYear</a></li>
+                  <%- param[:original_properties].each do |property| -%>
+                  <li><a href="<%=h property %>"><%=h property %></a></li>
+                  <%- end -%>
                 </ul>
           <h2 id="history">更新履歴</h2>
           <!-- 更新履歴は template/about.html.erb を修正すること! -->

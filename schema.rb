@@ -11,6 +11,9 @@ class_template_en = PageTemplate.new("template/class.html.en.erb")
 property_template = PageTemplate.new("template/property.html.erb")
 property_template_en = PageTemplate.new("template/property.html.en.erb")
 
+original_classes = []
+original_properties = []
+
 data.each do |uri, v|
   type = v["http://www.w3.org/1999/02/22-rdf-syntax-ns#type"].first
   basename = uri.sub("https://w3id.org/jp-textbook/", "")
@@ -34,9 +37,11 @@ data.each do |uri, v|
   when "http://www.w3.org/2000/01/rdf-schema#Class"
     template = class_template
     template_en = class_template_en
+    original_classes << uri
   when "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
     template = property_template
     template_en = property_template_en
+    original_properties << uri
   else
     raise "unknown type: #{type}"
   end
@@ -54,6 +59,8 @@ param = {
   active: :about,
   file: "about.html",
   file_en: "en/about.html",
+  original_classes: original_classes.sort,
+  original_properties: original_properties.sort
 }
 data = load_turtle("shape.ttl")
 prefix = load_prefixes("shape.ttl")
