@@ -3,6 +3,9 @@
 require "fileutils"
 require_relative "util.rb"
 
+require 'active_support/core_ext/numeric/conversions'
+require "active_support/core_ext/integer/inflections"
+
 include Textbook
 data = load_turtle("schema.ttl")
 sitemap = Sitemap.new
@@ -67,6 +70,45 @@ prefix = load_prefixes("shape.ttl")
 %w( CatalogueShape CurriculumGuidelineShape curriculum/SubjectAreaShape curriculum/SubjectShape PublisherShape SchoolShape SubjectTypeShape TextbookShape ).each do |klass|
   param[klass] = expand_shape(data, "https://w3id.org/jp-textbook/#{klass}", prefix)
   param[klass + "_en"] = expand_shape(data, "https://w3id.org/jp-textbook/#{klass}", prefix, :en)
+end
+data = load_turtle("dataset.ttl")
+param[:versions] = []
+toplevel = data["_:toplevel"]
+version = data[toplevel["http://purl.org/pav/hasCurrentVersion"].first]
+revision = data[version["http://www.w3.org/ns/prov#qualifiedRevision"].first]
+#p version
+param[:versions] << {
+  date: version["http://purl.org/dc/terms/issued"].first,
+  version: version["http://purl.org/pav/version"].first,
+  triples: version["http://rdfs.org/ns/void#triples"].first,
+  byteSize: version["http://www.w3.org/ns/dcat#byteSize"].first,
+  dataDump: version["http://rdfs.org/ns/void#dataDump"].first,
+  comment_ja: revision["http://www.w3.org/2000/01/rdf-schema#comment"][:ja],
+  comment_en: revision["http://www.w3.org/2000/01/rdf-schema#comment"][:en],
+  revision_url: revision["http://www.w3.org/2000/01/rdf-schema#seeAlso"],
+  subset: version["http://rdfs.org/ns/void#subset"].map{|subset|
+    data[subset]["http://rdfs.org/ns/void#dataDump"].first
+  },
+}
+#p param[:versions]
+toplevel["http://purl.org/pav/hasVersion"].reverse.each do |version_s|
+  version = data[version_s]
+  revision = data[version["http://www.w3.org/ns/prov#qualifiedRevision"].first]
+  #p version
+param[:versions] << {
+  date: version["http://purl.org/dc/terms/issued"].first,
+  version: version["http://purl.org/pav/version"].first,
+  triples: version["http://rdfs.org/ns/void#triples"].first,
+  byteSize: version["http://www.w3.org/ns/dcat#byteSize"]&.first,
+  dataDump: version["http://rdfs.org/ns/void#dataDump"]&.first,
+  comment_ja: revision["http://www.w3.org/2000/01/rdf-schema#comment"][:ja],
+  comment_en: revision["http://www.w3.org/2000/01/rdf-schema#comment"][:en],
+  revision_url: revision["http://www.w3.org/2000/01/rdf-schema#seeAlso"],
+  subset: version["http://rdfs.org/ns/void#subset"].map{|subset|
+    #p subset
+    data[subset]["http://rdfs.org/ns/void#dataDump"].first
+  },
+}
 end
 template.output_to(param[:file], param, :ja)
 template_en.output_to(param[:file_en], param, :en)
