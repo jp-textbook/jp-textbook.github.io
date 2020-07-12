@@ -21,7 +21,7 @@ ARGV.each do |file|
 end
 ARGV.each do |file|
   filename = find_turtle(file)
-  STDERR.puts "<li><a href=\"#{filename}\">#{filename}</a></li>"
+  STDERR.puts filename
 end
 
 prefix.each do |k, v|

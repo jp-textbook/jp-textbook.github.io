@@ -688,4 +688,24 @@ _:v15.0 a void:Dataset;
 		_:schema-20200702,
 		_:shape-20200702;
 	pav:previousVersion _:v14.0 .
-_:toplevel pav:hasCurrentVersion _:v15.0 .
+_:toplevel pav:hasVersion _:v15.0 .
+
+_:schema-20200703 a void:Dataset;
+        void:dataDump <https://w3id.org/jp-textbook/schema-20200703.ttl>.
+_:dataset-20200712 a void:Dataset;
+        void:dataDump <https://w3id.org/jp-textbook/dataset-20200712.ttl>.
+_:v15.1 a void:Dataset;
+	dct:issued "2020-07-12"^^xsd:date;
+	pav:version "15.1";
+	void:triples 273449;
+	dcat:byteSize 13333892;
+	void:dataDump <https://w3id.org/jp-textbook/all-20200712.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "データセット全体を記述したメタデータを追加しました。一部のスキーマ記述漏れを修正しました。"@ja;
+		rdfs:comment "Add dataset metadata. Fix some errors in schema description."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/32?closed=1>
+	];
+	void:subset _:textbook-20200702, _:textbook-rc-20200315, _:curriculum-20200308, _:curriculum-versions-20200316, _:catalogue-20200308, _:subject-20200316, _:subjectArea-20200315, _:subjectType-20180811, _:school-20180713, _:publisher-20200308, _:schema-20200703, _:shape-20200702, _:dataset-20200712;
+	pav:previousVersion _:v15.0 .
+_:toplevel pav:hasCurrentVersion _:v15.1 .
