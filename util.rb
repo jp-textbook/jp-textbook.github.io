@@ -116,7 +116,7 @@ module Textbook
     ndl_search: /iss.ndl.go.jp/,
     ndla: /id.ndl.go.jp\/auth\/ndlna\//,
     dbpedia: /dbpedia.org/,
-    hojin_info: /hojin-info\.go\.jp/,
+    hojin_info: /info\.gbiz\.go\.jp\/hojin\//,
   }
   CURRENT_YEAR= 2019
   def map_links(urls, links)
