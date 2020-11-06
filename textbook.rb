@@ -252,6 +252,8 @@ subjects.sort_by{|k,v| k }.each do |subject, v|
   school_name = school.last_part
   school_name_en = school_data[school]["http://schema.org/name"][:en]
   curriculum = subject.sub(/\/[^\/]+\/[^\/]+\Z/, "")
+  p subject
+  curriculums[curriculum] ||= {}
   textbooks = curriculums[curriculum][subject]
   textbooks = [] if textbooks.nil?
   subject_area = subject.sub(/\/[^\/]+\Z/, "")
