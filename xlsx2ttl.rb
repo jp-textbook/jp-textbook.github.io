@@ -81,22 +81,29 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
   end
   catalogues = []
   usage_year_start = row["/SDATE#1"].to_i
+  usage_year_start = nil if usage_year_start == 0
   usage_year_end   = row["/EDATE#1"].to_i
   usage_year_end = nil if usage_year_end == 9999
-  usage_years = (usage_year_start .. (usage_year_end or CURRENT_YEAR))
-  usage_year_str = if usage_year_end.nil?
+  usage_years = if usage_year_start
+                  (usage_year_start .. (usage_year_end or CURRENT_YEAR))
+                else
+                  []
+                end
+  usage_year_str = if usage_year_start.nil?
+                     nil
+                   elsif usage_year_end.nil?
                      "#{usage_year_start}-"
                    elsif usage_years.size == 1
                      usage_year_start.to_s
                    else
                      [usage_year_start, usage_year_end].join("-")
                    end
-  logger.warn "#{uri}: catalogue and usage year mismatch (#{row["/PDATE#1"]} vs #{row["/SDATE#1"]})" if row["/PDATE#1"].to_i != usage_year_start-1
-  logger.warn "#{uri}: usage year possible typo (#{row["/SDATE#1"]}-#{row["/EDATE#1"]})" if usage_year_end and usage_year_start > usage_year_end
+  logger.warn "#{uri}: catalogue and usage year mismatch (#{row["/PDATE#1"]} vs #{row["/SDATE#1"]})" if usage_year_start and row["/PDATE#1"].to_i != usage_year_start-1
+  logger.warn "#{uri}: usage year possible typo (#{row["/SDATE#1"]}-#{row["/EDATE#1"]})" if usage_year_start and usage_year_end and usage_year_start > usage_year_end
   data = {
     "schema:name" => row["/TITLE#1"],
     "schema:editor" => row["/CREATOR#1"],
-    "schema:publisher" => "#{BASE_URI}publisher/#{usage_year_start-1}/#{row["/PUA#1"]}",
+    "schema:publisher" => usage_year_start.nil? ? nil : "#{BASE_URI}publisher/#{usage_year_start-1}/#{row["/PUA#1"]}",
     "schema:bookEdition" => row["/EDITION#1"],
     "textbook:item" => {
       "a" => "bf:Item",
@@ -146,7 +153,7 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
     end
   end
   %w[ textbook:usageYearRange textbook:authorizedYear ].each do |year|
-    if data[year].split(/\D+/).find{|i| i.to_i > Date.today.year }
+    if data[year] and data[year].split(/\D+/).find{|i| i.to_i > Date.today.year }
       #logger.warn "Year (#{year}=#{ data["textbook:usageYear"]}) is greater than today. cf. <#{uri}>"
     end
   end

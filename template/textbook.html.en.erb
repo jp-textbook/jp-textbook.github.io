@@ -9,7 +9,9 @@
           <small><%= param[:bookEdition] %></small>
         <%- end -%>
         </h1>
+        <%- if not param[:publishers].empty? -%>
         <p><%=h param[:publishers].first[:name] %></p>
+        <%- end -%>
         <p><%=h param[:school_name_en] %> - <%=h param[:subject_name_en] || param[:subjectArea_name_en] %>
           <%- if param[:grade] -%>
             (<%= param[:grade].sort.map{|i| ordinalize(i) }.join(", ") %> grade<%= "s" if param[:grade].size > 1 %>)
@@ -71,12 +73,14 @@
             <%- end -%>
             <dt>Usage year(s)</dt><dd><%=h param[:usageYearRange] %></dd>
             <dt>Authorized year</dt><dd><%=h param[:authorizedYear] %></dd>
+            <%- if param[:catalogue] -%>
             <dt>Catalogues listed</dt>
             <dd><% catalogues = param[:catalogue].sort.map do |catalogue|
                      %Q|<a href="#{h relative_path_uri(catalogue, :en) }">#{h catalogue.last_part }</a>|
                    end -%>
                 <%= catalogues.join(", ") -%>
             </dd>
+            <%- end -%>
             <dt>Curriculum guideline</dt><dd><a href="<%=h relative_path_uri(param[:curriculum], :en) %>"><%=h param[:curriculum_year] %></a></dd>
             <%- if param[:note] -%>
             <dt>注記</dt>

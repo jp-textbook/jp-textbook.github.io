@@ -45,14 +45,16 @@ data.each.with_progressbar(format: "%a %e %P% Processed: %c from %C") do |uri, v
   subject_name = subject.last_part if subject
   subject_name_en = subjects[subject]["http://schema.org/name"][:en] if subject and subjects[subject] # FIXME: correct subject name. #217
   subjectArea = v["https://w3id.org/jp-textbook/subjectArea"].first
-  p subjectArea if not area_data.has_key? subjectArea
   school = v["https://w3id.org/jp-textbook/school"].first
-  publisher_list = v["http://schema.org/publisher"].sort.map do |e|
-    warn "publisher [#{e}] not found in publisher.ttl." if not publisher_data[e]
-    { uri: e,
-      name: publisher_data[e]["http://schema.org/name"][:ja],
-      name_yomi: publisher_data[e]["http://schema.org/name"][:"ja-hira"],
-    }
+  publisher_list = []
+  if v["http://schema.org/publisher"]
+    publisher_list = v["http://schema.org/publisher"].sort.map do |e|
+      warn "publisher [#{e}] not found in publisher.ttl." if not publisher_data[e]
+      { uri: e,
+        name: publisher_data[e]["http://schema.org/name"][:ja],
+        name_yomi: publisher_data[e]["http://schema.org/name"][:"ja-hira"],
+      }
+    end
   end
   param = {
     uri: uri,
@@ -76,10 +78,10 @@ data.each.with_progressbar(format: "%a %e %P% Processed: %c from %C") do |uri, v
     school_name_en: school_data[school]["http://schema.org/name"][:en],
     textbookSymbol: v["https://w3id.org/jp-textbook/textbookSymbol"].first,
     textbookNumber: v["https://w3id.org/jp-textbook/textbookNumber"].first,
-    usageYearRange: v["https://w3id.org/jp-textbook/usageYearRange"].first,
+    usageYearRange: v["https://w3id.org/jp-textbook/usageYearRange"]&.first,
     authorizedYear: v["https://w3id.org/jp-textbook/authorizedYear"].first,
     catalogue: v["https://w3id.org/jp-textbook/catalogue"],
-    catalogue_year: v["https://w3id.org/jp-textbook/catalogue"].sort.first.last_part,
+    catalogue_year: v["https://w3id.org/jp-textbook/catalogue"] ? v["https://w3id.org/jp-textbook/catalogue"].sort.first.last_part : nil,
     #catalogue_year: v["https://w3id.org/jp-textbook/catalogue"].split(/\//).last,
     note: v["http://id.loc.gov/ontologies/bibframe/note"] ? v["http://id.loc.gov/ontologies/bibframe/note"].sort: nil,
     extent: v["http://id.loc.gov/ontologies/bibframe/extent"] ? v["http://id.loc.gov/ontologies/bibframe/extent"].first : nil,
@@ -120,7 +122,7 @@ data.each.with_progressbar(format: "%a %e %P% Processed: %c from %C") do |uri, v
     publishers[publisher[:uri]] ||= []
     publishers[publisher[:uri]] << param
   end
-  v["https://w3id.org/jp-textbook/catalogue"].each do |catalogue|
+  v["https://w3id.org/jp-textbook/catalogue"]&.each do |catalogue|
     catalogue_list[catalogue] ||= []
     catalogue_list[catalogue] << param
   end
@@ -252,7 +254,6 @@ subjects.sort_by{|k,v| k }.each do |subject, v|
   school_name = school.last_part
   school_name_en = school_data[school]["http://schema.org/name"][:en]
   curriculum = subject.sub(/\/[^\/]+\/[^\/]+\Z/, "")
-  p subject
   curriculums[curriculum] ||= {}
   textbooks = curriculums[curriculum][subject]
   textbooks = [] if textbooks.nil?

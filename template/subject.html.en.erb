@@ -50,7 +50,7 @@
           <h2>List of textbooks</h2>
           <ul>
             <%- param[:textbooks].each do |textbook| -%>
-              <li><a href="<%=h relative_path_uri(textbook[:uri], :en) %>"><%=h textbook[:name] %> (<%=h textbook[:publishers].first[:name] %>)</a>
+              <li><a href="<%=h relative_path_uri(textbook[:uri], :en) %>"><%=h textbook[:name] %><% if not textbook[:publishers].empty? %> (<%=h textbook[:publishers].first[:name] %>)<% end %></a>
               (<%=h textbook[:usageYearRange] %>)
               </li>
             <%- end -%>
