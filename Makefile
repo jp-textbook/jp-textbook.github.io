@@ -18,6 +18,7 @@ ext-single-ttl:
 check:
 	./check.rb
 	./check-link.rb en/index.html index.html about.html en/about.html 高等学校/2016/国総/359.html en/高等学校/2016/国総/359.html curriculum/中学校/2012/国語/国語.html en/curriculum/中学校/2012/国語/国語.html
+	cd ../shaclex; sbt "run --data ../jp-textbook.github.io/all-`date +%Y%m%d`.ttl --engine shaclex --showValidationReport"
 
 schema:
 	./schema.rb
