@@ -9,6 +9,26 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
+          <h2>現行学習指導要領（2020年度以降）</h2>
+          <dl>
+            <%-
+            [ "https://w3id.org/jp-textbook/curriculum/小学校/2020",
+              "https://w3id.org/jp-textbook/curriculum/中学校/2021",
+              "https://w3id.org/jp-textbook/curriculum/高等学校/2022",
+            ].each do |uri|
+              dir, year, = File.split(uri)
+              base, school, = File.split(dir)
+            -%>
+            <dt><%=h school %> <small><a href="<%= relative_path_uri(uri) %>"><span class="glyphicon glyphicon-book"></span> 学習指導要領</a></small>
+            <dd><ul class="list-inline">
+                <%- param[uri].each do |name| -%>
+                  <li><a href="<%=h relative_path_uri(name) %>"><%=h name.last_part %></a></li>
+                <%- end -%>
+                </ul></dd>
+            <%- end -%>
+          </dl>
+        </div>
+        <div class="col-md-4">
           <h2>現行学習指導要領（2011年度以降）</h2>
           <dl>
             <%-
