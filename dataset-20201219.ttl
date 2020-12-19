@@ -1,0 +1,785 @@
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+_:toplevel a void:Dataset;
+	foaf:homepage <https://w3id.org/jp-textbook/>;
+	foaf:page <https://jp-textbook.github.io/>;
+	dct:title "教科書LOD"@ja;
+	dct:title "Japanese Textbook LOD"@en;
+	dct:description "教科書LODプロジェクトでは、初等教育、中等教育で使われている学習指導要領と現行使用教科書の出版情報を Linked Open Data (LOD) として公開します。"@ja;
+	dct:description "Japanese Textbook Linked Open Data (LOD) is a dataset which includes bibliographic information for textbooks published up to now since the 7th curriculum guideline enforced in 1992, as well as the related information such as the subject areas, the subjects, and the curriculum guidelines."@en;
+	dct:available "2017-01-15"^^xsd:date;
+	dct:source <https://nierlib.nier.go.jp/lib/database/TEXTBOOK/>;
+	dct:publisher [
+		a foaf:Project;
+		foaf:name "教科書LODプロジェクト"@ja;
+		foaf:name "Japanese Textbook LOD Project"@ja;
+		foaf:member [
+			a foaf:Person;
+			foaf:name "江草由佳"@ja;
+			foaf:name "Yuka Egusa"@en;
+			foaf:mbox "mailto:yuka@nier.go.jp";
+			foaf:homepage <https://www.nier.go.jp/yuka/>;
+		], [
+			a foaf:Person;
+			foaf:name "高久雅生"@ja;
+			foaf:name "Masao Takaku"@en;
+			foaf:mbox "mailto:masao@slis.tsukuba.ac.jp";
+			foaf:homepage <https://masao.jpn.org>;
+		];
+	];
+	dct:license <http://creativecommons.org/publicdomain/zero/1.0/>;
+	void:feature <http://www.w3.org/ns/formats/Turtle> .
+
+_:textbook-20170115 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-20170115.ttl> .
+
+_:curriculum-20170115 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/curriculum-20170115.ttl> .
+
+_:v1.0 a void:Dataset;
+	dct:issued "2017-01-15"^^xsd:date;
+	pav:version "1.0";
+	void:triples 107403;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "初期バージョン公開。"@ja;
+		rdfs:comment "The first dataset release."@en;
+	];
+	void:subset _:textbook-20170115, _:curriculum-20170115 .
+_:toplevel pav:hasVersion _:v1.0 .
+
+_:textbook-20170503 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-20170503.ttl> .
+_:curriculum-20170503 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/curriculum-20170503.ttl> .
+_:v2.0 a void:Dataset;
+	dct:issued "2017-05-03"^^xsd:date;
+	pav:version "2.0";
+	void:triples 107038;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "リソースURIとプロパティを一部変更しました。"@ja;
+		rdfs:comment "Changed some resource URIs and properties."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/1?closed=1>
+	];
+	void:subset _:textbook-20170503, _:curriculum-20170503;
+	pav:previousVersion _:v1.0 .
+_:toplevel pav:hasVersion _:v2.0 .
+
+_:textbook-20170606 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-20170606.ttl> .
+_:curriculum-20170606 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/curriculum-20170606.ttl> .
+_:subject-20170606 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/subject-20170606.ttl> .
+_:subjectArea-20170606 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/subjectArea-20170606.ttl> .
+_:v3.0 a void:Dataset;
+	dct:issued "2017-06-06"^^xsd:date;
+	pav:version "3.0";
+	void:triples 112441;
+	dcat:byteSize 6347900;
+	void:dataDump <https://w3id.org/jp-textbook/all-20170606.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "種目と教科情報を説明するリソースURIとプロパティを大幅に追加しました。一部のデータ不具合を修正しました。"@ja;
+		rdfs:comment "Added all the subjectArea URIs, subject URIs, and their property data. Fixed some errors in the dataset."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/2?closed=1>
+	];
+	void:subset _:textbook-20170606, _:curriculum-20170606, _:subject-20170606, _:subjectArea-20170606;
+	pav:previousVersion _:v2.0 .
+_:toplevel pav:hasVersion _:v3.0 .
+
+_:textbook-20170611 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-20170611.ttl> .
+_:subject-20170611 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/subject-20170611.ttl> .
+_:subjectArea-20170611 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/subjectArea-20170611.ttl> .
+_:catalogue-20170611 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/catalogue-20170611.ttl> .
+_:v4.0 a void:Dataset;
+	dct:issued "2017-06-11"^^xsd:date;
+	pav:version "4.0";
+	void:triples 120437;
+	dcat:byteSize 6538965;
+	void:dataDump <https://w3id.org/jp-textbook/all-20170611.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "教科書目録リソースを追加しました。トップページの種目一覧を自動生成するようにしました。"@ja;
+		rdfs:comment "Added URI resources for textbook catalogs. Automated the generation of the top page of this project from the dataset. Fixed some errors in the dataset."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/3?closed=1>;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/4?closed=1>
+	];
+	void:subset _:textbook-20170611, _:curriculum-20170606, _:subject-20170611, _:subjectArea-20170611, _:catalogue-20170611;
+	pav:previousVersion _:v3.0 .
+_:toplevel pav:hasVersion _:v4.0 .
+
+_:textbook-20170707 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-20170707.ttl> .
+_:v4.1 a void:Dataset;
+	dct:issued "2017-07-07"^^xsd:date;
+	pav:version "4.1";
+	void:triples 120248;
+	dcat:byteSize 6521199;
+	void:dataDump <https://w3id.org/jp-textbook/all-20170707.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "種目情報の詳細情報を提供するページを追加し、教科書一覧のページを置き換えるようにしました。その他公開ページの内容を整理しました。"@ja;
+		rdfs:comment "Added web pages for each subject, and replaced the list pages of textbooks with them. Fixed some errors in the dataset."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/5?closed=1>
+	];
+	void:subset _:textbook-20170707, _:curriculum-20170606, _:subject-20170611, _:subjectArea-20170611, _:catalogue-20170611;
+	pav:previousVersion _:v4.0 .
+_:toplevel pav:hasVersion _:v4.1 .
+
+_:textbook-20171003 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-20171003.ttl> .
+_:subjectArea-20171003 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/subjectArea-20171003.ttl> .
+_:catalogue-20171003 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/catalogue-20171003.ttl> .
+_:v5.0 a void:Dataset;
+	dct:issued "2017-10-03"^^xsd:date;
+	pav:version "5.0";
+	void:triples 139839;
+	dcat:byteSize 7102948;
+	void:dataDump <https://w3id.org/jp-textbook/all-20171003.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "2017年度使用教科書の情報を追加しました。そのほかページ数、大きさなどのプロパティを追加しました。"@ja;
+		rdfs:comment "Added information on textbooks used in AY2017. Added properties on the number of pages and extent etc."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/6?closed=1>
+	];
+	void:subset _:textbook-20171003, _:curriculum-20170606, _:subject-20170611, _:subjectArea-20171003, _:catalogue-20171003;
+	pav:previousVersion _:v4.1 .
+_:toplevel pav:hasVersion _:v5.0 .
+
+_:curriculum-20171005 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/curriculum-20171005.ttl>.
+_:subject-20171005 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/subject-20171005.ttl>.
+_:catalogue-20171009 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/catalogue-20171009.ttl>.
+_:v5.1 a void:Dataset;
+	dct:issued "2017-10-09"^^xsd:date;
+	pav:version "5.1";
+	void:triples 141098;
+	dcat:byteSize 7177192;
+	void:dataDump <https://w3id.org/jp-textbook/all-20171009.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "教科、種目、学習指導要領等の名称のよみ、英語名を追加しました。"@ja;
+		rdfs:comment "Added English names and Hiragana transcriptions for subjects, subject areas, and curriculum guidelines."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/7?closed=1>
+	];
+	void:subset _:textbook-20171003, _:curriculum-20171005, _:subject-20171005, _:subjectArea-20171003, _:catalogue-20171009;
+	pav:previousVersion _:v5.0 .
+_:toplevel pav:hasVersion _:v5.1 .
+
+_:textbook-20171130 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-20171130.ttl>.
+_:v5.2 a void:Dataset;
+	dct:issued "2017-11-30"^^xsd:date;
+	pav:version "5.2";
+	void:triples 141150 ;
+	dcat:byteSize 7179285;
+	void:dataDump <https://w3id.org/jp-textbook/all-20171130.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "いくつかの教科書情報における誤りとウェブ上の表記を修正しました。"@ja;
+		rdfs:comment "Fixed some errors on bibliographic information and descriptions on the web site."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/8?closed=1>
+	];
+	void:subset _:textbook-20171130, _:curriculum-20171005, _:subject-20171005, _:subjectArea-20171003, _:catalogue-20171009;
+	pav:previousVersion _:v5.1 .
+_:toplevel pav:hasVersion _:v5.2 .
+
+_:textbook-rc-20171202 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-rc-20171202.ttl>.
+_:v6.0 a void:Dataset;
+	dct:issued "2017-12-03"^^xsd:date;
+	pav:version "6.0";
+	void:triples 157045;
+	dcat:byteSize 7842566;
+	void:dataDump <https://w3id.org/jp-textbook/all-20171203.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "<a href=\"http://www.textbook-rc.or.jp/library/\">公益財団法人教科書研究センター附属教科書図書館</a>の所蔵教科書の書誌情報をいただき、リンクを追加しました。"@ja;
+		rdfs:comment "Added bibliographic information for textbooks held in <a href=\"http://www.textbook-rc.or.jp/library/\">Textbook Research Center Library</a>, and links to their OPAC."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/9?closed=1>
+	];
+	void:subset _:textbook-20171130, _:textbook-rc-20171202, _:curriculum-20171005, _:subject-20171005, _:subjectArea-20171003, _:catalogue-20171009;
+	pav:previousVersion _:v5.2 .
+_:toplevel pav:hasVersion _:v6.0 .
+
+_:textbook-20180313 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-20180313.ttl>.
+_:textbook-rc-20171222 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-rc-20171222.ttl>.
+_:v6.1 a void:Dataset;
+	dct:issued "2018-03-13"^^xsd:date;
+	pav:version "6.1";
+	void:triples 157297;
+	dcat:byteSize 7851172;
+	void:dataDump <https://w3id.org/jp-textbook/all-20180313.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "教科書図書館の所蔵教科書で一つの教科書リソースに対して複数の所蔵があるものについて両者へのリンクを追加するよう修正しました。書誌情報をいくつか修正しました。"@ja;
+		rdfs:comment "Added links to multiple holding items in Education Library for a single textbook resource. Fixed several bibliographic information."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/10?closed=1>
+	];
+	void:subset _:textbook-20180313, _:textbook-rc-20171222, _:curriculum-20171005, _:subject-20171005, _:subjectArea-20171003, _:catalogue-20171009;
+	pav:previousVersion _:v6.0 .
+_:toplevel pav:hasVersion _:v6.1 .
+
+_:textbook-20180715 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-20180715.ttl>.
+_:textbook-rc-20180720 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-rc-20180720.ttl>.
+_:curriculum-20180713 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/curriculum-20180713.ttl>.
+_:catalogue-20180713 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/catalogue-20180713.ttl>.
+_:subject-20180720 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/subject-20180720.ttl>.
+_:subjectArea-20180713 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/subjectArea-20180713.ttl>.
+_:school-20180713 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/school-20180713.ttl>.
+_:v7.0 a void:Dataset;
+	dct:issued "2018-07-21"^^xsd:date;
+	pav:version "7.0";
+	void:triples 164387;
+	dcat:byteSize 8242561;
+	void:dataDump <https://w3id.org/jp-textbook/all-20180721.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "2018年度使用教科書の書誌情報と所蔵情報をいくつか修正しました。 新たな教科・種目「道徳」を追加しました。 学校種別のURIリソースを新設しました。 各ページに対応する英語ページを作成しました。 全てのリソースに対応して、個別のリソースに対するTurtle形式を出力するようにしました。 カーリルへのリンクを追加しました。"@ja;
+		rdfs:comment "Added new bibliographic and holding information for textbooks used in AY2018. Added a new subject and subject area \"Moral Education\". Replaced the URIs for types of schools into new original URIs. Added English website for every page. Added Turtle format files for all the individual resources. Added related links to Calil website in the textbook pages."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/11?closed=1>;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/12?closed=1>
+	];
+	void:subset _:textbook-20180715, _:textbook-rc-20180720, _:curriculum-20180713, _:catalogue-20180713, _:subject-20180720, _:subjectArea-20180713, _:school-20180713;
+	pav:previousVersion _:v6.1 .
+_:toplevel pav:hasVersion _:v7.0 .
+
+_:textbook-rc-20180725 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-rc-20180725.ttl>.
+_:catalogue-20180727 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/catalogue-20180727.ttl>.
+_:v7.1 a void:Dataset;
+	dct:issued "2018-07-28"^^xsd:date;
+	pav:version "7.1";
+	void:triples 164553;
+	dcat:byteSize 8252010;
+	void:dataDump <https://w3id.org/jp-textbook/all-20180728.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "個別のRDF/Turtleデータへのリンクを追加しました。 教科書目録のNCIDとJPNOを追加しました。 英語ページと日本語ページの間を相互にリンクするようにしました。 対象外の教科書情報が数件混入していたため除外しました。"@ja;
+		rdfs:comment "Added links to individual RDF/Turtle data. Added identifiers NCID and JPNO for each textbook catalogue. Added cross-links between Japanese and English pages respectively. Removed a few of textbook records out of scopes."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/13?closed=1>
+	];
+	void:subset _:textbook-20180715, _:textbook-rc-20180725, _:curriculum-20180713, _:catalogue-20180727, _:subject-20180720, _:subjectArea-20180713, _:school-20180713;
+	pav:previousVersion _:v7.0 .
+_:toplevel pav:hasVersion _:v7.1 .
+
+_:curriculum-20180804 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/curriculum-20180804.ttl>.
+_:curriculum-versions-20180802 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/curriculum-versions-20180802.ttl>.
+_:subject-20180804 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/subject-20180804.ttl>.
+_:subjectArea-20180806 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/subjectArea-20180806.ttl>.
+_:subjectType-20180806 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/subjectType-20180806.ttl>.
+_:v8.0 a void:Dataset;
+	dct:issued "2018-08-09"^^xsd:date;
+	pav:version "8.0";
+	void:triples 165325;
+	dcat:byteSize 8298518;
+	void:dataDump <https://w3id.org/jp-textbook/all-20180809.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "学習指導要領の改正情報を追加しました。 教科種別、種目種別について、各学習指導要領別のURIとなるよう修正し、あわせて各教科・種目からの関連プロパティも変更しました。 全てのリソースの詳細情報を全てのプロパティ分表示するようにしました。"@ja;
+		rdfs:comment "Added revisions information for curriculum guidelines. Changed the types of subject areas and subjects to use each curriculum guideline URI, and changed the related properties from each subject and subject area. The web site now shows all the property values in the details sections."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/14?closed=1>
+	];
+	void:subset _:textbook-20180715, _:textbook-rc-20180725, _:curriculum-20180804, _:curriculum-versions-20180802, _:catalogue-20180727, _:subject-20180804, _:subjectArea-20180806, _:subjectType-20180806, _:school-20180713;
+	pav:previousVersion _:v7.1 .
+_:toplevel pav:hasVersion _:v8.0 .
+
+_:textbook-20180811 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-20180811.ttl>.
+_:textbook-rc-20180812 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-rc-20180812.ttl>.
+_:curriculum-versions-20180811 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/curriculum-versions-20180811.ttl>.
+_:subjectType-20180811 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/subjectType-20180811.ttl>.
+_:v9.0 a void:Dataset;
+	dct:issued "2018-08-12"^^xsd:date;
+	pav:version "9.0";
+	void:triples 166237;
+	dcat:byteSize 8374328;
+	void:dataDump <https://w3id.org/jp-textbook/all-20180812.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "教育図書館で記述している教科書の注記情報を追加しました。 注記を示すプロパティを独自の<code>textbook:note</code>からBIBFRAMEの<code>bf:note</code>プロパティに変更しました。 教科書を示すRDFクラスを<code>schema:Book</code>から独自の<code>textbook:Textbook</code>に変更しました。 対象学年情報を示す<code>textbook:grade</code>プロパティを数値リテラルで繰り返し記述するように変更しました。 教科・種別リソースに学習指導要領リソースと学校種別リソースへのリンクを追加しました。 学習指導要領改正情報に英語名称、英語出典表記を追加しました。"@ja;
+		rdfs:comment "Added note fields described by NIER Education Library. Changed the original property <code>textbook:note</code> to BIBFRAME's <code>bf:note</code>. Changed the RDF class representing the textbooks from <code>schema:Book</code> to the original class <code>textbook:Textbook</code>. Changed property values representing the target grade to use the repeatable integer literals instead of textual literal. Added links to Curriculum guidelines and types of school resources from types of subject. Added English description in revisions information of curriculum guidelines."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/15?closed=1>
+	];
+	void:subset _:textbook-20180811, _:textbook-rc-20180812, _:curriculum-20180804, _:curriculum-versions-20180811, _:catalogue-20180727, _:subject-20180804, _:subjectArea-20180806, _:subjectType-20180811, _:school-20180713;
+	pav:previousVersion _:v8.0 .
+_:toplevel pav:hasVersion _:v9.0 .
+
+_:subject-20180812 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/subject-20180812.ttl>.
+_:subjectArea-20180812 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/subjectArea-20180812.ttl>.
+_:v9.1 a void:Dataset;
+	dct:issued "2018-08-15"^^xsd:date;
+	pav:version "9.1";
+	void:triples 166237;
+	dcat:byteSize 8374376;
+	void:dataDump <https://w3id.org/jp-textbook/all-20180815.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "教科名と種目名の英語表記とよみを一部修正しました。 教科書LODのロゴ画像を追加しました。 サイト全体のFacebookとTwitterシェア用の画像を設定しました。"@ja;
+		rdfs:comment "Fixed errors in some of names in English names of subjects and subject areas. Added a logo image for the project. Added a logo previews when sharing the pages on Facebook and Twitter."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/16?closed=1>
+	];
+	void:subset _:textbook-20180811, _:textbook-rc-20180812, _:curriculum-20180804, _:curriculum-versions-20180811, _:catalogue-20180727, _:subject-20180812, _:subjectArea-20180812, _:subjectType-20180811, _:school-20180713;
+	pav:previousVersion _:v9.0 .
+_:toplevel pav:hasVersion _:v9.1 .
+
+_:textbook-20180820 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-20180820.ttl>.
+_:publisher-20180818 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/publisher-20180818.ttl>.
+_:v10.0 a void:Dataset;
+	dct:issued "2018-08-20"^^xsd:date;
+	pav:version "10.0";
+	void:triples 173396;
+	dcat:byteSize 8980527;
+	void:dataDump <https://w3id.org/jp-textbook/all-20180820.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "発行者情報リソースを追加しました。"@ja;
+		rdfs:comment "Added the resources for the publishers and related information."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/17?closed=1>
+	];
+	void:subset _:textbook-20180820, _:textbook-rc-20180812, _:curriculum-20180804, _:curriculum-versions-20180811, _:catalogue-20180727, _:subject-20180812, _:subjectArea-20180812, _:subjectType-20180811, _:school-20180713, _:publisher-20180818;
+	pav:previousVersion _:v9.1 .
+_:toplevel pav:hasVersion _:v10.0 .
+
+_:curriculum-versions-20180822 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/curriculum-versions-20180822.ttl>.
+_:subject-20180821 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/subject-20180821.ttl>.
+_:subjectArea-20180821 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/subjectArea-20180821.ttl>.
+_:publisher-20180825 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/publisher-20180825.ttl>.
+_:v10.1 a void:Dataset;
+	dct:issued "2018-08-25"^^xsd:date;
+	pav:version "10.1";
+	void:triples 177410;
+	dcat:byteSize 9369707;
+	void:dataDump <https://w3id.org/jp-textbook/all-20180825.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "発行者情報リソースURIの記述の誤りを修正しました。 複数年にわたる発行者リソース同士をグループ化して表示するようにしました。 教科および種目の英語名称の出典情報を追加しました。 発行者情報英語版ページのタイトルをアルファベット表記に変更しました。 個別URIへのアクセス時に<code>text/turtle</code>を指定してアクセスするとRDF/Turtleデータを返すようにしました。"@ja;
+		rdfs:comment "Correct the URIs for publishers information. Add grouping list for the same publisher in the publisher pages. Add sources information for the name of subjects and subject areas. Change the title of English version of publishers page into Latin transcribed form. Support requests with \"text/turtle\" for each resource."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/18?closed=1>
+	];
+	void:subset _:textbook-20180820, _:textbook-rc-20180812, _:curriculum-20180804, _:curriculum-versions-20180822, _:catalogue-20180727, _:subject-20180821, _:subjectArea-20180821, _:subjectType-20180811, _:school-20180713, _:publisher-20180825;
+	pav:previousVersion _:v10.0 .
+_:toplevel pav:hasVersion _:v10.1 .
+
+_:textbook-20180831 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-20180831.ttl>.
+_:subject-20180827 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/subject-20180827.ttl>.
+_:subjectArea-20180827 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/subjectArea-20180827.ttl>.
+_:publisher-20180826 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/publisher-20180826.ttl>.
+_:v10.2 a void:Dataset;
+	dct:issued "2018-08-31"^^xsd:date;
+	pav:version "10.2";
+	void:triples 178146;
+	dcat:byteSize 9454764;
+	void:dataDump <https://w3id.org/jp-textbook/all-20180831.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "発行者リソースに法人番号リソースへのリンクを追加しました。 発行者名称を教科書目録の「発行者一覧」から採録するように変更し、データ一部に修正を加えました。 教科書が例外的に複数の発行者から出版された場合に発行者リソースへの関連リンクを複数付与するように修正しました。 発行者番号の誤りをいくつか修正しました。"@ja;
+		rdfs:comment "Add the Corporate Numbers for the publisher resources. Change some names for publishers to use \"The list of publishers\" from textbook catalogues as the sources. Add multiple publisher links from textbooks when the same textbook has been published from them. Correct several errors in publisher numbers."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/19?closed=1>
+	];
+	void:subset _:textbook-20180831, _:textbook-rc-20180812, _:curriculum-20180804, _:curriculum-versions-20180822, _:catalogue-20180727, _:subject-20180827, _:subjectArea-20180827, _:subjectType-20180811, _:school-20180713, _:publisher-20180826;
+	pav:previousVersion _:v10.1 .
+_:toplevel pav:hasVersion _:v10.2 .
+
+_:schema-20180913 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/schema-20180913.ttl>.
+_:v10.3 a void:Dataset;
+	dct:issued "2018-09-16"^^xsd:date;
+	pav:version "10.3";
+	void:triples 178303;
+	dcat:byteSize 9461538;
+	void:dataDump <https://w3id.org/jp-textbook/all-20180916.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "独自のクラス、プロパティの定義としてスキーマを追加しました。"@ja;
+		rdfs:comment "Add the schema for our own classes and properties."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/20?closed=1>
+	];
+	void:subset _:textbook-20180831, _:textbook-rc-20180812, _:curriculum-20180804, _:curriculum-versions-20180822, _:catalogue-20180727, _:subject-20180827, _:subjectArea-20180827, _:subjectType-20180811, _:school-20180713, _:publisher-20180826, _:schema-20180913;
+	pav:previousVersion _:v10.2 .
+_:toplevel pav:hasVersion _:v10.3 .
+
+_:textbook-rc-20180916 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-rc-20180916.ttl>.
+_:v10.4 a void:Dataset;
+	dct:issued "2018-10-13"^^xsd:date;
+	pav:version "10.4";
+	void:triples 185658;
+	dcat:byteSize 9857261;
+	void:dataDump <https://w3id.org/jp-textbook/all-20181013.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "ISBNを持つ教科書について、JP番号、NDL書誌番号、NCIDのリンクを追加しました。"@ja;
+		rdfs:comment "Add the links to identifiers of JPNO, NDLBibID, and NCID for the textbooks with ISBNs."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/21?closed=1>
+	];
+	void:subset _:textbook-20180831, _:textbook-rc-20180916, _:curriculum-20180804, _:curriculum-versions-20180822, _:catalogue-20180727, _:subject-20180827, _:subjectArea-20180827, _:subjectType-20180811, _:school-20180713, _:publisher-20180826, _:schema-20180913;
+	pav:previousVersion _:v10.3 .
+_:toplevel pav:hasVersion _:v10.4 .
+
+_:textbook-20181111 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-20181111.ttl>.
+_:publisher-20181123 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/publisher-20181123.ttl>.
+_:schema-20181013 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/schema-20181013.ttl>.
+_:v11.0 a void:Dataset;
+	dct:issued "2018-11-27"^^xsd:date;
+	pav:version "11.0";
+	void:triples 212141;
+	dcat:byteSize 11421878;
+	void:dataDump <https://w3id.org/jp-textbook/all-20181125.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "教科書とその掲載教科書目録との関連付けを、初出教科書目録への関連付けから、掲載教科書目録へと変更し、繰り返し可能なプロパティとして定義しなおしました。 発行者情報に発見された誤りをいくつか修正しました。 教科書LODサイト内にGoogleサイト内検索の機能を追加しました。 種目名の誤りをいくつか修正しました。"@ja;
+		rdfs:comment "Redefine the cataogue property links from the first appeared one to the listed cataloges as repeatable properties for each textbook. Fix several errors in publishers information. Add search functionalities in the LOD website through Google Custom Search. Fix several errors in the names of subjects."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/22?closed=1>
+	];
+	void:subset _:textbook-20181111, _:textbook-rc-20180916, _:curriculum-20180804, _:curriculum-versions-20180822, _:catalogue-20180727, _:subject-20180827, _:subjectArea-20180827, _:subjectType-20180811, _:school-20180713, _:publisher-20181123, _:schema-20181013;
+	pav:previousVersion _:v10.4 .
+_:toplevel pav:hasVersion _:v11.0 .
+
+_:textbook-20181129 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-20181129.ttl>.
+_:catalogue-20181130 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/catalogue-20181130.ttl>.
+_:publisher-20181130 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/publisher-20181130.ttl>.
+_:v11.1 a void:Dataset;
+	dct:issued "2018-12-03"^^xsd:date;
+	pav:version "11.1";
+	void:triples 218206;
+	dcat:byteSize 11782794;
+	void:dataDump <https://w3id.org/jp-textbook/all-20181130.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "教科書目録ページに教科書一覧を掲載するようにしました。 トップページから教科書目録ページへのリンクを追加しました。 発行者リソースの発行年情報の誤りをいくつか修正しました。 教科書リソースから教科書目録リソースへのリンク関連付けに一部失敗していたのを修正しました。 トップページにいくつかの種目が重複して掲載されていた誤りを修正しました。 LODモデル図を最新版に更新しました。"@ja;
+		rdfs:comment "Add a list of textbooks in the textbook catalogue pages. Fix errors in some of links from textbook resources to textbook catalogue resources, Fix errors in publication years at some of publisher resources. Add a list of textbook catalogues in the top page. Fix errors of duplicate listings of subjects in the top page. Update the LOD diagram in the about page."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/23?closed=1>
+	];
+	void:subset _:textbook-20181129, _:textbook-rc-20180916, _:curriculum-20180804, _:curriculum-versions-20180822, _:catalogue-20181130, _:subject-20180827, _:subjectArea-20180827, _:subjectType-20180811, _:school-20180713, _:publisher-20181130, _:schema-20181013;
+	pav:previousVersion _:v11.0 .
+_:toplevel pav:hasVersion _:v11.1 .
+
+_:shape-20181214 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/shape-20181214.ttl>.
+_:v11.2 a void:Dataset;
+	dct:issued "2018-12-21"^^xsd:date;
+	pav:version "11.2";
+	void:triples 219018;
+	dcat:byteSize 11835568;
+	void:dataDump <https://w3id.org/jp-textbook/all-20181220.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "<a href=\"https://www.w3.org/TR/shacl/\">SHACL標準</a>に基づき、メタデータスキーマをRDF Shapeとして記述したファイルを追加しました。 プロパティ説明等のアプリケーションプロファイル記述をSHACLファイルから自動生成するように変更しました。"@ja;
+		rdfs:comment "Add a shape expression for RDF graph as a metadata schema for this dataset based on <a href=\"https://www.w3.org/TR/shacl/\">SHACL Standard</a>. Change to generate a documentation of application profile including description on properties from a SHACL file."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/24?closed=1>
+	];
+	void:subset _:textbook-20181129, _:textbook-rc-20180916, _:curriculum-20180804, _:curriculum-versions-20180822, _:catalogue-20181130, _:subject-20180827, _:subjectArea-20180827, _:subjectType-20180811, _:school-20180713, _:publisher-20181130, _:schema-20181013, _:shape-20181214;
+	pav:previousVersion _:v11.1 .
+_:toplevel pav:hasVersion _:v11.2 .
+
+_:textbook-20200302 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-20200302.ttl>.
+_:curriculum-20190516 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/curriculum-20190516.ttl>.
+_:catalogue-20190515 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/catalogue-20190515.ttl>.
+_:subject-20190620 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/subject-20190620.ttl>.
+_:subjectArea-20190620 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/subjectArea-20190620.ttl>.
+_:publisher-20190620 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/publisher-20190620.ttl>.
+_:shape-20190306 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/shape-20190306.ttl>.
+_:v12.0 a void:Dataset;
+	dct:issued "2020-03-02"^^xsd:date;
+	pav:version "12.0";
+	void:triples 221029;
+	dcat:byteSize 11945755;
+	void:dataDump <https://w3id.org/jp-textbook/all-20200302.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "2019年度使用教科書を追加しました。 いくつかの教科書の使用年度やタイトル等に誤りがあったものを修正しました。"@ja;
+		rdfs:comment "Add textbooks used in 2019 FY, Fix several data errors in usage year, title, etc."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/26?closed=1>
+	];
+	void:subset _:textbook-20200302, _:textbook-rc-20180916, _:curriculum-20190516, _:curriculum-versions-20180822, _:catalogue-20190515, _:subject-20190620, _:subjectArea-20190620, _:subjectType-20180811, _:school-20180713, _:publisher-20190620, _:schema-20181013, _:shape-20190306;
+	pav:previousVersion _:v11.2 .
+_:toplevel pav:hasVersion _:v12.0 .
+
+_:textbook-20200306 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-20200306.ttl>.
+_:textbook-rc-20200306 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-rc-20200306.ttl>.
+_:schema-20200306 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/schema-20200306.ttl>.
+_:shape-20200306 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/shape-20200306.ttl>.
+_:v13.0 a void:Dataset;
+	dct:issued "2020-03-06"^^xsd:date;
+	pav:version "13.0";
+	void:triples 234885;
+	dcat:byteSize 12231542;
+	void:dataDump <https://w3id.org/jp-textbook/all-20200306.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "個別所蔵資料リソースのRDFクラスとして<code>bf:Item</code>を追加しました。 ISBNを持つ教科書に対する外部リンクとして、JPNO, BibID, NCIDの新しいデータを追加しました。"@ja;
+		rdfs:comment "Add <code>bf:Item</code> class into the textbook item resources. Add new identifiers of JPNO, BibID, and NCID into the textbook resources."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/27?closed=1>
+	];
+	void:subset _:textbook-20200306, _:textbook-rc-20200306, _:curriculum-20190516, _:curriculum-versions-20180822, _:catalogue-20190515, _:subject-20190620, _:subjectArea-20190620, _:subjectType-20180811, _:school-20180713, _:publisher-20190620, _:schema-20200306, _:shape-20200306;
+	pav:previousVersion _:v12.0 .
+_:toplevel pav:hasVersion _:v13.0 .
+
+_:textbook-20200308 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-20200308.ttl>.
+_:curriculum-20200308 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/curriculum-20200308.ttl>.
+_:catalogue-20200308 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/catalogue-20200308.ttl>.
+_:publisher-20200308 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/publisher-20200308.ttl>.
+_:shape-20200308 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/shape-20200308.ttl>.
+_:v13.1 a void:Dataset;
+	dct:issued "2020-03-08"^^xsd:date;
+	pav:version "13.1";
+	void:triples 235874 ;
+	dcat:byteSize 12419724;
+	void:dataDump <https://w3id.org/jp-textbook/all-20200308.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "これまで登録されていなかった専門学科における教科の種目を自動的に登録するようにし、トップページ等の表示に反映できるようにしました。 SHACL制約の一部とデータセットの一部を修正しました。特に、一部の日付データにおいて明示的に<code>xsd:date</code>型を追加しました。"@ja;
+		rdfs:comment "Add the subjects for the special subject areas automatically. Fix some of SHACL constraints and some of dataset. Especially a part of date data is added as the datatype <code>xsd:date</code>."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/28?closed=1>
+	];
+	void:subset _:textbook-20200308, _:textbook-rc-20200306, _:curriculum-20200308, _:curriculum-versions-20180822, _:catalogue-20200308, _:subject-20190620, _:subjectArea-20190620, _:subjectType-20180811, _:school-20180713, _:publisher-20200308, _:schema-20200306, _:shape-20200308;
+	pav:previousVersion _:v13.0 .
+_:toplevel pav:hasVersion _:v13.1 .
+
+_:textbook-20200313 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-20200313.ttl>.
+_:textbook-rc-bib-20200313 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-rc-bib-20200313.ttl>.
+_:shape-20200314 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/shape-20200314.ttl>.
+_:v13.2 a void:Dataset;
+	dct:issued "2020-03-14"^^xsd:date;
+	pav:version "13.2";
+	void:triples 235914 ;
+	dcat:byteSize 12422180;
+	void:dataDump <https://w3id.org/jp-textbook/all-20200314.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "2019年度使用教科書のISBN情報など識別子を追加しました。 一部の教科書の所蔵情報を修正しました。"@ja;
+		rdfs:comment "Add identifiers along with ISBN information for the textbooks used in 2019. Fix some of holding information."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/29?closed=1>
+	];
+	void:subset _:textbook-20200313, _:textbook-rc-20200306, _:textbook-rc-bib-20200313, _:curriculum-20200308, _:curriculum-versions-20180822, _:catalogue-20200308, _:subject-20190620, _:subjectArea-20190620, _:subjectType-20180811, _:school-20180713, _:publisher-20200308, _:schema-20200306, _:shape-20200314;
+	pav:previousVersion _:v13.1 .
+_:toplevel pav:hasVersion _:v13.2 .
+
+_:textbook-20200316 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-20200316.ttl>.
+_:textbook-rc-20200315 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-rc-20200315.ttl>.
+_:curriculum-versions-20200316 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/curriculum-versions-20200316.ttl>.
+_:subject-20200316 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/subject-20200316.ttl>.
+_:subjectArea-20200315 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/subjectArea-20200315.ttl>.
+_:shape-20200315 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/shape-20200315.ttl>.
+_:v14.0 a void:Dataset;
+	dct:issued "2020-03-16"^^xsd:date;
+	pav:version "14.0";
+	void:triples 233001  ;
+	dcat:byteSize 12378768;
+	void:dataDump <https://w3id.org/jp-textbook/all-20200316.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "「情報」「家庭」「外国語」など、主として専門学科において開設される教科と学科に共通する教科において名称が同一だったもののURIを変更しました（<a href=\"https://w3id.org/jp-textbook/curriculum/%E9%AB%98%E7%AD%89%E5%AD%A6%E6%A0%A1/2013/%E6%83%85%E5%A0%B1(%E5%B0%82%E9%96%80)\">情報(専門)</a>など）。 一部の2019年使用教科書の使用年が継続記述になっていなかったものを修正しました。"@ja;
+		rdfs:comment "Change URIs for the subject mainly used in the special departments. Ex. <a href=\"https://w3id.org/jp-textbook/curriculum/%E9%AB%98%E7%AD%89%E5%AD%A6%E6%A0%A1/2013/%E6%83%85%E5%A0%B1(%E5%B0%82%E9%96%80)\">情報(専門)</a>. Fix some of usage years of textbooks used in AY2019."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/30?closed=1>
+	];
+	void:subset _:textbook-20200316, _:textbook-rc-20200315, _:curriculum-20200308, _:curriculum-versions-20200316, _:catalogue-20200308, _:subject-20200316, _:subjectArea-20200315, _:subjectType-20180811, _:school-20180713, _:publisher-20200308, _:schema-20200306, _:shape-20200315;
+	pav:previousVersion _:v13.2 .
+_:toplevel pav:hasVersion _:v14.0 .
+
+_:textbook-20200702 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/textbook-20200702.ttl>.
+_:schema-20200702 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/schema-20200702.ttl>.
+_:shape-20200702 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/shape-20200702.ttl>.
+_:v15.0 a void:Dataset;
+	dct:issued "2020-07-02"^^xsd:date;
+	pav:version "15.0";
+	void:triples 272594;
+	dcat:byteSize 13290196;
+	void:dataDump <https://w3id.org/jp-textbook/all-20200702.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "使用年の情報を対応する年数分のプロパティとして記録するように変更しました。"@ja;
+		rdfs:comment "Change usage years information as repeatable properties."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/31?closed=1>
+	];
+	void:subset _:textbook-20200702,
+		_:textbook-rc-20200315,
+		_:curriculum-20200308,
+		_:curriculum-versions-20200316,
+		_:catalogue-20200308,
+		_:subject-20200316,
+		_:subjectArea-20200315,
+		_:subjectType-20180811,
+		_:school-20180713,
+		_:publisher-20200308,
+		_:schema-20200702,
+		_:shape-20200702;
+	pav:previousVersion _:v14.0 .
+_:toplevel pav:hasVersion _:v15.0 .
+
+_:schema-20200703 a void:Dataset;
+        void:dataDump <https://w3id.org/jp-textbook/schema-20200703.ttl>.
+_:dataset-20200712 a void:Dataset;
+        void:dataDump <https://w3id.org/jp-textbook/dataset-20200712.ttl>.
+_:v15.1 a void:Dataset;
+	dct:issued "2020-07-12"^^xsd:date;
+	pav:version "15.1";
+	void:triples 273449;
+	dcat:byteSize 13333892;
+	void:dataDump <https://w3id.org/jp-textbook/all-20200712.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "データセット全体を記述したメタデータを追加しました。一部のスキーマ記述漏れを修正しました。"@ja;
+		rdfs:comment "Add dataset metadata. Fix some errors in schema description."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/32?closed=1>
+	];
+	void:subset _:textbook-20200702, _:textbook-rc-20200315, _:curriculum-20200308, _:curriculum-versions-20200316, _:catalogue-20200308, _:subject-20200316, _:subjectArea-20200315, _:subjectType-20180811, _:school-20180713, _:publisher-20200308, _:schema-20200703, _:shape-20200702, _:dataset-20200712;
+	pav:previousVersion _:v15.0 .
+_:toplevel pav:hasVersion _:v15.1 .
+
+_:publisher-20200801 a void:Dataset;
+        void:dataDump <https://w3id.org/jp-textbook/publisher-20200801.ttl>.
+_:dataset-20200814 a void:Dataset;
+        void:dataDump <https://w3id.org/jp-textbook/dataset-20200814.ttl>.
+_:v15.2 a void:Dataset;
+	dct:issued "2020-08-15"^^xsd:date;
+	pav:version "15.2";
+	void:triples 273479;
+	dcat:byteSize 13334311;
+	void:dataDump <https://w3id.org/jp-textbook/all-20200815.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "出版社の識別子の一つとして用いている法人インフォのURI変更に対応しました。"@ja;
+		rdfs:comment "Changed URIs for Houjin Info, used as one of the identifiers for publishers."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/33?closed=1>
+	];
+	void:subset _:textbook-20200702, _:textbook-rc-20200315, _:curriculum-20200308, _:curriculum-versions-20200316, _:catalogue-20200308, _:subject-20200316, _:subjectArea-20200315, _:subjectType-20180811, _:school-20180713, _:publisher-20200801, _:schema-20200703, _:shape-20200702, _:dataset-20200814;
+	pav:previousVersion _:v15.1 .
+_:toplevel pav:hasVersion _:v15.2 .
+
+_:catalogue-20201103 a void:Dataset;
+        void:dataDump <https://w3id.org/jp-textbook/catalogue-20201103.ttl>.
+_:subject-20201103  a void:Dataset;
+        void:dataDump <https://w3id.org/jp-textbook/subject-20201103.ttl>.
+_:subjectArea-20201030 a void:Dataset;
+        void:dataDump <https://w3id.org/jp-textbook/subjectArea-20201030.ttl>.
+_:subjectType-20201103 a void:Dataset;
+        void:dataDump <https://w3id.org/jp-textbook/subjectType-20201103.ttl>.
+_:publisher-20201103 a void:Dataset;
+        void:dataDump <https://w3id.org/jp-textbook/publisher-20201103.ttl>.
+_:dataset-20201107 a void:Dataset;
+        void:dataDump <https://w3id.org/jp-textbook/dataset-20201107.ttl>.
+_:v16.0 a void:Dataset;
+	dct:issued "2020-11-07"^^xsd:date;
+	pav:version "16.0";
+	void:triples 278555;
+	dcat:byteSize 13745566;
+	void:dataDump <https://w3id.org/jp-textbook/all-20201107.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "2020年以降実施の新学習指導要領の教科、種目を追加し、2020年使用の教科書目録を追加しました。"@ja;
+		rdfs:comment "Added all the subject areas and subjects for the new curriculum guideline effective after 2020. Added new textbook catalogues for AY2020."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/35?closed=1>
+	];
+        void:subset _:textbook-20200702, _:textbook-rc-20200315, _:curriculum-20200308, _:curriculum-versions-20200316, _:catalogue-20201103, _:subject-20201103, _:subjectArea-20201030, _:subjectType-20201103, _:school-20180713, _:publisher-20201103, _:schema-20200703, _:shape-20200702, _:dataset-20201107;
+	pav:previousVersion _:v15.2 .
+_:toplevel pav:hasVersion _:v16.0 .
+
+_:textbook-20201213 a void:Dataset;
+        void:dataDump <https://w3id.org/jp-textbook/textbook-20201213.ttl>.
+_:catalogue-20201215 a void:Dataset;
+        void:dataDump <https://w3id.org/jp-textbook/catalogue-20201215.ttl>.
+_:publisher-20201213 a void:Dataset;
+        void:dataDump <https://w3id.org/jp-textbook/publisher-20201213.ttl>.
+_:shape-20201215 a void:Dataset;
+        void:dataDump <https://w3id.org/jp-textbook/shape-20201215.ttl>.
+_:dataset-20201219 a void:Dataset;
+        void:dataDump <https://w3id.org/jp-textbook/dataset-20201219.ttl>.
+_:v17.0 a void:Dataset;
+	dct:issued "2020-12-19"^^xsd:date;
+	pav:version "17.0";
+	void:triples 286149;
+	dcat:byteSize 14156459;
+	void:dataDump <https://w3id.org/jp-textbook/all-20201219.ttl>;
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "2020年度使用教科書メタデータを追加しました。年データにはデータ型<code>xsd:gYear</code>を使うよう変更しました。"@ja;
+		rdfs:comment "Added all the textbook information used in AY2020. Change the year data types into xsd:gYear."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/37?closed=1>
+	];
+        void:subset _:textbook-20201213, _:textbook-rc-20200315, _:curriculum-20200308, _:curriculum-versions-20200316, _:catalogue-20201215, _:subject-20201103, _:subjectArea-20201030, _:subjectType-20201103, _:school-20180713, _:publisher-20201213, _:schema-20200703, _:shape-20201215, _:dataset-20201219;
+	pav:previousVersion _:v16.0 .
+_:toplevel pav:hasCurrentVersion _:v17.0 .
