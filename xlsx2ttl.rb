@@ -51,14 +51,49 @@ io.close
 
 CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
   next if row["状態区分名称"] == "取り下げ"
-  uri = "#{BASE_URI}#{row["/SCLASS#1"]}/#{row["/ADATE#1"]}/#{row["/TXSIGN#1"]}/#{row["/TXC#1"]}"
-  curriculum = row["学習指導URI"]
+  school = row["/SCLASS#1"]
+  notified_year = row["/ODATE#1"].to_i
+  next if notified_year < 1989
+  uri = "#{BASE_URI}#{school}/#{row["/ADATE#1"]}/#{row["/TXSIGN#1"]}/#{row["/TXC#1"]}"
+  curriculum = case school
+               when "小学校"
+                 case notified_year
+                 when 1989
+                   "https://w3id.org/jp-textbook/curriculum/小学校/1992"
+                 when 1998
+                   "https://w3id.org/jp-textbook/curriculum/小学校/2002"
+                 when 2008
+                   "https://w3id.org/jp-textbook/curriculum/小学校/2011"
+                 when 2017
+                   "https://w3id.org/jp-textbook/curriculum/小学校/2020"
+                 else
+                   STDERR.puts "WARN: unrecognized notified year for Elementary Schools: #{notified_year}"
+                 end
+               when "中学校"
+                 "https://w3id.org/jp-textbook/curriculum/中学校/#{notified_year + 4}"
+               when "高等学校"
+                 case notified_year
+                 when 1989
+                   "https://w3id.org/jp-textbook/curriculum/高等学校/1994"
+                 when 1999
+                   "https://w3id.org/jp-textbook/curriculum/高等学校/2003"
+                 when 2009
+                   "https://w3id.org/jp-textbook/curriculum/高等学校/2013"
+                 when 2018
+                   "https://w3id.org/jp-textbook/curriculum/高等学校/2022"
+                 else
+                   STDERR.puts "WARN: unrecognized notified year for High Schools: #{notified_year}"
+                 end
+               else
+                 STDERR.puts "WARN: unrecognized school types: #{school}"
+                 next
+               end
+  #curriculum = row["学習指導URI"]
   next if not curriculum =~ %r|https://w3id.org/jp-textbook/curriculum/.+|
   subject_area = row["/SUBJECT#1"]
   subject = row["/ITEM#1"].to_s
   p row["メタデータID"] if subject.nil?
   subject = subject.normalize.gsub(/\s+/, "").gsub(/1/, "I").gsub(/2/, "II").gsub(/3/, "III")
-  school = row["/SCLASS#1"]
   grades = []
   (1..6).each do |i|
     grade = row["/GRADE##{i}"]
