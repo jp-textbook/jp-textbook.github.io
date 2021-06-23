@@ -47,6 +47,23 @@
     <http://www.w3.org/ns/shacl#path> <http://schema.org/citation>;
     <http://www.w3.org/ns/shacl#uniqueLang> true
   ], [
+    <http://www.w3.org/2004/02/skos/core#example> "<ul><li>\"平成元年3月 告示\"@ja</li><li>\"1989-03 Notification\"@en</li></ul>";
+    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString>;
+    <http://www.w3.org/ns/shacl#description> "If the revision is on a part of a guideline, the name of the revision will be assigned such as \"Partial revision in December 2003\". Using language tags, Japanese and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@en</dt><dd>English name</dd></dl>"@en, "一部改正であれば、「平成15年12月 一部改正」のような表現となります。また、言語コードを用いて、名称に加え、英語名称を示します。言語コードとその意味は以下の通りです。<dl><dt>@ja</dt><dd>日本語名称（漢字表記）</dd><dt>@en</dt><dd>英語名称</dd></dl>"@ja;
+    <http://www.w3.org/ns/shacl#languageIn> [
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "ja";
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> [
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "en";
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil>
+      ]
+    ];
+    <http://www.w3.org/ns/shacl#maxCount> 2;
+    <http://www.w3.org/ns/shacl#minCount> 1;
+    <http://www.w3.org/ns/shacl#name> "Name of the revision"@en, "別バージョンの名称"@ja;
+    <http://www.w3.org/ns/shacl#order> 1;
+    <http://www.w3.org/ns/shacl#path> <http://schema.org/name>;
+    <http://www.w3.org/ns/shacl#uniqueLang> true
+  ], [
     <http://www.w3.org/2004/02/skos/core#example> "BB80025218";
     <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string>;
     <http://www.w3.org/ns/shacl#description> "<code>https://nieropac.nier.go.jp/ebopac/<var>レコードID</var></code>の形式で参照可能"@ja, "Link is available as <code>https://nieropac.nier.go.jp/ebopac/<var>record identifier</var></code>."@en;
@@ -68,21 +85,4 @@
     <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI>;
     <http://www.w3.org/ns/shacl#order> 4;
     <http://www.w3.org/ns/shacl#path> <http://schema.org/url>
-  ], [
-    <http://www.w3.org/2004/02/skos/core#example> "<ul><li>\"平成元年3月 告示\"@ja</li><li>\"1989-03 Notification\"@en</li></ul>";
-    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString>;
-    <http://www.w3.org/ns/shacl#description> "If the revision is on a part of a guideline, the name of the revision will be assigned such as \"Partial revision in December 2003\". Using language tags, Japanese and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@en</dt><dd>English name</dd></dl>"@en, "一部改正であれば、「平成15年12月 一部改正」のような表現となります。また、言語コードを用いて、名称に加え、英語名称を示します。言語コードとその意味は以下の通りです。<dl><dt>@ja</dt><dd>日本語名称（漢字表記）</dd><dt>@en</dt><dd>英語名称</dd></dl>"@ja;
-    <http://www.w3.org/ns/shacl#languageIn> [
-      <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "ja";
-      <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> [
-        <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "en";
-        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil>
-      ]
-    ];
-    <http://www.w3.org/ns/shacl#maxCount> 2;
-    <http://www.w3.org/ns/shacl#minCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Name of the revision"@en, "別バージョンの名称"@ja;
-    <http://www.w3.org/ns/shacl#order> 1;
-    <http://www.w3.org/ns/shacl#path> <http://schema.org/name>;
-    <http://www.w3.org/ns/shacl#uniqueLang> true
   ] .

@@ -1,6 +1,15 @@
 <https://w3id.org/jp-textbook/curriculum/SubjectShape>
   a <http://www.w3.org/ns/shacl#NodeShape>;
   <http://www.w3.org/ns/shacl#property> [
+    <http://www.w3.org/2004/02/skos/core#example> "1";
+    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#integer>;
+    <http://www.w3.org/ns/shacl#description> "Used in display orders"@en, "表示順を決める場合などで利用"@ja;
+    <http://www.w3.org/ns/shacl#maxCount> 1;
+    <http://www.w3.org/ns/shacl#minCount> 1;
+    <http://www.w3.org/ns/shacl#name> "Listing order of the subject in the document on textbook authorization"@en, "教科用図書検定申請受理種目掲載順"@ja;
+    <http://www.w3.org/ns/shacl#order> 3;
+    <http://www.w3.org/ns/shacl#path> <http://purl.org/linked-data/cube#order>
+  ], [
     <http://www.w3.org/2004/02/skos/core#example> "<ul><li>\"国語総合\"@ja</li><li>\"こくごそうごう\"@ja-Hira</li><li>\"Integrated Japanese Language\"@en</li></ul>";
     <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString>;
     <http://www.w3.org/ns/shacl#description> "Using language tags, Japanese name and its transcription (Yomi) and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@ja-Hira</dt><dd>Japanese name (Hiragana).</dd><dt>@en</dt><dd>English name of the subject</dd><dd><small>Note: English names are unofficial one. The errors in its translations are resposible for the maintainers of this dataset. We could not find any of official translations of the subject names, even though we ask the Education Library to find them. Some of the translations are origined from the tentative translations of the curriculum guidelines, such as <a href=\"http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1261037.htm\">Elementary schools</a>、<a href=\"http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1298356.htm\">Lower secondary schools</a>、<a href=\"http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1298353.htm\">Upper secondary schols</a>. We also refer to the English guide \"<a href=\"http://ci.nii.ac.jp/ncid/BA06708576\">Education in JAPAN, 13th ed.</a>\" by MEXT for the subject names of elementary and lower secondary schools, and the chapter eight \"The Content of Each Subject and Subject Area\" (p.107-195) of <a href=\"https://www.nier.go.jp/04_kenkyu_annai/pdf/improvement_of_the_courses_of_study.pdf\">Concerning improvements to the courses of study for elementary, lower secondary and upper secondary schools</a>.</small></dd></dl>"@en, "言語コードを用いて、種目名に加え、そのよみ、英語名称を示します。言語コードとその意味は以下の通りです。<dl><dt>@ja</dt><dd>日本語名称（漢字表記）</dd><dt>@ja-Hira</dt><dd>日本語名称（ひらがな表記）。種目名のよみをひらがな表記で示します。</dd><dt>@en</dt><dd>種目名の英語名称</dd><dd><small>注意：英訳名称は、文部科学省の正式なものではありません。翻訳の責任は、江草、高久にあります。 理由：大半の教科については、文部科学省が発表している正式な英語訳を見つけられませんでした（教育図書館へのレファレンス調査も実施済み）。 なお、学習指導要領の英訳（仮訳） （<a href=\"http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1261037.htm\">小学校</a>、<a href=\"http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1298356.htm\">中学校</a>、<a href=\"http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1298353.htm\">高等学校</a>） に記載されている種目（科目）はそれらに由来するものです。 また、小学校、中学校の教科については、文部科学省が出している英語ガイド（<a href=\"http://ci.nii.ac.jp/ncid/BA06708576\">Education In JAPAN, 13版</a>）67ページの記載、「<a href=\"https://www.nier.go.jp/04_kenkyu_annai/pdf/improvement_of_the_courses_of_study.pdf\">幼稚園、小学校、中学校、高等学校及び特別支援学校の学習指導要領等の改善について（答申）</a>」の英訳<a href=\"https://www.nier.go.jp/04_kenkyu_annai/pdf/improvement_of_the_courses_of_study.pdf\">Concerning improvements to the courses of study for elementary, lower secondary and upper secondary schools</a>の\"8. The Content of Each Subject and Subject Area\"(pp.107-195)も参考にしました。 いずれにも記載のない教科名は、江草・高久によって一から英訳したものです。</small></dd></dl>"@ja;
@@ -27,15 +36,6 @@
     <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI>;
     <http://www.w3.org/ns/shacl#order> 5;
     <http://www.w3.org/ns/shacl#path> <http://www.w3.org/2000/01/rdf-schema#seeAlso>
-  ], [
-    <http://www.w3.org/2004/02/skos/core#example> "1";
-    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#integer>;
-    <http://www.w3.org/ns/shacl#description> "Used in display orders"@en, "表示順を決める場合などで利用"@ja;
-    <http://www.w3.org/ns/shacl#maxCount> 1;
-    <http://www.w3.org/ns/shacl#minCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Listing order of the subject in the document on textbook authorization"@en, "教科用図書検定申請受理種目掲載順"@ja;
-    <http://www.w3.org/ns/shacl#order> 3;
-    <http://www.w3.org/ns/shacl#path> <http://purl.org/linked-data/cube#order>
   ], [
     <http://www.w3.org/2004/02/skos/core#example> "textbook:curriculum/高等学校/2013/Common";
     <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/SubjectType>;
