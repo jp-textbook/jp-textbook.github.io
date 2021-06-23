@@ -54,7 +54,8 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
   school = row["/SCLASS#1"]
   notified_year = row["/ODATE#1"].to_i
   next if notified_year < 1989
-  uri = "#{BASE_URI}#{school}/#{row["/ADATE#1"]}/#{row["/TXSIGN#1"]}/#{row["/TXC#1"]}"
+  textbook_symbol = row["/TXSIGN#1"].gsub(/[　 ]\Z/, "")
+  uri = "#{BASE_URI}#{school}/#{row["/ADATE#1"]}/#{textbook_symbol}/#{row["/TXC#1"]}"
   curriculum = case school
                when "小学校"
                  case notified_year
@@ -114,6 +115,7 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
       dimensions, extent = pages
     end
   end
+
   catalogues = []
   usage_year_start = row["/SDATE#1"].to_i
   usage_year_start = nil if usage_year_start == 0
@@ -154,7 +156,7 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
     "textbook:authorizedYear" => "#{row["/ADATE#1"]}^^xsd:gYear",
     "textbook:usageYearRange" => usage_year_str,
     "textbook:usageYear" => usage_years.to_a.map{|e| "#{e}^^xsd:gYear" },
-    "textbook:textbookSymbol" => row["/TXSIGN#1"],
+    "textbook:textbookSymbol" => textbook_symbol,
     "textbook:textbookNumber" => row["/TXC#1"],
     "bf:extent" => extent,
     "bf:dimensions" => dimensions,
