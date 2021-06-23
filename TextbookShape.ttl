@@ -1,13 +1,6 @@
 <https://w3id.org/jp-textbook/TextbookShape>
   a <http://www.w3.org/ns/shacl#NodeShape>;
   <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/2004/02/skos/core#example> "1, 2, 3";
-    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#integer>;
-    <http://www.w3.org/ns/shacl#maxCount> 6;
-    <http://www.w3.org/ns/shacl#name> "Target grade"@en, "対象学年"@ja;
-    <http://www.w3.org/ns/shacl#order> 8;
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/grade>
-  ], [
     <http://www.w3.org/2004/02/skos/core#example> "120";
     <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string>;
     <http://www.w3.org/ns/shacl#maxCount> 1;
@@ -28,16 +21,6 @@
     <http://www.w3.org/ns/shacl#order> 11;
     <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/usageYear>
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> "2005-2005";
-    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string>;
-    <http://www.w3.org/ns/shacl#description> "\"yyyy-yyyy\" もしくは \"yyyy-\" となる。\"yyyy-\" の場合は、終了年が未定のことを示す。"@ja, "Either of \"yyyy-yyyy\" or \"yyyy-\". The value ending with \"-\" like \"yyyy-\" means that the end year is undecided."@en;
-    <http://www.w3.org/ns/shacl#maxCount> 1;
-    <http://www.w3.org/ns/shacl#minCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Range of Usage years"@en, "使用年の区間"@ja;
-    <http://www.w3.org/ns/shacl#order> 12;
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/usageYearRange>;
-    <http://www.w3.org/ns/shacl#pattern> "^(\\d\\d\\d\\d|\\d\\d\\d\\d-(\\d\\d\\d\\d)?)(, (\\d\\d\\d\\d|\\d\\d\\d\\d-(\\d\\d\\d\\d)?))*$"
-  ], [
     <http://www.w3.org/2004/02/skos/core#example> "2009年度より出版社を「日本文教出版株式会社」に変更。";
     <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string>;
     <http://www.w3.org/ns/shacl#name> "Notes"@en, "注記"@ja;
@@ -51,13 +34,6 @@
     <http://www.w3.org/ns/shacl#name> "Textbook number"@en, "教科書番号"@ja;
     <http://www.w3.org/ns/shacl#order> 14;
     <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/textbookNumber>
-  ], [
-    <http://www.w3.org/2004/02/skos/core#example> "978-4-385-70190-5";
-    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string>;
-    <http://www.w3.org/ns/shacl#description> "※バージョン6.0以降のデータの一部に追加。※バージョン6.1以降、複数ある場合、繰り返される。"@ja;
-    <http://www.w3.org/ns/shacl#name> "ISBN"@en, "ISBN"@ja;
-    <http://www.w3.org/ns/shacl#order> 5;
-    <http://www.w3.org/ns/shacl#path> <http://schema.org/isbn>
   ], [
     <http://www.w3.org/2004/02/skos/core#example> "B4";
     <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string>;
@@ -80,6 +56,30 @@
     <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI>;
     <http://www.w3.org/ns/shacl#order> 20;
     <http://www.w3.org/ns/shacl#path> <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+  ], [
+    <http://www.w3.org/2004/02/skos/core#example> "1, 2, 3";
+    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#integer>;
+    <http://www.w3.org/ns/shacl#maxCount> 6;
+    <http://www.w3.org/ns/shacl#name> "Target grade"@en, "対象学年"@ja;
+    <http://www.w3.org/ns/shacl#order> 8;
+    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/grade>
+  ], [
+    <http://www.w3.org/2004/02/skos/core#example> "2005-2005";
+    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string>;
+    <http://www.w3.org/ns/shacl#description> "\"yyyy-yyyy\" もしくは \"yyyy-\" となる。\"yyyy-\" の場合は、終了年が未定のことを示す。"@ja, "Either of \"yyyy-yyyy\" or \"yyyy-\". The value ending with \"-\" like \"yyyy-\" means that the end year is undecided."@en;
+    <http://www.w3.org/ns/shacl#maxCount> 1;
+    <http://www.w3.org/ns/shacl#minCount> 1;
+    <http://www.w3.org/ns/shacl#name> "Range of Usage years"@en, "使用年の区間"@ja;
+    <http://www.w3.org/ns/shacl#order> 12;
+    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/usageYearRange>;
+    <http://www.w3.org/ns/shacl#pattern> "^(\\d\\d\\d\\d|\\d\\d\\d\\d-(\\d\\d\\d\\d)?)(, (\\d\\d\\d\\d|\\d\\d\\d\\d-(\\d\\d\\d\\d)?))*$"
+  ], [
+    <http://www.w3.org/2004/02/skos/core#example> "978-4-385-70190-5";
+    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string>;
+    <http://www.w3.org/ns/shacl#description> "※バージョン6.0以降のデータの一部に追加。※バージョン6.1以降、複数ある場合、繰り返される。"@ja;
+    <http://www.w3.org/ns/shacl#name> "ISBN"@en, "ISBN"@ja;
+    <http://www.w3.org/ns/shacl#order> 5;
+    <http://www.w3.org/ns/shacl#path> <http://schema.org/isbn>
   ], [
     <http://www.w3.org/2004/02/skos/core#example> "textbook:catalogue/中学校/2004";
     <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/Catalogue>;
