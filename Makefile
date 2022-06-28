@@ -1,7 +1,10 @@
 default: clean textbook schema all ext-single-ttl check
 
 all:
-	./catttl.rb textbook textbook-rc curriculum curriculum-versions catalogue subject subjectArea subjectType school publisher schema shape dataset > all-`date +%Y%m%d`.ttl
+	./catttl.rb textbook textbook-rc \
+	  curriculum curriculum-versions catalogue subject subjectArea subjectType school publisher schema \
+	  chapterType compilingProspectus teachingUnit-AA-body teachingUnit-AA-duration teachingUnit-AB teachingUnitType \
+	  shape dataset > all-`date +%Y%m%d`.ttl
 	rapper -i turtle all-`date +%Y%m%d`.ttl -c
 	ls -l all-`date +%Y%m%d`.ttl
 
