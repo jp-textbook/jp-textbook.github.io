@@ -1,0 +1,31 @@
+site_title: Japanese Textbook LOD
+base_uri: https://w3id.org/jp-textbook/
+uri_mappings:
+  - regexp: !ruby/regexp /^(A[ABC])(\d{9})(\d{3})$/
+    path: '\1/\2/\3'
+top_class: https://w3id.org/jp-textbook/CurriculumGuideline
+top_additional_property:
+  - https://w3id.org/jp-textbook/hasSubjectArea
+locale: en
+output_turtle: false
+breadcrumbs:
+  - property:
+    - property: http://schema.org/workExample
+    - property: http://schema.org/isPartOf
+  - property: https://w3id.org/jp-textbook/subject
+  - property: https://w3id.org/jp-textbook/hasSubject
+    inverse: true
+  - property: https://w3id.org/jp-textbook/hasSubjectArea
+    inverse: true
+admin_name: Japanese Textbook LOD Project
+copyright_year: 2017-2022
+css_file: ../style.css
+logo: ../logo.png
+additional_link:
+  - label: English
+    href: https://w3id.org/jp-textbook/en/
+shape_orders:
+  - https://w3id.org/jp-textbook/TextbookShape
+  - https://w3id.org/jp-textbook/CurriculumGuidelineShape
+template_dir: template
+navbar_class: navbar-dark navbar-inverse

@@ -1,15 +1,15 @@
 <%- if param[:data][RDF.type.to_s]&.include? "https://w3id.org/jp-textbook/Textbook" -%>
 <div class="row">
   <div class="col-md-12">
-  <h2>関連リンク</h2>
+  <h2>Links</h2>
   <ul>
     <%- param[:data]["https://w3id.org/jp-textbook/item"].each do |item| -%>
       <%- if param[:data_global][item] -%>
         <%- if param[:data_global][item]["http://dl.nier.go.jp/library/vocab/recordID"] -%>
-          <li><a href="https://nieropac.nier.go.jp/lib/database/TEXTBOOK/<%=h param[:data_global][item]["http://dl.nier.go.jp/library/vocab/recordID"].first %>/">国立教育政策研究所 教育図書館 OPAC</a> <span class="callNumber" title="請求記号"><%=h param[:data_global][item]["http://dl.nier.go.jp/library/vocab/callNumber"].first %></span></li>
+          <li><a href="https://nieropac.nier.go.jp/lib/database/TEXTBOOK/<%=h param[:data_global][item]["http://dl.nier.go.jp/library/vocab/recordID"].first %>/?lang=1">NIER Library of Education OPAC</a> <span class="callNumber" title="call number"><%=h param[:data_global][item]["http://dl.nier.go.jp/library/vocab/callNumber"].first %></span></li>
         <%- elsif param[:data_global][item]["http://dl.nier.go.jp/library/vocab/textbook-rc/recordID"] -%>
           <%- recordID = param[:data_global][item]["http://dl.nier.go.jp/library/vocab/textbook-rc/recordID"].first %>
-    <li><a href="javascript:document.getElementById('textbook_rc_lib_<%=h recordID %>').submit()">教科書研究センター附属教科書図書館 OPAC</a> <span class="callNumber" title="請求記号"><%=h param[:data_global][item]["http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber"].first %></span></li>
+    <li><a href="javascript:document.getElementById('textbook_rc_lib_<%=h recordID %>').submit()">Textbook Library, Japan Textbook Research Center OPAC</a> <span class="callNumber" title="call number"><%=h param[:data_global][item]["http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber"].first %></span></li>
     <form action="https://textbook-rc-lib.net/Opac/search.htm" id="textbook_rc_lib_<%=h recordID %>" method="post">
     <input type="hidden" name="s" value="-cKZ-xZqMVYzA_3dOR9fO1zB6wh">
     <input type="hidden" name="ie6_s_target" value="ds">
@@ -26,9 +26,9 @@
     <%- param[:data][RDF::RDFS.seeAlso.to_s].each do |link| -%>
       <%- case link -%>
       <%- when %r|\Ahttp://id.ndl.go.jp/jpno/| -%>
-      <li><a href="<%=h link %>">国立国会図書館サーチ (JPNO: <%=h link.split(/\//).last %>)</a></li>
+      <li><a href="<%=h link %>">NDL Search (JPNO: <%=h link.split(/\//).last %>)</a></li>
       <%- when %r|\Ahttp://id.ndl.go.jp/bib/| -%>
-      <li><a href="<%=h link %>">国立国会図書館オンライン (NDLBibID: <%=h link.split(/\//).last %>)/li>
+      <li><a href="<%=h link %>">NDL Online (NDLBibID: <%=h link.split(/\//).last %>)/li>
       <%- when %r|\Ahttps://ci.nii.ac.jp/ncid/| -%>
       <li><a href="<%=h link %>">CiNii Books (NCID: <%=h link.split(/\//).last %>)</a></li>
       <%- else -%>
@@ -40,9 +40,9 @@
   <%- if param[:data]["http://schema.org/isbn"] -%>
   <ul>
     <%-
-      { "国立国会図書館サーチ": "http://iss.ndl.go.jp/api/openurl?isbn=",
+      { "NDL Search": "http://iss.ndl.go.jp/api/openurl?isbn=",
         "CiNii Books": "http://ci.nii.ac.jp/books/openurl/query?isbn=",
-        "カーリル": "http://api.calil.jp/openurl?rft.isbn=",
+        "Calil": "http://api.calil.jp/openurl?rft.isbn=",
       }.each do |label, url|
         next if url == "http://iss.ndl.go.jp/api/openurl?isbn=" and param[:data][RDF::RDFS.seeAlso.to_s] and param[:data][RDF::RDFS.seeAlso.to_s].find{|e| e =~ %r|\Ahttp://id.ndl.go.jp/| }
         next if url == "http://ci.nii.ac.jp/books/openurl/query?isbn=" and param[:data][RDF::RDFS.seeAlso.to_s] and param[:data][RDF::RDFS.seeAlso.to_s].find{|e| e =~ %r|\Ahttps://ci.nii.ac.jp/ncid/| }
