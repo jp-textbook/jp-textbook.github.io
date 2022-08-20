@@ -1,4 +1,4 @@
-site_title: 学習指導要領LOD
+site_title: 教科書LOD
 base_uri: https://w3id.org/jp-textbook/
 uri_mappings:
   - regexp: !ruby/regexp /^(A[ABC])(\d{9})(\d{3})$/
@@ -8,9 +8,14 @@ top_additional_property:
   - https://w3id.org/jp-textbook/hasSubjectArea
 locale: ja
 breadcrumbs:
+  - property:
+    - property: http://schema.org/workExample
+    - property: http://schema.org/isPartOf
   - property: https://w3id.org/jp-textbook/subject
-  - property: https://w3id.org/jp-textbook/subjectArea
-  - property: https://w3id.org/jp-textbook/curriculum
+  - property: https://w3id.org/jp-textbook/hasSubject
+    inverse: true
+  - property: https://w3id.org/jp-textbook/hasSubjectArea
+    inverse: true
 admin_name: 教科書LODプロジェクト
 copyright_year: 2017-2022
 css_file: style.css
@@ -18,3 +23,8 @@ logo: logo.png
 additional_link:
   - label: English
     href: https://w3id.org/jp-textbook/en/
+shape_orders:
+  - https://w3id.org/jp-textbook/TextbookShape
+  - https://w3id.org/jp-textbook/CurriculumGuidelineShape
+template_dir: template
+navbar_class: navbar-dark navbar-inverse
