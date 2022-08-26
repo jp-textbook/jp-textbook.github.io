@@ -14,7 +14,9 @@
       <dd><ul class="list-inline">
         <%- param[:data_global][uri]["https://w3id.org/jp-textbook/hasSubjectArea"].sort_by{|e| param[:data_global][e]["http://purl.org/linked-data/cube#order"].first.to_i }.each do |subject_area| -%>
           <%- param[:data_global][subject_area]["https://w3id.org/jp-textbook/hasSubject"]&.each do |subject| -%>
-          <li class="list-inline-item"><%= format_object(subject, param[:data_global]) %></li>
+            <%- next if not param[:data_inverse_global].has_key?(subject) -%>
+            <%- next if not param[:data_inverse_global][subject].has_key?("https://w3id.org/jp-textbook/subject") -%>
+            <li class="list-inline-item"><%= format_object(subject, param[:data_global]) %></li>
           <%- end -%>
         <%- end -%>
       </ul></dd>
