@@ -1,15 +1,15 @@
 <div class="row">
   <div class="col-md-12">
-    <h2>現行学習指導要領（2020年度以降）</h2>
+    <h2>Current Curriculum Guideline (Since AY2020)</h2>
     <dl>
       <%- [ "https://w3id.org/jp-textbook/curriculum/小学校/2020",
             "https://w3id.org/jp-textbook/curriculum/中学校/2021",
             "https://w3id.org/jp-textbook/curriculum/高等学校/2022",
           ].each do |uri| -%>
           <%- school = param[:data_global][uri]["https://w3id.org/jp-textbook/school"].first -%>
-      <dt><%=h param[:data_global][school]["http://schema.org/name"][:ja] %>
+      <dt><%=h param[:data_global][school]["http://schema.org/name"][:en] %>
           <small><a href="<%= relative_path_uri(uri, param[:base_uri]) %>">
-            <i class="bi bi-book"></i> 学習指導要領
+            <i class="bi bi-book"></i> Curriculum guideline
           </a></small>
       <dd><ul class="list-inline">
         <%- param[:data_global][uri]["https://w3id.org/jp-textbook/hasSubjectArea"].sort_by{|e| param[:data_global][e]["http://purl.org/linked-data/cube#order"].first.to_i }.each do |subject_area| -%>
@@ -24,16 +24,16 @@
 </div>
 <div class="row">
   <div class="col-md-4">
-    <h2>現行学習指導要領（2011年度以降）</h2>
+    <h2>Old Curriculum Guideline (Since AY2011)</h2>
     <dl>
       <%- [ "https://w3id.org/jp-textbook/curriculum/小学校/2011",
             "https://w3id.org/jp-textbook/curriculum/中学校/2012",
             "https://w3id.org/jp-textbook/curriculum/高等学校/2013",
           ].each do |uri| -%>
           <%- school = param[:data_global][uri]["https://w3id.org/jp-textbook/school"].first -%>
-      <dt><%=h param[:data_global][school]["http://schema.org/name"][:ja] %>
+      <dt><%=h param[:data_global][school]["http://schema.org/name"][:en] %>
           <small><a href="<%= relative_path_uri(uri, param[:base_uri]) %>">
-            <i class="bi bi-book"></i> 学習指導要領
+            <i class="bi bi-book"></i> Curriculum guideline
           </a></small>
       <dd><ul class="list-inline">
         <%- param[:data_global][uri]["https://w3id.org/jp-textbook/hasSubjectArea"].sort_by{|e| param[:data_global][e]["http://purl.org/linked-data/cube#order"].first.to_i }.each do |subject_area| -%>
@@ -46,16 +46,16 @@
     </dl>
   </div>
   <div class="col-md-4">
-    <h2>旧学習指導要領（2002年度以降）</h2>
+    <h2>Old Curriculum Guideline (Since AY2002)</h2>
     <dl>
       <%- [ "https://w3id.org/jp-textbook/curriculum/小学校/2002",
             "https://w3id.org/jp-textbook/curriculum/中学校/2002",
             "https://w3id.org/jp-textbook/curriculum/高等学校/2003",
           ].each do |uri| -%>
           <%- school = param[:data_global][uri]["https://w3id.org/jp-textbook/school"].first -%>
-      <dt><%=h param[:data_global][school]["http://schema.org/name"][:ja] %>
+      <dt><%=h param[:data_global][school]["http://schema.org/name"][:en] %>
           <small><a href="<%= relative_path_uri(uri, param[:base_uri]) %>">
-            <i class="bi bi-book"></i> 学習指導要領
+            <i class="bi bi-book"></i> Curriculum guideline
           </a></small>
       <dd><ul class="list-inline">
         <%- param[:data_global][uri]["https://w3id.org/jp-textbook/hasSubjectArea"].sort_by{|e| param[:data_global][e]["http://purl.org/linked-data/cube#order"].first.to_i }.each do |subject_area| -%>
@@ -68,16 +68,16 @@
     </dl>
   </div>
   <div class="col-md-4">
-    <h2>旧学習指導要領（1992年度以降）</h2>
+    <h2>Old Curriculum Guideline (Since AY1992)</h2>
     <dl>
       <%- [ "https://w3id.org/jp-textbook/curriculum/小学校/1992",
             "https://w3id.org/jp-textbook/curriculum/中学校/1993",
             "https://w3id.org/jp-textbook/curriculum/高等学校/1994",
           ].each do |uri| -%>
           <%- school = param[:data_global][uri]["https://w3id.org/jp-textbook/school"].first -%>
-      <dt><%=h param[:data_global][school]["http://schema.org/name"][:ja] %>
+      <dt><%=h param[:data_global][school]["http://schema.org/name"][:en] %>
           <small><a href="<%= relative_path_uri(uri, param[:base_uri]) %>">
-            <i class="bi bi-book"></i> 学習指導要領
+            <i class="bi bi-book"></i> Curriculum guideline
           </a></small>
       <dd><ul class="list-inline">
         <%- param[:data_global][uri]["https://w3id.org/jp-textbook/hasSubjectArea"].sort_by{|e| param[:data_global][e]["http://purl.org/linked-data/cube#order"].first.to_i }.each do |subject_area| -%>
@@ -92,11 +92,19 @@
 </div>
 <div class="row">
   <div class="col-md-12">
-    <h2>教科書目録</h2>
-    <p>以下のリンクは掲載教科書の使用年度を示しています。</p>
+    <h2>List of Textbook Catalogues</h2>
+    <p>The following lists represents the usage year for the textbooks.</p>
     <dl>
       <%- %w( 小学校 中学校 高等学校 ).each do |school| -%>
-      <dt><%=h school %></dt>
+      <dt><%- case school -%>
+          <%- when "小学校" -%>
+          Elementary school
+          <%- when "中学校" -%>
+          Lower Secondary School
+          <%- when "高等学校" -%>
+          Upper Secondary School
+          <%- end -%>
+      </dt>
       <dd>
       <ul class="list-inline">
         <%- param[:data_global].keys.select{|e|
