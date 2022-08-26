@@ -1,0 +1,110 @@
+<https://w3id.org/jp-textbook/TeachingUnitShape>
+  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape>;
+  <http://www.w3.org/ns/shacl#property> [
+    <http://www.w3.org/2004/02/skos/core#example> "1";
+    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#integer>;
+    <http://www.w3.org/ns/shacl#description> "Used in display orders"@en, "表示順を決める場合などで利用"@ja;
+    <http://www.w3.org/ns/shacl#maxCount> "1";
+    <http://www.w3.org/ns/shacl#minCount> "1";
+    <http://www.w3.org/ns/shacl#name> "Listing order"@en, "ソート順"@ja;
+    <http://www.w3.org/ns/shacl#order> "1";
+    <http://www.w3.org/ns/shacl#path> <http://purl.org/linked-data/cube#order>
+  ], [
+    <http://www.w3.org/2004/02/skos/core#example> "Standard";
+    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/TeachingUnitType>;
+    <http://www.w3.org/ns/shacl#description> "Indicates the type of teaching unit: Standard, UpperGradeContents (upper grades), or OutOfCos (content that is not required to be covered at any grade level in Courses of Study)."@en, "単元の類型を示す。Standard（標準）,UpperGradeContents（後の学年）,OutOfCos（学習指導要領上、どの学年等でも扱うこととされていない内容）の3つのどれかをとる。"@ja;
+    <http://www.w3.org/ns/shacl#maxCount> "1";
+    <http://www.w3.org/ns/shacl#minCount> "1";
+    <http://www.w3.org/ns/shacl#name> "Teaching Unit Type"@en, "単元種別"@ja;
+    <http://www.w3.org/ns/shacl#order> "2";
+    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/teachingUnitType>
+  ], [
+    <http://www.w3.org/2004/02/skos/core#example> "まちが大すきたんけんたい";
+    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string>;
+    <http://www.w3.org/ns/shacl#maxCount> "1";
+    <http://www.w3.org/ns/shacl#minCount> "1";
+    <http://www.w3.org/ns/shacl#name> "Unit Title"@en, "単元名"@ja;
+    <http://www.w3.org/ns/shacl#order> "3";
+    <http://www.w3.org/ns/shacl#path> <http://schema.org/name>
+  ], [
+    <http://www.w3.org/2004/02/skos/core#example> <textbook:school/小学校>;
+    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/School>;
+    <http://www.w3.org/ns/shacl#description> "Link to the type resource of schools, represented as <code>textbook:school/<var>type of school</var></code>."@en, "対応する学校種別を<code>textbook:school/<var>学校種別</var></code> として示される学校リソースと関連付ける"@ja;
+    <http://www.w3.org/ns/shacl#maxCount> "1";
+    <http://www.w3.org/ns/shacl#minCount> "1";
+    <http://www.w3.org/ns/shacl#name> "Type of schools"@en, "学校種別"@ja;
+    <http://www.w3.org/ns/shacl#order> "4";
+    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/school>
+  ], [
+    <http://www.w3.org/2004/02/skos/core#example> "2001";
+    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#gYear>;
+    <http://www.w3.org/ns/shacl#name> "Authorized year"@en, "検定年"@ja;
+    <http://www.w3.org/ns/shacl#order> "5";
+    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/authorizedYear>
+  ], [
+    <http://www.w3.org/2004/02/skos/core#example> <textbook:curriculum/小学校/2019/生活>;
+    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/curriculum/SubjectArea>;
+    <http://www.w3.org/ns/shacl#description> "Link to the subject area resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var></code>."@en, "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科</var></code>として示される科目リソースと関連付ける"@ja;
+    <http://www.w3.org/ns/shacl#maxCount> "1";
+    <http://www.w3.org/ns/shacl#minCount> "1";
+    <http://www.w3.org/ns/shacl#name> "Subject area"@en, "教科"@ja;
+    <http://www.w3.org/ns/shacl#order> "6";
+    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/subjectArea>
+  ], [
+    <http://www.w3.org/2004/02/skos/core#example> <textbook:curriculum/小学校/2019/生活/生活>;
+    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/curriculum/Subject>;
+    <http://www.w3.org/ns/shacl#description> "Link to the subject resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var>/<var>subject</var></code>. "@en, "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科</var>/<var>科目</var></code>として示される種目（科目）リソースと関連付ける。"@ja;
+    <http://www.w3.org/ns/shacl#maxCount> "1";
+    <http://www.w3.org/ns/shacl#minCount> "1";
+    <http://www.w3.org/ns/shacl#name> "Subject"@en, "種目（科目）"@ja;
+    <http://www.w3.org/ns/shacl#order> "7";
+    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/subject>
+  ], [
+    <http://www.w3.org/2004/02/skos/core#example> "1, 2";
+    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#integer>;
+    <http://www.w3.org/ns/shacl#maxCount> "6";
+    <http://www.w3.org/ns/shacl#name> "Target grade"@en, "対象学年"@ja;
+    <http://www.w3.org/ns/shacl#order> "8";
+    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/grade>
+  ], [
+    <http://www.w3.org/ns/shacl#class> <http://schema.org/Chapter>;
+    <http://www.w3.org/ns/shacl#description> "Link to the blank node resource(s), which consist of properties <code>schema:isPartOf</code> and <code>schema:pagination</code>. If there are multiple textbooks, this property values are repeated according to the number of textbooks times."@en, "<code>schema:isPartOf</code>と<code>schema:pagination</code>の2つのプロパティを持つ。複数の教科書がある場合、繰り返される。"@ja;
+    <http://www.w3.org/ns/shacl#minCount> "1";
+    <http://www.w3.org/ns/shacl#name> "Page of Textbook"@en, "教科書の該当ページ"@ja;
+    <http://www.w3.org/ns/shacl#node> <https://w3id.org/jp-textbook/ChapterLUShape>;
+    <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#BlankNode>;
+    <http://www.w3.org/ns/shacl#order> "9";
+    <http://www.w3.org/ns/shacl#path> <http://schema.org/workExample>
+  ], [
+    <http://www.w3.org/2004/02/skos/core#example> <https://w3id.org/jp-cos/82F02D3141000000>;
+    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-cos/Item>;
+    <http://www.w3.org/ns/shacl#description> "Link to the course of study item, represented as <code>cs:<var>course of study code</var></code>."@en, "対応する学習指導要領の細目を<code>cs:<var>学習指導要領コード</var></code> として示される学習指導要領の細目リソースと関連付ける"@ja;
+    <http://www.w3.org/ns/shacl#name> "Course Of Study Item"@en, "学習指導要領の細目"@ja;
+    <http://www.w3.org/ns/shacl#order> "10";
+    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/cosItem>
+  ], [
+    <http://www.w3.org/2004/02/skos/core#example> "(3)(4)(5)(8)";
+    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string>;
+    <http://www.w3.org/ns/shacl#name> "Course Of Study Item (Label)"@en, "学習指導要領の細目（ラベル）"@ja;
+    <http://www.w3.org/ns/shacl#order> "11";
+    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/cosMappingDescription>
+  ], [
+    <http://www.w3.org/2004/02/skos/core#example> <https://w3id.org/jp-textbook/AC100000000132>;
+    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/CompilingProspectus>;
+    <http://www.w3.org/ns/shacl#description> "Link to the compiling prospectus resource, represented as <code>textbook:<var>compiling prospectus ID</var></code>."@en, "<code>textbook:<var>編修趣意書ID</var></code>として示される編修趣意書リソースと関連付ける"@ja;
+    <http://www.w3.org/ns/shacl#maxCount> "1";
+    <http://www.w3.org/ns/shacl#minCount> "1";
+    <http://www.w3.org/ns/shacl#name> "Compiling Prospectus"@en, "編修趣意書"@ja;
+    <http://www.w3.org/ns/shacl#order> "12";
+    <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/source>
+  ], [
+    <http://www.w3.org/ns/shacl#class> <http://schema.org/Duration>;
+    <http://www.w3.org/ns/shacl#description> "Link to the blank node resource(s), which consist of properties <code>rdf:value</code> and <code>schema:note</code>. If there are multiple resources, this property values are repeated."@en, "<code>rdf:value</code>と<code>schema:note</code>の2つのプロパティを持つ。複数ある場合、繰り返される。"@ja;
+    <http://www.w3.org/ns/shacl#maxCount> "2";
+    <http://www.w3.org/ns/shacl#name> "Duration"@en, "配当時数"@ja;
+    <http://www.w3.org/ns/shacl#node> <https://w3id.org/jp-textbook/DurationLUShape>;
+    <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#BlankNode>;
+    <http://www.w3.org/ns/shacl#order> "13";
+    <http://www.w3.org/ns/shacl#path> <http://schema.org/duration>
+  ];
+  <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/jp-textbook/TeachingUnit> .

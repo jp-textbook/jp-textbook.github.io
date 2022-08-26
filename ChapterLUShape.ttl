@@ -1,0 +1,28 @@
+<https://w3id.org/jp-textbook/ChapterLUShape>
+  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape>;
+  <http://www.w3.org/ns/shacl#property> [
+    <http://www.w3.org/2004/02/skos/core#example> <textbook:小学校/2019/生活/108>;
+    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/Textbook>;
+    <http://www.w3.org/ns/shacl#description> "Link to the textbook resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>authorized year</var>/<var>textbook symbol</var>/<var>textbook number</var></code>. "@en, "<code>textbook:<var>学校種別</var>/<var>検定年</var>/<var>教科書記号</var>/<var>教科書番号</var></code>として示される教科書リソースと関連付ける。"@ja;
+    <http://www.w3.org/ns/shacl#maxCount> "1";
+    <http://www.w3.org/ns/shacl#minCount> "1";
+    <http://www.w3.org/ns/shacl#name> "Textbook"@en, "教科書"@ja;
+    <http://www.w3.org/ns/shacl#order> "1";
+    <http://www.w3.org/ns/shacl#path> <http://schema.org/isPartOf>
+  ], [
+    <http://www.w3.org/2004/02/skos/core#example> "p.24〜45";
+    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string>;
+    <http://www.w3.org/ns/shacl#maxCount> "1";
+    <http://www.w3.org/ns/shacl#minCount> "1";
+    <http://www.w3.org/ns/shacl#name> "Page"@en, "ページ"@ja;
+    <http://www.w3.org/ns/shacl#order> "2";
+    <http://www.w3.org/ns/shacl#path> <http://schema.org/pagination>
+  ], [
+    <http://www.w3.org/2004/02/skos/core#example> "0.25";
+    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#decimal>;
+    <http://www.w3.org/ns/shacl#maxCount> "1";
+    <http://www.w3.org/ns/shacl#name> "Number Of Pages"@en, "ページ数"@ja;
+    <http://www.w3.org/ns/shacl#order> "3";
+    <http://www.w3.org/ns/shacl#path> <http://schema.org/numberOfPages>
+  ];
+  <http://www.w3.org/ns/shacl#targetClass> <http://schema.org/Chapter> .

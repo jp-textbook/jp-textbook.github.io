@@ -2,62 +2,34 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>教科書 Linked Open Data (LOD)</title>
-    <!-- Bootstrap -->
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
-    <meta property="og:image" content="https://jp-textbook.github.io/textbook-LOD-logo-FB.png">
-    <meta name="twitter:image" content="https://jp-textbook.github.io/textbook-lod-logo-twitter.png">
+    <title>教科書LOD</title>
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="教科書 Linked Open Data (LOD)">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-389547-11', 'auto');
-      ga('send', 'pageview');
-    </script>
+    <meta name="twitter:title" content="教科書LOD">
+    <meta property="og:title" content="教科書LOD">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://w3id.org/jp-textbook/logo.png">
   </head>
   <body>
-    <nav class="navbar navbar-inverse">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-left" href="/"><img src="textbookLOD-logo-no-bg.png" alt="教科書LOD" style="height:50px"></a>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-          <li class="active"><a class="navbar-brand" href="/">ホーム</a></li>
-          <li><a href="/about">教科書LODについて</a></li>
-          <li><a href="en">English</a></li>
-          <li class="searchbar">
-<script>
-(function() {
-  var cx = '014295902295096775885:qidxvgqqoco';
-  var gcse = document.createElement('script');
-  gcse.type = 'text/javascript';
-  gcse.async = true;
-  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-  var s = document.getElementsByTagName('script')[0];
-  s.parentNode.insertBefore(gcse, s);
-})();
-</script>
-<gcse:search></gcse:search>
-</li>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-inverse">
+      <a class="navbar-brand" href="./">
+        <img src="logo.png" style="max-height: 54px" alt="教科書LOD">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="./">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+            <li class="nav-item"><a class="nav-link" href="https://w3id.org/jp-textbook/en/">English</a></li>
         </ul>
       </div>
     </nav>
@@ -65,939 +37,978 @@
       <div class="container">
         <h1>教科書LOD</h1>
         <p>教科書LODプロジェクトでは、初等教育、中等教育で使われている学習指導要領と現行使用教科書の出版情報を Linked Open Data (LOD) として公開します。</p>
-        <p><small><a href="https://w3id.org/jp-textbook/"><span class="glyphicon glyphicon-link"></span> https://w3id.org/jp-textbook/</a></small></p>
-        <p><a class="btn btn-primary" href="about">教科書LODについて &raquo;</a></p>
+        <p><i class="bi bi-link-45deg"></i> <a href="https://w3id.org/jp-textbook/">https://w3id.org/jp-textbook/</a></p>
+        <p><a class="btn btn-info" href="about.html">教科書LODについて &raquo;</a></p>
       </div>
     </div>
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
-          <h2>現行学習指導要領（2020年度以降）</h2>
-          <dl>
-            <dt>小学校 <small><a href="curriculum/小学校/2020/"><span class="glyphicon glyphicon-book"></span> 学習指導要領</a></small>
-            <dd><ul class="list-inline">
-                  <li><a href="curriculum/小学校/2020/国語/国語">国語</a></li>
-                  <li><a href="curriculum/小学校/2020/国語/書写">書写</a></li>
-                  <li><a href="curriculum/小学校/2020/社会/社会">社会</a></li>
-                  <li><a href="curriculum/小学校/2020/社会/地図">地図</a></li>
-                  <li><a href="curriculum/小学校/2020/算数/算数">算数</a></li>
-                  <li><a href="curriculum/小学校/2020/理科/理科">理科</a></li>
-                  <li><a href="curriculum/小学校/2020/生活/生活">生活</a></li>
-                  <li><a href="curriculum/小学校/2020/音楽/音楽">音楽</a></li>
-                  <li><a href="curriculum/小学校/2020/図画工作/図画工作">図画工作</a></li>
-                  <li><a href="curriculum/小学校/2020/家庭/家庭">家庭</a></li>
-                  <li><a href="curriculum/小学校/2020/体育/保健">保健</a></li>
-                  <li><a href="curriculum/小学校/2020/外国語/英語">英語</a></li>
-                  <li><a href="curriculum/小学校/2020/道徳/道徳">道徳</a></li>
-                </ul></dd>
-            <dt>中学校 <small><a href="curriculum/中学校/2021/"><span class="glyphicon glyphicon-book"></span> 学習指導要領</a></small>
-            <dd><ul class="list-inline">
-                  <li><a href="curriculum/中学校/2021/国語/国語">国語</a></li>
-                  <li><a href="curriculum/中学校/2021/国語/書写">書写</a></li>
-                  <li><a href="curriculum/中学校/2021/社会/社会(地理的分野)">社会(地理的分野)</a></li>
-                  <li><a href="curriculum/中学校/2021/社会/社会(歴史的分野)">社会(歴史的分野)</a></li>
-                  <li><a href="curriculum/中学校/2021/社会/社会(公民的分野)">社会(公民的分野)</a></li>
-                  <li><a href="curriculum/中学校/2021/社会/地図">地図</a></li>
-                  <li><a href="curriculum/中学校/2021/数学/数学">数学</a></li>
-                  <li><a href="curriculum/中学校/2021/理科/理科">理科</a></li>
-                  <li><a href="curriculum/中学校/2021/音楽/音楽(一般)">音楽(一般)</a></li>
-                  <li><a href="curriculum/中学校/2021/音楽/音楽(器楽合奏)">音楽(器楽合奏)</a></li>
-                  <li><a href="curriculum/中学校/2021/美術/美術">美術</a></li>
-                  <li><a href="curriculum/中学校/2021/保健体育/保健体育">保健体育</a></li>
-                  <li><a href="curriculum/中学校/2021/技術・家庭/技術・家庭(技術分野)">技術・家庭(技術分野)</a></li>
-                  <li><a href="curriculum/中学校/2021/技術・家庭/技術・家庭(家庭分野)">技術・家庭(家庭分野)</a></li>
-                  <li><a href="curriculum/中学校/2021/外国語/英語">英語</a></li>
-                  <li><a href="curriculum/中学校/2021/道徳/道徳">道徳</a></li>
-                </ul></dd>
-            <dt>高等学校 <small><a href="curriculum/高等学校/2022/"><span class="glyphicon glyphicon-book"></span> 学習指導要領</a></small>
-            <dd><ul class="list-inline">
-                </ul></dd>
-          </dl>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <h2>現行学習指導要領（2011年度以降）</h2>
-          <dl>
-            <dt>小学校 <small><a href="curriculum/小学校/2011/"><span class="glyphicon glyphicon-book"></span> 学習指導要領</a></small>
-            <dd><ul class="list-inline">
-                <li><a href="curriculum/小学校/2011/国語/国語">国語</a></li>
-                <li><a href="curriculum/小学校/2011/国語/書写">書写</a></li>
-                <li><a href="curriculum/小学校/2011/社会/社会">社会</a></li>
-                <li><a href="curriculum/小学校/2011/社会/地図">地図</a></li>
-                <li><a href="curriculum/小学校/2011/算数/算数">算数</a></li>
-                <li><a href="curriculum/小学校/2011/理科/理科">理科</a></li>
-                <li><a href="curriculum/小学校/2011/生活/生活">生活</a></li>
-                <li><a href="curriculum/小学校/2011/音楽/音楽">音楽</a></li>
-                <li><a href="curriculum/小学校/2011/図画工作/図画工作">図画工作</a></li>
-                <li><a href="curriculum/小学校/2011/家庭/家庭">家庭</a></li>
-                <li><a href="curriculum/小学校/2011/体育/保健">保健</a></li>
-                <li><a href="curriculum/小学校/2011/道徳/道徳">道徳</a></li>
-              </ul></dd>
-            <dt>中学校 <small><a href="curriculum/中学校/2012/"><span class="glyphicon glyphicon-book"></span> 学習指導要領</a></small>
-            <dd><ul class="list-inline">
-                <li><a href="curriculum/中学校/2012/国語/国語">国語</a></li>
-                <li><a href="curriculum/中学校/2012/国語/書写">書写</a></li>
-                <li><a href="curriculum/中学校/2012/社会/社会(地理的分野)">社会(地理的分野)</a></li>
-                <li><a href="curriculum/中学校/2012/社会/社会(歴史的分野)">社会(歴史的分野)</a></li>
-                <li><a href="curriculum/中学校/2012/社会/社会(公民的分野)">社会(公民的分野)</a></li>
-                <li><a href="curriculum/中学校/2012/社会/地図">地図</a></li>
-                <li><a href="curriculum/中学校/2012/数学/数学">数学</a></li>
-                <li><a href="curriculum/中学校/2012/理科/理科">理科</a></li>
-                <li><a href="curriculum/中学校/2012/音楽/音楽(一般)">音楽(一般)</a></li>
-                <li><a href="curriculum/中学校/2012/音楽/音楽(器楽合奏)">音楽(器楽合奏)</a></li>
-                <li><a href="curriculum/中学校/2012/美術/美術">美術</a></li>
-                <li><a href="curriculum/中学校/2012/保健体育/保健体育">保健体育</a></li>
-                <li><a href="curriculum/中学校/2012/技術・家庭/技術・家庭(技術分野)">技術・家庭(技術分野)</a></li>
-                <li><a href="curriculum/中学校/2012/技術・家庭/技術・家庭(家庭分野)">技術・家庭(家庭分野)</a></li>
-                <li><a href="curriculum/中学校/2012/外国語/英語">英語</a></li>
-                <li><a href="curriculum/中学校/2012/道徳/道徳">道徳</a></li>
-              </ul></dd>
-            <dt>高等学校 <small><a href="curriculum/高等学校/2013/"><span class="glyphicon glyphicon-book"></span> 学習指導要領</a></small>
-            <dd><ul class="list-inline">
-                <li><a href="curriculum/高等学校/2013/国語/国語総合">国語総合</a></li>
-                <li><a href="curriculum/高等学校/2013/国語/国語表現">国語表現</a></li>
-                <li><a href="curriculum/高等学校/2013/国語/現代文A">現代文A</a></li>
-                <li><a href="curriculum/高等学校/2013/国語/現代文B">現代文B</a></li>
-                <li><a href="curriculum/高等学校/2013/国語/古典A">古典A</a></li>
-                <li><a href="curriculum/高等学校/2013/国語/古典B">古典B</a></li>
-                <li><a href="curriculum/高等学校/2013/地理歴史/世界史A">世界史A</a></li>
-                <li><a href="curriculum/高等学校/2013/地理歴史/世界史B">世界史B</a></li>
-                <li><a href="curriculum/高等学校/2013/地理歴史/日本史A">日本史A</a></li>
-                <li><a href="curriculum/高等学校/2013/地理歴史/日本史B">日本史B</a></li>
-                <li><a href="curriculum/高等学校/2013/地理歴史/地理A">地理A</a></li>
-                <li><a href="curriculum/高等学校/2013/地理歴史/地理B">地理B</a></li>
-                <li><a href="curriculum/高等学校/2013/地理歴史/地図">地図</a></li>
-                <li><a href="curriculum/高等学校/2013/公民/現代社会">現代社会</a></li>
-                <li><a href="curriculum/高等学校/2013/公民/倫理">倫理</a></li>
-                <li><a href="curriculum/高等学校/2013/公民/政治・経済">政治・経済</a></li>
-                <li><a href="curriculum/高等学校/2013/数学/数学I">数学I</a></li>
-                <li><a href="curriculum/高等学校/2013/数学/数学II">数学II</a></li>
-                <li><a href="curriculum/高等学校/2013/数学/数学III">数学III</a></li>
-                <li><a href="curriculum/高等学校/2013/数学/数学A">数学A</a></li>
-                <li><a href="curriculum/高等学校/2013/数学/数学B">数学B</a></li>
-                <li><a href="curriculum/高等学校/2013/数学/数学活用">数学活用</a></li>
-                <li><a href="curriculum/高等学校/2013/理科/科学と人間生活">科学と人間生活</a></li>
-                <li><a href="curriculum/高等学校/2013/理科/物理基礎">物理基礎</a></li>
-                <li><a href="curriculum/高等学校/2013/理科/物理">物理</a></li>
-                <li><a href="curriculum/高等学校/2013/理科/化学基礎">化学基礎</a></li>
-                <li><a href="curriculum/高等学校/2013/理科/化学">化学</a></li>
-                <li><a href="curriculum/高等学校/2013/理科/生物基礎">生物基礎</a></li>
-                <li><a href="curriculum/高等学校/2013/理科/生物">生物</a></li>
-                <li><a href="curriculum/高等学校/2013/理科/地学基礎">地学基礎</a></li>
-                <li><a href="curriculum/高等学校/2013/理科/地学">地学</a></li>
-                <li><a href="curriculum/高等学校/2013/保健体育/保健体育">保健体育</a></li>
-                <li><a href="curriculum/高等学校/2013/芸術/音楽I">音楽I</a></li>
-                <li><a href="curriculum/高等学校/2013/芸術/音楽II">音楽II</a></li>
-                <li><a href="curriculum/高等学校/2013/芸術/音楽III">音楽III</a></li>
-                <li><a href="curriculum/高等学校/2013/芸術/美術I">美術I</a></li>
-                <li><a href="curriculum/高等学校/2013/芸術/美術II">美術II</a></li>
-                <li><a href="curriculum/高等学校/2013/芸術/美術III">美術III</a></li>
-                <li><a href="curriculum/高等学校/2013/芸術/工芸I">工芸I</a></li>
-                <li><a href="curriculum/高等学校/2013/芸術/工芸II">工芸II</a></li>
-                <li><a href="curriculum/高等学校/2013/芸術/書道I">書道I</a></li>
-                <li><a href="curriculum/高等学校/2013/芸術/書道II">書道II</a></li>
-                <li><a href="curriculum/高等学校/2013/芸術/書道III">書道III</a></li>
-                <li><a href="curriculum/高等学校/2013/外国語/コミュニケーション英語基礎">コミュニケーション英語基礎</a></li>
-                <li><a href="curriculum/高等学校/2013/外国語/コミュニケーション英語I">コミュニケーション英語I</a></li>
-                <li><a href="curriculum/高等学校/2013/外国語/コミュニケーション英語II">コミュニケーション英語II</a></li>
-                <li><a href="curriculum/高等学校/2013/外国語/コミュニケーション英語III">コミュニケーション英語III</a></li>
-                <li><a href="curriculum/高等学校/2013/外国語/英語表現I">英語表現I</a></li>
-                <li><a href="curriculum/高等学校/2013/外国語/英語表現II">英語表現II</a></li>
-                <li><a href="curriculum/高等学校/2013/外国語/英語会話">英語会話</a></li>
-                <li><a href="curriculum/高等学校/2013/家庭/家庭基礎">家庭基礎</a></li>
-                <li><a href="curriculum/高等学校/2013/家庭/家庭総合">家庭総合</a></li>
-                <li><a href="curriculum/高等学校/2013/家庭/生活デザイン">生活デザイン</a></li>
-                <li><a href="curriculum/高等学校/2013/情報/社会と情報">社会と情報</a></li>
-                <li><a href="curriculum/高等学校/2013/情報/情報の科学">情報の科学</a></li>
-                <li><a href="curriculum/高等学校/2013/農業/農業と環境">農業と環境</a></li>
-                <li><a href="curriculum/高等学校/2013/農業/農業情報処理">農業情報処理</a></li>
-                <li><a href="curriculum/高等学校/2013/農業/作物">作物</a></li>
-                <li><a href="curriculum/高等学校/2013/農業/野菜">野菜</a></li>
-                <li><a href="curriculum/高等学校/2013/農業/果樹">果樹</a></li>
-                <li><a href="curriculum/高等学校/2013/農業/草花">草花</a></li>
-                <li><a href="curriculum/高等学校/2013/農業/畜産">畜産</a></li>
-                <li><a href="curriculum/高等学校/2013/農業/農業経営">農業経営</a></li>
-                <li><a href="curriculum/高等学校/2013/農業/農業機械">農業機械</a></li>
-                <li><a href="curriculum/高等学校/2013/農業/食品製造">食品製造</a></li>
-                <li><a href="curriculum/高等学校/2013/農業/植物バイオテクノロジー">植物バイオテクノロジー</a></li>
-                <li><a href="curriculum/高等学校/2013/農業/動物バイオテクノロジー">動物バイオテクノロジー</a></li>
-                <li><a href="curriculum/高等学校/2013/農業/農業経済">農業経済</a></li>
-                <li><a href="curriculum/高等学校/2013/農業/森林科学">森林科学</a></li>
-                <li><a href="curriculum/高等学校/2013/農業/森林経営">森林経営</a></li>
-                <li><a href="curriculum/高等学校/2013/農業/林産物利用">林産物利用</a></li>
-                <li><a href="curriculum/高等学校/2013/農業/農業土木設計">農業土木設計</a></li>
-                <li><a href="curriculum/高等学校/2013/農業/農業土木施工">農業土木施工</a></li>
-                <li><a href="curriculum/高等学校/2013/農業/水循環">水循環</a></li>
-                <li><a href="curriculum/高等学校/2013/農業/造園計画">造園計画</a></li>
-                <li><a href="curriculum/高等学校/2013/農業/造園技術">造園技術</a></li>
-                <li><a href="curriculum/高等学校/2013/農業/環境緑化材料">環境緑化材料</a></li>
-                <li><a href="curriculum/高等学校/2013/農業/生物活用">生物活用</a></li>
-                <li><a href="curriculum/高等学校/2013/農業/グリーンライフ">グリーンライフ</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/工業技術基礎">工業技術基礎</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/機械製図">機械製図</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/電気製図">電気製図</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/電子製図">電子製図</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/設備工業製図">設備工業製図</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/土木製図">土木製図</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/インテリア製図">インテリア製図</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/デザイン製図">デザイン製図</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/製図">製図</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/工業数理基礎">工業数理基礎</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/情報技術基礎">情報技術基礎</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/生産システム技術">生産システム技術</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/環境工学基礎">環境工学基礎</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/機械工作">機械工作</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/機械設計">機械設計</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/原動機">原動機</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/電子機械">電子機械</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/電子機械応用">電子機械応用</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/自動車工学">自動車工学</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/自動車整備">自動車整備</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/電気基礎">電気基礎</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/電気機器">電気機器</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/電力技術">電力技術</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/電子技術">電子技術</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/電子回路">電子回路</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/電子計測制御">電子計測制御</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/通信技術">通信技術</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/電子情報技術">電子情報技術</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/プログラミング技術">プログラミング技術</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/ハードウェア技術">ハードウェア技術</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/ソフトウェア技術">ソフトウェア技術</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/コンピュータシステム技術">コンピュータシステム技術</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/建築構造">建築構造</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/建築計画">建築計画</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/建築構造設計">建築構造設計</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/建築施工">建築施工</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/建築法規">建築法規</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/設備計画">設備計画</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/空気調和設備">空気調和設備</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/衛生・防災設備">衛生・防災設備</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/測量">測量</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/土木基礎力学">土木基礎力学</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/土木構造設計">土木構造設計</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/土木施工">土木施工</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/社会基盤工学">社会基盤工学</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/工業化学">工業化学</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/化学工学">化学工学</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/地球環境化学">地球環境化学</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/材料製造技術">材料製造技術</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/工業材料">工業材料</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/材料加工">材料加工</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/セラミック工業">セラミック工業</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/染織デザイン">染織デザイン</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/インテリア計画">インテリア計画</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/インテリア装備">インテリア装備</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/インテリアエレメント生産">インテリアエレメント生産</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/デザイン技術">デザイン技術</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/デザイン材料">デザイン材料</a></li>
-                <li><a href="curriculum/高等学校/2013/工業/デザイン史">デザイン史</a></li>
-                <li><a href="curriculum/高等学校/2013/商業/ビジネス基礎">ビジネス基礎</a></li>
-                <li><a href="curriculum/高等学校/2013/商業/ビジネス実務">ビジネス実務</a></li>
-                <li><a href="curriculum/高等学校/2013/商業/マーケティング">マーケティング</a></li>
-                <li><a href="curriculum/高等学校/2013/商業/商品開発">商品開発</a></li>
-                <li><a href="curriculum/高等学校/2013/商業/広告と販売促進">広告と販売促進</a></li>
-                <li><a href="curriculum/高等学校/2013/商業/ビジネス経済">ビジネス経済</a></li>
-                <li><a href="curriculum/高等学校/2013/商業/ビジネス経済応用">ビジネス経済応用</a></li>
-                <li><a href="curriculum/高等学校/2013/商業/経済活動と法">経済活動と法</a></li>
-                <li><a href="curriculum/高等学校/2013/商業/簿記">簿記</a></li>
-                <li><a href="curriculum/高等学校/2013/商業/財務会計I">財務会計I</a></li>
-                <li><a href="curriculum/高等学校/2013/商業/財務会計II">財務会計II</a></li>
-                <li><a href="curriculum/高等学校/2013/商業/原価計算">原価計算</a></li>
-                <li><a href="curriculum/高等学校/2013/商業/管理会計">管理会計</a></li>
-                <li><a href="curriculum/高等学校/2013/商業/情報処理">情報処理</a></li>
-                <li><a href="curriculum/高等学校/2013/商業/ビジネス情報">ビジネス情報</a></li>
-                <li><a href="curriculum/高等学校/2013/商業/電子商取引">電子商取引</a></li>
-                <li><a href="curriculum/高等学校/2013/商業/プログラミング">プログラミング</a></li>
-                <li><a href="curriculum/高等学校/2013/商業/ビジネス情報管理">ビジネス情報管理</a></li>
-                <li><a href="curriculum/高等学校/2013/家庭(専門)/生活産業情報">生活産業情報</a></li>
-                <li><a href="curriculum/高等学校/2013/家庭(専門)/消費生活">消費生活</a></li>
-                <li><a href="curriculum/高等学校/2013/家庭(専門)/子どもの発達と保育">子どもの発達と保育</a></li>
-                <li><a href="curriculum/高等学校/2013/家庭(専門)/子ども文化">子ども文化</a></li>
-                <li><a href="curriculum/高等学校/2013/家庭(専門)/服飾文化">服飾文化</a></li>
-                <li><a href="curriculum/高等学校/2013/家庭(専門)/ファッション造形基礎">ファッション造形基礎</a></li>
-                <li><a href="curriculum/高等学校/2013/家庭(専門)/ファッションデザイン">ファッションデザイン</a></li>
-                <li><a href="curriculum/高等学校/2013/家庭(専門)/フードデザイン">フードデザイン</a></li>
-                <li><a href="curriculum/高等学校/2013/水産/水産海洋基礎">水産海洋基礎</a></li>
-                <li><a href="curriculum/高等学校/2013/水産/海洋情報技術">海洋情報技術</a></li>
-                <li><a href="curriculum/高等学校/2013/水産/漁業">漁業</a></li>
-                <li><a href="curriculum/高等学校/2013/水産/航海・計器">航海・計器</a></li>
-                <li><a href="curriculum/高等学校/2013/水産/船舶運用">船舶運用</a></li>
-                <li><a href="curriculum/高等学校/2013/水産/船用機関">船用機関</a></li>
-                <li><a href="curriculum/高等学校/2013/水産/機械設計工作">機械設計工作</a></li>
-                <li><a href="curriculum/高等学校/2013/水産/電気理論">電気理論</a></li>
-                <li><a href="curriculum/高等学校/2013/水産/移動体通信工学">移動体通信工学</a></li>
-                <li><a href="curriculum/高等学校/2013/水産/海洋通信技術">海洋通信技術</a></li>
-                <li><a href="curriculum/高等学校/2013/水産/資源増殖">資源増殖</a></li>
-                <li><a href="curriculum/高等学校/2013/水産/海洋生物">海洋生物</a></li>
-                <li><a href="curriculum/高等学校/2013/水産/海洋環境">海洋環境</a></li>
-                <li><a href="curriculum/高等学校/2013/水産/食品製造">食品製造</a></li>
-                <li><a href="curriculum/高等学校/2013/水産/食品管理">食品管理</a></li>
-                <li><a href="curriculum/高等学校/2013/水産/水産流通">水産流通</a></li>
-                <li><a href="curriculum/高等学校/2013/看護/基礎看護">基礎看護</a></li>
-                <li><a href="curriculum/高等学校/2013/看護/人体と看護">人体と看護</a></li>
-                <li><a href="curriculum/高等学校/2013/看護/疾病と看護">疾病と看護</a></li>
-                <li><a href="curriculum/高等学校/2013/看護/生活と看護">生活と看護</a></li>
-                <li><a href="curriculum/高等学校/2013/看護/成人看護">成人看護</a></li>
-                <li><a href="curriculum/高等学校/2013/看護/老年看護">老年看護</a></li>
-                <li><a href="curriculum/高等学校/2013/看護/精神看護">精神看護</a></li>
-                <li><a href="curriculum/高等学校/2013/情報(専門)/情報産業と社会">情報産業と社会</a></li>
-                <li><a href="curriculum/高等学校/2013/情報(専門)/情報の表現と管理">情報の表現と管理</a></li>
-                <li><a href="curriculum/高等学校/2013/情報(専門)/情報と問題解決">情報と問題解決</a></li>
-                <li><a href="curriculum/高等学校/2013/情報(専門)/情報テクノロジー">情報テクノロジー</a></li>
-                <li><a href="curriculum/高等学校/2013/情報(専門)/アルゴリズムとプログラム">アルゴリズムとプログラム</a></li>
-                <li><a href="curriculum/高等学校/2013/情報(専門)/ネットワークシステム">ネットワークシステム</a></li>
-                <li><a href="curriculum/高等学校/2013/情報(専門)/データベース">データベース</a></li>
-                <li><a href="curriculum/高等学校/2013/情報(専門)/情報メディア">情報メディア</a></li>
-                <li><a href="curriculum/高等学校/2013/情報(専門)/情報デザイン">情報デザイン</a></li>
-                <li><a href="curriculum/高等学校/2013/福祉/社会福祉基礎">社会福祉基礎</a></li>
-                <li><a href="curriculum/高等学校/2013/福祉/介護福祉基礎">介護福祉基礎</a></li>
-                <li><a href="curriculum/高等学校/2013/福祉/コミュニケーション技術">コミュニケーション技術</a></li>
-                <li><a href="curriculum/高等学校/2013/福祉/生活支援技術">生活支援技術</a></li>
-                <li><a href="curriculum/高等学校/2013/福祉/介護過程">介護過程</a></li>
-                <li><a href="curriculum/高等学校/2013/福祉/こころとからだの理解">こころとからだの理解</a></li>
-              </ul></dd>
-          </dl>
-        </div>
-        <div class="col-md-4">
-          <h2>旧学習指導要領（2002年度以降）</h2>
-          <dl>
-            <dt>小学校 <small><a href="curriculum/小学校/2002/"><span class="glyphicon glyphicon-book"></span> 学習指導要領</a></small>
-            <dd><ul class="list-inline">
-                <li><a href="curriculum/小学校/2002/国語/国語">国語</a></li>
-                <li><a href="curriculum/小学校/2002/国語/書写">書写</a></li>
-                <li><a href="curriculum/小学校/2002/社会/社会">社会</a></li>
-                <li><a href="curriculum/小学校/2002/社会/地図">地図</a></li>
-                <li><a href="curriculum/小学校/2002/算数/算数">算数</a></li>
-                <li><a href="curriculum/小学校/2002/理科/理科">理科</a></li>
-                <li><a href="curriculum/小学校/2002/生活/生活">生活</a></li>
-                <li><a href="curriculum/小学校/2002/音楽/音楽">音楽</a></li>
-                <li><a href="curriculum/小学校/2002/図画工作/図画工作">図画工作</a></li>
-                <li><a href="curriculum/小学校/2002/家庭/家庭">家庭</a></li>
-                <li><a href="curriculum/小学校/2002/体育/保健">保健</a></li>
-              </ul></dd>
-            <dt>中学校 <small><a href="curriculum/中学校/2002/"><span class="glyphicon glyphicon-book"></span> 学習指導要領</a></small>
-            <dd><ul class="list-inline">
-                <li><a href="curriculum/中学校/2002/国語/国語">国語</a></li>
-                <li><a href="curriculum/中学校/2002/国語/書写">書写</a></li>
-                <li><a href="curriculum/中学校/2002/社会/社会(地理的分野)">社会(地理的分野)</a></li>
-                <li><a href="curriculum/中学校/2002/社会/社会(歴史的分野)">社会(歴史的分野)</a></li>
-                <li><a href="curriculum/中学校/2002/社会/社会(公民的分野)">社会(公民的分野)</a></li>
-                <li><a href="curriculum/中学校/2002/社会/地図">地図</a></li>
-                <li><a href="curriculum/中学校/2002/数学/数学">数学</a></li>
-                <li><a href="curriculum/中学校/2002/理科/理科(第一分野)">理科(第一分野)</a></li>
-                <li><a href="curriculum/中学校/2002/理科/理科(第二分野)">理科(第二分野)</a></li>
-                <li><a href="curriculum/中学校/2002/音楽/音楽(一般)">音楽(一般)</a></li>
-                <li><a href="curriculum/中学校/2002/音楽/音楽(器楽合奏)">音楽(器楽合奏)</a></li>
-                <li><a href="curriculum/中学校/2002/美術/美術">美術</a></li>
-                <li><a href="curriculum/中学校/2002/保健体育/保健体育">保健体育</a></li>
-                <li><a href="curriculum/中学校/2002/技術・家庭/技術・家庭(技術分野)">技術・家庭(技術分野)</a></li>
-                <li><a href="curriculum/中学校/2002/技術・家庭/技術・家庭(家庭分野)">技術・家庭(家庭分野)</a></li>
-                <li><a href="curriculum/中学校/2002/外国語/英語">英語</a></li>
-              </ul></dd>
-            <dt>高等学校 <small><a href="curriculum/高等学校/2003/"><span class="glyphicon glyphicon-book"></span> 学習指導要領</a></small>
-            <dd><ul class="list-inline">
-                <li><a href="curriculum/高等学校/2003/国語/国語表現I">国語表現I</a></li>
-                <li><a href="curriculum/高等学校/2003/国語/国語表現II">国語表現II</a></li>
-                <li><a href="curriculum/高等学校/2003/国語/国語総合">国語総合</a></li>
-                <li><a href="curriculum/高等学校/2003/国語/現代文">現代文</a></li>
-                <li><a href="curriculum/高等学校/2003/国語/古典">古典</a></li>
-                <li><a href="curriculum/高等学校/2003/国語/古典講読">古典講読</a></li>
-                <li><a href="curriculum/高等学校/2003/地理歴史/世界史A">世界史A</a></li>
-                <li><a href="curriculum/高等学校/2003/地理歴史/世界史B">世界史B</a></li>
-                <li><a href="curriculum/高等学校/2003/地理歴史/日本史A">日本史A</a></li>
-                <li><a href="curriculum/高等学校/2003/地理歴史/日本史B">日本史B</a></li>
-                <li><a href="curriculum/高等学校/2003/地理歴史/地理A">地理A</a></li>
-                <li><a href="curriculum/高等学校/2003/地理歴史/地理B">地理B</a></li>
-                <li><a href="curriculum/高等学校/2003/地理歴史/地図">地図</a></li>
-                <li><a href="curriculum/高等学校/2003/公民/現代社会">現代社会</a></li>
-                <li><a href="curriculum/高等学校/2003/公民/倫理">倫理</a></li>
-                <li><a href="curriculum/高等学校/2003/公民/政治・経済">政治・経済</a></li>
-                <li><a href="curriculum/高等学校/2003/数学/数学基礎">数学基礎</a></li>
-                <li><a href="curriculum/高等学校/2003/数学/数学I">数学I</a></li>
-                <li><a href="curriculum/高等学校/2003/数学/数学II">数学II</a></li>
-                <li><a href="curriculum/高等学校/2003/数学/数学III">数学III</a></li>
-                <li><a href="curriculum/高等学校/2003/数学/数学A">数学A</a></li>
-                <li><a href="curriculum/高等学校/2003/数学/数学B">数学B</a></li>
-                <li><a href="curriculum/高等学校/2003/数学/数学C">数学C</a></li>
-                <li><a href="curriculum/高等学校/2003/理科/理科基礎">理科基礎</a></li>
-                <li><a href="curriculum/高等学校/2003/理科/理科総合A">理科総合A</a></li>
-                <li><a href="curriculum/高等学校/2003/理科/理科総合B">理科総合B</a></li>
-                <li><a href="curriculum/高等学校/2003/理科/物理I">物理I</a></li>
-                <li><a href="curriculum/高等学校/2003/理科/物理II">物理II</a></li>
-                <li><a href="curriculum/高等学校/2003/理科/化学I">化学I</a></li>
-                <li><a href="curriculum/高等学校/2003/理科/化学II">化学II</a></li>
-                <li><a href="curriculum/高等学校/2003/理科/生物I">生物I</a></li>
-                <li><a href="curriculum/高等学校/2003/理科/生物II">生物II</a></li>
-                <li><a href="curriculum/高等学校/2003/理科/地学I">地学I</a></li>
-                <li><a href="curriculum/高等学校/2003/理科/地学II">地学II</a></li>
-                <li><a href="curriculum/高等学校/2003/保健体育/保健体育">保健体育</a></li>
-                <li><a href="curriculum/高等学校/2003/芸術/音楽I">音楽I</a></li>
-                <li><a href="curriculum/高等学校/2003/芸術/音楽II">音楽II</a></li>
-                <li><a href="curriculum/高等学校/2003/芸術/音楽III">音楽III</a></li>
-                <li><a href="curriculum/高等学校/2003/芸術/美術I">美術I</a></li>
-                <li><a href="curriculum/高等学校/2003/芸術/美術II">美術II</a></li>
-                <li><a href="curriculum/高等学校/2003/芸術/美術III">美術III</a></li>
-                <li><a href="curriculum/高等学校/2003/芸術/工芸I">工芸I</a></li>
-                <li><a href="curriculum/高等学校/2003/芸術/工芸II">工芸II</a></li>
-                <li><a href="curriculum/高等学校/2003/芸術/書道I">書道I</a></li>
-                <li><a href="curriculum/高等学校/2003/芸術/書道II">書道II</a></li>
-                <li><a href="curriculum/高等学校/2003/芸術/書道III">書道III</a></li>
-                <li><a href="curriculum/高等学校/2003/外国語/オーラル・コミュニケーションI">オーラル・コミュニケーションI</a></li>
-                <li><a href="curriculum/高等学校/2003/外国語/オーラル・コミュニケーションII">オーラル・コミュニケーションII</a></li>
-                <li><a href="curriculum/高等学校/2003/外国語/英語I">英語I</a></li>
-                <li><a href="curriculum/高等学校/2003/外国語/英語II">英語II</a></li>
-                <li><a href="curriculum/高等学校/2003/外国語/リーディング">リーディング</a></li>
-                <li><a href="curriculum/高等学校/2003/外国語/ライティング">ライティング</a></li>
-                <li><a href="curriculum/高等学校/2003/家庭/家庭基礎">家庭基礎</a></li>
-                <li><a href="curriculum/高等学校/2003/家庭/家庭総合">家庭総合</a></li>
-                <li><a href="curriculum/高等学校/2003/家庭/生活技術">生活技術</a></li>
-                <li><a href="curriculum/高等学校/2003/情報/情報A">情報A</a></li>
-                <li><a href="curriculum/高等学校/2003/情報/情報B">情報B</a></li>
-                <li><a href="curriculum/高等学校/2003/情報/情報C">情報C</a></li>
-                <li><a href="curriculum/高等学校/2003/農業/農業科学基礎">農業科学基礎</a></li>
-                <li><a href="curriculum/高等学校/2003/農業/環境科学基礎">環境科学基礎</a></li>
-                <li><a href="curriculum/高等学校/2003/農業/農業情報処理">農業情報処理</a></li>
-                <li><a href="curriculum/高等学校/2003/農業/作物">作物</a></li>
-                <li><a href="curriculum/高等学校/2003/農業/野菜">野菜</a></li>
-                <li><a href="curriculum/高等学校/2003/農業/果樹">果樹</a></li>
-                <li><a href="curriculum/高等学校/2003/農業/草花">草花</a></li>
-                <li><a href="curriculum/高等学校/2003/農業/畜産">畜産</a></li>
-                <li><a href="curriculum/高等学校/2003/農業/農業経営">農業経営</a></li>
-                <li><a href="curriculum/高等学校/2003/農業/農業機械">農業機械</a></li>
-                <li><a href="curriculum/高等学校/2003/農業/食品製造">食品製造</a></li>
-                <li><a href="curriculum/高等学校/2003/農業/植物バイオテクノロジー">植物バイオテクノロジー</a></li>
-                <li><a href="curriculum/高等学校/2003/農業/動物・微生物バイオテクノロジー">動物・微生物バイオテクノロジー</a></li>
-                <li><a href="curriculum/高等学校/2003/農業/農業経済">農業経済</a></li>
-                <li><a href="curriculum/高等学校/2003/農業/森林科学">森林科学</a></li>
-                <li><a href="curriculum/高等学校/2003/農業/森林経営">森林経営</a></li>
-                <li><a href="curriculum/高等学校/2003/農業/林産加工">林産加工</a></li>
-                <li><a href="curriculum/高等学校/2003/農業/農業土木設計">農業土木設計</a></li>
-                <li><a href="curriculum/高等学校/2003/農業/農業土木施工">農業土木施工</a></li>
-                <li><a href="curriculum/高等学校/2003/農業/造園計画">造園計画</a></li>
-                <li><a href="curriculum/高等学校/2003/農業/造園技術">造園技術</a></li>
-                <li><a href="curriculum/高等学校/2003/農業/生物活用">生物活用</a></li>
-                <li><a href="curriculum/高等学校/2003/農業/グリーンライフ">グリーンライフ</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/工業技術基礎">工業技術基礎</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/機械製図">機械製図</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/電気製図">電気製図</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/電子製図">電子製図</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/設備工業製図">設備工業製図</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/土木製図">土木製図</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/インテリア製図">インテリア製図</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/デザイン製図">デザイン製図</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/製図">製図</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/工業数理基礎">工業数理基礎</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/情報技術基礎">情報技術基礎</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/生産システム技術">生産システム技術</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/機械工作">機械工作</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/機械設計">機械設計</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/原動機">原動機</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/電子機械">電子機械</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/電子機械応用">電子機械応用</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/自動車工学">自動車工学</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/自動車整備">自動車整備</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/電気基礎">電気基礎</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/電気機器">電気機器</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/電力技術">電力技術</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/電子技術">電子技術</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/電子回路">電子回路</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/電子計測制御">電子計測制御</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/通信技術">通信技術</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/電子情報技術">電子情報技術</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/プログラミング技術">プログラミング技術</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/ハードウェア技術">ハードウェア技術</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/ソフトウェア技術">ソフトウェア技術</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/マルチメディア応用">マルチメディア応用</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/建築構造">建築構造</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/建築施工">建築施工</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/建築構造設計">建築構造設計</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/建築計画">建築計画</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/建築法規">建築法規</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/設備計画">設備計画</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/空気調和設備">空気調和設備</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/衛生・防災設備">衛生・防災設備</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/測量">測量</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/土木施工">土木施工</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/土木基礎力学">土木基礎力学</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/土木構造設計">土木構造設計</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/社会基盤工学">社会基盤工学</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/工業化学">工業化学</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/化学工学">化学工学</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/地球環境化学">地球環境化学</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/材料製造技術">材料製造技術</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/工業材料">工業材料</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/材料加工">材料加工</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/セラミック工業">セラミック工業</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/染織デザイン">染織デザイン</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/インテリア計画">インテリア計画</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/インテリア装備">インテリア装備</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/インテリアエレメント生産">インテリアエレメント生産</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/デザイン史">デザイン史</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/デザイン技術">デザイン技術</a></li>
-                <li><a href="curriculum/高等学校/2003/工業/デザイン材料">デザイン材料</a></li>
-                <li><a href="curriculum/高等学校/2003/商業/ビジネス基礎">ビジネス基礎</a></li>
-                <li><a href="curriculum/高等学校/2003/商業/商品と流通">商品と流通</a></li>
-                <li><a href="curriculum/高等学校/2003/商業/商業技術">商業技術</a></li>
-                <li><a href="curriculum/高等学校/2003/商業/マーケティング">マーケティング</a></li>
-                <li><a href="curriculum/高等学校/2003/商業/英語実務">英語実務</a></li>
-                <li><a href="curriculum/高等学校/2003/商業/経済活動と法">経済活動と法</a></li>
-                <li><a href="curriculum/高等学校/2003/商業/国際ビジネス">国際ビジネス</a></li>
-                <li><a href="curriculum/高等学校/2003/商業/簿記">簿記</a></li>
-                <li><a href="curriculum/高等学校/2003/商業/会計">会計</a></li>
-                <li><a href="curriculum/高等学校/2003/商業/原価計算">原価計算</a></li>
-                <li><a href="curriculum/高等学校/2003/商業/会計実務">会計実務</a></li>
-                <li><a href="curriculum/高等学校/2003/商業/情報処理">情報処理</a></li>
-                <li><a href="curriculum/高等学校/2003/商業/ビジネス情報">ビジネス情報</a></li>
-                <li><a href="curriculum/高等学校/2003/商業/文書デザイン">文書デザイン</a></li>
-                <li><a href="curriculum/高等学校/2003/商業/プログラミング">プログラミング</a></li>
-                <li><a href="curriculum/高等学校/2003/水産/水産基礎">水産基礎</a></li>
-                <li><a href="curriculum/高等学校/2003/水産/水産情報技術">水産情報技術</a></li>
-                <li><a href="curriculum/高等学校/2003/水産/漁業">漁業</a></li>
-                <li><a href="curriculum/高等学校/2003/水産/航海・計器">航海・計器</a></li>
-                <li><a href="curriculum/高等学校/2003/水産/漁船運用">漁船運用</a></li>
-                <li><a href="curriculum/高等学校/2003/水産/船用機関">船用機関</a></li>
-                <li><a href="curriculum/高等学校/2003/水産/機械設計工作">機械設計工作</a></li>
-                <li><a href="curriculum/高等学校/2003/水産/電気工学">電気工学</a></li>
-                <li><a href="curriculum/高等学校/2003/水産/通信工学">通信工学</a></li>
-                <li><a href="curriculum/高等学校/2003/水産/電気通信理論">電気通信理論</a></li>
-                <li><a href="curriculum/高等学校/2003/水産/栽培漁業">栽培漁業</a></li>
-                <li><a href="curriculum/高等学校/2003/水産/水産生物">水産生物</a></li>
-                <li><a href="curriculum/高等学校/2003/水産/海洋環境">海洋環境</a></li>
-                <li><a href="curriculum/高等学校/2003/水産/水産食品製造">水産食品製造</a></li>
-                <li><a href="curriculum/高等学校/2003/水産/水産食品管理">水産食品管理</a></li>
-                <li><a href="curriculum/高等学校/2003/水産/水産流通">水産流通</a></li>
-                <li><a href="curriculum/高等学校/2003/家庭(専門)/生活産業基礎">生活産業基礎</a></li>
-                <li><a href="curriculum/高等学校/2003/家庭(専門)/家庭情報処理">家庭情報処理</a></li>
-                <li><a href="curriculum/高等学校/2003/家庭(専門)/消費生活">消費生活</a></li>
-                <li><a href="curriculum/高等学校/2003/家庭(専門)/発達と保育">発達と保育</a></li>
-                <li><a href="curriculum/高等学校/2003/家庭(専門)/児童文化">児童文化</a></li>
-                <li><a href="curriculum/高等学校/2003/家庭(専門)/服飾文化">服飾文化</a></li>
-                <li><a href="curriculum/高等学校/2003/家庭(専門)/被服製作">被服製作</a></li>
-                <li><a href="curriculum/高等学校/2003/家庭(専門)/ファッションデザイン">ファッションデザイン</a></li>
-                <li><a href="curriculum/高等学校/2003/家庭(専門)/フードデザイン">フードデザイン</a></li>
-                <li><a href="curriculum/高等学校/2003/看護/基礎看護">基礎看護</a></li>
-                <li><a href="curriculum/高等学校/2003/看護/看護基礎医学">看護基礎医学</a></li>
-                <li><a href="curriculum/高等学校/2003/看護/成人・老人看護">成人・老人看護</a></li>
-                <li><a href="curriculum/高等学校/2003/看護/母子看護">母子看護</a></li>
-                <li><a href="curriculum/高等学校/2003/情報(専門)/情報産業と社会">情報産業と社会</a></li>
-                <li><a href="curriculum/高等学校/2003/情報(専門)/情報と表現">情報と表現</a></li>
-                <li><a href="curriculum/高等学校/2003/情報(専門)/情報システムの開発">情報システムの開発</a></li>
-                <li><a href="curriculum/高等学校/2003/情報(専門)/ネットワークシステム">ネットワークシステム</a></li>
-                <li><a href="curriculum/高等学校/2003/情報(専門)/モデル化とシミュレーション">モデル化とシミュレーション</a></li>
-                <li><a href="curriculum/高等学校/2003/情報(専門)/コンピュータデザイン">コンピュータデザイン</a></li>
-                <li><a href="curriculum/高等学校/2003/福祉/社会福祉基礎">社会福祉基礎</a></li>
-                <li><a href="curriculum/高等学校/2003/福祉/社会福祉制度">社会福祉制度</a></li>
-                <li><a href="curriculum/高等学校/2003/福祉/社会福祉援助技術">社会福祉援助技術</a></li>
-                <li><a href="curriculum/高等学校/2003/福祉/基礎介護">基礎介護</a></li>
-              </ul></dd>
-          </dl>
-        </div>
-        <div class="col-md-4">
-          <h2>旧学習指導要領（1992年度以降）</h2>
-          <dl>
-            <dt>小学校 <small><a href="curriculum/小学校/1992/"><span class="glyphicon glyphicon-book"></span> 学習指導要領</a></small>
-            <dd><ul class="list-inline">
-                <li><a href="curriculum/小学校/1992/国語/国語">国語</a></li>
-                <li><a href="curriculum/小学校/1992/国語/書写">書写</a></li>
-                <li><a href="curriculum/小学校/1992/社会/社会">社会</a></li>
-                <li><a href="curriculum/小学校/1992/社会/地図">地図</a></li>
-                <li><a href="curriculum/小学校/1992/算数/算数">算数</a></li>
-                <li><a href="curriculum/小学校/1992/理科/理科">理科</a></li>
-                <li><a href="curriculum/小学校/1992/生活/生活">生活</a></li>
-                <li><a href="curriculum/小学校/1992/音楽/音楽">音楽</a></li>
-                <li><a href="curriculum/小学校/1992/図画工作/図画工作">図画工作</a></li>
-                <li><a href="curriculum/小学校/1992/家庭/家庭">家庭</a></li>
-                <li><a href="curriculum/小学校/1992/体育/保健">保健</a></li>
-              </ul></dd>
-            <dt>中学校 <small><a href="curriculum/中学校/1993/"><span class="glyphicon glyphicon-book"></span> 学習指導要領</a></small>
-            <dd><ul class="list-inline">
-                <li><a href="curriculum/中学校/1993/国語/国語">国語</a></li>
-                <li><a href="curriculum/中学校/1993/国語/書写">書写</a></li>
-                <li><a href="curriculum/中学校/1993/社会/社会(地理的分野)">社会(地理的分野)</a></li>
-                <li><a href="curriculum/中学校/1993/社会/社会(歴史的分野)">社会(歴史的分野)</a></li>
-                <li><a href="curriculum/中学校/1993/社会/社会(公民的分野)">社会(公民的分野)</a></li>
-                <li><a href="curriculum/中学校/1993/社会/地図">地図</a></li>
-                <li><a href="curriculum/中学校/1993/数学/数学">数学</a></li>
-                <li><a href="curriculum/中学校/1993/理科/理科(第一分野)">理科(第一分野)</a></li>
-                <li><a href="curriculum/中学校/1993/理科/理科(第二分野)">理科(第二分野)</a></li>
-                <li><a href="curriculum/中学校/1993/音楽/音楽(一般)">音楽(一般)</a></li>
-                <li><a href="curriculum/中学校/1993/音楽/音楽(器楽合奏)">音楽(器楽合奏)</a></li>
-                <li><a href="curriculum/中学校/1993/美術/美術">美術</a></li>
-                <li><a href="curriculum/中学校/1993/保健体育/保健体育">保健体育</a></li>
-                <li><a href="curriculum/中学校/1993/技術・家庭/技術・家庭">技術・家庭</a></li>
-                <li><a href="curriculum/中学校/1993/外国語/英語">英語</a></li>
-              </ul></dd>
-            <dt>高等学校 <small><a href="curriculum/高等学校/1994/"><span class="glyphicon glyphicon-book"></span> 学習指導要領</a></small>
-            <dd><ul class="list-inline">
-                <li><a href="curriculum/高等学校/1994/国語/国語I">国語I</a></li>
-                <li><a href="curriculum/高等学校/1994/国語/国語II">国語II</a></li>
-                <li><a href="curriculum/高等学校/1994/国語/国語表現">国語表現</a></li>
-                <li><a href="curriculum/高等学校/1994/国語/現代文">現代文</a></li>
-                <li><a href="curriculum/高等学校/1994/国語/現代語">現代語</a></li>
-                <li><a href="curriculum/高等学校/1994/国語/古典I">古典I</a></li>
-                <li><a href="curriculum/高等学校/1994/国語/古典II">古典II</a></li>
-                <li><a href="curriculum/高等学校/1994/国語/古典講読">古典講読</a></li>
-                <li><a href="curriculum/高等学校/1994/地理歴史/世界史A">世界史A</a></li>
-                <li><a href="curriculum/高等学校/1994/地理歴史/世界史B">世界史B</a></li>
-                <li><a href="curriculum/高等学校/1994/地理歴史/日本史A">日本史A</a></li>
-                <li><a href="curriculum/高等学校/1994/地理歴史/日本史B">日本史B</a></li>
-                <li><a href="curriculum/高等学校/1994/地理歴史/地理A">地理A</a></li>
-                <li><a href="curriculum/高等学校/1994/地理歴史/地理B">地理B</a></li>
-                <li><a href="curriculum/高等学校/1994/地理歴史/地図">地図</a></li>
-                <li><a href="curriculum/高等学校/1994/公民/現代社会">現代社会</a></li>
-                <li><a href="curriculum/高等学校/1994/公民/倫理">倫理</a></li>
-                <li><a href="curriculum/高等学校/1994/公民/政治・経済">政治・経済</a></li>
-                <li><a href="curriculum/高等学校/1994/数学/数学I">数学I</a></li>
-                <li><a href="curriculum/高等学校/1994/数学/数学II">数学II</a></li>
-                <li><a href="curriculum/高等学校/1994/数学/数学III">数学III</a></li>
-                <li><a href="curriculum/高等学校/1994/数学/数学A">数学A</a></li>
-                <li><a href="curriculum/高等学校/1994/数学/数学B">数学B</a></li>
-                <li><a href="curriculum/高等学校/1994/数学/数学C">数学C</a></li>
-                <li><a href="curriculum/高等学校/1994/理科/総合理科">総合理科</a></li>
-                <li><a href="curriculum/高等学校/1994/理科/物理IA">物理IA</a></li>
-                <li><a href="curriculum/高等学校/1994/理科/物理IB">物理IB</a></li>
-                <li><a href="curriculum/高等学校/1994/理科/物理II">物理II</a></li>
-                <li><a href="curriculum/高等学校/1994/理科/化学IA">化学IA</a></li>
-                <li><a href="curriculum/高等学校/1994/理科/化学IB">化学IB</a></li>
-                <li><a href="curriculum/高等学校/1994/理科/化学II">化学II</a></li>
-                <li><a href="curriculum/高等学校/1994/理科/生物IA">生物IA</a></li>
-                <li><a href="curriculum/高等学校/1994/理科/生物IB">生物IB</a></li>
-                <li><a href="curriculum/高等学校/1994/理科/生物II">生物II</a></li>
-                <li><a href="curriculum/高等学校/1994/理科/地学IA">地学IA</a></li>
-                <li><a href="curriculum/高等学校/1994/理科/地学IB">地学IB</a></li>
-                <li><a href="curriculum/高等学校/1994/理科/地学II">地学II</a></li>
-                <li><a href="curriculum/高等学校/1994/保健体育/保健体育">保健体育</a></li>
-                <li><a href="curriculum/高等学校/1994/芸術/音楽I">音楽I</a></li>
-                <li><a href="curriculum/高等学校/1994/芸術/音楽II">音楽II</a></li>
-                <li><a href="curriculum/高等学校/1994/芸術/音楽III">音楽III</a></li>
-                <li><a href="curriculum/高等学校/1994/芸術/美術I">美術I</a></li>
-                <li><a href="curriculum/高等学校/1994/芸術/美術II">美術II</a></li>
-                <li><a href="curriculum/高等学校/1994/芸術/美術III">美術III</a></li>
-                <li><a href="curriculum/高等学校/1994/芸術/工芸I">工芸I</a></li>
-                <li><a href="curriculum/高等学校/1994/芸術/工芸II">工芸II</a></li>
-                <li><a href="curriculum/高等学校/1994/芸術/書道I">書道I</a></li>
-                <li><a href="curriculum/高等学校/1994/芸術/書道II">書道II</a></li>
-                <li><a href="curriculum/高等学校/1994/芸術/書道III">書道III</a></li>
-                <li><a href="curriculum/高等学校/1994/外国語/英語I">英語I</a></li>
-                <li><a href="curriculum/高等学校/1994/外国語/英語II">英語II</a></li>
-                <li><a href="curriculum/高等学校/1994/外国語/オーラル・コミュニケーションA">オーラル・コミュニケーションA</a></li>
-                <li><a href="curriculum/高等学校/1994/外国語/オーラル・コミュニケーションB">オーラル・コミュニケーションB</a></li>
-                <li><a href="curriculum/高等学校/1994/外国語/オーラル・コミュニケーションC">オーラル・コミュニケーションC</a></li>
-                <li><a href="curriculum/高等学校/1994/外国語/リーディング">リーディング</a></li>
-                <li><a href="curriculum/高等学校/1994/外国語/ライティング">ライティング</a></li>
-                <li><a href="curriculum/高等学校/1994/家庭/家庭一般">家庭一般</a></li>
-                <li><a href="curriculum/高等学校/1994/家庭/生活技術">生活技術</a></li>
-                <li><a href="curriculum/高等学校/1994/家庭/生活一般">生活一般</a></li>
-                <li><a href="curriculum/高等学校/1994/家庭(専門)/家庭情報処理">家庭情報処理</a></li>
-                <li><a href="curriculum/高等学校/1994/家庭(専門)/被服">被服</a></li>
-                <li><a href="curriculum/高等学校/1994/家庭(専門)/食物">食物</a></li>
-                <li><a href="curriculum/高等学校/1994/家庭(専門)/保育">保育</a></li>
-                <li><a href="curriculum/高等学校/1994/家庭(専門)/家庭経営">家庭経営</a></li>
-                <li><a href="curriculum/高等学校/1994/家庭(専門)/被服管理">被服管理</a></li>
-                <li><a href="curriculum/高等学校/1994/家庭(専門)/服飾デザイン">服飾デザイン</a></li>
-                <li><a href="curriculum/高等学校/1994/家庭(専門)/保育原理・技術">保育原理・技術</a></li>
-                <li><a href="curriculum/高等学校/1994/家庭(専門)/児童心理">児童心理</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/農業基礎">農業基礎</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/農業情報処理">農業情報処理</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/作物">作物</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/栽培環境">栽培環境</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/農業経営">農業経営</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/野菜">野菜</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/果樹">果樹</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/草花">草花</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/畜産">畜産</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/飼料">飼料</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/農業機械">農業機械</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/林業土木">林業土木</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/林業経営">林業経営</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/林産加工">林産加工</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/測量">測量</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/農業土木施工">農業土木施工</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/農業水利">農業水利</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/農地開発">農地開発</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/食品化学">食品化学</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/応用微生物">応用微生物</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/食品製造機器">食品製造機器</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/生物工学基礎">生物工学基礎</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/造園計画">造園計画</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/造園緑化材料">造園緑化材料</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/造園施工・管理">造園施工・管理</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/農業経済">農業経済</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/農業会計">農業会計</a></li>
-                <li><a href="curriculum/高等学校/1994/農業/食品流通">食品流通</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/工業基礎">工業基礎</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/機械製図">機械製図</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/造船製図">造船製図</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/電気製図">電気製図</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/電子製図">電子製図</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/設備工業製図">設備工業製図</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/土木製図">土木製図</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/インテリア製図">インテリア製図</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/デザイン製図">デザイン製図</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/製図">製図</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/工業数理">工業数理</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/情報技術基礎">情報技術基礎</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/機械工作">機械工作</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/機械設計">機械設計</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/原動機">原動機</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/計測・制御">計測・制御</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/電子機械">電子機械</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/電子機械応用">電子機械応用</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/自動車工学">自動車工学</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/自動車整備">自動車整備</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/電気基礎">電気基礎</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/電気機器">電気機器</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/電力技術">電力技術</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/電子技術">電子技術</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/電力応用">電力応用</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/電子回路">電子回路</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/電子計測制御">電子計測制御</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/通信技術">通信技術</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/電子情報技術">電子情報技術</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/プログラミング技術">プログラミング技術</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/ハードウェア技術">ハードウェア技術</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/ソフトウェア技術">ソフトウェア技術</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/コンピュータ応用">コンピュータ応用</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/建築構造">建築構造</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/建築施工">建築施工</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/建築構造設計">建築構造設計</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/建築計画">建築計画</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/建築法規">建築法規</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/設備計画">設備計画</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/空気調和設備">空気調和設備</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/衛生・防災設備">衛生・防災設備</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/設備施工">設備施工</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/測量">測量</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/土木施工">土木施工</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/土木設計">土木設計</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/水理">水理</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/土質力学">土質力学</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/土木計画">土木計画</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/工業化学">工業化学</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/化学工業">化学工業</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/化学工学">化学工学</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/化学システム技術">化学システム技術</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/化学工業安全">化学工業安全</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/材料製造技術">材料製造技術</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/工業材料">工業材料</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/材料加工">材料加工</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/セラミック工業">セラミック工業</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/染織デザイン">染織デザイン</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/インテリア計画">インテリア計画</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/インテリア装備">インテリア装備</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/インテリアエレメント生産">インテリアエレメント生産</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/デザイン史">デザイン史</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/デザイン技術">デザイン技術</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/デザイン材料">デザイン材料</a></li>
-                <li><a href="curriculum/高等学校/1994/工業/電子基礎">電子基礎</a></li>
-                <li><a href="curriculum/高等学校/1994/商業/流通経済">流通経済</a></li>
-                <li><a href="curriculum/高等学校/1994/商業/簿記">簿記</a></li>
-                <li><a href="curriculum/高等学校/1994/商業/情報処理">情報処理</a></li>
-                <li><a href="curriculum/高等学校/1994/商業/計算事務">計算事務</a></li>
-                <li><a href="curriculum/高等学校/1994/商業/商品">商品</a></li>
-                <li><a href="curriculum/高等学校/1994/商業/マーケティング">マーケティング</a></li>
-                <li><a href="curriculum/高等学校/1994/商業/商業デザイン">商業デザイン</a></li>
-                <li><a href="curriculum/高等学校/1994/商業/商業経済">商業経済</a></li>
-                <li><a href="curriculum/高等学校/1994/商業/商業法規">商業法規</a></li>
-                <li><a href="curriculum/高等学校/1994/商業/英語実務">英語実務</a></li>
-                <li><a href="curriculum/高等学校/1994/商業/国際経済">国際経済</a></li>
-                <li><a href="curriculum/高等学校/1994/商業/工業簿記">工業簿記</a></li>
-                <li><a href="curriculum/高等学校/1994/商業/会計">会計</a></li>
-                <li><a href="curriculum/高等学校/1994/商業/税務会計">税務会計</a></li>
-                <li><a href="curriculum/高等学校/1994/商業/文書処理">文書処理</a></li>
-                <li><a href="curriculum/高等学校/1994/商業/プログラミング">プログラミング</a></li>
-                <li><a href="curriculum/高等学校/1994/商業/情報管理">情報管理</a></li>
-                <li><a href="curriculum/高等学校/1994/商業/経営情報">経営情報</a></li>
-                <li><a href="curriculum/高等学校/1994/水産/水産一般">水産一般</a></li>
-                <li><a href="curriculum/高等学校/1994/水産/水産情報処理">水産情報処理</a></li>
-                <li><a href="curriculum/高等学校/1994/水産/漁業">漁業</a></li>
-                <li><a href="curriculum/高等学校/1994/水産/航海・計器">航海・計器</a></li>
-                <li><a href="curriculum/高等学校/1994/水産/漁船運用">漁船運用</a></li>
-                <li><a href="curriculum/高等学校/1994/水産/水産経済">水産経済</a></li>
-                <li><a href="curriculum/高等学校/1994/水産/船用機関">船用機関</a></li>
-                <li><a href="curriculum/高等学校/1994/水産/水産工学">水産工学</a></li>
-                <li><a href="curriculum/高等学校/1994/水産/機械設計工作">機械設計工作</a></li>
-                <li><a href="curriculum/高等学校/1994/水産/電気工学">電気工学</a></li>
-                <li><a href="curriculum/高等学校/1994/水産/通信工学">通信工学</a></li>
-                <li><a href="curriculum/高等学校/1994/水産/電気通信理論">電気通信理論</a></li>
-                <li><a href="curriculum/高等学校/1994/水産/栽培漁業">栽培漁業</a></li>
-                <li><a href="curriculum/高等学校/1994/水産/水産生物">水産生物</a></li>
-                <li><a href="curriculum/高等学校/1994/水産/漁場環境">漁場環境</a></li>
-                <li><a href="curriculum/高等学校/1994/水産/水産食品製造">水産食品製造</a></li>
-                <li><a href="curriculum/高等学校/1994/水産/水産食品化学">水産食品化学</a></li>
-                <li><a href="curriculum/高等学校/1994/水産/水産食品衛生">水産食品衛生</a></li>
-                <li><a href="curriculum/高等学校/1994/水産/水産食品流通">水産食品流通</a></li>
-                <li><a href="curriculum/高等学校/1994/看護/看護基礎医学">看護基礎医学</a></li>
-                <li><a href="curriculum/高等学校/1994/看護/基礎看護">基礎看護</a></li>
-                <li><a href="curriculum/高等学校/1994/看護/成人看護">成人看護</a></li>
-                <li><a href="curriculum/高等学校/1994/看護/母子看護">母子看護</a></li>
-              </ul></dd>
-          </dl>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <h2>教科書目録</h2>
-          <p>以下のリンクは掲載教科書の使用年度を示しています。</p>
-          <dl>
-            <dt>小学校</dt>
-            <dd>
-            <ul class="list-inline">
-                <li><a href="catalogue/小学校/2020">2021</a></li>
-                <li><a href="catalogue/小学校/2019">2020</a></li>
-                <li><a href="catalogue/小学校/2018">2019</a></li>
-                <li><a href="catalogue/小学校/2017">2018</a></li>
-                <li><a href="catalogue/小学校/2016">2017</a></li>
-                <li><a href="catalogue/小学校/2015">2016</a></li>
-                <li><a href="catalogue/小学校/2014">2015</a></li>
-                <li><a href="catalogue/小学校/2013">2014</a></li>
-                <li><a href="catalogue/小学校/2012">2013</a></li>
-                <li><a href="catalogue/小学校/2011">2012</a></li>
-                <li><a href="catalogue/小学校/2010">2011</a></li>
-                <li><a href="catalogue/小学校/2009">2010</a></li>
-                <li><a href="catalogue/小学校/2008">2009</a></li>
-                <li><a href="catalogue/小学校/2007">2008</a></li>
-                <li><a href="catalogue/小学校/2006">2007</a></li>
-                <li><a href="catalogue/小学校/2005">2006</a></li>
-                <li><a href="catalogue/小学校/2004">2005</a></li>
-                <li><a href="catalogue/小学校/2003">2004</a></li>
-                <li><a href="catalogue/小学校/2002">2003</a></li>
-                <li><a href="catalogue/小学校/2001">2002</a></li>
-                <li><a href="catalogue/小学校/2000">2001</a></li>
-                <li><a href="catalogue/小学校/1999">2000</a></li>
-                <li><a href="catalogue/小学校/1998">1999</a></li>
-                <li><a href="catalogue/小学校/1997">1998</a></li>
-                <li><a href="catalogue/小学校/1996">1997</a></li>
-                <li><a href="catalogue/小学校/1995">1996</a></li>
-                <li><a href="catalogue/小学校/1994">1995</a></li>
-                <li><a href="catalogue/小学校/1993">1994</a></li>
-                <li><a href="catalogue/小学校/1992">1993</a></li>
-                <li><a href="catalogue/小学校/1991">1992</a></li>
-            </ul>
-            </dd>
-            <dt>中学校</dt>
-            <dd>
-            <ul class="list-inline">
-                <li><a href="catalogue/中学校/2020">2021</a></li>
-                <li><a href="catalogue/中学校/2019">2020</a></li>
-                <li><a href="catalogue/中学校/2018">2019</a></li>
-                <li><a href="catalogue/中学校/2017">2018</a></li>
-                <li><a href="catalogue/中学校/2016">2017</a></li>
-                <li><a href="catalogue/中学校/2015">2016</a></li>
-                <li><a href="catalogue/中学校/2014">2015</a></li>
-                <li><a href="catalogue/中学校/2013">2014</a></li>
-                <li><a href="catalogue/中学校/2012">2013</a></li>
-                <li><a href="catalogue/中学校/2011">2012</a></li>
-                <li><a href="catalogue/中学校/2010">2011</a></li>
-                <li><a href="catalogue/中学校/2009">2010</a></li>
-                <li><a href="catalogue/中学校/2008">2009</a></li>
-                <li><a href="catalogue/中学校/2007">2008</a></li>
-                <li><a href="catalogue/中学校/2006">2007</a></li>
-                <li><a href="catalogue/中学校/2005">2006</a></li>
-                <li><a href="catalogue/中学校/2004">2005</a></li>
-                <li><a href="catalogue/中学校/2003">2004</a></li>
-                <li><a href="catalogue/中学校/2002">2003</a></li>
-                <li><a href="catalogue/中学校/2001">2002</a></li>
-                <li><a href="catalogue/中学校/2000">2001</a></li>
-                <li><a href="catalogue/中学校/1999">2000</a></li>
-                <li><a href="catalogue/中学校/1998">1999</a></li>
-                <li><a href="catalogue/中学校/1997">1998</a></li>
-                <li><a href="catalogue/中学校/1996">1997</a></li>
-                <li><a href="catalogue/中学校/1995">1996</a></li>
-                <li><a href="catalogue/中学校/1994">1995</a></li>
-                <li><a href="catalogue/中学校/1993">1994</a></li>
-                <li><a href="catalogue/中学校/1992">1993</a></li>
-                <li><a href="catalogue/中学校/1991">1992</a></li>
-            </ul>
-            </dd>
-            <dt>高等学校</dt>
-            <dd>
-            <ul class="list-inline">
-                <li><a href="catalogue/高等学校/2020">2021</a></li>
-                <li><a href="catalogue/高等学校/2019">2020</a></li>
-                <li><a href="catalogue/高等学校/2018">2019</a></li>
-                <li><a href="catalogue/高等学校/2017">2018</a></li>
-                <li><a href="catalogue/高等学校/2016">2017</a></li>
-                <li><a href="catalogue/高等学校/2015">2016</a></li>
-                <li><a href="catalogue/高等学校/2014">2015</a></li>
-                <li><a href="catalogue/高等学校/2013">2014</a></li>
-                <li><a href="catalogue/高等学校/2012">2013</a></li>
-                <li><a href="catalogue/高等学校/2011">2012</a></li>
-                <li><a href="catalogue/高等学校/2010">2011</a></li>
-                <li><a href="catalogue/高等学校/2009">2010</a></li>
-                <li><a href="catalogue/高等学校/2008">2009</a></li>
-                <li><a href="catalogue/高等学校/2007">2008</a></li>
-                <li><a href="catalogue/高等学校/2006">2007</a></li>
-                <li><a href="catalogue/高等学校/2005">2006</a></li>
-                <li><a href="catalogue/高等学校/2004">2005</a></li>
-                <li><a href="catalogue/高等学校/2003">2004</a></li>
-                <li><a href="catalogue/高等学校/2002">2003</a></li>
-                <li><a href="catalogue/高等学校/2001">2002</a></li>
-                <li><a href="catalogue/高等学校/2000">2001</a></li>
-                <li><a href="catalogue/高等学校/1999">2000</a></li>
-                <li><a href="catalogue/高等学校/1998">1999</a></li>
-                <li><a href="catalogue/高等学校/1997">1998</a></li>
-                <li><a href="catalogue/高等学校/1996">1997</a></li>
-                <li><a href="catalogue/高等学校/1995">1996</a></li>
-                <li><a href="catalogue/高等学校/1994">1995</a></li>
-                <li><a href="catalogue/高等学校/1993">1994</a></li>
-                <li><a href="catalogue/高等学校/1992">1993</a></li>
-                <li><a href="catalogue/高等学校/1991">1992</a></li>
-            </ul>
-            </dd>
-          </dl>
-        </div>
-      </div>
+  <div class="col-md-12">
+    <h2>現行学習指導要領（2020年度以降）</h2>
+    <dl>
+      <dt>小学校
+          <small><a href="curriculum/小学校/2020/">
+            <i class="bi bi-book"></i> 学習指導要領
+          </a></small>
+      <dd><ul class="list-inline">
+            <li class="list-inline-item"><a href="curriculum/小学校/2020/国語/国語">国語</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2020/国語/書写">書写</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2020/社会/社会">社会</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2020/社会/地図">地図</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2020/算数/算数">算数</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2020/理科/理科">理科</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2020/生活/生活">生活</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2020/音楽/音楽">音楽</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2020/図画工作/図画工作">図画工作</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2020/家庭/家庭">家庭</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2020/体育/保健">保健</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2020/外国語/英語">英語</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2020/道徳/道徳">道徳</a></li>
+      </ul></dd>
+      <dt>中学校
+          <small><a href="curriculum/中学校/2021/">
+            <i class="bi bi-book"></i> 学習指導要領
+          </a></small>
+      <dd><ul class="list-inline">
+            <li class="list-inline-item"><a href="curriculum/中学校/2021/国語/国語">国語</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2021/国語/書写">書写</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2021/社会/社会(地理的分野)">社会(地理的分野)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2021/社会/社会(歴史的分野)">社会(歴史的分野)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2021/社会/社会(公民的分野)">社会(公民的分野)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2021/社会/地図">地図</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2021/数学/数学">数学</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2021/理科/理科">理科</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2021/音楽/音楽(一般)">音楽(一般)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2021/音楽/音楽(器楽合奏)">音楽(器楽合奏)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2021/美術/美術">美術</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2021/保健体育/保健体育">保健体育</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2021/技術・家庭/技術・家庭(技術分野)">技術・家庭(技術分野)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2021/技術・家庭/技術・家庭(家庭分野)">技術・家庭(家庭分野)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2021/外国語/英語">英語</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2021/道徳/道徳">道徳</a></li>
+      </ul></dd>
+      <dt>高等学校
+          <small><a href="curriculum/高等学校/2022/">
+            <i class="bi bi-book"></i> 学習指導要領
+          </a></small>
+      <dd><ul class="list-inline">
+      </ul></dd>
+    </dl>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <h2>現行学習指導要領（2011年度以降）</h2>
+    <dl>
+      <dt>小学校
+          <small><a href="curriculum/小学校/2011/">
+            <i class="bi bi-book"></i> 学習指導要領
+          </a></small>
+      <dd><ul class="list-inline">
+            <li class="list-inline-item"><a href="curriculum/小学校/2011/国語/国語">国語</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2011/国語/書写">書写</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2011/社会/社会">社会</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2011/社会/地図">地図</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2011/算数/算数">算数</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2011/理科/理科">理科</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2011/生活/生活">生活</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2011/音楽/音楽">音楽</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2011/図画工作/図画工作">図画工作</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2011/家庭/家庭">家庭</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2011/体育/保健">保健</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2011/道徳/道徳">道徳</a></li>
+      </ul></dd>
+      <dt>中学校
+          <small><a href="curriculum/中学校/2012/">
+            <i class="bi bi-book"></i> 学習指導要領
+          </a></small>
+      <dd><ul class="list-inline">
+            <li class="list-inline-item"><a href="curriculum/中学校/2012/国語/国語">国語</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2012/国語/書写">書写</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2012/社会/社会(地理的分野)">社会(地理的分野)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2012/社会/社会(歴史的分野)">社会(歴史的分野)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2012/社会/社会(公民的分野)">社会(公民的分野)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2012/社会/地図">地図</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2012/数学/数学">数学</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2012/理科/理科">理科</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2012/音楽/音楽(一般)">音楽(一般)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2012/音楽/音楽(器楽合奏)">音楽(器楽合奏)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2012/美術/美術">美術</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2012/保健体育/保健体育">保健体育</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2012/技術・家庭/技術・家庭(技術分野)">技術・家庭(技術分野)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2012/技術・家庭/技術・家庭(家庭分野)">技術・家庭(家庭分野)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2012/外国語/英語">英語</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2012/道徳/道徳">道徳</a></li>
+      </ul></dd>
+      <dt>高等学校
+          <small><a href="curriculum/高等学校/2013/">
+            <i class="bi bi-book"></i> 学習指導要領
+          </a></small>
+      <dd><ul class="list-inline">
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/国語/国語総合">国語総合</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/国語/国語表現">国語表現</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/国語/現代文A">現代文A</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/国語/現代文B">現代文B</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/国語/古典A">古典A</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/国語/古典B">古典B</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/地理歴史/世界史A">世界史A</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/地理歴史/世界史B">世界史B</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/地理歴史/日本史A">日本史A</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/地理歴史/日本史B">日本史B</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/地理歴史/地理A">地理A</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/地理歴史/地理B">地理B</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/地理歴史/地図">地図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/公民/現代社会">現代社会</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/公民/倫理">倫理</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/公民/政治・経済">政治・経済</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/数学/数学I">数学I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/数学/数学II">数学II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/数学/数学III">数学III</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/数学/数学A">数学A</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/数学/数学B">数学B</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/数学/数学活用">数学活用</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/理科/科学と人間生活">科学と人間生活</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/理科/物理基礎">物理基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/理科/物理">物理</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/理科/化学基礎">化学基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/理科/化学">化学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/理科/生物基礎">生物基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/理科/生物">生物</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/理科/地学基礎">地学基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/理科/地学">地学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/保健体育/保健体育">保健体育</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/芸術/音楽I">音楽I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/芸術/音楽II">音楽II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/芸術/音楽III">音楽III</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/芸術/美術I">美術I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/芸術/美術II">美術II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/芸術/美術III">美術III</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/芸術/工芸I">工芸I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/芸術/工芸II">工芸II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/芸術/書道I">書道I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/芸術/書道II">書道II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/芸術/書道III">書道III</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/外国語/コミュニケーション英語基礎">コミュニケーション英語基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/外国語/コミュニケーション英語I">コミュニケーション英語I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/外国語/コミュニケーション英語II">コミュニケーション英語II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/外国語/コミュニケーション英語III">コミュニケーション英語III</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/外国語/英語表現I">英語表現I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/外国語/英語表現II">英語表現II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/外国語/英語会話">英語会話</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/家庭/家庭基礎">家庭基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/家庭/家庭総合">家庭総合</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/家庭/生活デザイン">生活デザイン</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/情報/社会と情報">社会と情報</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/情報/情報の科学">情報の科学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/農業/農業と環境">農業と環境</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/農業/農業情報処理">農業情報処理</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/農業/作物">作物</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/農業/野菜">野菜</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/農業/果樹">果樹</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/農業/草花">草花</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/農業/畜産">畜産</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/農業/農業経営">農業経営</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/農業/農業機械">農業機械</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/農業/食品製造">食品製造</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/農業/植物バイオテクノロジー">植物バイオテクノロジー</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/農業/動物バイオテクノロジー">動物バイオテクノロジー</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/農業/農業経済">農業経済</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/農業/森林科学">森林科学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/農業/森林経営">森林経営</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/農業/林産物利用">林産物利用</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/農業/農業土木設計">農業土木設計</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/農業/農業土木施工">農業土木施工</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/農業/水循環">水循環</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/農業/造園計画">造園計画</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/農業/造園技術">造園技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/農業/環境緑化材料">環境緑化材料</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/農業/生物活用">生物活用</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/農業/グリーンライフ">グリーンライフ</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/工業技術基礎">工業技術基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/機械製図">機械製図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/電気製図">電気製図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/電子製図">電子製図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/設備工業製図">設備工業製図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/土木製図">土木製図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/インテリア製図">インテリア製図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/デザイン製図">デザイン製図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/製図">製図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/工業数理基礎">工業数理基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/情報技術基礎">情報技術基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/生産システム技術">生産システム技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/環境工学基礎">環境工学基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/機械工作">機械工作</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/機械設計">機械設計</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/原動機">原動機</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/電子機械">電子機械</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/電子機械応用">電子機械応用</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/自動車工学">自動車工学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/自動車整備">自動車整備</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/電気基礎">電気基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/電気機器">電気機器</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/電力技術">電力技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/電子技術">電子技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/電子回路">電子回路</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/電子計測制御">電子計測制御</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/通信技術">通信技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/電子情報技術">電子情報技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/プログラミング技術">プログラミング技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/ハードウェア技術">ハードウェア技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/ソフトウェア技術">ソフトウェア技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/コンピュータシステム技術">コンピュータシステム技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/建築構造">建築構造</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/建築計画">建築計画</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/建築構造設計">建築構造設計</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/建築施工">建築施工</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/建築法規">建築法規</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/設備計画">設備計画</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/空気調和設備">空気調和設備</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/衛生・防災設備">衛生・防災設備</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/測量">測量</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/土木基礎力学">土木基礎力学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/土木構造設計">土木構造設計</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/土木施工">土木施工</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/社会基盤工学">社会基盤工学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/工業化学">工業化学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/化学工学">化学工学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/地球環境化学">地球環境化学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/材料製造技術">材料製造技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/工業材料">工業材料</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/材料加工">材料加工</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/セラミック工業">セラミック工業</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/染織デザイン">染織デザイン</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/インテリア計画">インテリア計画</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/インテリア装備">インテリア装備</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/インテリアエレメント生産">インテリアエレメント生産</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/デザイン技術">デザイン技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/デザイン材料">デザイン材料</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/工業/デザイン史">デザイン史</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/商業/ビジネス基礎">ビジネス基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/商業/ビジネス実務">ビジネス実務</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/商業/マーケティング">マーケティング</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/商業/商品開発">商品開発</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/商業/広告と販売促進">広告と販売促進</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/商業/ビジネス経済">ビジネス経済</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/商業/ビジネス経済応用">ビジネス経済応用</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/商業/経済活動と法">経済活動と法</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/商業/簿記">簿記</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/商業/財務会計I">財務会計I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/商業/財務会計II">財務会計II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/商業/原価計算">原価計算</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/商業/管理会計">管理会計</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/商業/情報処理">情報処理</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/商業/ビジネス情報">ビジネス情報</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/商業/電子商取引">電子商取引</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/商業/プログラミング">プログラミング</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/商業/ビジネス情報管理">ビジネス情報管理</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/家庭(専門)/生活産業情報">生活産業情報</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/家庭(専門)/消費生活">消費生活</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/家庭(専門)/子どもの発達と保育">子どもの発達と保育</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/家庭(専門)/子ども文化">子ども文化</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/家庭(専門)/服飾文化">服飾文化</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/家庭(専門)/ファッション造形基礎">ファッション造形基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/家庭(専門)/ファッションデザイン">ファッションデザイン</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/家庭(専門)/フードデザイン">フードデザイン</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/水産/水産海洋基礎">水産海洋基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/水産/海洋情報技術">海洋情報技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/水産/漁業">漁業</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/水産/航海・計器">航海・計器</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/水産/船舶運用">船舶運用</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/水産/船用機関">船用機関</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/水産/機械設計工作">機械設計工作</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/水産/電気理論">電気理論</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/水産/移動体通信工学">移動体通信工学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/水産/海洋通信技術">海洋通信技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/水産/資源増殖">資源増殖</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/水産/海洋生物">海洋生物</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/水産/海洋環境">海洋環境</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/水産/食品製造">食品製造</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/水産/食品管理">食品管理</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/水産/水産流通">水産流通</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/看護/基礎看護">基礎看護</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/看護/人体と看護">人体と看護</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/看護/疾病と看護">疾病と看護</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/看護/生活と看護">生活と看護</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/看護/成人看護">成人看護</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/看護/老年看護">老年看護</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/看護/精神看護">精神看護</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/情報(専門)/情報産業と社会">情報産業と社会</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/情報(専門)/情報の表現と管理">情報の表現と管理</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/情報(専門)/情報と問題解決">情報と問題解決</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/情報(専門)/情報テクノロジー">情報テクノロジー</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/情報(専門)/アルゴリズムとプログラム">アルゴリズムとプログラム</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/情報(専門)/ネットワークシステム">ネットワークシステム</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/情報(専門)/データベース">データベース</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/情報(専門)/情報メディア">情報メディア</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/情報(専門)/情報デザイン">情報デザイン</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/福祉/社会福祉基礎">社会福祉基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/福祉/介護福祉基礎">介護福祉基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/福祉/コミュニケーション技術">コミュニケーション技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/福祉/生活支援技術">生活支援技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/福祉/介護過程">介護過程</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2013/福祉/こころとからだの理解">こころとからだの理解</a></li>
+      </ul></dd>
+    </dl>
+  </div>
+  <div class="col-md-4">
+    <h2>旧学習指導要領（2002年度以降）</h2>
+    <dl>
+      <dt>小学校
+          <small><a href="curriculum/小学校/2002/">
+            <i class="bi bi-book"></i> 学習指導要領
+          </a></small>
+      <dd><ul class="list-inline">
+            <li class="list-inline-item"><a href="curriculum/小学校/2002/国語/国語">国語</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2002/国語/書写">書写</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2002/社会/社会">社会</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2002/社会/地図">地図</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2002/算数/算数">算数</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2002/理科/理科">理科</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2002/生活/生活">生活</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2002/音楽/音楽">音楽</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2002/図画工作/図画工作">図画工作</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2002/家庭/家庭">家庭</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/2002/体育/保健">保健</a></li>
+      </ul></dd>
+      <dt>中学校
+          <small><a href="curriculum/中学校/2002/">
+            <i class="bi bi-book"></i> 学習指導要領
+          </a></small>
+      <dd><ul class="list-inline">
+            <li class="list-inline-item"><a href="curriculum/中学校/2002/国語/国語">国語</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2002/国語/書写">書写</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2002/社会/社会(地理的分野)">社会(地理的分野)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2002/社会/社会(歴史的分野)">社会(歴史的分野)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2002/社会/社会(公民的分野)">社会(公民的分野)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2002/社会/地図">地図</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2002/数学/数学">数学</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2002/理科/理科(第一分野)">理科(第一分野)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2002/理科/理科(第二分野)">理科(第二分野)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2002/音楽/音楽(一般)">音楽(一般)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2002/音楽/音楽(器楽合奏)">音楽(器楽合奏)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2002/美術/美術">美術</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2002/保健体育/保健体育">保健体育</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2002/技術・家庭/技術・家庭(技術分野)">技術・家庭(技術分野)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2002/技術・家庭/技術・家庭(家庭分野)">技術・家庭(家庭分野)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/2002/外国語/英語">英語</a></li>
+      </ul></dd>
+      <dt>高等学校
+          <small><a href="curriculum/高等学校/2003/">
+            <i class="bi bi-book"></i> 学習指導要領
+          </a></small>
+      <dd><ul class="list-inline">
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/国語/国語表現I">国語表現I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/国語/国語表現II">国語表現II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/国語/国語総合">国語総合</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/国語/現代文">現代文</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/国語/古典">古典</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/国語/古典講読">古典講読</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/地理歴史/世界史A">世界史A</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/地理歴史/世界史B">世界史B</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/地理歴史/日本史A">日本史A</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/地理歴史/日本史B">日本史B</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/地理歴史/地理A">地理A</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/地理歴史/地理B">地理B</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/地理歴史/地図">地図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/公民/現代社会">現代社会</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/公民/倫理">倫理</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/公民/政治・経済">政治・経済</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/数学/数学基礎">数学基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/数学/数学I">数学I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/数学/数学II">数学II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/数学/数学III">数学III</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/数学/数学A">数学A</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/数学/数学B">数学B</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/数学/数学C">数学C</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/理科/理科基礎">理科基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/理科/理科総合A">理科総合A</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/理科/理科総合B">理科総合B</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/理科/物理I">物理I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/理科/物理II">物理II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/理科/化学I">化学I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/理科/化学II">化学II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/理科/生物I">生物I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/理科/生物II">生物II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/理科/地学I">地学I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/理科/地学II">地学II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/保健体育/保健体育">保健体育</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/芸術/音楽I">音楽I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/芸術/音楽II">音楽II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/芸術/音楽III">音楽III</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/芸術/美術I">美術I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/芸術/美術II">美術II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/芸術/美術III">美術III</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/芸術/工芸I">工芸I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/芸術/工芸II">工芸II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/芸術/書道I">書道I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/芸術/書道II">書道II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/芸術/書道III">書道III</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/外国語/オーラル・コミュニケーションI">オーラル・コミュニケーションI</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/外国語/オーラル・コミュニケーションII">オーラル・コミュニケーションII</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/外国語/英語I">英語I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/外国語/英語II">英語II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/外国語/リーディング">リーディング</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/外国語/ライティング">ライティング</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/家庭/家庭基礎">家庭基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/家庭/家庭総合">家庭総合</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/家庭/生活技術">生活技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/情報/情報A">情報A</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/情報/情報B">情報B</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/情報/情報C">情報C</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/農業/農業科学基礎">農業科学基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/農業/環境科学基礎">環境科学基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/農業/農業情報処理">農業情報処理</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/農業/作物">作物</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/農業/野菜">野菜</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/農業/果樹">果樹</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/農業/草花">草花</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/農業/畜産">畜産</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/農業/農業経営">農業経営</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/農業/農業機械">農業機械</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/農業/食品製造">食品製造</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/農業/植物バイオテクノロジー">植物バイオテクノロジー</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/農業/動物・微生物バイオテクノロジー">動物・微生物バイオテクノロジー</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/農業/農業経済">農業経済</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/農業/森林科学">森林科学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/農業/森林経営">森林経営</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/農業/林産加工">林産加工</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/農業/農業土木設計">農業土木設計</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/農業/農業土木施工">農業土木施工</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/農業/造園計画">造園計画</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/農業/造園技術">造園技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/農業/生物活用">生物活用</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/農業/グリーンライフ">グリーンライフ</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/工業技術基礎">工業技術基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/機械製図">機械製図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/電気製図">電気製図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/電子製図">電子製図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/設備工業製図">設備工業製図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/土木製図">土木製図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/インテリア製図">インテリア製図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/デザイン製図">デザイン製図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/製図">製図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/工業数理基礎">工業数理基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/情報技術基礎">情報技術基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/生産システム技術">生産システム技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/機械工作">機械工作</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/機械設計">機械設計</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/原動機">原動機</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/電子機械">電子機械</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/電子機械応用">電子機械応用</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/自動車工学">自動車工学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/自動車整備">自動車整備</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/電気基礎">電気基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/電気機器">電気機器</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/電力技術">電力技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/電子技術">電子技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/電子回路">電子回路</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/電子計測制御">電子計測制御</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/通信技術">通信技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/電子情報技術">電子情報技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/プログラミング技術">プログラミング技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/ハードウェア技術">ハードウェア技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/ソフトウェア技術">ソフトウェア技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/マルチメディア応用">マルチメディア応用</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/建築構造">建築構造</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/建築施工">建築施工</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/建築構造設計">建築構造設計</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/建築計画">建築計画</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/建築法規">建築法規</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/設備計画">設備計画</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/空気調和設備">空気調和設備</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/衛生・防災設備">衛生・防災設備</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/測量">測量</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/土木施工">土木施工</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/土木基礎力学">土木基礎力学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/土木構造設計">土木構造設計</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/社会基盤工学">社会基盤工学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/工業化学">工業化学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/化学工学">化学工学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/地球環境化学">地球環境化学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/材料製造技術">材料製造技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/工業材料">工業材料</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/材料加工">材料加工</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/セラミック工業">セラミック工業</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/染織デザイン">染織デザイン</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/インテリア計画">インテリア計画</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/インテリア装備">インテリア装備</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/インテリアエレメント生産">インテリアエレメント生産</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/デザイン史">デザイン史</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/デザイン技術">デザイン技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/工業/デザイン材料">デザイン材料</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/商業/ビジネス基礎">ビジネス基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/商業/商品と流通">商品と流通</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/商業/商業技術">商業技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/商業/マーケティング">マーケティング</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/商業/英語実務">英語実務</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/商業/経済活動と法">経済活動と法</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/商業/国際ビジネス">国際ビジネス</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/商業/簿記">簿記</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/商業/会計">会計</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/商業/原価計算">原価計算</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/商業/会計実務">会計実務</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/商業/情報処理">情報処理</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/商業/ビジネス情報">ビジネス情報</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/商業/文書デザイン">文書デザイン</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/商業/プログラミング">プログラミング</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/水産/水産基礎">水産基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/水産/水産情報技術">水産情報技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/水産/漁業">漁業</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/水産/航海・計器">航海・計器</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/水産/漁船運用">漁船運用</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/水産/船用機関">船用機関</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/水産/機械設計工作">機械設計工作</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/水産/電気工学">電気工学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/水産/通信工学">通信工学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/水産/電気通信理論">電気通信理論</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/水産/栽培漁業">栽培漁業</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/水産/水産生物">水産生物</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/水産/海洋環境">海洋環境</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/水産/水産食品製造">水産食品製造</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/水産/水産食品管理">水産食品管理</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/水産/水産流通">水産流通</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/家庭(専門)/生活産業基礎">生活産業基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/家庭(専門)/家庭情報処理">家庭情報処理</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/家庭(専門)/消費生活">消費生活</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/家庭(専門)/発達と保育">発達と保育</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/家庭(専門)/児童文化">児童文化</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/家庭(専門)/服飾文化">服飾文化</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/家庭(専門)/被服製作">被服製作</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/家庭(専門)/ファッションデザイン">ファッションデザイン</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/家庭(専門)/フードデザイン">フードデザイン</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/看護/基礎看護">基礎看護</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/看護/看護基礎医学">看護基礎医学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/看護/成人・老人看護">成人・老人看護</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/看護/母子看護">母子看護</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/情報(専門)/情報産業と社会">情報産業と社会</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/情報(専門)/情報と表現">情報と表現</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/情報(専門)/情報システムの開発">情報システムの開発</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/情報(専門)/ネットワークシステム">ネットワークシステム</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/情報(専門)/モデル化とシミュレーション">モデル化とシミュレーション</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/情報(専門)/コンピュータデザイン">コンピュータデザイン</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/福祉/社会福祉基礎">社会福祉基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/福祉/社会福祉制度">社会福祉制度</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/福祉/社会福祉援助技術">社会福祉援助技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/2003/福祉/基礎介護">基礎介護</a></li>
+      </ul></dd>
+    </dl>
+  </div>
+  <div class="col-md-4">
+    <h2>旧学習指導要領（1992年度以降）</h2>
+    <dl>
+      <dt>小学校
+          <small><a href="curriculum/小学校/1992/">
+            <i class="bi bi-book"></i> 学習指導要領
+          </a></small>
+      <dd><ul class="list-inline">
+            <li class="list-inline-item"><a href="curriculum/小学校/1992/国語/国語">国語</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/1992/国語/書写">書写</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/1992/社会/社会">社会</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/1992/社会/地図">地図</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/1992/算数/算数">算数</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/1992/理科/理科">理科</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/1992/生活/生活">生活</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/1992/音楽/音楽">音楽</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/1992/図画工作/図画工作">図画工作</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/1992/家庭/家庭">家庭</a></li>
+            <li class="list-inline-item"><a href="curriculum/小学校/1992/体育/保健">保健</a></li>
+      </ul></dd>
+      <dt>中学校
+          <small><a href="curriculum/中学校/1993/">
+            <i class="bi bi-book"></i> 学習指導要領
+          </a></small>
+      <dd><ul class="list-inline">
+            <li class="list-inline-item"><a href="curriculum/中学校/1993/国語/国語">国語</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/1993/国語/書写">書写</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/1993/社会/社会(地理的分野)">社会(地理的分野)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/1993/社会/社会(歴史的分野)">社会(歴史的分野)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/1993/社会/社会(公民的分野)">社会(公民的分野)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/1993/社会/地図">地図</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/1993/数学/数学">数学</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/1993/理科/理科(第一分野)">理科(第一分野)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/1993/理科/理科(第二分野)">理科(第二分野)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/1993/音楽/音楽(一般)">音楽(一般)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/1993/音楽/音楽(器楽合奏)">音楽(器楽合奏)</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/1993/美術/美術">美術</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/1993/保健体育/保健体育">保健体育</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/1993/技術・家庭/技術・家庭">技術・家庭</a></li>
+            <li class="list-inline-item"><a href="curriculum/中学校/1993/外国語/英語">英語</a></li>
+      </ul></dd>
+      <dt>高等学校
+          <small><a href="curriculum/高等学校/1994/">
+            <i class="bi bi-book"></i> 学習指導要領
+          </a></small>
+      <dd><ul class="list-inline">
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/国語/国語I">国語I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/国語/国語II">国語II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/国語/国語表現">国語表現</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/国語/現代文">現代文</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/国語/現代語">現代語</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/国語/古典I">古典I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/国語/古典II">古典II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/国語/古典講読">古典講読</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/地理歴史/世界史A">世界史A</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/地理歴史/世界史B">世界史B</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/地理歴史/日本史A">日本史A</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/地理歴史/日本史B">日本史B</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/地理歴史/地理A">地理A</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/地理歴史/地理B">地理B</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/地理歴史/地図">地図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/公民/現代社会">現代社会</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/公民/倫理">倫理</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/公民/政治・経済">政治・経済</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/数学/数学I">数学I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/数学/数学II">数学II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/数学/数学III">数学III</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/数学/数学A">数学A</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/数学/数学B">数学B</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/数学/数学C">数学C</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/理科/総合理科">総合理科</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/理科/物理IA">物理IA</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/理科/物理IB">物理IB</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/理科/物理II">物理II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/理科/化学IA">化学IA</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/理科/化学IB">化学IB</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/理科/化学II">化学II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/理科/生物IA">生物IA</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/理科/生物IB">生物IB</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/理科/生物II">生物II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/理科/地学IA">地学IA</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/理科/地学IB">地学IB</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/理科/地学II">地学II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/保健体育/保健体育">保健体育</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/芸術/音楽I">音楽I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/芸術/音楽II">音楽II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/芸術/音楽III">音楽III</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/芸術/美術I">美術I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/芸術/美術II">美術II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/芸術/美術III">美術III</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/芸術/工芸I">工芸I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/芸術/工芸II">工芸II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/芸術/書道I">書道I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/芸術/書道II">書道II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/芸術/書道III">書道III</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/外国語/英語I">英語I</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/外国語/英語II">英語II</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/外国語/オーラル・コミュニケーションA">オーラル・コミュニケーションA</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/外国語/オーラル・コミュニケーションB">オーラル・コミュニケーションB</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/外国語/オーラル・コミュニケーションC">オーラル・コミュニケーションC</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/外国語/リーディング">リーディング</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/外国語/ライティング">ライティング</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/家庭/家庭一般">家庭一般</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/家庭/生活技術">生活技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/家庭/生活一般">生活一般</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/家庭(専門)/家庭情報処理">家庭情報処理</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/家庭(専門)/被服">被服</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/家庭(専門)/食物">食物</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/家庭(専門)/保育">保育</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/家庭(専門)/家庭経営">家庭経営</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/家庭(専門)/被服管理">被服管理</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/家庭(専門)/服飾デザイン">服飾デザイン</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/家庭(専門)/保育原理・技術">保育原理・技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/家庭(専門)/児童心理">児童心理</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/農業基礎">農業基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/農業情報処理">農業情報処理</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/作物">作物</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/栽培環境">栽培環境</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/農業経営">農業経営</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/野菜">野菜</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/果樹">果樹</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/草花">草花</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/畜産">畜産</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/飼料">飼料</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/農業機械">農業機械</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/林業土木">林業土木</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/林業経営">林業経営</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/林産加工">林産加工</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/測量">測量</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/農業土木施工">農業土木施工</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/農業水利">農業水利</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/農地開発">農地開発</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/食品化学">食品化学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/応用微生物">応用微生物</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/食品製造機器">食品製造機器</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/生物工学基礎">生物工学基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/造園計画">造園計画</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/造園緑化材料">造園緑化材料</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/造園施工・管理">造園施工・管理</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/農業経済">農業経済</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/農業会計">農業会計</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/農業/食品流通">食品流通</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/工業基礎">工業基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/機械製図">機械製図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/造船製図">造船製図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/電気製図">電気製図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/電子製図">電子製図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/設備工業製図">設備工業製図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/土木製図">土木製図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/インテリア製図">インテリア製図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/デザイン製図">デザイン製図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/製図">製図</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/工業数理">工業数理</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/情報技術基礎">情報技術基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/機械工作">機械工作</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/機械設計">機械設計</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/原動機">原動機</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/計測・制御">計測・制御</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/電子機械">電子機械</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/電子機械応用">電子機械応用</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/自動車工学">自動車工学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/自動車整備">自動車整備</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/電気基礎">電気基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/電気機器">電気機器</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/電力技術">電力技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/電子技術">電子技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/電力応用">電力応用</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/電子回路">電子回路</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/電子計測制御">電子計測制御</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/通信技術">通信技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/電子情報技術">電子情報技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/プログラミング技術">プログラミング技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/ハードウェア技術">ハードウェア技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/ソフトウェア技術">ソフトウェア技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/コンピュータ応用">コンピュータ応用</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/建築構造">建築構造</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/建築施工">建築施工</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/建築構造設計">建築構造設計</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/建築計画">建築計画</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/建築法規">建築法規</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/設備計画">設備計画</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/空気調和設備">空気調和設備</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/衛生・防災設備">衛生・防災設備</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/設備施工">設備施工</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/測量">測量</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/土木施工">土木施工</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/土木設計">土木設計</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/水理">水理</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/土質力学">土質力学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/土木計画">土木計画</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/工業化学">工業化学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/化学工業">化学工業</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/化学工学">化学工学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/化学システム技術">化学システム技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/化学工業安全">化学工業安全</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/材料製造技術">材料製造技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/工業材料">工業材料</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/材料加工">材料加工</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/セラミック工業">セラミック工業</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/染織デザイン">染織デザイン</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/インテリア計画">インテリア計画</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/インテリア装備">インテリア装備</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/インテリアエレメント生産">インテリアエレメント生産</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/デザイン史">デザイン史</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/デザイン技術">デザイン技術</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/デザイン材料">デザイン材料</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/工業/電子基礎">電子基礎</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/商業/流通経済">流通経済</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/商業/簿記">簿記</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/商業/情報処理">情報処理</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/商業/計算事務">計算事務</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/商業/商品">商品</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/商業/マーケティング">マーケティング</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/商業/商業デザイン">商業デザイン</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/商業/商業経済">商業経済</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/商業/商業法規">商業法規</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/商業/英語実務">英語実務</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/商業/国際経済">国際経済</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/商業/工業簿記">工業簿記</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/商業/会計">会計</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/商業/税務会計">税務会計</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/商業/文書処理">文書処理</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/商業/プログラミング">プログラミング</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/商業/情報管理">情報管理</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/商業/経営情報">経営情報</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/水産/水産一般">水産一般</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/水産/水産情報処理">水産情報処理</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/水産/漁業">漁業</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/水産/航海・計器">航海・計器</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/水産/漁船運用">漁船運用</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/水産/水産経済">水産経済</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/水産/船用機関">船用機関</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/水産/水産工学">水産工学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/水産/機械設計工作">機械設計工作</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/水産/電気工学">電気工学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/水産/通信工学">通信工学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/水産/電気通信理論">電気通信理論</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/水産/栽培漁業">栽培漁業</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/水産/水産生物">水産生物</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/水産/漁場環境">漁場環境</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/水産/水産食品製造">水産食品製造</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/水産/水産食品化学">水産食品化学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/水産/水産食品衛生">水産食品衛生</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/水産/水産食品流通">水産食品流通</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/看護/看護基礎医学">看護基礎医学</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/看護/基礎看護">基礎看護</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/看護/成人看護">成人看護</a></li>
+            <li class="list-inline-item"><a href="curriculum/高等学校/1994/看護/母子看護">母子看護</a></li>
+      </ul></dd>
+    </dl>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <h2>教科書目録</h2>
+    <p>以下のリンクは掲載教科書の使用年度を示しています。</p>
+    <dl>
+      <dt>小学校</dt>
+      <dd>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="catalogue/小学校/2020">2021</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/2019">2020</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/2018">2019</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/2017">2018</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/2016">2017</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/2015">2016</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/2014">2015</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/2013">2014</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/2012">2013</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/2011">2012</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/2010">2011</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/2009">2010</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/2008">2009</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/2007">2008</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/2006">2007</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/2005">2006</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/2004">2005</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/2003">2004</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/2002">2003</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/2001">2002</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/2000">2001</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/1999">2000</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/1998">1999</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/1997">1998</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/1996">1997</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/1995">1996</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/1994">1995</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/1993">1994</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/1992">1993</a></li>
+        <li class="list-inline-item"><a href="catalogue/小学校/1991">1992</a></li>
+      </ul>
+      </dd>
+      <dt>中学校</dt>
+      <dd>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="catalogue/中学校/2020">2021</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/2019">2020</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/2018">2019</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/2017">2018</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/2016">2017</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/2015">2016</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/2014">2015</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/2013">2014</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/2012">2013</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/2011">2012</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/2010">2011</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/2009">2010</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/2008">2009</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/2007">2008</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/2006">2007</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/2005">2006</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/2004">2005</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/2003">2004</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/2002">2003</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/2001">2002</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/2000">2001</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/1999">2000</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/1998">1999</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/1997">1998</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/1996">1997</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/1995">1996</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/1994">1995</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/1993">1994</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/1992">1993</a></li>
+        <li class="list-inline-item"><a href="catalogue/中学校/1991">1992</a></li>
+      </ul>
+      </dd>
+      <dt>高等学校</dt>
+      <dd>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="catalogue/高等学校/2020">2021</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/2019">2020</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/2018">2019</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/2017">2018</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/2016">2017</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/2015">2016</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/2014">2015</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/2013">2014</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/2012">2013</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/2011">2012</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/2010">2011</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/2009">2010</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/2008">2009</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/2007">2008</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/2006">2007</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/2005">2006</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/2004">2005</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/2003">2004</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/2002">2003</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/2001">2002</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/2000">2001</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/1999">2000</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/1998">1999</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/1997">1998</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/1996">1997</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/1995">1996</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/1994">1995</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/1993">1994</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/1992">1993</a></li>
+        <li class="list-inline-item"><a href="catalogue/高等学校/1991">1992</a></li>
+      </ul>
+      </dd>
+    </dl>
+  </div>
+</div>
 
-      <hr>
       <div class="row">
-        <div class="col-md-12">
-          <h2>最近のお知らせ <small><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></small></h2>
-          <!-- 更新履歴は template/about.html.erb を修正すること! -->
-          <h3>2021年6月24日</h3>
-          <p>バージョン18.0を公開。
-              2021年度使用教科書メタデータを追加しました。教科書図書館OPACへのリンクを修正しました。
-              更新内容の詳細はGithubの<a href="https://github.com/jp-textbook/jp-textbook.github.io/milestone/39?closed=1">マイルストーン18.0</a>をご覧ください。</p>
-          <p><a href="about#history">&raquo; 過去の更新履歴の一覧</a></p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <h2>LODデータセット <small><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></small></h2>
-          <p>本データセットの最新版をTurtle形式のファイルとしてダウンロードできます。</p>
-          <ul><li>
-<a href="all-20210624.ttl">all-20210624.ttl</a> （全データ: 13.8MB, 292,130トリプル）
-                <ul>
-                  <li><a href="textbook-20210623.ttl">textbook-20210623.ttl</a></li>
-                  <li><a href="textbook-rc-20200315.ttl">textbook-rc-20200315.ttl</a></li>
-                  <li><a href="curriculum-20200308.ttl">curriculum-20200308.ttl</a></li>
-                  <li><a href="curriculum-versions-20200316.ttl">curriculum-versions-20200316.ttl</a></li>
-                  <li><a href="catalogue-20210623.ttl">catalogue-20210623.ttl</a></li>
-                  <li><a href="subject-20201103.ttl">subject-20201103.ttl</a></li>
-                  <li><a href="subjectArea-20201030.ttl">subjectArea-20201030.ttl</a></li>
-                  <li><a href="subjectType-20201103.ttl">subjectType-20201103.ttl</a></li>
-                  <li><a href="school-20180713.ttl">school-20180713.ttl</a></li>
-                  <li><a href="publisher-20210622.ttl">publisher-20210622.ttl</a></li>
-                  <li><a href="schema-20200703.ttl">schema-20200703.ttl</a></li>
-                  <li><a href="shape-20201215.ttl">shape-20201215.ttl</a></li>
-                  <li><a href="dataset-20210623.ttl">dataset-20210623.ttl</a></li>
-                </ul>
-              </li></ul>
-          <p><a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/deed.ja"><img src="https://i.creativecommons.org/p/zero/1.0/88x31.png" style="border-style: none;" alt="CC0"></a> 本データセットは <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/deed.ja">パブリックドメイン (CC0)</a> として自由に利用できます。</p>
+        <div class="col-md">
+          <h2 id="versions">最新のお知らせ <i class="bi bi-info-circle"></i></h2>
+          <dl>
+                    <dt>2021-06-24</dt>
+        <dd>バージョン18.0を公開。</dd>
+        <dd>2021年度使用教科書メタデータを追加しました。教科書図書館OPACへのリンクを修正しました。
+        更新の詳細については<a href="https://github.com/jp-textbook/jp-textbook.github.io/milestone/39?closed=1">こちら</a>をご覧ください。
+        </dd>
+        <dd><ul>
+          <li><a href="https://w3id.org/jp-textbook/all-20210624.ttl">all-20210624.ttl</a>
+          (292,130トリプル, 13.8 MB)
+          <ul>
+            <li><a href="https://w3id.org/jp-textbook/textbook-20210623.ttl">textbook-20210623.ttl</a></li>
+            <li><a href="https://w3id.org/jp-textbook/textbook-rc-20200315.ttl">textbook-rc-20200315.ttl</a></li>
+            <li><a href="https://w3id.org/jp-textbook/curriculum-20200308.ttl">curriculum-20200308.ttl</a></li>
+            <li><a href="https://w3id.org/jp-textbook/curriculum-versions-20200316.ttl">curriculum-versions-20200316.ttl</a></li>
+            <li><a href="https://w3id.org/jp-textbook/catalogue-20210623.ttl">catalogue-20210623.ttl</a></li>
+            <li><a href="https://w3id.org/jp-textbook/subject-20201103.ttl">subject-20201103.ttl</a></li>
+            <li><a href="https://w3id.org/jp-textbook/subjectArea-20201030.ttl">subjectArea-20201030.ttl</a></li>
+            <li><a href="https://w3id.org/jp-textbook/subjectType-20201103.ttl">subjectType-20201103.ttl</a></li>
+            <li><a href="https://w3id.org/jp-textbook/school-20180713.ttl">school-20180713.ttl</a></li>
+            <li><a href="https://w3id.org/jp-textbook/publisher-20210622.ttl">publisher-20210622.ttl</a></li>
+            <li><a href="https://w3id.org/jp-textbook/schema-20200703.ttl">schema-20200703.ttl</a></li>
+            <li><a href="https://w3id.org/jp-textbook/shape-20201215.ttl">shape-20201215.ttl</a></li>
+            <li><a href="https://w3id.org/jp-textbook/dataset-20210623.ttl">dataset-20210623.ttl</a></li>
+          </ul>
+          </li>
+        </ul></dd>
+
+          </dl>
+          <p><a href="about#versions">&raquo; 過去の更新履歴</a></p>
+          <p>
+            このデータセットは<a href="http://creativecommons.org/publicdomain/zero/1.0/">http://creativecommons.org/publicdomain/zero/1.0/</a>として自由に利用できます。
+          </p>
         </div>
       </div>
     </div>
 
     <hr>
     <footer>
-      <p>&copy; 2017-2021 <a href="/about">教科書LODプロジェクト</a></p>
+      <p>
+        &copy; 2017-2022
+        教科書LODプロジェクト
+      </p>
     </footer>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   </body>
 </html>

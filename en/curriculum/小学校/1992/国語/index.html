@@ -2,115 +2,440 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Japanese Language - Japanese Textbook Linked Open Data (LOD)</title>
-    <!-- Bootstrap -->
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../../../../../style.css">
-    <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
-    <meta property="og:image" content="https://jp-textbook.github.io/textbook-LOD-logo-FB.png">
-    <meta name="twitter:image" content="https://jp-textbook.github.io/textbook-lod-logo-twitter.png">
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Japanese Language - Japanese Textbook Linked Open Data (LOD)">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-389547-11', 'auto');
-      ga('send', 'pageview');
-    </script>
+    <title>Japanese Language - Japanese Textbook LOD</title>
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Japanese Language - Japanese Textbook LOD">
+    <meta property="og:title" content="Japanese Language - Japanese Textbook LOD">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://w3id.org/jp-textbook/curriculum/小学校/1992/国語">
+    <meta property="og:image" content="https://w3id.org/jp-textbook/logo.png">
   </head>
   <body>
-    <nav class="navbar navbar-inverse">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-left" href="../../../../"><img src="../../../../../textbookLOD-logo-no-bg.png" alt="Japanese Textbook LOD" style="height:50px"></a>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a class="navbar-brand" href="../../../../">Home</a></li>
-          <li><a href="../../../../about">About</a></li>
-          <li><a href="../../../../../curriculum/小学校/1992/国語">日本語</a></li>
-          <li class="searchbar">
-<script>
-(function() {
-  var cx = '014295902295096775885:qidxvgqqoco';
-  var gcse = document.createElement('script');
-  gcse.type = 'text/javascript';
-  gcse.async = true;
-  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-  var s = document.getElementsByTagName('script')[0];
-  s.parentNode.insertBefore(gcse, s);
-})();
-</script>
-<gcse:search></gcse:search>
-</li>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-inverse">
+      <a class="navbar-brand" href="../../../../">
+        <img src="../../../../logo.png" style="max-height: 54px" alt="Japanese Textbook LOD">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../../../../">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../../../about.html">About</a>
+          </li>
+            <li class="nav-item"><a class="nav-link" href="https://w3id.org/jp-textbook/">日本語</a></li>
         </ul>
       </div>
     </nav>
         <div class="jumbotron">
       <div class="container">
         <h1>Japanese Language</h1>
-        <p>Curriculum Guidelines for Elementary School (since AY1992)</p>
-        <p><small><span class="glyphicon glyphicon-link"></span> <a href="https://w3id.org/jp-textbook/curriculum/小学校/1992/国語">https://w3id.org/jp-textbook/curriculum/小学校/1992/国語</a></small></p>
+        <p><i class="bi bi-link-45deg"></i> <a href="https://w3id.org/jp-textbook/curriculum/小学校/1992/国語">https://w3id.org/jp-textbook/curriculum/小学校/1992/国語</a></p>
       </div>
     </div>
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <ol class="breadcrumb">
-            <li><a href="../../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
-            <li><a href="../../1992">Curriculum Guidelines for Elementary School (since AY1992)</a></li>
-            <li class="active">Japanese Language</li>
-          </ol>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="./"><i class="bi bi-house-door-fill"></i> Home</a></li>
+                <li class="breadcrumb-item" aria-current="page">
+                  <a href="https://w3id.org/jp-textbook/curriculum/小学校/1992">Elementary School Curriculum Guideline</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Japanese Language
+                </li>
+            </ol>
+          </nav>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
           <h2>Details</h2>
-          <dl class="dl-horizontal">
-          <dt>Subject area</dt><dd>Japanese Language</dd>
-            <dd><ul><li><small>Source of English name: <a href="http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1261037.htm">Elementary School Curriculum Guideline English Version (Tentative Translation) (2008-03)</a></small></li></ul></dd>
-          <dt>Name in Japanese</dt><dd><ruby>国語<rt>こくご</rt></ruby></dd>
-          <dt>Type of school</dt><dd><a href="../../../../school/小学校">Elementary School</a></dd>
-          <dt>Curriculum guideline</dt><dd><a href="../">Elementary School (since AY1992)</a></dd>
-          <dt>Sort order of subjects</dt><dd>1</dd>
-          </dl>
+          <dl class="row">
+  <dt class="col-sm-3">Name</dt>
+      <dd class="col-sm-9" lang="ja">国語</dd>
+      <dd class="col-sm-9 offset-sm-3" lang="ja-hira">こくご</dd>
+      <dd class="col-sm-9 offset-sm-3" lang="en">Japanese Language</dd>
+  <dt class="col-sm-3">Type of school</dt>
+    <dd class="col-sm-9"><a href="../../../../school/小学校">Elementary School</a></dd>
+  <dt class="col-sm-3">Listing order of the curriculum guideline</dt>
+    <dd class="col-sm-9">1</dd>
+  <dt class="col-sm-3">has a subject</dt>
+      <dd class="col-sm-9"><a href="国語">Japanese Language</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="書写">Penmanship</a></dd>
+  <dt class="col-sm-3">Source for the English name</dt>
+    <dd class="col-sm-9"><dl class="row">
+  <dt class="col-sm-3">Name</dt>
+      <dd class="col-sm-9" lang="ja">小学校学習指導要領英訳版（仮訳）(平成20年3月)</dd>
+      <dd class="col-sm-9 offset-sm-3" lang="en">Elementary School Curriculum Guideline English Version (Tentative Translation) (2008-03)</dd>
+  <dt class="col-sm-3">Type</dt>
+    <dd class="col-sm-9"><a href="../../../../SourceOfEnglishName">Source Of English Name</a></dd>
+  <dt class="col-sm-3">Seealso</dt>
+    <dd class="col-sm-9"><a href="http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1261037.htm">http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1261037.htm</a></dd>
+  <dt class="col-sm-3">Curriculum</dt>
+    <dd class="col-sm-9"><a href="../../2011">Elementary School Curriculum Guideline</a></dd>
+</dl></dd>
+  <dt class="col-sm-3">Type</dt>
+    <dd class="col-sm-9"><a href="../../../SubjectArea">Subject area</a></dd>
+</dl>
         </div>
       </div>
-      <div class="row">
+      
+      <div class="row inverse">
         <div class="col-md-12">
-          <h2>List of subjects</h2>
-          <ul>
-              <li><a href="国語">Japanese Language</a>
-              <li><a href="書写">Penmanship</a>
-          </ul>
+          <h2>Referred resources</h2>
+          <dl class="row">
+  <dt class="col-sm-3">Referred to as &#39;has a subject area&#39; from:</dt>
+    <dd class="col-sm-9"><a href="../">Elementary School Curriculum Guideline</a></dd>
+  <dt class="col-sm-3">Referred to as &#39;Subject area&#39; from:</dt>
+      <dd class="col-sm-9"><a href="../../../../小学校/1991/国語/101">わたしたちのしょうがくこくご1上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/102">わたしたちのしょうがくこくご1下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/103">あたらしいこくご一上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/104">あたらしいこくご一下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/105">しょうがくこくご1上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/106">しょうがくこくご1下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/107">しょうがっこうこくご一ねん上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/108">しょうがっこうこくご一ねん下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/109">新版こくご1上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/110">新版こくご1下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/111">こくご一上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/112">こくご一下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/201">わたしたちの小学国語2上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/202">わたしたちの小学国語2下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/203">新しい国語二上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/204">新しい国語二下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/205">小学こくご2上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/206">小学こくご2下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/207">小学校こくご二年上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/208">小学校こくご二年下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/209">新版国語2上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/210">新版国語2下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/211">こくご二上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/212">こくご二下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/301">わたしたちの小学国語3上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/302">わたしたちの小学国語3下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/303">新しい国語三上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/304">新しい国語三下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/305">小学国語3上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/306">小学国語3下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/307">小学校国語三年上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/308">小学校国語三年下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/309">新版国語3上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/310">新版国語3下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/311">国語三上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/312">国語三下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/401">わたしたちの小学国語4上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/402">わたしたちの小学国語4下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/403">新しい国語四上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/404">新しい国語四下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/405">小学国語4上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/406">小学国語4下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/407">小学校国語四年上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/408">小学校国語四年下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/409">新版国語4上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/410">新版国語4下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/411">国語四上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/412">国語四下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/501">わたしたちの小学国語5上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/502">わたしたちの小学国語5下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/503">新しい国語五上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/504">新しい国語五下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/505">小学国語5上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/506">小学国語5下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/507">小学校国語五年上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/508">小学校国語五年下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/509">新版国語5上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/510">新版国語5下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/511">国語五上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/512">国語五下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/601">わたしたちの小学国語6上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/602">わたしたちの小学国語6下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/603">新しい国語六上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/604">新しい国語六下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/605">小学国語6上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/606">小学国語6下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/607">小学校国語六年上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/608">小学校国語六年下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/609">新版国語6上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/610">新版国語6下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/611">国語六上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/国語/612">国語六下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/101">わたしたちのしょうがくしょしゃ一ねん</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/102">あたらしいかきかた一</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/103">しょうがくしょしゃ一ねん</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/104">しょうがっこうかきかた一ねん</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/105">新版しょしゃ1</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/106">かきかた一ねん</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/201">わたしたちの小学しょしゃ二年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/202">新しい書き方二</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/203">小学しょしゃ二年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/204">小学校かきかた二年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/205">新版しょしゃ2</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/206">書き方二年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/301">わたしたちの小学書写三年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/302">新しい書き方三</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/303">小学書写三年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/304">小学校書き方三年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/305">新版書写3</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/306">書き方三年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/401">わたしたちの小学書写四年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/402">新しい書き方四</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/403">小学書写四年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/404">小学校書き方四年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/405">新版書写4</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/406">書き方四年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/501">わたしたちの小学書写五年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/502">新しい書き方五</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/503">小学書写五年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/504">小学校書き方五年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/505">新版書写5</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/506">書き方五年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/601">わたしたちの小学書写六年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/602">新しい書き方六</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/603">小学書写六年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/604">小学校書き方六年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/605">新版書写6</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1991/書写/606">書き方六年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/113">わたしたちのしょうがくこくご1上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/114">わたしたちのしょうがくこくご1下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/115">新編あたらしいこくご一上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/116">新編あたらしいこくご一下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/117">しょうがくこくご1上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/118">しょうがくこくご1下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/119">しょうがっこうこくご一ねん上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/120">しょうがっこうこくご一ねん下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/121">こくご1上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/122">こくご1下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/123">こくご一上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/124">こくご一下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/213">わたしたちの小学国語2上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/214">わたしたちの小学国語2下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/215">新編新しい国語二上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/216">新編新しい国語二下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/217">小学こくご2上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/218">小学こくご2下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/219">小学校こくご二年上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/220">小学校こくご二年下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/221">国語2上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/222">国語2下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/223">こくご二上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/224">こくご二下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/313">わたしたちの小学国語3上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/314">わたしたちの小学国語3下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/315">新編新しい国語三上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/316">新編新しい国語三下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/317">小学国語3上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/318">小学国語3下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/319">小学校国語三年上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/320">小学校国語三年下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/321">国語3上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/322">国語3下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/323">国語三上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/324">国語三下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/413">わたしたちの小学国語4上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/414">わたしたちの小学国語4下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/415">新編新しい国語四上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/416">新編新しい国語四下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/417">小学国語4上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/418">小学国語4下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/419">小学校国語四年上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/420">小学校国語四年下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/421">国語4上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/422">国語4下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/423">国語四上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/424">国語四下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/513">わたしたちの小学国語5上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/514">わたしたちの小学国語5下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/515">新編新しい国語五上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/516">新編新しい国語五下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/517">小学国語5上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/518">小学国語5下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/519">小学校国語五年上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/520">小学校国語五年下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/521">国語5上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/522">国語5下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/523">国語五上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/524">国語五下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/613">わたしたちの小学国語6上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/614">わたしたちの小学国語6下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/615">新編新しい国語六上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/616">新編新しい国語六下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/617">小学国語6上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/618">小学国語6下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/619">小学校国語六年上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/620">小学校国語六年下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/621">国語6上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/622">国語6下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/623">国語六上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/国語/624">国語六下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/107">わたしたちのしょうがくしょしゃ1ねん</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/108">新編あたらしいかきかた一</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/109">しょうがくしょしゃ一ねん</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/110">しょうがっこうかきかた一ねん</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/111">しょしゃ1</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/112">しょしゃ一ねん</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/207">わたしたちの小学しょしゃ2年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/208">新編新しい書き方二</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/209">小学しょしゃ二年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/210">小学校かきかた二年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/211">しょしゃ2</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/212">しょしゃ二年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/307">わたしたちの小学書写3年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/308">新編新しい書き方三</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/309">小学書写三年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/310">小学校書き方三年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/311">書写3</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/312">書写三年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/407">わたしたちの小学書写4年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/408">新編新しい書き方四</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/409">小学書写四年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/410">小学校書き方四年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/411">書写4</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/412">書写四年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/507">わたしたちの小学書写5年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/508">新編新しい書き方五</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/509">小学書写五年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/510">小学校書き方五年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/511">書写5</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/512">書写五年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/607">わたしたちの小学書写6年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/608">新編新しい書き方六</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/609">小学書写六年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/610">小学校書き方六年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/611">書写6</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1995/書写/612">書写六年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/125">わたしたちのしょうがくこくご1上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/126">わたしたちのしょうがくこくご1下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/127">新訂あたらしいこくご一上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/128">新訂あたらしいこくご一下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/129">しょうがくこくご1上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/130">しょうがくこくご1下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/131">みんなとまなぶ</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/132">みんなとまなぶ</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/133">こくご1上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/134">こくご1下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/135">こくご一上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/136">こくご一下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/225">わたしたちの小学国語2上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/226">わたしたちの小学国語2下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/227">新訂新しい国語二上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/228">新訂新しい国語二下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/229">小学こくご2上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/230">小学こくご2下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/231">みんなと学ぶ</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/232">みんなと学ぶ</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/233">国語2上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/234">国語2下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/235">こくご二上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/236">こくご二下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/325">わたしたちの小学国語3上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/326">わたしたちの小学国語3下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/327">新訂新しい国語三上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/328">新訂新しい国語三下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/329">小学国語3上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/330">小学国語3下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/331">みんなと学ぶ</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/332">みんなと学ぶ</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/333">国語3上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/334">国語3下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/335">国語三上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/336">国語三下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/425">わたしたちの小学国語4上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/426">わたしたちの小学国語4下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/427">新訂新しい国語四上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/428">新訂新しい国語四下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/429">小学国語4上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/430">小学国語4下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/431">みんなと学ぶ</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/432">みんなと学ぶ</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/433">国語4上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/434">国語4下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/435">国語四上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/436">国語四下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/525">わたしたちの小学国語5上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/526">わたしたちの小学国語5下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/527">新訂新しい国語五上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/528">新訂新しい国語五下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/529">小学国語5上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/530">小学国語5下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/531">みんなと学ぶ</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/532">みんなと学ぶ</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/533">国語5上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/534">国語5下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/535">国語五上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/536">国語五下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/625">わたしたちの小学国語6上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/626">わたしたちの小学国語6下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/627">新訂新しい国語六上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/628">新訂新しい国語六下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/629">小学国語6上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/630">小学国語6下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/631">みんなと学ぶ</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/632">みんなと学ぶ</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/633">国語6上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/634">国語6下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/635">国語六上</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/国語/636">国語六下</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/113">わたしたちのしょうがくしょしゃ一ねん</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/114">新訂あたらしいしょしゃ一</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/115">しょうがくしょしゃ一ねん</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/116">みんなとまなぶ:しょうがっこうかきかた一ねん</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/117">しょしゃ1</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/118">しょしゃ一ねん</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/213">わたしたちの小学しょしゃ二年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/214">新訂あたらしいしょしゃ二</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/215">小学しょしゃ二年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/216">みんなと学ぶ:小学校かきかた二年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/217">しょしゃ2</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/218">しょしゃ二年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/313">わたしたちの小学書写三年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/314">新訂新しい書写三</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/315">小学書写三年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/316">みんなと学ぶ:小学校書き方三年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/317">書写3</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/318">書写三年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/413">わたしたちの小学書写四年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/414">新訂新しい書写四</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/415">小学書写四年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/416">みんなと学ぶ:小学校書き方四年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/417">書写4</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/418">書写四年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/513">わたしたちの小学書写五年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/514">新訂新しい書写五</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/515">小学書写五年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/516">みんなと学ぶ:小学校書き方五年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/517">書写5</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/518">書写五年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/613">わたしたちの小学書写六年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/614">新訂新しい書写六</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/615">小学書写六年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/616">みんなと学ぶ:小学校書き方六年</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/617">書写6</a></dd>
+      <dd class="col-sm-9 offset-sm-3"><a href="../../../../小学校/1999/書写/618">書写六年</a></dd>
+</dl>
         </div>
       </div>
     </div>
-
     <hr>
     <footer>
-      <p class="pull-right"><a href="https://w3id.org/jp-textbook/curriculum/小学校/1992/国語.ttl"><img src="https://www.w3.org/RDF/icons/rdf_flyer.24" alt="RDF data"></a></p>
-      <p>&copy; 2017-2021 <a href="../../../../about">Japanese Textbook LOD Project</a></p>
+        <p class="float-right"><a href="https://w3id.org/jp-textbook/curriculum/小学校/1992/国語.ttl"><img src="https://www.w3.org/RDF/icons/rdf_flyer.24" alt="RDF data"></a></p>
+      <p>
+        &copy; 2017-2022
+        Japanese Textbook LOD Project
+      </p>
     </footer>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   </body>
 </html>

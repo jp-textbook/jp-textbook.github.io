@@ -1,11 +1,6 @@
 source 'https://rubygems.org'
-gem "rdf-turtle"
-gem "linkeddata"
-gem "nokogiri"
 gem "era_ja"
 gem "roo"
-gem "activesupport"
-gem "ruby-progressbar"
 gem "lisbn"
-gem "zip"
-gem "activesupport"
+#gem "zip"
+gem "ttl2html", path: "../ttl2html"
