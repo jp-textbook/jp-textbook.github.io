@@ -79,7 +79,9 @@ EOF
           end
         end
         if isbn_ncid[isbn.isbn13]
-          str << format_property("rdfs:seeAlso", "https://ci.nii.ac.jp/ncid/#{isbn_ncid[isbn.isbn13]}")
+          isbn_ncid[isbn.isbn13].each do |ncid|
+            str << format_property("rdfs:seeAlso", "https://ci.nii.ac.jp/ncid/#{ncid}")
+          end
         end
       end
     end

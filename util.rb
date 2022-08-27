@@ -244,8 +244,8 @@ end
 
 def load_idlists
   hash = {}
-  [ { tsv: "IDList1_2.tsv", zip: "IDLists1_2.zip"},
-    { tsv: "IDList2_2.tsv", zip: "IDLists2_2.zip"}
+  [ { tsv: "IDLists1_2.tsv", zip: "IDLists1_2.zip"},
+    { tsv: "IDLists2_2.tsv", zip: "IDLists2_2.zip"}
   ].each do |files|
     if File.exists? files[:tsv]
       STDERR.puts "loading #{files[:tsv]}..."
@@ -306,7 +306,8 @@ def load_books_rdf_tsv
   open("books_rdf.tsv") do |io|
     io.each do |line|
       isbn, ncid, = line.chomp.split(/\t/)
-      hash[isbn] = ncid
+      hash[isbn] ||= []
+      hash[isbn] << ncid
     end
   end
   hash
