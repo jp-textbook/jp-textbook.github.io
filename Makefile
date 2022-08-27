@@ -13,8 +13,9 @@ ttl2html:
 	cd en && bundle exec ttl2html ../all-`date +%Y%m%d`.ttl
 
 clean:
-	-rm -rf catalogue/ curriculum/ publisher/ *学校/
-	-rm -rf en/catalogue/ en/curriculum/ en/publisher/ en/*学校/
+	-rm -rf catalogue/ curriculum/ school/ publisher/ *学校/
+	-rm -rf en/catalogue/ en/curriculum/ en/school/ en/publisher/ en/*学校/
+	-rm -rf A[ABC]/
 
 check:
 	./check.rb
