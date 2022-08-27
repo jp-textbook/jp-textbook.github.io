@@ -143,7 +143,7 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
     "schema:publisher" => usage_year_start.nil? ? nil : "#{BASE_URI}publisher/#{usage_year_start-1}/#{row["/PUA#1"]}",
     "schema:bookEdition" => row["/EDITION#1"],
     "textbook:item" => {
-      "a" => "bf:Item",
+      "a" => "textbook:ItemNIER",
       "nier:callNumber" => row["/CALLN#1"],
       "nier:recordID" => row["メタデータID"],
     },

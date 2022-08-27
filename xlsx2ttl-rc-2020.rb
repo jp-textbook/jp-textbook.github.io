@@ -47,7 +47,7 @@ EOF
     ].join("|")
     data = {
       "textbook:item" => {
-        "a" => "bf:Item",
+        "a" => "textbook:ItemTextbookRC",
         "textbook-rc:callNumber" => call_number,
         "textbook-rc:recordID" => row["目録レコード番号"]
       },
