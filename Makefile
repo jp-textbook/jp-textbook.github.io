@@ -7,10 +7,12 @@ all:
 	  shape dataset > all-`date +%Y%m%d`.ttl
 	rapper -i turtle all-`date +%Y%m%d`.ttl -c
 	ls -l all-`date +%Y%m%d`.ttl
+	gzip -9 all-`date +%Y%m%d`.ttl
+	ls -l all-`date +%Y%m%d`.ttl.gz
 
 ttl2html:
-	bundle exec ttl2html all-`date +%Y%m%d`.ttl
-	cd en && bundle exec ttl2html ../all-`date +%Y%m%d`.ttl
+	bundle exec ttl2html all-`date +%Y%m%d`.ttl.gz
+	cd en && bundle exec ttl2html ../all-`date +%Y%m%d`.ttl.gz
 
 clean:
 	-rm -rf catalogue/ curriculum/ school/ publisher/ *学校/
