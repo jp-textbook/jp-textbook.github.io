@@ -137,6 +137,7 @@ def find_turtle(filename, params = {})
     file = nil
     basename = File.basename(filename, ".ttl")
     files = Dir.glob("#{basename}-[0-9]*.ttl")
+    files += Dir.glob("#{basename}-[0-9]*.ttl.gz")
     file = files.sort.last
     file
   end
