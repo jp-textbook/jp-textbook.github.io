@@ -7,7 +7,7 @@ all:
 	  shape dataset > all-`date +%Y%m%d`.ttl
 	rapper -i turtle all-`date +%Y%m%d`.ttl -c
 	ls -l all-`date +%Y%m%d`.ttl
-	gzip -9 all-`date +%Y%m%d`.ttl
+	gzip -9 -f all-`date +%Y%m%d`.ttl
 	ls -l all-`date +%Y%m%d`.ttl.gz
 
 ttl2html:
