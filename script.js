@@ -19,7 +19,7 @@ function fetch_jp_cos(url, elem) {
     console.error(e);
   }
 }
-$("ul li a").each(function(link){
+$("dl.row dd a").each(function(link){
   //let url = "https://w3id.org/jp-cos/8220233111000000";
   let url = this.href.toString();
   if (url.startsWith("https://w3id.org/jp-cos/")) {
