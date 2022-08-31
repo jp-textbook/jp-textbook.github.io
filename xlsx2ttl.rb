@@ -51,6 +51,7 @@ io.close
 
 CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
   next if row["状態区分名称"] == "取り下げ"
+  next if row["/MCODE#1"] != "01" # 指導書等は除外
   school = row["/SCLASS#1"]
   notified_year = row["/ODATE#1"].to_i
   next if notified_year < 1989
