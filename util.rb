@@ -261,7 +261,7 @@ def load_idlists
         end
       end
     else
-      raise "file not found: IDList1_2.tsv"
+      raise "file not found: #{files[:tsv]} or #{files[:zip]}"
     end
   end
   hash
