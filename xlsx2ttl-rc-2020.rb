@@ -8,10 +8,16 @@ require_relative "util.rb"
 
 if $0 == __FILE__
   include Textbook
+
+  default_school = nil
+  default_sheet = nil
+  if ARGV[0] == "-s"
+    ARGV.shift
+    default_school = ARGV.shift
+  end
+
   if ARGV.size < 1
-    puts "USAGE: #$0 data.xls [sheet_name]"
-    puts
-    puts "   Note: default sheet_name is \"#{ SHEET_NAME }\""
+    puts "USAGE: #$0 data.xls [-s school] [sheet_name]"
     exit
   end
 
@@ -33,11 +39,19 @@ EOF
 
   done = {}
   xlsx = Roo::Excelx.new(ARGV[0])
-  headers = xlsx.row(1)
+  xlsx.default_sheet = default_sheet if default_sheet
+  headers = []
+  xlsx.row(1).each do |val|
+    name = val.gsub(/\s+/, "")
+    headers << name
+  end
   xlsx.each_row_streaming(offset: 1, pad_cells: true) do |x_row|
     row = map_xlsx_row_headers(x_row, headers)
+    school = row["学校種類"]
+    school = default_school if not school
     textbook_symbol = row["教科書記号"].normalize.gsub(/\d+/){|m| "I" * m.to_i }
-    uri = "#{BASE_URI}#{row["学校種類"]}/#{row["検定済年･著作年西暦"]}/#{textbook_symbol}/#{row["教科書番号"]}"
+    uri = "#{BASE_URI}#{school}/#{row["検定済年･著作年西暦"]}/#{textbook_symbol}/#{row["教科書番号"]}"
+    STDERR.puts uri
     next if row["ISBN"].nil? or row["ISBN"].strip.empty?
     next if not textbook_master[uri]
     call_number = [

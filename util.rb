@@ -412,6 +412,7 @@ end
 def map_xlsx_row_headers(data_row, headers)
   hash = {}
   headers.each_with_index do |h, idx|
+    STDERR.puts [h, idx, data_row[idx]].inspect
     hash[h] = data_row[idx].to_s
   end
   hash
