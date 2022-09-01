@@ -1,7 +1,7 @@
 default: clean all ttl2html check
 
 all:
-	./catttl.rb textbook textbook-rc \
+	bundle exec catttl textbook textbook-rc \
 	  curriculum curriculum-versions catalogue subject subjectArea subjectType school publisher schema \
 	  chapterType compilingProspectus teachingUnit-AA-body teachingUnit-AA-duration teachingUnit-AB teachingUnitType \
 	  shape dataset > all-`date +%Y%m%d`.ttl
