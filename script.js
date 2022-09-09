@@ -11,7 +11,7 @@ function get_nhk4school(cscode, page = 1) {
   })
   .catch(function (error) {
       console.log(`失敗しました: ${error}`);
-      render_nhk4school_results("<p>取得に失敗しました。</p>", page, false);
+      render_nhk4school_results("<p>取得に失敗しました。</p>", cscode, page, false);
   });
 
   function render_nhk4school_results(html, cscode, page, success = true) {
