@@ -6,9 +6,9 @@ all:
 	  chapterType compilingProspectus teachingUnit-AA-body teachingUnit-AA-duration teachingUnit-AB teachingUnitType \
 	  shape dataset > all-`date +%Y%m%d`.ttl
 	rapper -i turtle all-`date +%Y%m%d`.ttl -c
-	ls -l all-`date +%Y%m%d`.ttl
+	@ls -l all-`date +%Y%m%d`.ttl
 	gzip -9 -f all-`date +%Y%m%d`.ttl
-	ls -l all-`date +%Y%m%d`.ttl.gz
+	@ls -l all-`date +%Y%m%d`.ttl.gz
 
 ttl2html:
 	bundle exec ttl2html all-`date +%Y%m%d`.ttl.gz
