@@ -21,6 +21,6 @@ clean:
 
 check:
 	./check-link.rb en/index.html index.html about.html en/about.html 高等学校/2016/国総/359.html en/高等学校/2016/国総/359.html curriculum/中学校/2012/国語/国語.html en/curriculum/中学校/2012/国語/国語.html
-	gzip -cd all-`date +%Y%m%d`.ttl.gz | pyshacl -s `ls -1 shape-*.ttl|tail -1` -o pyshacl.log -
+	-gzip -cd all-`date +%Y%m%d`.ttl.gz | pyshacl -s `ls -1 shape-*.ttl|tail -1` -o pyshacl.log -
 	./check.rb
 	#cd ../shaclex; sbt "run --data ../jp-textbook.github.io/all-`date +%Y%m%d`.ttl --engine shaclex --showValidationReport"
