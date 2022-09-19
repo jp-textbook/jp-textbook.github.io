@@ -92,17 +92,25 @@ function fetch_jp_cos(url, elem) {
       if (e["@id"] == url) {
         let parent = elem.parentNode;
         let cscode = e["http://purl.org/dc/terms/identifier"]["@value"];
+        let subjectArea = e["https://w3id.org/jp-cos/subjectArea"]["@id"];
         parent.innerHTML += ` <span class="sectionNumberHierarchy">${e["https://w3id.org/jp-cos/sectionNumberHierarchy"]["@value"]}</span>`;
         parent.innerHTML += `<br><span class="sectionText">${e["https://w3id.org/jp-cos/sectionText"]["@value"]}</span>`;
         //console.log(parent);
-        parent.innerHTML += `
-          <button id="nhk4school-button-${cscode}-1" class="btn btn-outline-info btn-sm btn-nhk4school p-1"
-            onclick="get_nhk4school('${cscode}')">
-            NHK for Schoolコンテンツを検索 <i class="bi bi-search"></i>
-          </button>
-          <div id="nhk4school-list-${cscode}-1" class="collapse show"></div>
-        `;
-      }
+        switch (subjectArea) {
+          case "https://w3id.org/jp-cos/Elementary/2017/社会":
+          case "https://w3id.org/jp-cos/Elementary/2017/理科":
+          case "https://w3id.org/jp-cos/LowerSecondary/2017/社会":
+          case "https://w3id.org/jp-cos/LowerSecondary/2017/理科":
+            parent.innerHTML += `
+            <button id="nhk4school-button-${cscode}-1" class="btn btn-outline-info btn-sm btn-nhk4school p-1"
+              onclick="get_nhk4school('${cscode}')">
+              NHK for Schoolコンテンツを検索 <i class="bi bi-search"></i>
+            </button>
+            <div id="nhk4school-list-${cscode}-1" class="collapse show"></div>
+            `;
+            break;
+        }
+    }
     });
   }
   try {
