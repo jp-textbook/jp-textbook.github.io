@@ -7,7 +7,7 @@
             "https://w3id.org/jp-textbook/curriculum/高等学校/2022",
           ].each do |uri| -%>
           <%- school = param[:data_global][uri]["https://w3id.org/jp-textbook/school"].first -%>
-      <dt><%=h param[:data_global][school]["http://schema.org/name"][:ja] %>
+      <dt><%=h param[:data_global][school]["http://schema.org/name"].find{|e| e.language == :ja } %>
           <small><a href="<%= relative_path_uri(uri, param[:base_uri]) %>">
             <i class="bi bi-book"></i> 学習指導要領
           </a></small>
@@ -33,7 +33,7 @@
             "https://w3id.org/jp-textbook/curriculum/高等学校/2013",
           ].each do |uri| -%>
           <%- school = param[:data_global][uri]["https://w3id.org/jp-textbook/school"].first -%>
-      <dt><%=h param[:data_global][school]["http://schema.org/name"][:ja] %>
+      <dt><%=h param[:data_global][school]["http://schema.org/name"].find{|e| e.language == :ja } %>
           <small><a href="<%= relative_path_uri(uri, param[:base_uri]) %>">
             <i class="bi bi-book"></i> 学習指導要領
           </a></small>
@@ -57,7 +57,7 @@
             "https://w3id.org/jp-textbook/curriculum/高等学校/2003",
           ].each do |uri| -%>
           <%- school = param[:data_global][uri]["https://w3id.org/jp-textbook/school"].first -%>
-      <dt><%=h param[:data_global][school]["http://schema.org/name"][:ja] %>
+      <dt><%=h param[:data_global][school]["http://schema.org/name"].find{|e| e.language == "ja" } %>
           <small><a href="<%= relative_path_uri(uri, param[:base_uri]) %>">
             <i class="bi bi-book"></i> 学習指導要領
           </a></small>
@@ -81,7 +81,7 @@
             "https://w3id.org/jp-textbook/curriculum/高等学校/1994",
           ].each do |uri| -%>
           <%- school = param[:data_global][uri]["https://w3id.org/jp-textbook/school"].first -%>
-      <dt><%=h param[:data_global][school]["http://schema.org/name"][:ja] %>
+      <dt><%=h param[:data_global][school]["http://schema.org/name"].find{|e| e.language == "ja" } %>
           <small><a href="<%= relative_path_uri(uri, param[:base_uri]) %>">
             <i class="bi bi-book"></i> 学習指導要領
           </a></small>
