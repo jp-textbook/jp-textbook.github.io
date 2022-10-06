@@ -1,0 +1,1311 @@
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix cs: <https://w3id.org/jp-cos/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix qb: <http://purl.org/linked-data/cube#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix schema: <http://schema.org/>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+<https://w3id.org/jp-textbook/CatalogueShape> a sh:NodeShape;
+  sh:targetClass <https://w3id.org/jp-textbook/Catalogue>;
+  sh:property [
+    sh:path <http://schema.org/name>;
+    sh:name "書名"@ja;
+    sh:name "Title"@en;
+    sh:description "言語コードを用いて、書名に加え、そのよみ、英語名称を示します。言語コードとその意味は以下の通りです。<dl><dt>@ja</dt><dd>書名（漢字表記）</dd><dt>@ja-Hira</dt><dd>書名（ひらがな表記）。名称のよみをひらがな表記で示します。</dd><dt>@en</dt><dd>英語書名</dd></dl>"@ja;
+    sh:description "Using language tags, Japanese name, its transcription (Yomi) and English name are shown. The meanings of the language tags are as follows: <dl><dt>@ja</dt><dd>Japanese title (Kanji)</dd><dt>@ja-Hira</dt><dd>Japanese title (Hiragana)</dd><dt>@en</dt><dd>English title</dd></dl>"@en;
+    skos:example "<ul><li>\"高等学校用教科書目録(平成29年度使用)\"@ja</li><li>\"こうとうがっこうようきょうかしょもくろく（へいせい29ねんどしよう）\"@ja-Hira</li><li>\"Textbook Catalogue for Upper Secondary School of 2017 School Year\"@en</li></ul>";
+    sh:maxCount 3;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString>;
+    sh:order 1
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/school>;
+    sh:name "学校種別"@ja;
+    sh:name "Type of schools"@en;
+    skos:example "textbook:school/高等学校";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:class <https://w3id.org/jp-textbook/School>;
+    sh:order 2
+  ];
+  sh:property [
+    sh:path <http://schema.org/datePublished>;
+    sh:name "発行年"@ja;
+    sh:name "Publication date"@en;
+    skos:example "2016";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#gYear>;
+    sh:order 3
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/usageYear>;
+    sh:name "使用年度"@ja;
+    sh:name "Usage year"@en;
+    sh:description "掲載している教科書の使用年度を表す。"@ja;
+    sh:description "Usage year for textbooks listed in the catalogue."@en;
+    skos:example "2017";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#gYear>;
+    sh:order 4
+  ];
+  sh:property [
+    sh:path <http://schema.org/url>;
+    sh:name "本文URL"@ja;
+    sh:name "Fulltext URL"@en;
+    skos:example <http://www.mext.go.jp/a_menu/shotou/kyoukasho/__icsFiles/afieldfile/2016/04/26/1369944_3.pdf>;
+    sh:maxCount 1;
+    sh:nodeKind <http://www.w3.org/ns/shacl#IRI>;
+    sh:order 5
+  ];
+  sh:property [
+    sh:path <http://www.w3.org/2000/01/rdf-schema#seeAlso>;
+    sh:name "関連リンク"@ja;
+    sh:name "Related links"@en;
+    sh:description "繰り返しあり。本文のアーカイブ（<a href=\"https://archive.org/web/\">Wayback Machine</a>, <a href=\"http://warp.ndl.go.jp/\">WARP</a>など）へのリンク、<a href=\"http://iss.ndl.go.jp\">国立国会図書館サーチ</a>、<a href=\"https://ci.nii.ac.jp/books/\">CiNii Books</a>へのリンク"@ja;
+    sh:description "Repeatable. Links to web archiving services (<a href=\"https://archive.org/web/\">Wayback Machine</a> and <a href=\"http://warp.ndl.go.jp/\">WARP</a> etc.), <a href=\"http://iss.ndl.go.jp\">NDL Search</a>, and <a href=\"https://ci.nii.ac.jp/books/\">CiNii Books</a>."@en;
+    skos:example "<ul><li>https://web.archive.org/web/*/http://www.mext.go.jp/a_menu/shotou/kyoukasho/__icsFiles/afieldfile/2016/04/26/1369944_3.pdf</li><li>http://id.ndl.go.jp/jpno/000000045845</li><li>https://ci.nii.ac.jp/ncid/AN10586986</li></ul>";
+    sh:nodeKind <http://www.w3.org/ns/shacl#IRI>;
+    sh:order 6
+  ];
+  sh:property [
+    sh:path <http://dl.nier.go.jp/library/vocab/itemID>;
+    sh:name "国立教育政策研究所教育図書館の蔵書データベースにおける所蔵資料ID"@ja;
+    sh:name "Item identifier at the NIER Education Library"@en;
+    skos:example "400008926";
+    sh:maxCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 7
+  ];
+  sh:property [
+    sh:path <http://dl.nier.go.jp/library/vocab/callNumber>;
+    sh:name "国立教育政策研究所教育図書館の所蔵資料に対する請求記号"@ja;
+    sh:name "Call number at the NIER Education Library"@en;
+    sh:description "区切り記号は、「||」である。"@ja;
+    sh:description "Delimiter for a call number is \"||\""@en;
+    skos:example "375.9||27||2017";
+    sh:maxCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 8
+  ];
+  sh:property [
+    sh:path <http://dl.nier.go.jp/library/vocab/recordID>;
+    sh:name "国立教育政策研究所教育図書館の蔵書データベースにおけるレコードID"@ja;
+    sh:name "Record identifier at the NIER Education Library"@en;
+    sh:description "<code>https://nieropac.nier.go.jp/ebopac/<var>レコードID</var></code>の形式で参照可能"@ja;
+    sh:description "Link is available as <code>https://nieropac.nier.go.jp/ebopac/<var>record identifier</var></code>."@en;
+    skos:example "BB00014905";
+    sh:maxCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 9
+  ].
+
+<https://w3id.org/jp-textbook/ChapterCPShape> a sh:NodeShape;
+  sh:targetClass <https://w3id.org/jp-textbook/CompilingProspectusChapter>;
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/chapterType>;
+    sh:name "趣意書種別"@ja;
+    sh:name "Compiling Prospectus Type"@en;
+    sh:description "CPMappingLawOfEducation,CPMappingTUBody,CPMappingTUTable,CPMappingACBody,CPMappingACTableのいずれかの値をとる。"@ja;
+    sh:description "CPMappingLawOfEducation, CPMappingTUBody, CPMappingTUTable, CPMappingACBody, CPMappingACTable."@en;
+    skos:example <https://w3id.org/jp-textbook/CPMappingTUTable>;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:class <https://w3id.org/jp-textbook/ChapterType>;
+    sh:order 1
+  ];
+  sh:property [
+    sh:path <http://schema.org/pagination>;
+    sh:name "ページ"@ja;
+    sh:name "Page"@en;
+    skos:example "10";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 2
+  ].
+
+<https://w3id.org/jp-textbook/ChapterLUShape> a sh:NodeShape;
+  sh:targetClass <http://schema.org/Chapter>;
+  sh:property [
+    sh:path <http://schema.org/isPartOf>;
+    sh:name "教科書"@ja;
+    sh:name "Textbook"@en;
+    sh:description "<code>textbook:<var>学校種別</var>/<var>検定年</var>/<var>教科書記号</var>/<var>教科書番号</var></code>として示される教科書リソースと関連付ける。"@ja;
+    sh:description "Link to the textbook resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>authorized year</var>/<var>textbook symbol</var>/<var>textbook number</var></code>. "@en;
+    skos:example "textbook:小学校/2019/生活/108";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:class <https://w3id.org/jp-textbook/Textbook>;
+    sh:order 1
+  ];
+  sh:property [
+    sh:path <http://schema.org/pagination>;
+    sh:name "ページ"@ja;
+    sh:name "Page"@en;
+    skos:example "p.24〜45";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 2
+  ];
+  sh:property [
+    sh:path <http://schema.org/numberOfPages>;
+    sh:name "ページ数"@ja;
+    sh:name "Number Of Pages"@en;
+    skos:example "0.25";
+    sh:maxCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#decimal>;
+    sh:order 3
+  ].
+
+<https://w3id.org/jp-textbook/ChapterTypeShape> a sh:NodeShape;
+  sh:targetClass <https://w3id.org/jp-textbook/ChapterType>;
+  sh:property [
+    sh:path <http://schema.org/name>;
+    sh:name "名称"@ja;
+    sh:name "Name"@en;
+    sh:description "言語コードを用いて、名称に加え、英語名称を示します。言語コードとその意味は以下の通りです。<dl><dt>@ja</dt><dd>名称（日本語表記）</dd><dt>@en</dt><dd>英語名称</dd></dl>"@ja;
+    sh:description "Using language tags, Japanese name and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name</dd><dt>@en</dt><dd>English name</dd></dl>"@en;
+    skos:example "<ul><li>\"教育基本法との対照表\"@ja;</li><li>\"Mapping Table of Law of Education\"@en;</li></ul>";
+    sh:maxCount 2;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString>;
+    sh:languageIn ("ja" "ja-Hira" "en");
+    sh:uniqueLang true;
+    sh:order 1
+  ];
+  sh:property [
+    sh:path <http://www.w3.org/2000/01/rdf-schema#seeAlso>;
+    sh:name "関連リンク"@ja;
+    sh:name "Related links"@en;
+    sh:description "出典した本文を参照できるWebページへのリンク。"@ja;
+    sh:description "Links to the referenced website."@en;
+    skos:example <https://www.mext.go.jp/a_menu/shotou/kyoukasho/1260070.htm>;
+    sh:nodeKind <http://www.w3.org/ns/shacl#IRI>;
+    sh:order 2
+  ].
+
+<https://w3id.org/jp-textbook/CompilingProspectusShape> a sh:NodeShape;
+  sh:targetClass <https://w3id.org/jp-textbook/CompilingProspectus>;
+  sh:property [
+    sh:path <http://purl.org/linked-data/cube#order>;
+    sh:name "ソート順"@ja;
+    sh:name "Listing order"@en;
+    sh:description "表示順を決める場合などで利用"@ja;
+    sh:description "Used in display orders"@en;
+    skos:example "1";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#integer>;
+    sh:order 1
+  ];
+  sh:property [
+    sh:path <http://schema.org/name>;
+    sh:name "タイトル"@ja;
+    sh:name "Title"@en;
+    skos:example "小学校1,2年生活(教出)2019年検定教科書編修趣意書";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 2
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/school>;
+    sh:name "学校種別"@ja;
+    sh:name "Type of schools"@en;
+    sh:description "対応する学校種別を<code>textbook:school/<var>学校種別</var></code> として示される学校リソースと関連付ける"@ja;
+    sh:description "Link to the type resource of schools, represented as <code>textbook:school/<var>type of school</var></code>."@en;
+    skos:example "textbook:school/小学校";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:class <https://w3id.org/jp-textbook/School>;
+    sh:order 3
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/authorizedYear>;
+    sh:name "検定年"@ja;
+    sh:name "Authorized year"@en;
+    skos:example "2001";
+    sh:datatype <http://www.w3.org/2001/XMLSchema#gYear>;
+    sh:order 4
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/subjectArea>;
+    sh:name "教科"@ja;
+    sh:name "Subject area"@en;
+    sh:description "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科</var></code>として示される科目リソースと関連付ける"@ja;
+    sh:description "Link to the subject area resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var></code>."@en;
+    skos:example "textbook:curriculum/小学校/2020/生活";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:class <https://w3id.org/jp-textbook/curriculum/SubjectArea>;
+    sh:order 5
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/subject>;
+    sh:name "種目（科目）"@ja;
+    sh:name "Subject"@en;
+    sh:description "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科</var>/<var>科目</var></code>として示される種目（科目）リソースと関連付ける。"@ja;
+    sh:description "Link to the subject resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var>/<var>subject</var></code>."@en;
+    skos:example "textbook:curriculum/小学校/2020/生活/生活";
+    sh:maxCount 1;
+    sh:class <https://w3id.org/jp-textbook/curriculum/Subject>;
+    sh:order 6
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/grade>;
+    sh:name "対象学年"@ja;
+    sh:name "Target grade"@en;
+    skos:example "1, 2";
+    sh:maxCount 6;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#integer>;
+    sh:order 7
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/publisherAbbreviation>;
+    sh:name "発行者略称"@ja;
+    sh:name "Abbreviation for the publisher"@en;
+    skos:example "教出";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 8
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/textbook>;
+    sh:name "教科書"@ja;
+    sh:name "Textbook"@en;
+    sh:description "<code>textbook:<var>学校種別</var>/<var>検定年</var>/<var>教科書記号</var>/<var>教科書番号</var></code>として示される教科書リソースと関連付ける。複数の教科書がある場合、繰り返される。"@ja;
+    sh:description "Link to the textbook resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>authorized year</var>/<var>textbook symbol</var>/<var>textbook number</var></code>. If there are multiple textbooks, this property values are repeated according to the number of textbooks times."@en;
+    skos:example "textbook:小学校/2019/生活/108";
+    sh:maxCount 2;
+    sh:minCount 1;
+    sh:class <https://w3id.org/jp-textbook/Textbook>;
+    sh:order 9
+  ];
+  sh:property [
+    sh:path <http://schema.org/url>;
+    sh:name "本文URL"@ja;
+    sh:name "Fulltext URL"@en;
+    sh:description "本文へのリンク。文部科学省のウェブサイトへのリンク。"@ja;
+    sh:description "Link to the fulltext possibly at the MEXT website."@en;
+    skos:example <https://www.mext.go.jp/component/a_menu/education/micro_detail/__icsFiles/afieldfile/2019/05/14/1416507_004.pdf>;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:nodeKind <http://www.w3.org/ns/shacl#IRI>;
+    sh:order 10
+  ];
+  sh:property [
+    sh:path <http://schema.org/hasPart>;
+    sh:name "各対照表のページ数"@ja;
+    sh:name "Page of Each Table"@en;
+    sh:description "<code>textbook:CPtype</code>と<code>schema:name</code>と<code>schema:pagination</code>の3つのプロパティを持つ。繰り返される。"@ja;
+    sh:description "Link to the blank node resource(s), which consist of properties <code>textbook:CPtype</code>, <code>schema:name</code>, and <code>schema:pagination</code>. This property values are repeated."@en;
+    sh:maxCount 5;
+    sh:minCount 3;
+    sh:class <https://w3id.org/jp-textbook/CompilingProspectusChapter>;
+    sh:node <https://w3id.org/jp-textbook/ChapterCPShape>;
+    sh:nodeKind <http://www.w3.org/ns/shacl#BlankNode>;
+    sh:order 11
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/CPreceiptNumber>;
+    sh:name "編修趣意書受理番号"@ja;
+    sh:name "Compiling Prospectus Receipt Number"@en;
+    skos:example "30-165";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 12
+  ].
+
+<https://w3id.org/jp-textbook/CurriculumGuidelineShape> a sh:NodeShape;
+  sh:targetClass <https://w3id.org/jp-textbook/CurriculumGuideline>;
+  sh:property [
+    sh:path <http://schema.org/name>;
+    sh:name "名称"@ja;
+    sh:name "Name"@en;
+    sh:description "言語コードを用いて、名称に加え、そのよみ、英語名称を示します。言語コードとその意味は以下の通りです。<dl><dt>@ja</dt><dd>日本語名称（漢字表記）</dd><dt>@ja-Hira</dt><dd>日本語名称（ひらがな表記）。名称のよみをひらがな表記で示します。</dd><dt>@en</dt><dd>英語名称</dd></dl>"@ja;
+    sh:description "Using language tags, this property represents an original name as well as transcription and English name. Language codes are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@ja-Hira</dt><dd>Japanese name (Hiragana). Presented a transcription of the name in Hiragana.</dd><dt>@en</dt><dd>English name</dd></dl>"@en;
+    skos:example "<ul><li>\"高等学校学習指導要領\"@ja</li><li>\"こうとうがっこうがくしゅうしどうようりょう\"@ja-Hira</li><li>\"Upper Secondary School Curriculum Guideline\"@en</li></ul>";
+    sh:maxCount 3;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString>;
+    sh:languageIn ("ja" "ja-Hira" "en");
+    sh:order 1
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/hasSubjectArea>;
+    sh:name "教科がある"@ja;
+    sh:name "has a subject area"@en;
+    skos:example "textbook:curriculum/高等学校/1994/国語";
+    sh:minCount 1;
+    sh:class <https://w3id.org/jp-textbook/curriculum/SubjectArea>;
+    sh:order 2
+  ];
+  sh:property [
+    sh:path <http://schema.org/datePublished>;
+    sh:name "告示日"@ja;
+    sh:name "Date of announcement"@en;
+    skos:example "1989-03-15";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#date>;
+    sh:order 3
+  ];
+  sh:property [
+    sh:path <http://schema.org/startDate>;
+    sh:name "施行年月日"@ja;
+    sh:name "Date of enforcement"@en;
+    skos:example "1994-04-01";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#date>;
+    sh:order 4
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/school>;
+    sh:name "学校種別"@ja;
+    sh:name "Type of schools"@en;
+    skos:example "textbook:school/高等学校";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:class <https://w3id.org/jp-textbook/School>;
+    sh:order 5
+  ];
+  sh:property [
+    sh:path <http://schema.org/url>;
+    sh:name "本文URL"@ja;
+    sh:name "Fulltext URL"@en;
+    sh:description "繰り返しあり。本文へのリンク。文部科学省のウェブサイトと<a href=\"http://www.nier.go.jp/guideline/\">国立教育政策研究所学習指導要領データベース</a>へのリンク。"@ja;
+    sh:description "Repeatable. Link to the fulltext possibly at the MEXT website and Curriculum guidelines database at NIER"@en;
+    skos:example <http://www.mext.go.jp/a_menu/shotou/old-cs/1322503.htm>;
+    sh:nodeKind <http://www.w3.org/ns/shacl#IRI>;
+    sh:order 6
+  ];
+  sh:property [
+    sh:path <http://purl.org/dc/terms/hasVersion>;
+    sh:name "別バージョン情報"@ja;
+    sh:name "Other versions"@en;
+    sh:description "複数の改正がある場合、改正の件数分、繰り返される。<code>schema:name</code>, <code>schema:datePublished</code>, <code>schema:citation</code>, <code>schema:url</code>, <code>rdfs:seeAlso</code>, <code>schema:isbn</code>, <code>nier:itemID</code>, <code>nier:callNumber</code>, <code>nier:recordID</code>の9つの改正情報用プロパティを持つ。"@ja;
+    sh:description "Repeatable. It corresponds to the revisions of the curriculum guideline. A revision information consists of a blank node, which has nine properties <code>schema:name</code>, <code>schema:datePublished</code>, <code>schema:citation</code>, <code>schema:url</code>, <code>rdfs:seeAlso</code>, <code>schema:isbn</code>, <code>nier:itemID</code>, <code>nier:callNumber</code>, and <code>nier:recordID</code>."@en;
+    sh:class <https://w3id.org/jp-textbook/CurriculumGuidelineVersion>;
+    sh:node <https://w3id.org/jp-textbook/CurriculumGuidelineVersionShape>;
+    sh:nodeKind <http://www.w3.org/ns/shacl#BlankNode>;
+    sh:order 7
+  ].
+
+<https://w3id.org/jp-textbook/CurriculumGuidelineVersionShape> a sh:NodeShape;
+  sh:targetClass <https://w3id.org/jp-textbook/CurriculumGuidelineVersion>;
+  sh:property [
+    sh:path <http://schema.org/name>;
+    sh:name "別バージョンの名称"@ja;
+    sh:name "Name of the revision"@en;
+    sh:description "一部改正であれば、「平成15年12月 一部改正」のような表現となります。また、言語コードを用いて、名称に加え、英語名称を示します。言語コードとその意味は以下の通りです。<dl><dt>@ja</dt><dd>日本語名称（漢字表記）</dd><dt>@en</dt><dd>英語名称</dd></dl>"@ja;
+    sh:description "If the revision is on a part of a guideline, the name of the revision will be assigned such as \"Partial revision in December 2003\". Using language tags, Japanese and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@en</dt><dd>English name</dd></dl>"@en;
+    skos:example "<ul><li>\"平成元年3月 告示\"@ja</li><li>\"1989-03 Notification\"@en</li></ul>";
+    sh:minCount 1;
+    sh:maxCount 2;
+    sh:datatype <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString>;
+    sh:languageIn ("ja" "en");
+    sh:uniqueLang true;
+    sh:order 1
+  ];
+  sh:property [
+    sh:path <http://schema.org/datePublished>;
+    sh:name "告示日（改正日）"@ja;
+    sh:name "Date of announcement (date of revision)"@en;
+    skos:example "1989-03-15";
+    sh:minCount 1;
+    sh:maxCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#date>;
+    sh:order 2
+  ];
+  sh:property [
+    sh:path <http://schema.org/citation>;
+    sh:name "出典"@ja;
+    sh:name "Reference"@en;
+    sh:description "文部科学省（文部省）の告示タイトルおよび掲載された官報についての情報。また、言語コードを用いて、出典に加え、英語の出典を示します。言語コードとその意味は以下の通りです。<dl><dt>@ja</dt><dd>日本語出典（漢字表記）</dd><dt>@en</dt><dd>英語出典</dd></dl>"@ja;
+    sh:description "Refer to the official announcement and its publication. Using language tags, Japanese and English names shown. The meanings of language tags are as follows: <dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@en</dt><dd>English name</dd></dl>"@en;
+    skos:example "<ul><li>\"『平成元年 文部省告示第二十四号』（官報. 平成元年3月15日, 号外特第4号, pp.9-50）\"@ja</li><li>\"\\\"Notification No. 24 in 1989 of the Ministry of Education, Science and Culture\\\" (Official Gazette, 1989-03-15, Special Extra Edition No. 4, pp.9-50)\"@en</li></ul>";
+    sh:minCount 1;
+    sh:maxCount 2;
+    sh:datatype <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString>;
+    sh:languageIn ("ja" "en");
+    sh:uniqueLang true;
+    sh:order 3
+  ];
+  sh:property [
+    sh:path <http://schema.org/url>;
+    sh:name "本文URL"@ja;
+    sh:name "Fulltext URL"@en;
+    sh:description "繰り返しあり。本文へのリンク。文部科学省ウェブページか<a href=\"http://www.nier.go.jp/guideline/\">国立教育政策研究所学習指導要領データベース</a>へのリンク。"@ja;
+    sh:description "Repeatable. Links to the fulltext(s), such as MEXT website and <a href=\"http://www.nier.go.jp/guideline/\">NIER Curriculum Guidelines Database</a>."@en;
+    skos:example <http://www.mext.go.jp/a_menu/shotou/old-cs/1322235.htm>;
+    sh:nodeKind <http://www.w3.org/ns/shacl#IRI>;
+    sh:order 4
+  ];
+  sh:property [
+    sh:path <http://www.w3.org/2000/01/rdf-schema#seeAlso>;
+    sh:name "関連リンク"@ja;
+    sh:name "Related links"@en;
+    sh:description "繰り返しあり。<a href=\"http://iss.ndl.go.jp/\">国立国会図書館サーチ</a>、<a href=\"https://ci.nii.ac.jp/books/\">CiNii Books</a>へのリンク。"@ja;
+    sh:description "Repeatable. Links to <a href=\"http://iss.ndl.go.jp/\">NDL Search</a> and <a href=\"https://ci.nii.ac.jp/books/\">CiNii Books</a>."@en;
+    skos:example <http://id.ndl.go.jp/jpno/89034331>;
+    sh:nodeKind <http://www.w3.org/ns/shacl#IRI>;
+    sh:order 5
+  ];
+  sh:property [
+    sh:path <http://schema.org/isbn>;
+    sh:name "ISBN"@ja;
+    sh:name "ISBN"@en;
+    skos:example "4171533104";
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 6
+  ];
+  sh:property [
+    sh:path <http://dl.nier.go.jp/library/vocab/itemID>;
+    sh:name "国立教育政策研究所教育図書館の蔵書データベースにおける所蔵資料ID"@ja;
+    sh:name "Item identifier at the NIER Education Library"@en;
+    skos:example "071221843";
+    sh:maxCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 7
+  ];
+  sh:property [
+    sh:path <http://dl.nier.go.jp/library/vocab/callNumber>;
+    sh:name "国立教育政策研究所教育図書館の所蔵資料に対する請求記号"@ja;
+    sh:name "Call number at the NIER Education Library"@en;
+    sh:description "区切り記号は、「||」である。"@ja;
+    sh:description "Delimiter for a call number is \"||\"."@en;
+    skos:example "375.92||1||1989d";
+    sh:maxCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 8
+  ];
+  sh:property [
+    sh:path <http://dl.nier.go.jp/library/vocab/recordID>;
+    sh:name "国立教育政策研究所教育図書館の蔵書データベースにおけるレコードID"@ja;
+    sh:name "Record identifier at the NIER Education Library"@en;
+    sh:description "<code>https://nieropac.nier.go.jp/ebopac/<var>レコードID</var></code>の形式で参照可能"@ja;
+    sh:description "Link is available as <code>https://nieropac.nier.go.jp/ebopac/<var>record identifier</var></code>."@en;
+    skos:example "BB80025218";
+    sh:maxCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 9
+  ].
+
+<https://w3id.org/jp-textbook/DurationLUShape> a sh:NodeShape;
+  sh:targetClass <http://schema.org/Duration>;
+  sh:property [
+    sh:path <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>;
+    sh:name "配当時数"@ja;
+    sh:name "Duration"@en;
+    skos:example "2-4";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 1
+  ];
+  sh:property [
+    sh:path <http://schema.org/note>;
+    sh:name "注記"@ja;
+    sh:name "Note"@en;
+    skos:example "＊配当時数は，各内容を扱う際の最小時数を下限，最大時数を上限としています。";
+    sh:maxCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 2
+  ].
+
+<https://w3id.org/jp-textbook/ItemNIERShape> a sh:NodeShape;
+  sh:targetClass <https://w3id.org/jp-textbook/ItemNIER>;
+  sh:property [
+    sh:path <http://dl.nier.go.jp/library/vocab/recordID>;
+    sh:name "国立教育政策研究所教育図書館の戦後教科書データベースにおけるレコードID"@ja;
+    sh:name "Record identifier at the NIER Education Library Textbook Database"@en;
+    sh:description "<code>https://nieropac.nier.go.jp/ebopac/<var>レコードID</var></code>の形式で参照可能"@ja;
+    sh:description "It is possible to refer to the record at the website as follows: <code>https://nieropac.nier.go.jp/ebopac/<var>record ID</var></code>"@en;
+    skos:example "EB10015334";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 1
+  ];
+  sh:property [
+    sh:path <http://dl.nier.go.jp/library/vocab/callNumber>;
+    sh:name "国立教育政策研究所教育図書館の所蔵資料に対する請求記号"@ja;
+    sh:name "Call number for the item at the NIER Education Library."@en;
+    sh:description "区切り記号は、「||」である。 請求記号のルールは現行と古いものと大きく2種類ある。<dl><dt>現行ルール</dt><dd>教科書分類 - 出版者番号 - 検定年+図書番号（例：K170.8||K10||2010）</dd><dt>旧ルール</dt><dd>教科書分類 - 出版者番号＋管理番号 - 検定年/使用年（例：K260.91||S12U||01/05）。教科書分類と、出版者番号、管理番号、図書番号は教育図書館独自のもの。使用年については、教育図書館が受け入れた資料の使用年であり、当該教科書の使用開始年より遅い年のことがある。 （注：検定年、使用年が4桁の場合は西暦を、 それ以外の場合は、21～64は1946年～1989年（昭和21年～昭和64年）を表し、 88～99は1988年～1999年、00～05は2000年～2005年を表す。）</dd></dl>"@ja;
+    sh:description "Delimiter characters are \"||\". Two types of call numbers are used: The current one and the old one. <dl><dt>The current rule for call numbers</dt><dd>Textbook classification numbers - publisher number - authorized years + book number (Ex. K170.8||K10||2010)</dd><dt>The old rule for call numbers</dt><dd>Textbook classification numbers - publisher number + administrative number - authorized / usage year (Ex. K260.91||S12U||01/05). Textbook classification, publisher number, administrative number and book number are originally assign by Education Library. Usage year is derived from the item holdings of Ducation Library, so some of the year might be different from the original usage year. If year numbers are four digits, they are Gregorian calendar years. In the other cases, the numbers from 21 to 64 corresponds to 1964 to 1989 (Showa Era), the ones from 88 to 99 are 1988 to 1999, and the ones from 00 to 05 means 2000 to 2005.</dd></dl>"@en;
+    skos:example "K260.91||S12U||01/05";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 2
+  ].
+
+<https://w3id.org/jp-textbook/ItemShape> a sh:NodeShape;
+  sh:or (<https://w3id.org/jp-textbook/ItemNIERShape> <https://w3id.org/jp-textbook/ItemTextbookRCShape>).
+
+<https://w3id.org/jp-textbook/ItemTextbookRCShape> a sh:NodeShape;
+  sh:targetClass <https://w3id.org/jp-textbook/ItemTextbookRC>;
+  sh:property [
+    sh:path <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID>;
+    sh:name "教科書研究センター附属教科書図書館の教科書目録情報データベースにおけるレコードID"@ja;
+    sh:name "Record identifier at the Textbook Library of Textbook Research Center Textbook Catalogue Information Database."@en;
+    sh:description "<code>http://textbook-rc-lib.net/Opac/search.htm?s=SsaOkobBIBy2ftPelVbXwTJqTVi&ncid=<var>レコードID</var></code>の形式で参照可能"@ja;
+    sh:description "It is possible to refer to the record at the website as follows: <code>http://textbook-rc-lib.net/Opac/search.htm?s=SsaOkobBIBy2ftPelVbXwTJqTVi&ncid=<var>record ID</var></code>"@en;
+    skos:example "220050110";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 1
+  ];
+  sh:property [
+    sh:path <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber>;
+    sh:name "教科書研究センター附属教科書図書館の所蔵資料にたいする請求記号"@ja;
+    sh:name "Call number for the item at the Textbook Library of Textbook Research Center."@en;
+    skos:example "B2|600|H17/18";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 2
+  ].
+
+<https://w3id.org/jp-textbook/PublisherShape> a sh:NodeShape;
+  sh:targetClass <https://w3id.org/jp-textbook/Publisher>;
+  sh:property [
+    sh:path <http://schema.org/name>;
+    sh:name "名称"@ja;
+    sh:name "Name"@en;
+    sh:description "言語コードを用いて、名称に加え、そのよみ、よみのローマ字表記を示します。言語コードとその意味は以下の通りです。<dl><dt>@ja</dt><dd>名称（漢字表記）</dd><dt>@ja-Hira</dt><dd>名称（ひらがな表記）。名称のよみをひらがな表記で示します。</dd><dt>@ja-Latn</dt><dd>名称（ローマ字表記）。名称のよみをローマ字表記で示します。</dd></dl>"@ja;
+    sh:description "Using language tags, the name and its transcription (Yomi) in Hiragana and in Alphabetical form. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@ja-Hira</dt><dd>Japanese name in Hiragana.</dd><dt>@ja-Latn</dt><dd>Japanese name in an alphabetical form.</dd></dl>"@en;
+    skos:example "<ul><li>\"音楽之友社\"@ja;</li><li>\"おんがく の ともしゃ\"@ja-Hira;</li><li>\"Ongaku No Tomosha\"@ja-Latn;</li></ul>";
+    sh:maxCount 3;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString>;
+    sh:languageIn ("ja" "ja-Hira" "ja-Latn");
+    sh:uniqueLang true;
+    sh:order 1
+  ];
+  sh:property [
+    sh:path <http://www.w3.org/2000/01/rdf-schema#seeAlso>;
+    sh:name "関連リンク"@ja;
+    sh:name "Related links"@en;
+    sh:description "繰り返しあり。<a href=\"https://hojin-info.go.jp/hojin/TopPage\">法人インフォ</a>、<a href=\"https://id.ndl.go.jp/auth/ndla\">Web NDL Authorities</a>、<a href=\"http://ja.dbpedia.org/\">DBpedia</a>へのリンク"@ja;
+    sh:description "Repeatable. Links to <a href=\"https://hojin-info.go.jp/hojin/TopPage\">Houjin Info</a>, <a href=\"https://id.ndl.go.jp/auth/ndla\">Web NDL Authorities</a> and <a href=\"http://ja.dbpedia.org/\">DBpedia</a>."@en;
+    skos:example <https://id.ndl.go.jp/auth/ndlna/00258007>;
+    sh:nodeKind <http://www.w3.org/ns/shacl#IRI>;
+    sh:order 2
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/catalogueYear>;
+    sh:name "掲載教科書目録の発行年"@ja;
+    sh:name "Publication year for a textbook catalogue where the publisher is listed"@en;
+    skos:example "2017";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#gYear>;
+    sh:order 3
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/catalogue>;
+    sh:name "掲載教科書目録"@ja;
+    sh:name "Textbook catalogue listed"@en;
+    sh:description "繰り返しあり。<code>textbook:catalogue/<var>学校種別</var>/<var>教科書目録発行年</var></code>として示される教科書目録リソースと関連付ける"@ja;
+    sh:description "Repeatable. Add link to the textbook catalogue resource represented as <code>textbook:catalogue/<var>type of schools</var>/<var>catalogue publication year</var></code>"@en;
+    skos:example "textbook:catalogue/高等学校/2017";
+    sh:minCount 1;
+    sh:class <https://w3id.org/jp-textbook/Catalogue>;
+    sh:order 4
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/publisherAbbreviation>;
+    sh:name "発行者略称"@ja;
+    sh:name "Abbreviation for the publisher"@en;
+    skos:example "友社";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 5
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/publisherNumber>;
+    sh:name "発行者番号"@ja;
+    sh:name "Publisher number"@en;
+    sh:description "繰り返しあり。（例：<a href=\"https://w3id.org/jp-textbook/publisher/2009/日文\">textbook:publisher/2009/日文</a>）"@ja;
+    sh:description "Repeatable. ex. <a href=\"https://w3id.org/jp-textbook/publisher/2009/日文\">textbook:publisher/2009/日文</a>."@en;
+    skos:example "89";
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 6
+  ];
+  sh:property [
+    sh:path <http://id.loc.gov/ontologies/bibframe/note>;
+    sh:name "注記"@ja;
+    sh:name "Notes"@en;
+    skos:example "発行者番号が2種類ある（大阪書籍の教科書は発行者番号：3）。";
+    sh:maxCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 7
+  ].
+
+<https://w3id.org/jp-textbook/SchoolShape> a sh:NodeShape;
+  sh:targetClass <https://w3id.org/jp-textbook/School>;
+  sh:property [
+    sh:path <http://schema.org/name>;
+    sh:name "名称"@ja;
+    sh:name "Name"@en;
+    sh:description "言語コードを用いて、名称に加え、そのよみ、英語名称を示します。言語コードとその意味は以下の通りです。<dl><dt>@ja</dt><dd>名称（漢字表記）</dd><dt>@ja-Hira</dt><dd>名称（ひらがな表記）。名称のよみをひらがな表記で示します。</dd><dt>@en</dt><dd>英語名称</dd></dl>"@ja;
+    sh:description "Using language tags, Japanese name and its transcription and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@ja-Hira</dt><dd>Japanese name (Hiragana)</dd><dt>@en</dt><dd>English name</dd></dl>"@en;
+    skos:example "<ul><li>\"小学校\"@ja;</li><li>\"しょうがっこう\"@ja-Hira;</li><li>\"Elementary School\"@en;</li></ul>";
+    sh:maxCount 3;
+    sh:minCount 1;
+    sh:languageIn ("ja" "ja-Hira" "en");
+    sh:uniqueLang true;
+    sh:order 1
+  ];
+  sh:property [
+    sh:path <http://www.w3.org/2002/07/owl#sameAs>;
+    sh:name "同一リソース"@ja;
+    sh:name "Equivalent resource"@en;
+    skos:example <http://ja.dbpedia.org/resource/特別支援学校>;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:nodeKind <http://www.w3.org/ns/shacl#IRI>;
+    sh:order 2
+  ].
+
+<https://w3id.org/jp-textbook/SourceOfEnglishNameShape> a sh:NodeShape;
+  sh:targetClass <https://w3id.org/jp-textbook/SourceOfEnglishName>;
+  sh:property [
+    sh:path <http://schema.org/name>;
+    sh:name "英語表記出典の名称"@ja;
+    sh:name "Name for the source"@en;
+    sh:description "言語コードを用いて、名称に加え、英語名称を示します。言語コードとその意味は以下の通りです。<dl><dt>@ja</dt><dd>日本語名称（漢字表記）</dd><dt>@en</dt><dd>英語名称</dd></dl>"@ja;
+    sh:description "Using language tags, Japanese and English names are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@en</dt><dd>English name</dd></dl>"@en;
+    skos:example "<ul><li>\"小学校学習指導要領英訳版（仮訳）(平成20年3月)\"@ja</li><li>\"Elementary School Curriculum Guideline English Version (Tentative Translation) (2008-03)\"@en</li></ul>";
+    sh:maxCount 2;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString>;
+    sh:languageIn ("ja" "en");
+    sh:uniqueLang true;
+    sh:order 1
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/curriculum>;
+    sh:name "対応学習指導要領"@ja;
+    sh:name "Reference to a curriculum guideline"@en;
+    sh:description "学習指導要領の仮訳が出典となっている場合は、対応する学習指導要領リソースのURIを示す。"@ja;
+    sh:description "If the source is the English translation of the curriculum guideline, this property refer to the corresponding guideline."@en;
+    skos:example "curriculum/小学校/2012";
+    sh:maxCount 1;
+    sh:class <https://w3id.org/jp-textbook/CurriculumGuideline>;
+    sh:order 2
+  ];
+  sh:property [
+    sh:path <http://www.w3.org/2000/01/rdf-schema#seeAlso>;
+    sh:name "関連リンク"@ja;
+    sh:name "Related links"@en;
+    sh:description "出典した本文を参照できるWebページへのリンクや、出典が本の場合は書誌データ（<a href=\"https://ci.nii.ac.jp/books/\">CiNii Books</a>）へのリンクなど。"@ja;
+    sh:description "Links to the referenced website and the bibliographic information such as <a href=\"https://ci.nii.ac.jp/books/\">CiNii Books</a> when the source is a book."@en;
+    skos:example <http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1261037.htm>;
+    sh:nodeKind <http://www.w3.org/ns/shacl#IRI>;
+    sh:order 3
+  ].
+
+<https://w3id.org/jp-textbook/SubjectTypeShape> a sh:NodeShape;
+  sh:targetClass <https://w3id.org/jp-textbook/SubjectType>;
+  sh:property [
+    sh:path <http://schema.org/name>;
+    sh:name "名称"@ja;
+    sh:name "Name"@en;
+    sh:description "言語コードを用いて、名称に加え、そのよみを示します。言語コードとその意味は以下の通りです。<dl><dt>@ja</dt><dd>名称（漢字表記）</dd><dt>@ja-Hira</dt><dd>名称（ひらがな表記）。名称のよみをひらがな表記で示します。</dd></dl>"@ja;
+    skos:example "<ul><li>\"各学科に共通する各教科\"@ja;</li><li>\"かくがっかにきょうつうするかくきょうか\"@ja-Hira;</li></ul>";
+    sh:maxCount 2;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString>;
+    sh:languageIn ("ja" "ja-Hira");
+    sh:uniqueLang true;
+    sh:order 1
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/school>;
+    sh:name "学校種別"@ja;
+    sh:name "Type of schools"@en;
+    skos:example "textbook:school/高等学校";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:class <https://w3id.org/jp-textbook/School>;
+    sh:order 2
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/curriculum>;
+    sh:name "学習指導要領"@ja;
+    sh:name "Curriculum guideline"@en;
+    skos:example "textbook:curriculum/高等学校/2013";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:class <https://w3id.org/jp-textbook/CurriculumGuideline>;
+    sh:order 3
+  ];
+  sh:property [
+    sh:path <http://schema.org/citation>;
+    sh:name "出典"@ja;
+    sh:name "Reference"@en;
+    skos:example "学習指導要領の章タイトルなど（「第２章 各学科に共通する各教科」「第３章 主として専門学科において開設される各教科」）や、学習指導要領冒頭の「学 校 教 育 法 施 行 規 則（抄）」の表題（pp. iii-iv ）など";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 4
+  ].
+
+<https://w3id.org/jp-textbook/TeachingUnitShape> a sh:NodeShape;
+  sh:targetClass <https://w3id.org/jp-textbook/TeachingUnit>;
+  sh:property [
+    sh:path <http://purl.org/linked-data/cube#order>;
+    sh:name "ソート順"@ja;
+    sh:name "Listing order"@en;
+    sh:description "表示順を決める場合などで利用"@ja;
+    sh:description "Used in display orders"@en;
+    skos:example "1";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#integer>;
+    sh:order 1
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/teachingUnitType>;
+    sh:name "単元種別"@ja;
+    sh:name "Teaching Unit Type"@en;
+    sh:description "単元の類型を示す。Standard（標準）,UpperGradeContents（後の学年）,OutOfCos（学習指導要領上、どの学年等でも扱うこととされていない内容）の3つのどれかをとる。"@ja;
+    sh:description "Indicates the type of teaching unit: Standard, UpperGradeContents (upper grades), or OutOfCos (content that is not required to be covered at any grade level in Courses of Study)."@en;
+    skos:example "Standard";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:class <https://w3id.org/jp-textbook/TeachingUnitType>;
+    sh:order 2
+  ];
+  sh:property [
+    sh:path <http://schema.org/name>;
+    sh:name "単元名"@ja;
+    sh:name "Unit Title"@en;
+    skos:example "まちが大すきたんけんたい";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 3
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/school>;
+    sh:name "学校種別"@ja;
+    sh:name "Type of schools"@en;
+    sh:description "対応する学校種別を<code>textbook:school/<var>学校種別</var></code> として示される学校リソースと関連付ける"@ja;
+    sh:description "Link to the type resource of schools, represented as <code>textbook:school/<var>type of school</var></code>."@en;
+    skos:example "textbook:school/小学校";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:class <https://w3id.org/jp-textbook/School>;
+    sh:order 4
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/authorizedYear>;
+    sh:name "検定年"@ja;
+    sh:name "Authorized year"@en;
+    skos:example "2001";
+    sh:datatype <http://www.w3.org/2001/XMLSchema#gYear>;
+    sh:order 5
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/subjectArea>;
+    sh:name "教科"@ja;
+    sh:name "Subject area"@en;
+    sh:description "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科</var></code>として示される科目リソースと関連付ける"@ja;
+    sh:description "Link to the subject area resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var></code>."@en;
+    skos:example "textbook:curriculum/小学校/2019/生活";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:class <https://w3id.org/jp-textbook/curriculum/SubjectArea>;
+    sh:order 6
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/subject>;
+    sh:name "種目（科目）"@ja;
+    sh:name "Subject"@en;
+    sh:description "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科</var>/<var>科目</var></code>として示される種目（科目）リソースと関連付ける。"@ja;
+    sh:description "Link to the subject resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var>/<var>subject</var></code>. "@en;
+    skos:example "textbook:curriculum/小学校/2019/生活/生活";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:class <https://w3id.org/jp-textbook/curriculum/Subject>;
+    sh:order 7
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/grade>;
+    sh:name "対象学年"@ja;
+    sh:name "Target grade"@en;
+    skos:example "1, 2";
+    sh:maxCount 6;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#integer>;
+    sh:order 8
+  ];
+  sh:property [
+    sh:path <http://schema.org/workExample>;
+    sh:name "教科書の該当ページ"@ja;
+    sh:name "Page of Textbook"@en;
+    sh:description "<code>schema:isPartOf</code>と<code>schema:pagination</code>の2つのプロパティを持つ。複数の教科書がある場合、繰り返される。"@ja;
+    sh:description "Link to the blank node resource(s), which consist of properties <code>schema:isPartOf</code> and <code>schema:pagination</code>. If there are multiple textbooks, this property values are repeated according to the number of textbooks times."@en;
+    sh:minCount 1;
+    sh:class <http://schema.org/Chapter>;
+    sh:node <https://w3id.org/jp-textbook/ChapterLUShape>;
+    sh:nodeKind <http://www.w3.org/ns/shacl#BlankNode>;
+    sh:order 9
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-cos/cosItem>;
+    sh:name "学習指導要領の細目"@ja;
+    sh:name "Course Of Study Item"@en;
+    sh:description "対応する学習指導要領の細目を<code>cs:<var>学習指導要領コード</var></code> として示される学習指導要領の細目リソースと関連付ける"@ja;
+    sh:description "Link to the course of study item, represented as <code>cs:<var>course of study code</var></code>."@en;
+    skos:example cs:82F02D3141000000;
+    sh:class <https://w3id.org/jp-cos/Item>;
+    sh:order 10
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/cosMappingDescription>;
+    sh:name "学習指導要領の細目（ラベル）"@ja;
+    sh:name "Course Of Study Item (Label)"@en;
+    skos:example "(3)(4)(5)(8)";
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 11
+  ];
+  sh:property [
+    sh:path <http://purl.org/dc/terms/source>;
+    sh:name "編修趣意書"@ja;
+    sh:name "Compiling Prospectus"@en;
+    sh:description "<code>textbook:<var>編修趣意書ID</var></code>として示される編修趣意書リソースと関連付ける"@ja;
+    sh:description "Link to the compiling prospectus resource, represented as <code>textbook:<var>compiling prospectus ID</var></code>."@en;
+    skos:example textbook:AC100000000132;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:class <https://w3id.org/jp-textbook/CompilingProspectus>;
+    sh:order 12
+  ];
+  sh:property [
+    sh:path <http://schema.org/duration>;
+    sh:name "配当時数"@ja;
+    sh:name "Duration"@en;
+    sh:description "<code>rdf:value</code>と<code>schema:note</code>の2つのプロパティを持つ。複数ある場合、繰り返される。"@ja;
+    sh:description "Link to the blank node resource(s), which consist of properties <code>rdf:value</code> and <code>schema:note</code>. If there are multiple resources, this property values are repeated."@en;
+    sh:maxCount 2;
+    sh:class <http://schema.org/Duration>;
+    sh:node <https://w3id.org/jp-textbook/DurationLUShape>;
+    sh:nodeKind <http://www.w3.org/ns/shacl#BlankNode>;
+    sh:order 13
+  ].
+
+<https://w3id.org/jp-textbook/TeachingUnitTypeShape> a sh:NodeShape;
+  sh:targetClass <https://w3id.org/jp-textbook/TeachingUnitType>;
+  sh:property [
+    sh:path <http://schema.org/name>;
+    sh:name "名称"@ja;
+    sh:name "Name"@en;
+    sh:description "言語コードを用いて、名称に加え、英語名称を示します。言語コードとその意味は以下の通りです。<dl><dt>@ja</dt><dd>名称（日本語表記）</dd><dt>@en</dt><dd>英語名称</dd></dl>"@ja;
+    sh:description "Using language tags, Japanese name and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name</dd><dt>@en</dt><dd>English name</dd></dl>"@en;
+    skos:example "<ul><li>\"類型1: 後の学年等の学習内容\"@ja;</li><li>\"Type 1: Study contents of upper grade\"@en;</li></ul>";
+    sh:maxCount 2;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString>;
+    sh:languageIn ("ja" "ja-Hira" "en");
+    sh:uniqueLang true;
+    sh:order 1
+  ];
+  sh:property [
+    sh:path <http://www.w3.org/2000/01/rdf-schema#seeAlso>;
+    sh:name "関連リンク"@ja;
+    sh:name "Related links"@en;
+    sh:description "出典した本文を参照できるWebページへのリンク。"@ja;
+    sh:description "Links to the referenced website."@en;
+    skos:example <https://www.mext.go.jp/a_menu/shotou/kyoukasho/20210212-mxt_kouhou02-1.pdf#page=8>;
+    sh:nodeKind <http://www.w3.org/ns/shacl#IRI>;
+    sh:order 2
+  ].
+
+<https://w3id.org/jp-textbook/TextbookShape> a sh:NodeShape;
+  sh:targetClass <https://w3id.org/jp-textbook/Textbook>;
+  sh:property [
+    sh:path <http://schema.org/name>;
+    sh:name "書名"@ja;
+    sh:name "Title"@en;
+    skos:example "NEW CROWN ENGLISH SERIES 3";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 1
+  ];
+  sh:property [
+    sh:path <http://schema.org/editor>;
+    sh:name "編著者名"@ja;
+    sh:name "Editor(s)"@en;
+    skos:example "森住衛 ほか29名";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 2
+  ];
+  sh:property [
+    sh:path <http://schema.org/publisher>;
+    sh:name "出版者名"@ja;
+    sh:name "Publisher"@en;
+    sh:description "<code>textbook:publisher/<var>掲載教科書目録の発行年</var>/<var>発行者略称</var></code>として示される発行者をあらわすリソースと関連付ける"@ja;
+    sh:description "Link to the publisher resource, represented as <code>textbook:publisher/<var>catalogue publication year</var>/<var>publisher's abbriviated name</var></code>"@en;
+    skos:example "textbook:publisher/2003/三省堂";
+    sh:minCount 1;
+    sh:class <https://w3id.org/jp-textbook/Publisher>;
+    sh:order 3
+  ];
+  sh:property [
+    sh:path <http://schema.org/bookEdition>;
+    sh:name "版情報"@ja;
+    sh:name "Edition"@en;
+    sh:description "※バージョン2.0までのデータ内には版情報が入っているレコードはない（古い教科書の場合のために念のため用意している）。"@ja;
+    skos:example "改訂版";
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 4
+  ];
+  sh:property [
+    sh:path <http://schema.org/isbn>;
+    sh:name "ISBN"@ja;
+    sh:name "ISBN"@en;
+    sh:description "※バージョン6.0以降のデータの一部に追加。※バージョン6.1以降、複数ある場合、繰り返される。"@ja;
+    skos:example "978-4-385-70190-5";
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 5
+  ];
+  sh:property [
+    sh:path <http://id.loc.gov/ontologies/bibframe/extent>;
+    sh:name "ページ数"@ja;
+    sh:name "The total pages"@en;
+    skos:example "120";
+    sh:maxCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 6
+  ];
+  sh:property [
+    sh:path <http://id.loc.gov/ontologies/bibframe/dimensions>;
+    sh:name "大きさ"@ja;
+    sh:name "Dimensions"@en;
+    skos:example "B4";
+    sh:maxCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 7
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/grade>;
+    sh:name "対象学年"@ja;
+    sh:name "Target grade"@en;
+    skos:example "1, 2, 3";
+    sh:maxCount 6;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#integer>;
+    sh:order 8
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/authorizedYear>;
+    sh:name "検定年"@ja;
+    sh:name "Authorized year"@en;
+    skos:example "2001";
+    sh:datatype <http://www.w3.org/2001/XMLSchema#gYear>;
+    sh:order 9
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/catalogue>;
+    sh:name "掲載教科書目録"@ja;
+    sh:name "Textbook catalogue"@en;
+    sh:description "<code>textbook:catalogue/<var>学校種別</var>/<var>教科書目録発行年</var></code>として示される教科書目録リソースと関連付ける。繰り返される（バージョン11.0より、初出だけでなく当該教科書が掲載されている全ての教科書目録を繰り返しで表現するように変更）。"@ja;
+    sh:description "Link to the catalogue resources, represented as <code>textbook:catalogue/<var>type of school</var>/<var>first published year</var></code>. Since version 11.0, this property has changed to link to all the related catalogues."@en;
+    skos:example "textbook:catalogue/中学校/2004";
+    sh:minCount 1;
+    sh:class <https://w3id.org/jp-textbook/Catalogue>;
+    sh:order 10
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/usageYear>;
+    sh:name "使用年"@ja;
+    sh:name "Usage year"@en;
+    skos:example "2005";
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#gYear>;
+    sh:order 11
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/usageYearRange>;
+    sh:name "使用年の区間"@ja;
+    sh:name "Range of Usage years"@en;
+    sh:description "\"yyyy-yyyy\" もしくは \"yyyy-\" となる。\"yyyy-\" の場合は、終了年が未定のことを示す。"@ja;
+    sh:description "Either of \"yyyy-yyyy\" or \"yyyy-\". The value ending with \"-\" like \"yyyy-\" means that the end year is undecided."@en;
+    skos:example "2005-2005";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:pattern "^(\\d\\d\\d\\d|\\d\\d\\d\\d-(\\d\\d\\d\\d)?)(, (\\d\\d\\d\\d\\|\\d\\d\\d\\d-(\\d\\d\\d\\d)?))*$";
+    sh:order 12
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/textbookSymbol>;
+    sh:name "教科書記号"@ja;
+    sh:name "Texbook symbol"@en;
+    skos:example "英語";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 13
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/textbookNumber>;
+    sh:name "教科書番号"@ja;
+    sh:name "Textbook number"@en;
+    skos:example "904";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 14
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/subject>;
+    sh:name "種目（科目）"@ja;
+    sh:name "Subject"@en;
+    sh:description "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科</var>/<var>科目</var></code>として示される種目（科目）リソースと関連付ける。専門教科 (<code>textbook:subjectType = Special</code>) の場合、少数の例外を除いて、機械的に書名と種目名との一致により種目を類推して追加したものであり、教育図書館が追加したデータではないことに注意。最長一致で解決できない例外は、江草・高久によって追加。"@ja;
+    sh:description "Link to the subject resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var>/<var>subject</var></code>. Note that if the type of the subject is Special (<code>textbook:subjectType</code>), the subject is deternmined automatically by the longest match of the Subject name from the title of the textbook, and it does not added by the Library of Education. Some exceptional data is resolved by Drs. Egusa and Takaku."@en;
+    skos:example "textbook:curriculum/中学校/2002/外国語/英語";
+    sh:maxCount 1;
+    sh:class <https://w3id.org/jp-textbook/curriculum/Subject>;
+    sh:order 15
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/subjectArea>;
+    sh:name "教科"@ja;
+    sh:name "Subject area"@en;
+    sh:description "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科</var></code>として示される科目リソースと関連付ける"@ja;
+    sh:description "Link to the subject area resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var></code>."@en;
+    skos:example "textbook:curriculum/中学校/2002/外国語";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:class <https://w3id.org/jp-textbook/curriculum/SubjectArea>;
+    sh:order 16
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/curriculum>;
+    sh:name "対応する学習指導要領"@ja;
+    sh:name "Curriculum Guideline"@en;
+    sh:description "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var></code>として示される学習指導要領リソースと関連付ける"@ja;
+    sh:description "Link to the curriculum guideline resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var></code>."@en;
+    skos:example "textbook:curriculum/中学校/2002";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:class <https://w3id.org/jp-textbook/CurriculumGuideline>;
+    sh:order 17
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/school>;
+    sh:name "学校種別"@ja;
+    sh:name "Type of schools"@en;
+    sh:description "対応する学校種別を<code>textbook:school/<var>学校種別</var></code> として示される学校リソースと関連付ける"@ja;
+    sh:description "Link to the type resource of schools, represented as <code>textbook:school/<var>type of school</var></code>."@en;
+    skos:example "textbook:school/中学校";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:class <https://w3id.org/jp-textbook/School>;
+    sh:order 18
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/item>;
+    sh:name "所蔵情報"@ja;
+    sh:name "Holding item(s)"@en;
+    sh:description "<code>nier:recordID</code>と<code>nier:callNumber</code>、もしくは、<code>textbook-rc:recordID</code>と<code>textbook-rc:callNumber</code>の2つの所蔵情報用プロパティを持つ。複数の所蔵情報がある場合、所蔵情報の件数分、繰り返される。"@ja;
+    sh:description "Link to the blank node resource(s), which consist of either of properties 1) <code>nier:recordID</code> and <code>nier:callNumber</code>, or 2) <code>textbook-rc:recordID</code> and <code>textbook-rc:callNumber</code>. If there are multiple holdings in a library, this property values are repeated according to the number of holdings times."@en;
+    sh:minCount 1;
+    sh:class <http://id.loc.gov/ontologies/bibframe/Item>;
+    sh:node <https://w3id.org/jp-textbook/ItemShape>;
+    sh:nodeKind <http://www.w3.org/ns/shacl#BlankNode>;
+    sh:order 19
+  ];
+  sh:property [
+    sh:path <http://www.w3.org/2000/01/rdf-schema#seeAlso>;
+    sh:name "関連リンク"@ja;
+    sh:name "Related link(s)"@en;
+    sh:description "繰り返しあり。<a href=\"http://iss.ndl.go.jp/\">国立国会図書館サーチ</a>(国立国会図書館の書誌ID（NDLBibID）と全国書誌番号（JPNO）を使用)、<a href=\"https://ci.nii.ac.jp/books/\">CiNii Books</a>（NCIDを使用）へのリンク。"@ja;
+    sh:description "Repeatable. Links to <a href=\"http://iss.ndl.go.jp/\">NDL Search</a> (via NDLBibID and JPNO) and <a href=\"https://ci.nii.ac.jp/books/\">CiNii Books</a> (via NCID)."@en;
+    skos:example <http://id.ndl.go.jp/jpno/89034331>;
+    sh:nodeKind <http://www.w3.org/ns/shacl#IRI>;
+    sh:order 20
+  ];
+  sh:property [
+    sh:path <http://id.loc.gov/ontologies/bibframe/note>;
+    sh:name "注記"@ja;
+    sh:name "Notes"@en;
+    skos:example "2009年度より出版社を「日本文教出版株式会社」に変更。";
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 21
+  ].
+
+<https://w3id.org/jp-textbook/curriculum/SubjectAreaShape> a sh:NodeShape;
+  sh:targetClass <https://w3id.org/jp-textbook/curriculum/SubjectArea>;
+  sh:property [
+    sh:path <http://schema.org/name>;
+    sh:name "教科名"@ja;
+    sh:name "Name"@en;
+    sh:description "言語コードを用いて、教科名に加え、そのよみ、英語名称を示します。言語コードとその意味は以下の通りです。<dl><dt>@ja</dt><dd>日本語名称（漢字表記）</dd><dt>@ja-Hira</dt><dd>日本語名称（ひらがな表記）。教科名のよみをひらがな表記で示します。</dd><dt>@en</dt><dd>教科名の英語名称</dd></dl>注意：英訳名称は、文部科学省の正式なものではありません。翻訳の責任は、江草、高久にあります。 理由：大半の教科については、文部科学省が発表している正式な英語訳を見つけられませんでした（教育図書館へのレファレンス調査も実施済み）。 なお、学習指導要領の英訳（仮訳） （小学校、 中学校、 高等学校） に記載されている教科はそれらに由来するものです。 また、小学校、中学校の教科については、文部科学省が出している英語ガイド（Education In JAPAN, 13版）67ページの記載も参考にしました。 いずれにも記載のない教科名は、江草・高久によって一から英訳したものです。"@ja;
+    sh:description "Using language tags, Japanese name, transcription of the name, and English name are shown. The meanings of language tags are as follows:  <dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@ja-Hira</dt><dd>Japanese name (Hiragana). The name of the subject area is transcribed in Hiragana.</dd><dt>@en</dt><dd>English name of the subject area</dd></dl>Note that English names are unfficial one. Translation is done by the maintainers of this dataset. While we could not find the official English translations for the subject area, we refer to the tentative translations in the curriculum guidelines, and the English guide entitled \"Education in Japan\" published by the MEXT."@en;
+    skos:example "<ul><li>\"国語\"@ja</li><li>\"こくご\"@ja-Hira</li><li>\"Japanese Language\"@en</li></ul>";
+    sh:maxCount 3;
+    sh:minCount 1;
+    sh:languageIn ("ja" "ja-Hira" "en");
+    sh:uniqueLang true;
+    sh:order 1
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/school>;
+    sh:name "学校種別"@ja;
+    sh:name "Type of school"@en;
+    skos:example "textbook:school/高等学校";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:class <https://w3id.org/jp-textbook/School>;
+    sh:order 2
+  ];
+  sh:property [
+    sh:path <http://purl.org/linked-data/cube#order>;
+    sh:name "学習指導要領掲載順"@ja;
+    sh:name "Listing order of the curriculum guideline"@en;
+    sh:description "表示順を決める場合などで利用"@ja;
+    sh:description "This is used in the order of the listings."@en;
+    skos:example "1";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#integer>;
+    sh:order 3
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/subjectType>;
+    sh:name "教科種別"@ja;
+    sh:name "Type of the subject area"@en;
+    sh:description "学習指導要領1994,2003,2013の高等学校の教科のみ。"@ja;
+    sh:description "Used only in the subject areas at the curriculum guidelines 1994, 2003 and 2013 for the high schools."@en;
+    skos:example "textbook:curriculum/高等学校/2013/Common";
+    sh:maxCount 1;
+    sh:class <https://w3id.org/jp-textbook/SubjectType>;
+    sh:order 4
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/hasSubject>;
+    sh:name "種目（科目）がある"@ja;
+    sh:name "has a subject"@en;
+    skos:example "textbook:curriculum/高等学校/2013/国語/国語総合";
+    sh:class <https://w3id.org/jp-textbook/curriculum/Subject>;
+    sh:order 5
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/sourceOfEnglishName>;
+    sh:name "英語表記出典"@ja;
+    sh:name "Source for the English name"@en;
+    sh:description "<code>schema:name</code>, <code>textbook:curriculum</code>, <code>rdfs:seeAlso</code>の3つのプロパティを持つ。"@ja;
+    sh:description "This has a blank node which consists of three properties: <code>schema:name</code>, <code>textbook:curriculum</code> and <code>rdfs:seeAlso</code>."@en;
+    sh:maxCount 1;
+    sh:class <https://w3id.org/jp-textbook/SourceOfEnglishName>;
+    sh:node <https://w3id.org/jp-textbook/SourceOfEnglishNameShape>;
+    sh:nodeKind <http://www.w3.org/ns/shacl#BlankNode>;
+    sh:order 6
+  ].
+
+<https://w3id.org/jp-textbook/curriculum/SubjectShape> a sh:NodeShape;
+  sh:targetClass <https://w3id.org/jp-textbook/curriculum/Subject>;
+  sh:property [
+    sh:path <http://schema.org/name>;
+    sh:name "種目名"@ja;
+    sh:name "Subject name"@en;
+    sh:description "言語コードを用いて、種目名に加え、そのよみ、英語名称を示します。言語コードとその意味は以下の通りです。<dl><dt>@ja</dt><dd>日本語名称（漢字表記）</dd><dt>@ja-Hira</dt><dd>日本語名称（ひらがな表記）。種目名のよみをひらがな表記で示します。</dd><dt>@en</dt><dd>種目名の英語名称</dd><dd><small>注意：英訳名称は、文部科学省の正式なものではありません。翻訳の責任は、江草、高久にあります。 理由：大半の教科については、文部科学省が発表している正式な英語訳を見つけられませんでした（教育図書館へのレファレンス調査も実施済み）。 なお、学習指導要領の英訳（仮訳） （<a href=\"http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1261037.htm\">小学校</a>、<a href=\"http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1298356.htm\">中学校</a>、<a href=\"http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1298353.htm\">高等学校</a>） に記載されている種目（科目）はそれらに由来するものです。 また、小学校、中学校の教科については、文部科学省が出している英語ガイド（<a href=\"http://ci.nii.ac.jp/ncid/BA06708576\">Education In JAPAN, 13版</a>）67ページの記載、「<a href=\"https://www.nier.go.jp/04_kenkyu_annai/pdf/improvement_of_the_courses_of_study.pdf\">幼稚園、小学校、中学校、高等学校及び特別支援学校の学習指導要領等の改善について（答申）</a>」の英訳<a href=\"https://www.nier.go.jp/04_kenkyu_annai/pdf/improvement_of_the_courses_of_study.pdf\">Concerning improvements to the courses of study for elementary, lower secondary and upper secondary schools</a>の\"8. The Content of Each Subject and Subject Area\"(pp.107-195)も参考にしました。 いずれにも記載のない教科名は、江草・高久によって一から英訳したものです。</small></dd></dl>"@ja;
+    sh:description "Using language tags, Japanese name and its transcription (Yomi) and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@ja-Hira</dt><dd>Japanese name (Hiragana).</dd><dt>@en</dt><dd>English name of the subject</dd><dd><small>Note: English names are unofficial one. The errors in its translations are resposible for the maintainers of this dataset. We could not find any of official translations of the subject names, even though we ask the Education Library to find them. Some of the translations are origined from the tentative translations of the curriculum guidelines, such as <a href=\"http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1261037.htm\">Elementary schools</a>、<a href=\"http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1298356.htm\">Lower secondary schools</a>、<a href=\"http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1298353.htm\">Upper secondary schols</a>. We also refer to the English guide \"<a href=\"http://ci.nii.ac.jp/ncid/BA06708576\">Education in JAPAN, 13th ed.</a>\" by MEXT for the subject names of elementary and lower secondary schools, and the chapter eight \"The Content of Each Subject and Subject Area\" (p.107-195) of <a href=\"https://www.nier.go.jp/04_kenkyu_annai/pdf/improvement_of_the_courses_of_study.pdf\">Concerning improvements to the courses of study for elementary, lower secondary and upper secondary schools</a>.</small></dd></dl>"@en;
+    skos:example "<ul><li>\"国語総合\"@ja</li><li>\"こくごそうごう\"@ja-Hira</li><li>\"Integrated Japanese Language\"@en</li></ul>";
+    sh:maxCount 3;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString>;
+    sh:languageIn ("ja" "ja-Hira" "en");
+    sh:uniqueLang true;
+    sh:order 1
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/school>;
+    sh:name "学校種別"@ja;
+    sh:name "Type of schools"@en;
+    skos:example "textbook:school/高等学校";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:class <https://w3id.org/jp-textbook/School>;
+    sh:order 2
+  ];
+  sh:property [
+    sh:path <http://purl.org/linked-data/cube#order>;
+    sh:name "教科用図書検定申請受理種目掲載順"@ja;
+    sh:name "Listing order of the subject in the document on textbook authorization"@en;
+    sh:description "表示順を決める場合などで利用"@ja;
+    sh:description "Used in display orders"@en;
+    skos:example "1";
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#integer>;
+    sh:order 3
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/subjectType>;
+    sh:name "種目種別"@ja;
+    sh:name "Type of the subjects"@en;
+    sh:description "学習指導要領1994,2003,2013の高等学校の教科の種目のみ。"@ja;
+    sh:description "Used only in the curriculum guidelines 1994, 2003 and 2013 for the upper secondary schools"@en;
+    skos:example "textbook:curriculum/高等学校/2013/Common";
+    sh:class <https://w3id.org/jp-textbook/SubjectType>;
+    sh:order 4
+  ];
+  sh:property [
+    sh:path <http://www.w3.org/2000/01/rdf-schema#seeAlso>;
+    sh:name "参照"@ja;
+    sh:name "Reference"@en;
+    sh:description "教科用図書検定申請受理種目のWebページ"@ja;
+    sh:description "Links to the website for the document on textbook authorization"@en;
+    skos:example <http://www.mext.go.jp/a_menu/shotou/kyoukasho/kentei/1293732.htm>;
+    sh:nodeKind <http://www.w3.org/ns/shacl#IRI>;
+    sh:order 5
+  ];
+  sh:property [
+    sh:path <http://schema.org/citation>;
+    sh:name "出典"@ja;
+    sh:name "Citation"@en;
+    sh:description "種目の出典となる表。検定教科書の検定時の申請に使われる種目表。"@ja;
+    sh:description "Source citation for the subject name."@en;
+    skos:example "『教科用図書検定申請受理種目』平成22年5月14日号外文部科学省告示第83号(平成元年6月9日文部省告示第89号の改正)";
+    sh:maxCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 6
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/sourceOfEnglishName>;
+    sh:name "英語表記出典"@ja;
+    sh:name "Source of English name"@en;
+    sh:description "<code>schema:name</code>, <code>textbook:curriculum</code>, <code>rdfs:seeAlso</code>の3つのプロパティを持つ。"@ja;
+    sh:description "This has a blank node which consists of three properties: <code>schema:name</code>, <code>textbook:curriculum</code> and <code>rdfs:seeAlso</code>."@en;
+    sh:maxCount 1;
+    sh:class <https://w3id.org/jp-textbook/SourceOfEnglishName>;
+    sh:node <https://w3id.org/jp-textbook/SourceOfEnglishNameShape>;
+    sh:nodeKind <http://www.w3.org/ns/shacl#BlankNode>;
+    sh:order 7
+  ].
