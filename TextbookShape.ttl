@@ -17,7 +17,7 @@
     <http://www.w3.org/ns/shacl#order> 2;
     <http://www.w3.org/ns/shacl#path> <http://schema.org/editor>
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> "textbook:publisher/2003/三省堂";
+    <http://www.w3.org/2004/02/skos/core#example> <textbook:publisher/2003/三省堂>;
     <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/Publisher>;
     <http://www.w3.org/ns/shacl#description> "<code>textbook:publisher/<var>掲載教科書目録の発行年</var>/<var>発行者略称</var></code>として示される発行者をあらわすリソースと関連付ける"@ja, "Link to the publisher resource, represented as <code>textbook:publisher/<var>catalogue publication year</var>/<var>publisher's abbriviated name</var></code>"@en;
     <http://www.w3.org/ns/shacl#minCount> 1;
@@ -66,7 +66,7 @@
     <http://www.w3.org/ns/shacl#order> 9;
     <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/authorizedYear>
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> "textbook:catalogue/中学校/2004";
+    <http://www.w3.org/2004/02/skos/core#example> <textbook:catalogue/中学校/2004>;
     <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/Catalogue>;
     <http://www.w3.org/ns/shacl#description> "<code>textbook:catalogue/<var>学校種別</var>/<var>教科書目録発行年</var></code>として示される教科書目録リソースと関連付ける。繰り返される（バージョン11.0より、初出だけでなく当該教科書が掲載されている全ての教科書目録を繰り返しで表現するように変更）。"@ja, "Link to the catalogue resources, represented as <code>textbook:catalogue/<var>type of school</var>/<var>first published year</var></code>. Since version 11.0, this property has changed to link to all the related catalogues."@en;
     <http://www.w3.org/ns/shacl#minCount> 1;
@@ -107,7 +107,7 @@
     <http://www.w3.org/ns/shacl#order> 14;
     <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/textbookNumber>
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> "textbook:curriculum/中学校/2002/外国語/英語";
+    <http://www.w3.org/2004/02/skos/core#example> <textbook:curriculum/中学校/2002/外国語/英語>;
     <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/curriculum/Subject>;
     <http://www.w3.org/ns/shacl#description> "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科</var>/<var>科目</var></code>として示される種目（科目）リソースと関連付ける。専門教科 (<code>textbook:subjectType = Special</code>) の場合、少数の例外を除いて、機械的に書名と種目名との一致により種目を類推して追加したものであり、教育図書館が追加したデータではないことに注意。最長一致で解決できない例外は、江草・高久によって追加。"@ja, "Link to the subject resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var>/<var>subject</var></code>. Note that if the type of the subject is Special (<code>textbook:subjectType</code>), the subject is deternmined automatically by the longest match of the Subject name from the title of the textbook, and it does not added by the Library of Education. Some exceptional data is resolved by Drs. Egusa and Takaku."@en;
     <http://www.w3.org/ns/shacl#maxCount> 1;
@@ -115,7 +115,7 @@
     <http://www.w3.org/ns/shacl#order> 15;
     <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/subject>
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> "textbook:curriculum/中学校/2002/外国語";
+    <http://www.w3.org/2004/02/skos/core#example> <textbook:curriculum/中学校/2002/外国語>;
     <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/curriculum/SubjectArea>;
     <http://www.w3.org/ns/shacl#description> "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科</var></code>として示される科目リソースと関連付ける"@ja, "Link to the subject area resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var></code>."@en;
     <http://www.w3.org/ns/shacl#maxCount> 1;
@@ -124,7 +124,7 @@
     <http://www.w3.org/ns/shacl#order> 16;
     <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/subjectArea>
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> "textbook:curriculum/中学校/2002";
+    <http://www.w3.org/2004/02/skos/core#example> <textbook:curriculum/中学校/2002>;
     <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/CurriculumGuideline>;
     <http://www.w3.org/ns/shacl#description> "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var></code>として示される学習指導要領リソースと関連付ける"@ja, "Link to the curriculum guideline resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var></code>."@en;
     <http://www.w3.org/ns/shacl#maxCount> 1;
@@ -133,7 +133,7 @@
     <http://www.w3.org/ns/shacl#order> 17;
     <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/curriculum>
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> "textbook:school/中学校";
+    <http://www.w3.org/2004/02/skos/core#example> <textbook:school/中学校>;
     <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/School>;
     <http://www.w3.org/ns/shacl#description> "Link to the type resource of schools, represented as <code>textbook:school/<var>type of school</var></code>."@en, "対応する学校種別を<code>textbook:school/<var>学校種別</var></code> として示される学校リソースと関連付ける"@ja;
     <http://www.w3.org/ns/shacl#maxCount> 1;
