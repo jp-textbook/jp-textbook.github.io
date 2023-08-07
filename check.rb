@@ -5,7 +5,7 @@ require_relative "util.rb"
 
 if $0 == __FILE__
   include Textbook
-  filename = find_turtle("all.ttl")
+  filename = find_turtle("all-textbook.ttl")
   ttl2html = TTL2HTML::App.new
   data = ttl2html.load_turtle(filename)
   STDERR.puts "loading #{filename}..."
