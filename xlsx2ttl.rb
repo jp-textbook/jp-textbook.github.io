@@ -121,7 +121,7 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
   usage_year_start = row["/SDATE#1"].to_i
   usage_year_start = nil if usage_year_start == 0
   usage_year_end   = row["/EDATE#1"].to_i
-  usage_year_end = nil if usage_year_end == 9999
+  usage_year_end = nil if usage_year_end == 9999 or usage_year_end == 0
   usage_years = if usage_year_start
                   (usage_year_start .. (usage_year_end or CURRENT_YEAR))
                 else
