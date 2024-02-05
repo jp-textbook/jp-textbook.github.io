@@ -23,12 +23,12 @@
   </ul>
   <%- if param[:data][RDF::RDFS.seeAlso.to_s] -%>
   <ul>
-    <%- param[:data][RDF::RDFS.seeAlso.to_s].each do |link| -%>
+    <%- param[:data][RDF::RDFS.seeAlso.to_s].sort.each do |link| -%>
       <%- case link -%>
       <%- when %r|\Ahttp://id.ndl.go.jp/jpno/| -%>
       <li><a href="<%=h link %>">NDL Search (JPNO: <%=h link.split(/\//).last %>)</a></li>
       <%- when %r|\Ahttp://id.ndl.go.jp/bib/| -%>
-      <li><a href="<%=h link %>">NDL Online (NDLBibID: <%=h link.split(/\//).last %>)/li>
+      <li><a href="<%=h link %>">NDL Search (NDLBibID: <%=h link.split(/\//).last %>)/li>
       <%- when %r|\Ahttps://ci.nii.ac.jp/ncid/| -%>
       <li><a href="<%=h link %>">CiNii Books (NCID: <%=h link.split(/\//).last %>)</a></li>
       <%- else -%>
@@ -40,11 +40,11 @@
   <%- if param[:data]["http://schema.org/isbn"] -%>
   <ul>
     <%-
-      { "NDL Search": "http://iss.ndl.go.jp/api/openurl?isbn=",
+      { "NDL Search": "https://ndlsearch.ndl.go.jp/api/openurl?isbn=",
         "CiNii Books": "http://ci.nii.ac.jp/books/openurl/query?isbn=",
         "Calil": "http://api.calil.jp/openurl?rft.isbn=",
       }.each do |label, url|
-        next if url == "http://iss.ndl.go.jp/api/openurl?isbn=" and param[:data][RDF::RDFS.seeAlso.to_s] and param[:data][RDF::RDFS.seeAlso.to_s].find{|e| e =~ %r|\Ahttp://id.ndl.go.jp/| }
+        next if url == "https://ndlsearch.ndl.go.jp/api/openurl?isbn=" and param[:data][RDF::RDFS.seeAlso.to_s] and param[:data][RDF::RDFS.seeAlso.to_s].find{|e| e =~ %r|\Ahttp://id.ndl.go.jp/| }
         next if url == "http://ci.nii.ac.jp/books/openurl/query?isbn=" and param[:data][RDF::RDFS.seeAlso.to_s] and param[:data][RDF::RDFS.seeAlso.to_s].find{|e| e =~ %r|\Ahttps://ci.nii.ac.jp/ncid/| }
         param[:data]["http://schema.org/isbn"].each do |isbn| -%>
           <li><a href="<%= url %><%=h isbn %>"><%=h label %></a><%=h param[:data]["http://schema.org/isbn"].size > 1 ? " (#{isbn})" : "" %></li>
