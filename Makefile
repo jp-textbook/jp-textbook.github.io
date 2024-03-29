@@ -1,6 +1,7 @@
 default: clean all ttl2html check
 
 all:
+	bundle update
 	bundle exec catttl textbook textbook-rc \
 	  curriculum curriculum-versions catalogue subject subjectArea subjectType school publisher schema \
 	  shape dataset > all-textbook-`date +%Y%m%d`.ttl
@@ -16,7 +17,7 @@ all:
 
 ttl2html:
 	bundle exec ttl2html all-textbook-`date +%Y%m%d`.ttl.gz all-teachingUnit-`date +%Y%m%d`.ttl.gz
-	cd en && bundle exec ttl2html ../all-textbook-`date +%Y%m%d`.ttl.gz ../all-teachingUnit-`date +%Y%m%d`.ttl.gz
+	cd en && bundle update && bundle exec ttl2html ../all-textbook-`date +%Y%m%d`.ttl.gz ../all-teachingUnit-`date +%Y%m%d`.ttl.gz
 
 clean:
 	-rm -rf catalogue/ curriculum/ school/ publisher/ *学校/
