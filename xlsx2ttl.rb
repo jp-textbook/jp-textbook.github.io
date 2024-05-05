@@ -20,6 +20,7 @@ puts <<EOF
 @prefix nier:      <http://dl.nier.go.jp/library/vocab/>.
 @prefix textbook:  <https://w3id.org/jp-textbook/>.
 @prefix xsd:       <http://www.w3.org/2001/XMLSchema#>.
+@prefix dct:       <http://purl.org/dc/terms/>.
 EOF
 
 done = {}
@@ -162,6 +163,7 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
     "bf:extent" => extent,
     "bf:dimensions" => dimensions,
     "bf:note" => [],
+    "dct:bibliographicCitation" => "「#{row["/TITLE#1"]}」#{row["/EDITION#1"] if row["/EDITION#1"]}, #{school}#{grades.join(",")+"年" unless grades.empty?}, #{textbook_symbol}|#{row["/TXC#1"]} (#{row["/PUA#1"]}) #{row["/ADATE#1"]}年検定",
   }
   data.delete("textbook:subject") if subject.empty?
   data["bf:note"] << row["/NOTE#1"] if row["/NOTE#1"]
@@ -245,6 +247,7 @@ done.sort_by{|k,v| k }.each do |uri, data|
       textbook:authorizedYear textbook:usageYear textbook:usageYearRange
       bf:extent bf:dimensions
       textbook:textbookSymbol textbook:textbookNumber 
+      dct:bibliographicCitation
       bf:note
   ].each do |property|
     if data[property] and not data[property].empty?
