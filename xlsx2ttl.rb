@@ -31,7 +31,7 @@ fix_curriculums = c.keys.select do |k| # cf. #59
   if c[k]["https://w3id.org/jp-textbook/school"].first == "http://ja.dbpedia.org/resource/高等学校" or
      c[k]["https://w3id.org/jp-textbook/school"].first == "https://w3id.org/jp-textbook/school/高等学校"
     case c[k]["http://schema.org/startDate"].first
-    when "1994-04-01", "2003-04-01", "2013-04-01"
+    when "1994-04-01", "2003-04-01", "2013-04-01", "2022-04-01"
       true
     else
       false
