@@ -28,6 +28,7 @@ def expand_coscode_hier(coscodes)
   results = []
   return [] if coscodes.nil? or coscodes.empty?
   coscodes.strip.split(/,/).each do |coscode|
+    results << "https://w3id.org/jp-cos/#{coscode}"
     if not DataCache[coscode]
       sparql = SPARQL % coscode
       uri = ENDPOINT + "?" + URI.encode_www_form(query: sparql)
@@ -44,7 +45,7 @@ def expand_coscode_hier(coscodes)
       results << DataCache[coscode]
     end
   end
-  results.sort.uniq
+  results.flatten.sort.uniq
 end
 
 if $0 == __FILE__
@@ -67,7 +68,7 @@ if $0 == __FILE__
     coscode = row.find(""){|e| e.coordinate[1] == cos_idx + 1 }.to_s
     if coscode and not coscode.empty?
       expanded = expand_coscode_hier(coscode).join(",")
-      puts [row[0], coscode, [*expanded + "https://w3id.org/jp-cos/#{coscode}" ].sort.uniq ].join("\t")
+      puts [ row[0], coscode, expanded ].join("\t")
     else
       puts row[0]
     end
