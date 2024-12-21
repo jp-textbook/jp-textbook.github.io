@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc/dist/bootstrap-toc.min.css">
     <link rel="stylesheet" href="../style.css">
     <title>About Japanese Textbook LOD</title>
     <meta name="twitter:card" content="summary">
@@ -13,7 +13,7 @@
     <meta property="og:title" content="About Japanese Textbook LOD">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://w3id.org/jp-textbook/logo.png">
-    <meta name="generator" content="ttl2html 2.0.10">
+    <meta name="generator" content="ttl2html 2.0.11">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-389547-11"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -2017,6 +2017,20 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
       </td>
       <td>Links to the referenced website and the bibliographic information such as <a href="https://ci.nii.ac.jp/books/">CiNii Books</a> when the source is a book.</td>
     </tr>
+    <tr>
+      <td><code>dct:date</code></td>
+      <td>Reference Date</td>
+      <td>"2018-08-12"</td>
+      <td>
+        <div>
+          <strong>Required</strong>
+        </div>
+        <div>
+        Non repeatable
+        </div>
+      </td>
+      <td>Date of reference for this source</td>
+    </tr>
   </tbody>
   <tfoot>
     <tr><td colspan="5">
@@ -2028,6 +2042,8 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
       <dd class="col-sm-10">https://w3id.org/jp-textbook/</dd>
       <dt class="col-sm-2"><code>rdfs:</code></dt>
       <dd class="col-sm-10">http://www.w3.org/2000/01/rdf-schema#</dd>
+      <dt class="col-sm-2"><code>dct:</code></dt>
+      <dd class="col-sm-10">http://purl.org/dc/terms/</dd>
       </dl>
   </td></tr>
   </tfoot>
@@ -2590,9 +2606,9 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
       <td></td>
     </tr>
     <tr>
-      <td rowspan="2"><code>textbook:sourceOfEnglishName</code></td>
-      <td>Source for the English name</td>
-      <td></td>
+      <td><code>textbook:sourceOfEnglishName</code></td>
+      <td>Source of English name</td>
+      <td>https://w3id.org/jp-textbook/source/Elementary-2008</td>
       <td>
         <div>
         Optional
@@ -2601,79 +2617,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>This has a blank node which consists of three properties: <code>schema:name</code>, <code>textbook:curriculum</code> and <code>rdfs:seeAlso</code>.</td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        The structural contents of a blank node are as follows:
-        <div class="blank_node"><table class="table table-sm">
-  <tr>
-    <th>Property name</th>
-    <th>Description</th>
-    <th>Example of the property value(s)</th>
-    <th>Required?<br>
-        Repeatable?</th>
-    <th>Notes</th>
-  </tr>
-  <tbody>
-    <tr>
-      <td><code>schema:name</code></td>
-      <td>Name for the source</td>
-      <td><ul><li>"小学校学習指導要領英訳版（仮訳）(平成20年3月)"@ja</li><li>"Elementary School Curriculum Guideline English Version (Tentative Translation) (2008-03)"@en</li></ul></td>
-      <td>
-        <div>
-          <strong>Required</strong>
-        </div>
-        <div>
-        Repeatable
-        </div>
-      </td>
-      <td>Using language tags, Japanese and English names are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@en</dt><dd>English name</dd></dl></td>
-    </tr>
-    <tr>
-      <td><code>textbook:curriculum</code></td>
-      <td>Reference to a curriculum guideline</td>
-      <td>curriculum/小学校/2012</td>
-      <td>
-        <div>
-        Optional
-        </div>
-        <div>
-        Non repeatable
-        </div>
-      </td>
-      <td>If the source is the English translation of the curriculum guideline, this property refer to the corresponding guideline.</td>
-    </tr>
-    <tr>
-      <td><code>rdfs:seeAlso</code></td>
-      <td>Related links</td>
-      <td class="url">http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1261037.htm</td>
-      <td>
-        <div>
-        Optional
-        </div>
-        <div>
-        Repeatable
-        </div>
-      </td>
-      <td>Links to the referenced website and the bibliographic information such as <a href="https://ci.nii.ac.jp/books/">CiNii Books</a> when the source is a book.</td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr><td colspan="5">
-    The namespace URIs used in the table are as follows:
-      <dl class="row small">
-      <dt class="col-sm-2"><code>schema:</code></dt>
-      <dd class="col-sm-10">http://schema.org/</dd>
-      <dt class="col-sm-2"><code>textbook:</code></dt>
-      <dd class="col-sm-10">https://w3id.org/jp-textbook/</dd>
-      <dt class="col-sm-2"><code>rdfs:</code></dt>
-      <dd class="col-sm-10">http://www.w3.org/2000/01/rdf-schema#</dd>
-      </dl>
-  </td></tr>
-  </tfoot>
-</table></div>
-      </td>
+      <td>To provide the source information that serves as the basis for the English notation.</td>
     </tr>
   </tbody>
   <tfoot>
@@ -2788,9 +2732,9 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
       <td>Source citation for the subject name.</td>
     </tr>
     <tr>
-      <td rowspan="2"><code>textbook:sourceOfEnglishName</code></td>
+      <td><code>textbook:sourceOfEnglishName</code></td>
       <td>Source of English name</td>
-      <td></td>
+      <td>https://w3id.org/jp-textbook/source/Elementary-2008</td>
       <td>
         <div>
         Optional
@@ -2799,79 +2743,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>This has a blank node which consists of three properties: <code>schema:name</code>, <code>textbook:curriculum</code> and <code>rdfs:seeAlso</code>.</td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        The structural contents of a blank node are as follows:
-        <div class="blank_node"><table class="table table-sm">
-  <tr>
-    <th>Property name</th>
-    <th>Description</th>
-    <th>Example of the property value(s)</th>
-    <th>Required?<br>
-        Repeatable?</th>
-    <th>Notes</th>
-  </tr>
-  <tbody>
-    <tr>
-      <td><code>schema:name</code></td>
-      <td>Name for the source</td>
-      <td><ul><li>"小学校学習指導要領英訳版（仮訳）(平成20年3月)"@ja</li><li>"Elementary School Curriculum Guideline English Version (Tentative Translation) (2008-03)"@en</li></ul></td>
-      <td>
-        <div>
-          <strong>Required</strong>
-        </div>
-        <div>
-        Repeatable
-        </div>
-      </td>
-      <td>Using language tags, Japanese and English names are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@en</dt><dd>English name</dd></dl></td>
-    </tr>
-    <tr>
-      <td><code>textbook:curriculum</code></td>
-      <td>Reference to a curriculum guideline</td>
-      <td>curriculum/小学校/2012</td>
-      <td>
-        <div>
-        Optional
-        </div>
-        <div>
-        Non repeatable
-        </div>
-      </td>
-      <td>If the source is the English translation of the curriculum guideline, this property refer to the corresponding guideline.</td>
-    </tr>
-    <tr>
-      <td><code>rdfs:seeAlso</code></td>
-      <td>Related links</td>
-      <td class="url">http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1261037.htm</td>
-      <td>
-        <div>
-        Optional
-        </div>
-        <div>
-        Repeatable
-        </div>
-      </td>
-      <td>Links to the referenced website and the bibliographic information such as <a href="https://ci.nii.ac.jp/books/">CiNii Books</a> when the source is a book.</td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr><td colspan="5">
-    The namespace URIs used in the table are as follows:
-      <dl class="row small">
-      <dt class="col-sm-2"><code>schema:</code></dt>
-      <dd class="col-sm-10">http://schema.org/</dd>
-      <dt class="col-sm-2"><code>textbook:</code></dt>
-      <dd class="col-sm-10">https://w3id.org/jp-textbook/</dd>
-      <dt class="col-sm-2"><code>rdfs:</code></dt>
-      <dd class="col-sm-10">http://www.w3.org/2000/01/rdf-schema#</dd>
-      </dl>
-  </td></tr>
-  </tfoot>
-</table></div>
-      </td>
+      <td>To provide the source information that serves as the basis for the English notation.</td>
     </tr>
   </tbody>
   <tfoot>
@@ -4729,6 +4601,6 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc/dist/bootstrap-toc.min.js"></script>
   </body>
 </html>

@@ -4,7 +4,7 @@ all:
 	bundle update
 	bundle exec catttl textbook textbook-rc \
 	  curriculum curriculum-versions catalogue subject subjectArea subjectType school publisher schema \
-	  shape dataset > all-textbook-`date +%Y%m%d`.ttl
+	  shape dataset source > all-textbook-`date +%Y%m%d`.ttl
 	rapper -i turtle all-textbook-`date +%Y%m%d`.ttl -c
 	@ls -l all-textbook-`date +%Y%m%d`.ttl
 	gzip -9 -f all-textbook-`date +%Y%m%d`.ttl
