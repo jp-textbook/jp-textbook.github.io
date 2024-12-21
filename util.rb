@@ -130,7 +130,7 @@ module Textbook
 
 def find_turtle(filename, params = {})
   if params[:noexpand] == true
-    if File.exists? filename
+    if File.exist? filename
       filename
     end
   else
@@ -248,12 +248,12 @@ def load_idlists
   [ { tsv: "IDLists1_2.tsv", zip: "IDLists1_2.zip"},
     { tsv: "IDLists2_2.tsv", zip: "IDLists2_2.zip"}
   ].each do |files|
-    if File.exists? files[:tsv]
+    if File.exist? files[:tsv]
       STDERR.puts "loading #{files[:tsv]}..."
       open(files[:tsv]) do |io|
         hash.merge! load_idlist(io)
       end
-    elsif File.exists? files[:zip]
+    elsif File.exist? files[:zip]
       STDERR.puts "loading #{files[:zip]}..."
       Zip::File.open(files[:zip]) do |zip|
         zip.get_input_stream(files[:tsv]) do |io|
@@ -298,7 +298,7 @@ def load_idlist(io)
   hash
 end
 def load_books_rdf_tsv
-  if not File.exists? "books.rdf"
+  if not File.exist? "books.rdf"
     STDERR.puts "books_rdf.tsv not found. Please execute books_rdf2tsv.rb."
     STDERR.puts "  USAGE: ./books_rdf2tsv.rb > books_rdf.tsv"
     exit
@@ -315,19 +315,19 @@ def load_books_rdf_tsv
 end
 def load_books_rdf
   hash = {}
-  if File.exists? "books.rdf"
+  if File.exist? "books.rdf"
     STDERR.puts "loading books.rdf..."
     open("books.rdf") do |io|
       hash = _load_books_rdf(io)
     end
-  elsif File.exists? "books.rdf.zip"
+  elsif File.exist? "books.rdf.zip"
     STDERR.puts "loading books.rdf.zip..."
     Zip::File.open("books.rdf.zip") do |zip|
       zip.get_input_stream("books.rdf") do |io|
         hash = _load_books_rdf(io)
       end
     end
-  elsif File.exists? "books.rdf.gz"
+  elsif File.exist? "books.rdf.gz"
     STDERR.puts "loading books.rdf.gz..."
     f = File.open("books.rdf.gz")
     Zlib::GzipReader.new(f) do |io|
