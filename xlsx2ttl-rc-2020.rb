@@ -34,7 +34,7 @@ EOF
   textbook_master = load_turtle("textbook.ttl")
   isbn_data = load_idlists #("IDList1_2.tsv", "IDList2_2.tsv") # cf. https://www.ndl.go.jp/jp/dlib/standards/opendataset/#ids
   logger.info("NDL data loaded: #{isbn_data.size}")
-  isbn_ncid = load_books_rdf_tsv # cf. https://www.nii.ac.jp/CAT-ILL/about/infocat/od/
+  isbn_ncid = load_books_rdf_tsv # cf. https://contents.nii.ac.jp/catill/about/cat/infocat/od
   logger.info("NCID data loaded: #{isbn_ncid.size}")
 
   done = {}
