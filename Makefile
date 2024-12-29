@@ -20,8 +20,8 @@ ttl2html:
 	cd en && bundle update && bundle exec ttl2html ../all-textbook-`date +%Y%m%d`.ttl.gz ../all-teachingUnit-`date +%Y%m%d`.ttl.gz
 
 clean:
-	-rm -rf catalogue/ curriculum/ school/ publisher/ *学校/
-	-rm -rf en/catalogue/ en/curriculum/ en/school/ en/publisher/ en/*学校/
+	-rm -rf catalogue/ curriculum/ school/ publisher/ source/ *学校/
+	-rm -rf en/catalogue/ en/curriculum/ en/school/ en/publisher/ en/source/ en/*学校/
 	-rm -rf A[ABC]/
 
 check:
