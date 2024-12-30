@@ -53,6 +53,26 @@
     <%- end -%>
   </ul>
   <%- end -%>
+  <%- if param[:data_inverse] and param[:data_inverse]["https://w3id.org/jp-textbook/textbook"] -%>
+    <%-
+    param[:data_inverse]["https://w3id.org/jp-textbook/textbook"].each do |prospectus|
+      if param[:data_global][prospectus]["http://schema.org/hasPart"]
+        param[:data_global][prospectus]["http://schema.org/hasPart"].each do |chapter|
+          if param[:data_global][chapter]["https://w3id.org/jp-textbook/chapterType"].include?("https://w3id.org/jp-textbook/CPMappingTUTable")
+            page = param[:data_global][chapter]["http://schema.org/pagination"].first.to_s
+            page = $1.to_i if page =~ /^(\d+)/
+            pdf_url = param[:data_global][prospectus]["http://schema.org/url"].first
+    -%>
+            <ul>
+            <li><a href="<%=h pdf_url %>#page=<%=h page %>">学習指導要領との対照表と配当授業時数表（編修趣意書）</a></li>
+            </ul>
+    <%-
+          end
+        end
+      end
+    end
+    -%>
+  <%- end -%>
   </div>
 </div>
 <%- end -%>
