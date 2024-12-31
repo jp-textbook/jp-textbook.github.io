@@ -820,6 +820,42 @@
     sh:order 3
   ];
   sh:property [
+    sh:path <https://w3id.org/jp-textbook/unit1>;
+    sh:name "単元名レベル1"@ja;
+    sh:name "Unit Title Level 1"@en;
+    skos:example "第2編 世界のさまざまな地域";
+    sh:maxCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 4
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/unit2>;
+    sh:name "単元名レベル2"@ja;
+    sh:name "Unit Title Level 2"@en;
+    skos:example "第2章 世界の諸地域";
+    sh:maxCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 5
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/unit3>;
+    sh:name "単元名レベル3"@ja;
+    sh:name "Unit Title Level 3"@en;
+    skos:example "1 アジア州";
+    sh:maxCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 6
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-textbook/unit4>;
+    sh:name "単元名レベル4"@ja;
+    sh:name "Unit Title Level 4"@en;
+    skos:example "学習のまとめと表現";
+    sh:maxCount 1;
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 7
+  ];
+  sh:property [
     sh:path <https://w3id.org/jp-textbook/school>;
     sh:name "学校種別"@ja;
     sh:name "Type of schools"@en;
@@ -829,7 +865,7 @@
     sh:maxCount 1;
     sh:minCount 1;
     sh:class <https://w3id.org/jp-textbook/School>;
-    sh:order 4
+    sh:order 8
   ];
   sh:property [
     sh:path <https://w3id.org/jp-textbook/authorizedYear>;
@@ -837,7 +873,7 @@
     sh:name "Authorized year"@en;
     skos:example "2001";
     sh:datatype <http://www.w3.org/2001/XMLSchema#gYear>;
-    sh:order 5
+    sh:order 9
   ];
   sh:property [
     sh:path <https://w3id.org/jp-textbook/subjectArea>;
@@ -849,7 +885,7 @@
     sh:maxCount 1;
     sh:minCount 1;
     sh:class <https://w3id.org/jp-textbook/curriculum/SubjectArea>;
-    sh:order 6
+    sh:order 10
   ];
   sh:property [
     sh:path <https://w3id.org/jp-textbook/subject>;
@@ -861,7 +897,7 @@
     sh:maxCount 1;
     sh:minCount 1;
     sh:class <https://w3id.org/jp-textbook/curriculum/Subject>;
-    sh:order 7
+    sh:order 11
   ];
   sh:property [
     sh:path <https://w3id.org/jp-textbook/grade>;
@@ -870,7 +906,7 @@
     skos:example "1, 2";
     sh:maxCount 6;
     sh:datatype <http://www.w3.org/2001/XMLSchema#integer>;
-    sh:order 8
+    sh:order 12
   ];
   sh:property [
     sh:path <http://schema.org/workExample>;
@@ -882,17 +918,27 @@
     sh:class <http://schema.org/Chapter>;
     sh:node <https://w3id.org/jp-textbook/ChapterLUShape>;
     sh:nodeKind <http://www.w3.org/ns/shacl#BlankNode>;
-    sh:order 9
+    sh:order 13
   ];
   sh:property [
     sh:path <https://w3id.org/jp-cos/cosItem>;
     sh:name "学習指導要領の細目"@ja;
     sh:name "Course Of Study Item"@en;
+    sh:description "対応する学習指導要領の細目を葉まで含めて拡張し、<code>cs:<var>学習指導要領コード</var></code> として示される学習指導要領の細目リソースと関連付ける"@ja;
+    sh:description "Link to the expand course of study item, represented as <code>cs:<var>course of study code</var></code>."@en;
+    skos:example cs:82F02D3141000000;
+    sh:class <https://w3id.org/jp-cos/Item>;
+    sh:order 14
+  ];
+  sh:property [
+    sh:path <https://w3id.org/jp-cos/originalCosItem>;
+    sh:name "転記した学習指導要領の細目"@ja;
+    sh:name "Transcribed Course Of Study Item"@en;
     sh:description "対応する学習指導要領の細目を<code>cs:<var>学習指導要領コード</var></code> として示される学習指導要領の細目リソースと関連付ける"@ja;
     sh:description "Link to the course of study item, represented as <code>cs:<var>course of study code</var></code>."@en;
     skos:example cs:82F02D3141000000;
     sh:class <https://w3id.org/jp-cos/Item>;
-    sh:order 10
+    sh:order 15
   ];
   sh:property [
     sh:path <https://w3id.org/jp-textbook/cosMappingDescription>;
@@ -900,7 +946,7 @@
     sh:name "Course Of Study Item (Label)"@en;
     skos:example "(3)(4)(5)(8)";
     sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
-    sh:order 11
+    sh:order 16
   ];
   sh:property [
     sh:path <http://purl.org/dc/terms/source>;
@@ -912,7 +958,7 @@
     sh:maxCount 1;
     sh:minCount 1;
     sh:class <https://w3id.org/jp-textbook/CompilingProspectus>;
-    sh:order 12
+    sh:order 17
   ];
   sh:property [
     sh:path <http://schema.org/duration>;
@@ -924,7 +970,7 @@
     sh:class <http://schema.org/Duration>;
     sh:node <https://w3id.org/jp-textbook/DurationLUShape>;
     sh:nodeKind <http://www.w3.org/ns/shacl#BlankNode>;
-    sh:order 13
+    sh:order 18
   ].
 
 <https://w3id.org/jp-textbook/TeachingUnitTypeShape> a sh:NodeShape;
