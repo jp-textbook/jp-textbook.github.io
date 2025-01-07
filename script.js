@@ -92,15 +92,14 @@ function fetch_jp_cos(url, elem) {
       if (e["@id"] == url) {
         let parent = elem.parentNode;
         let cscode = e["http://purl.org/dc/terms/identifier"]["@value"];
-        let subjectArea = e["https://w3id.org/jp-cos/subjectArea"]["@id"];
+        let cos = e["https://w3id.org/jp-cos/courseOfStudy"]["@value"];
         parent.innerHTML += ` <span class="sectionNumberHierarchy">${e["https://w3id.org/jp-cos/sectionNumberHierarchy"]["@value"]}</span>`;
         parent.innerHTML += `<br><span class="sectionText">${e["https://w3id.org/jp-cos/sectionText"]["@value"]}</span>`;
         //console.log(parent);
-        switch (subjectArea) {
-          case "https://w3id.org/jp-cos/Elementary/2017/社会":
-          case "https://w3id.org/jp-cos/Elementary/2017/理科":
-          case "https://w3id.org/jp-cos/LowerSecondary/2017/社会":
-          case "https://w3id.org/jp-cos/LowerSecondary/2017/理科":
+        switch (cos) {
+          case "https://w3id.org/jp-cos/Elementary/2017":
+          case "https://w3id.org/jp-cos/LowerSecondary/2017":
+          case "https://w3id.org/jp-cos/UpperSecondary/2018":
             parent.innerHTML += `
             <button id="nhk4school-button-${cscode}-1" class="btn btn-outline-info btn-sm btn-nhk4school p-1"
               onclick="get_nhk4school('${cscode}')">
