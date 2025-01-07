@@ -92,7 +92,7 @@ function fetch_jp_cos(url, elem) {
       if (e["@id"] == url) {
         let parent = elem.parentNode;
         let cscode = e["http://purl.org/dc/terms/identifier"]["@value"];
-        let cos = e["https://w3id.org/jp-cos/courseOfStudy"]["@value"];
+        let cos = e["https://w3id.org/jp-cos/courseOfStudy"]["@id"];
         parent.innerHTML += ` <span class="sectionNumberHierarchy">${e["https://w3id.org/jp-cos/sectionNumberHierarchy"]["@value"]}</span>`;
         parent.innerHTML += `<br><span class="sectionText">${e["https://w3id.org/jp-cos/sectionText"]["@value"]}</span>`;
         //console.log(parent);
