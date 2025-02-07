@@ -5,21 +5,24 @@ require_relative "util.rb"
 
 if $0 == __FILE__
   include Textbook
-  data = nil
+  data = {}
   ttl2html = TTL2HTML::App.new
-  graph = RDF::Graph.new
   ["all-textbook.ttl", "all-teachingUnit.ttl"].each do |filename|
     ttl_filename = find_turtle(filename)
     data = ttl2html.load_turtle(ttl_filename)
-    klass = File
-    klass = Zlib::GzipReader if ttl_filename =~ /\.ttl\.gz\z/
-    klass.open(ttl_filename) do |io|
-      reader = RDF::Reader.for(:turtle).new(io)
-      graph << reader
+  end
+  subjects = []
+  objects = []
+  predicates = []
+  data.each do |k, v|
+    subjects << k
+    v.each do |p, o|
+      predicates << p
+      objects.concat(o)
     end
   end
-  missing = ( graph.subjects - graph.objects - graph.predicates ).select do |e|
-    e.is_a?(RDF::URI) and e.to_s.match(BASE_URI)
+  missing = ( subjects - objects - predicates ).select do |e|
+    e.to_s =~ /\Ahttps?:\/\// and e.start_with?(BASE_URI)
   end
   if not missing.empty?
     puts "Missing usage for subject(s):"
@@ -31,8 +34,8 @@ if $0 == __FILE__
       p subject
     end
   end
-  missing = (graph.objects - graph.subjects).select{|e|
-    e.is_a?(RDF::URI) and e.to_s.match(BASE_URI)
+  missing = ( objects - subjects ).select{|e|
+    e.to_s =~ /\Ahttps?:\/\// and e.to_s.start_with?(BASE_URI)
   }
   if not missing.empty?
     puts "Missing definition for object(s):"
@@ -40,8 +43,8 @@ if $0 == __FILE__
       p object
     end
   end
-  missing = (graph.predicates - graph.subjects).select{|e|
-    e.is_a?(RDF::URI) and e.to_s.match(BASE_URI)
+  missing = ( predicates - subjects ).select{|e|
+    e.to_s =~ /\Ahttps?:\/\// and e.to_s.start_with?(BASE_URI)
   }
   if not missing.empty?
     puts "Missing definition for predicate(s):"
