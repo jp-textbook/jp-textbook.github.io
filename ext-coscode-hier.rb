@@ -7,6 +7,7 @@ require "roo"
 require "pp"
 
 require "ttl2html"
+require_relative "util.rb"
 
 ENDPOINT = "https://dydra.com/masao/jp-cos/sparql"
 SPARQL = <<EOF
@@ -27,12 +28,12 @@ class DataCache
   end
 end
 
-class App
+class App < TTL2HTML::App
   include TTL2HTML
   def initialize
-    @ttl2html = TTL2HTML::App.new
+    super
     file = find_turtle("../jp-cos.github.io/all")
-    @data = @ttl2html.load_turtle(file)
+    load_turtle(file)
   end
   def expand_coscode_hierarchy(coscodes)
     results = []
@@ -51,7 +52,28 @@ class App
         end
       end
     end
-    results.flatten.sort.uniq
+    results = results.flatten.sort.uniq
+  end
+  def expand_coscode_hierarchy_upward(coscodes)
+    results = []
+    coscodes = coscodes.sort
+    while not coscodes.empty?
+      coscode = coscodes.pop
+      parent = @data_inverse["https://w3id.org/jp-cos/#{coscode}"]
+      if parent["http://schema.org/hasPart"]
+        parent["http://schema.org/hasPart"].each do |e|
+          children = @data[e]["http://schema.org/hasPart"].map{|c| c.last_part }
+          p [:children, children]
+          intersection = (coscodes + results + [coscode]).intersection(children)
+          p [:intersection, intersection]
+          if intersection.size == children.size
+            coscodes << e.last_part
+          end
+        end
+      end
+      results << coscode
+    end
+    results.sort.uniq
   end
 end
 
@@ -81,6 +103,7 @@ end
 
 $0 = File.expand_path($0, __dir__)
 if $0 == __FILE__
+  app = App.new
   if ARGV.size < 1
     puts "USAGE #$0 filename [sheetname]"
     exit
@@ -104,8 +127,9 @@ if $0 == __FILE__
     next if row.empty? or row[0].empty?
     coscode = row.find(""){|e| e.coordinate[1] == cos_idx + 1 }.to_s
     if coscode and not coscode.empty?
-      expanded = app.expand_coscode_hierarchy(coscode).join(",")
-      puts [ row[0], coscode, expanded ].join("\t")
+      expanded = app.expand_coscode_hierarchy(coscode)
+      expanded = app.expand_coscode_hierarchy_upward(expanded)
+      puts [ row[0], coscode, expanded.join(",") ].join("\t")
     else
       puts row[0]
     end
