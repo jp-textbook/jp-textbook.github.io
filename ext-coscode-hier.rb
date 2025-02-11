@@ -63,9 +63,9 @@ class App < TTL2HTML::App
       if parent["http://schema.org/hasPart"]
         parent["http://schema.org/hasPart"].each do |e|
           children = @data[e]["http://schema.org/hasPart"].map{|c| c.last_part }
-          p [:children, children]
+          #p [:children, children]
           intersection = (coscodes + results + [coscode]).intersection(children)
-          p [:intersection, intersection]
+          #p [:intersection, intersection]
           if intersection.size == children.size
             coscodes << e.last_part
           end
