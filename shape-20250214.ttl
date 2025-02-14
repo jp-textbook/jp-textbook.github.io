@@ -910,8 +910,10 @@
   ];
   sh:property [
     sh:path <https://w3id.org/jp-textbook/cosMappingDescription>;
-    sh:name "学習指導要領の細目（ラベル）"@ja;
-    sh:name "Course Of Study Item (Label)"@en;
+    sh:name "転記した学習指導要領の細目（文字列）"@ja;
+    sh:name "Section numbers of Course of Study Item from Compiling Prospectus"@en;
+    sh:description "編修趣意書に記述された単元に対応する学習指導要領の細目についての情報。原則、編修趣意書に記述されたまま転記したもの。"@ja;
+    sh:description "This property refers to the section numbers of the corresponding courses of study items described in the compiling prospectus. This is a transcription of the information written in the compiling prospectus."@en;
     skos:example "体育分野 ２−Ｈ 第１学年及び第２学年（1）ア（ウ）,イ,ウ";
     sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
     sh:order 13
@@ -920,18 +922,18 @@
     sh:path <https://w3id.org/jp-cos/cosItem>;
     sh:name "学習指導要領の細目"@ja;
     sh:name "Course Of Study Item"@en;
-    sh:description "対応する学習指導要領の細目を葉まで含めて拡張し、<code>cs:<var>学習指導要領コード</var></code> として示される学習指導要領の細目リソースと関連付ける"@ja;
-    sh:description "Link to the expand course of study item, represented as <code>cs:<var>course of study code</var></code>."@en;
+    sh:description "単元に対応した学習指導要領の細目を表す。<code>cs:<var>学習指導要領コード</var></code> として示される学習指導要領の細目リソースと関連付いている。「転記した学習指導要領の細目（コード）」を根や葉まで含めて拡張している。"@ja;
+    sh:description "Link to the expand course of study item, represented as <code>cs:<var>course of study code</var></code>. The \"Transcribed Course Of Study Item(Code)\" are expanded to include both roots and leaves."@en;
     skos:example "cs:83G1213811300000, cs:83G1213812000000, cs:83G1213813000000";
     sh:class <https://w3id.org/jp-cos/Item>;
     sh:order 14
   ];
   sh:property [
     sh:path <https://w3id.org/jp-cos/originalCosItem>;
-    sh:name "転記した学習指導要領の細目"@ja;
-    sh:name "Transcribed Course Of Study Item"@en;
-    sh:description "対応する学習指導要領の細目を<code>cs:<var>学習指導要領コード</var></code> として示される学習指導要領の細目リソースと関連付ける"@ja;
-    sh:description "Link to the course of study item, represented as <code>cs:<var>course of study code</var></code>."@en;
+    sh:name "転記した学習指導要領の細目（コード）"@ja;
+    sh:name "Course of Study Item from Compiling Prospectus"@en;
+    sh:description "「転記した学習指導要領の細目（文字列）」の内容から<code>cs:<var>学習指導要領コード</var></code> として示される学習指導要領の細目リソースと関連付けた値"@ja;
+    sh:description " It represents the details of the Courses of Study Items corresponding to the unit. It is associated with the Courses of Study resources shown as cs:Course guidelines code. It is expanded from the \"Course of Study Item from Compiling Prospectus\" to include higher- and lower-level items in the hierarchy."@en;
     skos:example "cs:83G1213811300000, cs:83G1213812000000, cs:83G1213813000000";
     sh:class <https://w3id.org/jp-cos/Item>;
     sh:order 15
