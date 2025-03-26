@@ -23,7 +23,7 @@ if $0 == __FILE__
   end
   missing = ( subjects - objects - predicates ).select do |e|
     e.to_s =~ /\Ahttps?:\/\// and e.start_with?(BASE_URI)
-  end
+  end.uniq
   if not missing.empty?
     puts "Missing usage for subject(s):"
     missing.sort.each do |subject|
@@ -36,7 +36,7 @@ if $0 == __FILE__
   end
   missing = ( objects - subjects ).select{|e|
     e.to_s =~ /\Ahttps?:\/\// and e.to_s.start_with?(BASE_URI)
-  }
+  }.uniq
   if not missing.empty?
     puts "Missing definition for object(s):"
     missing.sort.each do |object|
@@ -45,7 +45,7 @@ if $0 == __FILE__
   end
   missing = ( predicates - subjects ).select{|e|
     e.to_s =~ /\Ahttps?:\/\// and e.to_s.start_with?(BASE_URI)
-  }
+  }.uniq
   if not missing.empty?
     puts "Missing definition for predicate(s):"
     missing.sort.each do |predicate|
