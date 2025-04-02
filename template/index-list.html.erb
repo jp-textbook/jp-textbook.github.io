@@ -1,6 +1,9 @@
 <div class="row">
   <div class="col-md-12">
-    <h2>現行学習指導要領（2020年度以降）</h2>
+    <hgroup>
+    <h2>現行学習指導要領</h2>
+    <p>平成29・30・31年 (2017・18・19) 改訂</p>
+    </hgroup>
     <dl>
       <%- [ "https://w3id.org/jp-textbook/curriculum/小学校/2020",
             "https://w3id.org/jp-textbook/curriculum/中学校/2021",
@@ -25,26 +28,39 @@
   </div>
 </div>
 <div class="row">
-  <%- { "学習指導要領（2011年度以降）":
-          [ "https://w3id.org/jp-textbook/curriculum/小学校/2011",
+  <%- [
+        { title: "旧学習指導要領",
+          subtitle: "平成20・21年 (2008・09) 改訂",
+          curriculums: [
+            "https://w3id.org/jp-textbook/curriculum/小学校/2011",
             "https://w3id.org/jp-textbook/curriculum/中学校/2012",
             "https://w3id.org/jp-textbook/curriculum/高等学校/2013",
           ],
-        "旧学習指導要領（2002年度以降）":
-          [ "https://w3id.org/jp-textbook/curriculum/小学校/2002",
+        },
+        { title: "旧学習指導要領",
+          subtitle: "平成10・11年 (1998・99) 改訂",
+          curriculums: [
+            "https://w3id.org/jp-textbook/curriculum/小学校/2002",
             "https://w3id.org/jp-textbook/curriculum/中学校/2002",
             "https://w3id.org/jp-textbook/curriculum/高等学校/2003",
           ],
-        "旧学習指導要領（1992年度以降）":
-          [ "https://w3id.org/jp-textbook/curriculum/小学校/1992",
+        },
+        { title: "旧学習指導要領",
+          subtitle: "平成元年 (1989) 改訂",
+          curriculums: [
+            "https://w3id.org/jp-textbook/curriculum/小学校/1992",
             "https://w3id.org/jp-textbook/curriculum/中学校/1993",
             "https://w3id.org/jp-textbook/curriculum/高等学校/1994",
-          ]
-      }.each do |name, curriculums| -%>
+          ],
+        },
+      ].each do |curriculum| -%>
   <div class="col-md-4">
-    <h2><%=h name %></h2>
+    <hgroup>
+    <h2><%=h curriculum[:title] %></h2>
+    <p class="text-secondary"><%=h curriculum[:subtitle] %></p>
+    </hgroup>
     <dl>
-      <%- curriculums.each do |uri| -%>
+      <%- curriculum[:curriculums].each do |uri| -%>
           <%- school = param[:data_global][uri]["https://w3id.org/jp-textbook/school"].first -%>
       <dt><%=h param[:data_global][school]["http://schema.org/name"].find{|e| e.language == :ja } %>
           <small><a href="<%= relative_path_uri(uri, param[:base_uri]) %>">
