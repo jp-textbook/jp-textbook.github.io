@@ -1,6 +1,9 @@
 <div class="row">
   <div class="col-md-12">
-    <h2>Current Curriculum Guideline (2017-2019 revision)</h2>
+    <hgroup>
+      <h2>Current Curriculum Guideline</h2>
+      <p>2017-2019 revision</p>
+    </hgroup>
     <dl>
       <%- [ "https://w3id.org/jp-textbook/curriculum/小学校/2020",
             "https://w3id.org/jp-textbook/curriculum/中学校/2021",
@@ -26,21 +29,24 @@
 </div>
 <div class="row">
   <%- [
-        { title: "Old Curriculum Guideline (2008-2009 revision)",
+        { title: "Old Curriculum Guideline",
+          subtitle: "2008-2009 revision",
           curriculums: [
             "https://w3id.org/jp-textbook/curriculum/小学校/2011",
             "https://w3id.org/jp-textbook/curriculum/中学校/2012",
             "https://w3id.org/jp-textbook/curriculum/高等学校/2013",
           ],
         },
-        { title: "Old Curriculum Guideline (1998-1999 revision)",
+        { title: "Old Curriculum Guideline",
+          subtitle: "1998-1999 revision",
           curriculums: [
             "https://w3id.org/jp-textbook/curriculum/小学校/2002",
             "https://w3id.org/jp-textbook/curriculum/中学校/2002",
             "https://w3id.org/jp-textbook/curriculum/高等学校/2003",
           ],
         },
-        { title: "Old Curriculum Guideline (1989 revision)",
+        { title: "Old Curriculum Guideline",
+          subtitle: "1989 revision",
           curriculums: [
             "https://w3id.org/jp-textbook/curriculum/小学校/1992",
             "https://w3id.org/jp-textbook/curriculum/中学校/1993",
@@ -49,7 +55,10 @@
         },
       ].each do |curriculum| -%>
   <div class="col-md-4">
+    <hgroup>
     <h2><%=h curriculum[:title] %></h2>
+    <p><%=h curriculum[:subtitle] %></p>
+    </hgroup>
     <dl>
       <%- curriculum[:curriculums].each do |uri| -%>
           <%- school = param[:data_global][uri]["https://w3id.org/jp-textbook/school"].first -%>
