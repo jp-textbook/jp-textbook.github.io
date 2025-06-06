@@ -10,6 +10,7 @@ def check_links(file)
   a_elements.each do |a_elem|
     href = a_elem["href"]
     href = href.sub(/#.*\z/, "")
+    href = href.sub("https://w3id.org/jp-textbook/", "/")
     next if href =~ /\Ahttps?:\/\//
     next if href =~ /\Ajavascript:/
     href = Pathname(File.dirname(file)) + href
