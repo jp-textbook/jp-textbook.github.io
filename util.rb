@@ -118,7 +118,7 @@ module Textbook
     dbpedia: /dbpedia.org/,
     hojin_info: /info\.gbiz\.go\.jp\/hojin\//,
   }
-  CURRENT_YEAR= 2024
+  CURRENT_YEAR= 2025
   def map_links(urls, links)
     urls = [] if urls.nil?
     urls.map{|url|
