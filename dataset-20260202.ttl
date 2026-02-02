@@ -18,7 +18,6 @@ _:toplevel a void:Dataset;
 	dct:description "Japanese Textbook Linked Open Data (LOD) is a dataset which includes bibliographic information for textbooks published up to now since the 7th curriculum guideline enforced in 1992, as well as the related information such as the subject areas, the subjects, teaching units, compiling prospectus and the curriculum guidelines."@en;
 	dct:available "2017-01-15"^^xsd:date;
 	dct:source <https://nierlib.nier.go.jp/lib/database/TEXTBOOK/>;
-	void:sparqlEndpoint <https://dydra.com/masao/jp-textbook/@query>;
 	dct:publisher [
 		a foaf:Project;
 		foaf:name "教科書LODプロジェクト"@ja;
@@ -66,6 +65,11 @@ _:toplevel a void:Dataset;
             vcard:organization-name "Doshisha University"@en;
 	    ]
     ];
+	dcat:accessService [
+    	a dcat:DataService;
+    	dcat:endpointURL <https://dydra.com/masao/jp-textbook/sparql>;
+    	dcat:landingPage <https://dydra.com/masao/jp-textbook/@query>
+	];
 	void:feature <http://www.w3.org/ns/formats/Turtle> .
 
 _:derivedfrom_compilingprospectus
