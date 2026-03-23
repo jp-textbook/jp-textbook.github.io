@@ -47,7 +47,65 @@
         <div class="jumbotron">
       <div class="container">
         <h1>資料「書写の資料館」 : ・漢字のいろいろな書き方</h1>
-        <p><i class="bi bi-link-45deg"></i> <a href="https://w3id.org/jp-textbook/AA100000001432">https://w3id.org/jp-textbook/AA100000001432</a></p>
+        <p>
+        <i class="bi bi-link-45deg"></i> <a href="https://w3id.org/jp-textbook/AA100000001432">https://w3id.org/jp-textbook/AA100000001432</a>
+        <button id="copy-link" class="btn btn-sm btn-outline-secondary" aria-live="polite">
+        <i class="bi bi-copy"></i> <span class="copy-link-text">Copy Link</span>
+        </button>
+        </p>
+        <script>
+        (() => {
+          const btn = document.getElementById("copy-link");
+          const url = 'https://w3id.org/jp-textbook/AA100000001432';
+          const originalHTML = btn.innerHTML;
+          let timerId = null;
+          async function copyText(text) {
+            // Clipboard API, or fallback
+            if (navigator.clipboard && window.isSecureContext) {
+              await navigator.clipboard.writeText(text);
+              return;
+            }
+            const ta = document.createElement("textarea");
+            ta.value = text;
+            ta.style.position = "fixed";
+            ta.style.left = "-9999px";
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand("copy");
+            document.body.removeChild(ta);
+          }
+          function setCopiedState() {
+            btn.innerHTML = `<i class="bi bi-check2"></i> <span class="btn-label">Copied!</span>`;
+            btn.classList.remove("btn-outline-secondary");
+            btn.classList.add("btn-outline-success");
+          }
+          function resetState() {
+            btn.innerHTML = originalHTML;
+            btn.classList.remove("btn-outline-success");
+            btn.classList.add("btn-outline-secondary");
+          }
+          btn.addEventListener("click", async () => {
+            btn.disabled = true;
+            try {
+              await copyText(url);
+              setCopiedState();
+              clearTimeout(timerId);
+              timerId = setTimeout(() => {
+                resetState();
+                btn.disabled = false;
+              }, 1500);
+            } catch (e) {
+              // fail...
+              btn.innerHTML = `<span class="btn-label">Copy failed...</span>`;
+              clearTimeout(timerId);
+              timerId = setTimeout(() => {
+                resetState();
+                btn.disabled = false;
+              }, 1500);
+            }
+          });
+        })();
+        </script>
       </div>
     </div>
     <div class="container">
