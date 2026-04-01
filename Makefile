@@ -9,7 +9,8 @@ all:
 	@ls -l all-textbook-`date +%Y%m%d`.ttl
 	gzip -9 -f all-textbook-`date +%Y%m%d`.ttl
 	@ls -l all-textbook-`date +%Y%m%d`.ttl.gz
-	bundle exec catttl chapterType compilingProspectus teachingUnit-AA-body teachingUnit-AA-duration teachingUnit-AB teachingUnitType > all-teachingUnit-`date +%Y%m%d`.ttl
+	bundle exec catttl chapterType compilingProspectus durationType mixedDurationType \
+	  teachingUnit-AA-body teachingUnit-AA-duration teachingUnit-AB teachingUnitType > all-teachingUnit-`date +%Y%m%d`.ttl
 	rapper -i turtle all-teachingUnit-`date +%Y%m%d`.ttl -c
 	@ls -l all-teachingUnit-`date +%Y%m%d`.ttl
 	gzip -9 -f all-teachingUnit-`date +%Y%m%d`.ttl

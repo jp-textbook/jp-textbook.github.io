@@ -1734,8 +1734,8 @@
   </thead>
   <tbody>
     <tr>
-      <td class="url"><code>rdf:value</code></td>
-      <td>配当時数</td>
+      <td class="url"><code>schema:name</code></td>
+      <td>配当時数（転記）</td>
       <td>2-4</td>
       <td>
         <div>
@@ -1745,12 +1745,96 @@
         繰り返し無し
         </div>
       </td>
-      <td></td>
+      <td>編修趣意書に掲載されたままの表記を表す。</td>
     </tr>
     <tr>
-      <td class="url"><code>schema:note</code></td>
+      <td class="url"><code>rdf:value</code></td>
+      <td>配当時数</td>
+      <td>2</td>
+      <td>
+        <div>
+          <strong>必須</strong>
+        </div>
+        <div>
+        繰り返し無し
+        </div>
+      </td>
+      <td>数値で表した配当時数を表す。代表的であると思われる時間を示す。不明な場合は短い値。</td>
+    </tr>
+    <tr>
+      <td class="url"><code>rdfs:minValue</code></td>
+      <td>配当時数の最小値</td>
+      <td>2</td>
+      <td>
+        <div>
+        省略可能
+        </div>
+        <div>
+        繰り返し無し
+        </div>
+      </td>
+      <td>範囲で配当時数が示されている場合の最小値。</td>
+    </tr>
+    <tr>
+      <td class="url"><code>rdfs:maxValue</code></td>
+      <td>配当時数の最大値</td>
+      <td>4</td>
+      <td>
+        <div>
+        省略可能
+        </div>
+        <div>
+        繰り返し無し
+        </div>
+      </td>
+      <td>範囲で配当時数が示されている場合の最大値。</td>
+    </tr>
+    <tr>
+      <td class="url"><code>dct:source</code></td>
+      <td>編修趣意書</td>
+      <td class="url">https://w3id.org/jp-textbook/AC100000000315</td>
+      <td>
+        <div>
+          <strong>必須</strong>
+        </div>
+        <div>
+        繰り返し無し
+        </div>
+      </td>
+      <td><code>textbook:<var>編修趣意書ID</var></code>として示される編修趣意書リソースと関連付ける</td>
+    </tr>
+    <tr>
+      <td class="url"><code>textbook:mixedDurationType</code></td>
+      <td>複数単元種別</td>
+      <td class="url">textbook:mixedDurationType/Selected</td>
+      <td>
+        <div>
+        省略可能
+        </div>
+        <div>
+        繰り返し無し
+        </div>
+      </td>
+      <td>複数単元の類型を示す。Combined（複合）,Selected（選択）の２つのどちらかをとる。</td>
+    </tr>
+    <tr>
+      <td class="url"><code>textbook:durationType</code></td>
+      <td>時数種別</td>
+      <td class="url">textbook:durationType/Standard</td>
+      <td>
+        <div>
+          <strong>必須</strong>
+        </div>
+        <div>
+        繰り返し無し
+        </div>
+      </td>
+      <td>配当時数の類型を示す。 Standard（標準）, Flexible（適宜や随時）, Optional（オプション）,  Spare（予備） のどれかをとる。</td>
+    </tr>
+    <tr>
+      <td class="url"><code>rdfs:comment</code></td>
       <td>注記</td>
-      <td>＊配当時数は，各内容を扱う際の最小時数を下限，最大時数を上限としています。</td>
+      <td>5つの単元のうち導入の1つ及び残りの4つのうち2つの単元を選択する。</td>
       <td>
         <div>
         省略可能
@@ -1761,13 +1845,75 @@
       </td>
       <td></td>
     </tr>
+    <tr>
+      <td class="url"><code>qb:order</code></td>
+      <td>ソート順</td>
+      <td>1</td>
+      <td>
+        <div>
+          <strong>必須</strong>
+        </div>
+        <div>
+        繰り返し無し
+        </div>
+      </td>
+      <td>表示順を決める場合などで利用</td>
+    </tr>
   </tbody>
   <tfoot>
     <tr><td colspan="5">
     表内で用いている名前空間URIは以下の通りです
       <dl class="row small">
+      <dt class="col-sm-2"><code>schema:</code></dt>
+      <dd class="col-sm-10">http://schema.org/</dd>
       <dt class="col-sm-2"><code>rdf:</code></dt>
       <dd class="col-sm-10">http://www.w3.org/1999/02/22-rdf-syntax-ns#</dd>
+      <dt class="col-sm-2"><code>rdfs:</code></dt>
+      <dd class="col-sm-10">http://www.w3.org/2000/01/rdf-schema#</dd>
+      <dt class="col-sm-2"><code>dct:</code></dt>
+      <dd class="col-sm-10">http://purl.org/dc/terms/</dd>
+      <dt class="col-sm-2"><code>textbook:</code></dt>
+      <dd class="col-sm-10">https://w3id.org/jp-textbook/</dd>
+      <dt class="col-sm-2"><code>qb:</code></dt>
+      <dd class="col-sm-10">http://purl.org/linked-data/cube#</dd>
+      </dl>
+    </td></tr>
+  </tfoot>
+</table>            <h3 id="DurationTypeShape">Durationtype</h3>
+            <ul><li>対象クラス: <a href="https://w3id.org/jp-textbook/DurationType">https://w3id.org/jp-textbook/DurationType</a></li></ul>
+            <p></p>
+            <p>Durationtypeリソースが持つプロパティを下表に示します</p>
+            <table class="table table-sm">
+  <thead>
+  <tr>
+    <th>プロパティ名</th>
+    <th>説明</th>
+    <th>プロパティ値の例</th>
+    <th>必須・省略の別<br>
+        繰り返しの有無</th>
+    <th>備考</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="url"><code>schema:name</code></td>
+      <td>名称</td>
+      <td><ul><li>"予備"@ja;</li><li>"Spare"@en;</li></ul></td>
+      <td>
+        <div>
+          <strong>必須</strong>
+        </div>
+        <div>
+        繰り返し有り
+        </div>
+      </td>
+      <td>言語コードを用いて、名称に加え、英語名称を示します。言語コードとその意味は以下の通りです。<dl><dt>@ja</dt><dd>名称（日本語表記）</dd><dt>@en</dt><dd>英語名称</dd></dl></td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr><td colspan="5">
+    表内で用いている名前空間URIは以下の通りです
+      <dl class="row small">
       <dt class="col-sm-2"><code>schema:</code></dt>
       <dd class="col-sm-10">http://schema.org/</dd>
       </dl>
@@ -1880,6 +2026,46 @@
       <dd class="col-sm-10">http://dl.nier.go.jp/library/vocab/</dd>
       <dt class="col-sm-2"><code>textbook-rc:</code></dt>
       <dd class="col-sm-10">http://dl.nier.go.jp/library/vocab/textbook-rc/</dd>
+      </dl>
+    </td></tr>
+  </tfoot>
+</table>            <h3 id="MixedDurationTypeShape">Mixeddurationtype</h3>
+            <ul><li>対象クラス: <a href="https://w3id.org/jp-textbook/MixedDurationType">https://w3id.org/jp-textbook/MixedDurationType</a></li></ul>
+            <p></p>
+            <p>Mixeddurationtypeリソースが持つプロパティを下表に示します</p>
+            <table class="table table-sm">
+  <thead>
+  <tr>
+    <th>プロパティ名</th>
+    <th>説明</th>
+    <th>プロパティ値の例</th>
+    <th>必須・省略の別<br>
+        繰り返しの有無</th>
+    <th>備考</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="url"><code>schema:name</code></td>
+      <td>名称</td>
+      <td><ul><li>"複合"@ja;</li><li>"Combined"@en;</li></ul></td>
+      <td>
+        <div>
+          <strong>必須</strong>
+        </div>
+        <div>
+        繰り返し有り
+        </div>
+      </td>
+      <td>言語コードを用いて、名称に加え、英語名称を示します。言語コードとその意味は以下の通りです。<dl><dt>@ja</dt><dd>名称（日本語表記）</dd><dt>@en</dt><dd>英語名称</dd></dl></td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr><td colspan="5">
+    表内で用いている名前空間URIは以下の通りです
+      <dl class="row small">
+      <dt class="col-sm-2"><code>schema:</code></dt>
+      <dd class="col-sm-10">http://schema.org/</dd>
       </dl>
     </td></tr>
   </tfoot>
@@ -2482,52 +2668,9 @@
       </td>
     </tr>
     <tr>
-      <td rowspan="2" class="url"><code>schema:duration</code></td>
+      <td class="url"><code>schema:duration</code></td>
       <td>配当時数</td>
-      <td class="url"></td>
-      <td>
-        <div>
-        省略可能
-        </div>
-        <div>
-        繰り返し有り
-        </div>
-      </td>
-      <td><code>rdf:value</code>と<code>schema:note</code>の2つのプロパティを持つ。複数ある場合、繰り返される。</td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        ブランクノードの内容は以下の内容からなる構造を持ちます。
-        <div class="blank_node"><table class="table table-sm">
-  <thead>
-  <tr>
-    <th>プロパティ名</th>
-    <th>説明</th>
-    <th>プロパティ値の例</th>
-    <th>必須・省略の別<br>
-        繰り返しの有無</th>
-    <th>備考</th>
-  </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="url"><code>rdf:value</code></td>
-      <td>配当時数</td>
-      <td>2-4</td>
-      <td>
-        <div>
-          <strong>必須</strong>
-        </div>
-        <div>
-        繰り返し無し
-        </div>
-      </td>
-      <td></td>
-    </tr>
-    <tr>
-      <td class="url"><code>schema:note</code></td>
-      <td>注記</td>
-      <td>＊配当時数は，各内容を扱う際の最小時数を下限，最大時数を上限としています。</td>
+      <td class="url">textbook:AC100000000315/Time004</td>
       <td>
         <div>
         省略可能
@@ -2536,22 +2679,7 @@
         繰り返し無し
         </div>
       </td>
-      <td></td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr><td colspan="5">
-    表内で用いている名前空間URIは以下の通りです
-      <dl class="row small">
-      <dt class="col-sm-2"><code>rdf:</code></dt>
-      <dd class="col-sm-10">http://www.w3.org/1999/02/22-rdf-syntax-ns#</dd>
-      <dt class="col-sm-2"><code>schema:</code></dt>
-      <dd class="col-sm-10">http://schema.org/</dd>
-      </dl>
-    </td></tr>
-  </tfoot>
-</table></div>
-      </td>
+      <td>配当時数リソースと関連付ける。</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:cosMappingDescription</code></td>
