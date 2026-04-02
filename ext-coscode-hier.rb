@@ -58,7 +58,7 @@ class App < TTL2HTML::App
   end
 end
 
-$0 = File.expand_path($0, __dir__)
+#$0 = File.expand_path($0, __dir__)
 if $0 == __FILE__
   if ARGV.size < 1
     puts "USAGE #$0 filename [sheetname]"
@@ -75,7 +75,7 @@ if $0 == __FILE__
     if skip
       if row[0].to_s == "No" or row[0].to_s =~ /ID$/
         skip = false
-        cos_idx = row.index{|e| e.to_s == "cosコード" or e.to_s == "オリジナルcos" }
+        cos_idx = row.index{|e| e.to_s == "cosコード" or e.to_s == "オリジナルcos" or e.to_s =~ /cosコード/ }
         raise "cos_idx not found: one of the header must have either the values of \"cosコード\" or \"オリジナルcos\"" if cos_idx.nil?
       end
       next
