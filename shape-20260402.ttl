@@ -329,6 +329,9 @@
     sh:order 12
   ].
 
+<https://w3id.org/jp-textbook/CosAboutShape> a sh:NodeShape;
+  sh:or (<https://w3id.org/jp-cos/SubjectShape> <https://w3id.org/jp-cos/SubjectAreaShape>).
+
 <https://w3id.org/jp-textbook/CurriculumGuidelineShape> a sh:NodeShape;
   sh:targetClass <https://w3id.org/jp-textbook/CurriculumGuideline>;
   sh:property [
@@ -394,6 +397,16 @@
     sh:order 6
   ];
   sh:property [
+    sh:path <http://www.w3.org/2002/07/owl#sameAs>;
+    sh:name "同一リソース"@ja;
+    sh:name "Same resource"@en;
+    skos:example <https://w3id.org/jp-cos/UpperSecondary/2018>;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:class <https://w3id.org/jp-cos/CourseOfStudy>;
+    sh:order 7
+  ];
+  sh:property [
     sh:path <http://purl.org/dc/terms/hasVersion>;
     sh:name "別バージョン情報"@ja;
     sh:name "Other versions"@en;
@@ -402,7 +415,7 @@
     sh:class <https://w3id.org/jp-textbook/CurriculumGuidelineVersion>;
     sh:node <https://w3id.org/jp-textbook/CurriculumGuidelineVersionShape>;
     sh:nodeKind <http://www.w3.org/ns/shacl#BlankNode>;
-    sh:order 7
+    sh:order 8
   ].
 
 <https://w3id.org/jp-textbook/CurriculumGuidelineVersionShape> a sh:NodeShape;
@@ -1394,12 +1407,22 @@
     sh:order 4
   ];
   sh:property [
+    sh:path <http://www.w3.org/2002/07/owl#sameAs>;
+    sh:name "同一リソース"@ja;
+    sh:name "Same resource"@en;
+    skos:example <https://w3id.org/jp-cos/UpperSecondary/2018/国語>;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:class <https://w3id.org/jp-cos/SubjectArea>;
+    sh:order 5
+  ];
+  sh:property [
     sh:path <https://w3id.org/jp-textbook/hasSubject>;
     sh:name "種目（科目）がある"@ja;
     sh:name "has a subject"@en;
     skos:example "textbook:curriculum/高等学校/2013/国語/国語総合";
     sh:class <https://w3id.org/jp-textbook/curriculum/Subject>;
-    sh:order 5
+    sh:order 6
   ];
   sh:property [
     sh:path <https://w3id.org/jp-textbook/sourceOfEnglishName>;
@@ -1410,7 +1433,7 @@
     skos:example <https://w3id.org/jp-textbook/source/Elementary-2008>;
     sh:maxCount 1;
     sh:class <https://w3id.org/jp-textbook/SourceOfEnglishName>;
-    sh:order 6
+    sh:order 7
   ].
 
 <https://w3id.org/jp-textbook/curriculum/SubjectShape> a sh:NodeShape;
@@ -1452,6 +1475,15 @@
     sh:order 3
   ];
   sh:property [
+    sh:path <http://schema.org/about>;
+    sh:name "対象とする科目もしくは教科"@ja;
+    sh:name "Target subject or subject area"@en;
+    skos:example <https://w3id.org/jp-cos/UpperSecondary/2009/国語/国語総合>;
+    sh:maxCount 1;
+    sh:node <https://w3id.org/jp-textbook/CosAboutShape>;
+    sh:order 4
+  ];
+  sh:property [
     sh:path <https://w3id.org/jp-textbook/subjectType>;
     sh:name "種目種別"@ja;
     sh:name "Type of the subjects"@en;
@@ -1459,7 +1491,15 @@
     sh:description "Used only in the curriculum guidelines 1994, 2003 and 2013 for the upper secondary schools"@en;
     skos:example "textbook:curriculum/高等学校/2013/Common";
     sh:class <https://w3id.org/jp-textbook/SubjectType>;
-    sh:order 4
+    sh:order 5
+  ];
+  sh:property [
+    sh:path <http://www.w3.org/2000/01/rdf-schema#comment>;
+    sh:name "注記"@ja;
+    sh:name "Note"@en;
+    skos:example "国語のうち書写を除く内容を対象とする。";
+    sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
+    sh:order 6
   ];
   sh:property [
     sh:path <http://www.w3.org/2000/01/rdf-schema#seeAlso>;
@@ -1469,7 +1509,7 @@
     sh:description "Links to the website for the document on textbook authorization"@en;
     skos:example <http://www.mext.go.jp/a_menu/shotou/kyoukasho/kentei/1293732.htm>;
     sh:nodeKind <http://www.w3.org/ns/shacl#IRI>;
-    sh:order 5
+    sh:order 7
   ];
   sh:property [
     sh:path <http://schema.org/citation>;
@@ -1480,7 +1520,7 @@
     skos:example "『教科用図書検定申請受理種目』平成22年5月14日号外文部科学省告示第83号(平成元年6月9日文部省告示第89号の改正)";
     sh:maxCount 1;
     sh:datatype <http://www.w3.org/2001/XMLSchema#string>;
-    sh:order 6
+    sh:order 8
   ];
   sh:property [
     sh:path <https://w3id.org/jp-textbook/sourceOfEnglishName>;
@@ -1491,5 +1531,5 @@
     skos:example <https://w3id.org/jp-textbook/source/Elementary-2008>;
     sh:maxCount 1;
     sh:class <https://w3id.org/jp-textbook/SourceOfEnglishName>;
-    sh:order 7
+    sh:order 9
   ].
