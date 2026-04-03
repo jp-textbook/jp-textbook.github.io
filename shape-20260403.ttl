@@ -522,8 +522,8 @@
   sh:targetClass <http://schema.org/Duration>;
   sh:property [
     sh:path <http://schema.org/name>;
-    sh:name "配当時数（転記）"@ja;
-    sh:name "Duration(transferred)"@en;
+    sh:name "配当時数（文字列）"@ja;
+    sh:name "Duration(string)"@en;
     sh:description "編修趣意書に掲載されたままの表記を表す。"@ja;
     sh:description "Indicates the wording as it appears in the compiling prospectus."@en;
     skos:example "2-4";
@@ -1213,7 +1213,7 @@
     sh:path <https://w3id.org/jp-textbook/authorizedYear>;
     sh:name "検定年"@ja;
     sh:name "Authorized year"@en;
-    skos:example "2001";
+    skos:example "\"2001\""^^xsd:gYear;
     sh:datatype <http://www.w3.org/2001/XMLSchema#gYear>;
     sh:order 9
   ];
@@ -1232,7 +1232,7 @@
     sh:path <https://w3id.org/jp-textbook/usageYear>;
     sh:name "使用年"@ja;
     sh:name "Usage year"@en;
-    skos:example "2005";
+    skos:example "\"2005\""^^xsd:gYear;
     sh:minCount 1;
     sh:datatype <http://www.w3.org/2001/XMLSchema#gYear>;
     sh:order 11
@@ -1412,7 +1412,6 @@
     sh:name "Same resource"@en;
     skos:example <https://w3id.org/jp-cos/UpperSecondary/2018/国語>;
     sh:maxCount 1;
-    sh:minCount 1;
     sh:class <https://w3id.org/jp-cos/SubjectArea>;
     sh:order 5
   ];
