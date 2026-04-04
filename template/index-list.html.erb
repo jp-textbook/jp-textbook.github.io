@@ -11,7 +11,7 @@
           ].each do |uri| -%>
           <%- school = param[:data_global][uri]["https://w3id.org/jp-textbook/school"].first -%>
       <dt><%=h param[:data_global][school]["http://schema.org/name"].find{|e| e.language == :ja } %>
-          <small><a href="<%= relative_path_uri(uri, param[:base_uri]) %>">
+          <small><a href="<%= relative_path_uri("index.html", uri, param[:base_uri]) %>">
             <i class="bi bi-book"></i> 学習指導要領
           </a></small>
       <dd><ul class="list-inline">
@@ -19,7 +19,7 @@
           <%- param[:data_global][subject_area]["https://w3id.org/jp-textbook/hasSubject"]&.each do |subject| -%>
             <%- next if not param[:data_inverse_global].has_key?(subject) -%>
             <%- next if not param[:data_inverse_global][subject].has_key?("https://w3id.org/jp-textbook/subject") -%>
-            <li class="list-inline-item"><%= format_object(subject, param[:data_global]) %></li>
+            <li class="list-inline-item"><%= format_object(subject, param) %></li>
           <%- end -%>
         <%- end -%>
       </ul></dd>
@@ -63,7 +63,7 @@
       <%- curriculum[:curriculums].each do |uri| -%>
           <%- school = param[:data_global][uri]["https://w3id.org/jp-textbook/school"].first -%>
       <dt><%=h param[:data_global][school]["http://schema.org/name"].find{|e| e.language == :ja } %>
-          <small><a href="<%= relative_path_uri(uri, param[:base_uri]) %>">
+          <small><a href="<%= relative_path_uri("index.html", uri, param[:base_uri]) %>">
             <i class="bi bi-book"></i> 学習指導要領
           </a></small>
       <dd><ul class="list-inline">
@@ -71,7 +71,7 @@
           <%- param[:data_global][subject_area]["https://w3id.org/jp-textbook/hasSubject"]&.each do |subject| -%>
             <%- next if not param[:data_inverse_global].has_key?(subject) -%>
             <%- next if not param[:data_inverse_global][subject].has_key?("https://w3id.org/jp-textbook/subject") -%>
-            <li class="list-inline-item"><%= format_object(subject, param[:data_global]) %></li>
+            <li class="list-inline-item"><%= format_object(subject, param) %></li>
           <%- end -%>
         <%- end -%>
       </ul></dd>
@@ -92,7 +92,7 @@
         <%- param[:data_global].keys.select{|e|
               param[:data_global][e][RDF.type.to_s]&.include?("https://w3id.org/jp-textbook/Catalogue") and param[:data_global][e]["https://w3id.org/jp-textbook/school"].first == "https://w3id.org/jp-textbook/school/#{school}"
             }.sort.reverse.each do |catalogue| -%>
-        <li class="list-inline-item"><a href="<%=h relative_path_uri(catalogue, param[:base_uri]) %>"><%=h catalogue.split(/\//).last.to_i + 1 %></a></li>
+        <li class="list-inline-item"><a href="<%=h relative_path_uri("index.html", catalogue, param[:base_uri]) %>"><%=h catalogue.split(/\//).last.to_i + 1 %></a></li>
         <%- end -%>
       </ul>
       </dd>
