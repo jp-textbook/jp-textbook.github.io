@@ -245,8 +245,8 @@ end
 
 def load_idlists
   hash = {}
-  [ { tsv: "IDLists1_2.tsv", zip: "IDLists1_2.zip"},
-    { tsv: "IDLists2_2.tsv", zip: "IDLists2_2.zip"}
+  [ { tsv: "IDLists_1_2.tsv", zip: "IDLists_1_2.zip"},
+    { tsv: "IDLists_2_2.tsv", zip: "IDLists_2_2.zip"}
   ].each do |files|
     if File.exist? files[:tsv]
       STDERR.puts "loading #{files[:tsv]}..."
@@ -412,8 +412,8 @@ end
 def map_xlsx_row_headers(data_row, headers)
   hash = {}
   headers.each_with_index do |h, idx|
-    STDERR.puts [h, idx, data_row[idx]].inspect
-    hash[h] = data_row[idx].to_s
+    #STDERR.puts [h, idx, data_row[idx]].inspect
+    hash[h] = data_row[idx].cell_value # formatted_value
   end
   hash
 end
