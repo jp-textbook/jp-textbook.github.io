@@ -2,7 +2,12 @@
   <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class>;
   <http://www.w3.org/2000/01/rdf-schema#comment> "This resource represents publisher for a textbook. URIs for the resources are represented as follows:<br><code>https://w3id.org/jp-textbook/publisher/<var>publication year of the textbook catalogue listed</var>/<var>abbreviated name</var></code>"@en, "発行者を表現するクラス。以下のようなURIにより表現されます。<br><code>https://w3id.org/jp-textbook/publisher/<var>掲載教科書目録の発行年</var>/<var>発行者略称</var></code>"@ja;
   <http://www.w3.org/2000/01/rdf-schema#label> "Publisher"@en, "発行者"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Organization>, <http://schema.org/Person> .
+  <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Organization>, <http://schema.org/Person>.
+<https://w3id.org/jp-textbook/PublisherShape> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/jp-textbook/Publisher>.
+<https://w3id.org/jp-textbook/TextbookShape> <http://www.w3.org/ns/shacl#property> [
+    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/Publisher>
+  ].
+<https://w3id.org/jp-textbook/catalogueYear> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/jp-textbook/Publisher>.
 <https://w3id.org/jp-textbook/publisher/1991/一橋> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Publisher>.
 <https://w3id.org/jp-textbook/publisher/1991/三友> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Publisher>.
 <https://w3id.org/jp-textbook/publisher/1991/三省堂> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Publisher>.
@@ -1198,7 +1203,5 @@
 <https://w3id.org/jp-textbook/publisher/2024/農文協> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Publisher>.
 <https://w3id.org/jp-textbook/publisher/2024/開隆堂> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Publisher>.
 <https://w3id.org/jp-textbook/publisher/2024/電機大> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Publisher>.
-<https://w3id.org/jp-textbook/catalogueYear> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/jp-textbook/Publisher>.
 <https://w3id.org/jp-textbook/publisherAbbreviation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/jp-textbook/Publisher>.
 <https://w3id.org/jp-textbook/publisherNumber> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/jp-textbook/Publisher>.
-<https://w3id.org/jp-textbook/PublisherShape> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/jp-textbook/Publisher>.

@@ -2,7 +2,15 @@
   <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class>;
   <http://www.w3.org/2000/01/rdf-schema#comment> "An annual textbook catalogue is a book which lists textbooks usable for the year. Recent textbook catalogues are available at the MEXT website: <a href=\"http://www.mext.go.jp/a_menu/shotou/kyoukasho/mokuroku.htm\">http://www.mext.go.jp/a_menu/shotou/kyoukasho/mokuroku.htm</a> URIs for the resources are represented as follows:<br><code>https://w3id.org/jp-textbook/catalogue/<var>type of schools</var>/<var>publication year</var></code>"@en, "検定教科書の一覧を示す教科書目録を表現するクラス。文部科学省が毎年発行している、当該年度に利用できる教科書のリストです。最近のものは次のページから一覧されています: <a href=\"http://www.mext.go.jp/a_menu/shotou/kyoukasho/mokuroku.htm\">http://www.mext.go.jp/a_menu/shotou/kyoukasho/mokuroku.htm</a> 以下のようなURIにより表現されます。<br><code>https://w3id.org/jp-textbook/catalogue/<var>学校種別</var>/<var>発行年</var></code>"@ja;
   <http://www.w3.org/2000/01/rdf-schema#label> "Textbook Catalogue"@en, "教科書目録"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Book> .
+  <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Book>.
+<https://w3id.org/jp-textbook/CatalogueShape> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/jp-textbook/Catalogue>.
+<https://w3id.org/jp-textbook/PublisherShape> <http://www.w3.org/ns/shacl#property> [
+    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/Catalogue>
+  ].
+<https://w3id.org/jp-textbook/TextbookShape> <http://www.w3.org/ns/shacl#property> [
+    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/Catalogue>
+  ].
+<https://w3id.org/jp-textbook/catalogue> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/jp-textbook/Catalogue>.
 <https://w3id.org/jp-textbook/catalogue/中学校/1991> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Catalogue>.
 <https://w3id.org/jp-textbook/catalogue/中学校/1992> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Catalogue>.
 <https://w3id.org/jp-textbook/catalogue/中学校/1993> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Catalogue>.
@@ -140,5 +148,3 @@
 <https://w3id.org/jp-textbook/catalogue/高等学校/2023> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Catalogue>.
 <https://w3id.org/jp-textbook/catalogue/高等学校/2024> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Catalogue>.
 <https://w3id.org/jp-textbook/usageYear> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/jp-textbook/Catalogue>.
-<https://w3id.org/jp-textbook/catalogue> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/jp-textbook/Catalogue>.
-<https://w3id.org/jp-textbook/CatalogueShape> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/jp-textbook/Catalogue>.
