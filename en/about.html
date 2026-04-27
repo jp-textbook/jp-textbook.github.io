@@ -213,7 +213,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>schema:editor</code></td>
@@ -227,7 +227,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>schema:publisher</code></td>
@@ -255,7 +255,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td>※バージョン2.0までのデータ内には版情報が入っているレコードはない（古い教科書の場合のために念のため用意している）。</td>
+      <td>※バージョン2.0までのデータ内には版情報が入っているレコードはない（古い教科書の場合のために念のため用意している）。<br>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>schema:isbn</code></td>
@@ -269,7 +269,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td>※バージョン6.0以降のデータの一部に追加。※バージョン6.1以降、複数ある場合、繰り返される。</td>
+      <td>※バージョン6.0以降のデータの一部に追加。※バージョン6.1以降、複数ある場合、繰り返される。<br>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>bf:extent</code></td>
@@ -283,7 +283,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>bf:dimensions</code></td>
@@ -297,7 +297,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:grade</code></td>
@@ -311,7 +311,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:integer</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:authorizedYear</code></td>
@@ -325,7 +325,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:gYear</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:catalogue</code></td>
@@ -353,7 +353,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:gYear</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:usageYearRange</code></td>
@@ -367,7 +367,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>Either of "yyyy-yyyy" or "yyyy-". The value ending with "-" like "yyyy-" means that the end year is undecided.</td>
+      <td>Either of "yyyy-yyyy" or "yyyy-". The value ending with "-" like "yyyy-" means that the end year is undecided.<br>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:textbookSymbol</code></td>
@@ -381,7 +381,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:textbookNumber</code></td>
@@ -395,7 +395,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:subject</code></td>
@@ -494,7 +494,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>It is possible to refer to the record at the website as follows: <code>https://nieropac.nier.go.jp/ebopac/<var>record ID</var></code></td>
+      <td>It is possible to refer to the record at the website as follows: <code>https://nieropac.nier.go.jp/ebopac/<var>record ID</var></code><br>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>nier:callNumber</code></td>
@@ -508,7 +508,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>Delimiter characters are "||". Two types of call numbers are used: The current one and the old one. <dl><dt>The current rule for call numbers</dt><dd>Textbook classification numbers - publisher number - authorized years + book number (Ex. K170.8||K10||2010)</dd><dt>The old rule for call numbers</dt><dd>Textbook classification numbers - publisher number + administrative number - authorized / usage year (Ex. K260.91||S12U||01/05). Textbook classification, publisher number, administrative number and book number are originally assign by Education Library. Usage year is derived from the item holdings of Ducation Library, so some of the year might be different from the original usage year. If year numbers are four digits, they are Gregorian calendar years. In the other cases, the numbers from 21 to 64 corresponds to 1964 to 1989 (Showa Era), the ones from 88 to 99 are 1988 to 1999, and the ones from 00 to 05 means 2000 to 2005.</dd></dl></td>
+      <td>Delimiter characters are "||". Two types of call numbers are used: The current one and the old one. <dl><dt>The current rule for call numbers</dt><dd>Textbook classification numbers - publisher number - authorized years + book number (Ex. K170.8||K10||2010)</dd><dt>The old rule for call numbers</dt><dd>Textbook classification numbers - publisher number + administrative number - authorized / usage year (Ex. K260.91||S12U||01/05). Textbook classification, publisher number, administrative number and book number are originally assign by Education Library. Usage year is derived from the item holdings of Ducation Library, so some of the year might be different from the original usage year. If year numbers are four digits, they are Gregorian calendar years. In the other cases, the numbers from 21 to 64 corresponds to 1964 to 1989 (Showa Era), the ones from 88 to 99 are 1988 to 1999, and the ones from 00 to 05 means 2000 to 2005.</dd></dl><br>Datatype: xsd:string</td>
     </tr>
   </tbody>
   <tfoot>
@@ -545,7 +545,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>It is possible to refer to the record at the website as follows: <code>http://textbook-rc-lib.net/Opac/search.htm?s=SsaOkobBIBy2ftPelVbXwTJqTVi&ncid=<var>record ID</var></code></td>
+      <td>It is possible to refer to the record at the website as follows: <code>http://textbook-rc-lib.net/Opac/search.htm?s=SsaOkobBIBy2ftPelVbXwTJqTVi&ncid=<var>record ID</var></code><br>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>textbook-rc:callNumber</code></td>
@@ -559,7 +559,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
   </tbody>
   <tfoot>
@@ -602,7 +602,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>dct:bibliographicCitation</code></td>
@@ -616,7 +616,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
   </tbody>
   <tfoot>
@@ -664,7 +664,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td>Using language tags, this property represents an original name as well as transcription and English name. Language codes are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@ja-Hira</dt><dd>Japanese name (Hiragana). Presented a transcription of the name in Hiragana.</dd><dt>@en</dt><dd>English name</dd></dl></td>
+      <td>Using language tags, this property represents an original name as well as transcription and English name. Language codes are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@ja-Hira</dt><dd>Japanese name (Hiragana). Presented a transcription of the name in Hiragana.</dd><dt>@en</dt><dd>English name</dd></dl><br>Datatype: http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:hasSubjectArea</code></td>
@@ -692,7 +692,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:date</td>
     </tr>
     <tr>
       <td class="url"><code>schema:startDate</code></td>
@@ -706,7 +706,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:date</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:school</code></td>
@@ -791,7 +791,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td>If the revision is on a part of a guideline, the name of the revision will be assigned such as "Partial revision in December 2003". Using language tags, Japanese and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@en</dt><dd>English name</dd></dl></td>
+      <td>If the revision is on a part of a guideline, the name of the revision will be assigned such as "Partial revision in December 2003". Using language tags, Japanese and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@en</dt><dd>English name</dd></dl><br>Datatype: http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</td>
     </tr>
     <tr>
       <td class="url"><code>schema:datePublished</code></td>
@@ -805,7 +805,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:date</td>
     </tr>
     <tr>
       <td class="url"><code>schema:citation</code></td>
@@ -819,7 +819,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td>Refer to the official announcement and its publication. Using language tags, Japanese and English names shown. The meanings of language tags are as follows: <dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@en</dt><dd>English name</dd></dl></td>
+      <td>Refer to the official announcement and its publication. Using language tags, Japanese and English names shown. The meanings of language tags are as follows: <dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@en</dt><dd>English name</dd></dl><br>Datatype: http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</td>
     </tr>
     <tr>
       <td class="url"><code>schema:url</code></td>
@@ -861,7 +861,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>nier:itemID</code></td>
@@ -875,7 +875,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>nier:callNumber</code></td>
@@ -889,7 +889,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>Delimiter for a call number is "||".</td>
+      <td>Delimiter for a call number is "||".<br>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>nier:recordID</code></td>
@@ -903,7 +903,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>Link is available as <code>https://nieropac.nier.go.jp/ebopac/<var>record identifier</var></code>.</td>
+      <td>Link is available as <code>https://nieropac.nier.go.jp/ebopac/<var>record identifier</var></code>.<br>Datatype: xsd:string</td>
     </tr>
   </tbody>
   <tfoot>
@@ -966,7 +966,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td>Using language tags, Japanese name, its transcription (Yomi) and English name are shown. The meanings of the language tags are as follows: <dl><dt>@ja</dt><dd>Japanese title (Kanji)</dd><dt>@ja-Hira</dt><dd>Japanese title (Hiragana)</dd><dt>@en</dt><dd>English title</dd></dl></td>
+      <td>Using language tags, Japanese name, its transcription (Yomi) and English name are shown. The meanings of the language tags are as follows: <dl><dt>@ja</dt><dd>Japanese title (Kanji)</dd><dt>@ja-Hira</dt><dd>Japanese title (Hiragana)</dd><dt>@en</dt><dd>English title</dd></dl><br>Datatype: http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:school</code></td>
@@ -994,7 +994,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:gYear</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:usageYear</code></td>
@@ -1008,7 +1008,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>Usage year for textbooks listed in the catalogue.</td>
+      <td>Usage year for textbooks listed in the catalogue.<br>Datatype: xsd:gYear</td>
     </tr>
     <tr>
       <td class="url"><code>schema:url</code></td>
@@ -1050,7 +1050,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>nier:callNumber</code></td>
@@ -1064,7 +1064,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>Delimiter for a call number is "||"</td>
+      <td>Delimiter for a call number is "||"<br>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>nier:recordID</code></td>
@@ -1078,7 +1078,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>Link is available as <code>https://nieropac.nier.go.jp/ebopac/<var>record identifier</var></code>.</td>
+      <td>Link is available as <code>https://nieropac.nier.go.jp/ebopac/<var>record identifier</var></code>.<br>Datatype: xsd:string</td>
     </tr>
   </tbody>
   <tfoot>
@@ -1138,7 +1138,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
   </tbody>
   <tfoot>
@@ -1194,7 +1194,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>schema:numberOfPages</code></td>
@@ -1208,7 +1208,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:decimal</td>
     </tr>
   </tbody>
   <tfoot>
@@ -1248,7 +1248,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td>Using language tags, Japanese name and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name</dd><dt>@en</dt><dd>English name</dd></dl></td>
+      <td>Using language tags, Japanese name and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name</dd><dt>@en</dt><dd>English name</dd></dl><br>Datatype: http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</td>
     </tr>
     <tr>
       <td class="url"><code>rdfs:seeAlso</code></td>
@@ -1304,7 +1304,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:school</code></td>
@@ -1332,7 +1332,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:gYear</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:subjectArea</code></td>
@@ -1374,7 +1374,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:integer</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:publisherAbbreviation</code></td>
@@ -1388,7 +1388,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:textbook</code></td>
@@ -1473,7 +1473,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
   </tbody>
   <tfoot>
@@ -1502,7 +1502,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>qb:order</code></td>
@@ -1516,7 +1516,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>Used in display orders</td>
+      <td>Used in display orders<br>Datatype: xsd:integer</td>
     </tr>
   </tbody>
   <tfoot>
@@ -1560,7 +1560,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td>If the revision is on a part of a guideline, the name of the revision will be assigned such as "Partial revision in December 2003". Using language tags, Japanese and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@en</dt><dd>English name</dd></dl></td>
+      <td>If the revision is on a part of a guideline, the name of the revision will be assigned such as "Partial revision in December 2003". Using language tags, Japanese and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@en</dt><dd>English name</dd></dl><br>Datatype: http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</td>
     </tr>
     <tr>
       <td class="url"><code>schema:datePublished</code></td>
@@ -1574,7 +1574,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:date</td>
     </tr>
     <tr>
       <td class="url"><code>schema:citation</code></td>
@@ -1588,7 +1588,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td>Refer to the official announcement and its publication. Using language tags, Japanese and English names shown. The meanings of language tags are as follows: <dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@en</dt><dd>English name</dd></dl></td>
+      <td>Refer to the official announcement and its publication. Using language tags, Japanese and English names shown. The meanings of language tags are as follows: <dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@en</dt><dd>English name</dd></dl><br>Datatype: http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</td>
     </tr>
     <tr>
       <td class="url"><code>schema:url</code></td>
@@ -1630,7 +1630,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>nier:itemID</code></td>
@@ -1644,7 +1644,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>nier:callNumber</code></td>
@@ -1658,7 +1658,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>Delimiter for a call number is "||".</td>
+      <td>Delimiter for a call number is "||".<br>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>nier:recordID</code></td>
@@ -1672,7 +1672,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>Link is available as <code>https://nieropac.nier.go.jp/ebopac/<var>record identifier</var></code>.</td>
+      <td>Link is available as <code>https://nieropac.nier.go.jp/ebopac/<var>record identifier</var></code>.<br>Datatype: xsd:string</td>
     </tr>
   </tbody>
   <tfoot>
@@ -1716,7 +1716,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>Indicates the wording as it appears in the compiling prospectus.</td>
+      <td>Indicates the wording as it appears in the compiling prospectus.<br>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>schema:alternateName</code></td>
@@ -1730,7 +1730,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>rdf:value</code></td>
@@ -1744,7 +1744,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>Indicates the duration as a numerical value. The time shown is considered representative; when uncertain, a shorter duration is applied.</td>
+      <td>Indicates the duration as a numerical value. The time shown is considered representative; when uncertain, a shorter duration is applied.<br>Datatype: xsd:integer</td>
     </tr>
     <tr>
       <td class="url"><code>rdfs:minValue</code></td>
@@ -1758,7 +1758,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>The minimum value when the duration is indicated as a range.</td>
+      <td>The minimum value when the duration is indicated as a range.<br>Datatype: xsd:integer</td>
     </tr>
     <tr>
       <td class="url"><code>rdfs:maxValue</code></td>
@@ -1772,7 +1772,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>Maximum value when the duration is indicated as a range.</td>
+      <td>Maximum value when the duration is indicated as a range.<br>Datatype: xsd:integer</td>
     </tr>
     <tr>
       <td class="url"><code>dct:source</code></td>
@@ -1828,7 +1828,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>qb:order</code></td>
@@ -1842,7 +1842,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>Used in display orders</td>
+      <td>Used in display orders<br>Datatype: xsd:integer</td>
     </tr>
   </tbody>
   <tfoot>
@@ -1892,7 +1892,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td>Using language tags, Japanese name and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name</dd><dt>@en</dt><dd>English name</dd></dl></td>
+      <td>Using language tags, Japanese name and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name</dd><dt>@en</dt><dd>English name</dd></dl><br>Datatype: http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</td>
     </tr>
   </tbody>
   <tfoot>
@@ -1932,7 +1932,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>It is possible to refer to the record at the website as follows: <code>https://nieropac.nier.go.jp/ebopac/<var>record ID</var></code></td>
+      <td>It is possible to refer to the record at the website as follows: <code>https://nieropac.nier.go.jp/ebopac/<var>record ID</var></code><br>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>nier:callNumber</code></td>
@@ -1946,7 +1946,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>Delimiter characters are "||". Two types of call numbers are used: The current one and the old one. <dl><dt>The current rule for call numbers</dt><dd>Textbook classification numbers - publisher number - authorized years + book number (Ex. K170.8||K10||2010)</dd><dt>The old rule for call numbers</dt><dd>Textbook classification numbers - publisher number + administrative number - authorized / usage year (Ex. K260.91||S12U||01/05). Textbook classification, publisher number, administrative number and book number are originally assign by Education Library. Usage year is derived from the item holdings of Ducation Library, so some of the year might be different from the original usage year. If year numbers are four digits, they are Gregorian calendar years. In the other cases, the numbers from 21 to 64 corresponds to 1964 to 1989 (Showa Era), the ones from 88 to 99 are 1988 to 1999, and the ones from 00 to 05 means 2000 to 2005.</dd></dl></td>
+      <td>Delimiter characters are "||". Two types of call numbers are used: The current one and the old one. <dl><dt>The current rule for call numbers</dt><dd>Textbook classification numbers - publisher number - authorized years + book number (Ex. K170.8||K10||2010)</dd><dt>The old rule for call numbers</dt><dd>Textbook classification numbers - publisher number + administrative number - authorized / usage year (Ex. K260.91||S12U||01/05). Textbook classification, publisher number, administrative number and book number are originally assign by Education Library. Usage year is derived from the item holdings of Ducation Library, so some of the year might be different from the original usage year. If year numbers are four digits, they are Gregorian calendar years. In the other cases, the numbers from 21 to 64 corresponds to 1964 to 1989 (Showa Era), the ones from 88 to 99 are 1988 to 1999, and the ones from 00 to 05 means 2000 to 2005.</dd></dl><br>Datatype: xsd:string</td>
     </tr>
   </tbody>
   <tfoot>
@@ -1986,7 +1986,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>It is possible to refer to the record at the website as follows: <code>http://textbook-rc-lib.net/Opac/search.htm?s=SsaOkobBIBy2ftPelVbXwTJqTVi&ncid=<var>record ID</var></code></td>
+      <td>It is possible to refer to the record at the website as follows: <code>http://textbook-rc-lib.net/Opac/search.htm?s=SsaOkobBIBy2ftPelVbXwTJqTVi&ncid=<var>record ID</var></code><br>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>textbook-rc:callNumber</code></td>
@@ -2000,7 +2000,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
   </tbody>
   <tfoot>
@@ -2042,7 +2042,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td>Using language tags, Japanese name and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name</dd><dt>@en</dt><dd>English name</dd></dl></td>
+      <td>Using language tags, Japanese name and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name</dd><dt>@en</dt><dd>English name</dd></dl><br>Datatype: http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</td>
     </tr>
   </tbody>
   <tfoot>
@@ -2082,7 +2082,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td>Using language tags, the name and its transcription (Yomi) in Hiragana and in Alphabetical form. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@ja-Hira</dt><dd>Japanese name in Hiragana.</dd><dt>@ja-Latn</dt><dd>Japanese name in an alphabetical form.</dd></dl></td>
+      <td>Using language tags, the name and its transcription (Yomi) in Hiragana and in Alphabetical form. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@ja-Hira</dt><dd>Japanese name in Hiragana.</dd><dt>@ja-Latn</dt><dd>Japanese name in an alphabetical form.</dd></dl><br>Datatype: http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</td>
     </tr>
     <tr>
       <td class="url"><code>rdfs:seeAlso</code></td>
@@ -2110,7 +2110,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:gYear</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:catalogue</code></td>
@@ -2138,7 +2138,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:publisherNumber</code></td>
@@ -2152,7 +2152,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td>Repeatable. ex. <a href="https://w3id.org/jp-textbook/publisher/2009/日文">textbook:publisher/2009/日文</a>.</td>
+      <td>Repeatable. ex. <a href="https://w3id.org/jp-textbook/publisher/2009/日文">textbook:publisher/2009/日文</a>.<br>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>bf:note</code></td>
@@ -2166,7 +2166,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
   </tbody>
   <tfoot>
@@ -2268,7 +2268,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td>Using language tags, Japanese and English names are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@en</dt><dd>English name</dd></dl></td>
+      <td>Using language tags, Japanese and English names are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@en</dt><dd>English name</dd></dl><br>Datatype: http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:curriculum</code></td>
@@ -2310,7 +2310,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>Date of reference for this source</td>
+      <td>Date of reference for this source<br>Datatype: xsd:date</td>
     </tr>
   </tbody>
   <tfoot>
@@ -2356,7 +2356,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td>言語コードを用いて、名称に加え、そのよみを示します。言語コードとその意味は以下の通りです。<dl><dt>@ja</dt><dd>名称（漢字表記）</dd><dt>@ja-Hira</dt><dd>名称（ひらがな表記）。名称のよみをひらがな表記で示します。</dd></dl></td>
+      <td>言語コードを用いて、名称に加え、そのよみを示します。言語コードとその意味は以下の通りです。<dl><dt>@ja</dt><dd>名称（漢字表記）</dd><dt>@ja-Hira</dt><dd>名称（ひらがな表記）。名称のよみをひらがな表記で示します。</dd></dl><br>Datatype: http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:school</code></td>
@@ -2398,7 +2398,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
   </tbody>
   <tfoot>
@@ -2440,7 +2440,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:unit1</code></td>
@@ -2454,7 +2454,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:unit2</code></td>
@@ -2468,7 +2468,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:unit3</code></td>
@@ -2482,7 +2482,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:unit4</code></td>
@@ -2496,7 +2496,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:school</code></td>
@@ -2524,7 +2524,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:gYear</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:subjectArea</code></td>
@@ -2566,7 +2566,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:integer</td>
     </tr>
     <tr>
       <td rowspan="2" class="url"><code>schema:workExample</code></td>
@@ -2623,7 +2623,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>schema:numberOfPages</code></td>
@@ -2637,7 +2637,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:decimal</td>
     </tr>
   </tbody>
   <tfoot>
@@ -2678,7 +2678,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td>This property refers to the section numbers of the corresponding courses of study items described in the compiling prospectus. This is a transcription of the information written in the compiling prospectus.</td>
+      <td>This property refers to the section numbers of the corresponding courses of study items described in the compiling prospectus. This is a transcription of the information written in the compiling prospectus.<br>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>cs:cosItem</code></td>
@@ -2748,7 +2748,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>Used in display orders</td>
+      <td>Used in display orders<br>Datatype: xsd:integer</td>
     </tr>
   </tbody>
   <tfoot>
@@ -2796,7 +2796,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td>Using language tags, Japanese name and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name</dd><dt>@en</dt><dd>English name</dd></dl></td>
+      <td>Using language tags, Japanese name and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name</dd><dt>@en</dt><dd>English name</dd></dl><br>Datatype: http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</td>
     </tr>
     <tr>
       <td class="url"><code>rdfs:seeAlso</code></td>
@@ -2880,7 +2880,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>This is used in the order of the listings.</td>
+      <td>This is used in the order of the listings.<br>Datatype: xsd:integer</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:subjectType</code></td>
@@ -2982,7 +2982,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td>Using language tags, Japanese name and its transcription (Yomi) and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@ja-Hira</dt><dd>Japanese name (Hiragana).</dd><dt>@en</dt><dd>English name of the subject</dd><dd><small>Note: English names are unofficial one. The errors in its translations are resposible for the maintainers of this dataset. We could not find any of official translations of the subject names, even though we ask the Education Library to find them. Some of the translations are origined from the tentative translations of the curriculum guidelines, such as <a href="http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1261037.htm">Elementary schools</a>、<a href="http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1298356.htm">Lower secondary schools</a>、<a href="http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1298353.htm">Upper secondary schols</a>. We also refer to the English guide "<a href="http://ci.nii.ac.jp/ncid/BA06708576">Education in JAPAN, 13th ed.</a>" by MEXT for the subject names of elementary and lower secondary schools, and the chapter eight "The Content of Each Subject and Subject Area" (p.107-195) of <a href="https://www.nier.go.jp/04_kenkyu_annai/pdf/improvement_of_the_courses_of_study.pdf">Concerning improvements to the courses of study for elementary, lower secondary and upper secondary schools</a>.</small></dd></dl></td>
+      <td>Using language tags, Japanese name and its transcription (Yomi) and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name (Kanji)</dd><dt>@ja-Hira</dt><dd>Japanese name (Hiragana).</dd><dt>@en</dt><dd>English name of the subject</dd><dd><small>Note: English names are unofficial one. The errors in its translations are resposible for the maintainers of this dataset. We could not find any of official translations of the subject names, even though we ask the Education Library to find them. Some of the translations are origined from the tentative translations of the curriculum guidelines, such as <a href="http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1261037.htm">Elementary schools</a>、<a href="http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1298356.htm">Lower secondary schools</a>、<a href="http://www.mext.go.jp/a_menu/shotou/new-cs/youryou/eiyaku/1298353.htm">Upper secondary schols</a>. We also refer to the English guide "<a href="http://ci.nii.ac.jp/ncid/BA06708576">Education in JAPAN, 13th ed.</a>" by MEXT for the subject names of elementary and lower secondary schools, and the chapter eight "The Content of Each Subject and Subject Area" (p.107-195) of <a href="https://www.nier.go.jp/04_kenkyu_annai/pdf/improvement_of_the_courses_of_study.pdf">Concerning improvements to the courses of study for elementary, lower secondary and upper secondary schools</a>.</small></dd></dl><br>Datatype: http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:school</code></td>
@@ -3010,7 +3010,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>Used in display orders</td>
+      <td>Used in display orders<br>Datatype: xsd:integer</td>
     </tr>
     <tr>
       <td class="url"><code>schema:about</code></td>
@@ -3052,7 +3052,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Repeatable
         </div>
       </td>
-      <td></td>
+      <td>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>rdfs:seeAlso</code></td>
@@ -3080,7 +3080,7 @@ The base URI for the Japanese Textbook LOD is https://w3id.org/jp-textbook/, the
         Non repeatable
         </div>
       </td>
-      <td>Source citation for the subject name.</td>
+      <td>Source citation for the subject name.<br>Datatype: xsd:string</td>
     </tr>
     <tr>
       <td class="url"><code>textbook:sourceOfEnglishName</code></td>
