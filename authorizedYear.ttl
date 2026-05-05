@@ -1,16 +1,36 @@
-<https://w3id.org/jp-textbook/authorizedYear>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
-  <http://www.w3.org/2000/01/rdf-schema#comment> "検定が実施された年を表現するプロパティ"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#label> "Authorized year"@en, "検定年"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Date>, <http://www.w3.org/2000/01/rdf-schema#Literal>;
-  <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/date>.
-<https://w3id.org/jp-textbook/CompilingProspectusShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/authorizedYear>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix schema: <http://schema.org/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+textbook:authorizedYear
+  rdf:type rdf:Property;
+  rdfs:comment "検定が実施された年を表現するプロパティ"@ja;
+  rdfs:domain textbook:Textbook;
+  rdfs:label "Authorized year"@en, "検定年"@ja;
+  rdfs:range schema:Date, rdfs:Literal;
+  rdfs:subPropertyOf dct:date.
+textbook:CompilingProspectusShape sh:property [
+    skos:example "\"2001\""^^xsd:gYear;
+    sh:datatype xsd:gYear;
+    sh:name "Authorized year"@en, "検定年"@ja;
+    sh:order 3;
+    sh:path textbook:authorizedYear
   ].
-<https://w3id.org/jp-textbook/TeachingUnitShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/authorizedYear>
+textbook:TeachingUnitShape sh:property [
+    skos:example "\"2020\""^^xsd:gYear;
+    sh:datatype xsd:gYear;
+    sh:name "Authorized year"@en, "検定年"@ja;
+    sh:order 7;
+    sh:path textbook:authorizedYear
   ].
-<https://w3id.org/jp-textbook/TextbookShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/authorizedYear>
+textbook:TextbookShape sh:property [
+    skos:example "\"2001\""^^xsd:gYear;
+    sh:datatype xsd:gYear;
+    sh:name "Authorized year"@en, "検定年"@ja;
+    sh:order 9;
+    sh:path textbook:authorizedYear
   ].

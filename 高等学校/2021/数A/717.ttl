@@ -1,48 +1,71 @@
-<https://w3id.org/jp-textbook/高等学校/2021/数A/717>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "A5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "206";
-  <http://purl.org/dc/terms/bibliographicCitation> "「NEXT　数学A」, 高等学校, 数A|717 (数研) 2021年検定";
-  <http://schema.org/editor> "岡部 恒治   ほか10名";
-  <http://schema.org/isbn> "9784410804861";
-  <http://schema.org/name> "NEXT　数学A";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2021/数研>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/032455475>, <http://id.ndl.go.jp/jpno/23761634>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2021>, <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.41||S19||2021Q";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20082004";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2021\/数A\/717
+  bf:dimensions "A5";
+  bf:extent "206";
+  dct:bibliographicCitation "「NEXT　数学A」, 高等学校, 数A|717 (数研) 2021年検定";
+  schema:editor "岡部 恒治   ほか10名";
+  schema:isbn "9784410804861";
+  schema:name "NEXT　数学A";
+  schema:publisher textbook:publisher\/2021\/数研;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/032455475>, <http://id.ndl.go.jp/jpno/23761634>;
+  textbook:authorizedYear "2021"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2021, textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.41||S19||2021Q";
+    nier:recordID "EB20082004";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C104|300f|R03/04";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320210121";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C104|300f|R03/04";
+    textbook-rc:recordID "320210121";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/数学/数学A>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/数学>;
-  <https://w3id.org/jp-textbook/textbookNumber> "717";
-  <https://w3id.org/jp-textbook/textbookSymbol> "数A";
-  <https://w3id.org/jp-textbook/usageYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2022-".
-<https://w3id.org/jp-textbook/AA100000028071> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数A/717>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/数学\/数学A;
+  textbook:subjectArea curriculum:高等学校\/2022\/数学;
+  textbook:textbookNumber "717";
+  textbook:textbookSymbol "数A";
+  textbook:usageYear "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2022-".
+textbook:AC100000000680 textbook:textbook textbook:高等学校\/2021\/数A\/717.
+textbook:AB100000002328 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数A\/717;
+    schema:numberOfPages 2;
+    schema:pagination "186，187";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028072> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数A/717>
+textbook:AA100000028071 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数A\/717;
+    schema:pagination "12～77ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028073> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数A/717>
+textbook:AA100000028072 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数A\/717;
+    schema:pagination "12～77ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028074> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数A/717>
+textbook:AA100000028073 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数A\/717;
+    schema:pagination "78～135ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028075> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数A/717>
+textbook:AA100000028074 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数A\/717;
+    schema:pagination "78～135ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002328> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数A/717>
+textbook:AA100000028075 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数A\/717;
+    schema:pagination "136～182ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000680> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2021/数A/717>.

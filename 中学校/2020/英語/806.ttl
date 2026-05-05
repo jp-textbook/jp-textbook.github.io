@@ -1,67 +1,101 @@
-<https://w3id.org/jp-textbook/中学校/2020/英語/806>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "AB";
-  <http://id.loc.gov/ontologies/bibframe/extent> "166";
-  <http://purl.org/dc/terms/bibliographicCitation> "「BLUE SKY English Course 2」, 中学校2年, 英語|806 (啓林館) 2020年検定";
-  <http://schema.org/editor> "狩野晶子  田尻悟郎 ほか68名";
-  <http://schema.org/isbn> "9784402018313";
-  <http://schema.org/name> "BLUE SKY English Course 2";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2020/啓林館>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/031626635>, <http://id.ndl.go.jp/jpno/23582702>, <https://ci.nii.ac.jp/ncid/BB31459448>, <https://ci.nii.ac.jp/ncid/BC06820490>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2020"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/中学校/2020>, <https://w3id.org/jp-textbook/catalogue/中学校/2021>, <https://w3id.org/jp-textbook/catalogue/中学校/2022>, <https://w3id.org/jp-textbook/catalogue/中学校/2023>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/中学校/2021>;
-  <https://w3id.org/jp-textbook/grade> 2;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K260.91||S16||2020";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20080804";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:中学校\/2020\/英語\/806
+  bf:dimensions "AB";
+  bf:extent "166";
+  dct:bibliographicCitation "「BLUE SKY English Course 2」, 中学校2年, 英語|806 (啓林館) 2020年検定";
+  schema:editor "狩野晶子  田尻悟郎 ほか68名";
+  schema:isbn "9784402018313";
+  schema:name "BLUE SKY English Course 2";
+  schema:publisher textbook:publisher\/2020\/啓林館;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/031626635>, <http://id.ndl.go.jp/jpno/23582702>, <https://ci.nii.ac.jp/ncid/BB31459448>, <https://ci.nii.ac.jp/ncid/BC06820490>;
+  textbook:authorizedYear "2020"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/中学校\/2020, textbook:catalogue\/中学校\/2021, textbook:catalogue\/中学校\/2022, textbook:catalogue\/中学校\/2023;
+  textbook:curriculum curriculum:中学校\/2021;
+  textbook:grade 2;
+  textbook:item [
+    nier:callNumber "K260.91||S16||2020";
+    nier:recordID "EB20080804";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "B061|812|R02/03";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "220200144";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "B061|812|R02/03";
+    textbook-rc:recordID "220200144";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/中学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/中学校/2021/外国語/英語>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/中学校/2021/外国語>;
-  <https://w3id.org/jp-textbook/textbookNumber> "806";
-  <https://w3id.org/jp-textbook/textbookSymbol> "英語";
-  <https://w3id.org/jp-textbook/usageYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2021-2024".
-<https://w3id.org/jp-textbook/AA100000016955> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/英語/806>
+  textbook:school textbook:school\/中学校;
+  textbook:subject curriculum:中学校\/2021\/外国語\/英語;
+  textbook:subjectArea curriculum:中学校\/2021\/外国語;
+  textbook:textbookNumber "806";
+  textbook:textbookSymbol "英語";
+  textbook:usageYear "2021"^^xsd:gYear, "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear;
+  textbook:usageYearRange "2021-2024".
+textbook:AC100000000338 textbook:textbook textbook:中学校\/2020\/英語\/806.
+textbook:AA100000016955 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/英語\/806;
+    schema:pagination "p.7〜18";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016956> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/英語/806>
+textbook:AA100000016956 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/英語\/806;
+    schema:pagination "p.19〜30";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016957> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/英語/806>
+textbook:AA100000016957 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/英語\/806;
+    schema:pagination "p.31〜45";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016958> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/英語/806>
+textbook:AA100000016958 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/英語\/806;
+    schema:pagination "p.46〜47";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016959> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/英語/806>
+textbook:AA100000016959 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/英語\/806;
+    schema:pagination "p.49〜60";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016960> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/英語/806>
+textbook:AA100000016960 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/英語\/806;
+    schema:pagination "p.61〜72";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016961> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/英語/806>
+textbook:AA100000016961 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/英語\/806;
+    schema:pagination "p.73〜87";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016962> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/英語/806>
+textbook:AA100000016962 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/英語\/806;
+    schema:pagination "p.88〜89";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016963> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/英語/806>
+textbook:AA100000016963 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/英語\/806;
+    schema:pagination "p.91〜102";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016964> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/英語/806>
+textbook:AA100000016964 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/英語\/806;
+    schema:pagination "p.103〜117";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016965> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/英語/806>
+textbook:AA100000016965 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/英語\/806;
+    schema:pagination "p.118〜119";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016966> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/英語/806>
+textbook:AA100000016966 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/英語\/806;
+    schema:pagination "p.120〜125";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000338> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/中学校/2020/英語/806>.

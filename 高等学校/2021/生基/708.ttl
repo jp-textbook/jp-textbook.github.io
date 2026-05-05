@@ -1,204 +1,362 @@
-<https://w3id.org/jp-textbook/高等学校/2021/生基/708>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5 変型";
-  <http://id.loc.gov/ontologies/bibframe/extent> "268";
-  <http://purl.org/dc/terms/bibliographicCitation> "「高等学校　生物基礎」, 高等学校, 生基|708 (数研) 2021年検定";
-  <http://schema.org/editor> "嶋田 正和   ほか20名";
-  <http://schema.org/isbn> "9784410812613";
-  <http://schema.org/name> "高等学校　生物基礎";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2021/数研>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/032455483>, <http://id.ndl.go.jp/jpno/23761349>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2021>, <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.46||S19||2021B";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20082041";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2021\/生基\/708
+  bf:dimensions "B5 変型";
+  bf:extent "268";
+  dct:bibliographicCitation "「高等学校　生物基礎」, 高等学校, 生基|708 (数研) 2021年検定";
+  schema:editor "嶋田 正和   ほか20名";
+  schema:isbn "9784410812613";
+  schema:name "高等学校　生物基礎";
+  schema:publisher textbook:publisher\/2021\/数研;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/032455483>, <http://id.ndl.go.jp/jpno/23761349>;
+  textbook:authorizedYear "2021"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2021, textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.46||S19||2021B";
+    nier:recordID "EB20082041";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C104|460b|R03/04";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320210158";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C104|460b|R03/04";
+    textbook-rc:recordID "320210158";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/理科/生物基礎>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/理科>;
-  <https://w3id.org/jp-textbook/textbookNumber> "708";
-  <https://w3id.org/jp-textbook/textbookSymbol> "生基";
-  <https://w3id.org/jp-textbook/usageYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2022-".
-<https://w3id.org/jp-textbook/AA100000028538> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/理科\/生物基礎;
+  textbook:subjectArea curriculum:高等学校\/2022\/理科;
+  textbook:textbookNumber "708";
+  textbook:textbookSymbol "生基";
+  textbook:usageYear "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2022-".
+textbook:AC100000000716 textbook:textbook textbook:高等学校\/2021\/生基\/708.
+textbook:AB100000002839 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 0.5;
+    schema:pagination "30-31";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028539> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002840 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 1;
+    schema:pagination "40";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028540> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002841 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 1;
+    schema:pagination "51";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028541> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002842 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 1;
+    schema:pagination "53";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028542> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002843 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 1;
+    schema:pagination "55";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028543> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002844 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 0.25;
+    schema:pagination "56";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028544> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002845 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 0.25;
+    schema:pagination "57";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028545> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002846 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 0.75;
+    schema:pagination "58";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028546> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002847 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 0.5;
+    schema:pagination "67";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028547> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002848 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 0.25;
+    schema:pagination "76";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028548> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002849 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 0.75;
+    schema:pagination "81";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028549> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002850 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 2;
+    schema:pagination "84-85";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028550> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002851 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 1;
+    schema:pagination "93";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028551> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002852 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 2;
+    schema:pagination "94-95";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028552> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002853 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 0.75;
+    schema:pagination "97";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028553> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002854 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 2;
+    schema:pagination "98-99";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028554> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002855 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 0.25;
+    schema:pagination "101";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028555> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002856 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 0.5;
+    schema:pagination "102";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028556> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002857 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 1;
+    schema:pagination "103";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028557> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002858 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 0.25;
+    schema:pagination "112";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028558> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002859 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 0.25;
+    schema:pagination "117";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028559> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002860 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 0.25;
+    schema:pagination "130";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028560> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002861 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 0.25;
+    schema:pagination "136";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028561> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002862 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 1;
+    schema:pagination "137";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028562> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002863 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 0.25;
+    schema:pagination "138";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028563> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002864 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 0.5;
+    schema:pagination "139";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002839> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002865 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 0.5;
+    schema:pagination "143";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002840> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002866 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 0.5;
+    schema:pagination "147";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002841> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002867 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 0.25;
+    schema:pagination "162-163";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002842> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002868 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 1;
+    schema:pagination "187";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002843> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002869 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 0.25;
+    schema:pagination "189";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002844> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AB100000002870 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:numberOfPages 2;
+    schema:pagination "後見返し";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002845> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028538 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "p.6～23";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002846> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028539 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "p.6～23";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002847> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028540 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "p.6～23";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002848> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028541 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "p.6～23";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002849> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028542 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002850> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028543 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "p.24～61";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002851> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028544 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "p.26～41";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002852> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028545 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "p.42～47";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002853> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028546 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "p.48～59";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002854> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028547 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "p.62～105";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002855> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028548 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "p.64～73";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002856> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028549 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "p.74～81";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002857> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028550 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "p.82～103";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002858> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028551 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002859> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028552 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "p.106～151";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002860> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028553 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "p.108～119";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002861> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028554 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "p.120～131";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002862> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028555 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "p.132～149";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002863> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028556 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002864> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028557 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "p.152～211";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002865> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028558 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "p.154～169";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002866> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028559 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "p.170～181";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002867> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028560 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "p.182～193";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002868> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028561 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "p.194～209";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002869> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028562 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "p.212～217";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002870> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>
+textbook:AA100000028563 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/生基\/708;
+    schema:pagination "p.212～217";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000716> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2021/生基/708>.

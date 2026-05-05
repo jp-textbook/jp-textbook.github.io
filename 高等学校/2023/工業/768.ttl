@@ -1,60 +1,89 @@
-<https://w3id.org/jp-textbook/高等学校/2023/工業/768>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "278";
-  <http://id.loc.gov/ontologies/bibframe/note> "検定用見本";
-  <http://purl.org/dc/terms/bibliographicCitation> "「建築施工」, 高等学校, 工業|768 (実教) 2023年検定";
-  <http://schema.org/editor> "大野 義照  桑原 進  ほか7名";
-  <http://schema.org/isbn> "9784407205596";
-  <http://schema.org/name> "建築施工";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2023/実教>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.52||J3||2023A";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20082706";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2023\/工業\/768
+  bf:dimensions "B5";
+  bf:extent "278";
+  bf:note "検定用見本";
+  dct:bibliographicCitation "「建築施工」, 高等学校, 工業|768 (実教) 2023年検定";
+  schema:editor "大野 義照  桑原 進  ほか7名";
+  schema:isbn "9784407205596";
+  schema:name "建築施工";
+  schema:publisher textbook:publisher\/2023\/実教;
+  rdf:type textbook:Textbook;
+  textbook:authorizedYear "2023"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.52||J3||2023A";
+    nier:recordID "EB20082706";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C007|920f|R05/06";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320230061";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C007|920f|R05/06";
+    textbook-rc:recordID "320230061";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/工業/建築施工>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/工業>;
-  <https://w3id.org/jp-textbook/textbookNumber> "768";
-  <https://w3id.org/jp-textbook/textbookSymbol> "工業";
-  <https://w3id.org/jp-textbook/usageYear> "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2024-".
-<https://w3id.org/jp-textbook/AA100000033608> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2023/工業/768>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/工業\/建築施工;
+  textbook:subjectArea curriculum:高等学校\/2022\/工業;
+  textbook:textbookNumber "768";
+  textbook:textbookSymbol "工業";
+  textbook:usageYear "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2024-".
+textbook:AC100000001154 textbook:textbook textbook:高等学校\/2023\/工業\/768.
+textbook:AA100000033608 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2023\/工業\/768;
+    schema:pagination "p.4-9 ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000033609> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2023/工業/768>
+textbook:AA100000033609 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2023\/工業\/768;
+    schema:pagination "p.11-34 ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000033610> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2023/工業/768>
+textbook:AA100000033610 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2023\/工業\/768;
+    schema:pagination "p.35-64 ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000033611> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2023/工業/768>
+textbook:AA100000033611 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2023\/工業\/768;
+    schema:pagination "p.65-104 ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000033612> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2023/工業/768>
+textbook:AA100000033612 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2023\/工業\/768;
+    schema:pagination "p.105-158 ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000033613> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2023/工業/768>
+textbook:AA100000033613 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2023\/工業\/768;
+    schema:pagination "p.159-190 ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000033614> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2023/工業/768>
+textbook:AA100000033614 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2023\/工業\/768;
+    schema:pagination "p.191-200 ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000033615> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2023/工業/768>
+textbook:AA100000033615 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2023\/工業\/768;
+    schema:pagination "p.201-218 ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000033616> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2023/工業/768>
+textbook:AA100000033616 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2023\/工業\/768;
+    schema:pagination "p.219-242 ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000033617> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2023/工業/768>
+textbook:AA100000033617 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2023\/工業\/768;
+    schema:pagination "p.243-265 ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000001154> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2023/工業/768>.

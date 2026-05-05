@@ -1,68 +1,103 @@
-<https://w3id.org/jp-textbook/高等学校/2022/政経/705>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "A5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "270";
-  <http://purl.org/dc/terms/bibliographicCitation> "「政治・経済」, 高等学校, 政経|705 (数研) 2022年検定";
-  <http://schema.org/editor> "岩田 一政  ほか11名";
-  <http://schema.org/isbn> "9784410831300";
-  <http://schema.org/name> "政治・経済";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2022/数研>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.35||S19||2022";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20082428";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2022\/政経\/705
+  bf:dimensions "A5";
+  bf:extent "270";
+  dct:bibliographicCitation "「政治・経済」, 高等学校, 政経|705 (数研) 2022年検定";
+  schema:editor "岩田 一政  ほか11名";
+  schema:isbn "9784410831300";
+  schema:name "政治・経済";
+  schema:publisher textbook:publisher\/2022\/数研;
+  rdf:type textbook:Textbook;
+  textbook:authorizedYear "2022"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.35||S19||2022";
+    nier:recordID "EB20082428";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C104|220|R04/05";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320220077";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C104|220|R04/05";
+    textbook-rc:recordID "320220077";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/公民/政治・経済>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/公民>;
-  <https://w3id.org/jp-textbook/textbookNumber> "705";
-  <https://w3id.org/jp-textbook/textbookSymbol> "政経";
-  <https://w3id.org/jp-textbook/usageYear> "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2023-".
-<https://w3id.org/jp-textbook/AA100000040029> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/政経/705>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/公民\/政治・経済;
+  textbook:subjectArea curriculum:高等学校\/2022\/公民;
+  textbook:textbookNumber "705";
+  textbook:textbookSymbol "政経";
+  textbook:usageYear "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2023-".
+textbook:AC100000000923 textbook:textbook textbook:高等学校\/2022\/政経\/705.
+textbook:AA100000040029 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/政経\/705;
+    schema:pagination "6～21ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040030> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/政経/705>
+textbook:AA100000040030 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/政経\/705;
+    schema:pagination "22～43ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040031> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/政経/705>
+textbook:AA100000040031 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/政経\/705;
+    schema:pagination "44～61ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040032> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/政経/705>
+textbook:AA100000040032 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/政経\/705;
+    schema:pagination "62～73ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040033> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/政経/705>
+textbook:AA100000040033 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/政経\/705;
+    schema:pagination "74～81ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040034> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/政経/705>
+textbook:AA100000040034 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/政経\/705;
+    schema:pagination "84～95ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040035> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/政経/705>
+textbook:AA100000040035 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/政経\/705;
+    schema:pagination "96～121ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040036> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/政経/705>
+textbook:AA100000040036 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/政経\/705;
+    schema:pagination "122～157ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040037> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/政経/705>
+textbook:AA100000040037 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/政経\/705;
+    schema:pagination "158～171ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040038> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/政経/705>
+textbook:AA100000040038 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/政経\/705;
+    schema:pagination "174～193ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040039> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/政経/705>
+textbook:AA100000040039 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/政経\/705;
+    schema:pagination "194～207ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040040> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/政経/705>
+textbook:AA100000040040 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/政経\/705;
+    schema:pagination "208～227ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040041> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/政経/705>
+textbook:AA100000040041 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/政経\/705;
+    schema:pagination "228～239ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000923> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2022/政経/705>.

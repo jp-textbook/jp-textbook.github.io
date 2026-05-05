@@ -1,29 +1,39 @@
-<https://w3id.org/jp-textbook/高等学校/2014/音III/302>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "A4変型";
-  <http://id.loc.gov/ontologies/bibframe/extent> "126";
-  <http://purl.org/dc/terms/bibliographicCitation> "「Joy of Music」, 高等学校, 音III|302 (教芸) 2014年検定";
-  <http://schema.org/editor> "小原光一 ほか8名";
-  <http://schema.org/isbn> "978-4-87788-598-4";
-  <http://schema.org/name> "Joy of Music";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2014/教芸>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/026619924>, <http://id.ndl.go.jp/jpno/22619542>, <https://ci.nii.ac.jp/ncid/BB18569780>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2014"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2014>, <https://w3id.org/jp-textbook/catalogue/高等学校/2015>, <https://w3id.org/jp-textbook/catalogue/高等学校/2016>, <https://w3id.org/jp-textbook/catalogue/高等学校/2017>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2013>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.76||K12||2014";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB16336166";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2014\/音III\/302
+  bf:dimensions "A4変型";
+  bf:extent "126";
+  dct:bibliographicCitation "「Joy of Music」, 高等学校, 音III|302 (教芸) 2014年検定";
+  schema:editor "小原光一 ほか8名";
+  schema:isbn "978-4-87788-598-4";
+  schema:name "Joy of Music";
+  schema:publisher textbook:publisher\/2014\/教芸;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/026619924>, <http://id.ndl.go.jp/jpno/22619542>, <https://ci.nii.ac.jp/ncid/BB18569780>;
+  textbook:authorizedYear "2014"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2014, textbook:catalogue\/高等学校\/2015, textbook:catalogue\/高等学校\/2016, textbook:catalogue\/高等学校\/2017;
+  textbook:curriculum curriculum:高等学校\/2013;
+  textbook:item [
+    nier:callNumber "K280.76||K12||2014";
+    nier:recordID "EB16336166";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C027|610|H26/27";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320140017";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C027|610|H26/27";
+    textbook-rc:recordID "320140017";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2013/芸術/音楽III>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2013/芸術>;
-  <https://w3id.org/jp-textbook/textbookNumber> "302";
-  <https://w3id.org/jp-textbook/textbookSymbol> "音III";
-  <https://w3id.org/jp-textbook/usageYear> "2015"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2016"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2017"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2018"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2015-2018".
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2013\/芸術\/音楽III;
+  textbook:subjectArea curriculum:高等学校\/2013\/芸術;
+  textbook:textbookNumber "302";
+  textbook:textbookSymbol "音III";
+  textbook:usageYear "2015"^^xsd:gYear, "2016"^^xsd:gYear, "2017"^^xsd:gYear, "2018"^^xsd:gYear;
+  textbook:usageYearRange "2015-2018".

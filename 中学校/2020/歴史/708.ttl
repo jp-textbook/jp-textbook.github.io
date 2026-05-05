@@ -1,184 +1,296 @@
-<https://w3id.org/jp-textbook/中学校/2020/歴史/708>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "AB";
-  <http://id.loc.gov/ontologies/bibframe/extent> "296";
-  <http://purl.org/dc/terms/bibliographicCitation> "「中学歴史　日本と世界」, 中学校1,2,3年, 歴史|708 (山川) 2020年検定";
-  <http://schema.org/editor> "橋場弦 桜井英治 ほか21名";
-  <http://schema.org/isbn> "9784634709041";
-  <http://schema.org/name> "中学歴史　日本と世界";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2020/山川>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/031626637>, <http://id.ndl.go.jp/jpno/23578030>, <https://ci.nii.ac.jp/ncid/BC06727462>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2020"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/中学校/2020>, <https://w3id.org/jp-textbook/catalogue/中学校/2021>, <https://w3id.org/jp-textbook/catalogue/中学校/2022>, <https://w3id.org/jp-textbook/catalogue/中学校/2023>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/中学校/2021>;
-  <https://w3id.org/jp-textbook/grade> 1, 2, 3;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K260.3||Y4||2020";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20080711";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:中学校\/2020\/歴史\/708
+  bf:dimensions "AB";
+  bf:extent "296";
+  dct:bibliographicCitation "「中学歴史　日本と世界」, 中学校1,2,3年, 歴史|708 (山川) 2020年検定";
+  schema:editor "橋場弦 桜井英治 ほか21名";
+  schema:isbn "9784634709041";
+  schema:name "中学歴史　日本と世界";
+  schema:publisher textbook:publisher\/2020\/山川;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/031626637>, <http://id.ndl.go.jp/jpno/23578030>, <https://ci.nii.ac.jp/ncid/BC06727462>;
+  textbook:authorizedYear "2020"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/中学校\/2020, textbook:catalogue\/中学校\/2021, textbook:catalogue\/中学校\/2022, textbook:catalogue\/中学校\/2023;
+  textbook:curriculum curriculum:中学校\/2021;
+  textbook:grade 1, 2, 3;
+  textbook:item [
+    nier:callNumber "K260.3||Y4||2020";
+    nier:recordID "EB20080711";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "B081|230|R02/03";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "220200053";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "B081|230|R02/03";
+    textbook-rc:recordID "220200053";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/中学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/中学校/2021/社会/社会(歴史的分野)>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/中学校/2021/社会>;
-  <https://w3id.org/jp-textbook/textbookNumber> "708";
-  <https://w3id.org/jp-textbook/textbookSymbol> "歴史";
-  <https://w3id.org/jp-textbook/usageYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2021-2024".
-<https://w3id.org/jp-textbook/AA100000015401> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+  textbook:school textbook:school\/中学校;
+  textbook:subject curriculum:中学校\/2021\/社会\/社会\(歴史的分野\);
+  textbook:subjectArea curriculum:中学校\/2021\/社会;
+  textbook:textbookNumber "708";
+  textbook:textbookSymbol "歴史";
+  textbook:usageYear "2021"^^xsd:gYear, "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear;
+  textbook:usageYearRange "2021-2024".
+textbook:AC100000000252 textbook:textbook textbook:中学校\/2020\/歴史\/708.
+textbook:AA100000015401 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.5";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015402> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015402 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.6";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015403> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015403 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.7";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015404> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015404 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.8~13";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015405> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015405 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.14~15";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015406> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015406 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.16~27";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015407> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015407 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.28~35";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015408> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015408 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.36~49";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015409> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015409 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.46~47";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015410> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015410 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.50~59";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015411> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015411 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.56~57";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015412> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015412 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.58~59";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015413> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015413 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.60~61";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015414> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015414 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.62~63";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015415> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015415 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.64~81";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015416> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015416 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.68~69";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015417> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015417 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.76~77";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015418> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015418 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.82~99";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015419> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015419 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.95";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015420> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015420 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.100~101";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015421> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015421 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.102~103";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015422> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015422 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.104~111";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015423> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015423 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.112~119";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015424> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015424 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.120~127";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015425> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015425 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.128~135";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015426> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015426 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.134~135";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015427> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015427 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.136~151";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015428> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015428 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.150~151";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015429> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015429 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.152~153";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015430> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015430 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.154~155";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015431> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015431 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.156~165";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015432> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015432 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.166~171";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015433> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015433 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.172~189";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015434> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015434 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.178~179";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015435> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015435 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.190~201";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015436> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015436 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.202~209";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015437> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015437 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.205";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015438> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015438 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.210~211";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015439> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015439 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.212~213";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015440> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015440 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.214~231";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015441> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015441 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.228~229";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015442> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015442 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.232~241";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015443> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015443 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.242~251";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015444> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015444 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.250~251";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015445> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015445 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.252~253";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015446> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015446 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.254~255";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015447> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015447 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.256~273";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015448> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015448 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.260~261";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015449> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015449 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.274~281";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015450> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015450 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.276~277";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015451> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>
+textbook:AA100000015451 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/歴史\/708;
+    schema:pagination "p.282~283";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000252> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/中学校/2020/歴史/708>.

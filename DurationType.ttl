@@ -1,13 +1,24 @@
-<https://w3id.org/jp-textbook/DurationType>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Class>;
-  <http://www.w3.org/2000/01/rdf-schema#comment> "A class that represents the type of time allocation. It consists of one of the following: 'Standard', 'Flexible', 'Optional', or 'Spare'."@en, "配当時数の種類を表現するクラス。「標準 (Standard)」「適宜や随時 (Flexible)」「オプション (Optional)」「予備 (Spare)」のいずれかからなる。"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#label> "Duration type"@en, "配当時数種別"@ja.
-<https://w3id.org/jp-textbook/DurationLUShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/DurationType>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+textbook:DurationType
+  rdf:type rdf:Class;
+  rdfs:comment "A class that represents the type of time allocation. It consists of one of the following: 'Standard', 'Flexible', 'Optional', or 'Spare'."@en, "配当時数の種類を表現するクラス。「標準 (Standard)」「適宜や随時 (Flexible)」「オプション (Optional)」「予備 (Spare)」のいずれかからなる。"@ja;
+  rdfs:label "Duration type"@en, "配当時数種別"@ja.
+textbook:DurationLUShape sh:property [
+    skos:example <textbook:durationType/Standard>;
+    sh:class textbook:DurationType;
+    sh:description "Indicates the type of duration: Standard, Flexible, Optional, or  Spare."@en, "配当時数の類型を示す。 Standard（標準）, Flexible（適宜や随時）, Optional（オプション）,  Spare（予備） のどれかをとる。"@ja;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Duration type"@en, "時数種別"@ja;
+    sh:order 8;
+    sh:path textbook:durationType
   ].
-<https://w3id.org/jp-textbook/DurationTypeShape> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/jp-textbook/DurationType>.
-<https://w3id.org/jp-textbook/durationType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/jp-textbook/DurationType>.
-<https://w3id.org/jp-textbook/durationType/Flexible> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/DurationType>.
-<https://w3id.org/jp-textbook/durationType/Optional> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/DurationType>.
-<https://w3id.org/jp-textbook/durationType/Spare> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/DurationType>.
-<https://w3id.org/jp-textbook/durationType/Standard> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/DurationType>.
+textbook:DurationTypeShape sh:targetClass textbook:DurationType.
+textbook:durationType\/Flexible rdf:type textbook:DurationType.
+textbook:durationType\/Optional rdf:type textbook:DurationType.
+textbook:durationType\/Spare rdf:type textbook:DurationType.
+textbook:durationType\/Standard rdf:type textbook:DurationType.

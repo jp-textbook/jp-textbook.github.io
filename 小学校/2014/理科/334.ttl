@@ -1,30 +1,40 @@
-<https://w3id.org/jp-textbook/小学校/2014/理科/334>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "AB";
-  <http://id.loc.gov/ontologies/bibframe/extent> "182";
-  <http://purl.org/dc/terms/bibliographicCitation> "「みらいをひらく 小学理科 3」, 小学校3年, 理科|334 (教出) 2014年検定";
-  <http://schema.org/editor> "養老孟司 角屋重樹 ほか29名";
-  <http://schema.org/isbn> "978-4-316-20288-4";
-  <http://schema.org/name> "みらいをひらく 小学理科 3";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2014/教出>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/026619806>, <http://id.ndl.go.jp/jpno/22615576>, <https://ci.nii.ac.jp/ncid/BB18475563>, <https://ci.nii.ac.jp/ncid/BB18607595>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2014"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/小学校/2014>, <https://w3id.org/jp-textbook/catalogue/小学校/2015>, <https://w3id.org/jp-textbook/catalogue/小学校/2016>, <https://w3id.org/jp-textbook/catalogue/小学校/2017>, <https://w3id.org/jp-textbook/catalogue/小学校/2018>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/小学校/2011>;
-  <https://w3id.org/jp-textbook/grade> 3;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K170.42||K10||2014";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB16336081";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:小学校\/2014\/理科\/334
+  bf:dimensions "AB";
+  bf:extent "182";
+  dct:bibliographicCitation "「みらいをひらく 小学理科 3」, 小学校3年, 理科|334 (教出) 2014年検定";
+  schema:editor "養老孟司 角屋重樹 ほか29名";
+  schema:isbn "978-4-316-20288-4";
+  schema:name "みらいをひらく 小学理科 3";
+  schema:publisher textbook:publisher\/2014\/教出;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/026619806>, <http://id.ndl.go.jp/jpno/22615576>, <https://ci.nii.ac.jp/ncid/BB18475563>, <https://ci.nii.ac.jp/ncid/BB18607595>;
+  textbook:authorizedYear "2014"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/小学校\/2014, textbook:catalogue\/小学校\/2015, textbook:catalogue\/小学校\/2016, textbook:catalogue\/小学校\/2017, textbook:catalogue\/小学校\/2018;
+  textbook:curriculum curriculum:小学校\/2011;
+  textbook:grade 3;
+  textbook:item [
+    nier:callNumber "K170.42||K10||2014";
+    nier:recordID "EB16336081";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "A017|403|H26/27";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "120140185";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "A017|403|H26/27";
+    textbook-rc:recordID "120140185";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/小学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/小学校/2011/理科/理科>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/小学校/2011/理科>;
-  <https://w3id.org/jp-textbook/textbookNumber> "334";
-  <https://w3id.org/jp-textbook/textbookSymbol> "理科";
-  <https://w3id.org/jp-textbook/usageYear> "2015"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2016"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2017"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2018"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2019"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2015-2019".
+  textbook:school textbook:school\/小学校;
+  textbook:subject curriculum:小学校\/2011\/理科\/理科;
+  textbook:subjectArea curriculum:小学校\/2011\/理科;
+  textbook:textbookNumber "334";
+  textbook:textbookSymbol "理科";
+  textbook:usageYear "2015"^^xsd:gYear, "2016"^^xsd:gYear, "2017"^^xsd:gYear, "2018"^^xsd:gYear, "2019"^^xsd:gYear;
+  textbook:usageYearRange "2015-2019".

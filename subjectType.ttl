@@ -1,12 +1,29 @@
-<https://w3id.org/jp-textbook/subjectType>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
-  <http://www.w3.org/2000/01/rdf-schema#comment> "対応する教科または種目の種別を示すプロパティ"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/jp-textbook/curriculum/Subject>, <https://w3id.org/jp-textbook/curriculum/SubjectArea>;
-  <http://www.w3.org/2000/01/rdf-schema#label> "Type of subject and subject area"@en, "教科・種目種別"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/jp-textbook/SubjectType>.
-<https://w3id.org/jp-textbook/curriculum/SubjectAreaShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/subjectType>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+textbook:subjectType
+  rdf:type rdf:Property;
+  rdfs:comment "対応する教科または種目の種別を示すプロパティ"@ja;
+  rdfs:domain curriculum:Subject, curriculum:SubjectArea;
+  rdfs:label "Type of subject and subject area"@en, "教科・種目種別"@ja;
+  rdfs:range textbook:SubjectType.
+curriculum:SubjectAreaShape sh:property [
+    skos:example <textbook:curriculum/高等学校/2013/Common>;
+    sh:class textbook:SubjectType;
+    sh:description "Used only in the subject areas at the curriculum guidelines 1994, 2003 and 2013 for the high schools."@en, "学習指導要領1994,2003,2013の高等学校の教科のみ。"@ja;
+    sh:maxCount 1;
+    sh:name "Type of the subject area"@en, "教科種別"@ja;
+    sh:order 4;
+    sh:path textbook:subjectType
   ].
-<https://w3id.org/jp-textbook/curriculum/SubjectShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/subjectType>
+curriculum:SubjectShape sh:property [
+    skos:example <textbook:curriculum/高等学校/2013/Common>;
+    sh:class textbook:SubjectType;
+    sh:description "Used only in the curriculum guidelines 1994, 2003 and 2013 for the upper secondary schools"@en, "学習指導要領1994,2003,2013の高等学校の教科の種目のみ。"@ja;
+    sh:name "Type of the subjects"@en, "種目種別"@ja;
+    sh:order 5;
+    sh:path textbook:subjectType
   ].

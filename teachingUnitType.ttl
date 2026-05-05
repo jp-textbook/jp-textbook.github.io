@@ -1,9 +1,21 @@
-<https://w3id.org/jp-textbook/teachingUnitType>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
-  <http://www.w3.org/2000/01/rdf-schema#comment> "単元種別を示すプロパティ"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/jp-textbook/TeachingUnit>;
-  <http://www.w3.org/2000/01/rdf-schema#label> "Teaching Unit Type"@en, "単元種別"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/jp-textbook/TeachingUnitType>.
-<https://w3id.org/jp-textbook/TeachingUnitShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/teachingUnitType>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+textbook:teachingUnitType
+  rdf:type rdf:Property;
+  rdfs:comment "単元種別を示すプロパティ"@ja;
+  rdfs:domain textbook:TeachingUnit;
+  rdfs:label "Teaching Unit Type"@en, "単元種別"@ja;
+  rdfs:range textbook:TeachingUnitType.
+textbook:TeachingUnitShape sh:property [
+    skos:example "Standard";
+    sh:class textbook:TeachingUnitType;
+    sh:description "Indicates the type of teaching unit: Standard, UpperGradeContents (upper grades), or OutOfCos (content that is not required to be covered at any grade level in Courses of Study)."@en, "単元の類型を示す。Standard（標準）,UpperGradeContents（後の学年）,OutOfCos（学習指導要領上、どの学年等でも扱うこととされていない内容）の3つのどれかをとる。"@ja;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Teaching Unit Type"@en, "単元種別"@ja;
+    sh:order 17;
+    sh:path textbook:teachingUnitType
   ].

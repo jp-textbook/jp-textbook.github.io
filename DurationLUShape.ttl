@@ -1,89 +1,105 @@
-<https://w3id.org/jp-textbook/DurationLUShape>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape>;
-  <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/2004/02/skos/core#example> "2-4";
-    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string>;
-    <http://www.w3.org/ns/shacl#description> "Indicates the wording as it appears in the compiling prospectus."@en, "編修趣意書に掲載されたままの表記を表す。"@ja;
-    <http://www.w3.org/ns/shacl#maxCount> 1;
-    <http://www.w3.org/ns/shacl#minCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Duration(string)"@en, "配当時数（文字列）"@ja;
-    <http://www.w3.org/ns/shacl#order> 1;
-    <http://www.w3.org/ns/shacl#path> <http://schema.org/name>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix schema: <http://schema.org/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix qb: <http://purl.org/linked-data/cube#>.
+textbook:DurationLUShape
+  rdf:type sh:NodeShape;
+  sh:property [
+    skos:example "2-4";
+    sh:datatype xsd:string;
+    sh:description "Indicates the wording as it appears in the compiling prospectus."@en, "編修趣意書に掲載されたままの表記を表す。"@ja;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Duration(string)"@en, "配当時数（文字列）"@ja;
+    sh:order 1;
+    sh:path schema:name
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> "2－4（ともに生きる : 6編 私たちの成長と家....の配当時数）";
-    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string>;
-    <http://www.w3.org/ns/shacl#name> "Duration(label)"@en, "配当時数（ラベル）"@ja;
-    <http://www.w3.org/ns/shacl#order> 2;
-    <http://www.w3.org/ns/shacl#path> <http://schema.org/alternateName>
+    skos:example "2－4（ともに生きる : 6編 私たちの成長と家....の配当時数）";
+    sh:datatype xsd:string;
+    sh:name "Duration(label)"@en, "配当時数（ラベル）"@ja;
+    sh:order 2;
+    sh:path schema:alternateName
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> "2";
-    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#integer>;
-    <http://www.w3.org/ns/shacl#description> "Indicates the duration as a numerical value. The time shown is considered representative; when uncertain, a shorter duration is applied."@en, "数値で表した配当時数を表す。代表的であると思われる時間を示す。不明な場合は短い値。"@ja;
-    <http://www.w3.org/ns/shacl#maxCount> 1;
-    <http://www.w3.org/ns/shacl#minCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Duration"@en, "配当時数"@ja;
-    <http://www.w3.org/ns/shacl#order> 3;
-    <http://www.w3.org/ns/shacl#path> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+    skos:example "2";
+    sh:datatype xsd:integer;
+    sh:description "Indicates the duration as a numerical value. The time shown is considered representative; when uncertain, a shorter duration is applied."@en, "数値で表した配当時数を表す。代表的であると思われる時間を示す。不明な場合は短い値。"@ja;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Duration"@en, "配当時数"@ja;
+    sh:order 3;
+    sh:path rdf:value
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> "2";
-    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#integer>;
-    <http://www.w3.org/ns/shacl#description> "The minimum value when the duration is indicated as a range."@en, "範囲で配当時数が示されている場合の最小値。"@ja;
-    <http://www.w3.org/ns/shacl#maxCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Minimum value of the duration."@en, "配当時数の最小値"@ja;
-    <http://www.w3.org/ns/shacl#order> 4;
-    <http://www.w3.org/ns/shacl#path> <http://www.w3.org/2000/01/rdf-schema#minValue>
+    skos:example "2";
+    sh:datatype xsd:integer;
+    sh:description "The minimum value when the duration is indicated as a range."@en, "範囲で配当時数が示されている場合の最小値。"@ja;
+    sh:maxCount 1;
+    sh:name "Minimum value of the duration."@en, "配当時数の最小値"@ja;
+    sh:order 4;
+    sh:path rdfs:minValue
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> "4";
-    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#integer>;
-    <http://www.w3.org/ns/shacl#description> "Maximum value when the duration is indicated as a range."@en, "範囲で配当時数が示されている場合の最大値。"@ja;
-    <http://www.w3.org/ns/shacl#maxCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Maximum  value of the duration."@en, "配当時数の最大値"@ja;
-    <http://www.w3.org/ns/shacl#order> 5;
-    <http://www.w3.org/ns/shacl#path> <http://www.w3.org/2000/01/rdf-schema#maxValue>
+    skos:example "4";
+    sh:datatype xsd:integer;
+    sh:description "Maximum value when the duration is indicated as a range."@en, "範囲で配当時数が示されている場合の最大値。"@ja;
+    sh:maxCount 1;
+    sh:name "Maximum  value of the duration."@en, "配当時数の最大値"@ja;
+    sh:order 5;
+    sh:path rdfs:maxValue
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> <https://w3id.org/jp-textbook/AC100000000315>;
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/CompilingProspectus>;
-    <http://www.w3.org/ns/shacl#description> "<code>textbook:<var>編修趣意書ID</var></code>として示される編修趣意書リソースと関連付ける"@ja, "Link to the compiling prospectus resource, represented as <code>textbook:<var>compiling prospectus ID</var></code>."@en;
-    <http://www.w3.org/ns/shacl#maxCount> 1;
-    <http://www.w3.org/ns/shacl#minCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Compiling Prospectus"@en, "編修趣意書"@ja;
-    <http://www.w3.org/ns/shacl#order> 6;
-    <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/source>
+    skos:example textbook:AC100000000315;
+    sh:class textbook:CompilingProspectus;
+    sh:description "<code>textbook:<var>編修趣意書ID</var></code>として示される編修趣意書リソースと関連付ける"@ja, "Link to the compiling prospectus resource, represented as <code>textbook:<var>compiling prospectus ID</var></code>."@en;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Compiling Prospectus"@en, "編修趣意書"@ja;
+    sh:order 6;
+    sh:path dct:source
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> <textbook:mixedDurationType/Selected>;
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/MixedDurationType>;
-    <http://www.w3.org/ns/shacl#description> "Indicates the type of mixed duration: Combined or Selected."@en, "複数単元の類型を示す。Combined（複合）,Selected（選択）の２つのどちらかをとる。"@ja;
-    <http://www.w3.org/ns/shacl#maxCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Mixed duration type"@en, "複数単元種別"@ja;
-    <http://www.w3.org/ns/shacl#order> 7;
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/mixedDurationType>
+    skos:example <textbook:mixedDurationType/Selected>;
+    sh:class textbook:MixedDurationType;
+    sh:description "Indicates the type of mixed duration: Combined or Selected."@en, "複数単元の類型を示す。Combined（複合）,Selected（選択）の２つのどちらかをとる。"@ja;
+    sh:maxCount 1;
+    sh:name "Mixed duration type"@en, "複数単元種別"@ja;
+    sh:order 7;
+    sh:path textbook:mixedDurationType
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> <textbook:durationType/Standard>;
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/DurationType>;
-    <http://www.w3.org/ns/shacl#description> "Indicates the type of duration: Standard, Flexible, Optional, or  Spare."@en, "配当時数の類型を示す。 Standard（標準）, Flexible（適宜や随時）, Optional（オプション）,  Spare（予備） のどれかをとる。"@ja;
-    <http://www.w3.org/ns/shacl#maxCount> 1;
-    <http://www.w3.org/ns/shacl#minCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Duration type"@en, "時数種別"@ja;
-    <http://www.w3.org/ns/shacl#order> 8;
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/durationType>
+    skos:example <textbook:durationType/Standard>;
+    sh:class textbook:DurationType;
+    sh:description "Indicates the type of duration: Standard, Flexible, Optional, or  Spare."@en, "配当時数の類型を示す。 Standard（標準）, Flexible（適宜や随時）, Optional（オプション）,  Spare（予備） のどれかをとる。"@ja;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Duration type"@en, "時数種別"@ja;
+    sh:order 8;
+    sh:path textbook:durationType
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> "5つの単元のうち導入の1つ及び残りの4つのうち2つの単元を選択する。";
-    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string>;
-    <http://www.w3.org/ns/shacl#maxCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Note"@en, "注記"@ja;
-    <http://www.w3.org/ns/shacl#order> 9;
-    <http://www.w3.org/ns/shacl#path> <http://www.w3.org/2000/01/rdf-schema#comment>
+    skos:example "5つの単元のうち導入の1つ及び残りの4つのうち2つの単元を選択する。";
+    sh:datatype xsd:string;
+    sh:maxCount 1;
+    sh:name "Note"@en, "注記"@ja;
+    sh:order 9;
+    sh:path rdfs:comment
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> "1";
-    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#integer>;
-    <http://www.w3.org/ns/shacl#description> "Used in display orders"@en, "表示順を決める場合などで利用"@ja;
-    <http://www.w3.org/ns/shacl#maxCount> 1;
-    <http://www.w3.org/ns/shacl#minCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Listing order"@en, "ソート順"@ja;
-    <http://www.w3.org/ns/shacl#order> 10;
-    <http://www.w3.org/ns/shacl#path> <http://purl.org/linked-data/cube#order>
+    skos:example "1";
+    sh:datatype xsd:integer;
+    sh:description "Used in display orders"@en, "表示順を決める場合などで利用"@ja;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Listing order"@en, "ソート順"@ja;
+    sh:order 10;
+    sh:path qb:order
   ];
-  <http://www.w3.org/ns/shacl#targetClass> <http://schema.org/Duration>.
-<https://w3id.org/jp-textbook/TeachingUnitShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#node> <https://w3id.org/jp-textbook/DurationLUShape>
+  sh:targetClass schema:Duration.
+textbook:TeachingUnitShape sh:property [
+    skos:example <textbook:AC100000000315/Time004>;
+    sh:class schema:Duration;
+    sh:description "Link to the duration resource."@en, "配当時数リソースと関連付ける。"@ja;
+    sh:maxCount 1;
+    sh:name "Duration"@en, "配当時数"@ja;
+    sh:node textbook:DurationLUShape;
+    sh:order 12;
+    sh:path schema:duration
   ].

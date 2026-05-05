@@ -1,133 +1,214 @@
-<https://w3id.org/jp-textbook/中学校/2020/数学/701>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "312";
-  <http://purl.org/dc/terms/bibliographicCitation> "「新しい数学１」, 中学校1年, 数学|701 (東書) 2020年検定";
-  <http://schema.org/editor> "藤井斉亮 真島秀行 ほか94名";
-  <http://schema.org/isbn> "9784487123513";
-  <http://schema.org/name> "新しい数学１";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2020/東書>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/031626535>, <http://id.ndl.go.jp/jpno/23577986>, <https://ci.nii.ac.jp/ncid/BB3133824X>, <https://ci.nii.ac.jp/ncid/BC06508221>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2020"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/中学校/2020>, <https://w3id.org/jp-textbook/catalogue/中学校/2021>, <https://w3id.org/jp-textbook/catalogue/中学校/2022>, <https://w3id.org/jp-textbook/catalogue/中学校/2023>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/中学校/2021>;
-  <https://w3id.org/jp-textbook/grade> 1;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K260.41||T8||2020";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20080723";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:中学校\/2020\/数学\/701
+  bf:dimensions "B5";
+  bf:extent "312";
+  dct:bibliographicCitation "「新しい数学１」, 中学校1年, 数学|701 (東書) 2020年検定";
+  schema:editor "藤井斉亮 真島秀行 ほか94名";
+  schema:isbn "9784487123513";
+  schema:name "新しい数学１";
+  schema:publisher textbook:publisher\/2020\/東書;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/031626535>, <http://id.ndl.go.jp/jpno/23577986>, <https://ci.nii.ac.jp/ncid/BB3133824X>, <https://ci.nii.ac.jp/ncid/BC06508221>;
+  textbook:authorizedYear "2020"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/中学校\/2020, textbook:catalogue\/中学校\/2021, textbook:catalogue\/中学校\/2022, textbook:catalogue\/中学校\/2023;
+  textbook:curriculum curriculum:中学校\/2021;
+  textbook:grade 1;
+  textbook:item [
+    nier:callNumber "K260.41||T8||2020";
+    nier:recordID "EB20080723";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "B002|301|R02/03";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "220200063";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "B002|301|R02/03";
+    textbook-rc:recordID "220200063";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/中学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/中学校/2021/数学/数学>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/中学校/2021/数学>;
-  <https://w3id.org/jp-textbook/textbookNumber> "701";
-  <https://w3id.org/jp-textbook/textbookSymbol> "数学";
-  <https://w3id.org/jp-textbook/usageYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2021-2024".
-<https://w3id.org/jp-textbook/AA100000013897> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+  textbook:school textbook:school\/中学校;
+  textbook:subject curriculum:中学校\/2021\/数学\/数学;
+  textbook:subjectArea curriculum:中学校\/2021\/数学;
+  textbook:textbookNumber "701";
+  textbook:textbookSymbol "数学";
+  textbook:usageYear "2021"^^xsd:gYear, "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear;
+  textbook:usageYearRange "2021-2024".
+textbook:AC100000000264 textbook:textbook textbook:中学校\/2020\/数学\/701.
+textbook:AB100000001565 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:numberOfPages 0.25;
+    schema:pagination "75";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013898> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AB100000001566 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:numberOfPages 0.25;
+    schema:pagination "105";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013899> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AB100000001567 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:numberOfPages 1;
+    schema:pagination "257";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013900> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013897 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "9ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013901> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013898 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "10~13ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013902> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013899 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "17ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013903> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013900 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "18~26ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013904> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013901 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "27~38ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013905> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013902 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "39~54ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013906> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013903 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "55~57ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013907> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013904 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "61ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013908> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013905 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "62~72ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013909> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013906 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "73~80ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013910> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013907 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "81~85ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013911> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013908 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "89ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013912> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013909 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "90~100ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013913> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013910 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "101~109ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013914> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013911 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "113ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013915> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013912 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "114~122ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013916> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013913 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "123~134ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013917> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013914 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "135~144ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013918> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013915 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "145~149ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013919> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013916 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "153ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013920> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013917 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "154~164ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013921> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013918 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "165~178ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013922> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013919 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "179~181ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013923> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013920 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "187ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013924> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013921 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "188~192ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013925> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013922 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "193~208ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013926> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013923 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "209~217ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013927> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013924 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "221ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001565> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013925 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "222~232ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001566> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013926 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "233~234ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001567> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/701>
+textbook:AA100000013927 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/701;
+    schema:pagination "235~239ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000264> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/中学校/2020/数学/701>.

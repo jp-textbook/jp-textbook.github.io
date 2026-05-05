@@ -1,75 +1,115 @@
-<https://w3id.org/jp-textbook/高等学校/2021/理数/701>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "A4";
-  <http://id.loc.gov/ontologies/bibframe/extent> "130";
-  <http://purl.org/dc/terms/bibliographicCitation> "「理数探究基礎 未来に向かって」, 高等学校, 理数|701 (啓林館) 2021年検定";
-  <http://schema.org/editor> "石浦 章一  下田 正  ほか43名";
-  <http://schema.org/isbn> "9784402020033";
-  <http://schema.org/name> "理数探究基礎 未来に向かって";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2021/啓林館>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/032455444>, <http://id.ndl.go.jp/jpno/23789402>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2021>, <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.47||S16||2021";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20082138";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2021\/理数\/701
+  bf:dimensions "A4";
+  bf:extent "130";
+  dct:bibliographicCitation "「理数探究基礎 未来に向かって」, 高等学校, 理数|701 (啓林館) 2021年検定";
+  schema:editor "石浦 章一  下田 正  ほか43名";
+  schema:isbn "9784402020033";
+  schema:name "理数探究基礎 未来に向かって";
+  schema:publisher textbook:publisher\/2021\/啓林館;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/032455444>, <http://id.ndl.go.jp/jpno/23789402>;
+  textbook:authorizedYear "2021"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2021, textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.47||S16||2021";
+    nier:recordID "EB20082138";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C061|500|R03/04";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320210255";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C061|500|R03/04";
+    textbook-rc:recordID "320210255";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/理数/理数探究基礎>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/理数>;
-  <https://w3id.org/jp-textbook/textbookNumber> "701";
-  <https://w3id.org/jp-textbook/textbookSymbol> "理数";
-  <https://w3id.org/jp-textbook/usageYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2022-".
-<https://w3id.org/jp-textbook/AA100000032030> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/理数/701>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/理数\/理数探究基礎;
+  textbook:subjectArea curriculum:高等学校\/2022\/理数;
+  textbook:textbookNumber "701";
+  textbook:textbookSymbol "理数";
+  textbook:usageYear "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2022-".
+textbook:AC100000000798 textbook:textbook textbook:高等学校\/2021\/理数\/701.
+textbook:AA100000032030 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/理数\/701;
+    schema:pagination "p.4-5";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000032031> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/理数/701>
+textbook:AA100000032031 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/理数\/701;
+    schema:pagination "p.8-10，p.14-15，p.11，12-13，p.15，p.15，p.15p.14p.12-13";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000032032> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/理数/701>
+textbook:AA100000032032 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/理数\/701;
+    schema:pagination "p.18-21，24-25，p.22，p.20";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000032033> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/理数/701>
+textbook:AA100000032033 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/理数\/701;
+    schema:pagination "p.26，p.27-45，p.38-45，p.37，42-45，p.45，p.27，34-35，38-44，";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000032034> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/理数/701>
+textbook:AA100000032034 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/理数\/701;
+    schema:pagination "p.61，p.46-61，p.46-61";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000032035> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/理数/701>
+textbook:AA100000032035 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/理数\/701;
+    schema:pagination "p.62-67";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000032036> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/理数/701>
+textbook:AA100000032036 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/理数\/701;
+    schema:pagination "p.68-76";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000032037> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/理数/701>
+textbook:AA100000032037 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/理数\/701;
+    schema:pagination "p.78-81";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000032038> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/理数/701>
+textbook:AA100000032038 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/理数\/701;
+    schema:pagination "p.82-85";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000032039> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/理数/701>
+textbook:AA100000032039 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/理数\/701;
+    schema:pagination "p.86-93";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000032040> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/理数/701>
+textbook:AA100000032040 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/理数\/701;
+    schema:pagination "p.94-97";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000032041> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/理数/701>
+textbook:AA100000032041 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/理数\/701;
+    schema:pagination "p.98-102";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000032042> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/理数/701>
+textbook:AA100000032042 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/理数\/701;
+    schema:pagination "p.103-113";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000032043> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/理数/701>
+textbook:AA100000032043 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/理数\/701;
+    schema:pagination "p.114-115";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000032044> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/理数/701>
+textbook:AA100000032044 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/理数\/701;
+    schema:pagination "p.116-125";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000798> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2021/理数/701>.

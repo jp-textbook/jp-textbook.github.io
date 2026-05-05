@@ -1,31 +1,41 @@
-<https://w3id.org/jp-textbook/中学校/2015/数学/834>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "230";
-  <http://purl.org/dc/terms/bibliographicCitation> "「中学校数学2」, 中学校2年, 数学|834 (数研) 2015年検定";
-  <http://schema.org/editor> "岡部恒治 ほか15名";
-  <http://schema.org/isbn> "978-4-410-86022-5";
-  <http://schema.org/name> "中学校数学2";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2015/数研>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/027477904>, <http://id.ndl.go.jp/jpno/22768993>, <https://ci.nii.ac.jp/ncid/BB19172771>, <https://ci.nii.ac.jp/ncid/BB21050358>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2015"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/中学校/2015>, <https://w3id.org/jp-textbook/catalogue/中学校/2016>, <https://w3id.org/jp-textbook/catalogue/中学校/2017>, <https://w3id.org/jp-textbook/catalogue/中学校/2018>, <https://w3id.org/jp-textbook/catalogue/中学校/2019>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/中学校/2012>;
-  <https://w3id.org/jp-textbook/grade> 2;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K260.41||S19||2015";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB16336292";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:中学校\/2015\/数学\/834
+  bf:dimensions "B5";
+  bf:extent "230";
+  dct:bibliographicCitation "「中学校数学2」, 中学校2年, 数学|834 (数研) 2015年検定";
+  schema:editor "岡部恒治 ほか15名";
+  schema:isbn "978-4-410-86022-5";
+  schema:name "中学校数学2";
+  schema:publisher textbook:publisher\/2015\/数研;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/027477904>, <http://id.ndl.go.jp/jpno/22768993>, <https://ci.nii.ac.jp/ncid/BB19172771>, <https://ci.nii.ac.jp/ncid/BB21050358>;
+  textbook:authorizedYear "2015"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/中学校\/2015, textbook:catalogue\/中学校\/2016, textbook:catalogue\/中学校\/2017, textbook:catalogue\/中学校\/2018, textbook:catalogue\/中学校\/2019;
+  textbook:curriculum curriculum:中学校\/2012;
+  textbook:grade 2;
+  textbook:item [
+    nier:callNumber "K260.41||S19||2015";
+    nier:recordID "EB16336292";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "B104|302|H27/28";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "220150060";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "B104|302|H27/28";
+    textbook-rc:recordID "220150060";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/中学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/中学校/2012/数学/数学>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/中学校/2012/数学>;
-  <https://w3id.org/jp-textbook/textbookNumber> "834";
-  <https://w3id.org/jp-textbook/textbookSymbol> "数学";
-  <https://w3id.org/jp-textbook/usageYear> "2016"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2017"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2018"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2019"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2020"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2016-2020".
-<https://w3id.org/jp-textbook/AC100000001389> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/中学校/2015/数学/834>.
+  textbook:school textbook:school\/中学校;
+  textbook:subject curriculum:中学校\/2012\/数学\/数学;
+  textbook:subjectArea curriculum:中学校\/2012\/数学;
+  textbook:textbookNumber "834";
+  textbook:textbookSymbol "数学";
+  textbook:usageYear "2016"^^xsd:gYear, "2017"^^xsd:gYear, "2018"^^xsd:gYear, "2019"^^xsd:gYear, "2020"^^xsd:gYear;
+  textbook:usageYearRange "2016-2020".
+textbook:AC100000001389 textbook:textbook textbook:中学校\/2015\/数学\/834.

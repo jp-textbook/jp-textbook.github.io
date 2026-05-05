@@ -1,30 +1,40 @@
-<https://w3id.org/jp-textbook/小学校/2014/算数/636>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "242";
-  <http://purl.org/dc/terms/bibliographicCitation> "「小学算数 6」, 小学校6年, 算数|636 (教出) 2014年検定";
-  <http://schema.org/editor> "坪田耕三 金本良通 ほか29名";
-  <http://schema.org/isbn> "978-4-316-20287-7";
-  <http://schema.org/name> "小学算数 6";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2014/教出>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/026619805>, <http://id.ndl.go.jp/jpno/22614760>, <https://ci.nii.ac.jp/ncid/BB18441109>, <https://ci.nii.ac.jp/ncid/BB18599759>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2014"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/小学校/2014>, <https://w3id.org/jp-textbook/catalogue/小学校/2015>, <https://w3id.org/jp-textbook/catalogue/小学校/2016>, <https://w3id.org/jp-textbook/catalogue/小学校/2017>, <https://w3id.org/jp-textbook/catalogue/小学校/2018>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/小学校/2011>;
-  <https://w3id.org/jp-textbook/grade> 6;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K170.41||K10||2014";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB16336048";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:小学校\/2014\/算数\/636
+  bf:dimensions "B5";
+  bf:extent "242";
+  dct:bibliographicCitation "「小学算数 6」, 小学校6年, 算数|636 (教出) 2014年検定";
+  schema:editor "坪田耕三 金本良通 ほか29名";
+  schema:isbn "978-4-316-20287-7";
+  schema:name "小学算数 6";
+  schema:publisher textbook:publisher\/2014\/教出;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/026619805>, <http://id.ndl.go.jp/jpno/22614760>, <https://ci.nii.ac.jp/ncid/BB18441109>, <https://ci.nii.ac.jp/ncid/BB18599759>;
+  textbook:authorizedYear "2014"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/小学校\/2014, textbook:catalogue\/小学校\/2015, textbook:catalogue\/小学校\/2016, textbook:catalogue\/小学校\/2017, textbook:catalogue\/小学校\/2018;
+  textbook:curriculum curriculum:小学校\/2011;
+  textbook:grade 6;
+  textbook:item [
+    nier:callNumber "K170.41||K10||2014";
+    nier:recordID "EB16336048";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "A017|306|H26/27";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "120140152";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "A017|306|H26/27";
+    textbook-rc:recordID "120140152";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/小学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/小学校/2011/算数/算数>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/小学校/2011/算数>;
-  <https://w3id.org/jp-textbook/textbookNumber> "636";
-  <https://w3id.org/jp-textbook/textbookSymbol> "算数";
-  <https://w3id.org/jp-textbook/usageYear> "2015"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2016"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2017"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2018"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2019"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2015-2019".
+  textbook:school textbook:school\/小学校;
+  textbook:subject curriculum:小学校\/2011\/算数\/算数;
+  textbook:subjectArea curriculum:小学校\/2011\/算数;
+  textbook:textbookNumber "636";
+  textbook:textbookSymbol "算数";
+  textbook:usageYear "2015"^^xsd:gYear, "2016"^^xsd:gYear, "2017"^^xsd:gYear, "2018"^^xsd:gYear, "2019"^^xsd:gYear;
+  textbook:usageYearRange "2015-2019".

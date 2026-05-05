@@ -1,337 +1,587 @@
-<https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "AB";
-  <http://id.loc.gov/ontologies/bibframe/extent> "198";
-  <http://purl.org/dc/terms/bibliographicCitation> "「最新　中学校保健体育」, 中学校1,2,3年, 保体|703 (大修館) 2020年検定";
-  <http://schema.org/editor> "友添秀則 衞藤隆 ほか24名";
-  <http://schema.org/isbn> "9784469663013";
-  <http://schema.org/name> "最新　中学校保健体育";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2020/大修館>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/031626627>, <http://id.ndl.go.jp/jpno/23579969>, <https://ci.nii.ac.jp/ncid/BB31654873>, <https://ci.nii.ac.jp/ncid/BC06316606>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2020"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/中学校/2020>, <https://w3id.org/jp-textbook/catalogue/中学校/2021>, <https://w3id.org/jp-textbook/catalogue/中学校/2022>, <https://w3id.org/jp-textbook/catalogue/中学校/2023>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/中学校/2021>;
-  <https://w3id.org/jp-textbook/grade> 1, 2, 3;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K260.49||T10||2020";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20080779";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:中学校\/2020\/保体\/703
+  bf:dimensions "AB";
+  bf:extent "198";
+  dct:bibliographicCitation "「最新　中学校保健体育」, 中学校1,2,3年, 保体|703 (大修館) 2020年検定";
+  schema:editor "友添秀則 衞藤隆 ほか24名";
+  schema:isbn "9784469663013";
+  schema:name "最新　中学校保健体育";
+  schema:publisher textbook:publisher\/2020\/大修館;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/031626627>, <http://id.ndl.go.jp/jpno/23579969>, <https://ci.nii.ac.jp/ncid/BB31654873>, <https://ci.nii.ac.jp/ncid/BC06316606>;
+  textbook:authorizedYear "2020"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/中学校\/2020, textbook:catalogue\/中学校\/2021, textbook:catalogue\/中学校\/2022, textbook:catalogue\/中学校\/2023;
+  textbook:curriculum curriculum:中学校\/2021;
+  textbook:grade 1, 2, 3;
+  textbook:item [
+    nier:callNumber "K260.49||T10||2020";
+    nier:recordID "EB20080779";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "B050|600|R02/03";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "220200119";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "B050|600|R02/03";
+    textbook-rc:recordID "220200119";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/中学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/中学校/2021/保健体育/保健体育>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/中学校/2021/保健体育>;
-  <https://w3id.org/jp-textbook/textbookNumber> "703";
-  <https://w3id.org/jp-textbook/textbookSymbol> "保体";
-  <https://w3id.org/jp-textbook/usageYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2021-2024".
-<https://w3id.org/jp-textbook/AA100000016386> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
+  textbook:school textbook:school\/中学校;
+  textbook:subject curriculum:中学校\/2021\/保健体育\/保健体育;
+  textbook:subjectArea curriculum:中学校\/2021\/保健体育;
+  textbook:textbookNumber "703";
+  textbook:textbookSymbol "保体";
+  textbook:usageYear "2021"^^xsd:gYear, "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear;
+  textbook:usageYearRange "2021-2024".
+textbook:AC100000000314 textbook:textbook textbook:中学校\/2020\/保体\/703.
+textbook:AB100000001164 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.25;
+    schema:pagination "24";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001165 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.25;
+    schema:pagination "40";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001166 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.25;
+    schema:pagination "48";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001167 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.5;
+    schema:pagination "68";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001168 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.25;
+    schema:pagination "71";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001169 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 1;
+    schema:pagination "82-83";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001170 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.5;
+    schema:pagination "92";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001171 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.5;
+    schema:pagination "93";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001172 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.75;
+    schema:pagination "105";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001173 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 1;
+    schema:pagination "117";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001174 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.25;
+    schema:pagination "137";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001175 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.5;
+    schema:pagination "141";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001176 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 1;
+    schema:pagination "150";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001177 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.5;
+    schema:pagination "151";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001178 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.5;
+    schema:pagination "151";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001179 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.5;
+    schema:pagination "172";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001180 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 1;
+    schema:pagination "172";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001181 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.5;
+    schema:pagination "173";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001182 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.25;
+    schema:pagination "28";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001183 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 1;
+    schema:pagination "38";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001184 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.5;
+    schema:pagination "39";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001185 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.25;
+    schema:pagination "40";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001186 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 1;
+    schema:pagination "102";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001187 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 1;
+    schema:pagination "103";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001188 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.5;
+    schema:pagination "104";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001189 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.5;
+    schema:pagination "104";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001190 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.25;
+    schema:pagination "108";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001191 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.5;
+    schema:pagination "120";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001192 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.5;
+    schema:pagination "127";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001193 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.5;
+    schema:pagination "130";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001194 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.5;
+    schema:pagination "131";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001195 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.5;
+    schema:pagination "131";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001196 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.5;
+    schema:pagination "148";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001197 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.5;
+    schema:pagination "164";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001198 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 0.5;
+    schema:pagination "165";
+    rdf:type schema:Chapter
+  ].
+textbook:AB100000001199 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:numberOfPages 1;
+    schema:pagination "185";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016386 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.4-15";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016387 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.6-7";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016388 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.8-9 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016389 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.10-11";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016390 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.16-27";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016391 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.18-19 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016392 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.20-21 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016393 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.22-23 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016394 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.24-25";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016395 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.28-57";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016396 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.30-31 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016397 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.32-33 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016398 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.34-35 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016399 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.36-37 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016400 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.38-39 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016401 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.40-41 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016402 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.42-43 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016403 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.44-45 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016404 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.46-47 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016405 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.48-49 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016406 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.50-51 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016407 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.52-53";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016408 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.58-73";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016409 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.60-61 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016410 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.64-65 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016411 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.66-67";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016412 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.74-95";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016413 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.76-77 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016414 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.78-79 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016415 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.80-81 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016416 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.82-83";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016417 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.84-85 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016418 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.86-87 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016419 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.88-89 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016420 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.90-91";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016421 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.96-119";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016422 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.98-99 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016423 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.100-101";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016424 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.102-105";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016425 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.106-107 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016426 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.108-109 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016427 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.110-111 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016428 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.112-113 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016429 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.114-115";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016430 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.120-131";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016431 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.122-123 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016432 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.124-125 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016433 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.128-129";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016434 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.132-153";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016435 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.134-135 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016436 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.136-137 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016437 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.138-139 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016438 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.140-141 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016439 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.142-143 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016440 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.144-145 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016441 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.146-147 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016442 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.148-149";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016443 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.154-175";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016444 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.156-157";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016445 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.158-159 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016446 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.160-161 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016447 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.162-163 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016448 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.164-165 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016449 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.166-167 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016450 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.168-169 ";
+    rdf:type schema:Chapter
+  ].
+textbook:AA100000016451 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/保体\/703;
+    schema:pagination "p.170-171";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016387> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016388> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016389> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016390> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016391> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016392> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016393> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016394> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016395> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016396> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016397> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016398> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016399> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016400> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016401> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016402> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016403> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016404> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016405> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016406> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016407> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016408> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016409> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016410> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016411> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016412> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016413> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016414> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016415> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016416> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016417> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016418> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016419> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016420> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016421> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016422> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016423> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016424> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016425> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016426> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016427> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016428> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016429> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016430> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016431> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016432> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016433> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016434> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016435> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016436> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016437> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016438> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016439> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016440> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016441> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016442> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016443> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016444> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016445> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016446> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016447> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016448> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016449> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016450> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AA100000016451> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001164> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001165> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001166> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001167> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001168> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001169> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001170> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001171> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001172> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001173> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001174> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001175> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001176> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001177> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001178> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001179> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001180> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001181> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001182> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001183> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001184> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001185> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001186> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001187> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001188> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001189> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001190> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001191> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001192> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001193> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001194> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001195> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001196> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001197> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001198> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AB100000001199> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/保体/703>
-  ].
-<https://w3id.org/jp-textbook/AC100000000314> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/中学校/2020/保体/703>.

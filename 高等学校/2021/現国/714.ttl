@@ -1,147 +1,235 @@
-<https://w3id.org/jp-textbook/高等学校/2021/現国/714>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "A5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "270";
-  <http://purl.org/dc/terms/bibliographicCitation> "「高等学校　精選現代の国語」, 高等学校, 現国|714 (第一) 2021年検定";
-  <http://schema.org/editor> "大塚 常樹  難波 博孝  ほか20名";
-  <http://schema.org/isbn> "9784804021508";
-  <http://schema.org/name> "高等学校　精選現代の国語";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2021/第一>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/032455519>, <http://id.ndl.go.jp/jpno/23757736>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2021>, <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.8||D7||2021B";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20081897";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2021\/現国\/714
+  bf:dimensions "A5";
+  bf:extent "270";
+  dct:bibliographicCitation "「高等学校　精選現代の国語」, 高等学校, 現国|714 (第一) 2021年検定";
+  schema:editor "大塚 常樹  難波 博孝  ほか20名";
+  schema:isbn "9784804021508";
+  schema:name "高等学校　精選現代の国語";
+  schema:publisher textbook:publisher\/2021\/第一;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/032455519>, <http://id.ndl.go.jp/jpno/23757736>;
+  textbook:authorizedYear "2021"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2021, textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.8||D7||2021B";
+    nier:recordID "EB20081897";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C183|100b|R03/04";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320210014";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C183|100b|R03/04";
+    textbook-rc:recordID "320210014";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/国語/現代の国語>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/国語>;
-  <https://w3id.org/jp-textbook/textbookNumber> "714";
-  <https://w3id.org/jp-textbook/textbookSymbol> "現国";
-  <https://w3id.org/jp-textbook/usageYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2022-".
-<https://w3id.org/jp-textbook/AA100000024780> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/国語\/現代の国語;
+  textbook:subjectArea curriculum:高等学校\/2022\/国語;
+  textbook:textbookNumber "714";
+  textbook:textbookSymbol "現国";
+  textbook:usageYear "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2022-".
+textbook:AC100000000576 textbook:textbook textbook:高等学校\/2021\/現国\/714.
+textbook:AA100000024780 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.12-17";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024781> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024781 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.18";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024782> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024782 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.19-26";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024783> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024783 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.27";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024784> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024784 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.28-33";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024785> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024785 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.35-40";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024786> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024786 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.42-45";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024787> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024787 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.46-50";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024788> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024788 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.52-59";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024789> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024789 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.61-68";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024790> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024790 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.70-79";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024791> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024791 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.81-88";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024792> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024792 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.90-93";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024793> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024793 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.94-96";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024794> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024794 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.98-101";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024795> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024795 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.102-105";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024796> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024796 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.106-109";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024797> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024797 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.110-114";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024798> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024798 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.116-123";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024799> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024799 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.125-134";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024800> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024800 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.136-142";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024801> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024801 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.144-150";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024802> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024802 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.152-155";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024803> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024803 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.156-160";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024804> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024804 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.162-165";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024805> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024805 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.166-167";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024806> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024806 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.168-171";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024807> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024807 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.172-173";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024808> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024808 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.174-175";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024809> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024809 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.176-179";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024810> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024810 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.180-183";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024811> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024811 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.184-187";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024812> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024812 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.188-192";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024813> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024813 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.194-199";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024814> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024814 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.200-203";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024815> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024815 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.204-207";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024816> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024816 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.208-211";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024817> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024817 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.212-215";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000024818> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>
+textbook:AA100000024818 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/現国\/714;
+    schema:pagination "p.216-220";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000576> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2021/現国/714>.

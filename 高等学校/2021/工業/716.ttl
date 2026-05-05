@@ -1,142 +1,226 @@
-<https://w3id.org/jp-textbook/高等学校/2021/工業/716>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "278";
-  <http://id.loc.gov/ontologies/bibframe/note> "検定用見本";
-  <http://purl.org/dc/terms/bibliographicCitation> "「工業化学１」, 高等学校, 工業|716 (実教) 2021年検定";
-  <http://schema.org/editor> "和田 雄二　多湖 輝興   ほか8名";
-  <http://schema.org/isbn> "9784407204537";
-  <http://schema.org/name> "工業化学１";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2021/実教>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/032455344>, <http://id.ndl.go.jp/jpno/23768213>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2021>, <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.5||J3||2021C";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20082162";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2021\/工業\/716
+  bf:dimensions "B5";
+  bf:extent "278";
+  bf:note "検定用見本";
+  dct:bibliographicCitation "「工業化学１」, 高等学校, 工業|716 (実教) 2021年検定";
+  schema:editor "和田 雄二　多湖 輝興   ほか8名";
+  schema:isbn "9784407204537";
+  schema:name "工業化学１";
+  schema:publisher textbook:publisher\/2021\/実教;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/032455344>, <http://id.ndl.go.jp/jpno/23768213>;
+  textbook:authorizedYear "2021"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2021, textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.5||J3||2021C";
+    nier:recordID "EB20082162";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C007|920m|R03/04";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320210279";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C007|920m|R03/04";
+    textbook-rc:recordID "320210279";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/工業/工業化学>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/工業>;
-  <https://w3id.org/jp-textbook/textbookNumber> "716";
-  <https://w3id.org/jp-textbook/textbookSymbol> "工業";
-  <https://w3id.org/jp-textbook/usageYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2022-".
-<https://w3id.org/jp-textbook/AA100000034392> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/工業\/工業化学;
+  textbook:subjectArea curriculum:高等学校\/2022\/工業;
+  textbook:textbookNumber "716";
+  textbook:textbookSymbol "工業";
+  textbook:usageYear "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2022-".
+textbook:AC100000000828 textbook:textbook textbook:高等学校\/2021\/工業\/716.
+textbook:AA100000034392 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.5～10";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034393> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034393 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.11～42";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034394> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034394 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.11～42";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034395> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034395 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.11～42";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034396> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034396 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.11～42";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034397> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034397 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.11～42";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034398> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034398 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.43～66";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034399> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034399 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.43～66";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034400> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034400 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.43～66";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034401> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034401 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.43～66";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034402> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034402 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.67～88";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034403> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034403 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.67～88";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034404> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034404 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.89～108";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034405> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034405 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.89～108";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034406> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034406 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.89～108";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034407> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034407 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.89～108";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034408> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034408 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.109～130";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034409> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034409 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.109～130";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034410> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034410 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.131～168";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034411> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034411 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.131～168";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034412> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034412 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.131～168";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034413> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034413 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.169～194";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034414> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034414 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.169～194";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034415> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034415 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.169～194";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034416> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034416 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.195～210";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034417> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034417 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.195～210";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034418> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034418 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.195～210";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034419> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034419 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.211～228";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034420> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034420 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.211～228";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034421> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034421 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.229～246";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034422> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034422 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.229～246";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034423> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034423 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.229～246";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034424> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034424 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.229～246";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034425> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034425 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.247～263";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034426> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034426 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.247～263";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034427> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034427 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.247～263";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034428> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>
+textbook:AA100000034428 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/716;
+    schema:pagination "工業化学１　p.247～263";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000828> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2021/工業/716>.

@@ -1,19 +1,27 @@
-<https://w3id.org/jp-textbook/AA100000043531>
-  <http://purl.org/dc/terms/source> <https://w3id.org/jp-textbook/AC100000001068>;
-  <http://purl.org/linked-data/cube#order> 43531;
-  <http://schema.org/duration> <https://w3id.org/jp-textbook/AC100000001068/Time015>;
-  <http://schema.org/name> "５章４節";
-  <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/工業/754>;
-    <http://schema.org/pagination> "p.139～146";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Chapter>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix qb: <http://purl.org/linked-data/cube#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix cs: <https://w3id.org/jp-cos/>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+textbook:AA100000043531
+  dct:source textbook:AC100000001068;
+  qb:order 43531;
+  schema:duration textbook:AC100000001068\/Time015;
+  schema:name "５章４節";
+  schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/工業\/754;
+    schema:pagination "p.139～146";
+    rdf:type schema:Chapter
   ];
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/TeachingUnit>;
-  <https://w3id.org/jp-cos/cosItem> <https://w3id.org/jp-cos/84Q9503154000000>;
-  <https://w3id.org/jp-cos/originalCosItem> <https://w3id.org/jp-cos/84Q9503154000000>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/cosMappingDescription> "(5)環境対策技術　エ　音・振動・臭気";
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/工業/工業環境技術>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/工業>;
-  <https://w3id.org/jp-textbook/teachingUnitType> <https://w3id.org/jp-textbook/curriculum/Standard>.
+  rdf:type textbook:TeachingUnit;
+  cs:cosItem cs:84Q9503154000000;
+  cs:originalCosItem cs:84Q9503154000000;
+  textbook:authorizedYear "2022"^^xsd:gYear;
+  textbook:cosMappingDescription "(5)環境対策技術　エ　音・振動・臭気";
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/工業\/工業環境技術;
+  textbook:subjectArea curriculum:高等学校\/2022\/工業;
+  textbook:teachingUnitType curriculum:Standard.

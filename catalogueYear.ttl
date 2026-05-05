@@ -1,10 +1,24 @@
-<https://w3id.org/jp-textbook/catalogueYear>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
-  <http://www.w3.org/2000/01/rdf-schema#comment> "教科書目録に掲載された年を表現するプロパティ"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/jp-textbook/Publisher>, <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#label> "教科書目録掲載年"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Date>, <http://www.w3.org/2000/01/rdf-schema#Literal>;
-  <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/date>.
-<https://w3id.org/jp-textbook/PublisherShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/catalogueYear>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix schema: <http://schema.org/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+textbook:catalogueYear
+  rdf:type rdf:Property;
+  rdfs:comment "教科書目録に掲載された年を表現するプロパティ"@ja;
+  rdfs:domain textbook:Publisher, textbook:Textbook;
+  rdfs:label "教科書目録掲載年"@ja;
+  rdfs:range schema:Date, rdfs:Literal;
+  rdfs:subPropertyOf dct:date.
+textbook:PublisherShape sh:property [
+    skos:example "\"2017\""^^xsd:gYear;
+    sh:datatype xsd:gYear;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Publication year for a textbook catalogue where the publisher is listed"@en, "掲載教科書目録の発行年"@ja;
+    sh:order 3;
+    sh:path textbook:catalogueYear
   ].

@@ -1,36 +1,94 @@
-<https://w3id.org/jp-textbook/School>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class>;
-  <http://www.w3.org/2000/01/rdf-schema#comment> "This resource represents type of schools such as elementary schools. URIs for the resources are represented as follows:<br><code>https://w3id.org/jp-textbook/school/<var>type of schools</var></code>"@en, "日本における学校制度上の初等・中等教育組織を表現するクラス。以下のようなURIにより表現されます。<br><code>https://w3id.org/jp-textbook/school/<var>学校</var></code>"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#label> "Type of school"@en, "学校種別"@ja;
-  <http://www.w3.org/2002/07/owl#sameAs> <http://schema.org/School>.
-<https://w3id.org/jp-textbook/CatalogueShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/School>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix schema: <http://schema.org/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+textbook:School
+  rdf:type rdfs:Class;
+  rdfs:comment "This resource represents type of schools such as elementary schools. URIs for the resources are represented as follows:<br><code>https://w3id.org/jp-textbook/school/<var>type of schools</var></code>"@en, "日本における学校制度上の初等・中等教育組織を表現するクラス。以下のようなURIにより表現されます。<br><code>https://w3id.org/jp-textbook/school/<var>学校</var></code>"@ja;
+  rdfs:label "Type of school"@en, "学校種別"@ja;
+  owl:sameAs schema:School.
+textbook:CatalogueShape sh:property [
+    skos:example <textbook:school/高等学校>;
+    sh:class textbook:School;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Type of schools"@en, "学校種別"@ja;
+    sh:order 2;
+    sh:path textbook:school
   ].
-<https://w3id.org/jp-textbook/CompilingProspectusShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/School>
+textbook:CompilingProspectusShape sh:property [
+    skos:example <textbook:school/小学校>;
+    sh:class textbook:School;
+    sh:description "Link to the type resource of schools, represented as <code>textbook:school/<var>type of school</var></code>."@en, "対応する学校種別を<code>textbook:school/<var>学校種別</var></code> として示される学校リソースと関連付ける"@ja;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Type of schools"@en, "学校種別"@ja;
+    sh:order 2;
+    sh:path textbook:school
   ].
-<https://w3id.org/jp-textbook/CurriculumGuidelineShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/School>
+textbook:CurriculumGuidelineShape sh:property [
+    skos:example <textbook:school/高等学校>;
+    sh:class textbook:School;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Type of schools"@en, "学校種別"@ja;
+    sh:order 5;
+    sh:path textbook:school
   ].
-<https://w3id.org/jp-textbook/SchoolShape> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/jp-textbook/School>.
-<https://w3id.org/jp-textbook/SubjectTypeShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/School>
+textbook:SchoolShape sh:targetClass textbook:School.
+textbook:SubjectTypeShape sh:property [
+    skos:example <textbook:school/高等学校>;
+    sh:class textbook:School;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Type of schools"@en, "学校種別"@ja;
+    sh:order 2;
+    sh:path textbook:school
   ].
-<https://w3id.org/jp-textbook/TeachingUnitShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/School>
+textbook:TeachingUnitShape sh:property [
+    skos:example <textbook:school/中学校>;
+    sh:class textbook:School;
+    sh:description "Link to the type resource of schools, represented as <code>textbook:school/<var>type of school</var></code>."@en, "対応する学校種別を<code>textbook:school/<var>学校種別</var></code> として示される学校リソースと関連付ける"@ja;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Type of schools"@en, "学校種別"@ja;
+    sh:order 6;
+    sh:path textbook:school
   ].
-<https://w3id.org/jp-textbook/TextbookShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/School>
+textbook:TextbookShape sh:property [
+    skos:example <textbook:school/中学校>;
+    sh:class textbook:School;
+    sh:description "Link to the type resource of schools, represented as <code>textbook:school/<var>type of school</var></code>."@en, "対応する学校種別を<code>textbook:school/<var>学校種別</var></code> として示される学校リソースと関連付ける"@ja;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Type of schools"@en, "学校種別"@ja;
+    sh:order 18;
+    sh:path textbook:school
   ].
-<https://w3id.org/jp-textbook/curriculum/SubjectAreaShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/School>
+curriculum:SubjectAreaShape sh:property [
+    skos:example <textbook:school/高等学校>;
+    sh:class textbook:School;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Type of school"@en, "学校種別"@ja;
+    sh:order 2;
+    sh:path textbook:school
   ].
-<https://w3id.org/jp-textbook/curriculum/SubjectShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/School>
+curriculum:SubjectShape sh:property [
+    skos:example <textbook:school/高等学校>;
+    sh:class textbook:School;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Type of schools"@en, "学校種別"@ja;
+    sh:order 2;
+    sh:path textbook:school
   ].
-<https://w3id.org/jp-textbook/school> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/jp-textbook/School>.
-<https://w3id.org/jp-textbook/school/中学校> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/School>.
-<https://w3id.org/jp-textbook/school/小学校> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/School>.
-<https://w3id.org/jp-textbook/school/特別支援学校> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/School>.
-<https://w3id.org/jp-textbook/school/特殊教育諸学校> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/School>.
-<https://w3id.org/jp-textbook/school/高等学校> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/School>.
+textbook:school\/中学校 rdf:type textbook:School.
+textbook:school\/小学校 rdf:type textbook:School.
+textbook:school\/特別支援学校 rdf:type textbook:School.
+textbook:school\/特殊教育諸学校 rdf:type textbook:School.
+textbook:school\/高等学校 rdf:type textbook:School.

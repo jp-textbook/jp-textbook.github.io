@@ -1,76 +1,123 @@
-<https://w3id.org/jp-textbook/小学校/2019/保健/305>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "A4";
-  <http://id.loc.gov/ontologies/bibframe/extent> "38";
-  <http://purl.org/dc/terms/bibliographicCitation> "「みんなのほけん　３・４年」, 小学校3,4年, 保健|305 (学研) 2019年検定";
-  <http://schema.org/editor> "森　昭三ほか26名";
-  <http://schema.org/isbn> "9784904811597";
-  <http://schema.org/name> "みんなのほけん　３・４年";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2019/学研>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/030622971>, <http://id.ndl.go.jp/jpno/23435916>, <https://ci.nii.ac.jp/ncid/BB29761043>, <https://ci.nii.ac.jp/ncid/BB29953667>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2019"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/小学校/2019>, <https://w3id.org/jp-textbook/catalogue/小学校/2020>, <https://w3id.org/jp-textbook/catalogue/小学校/2021>, <https://w3id.org/jp-textbook/catalogue/小学校/2022>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/小学校/2020>;
-  <https://w3id.org/jp-textbook/grade> 3, 4;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K170.49||G7||2019";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20080529";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:小学校\/2019\/保健\/305
+  bf:dimensions "A4";
+  bf:extent "38";
+  dct:bibliographicCitation "「みんなのほけん　３・４年」, 小学校3,4年, 保健|305 (学研) 2019年検定";
+  schema:editor "森　昭三ほか26名";
+  schema:isbn "9784904811597";
+  schema:name "みんなのほけん　３・４年";
+  schema:publisher textbook:publisher\/2019\/学研;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/030622971>, <http://id.ndl.go.jp/jpno/23435916>, <https://ci.nii.ac.jp/ncid/BB29761043>, <https://ci.nii.ac.jp/ncid/BB29953667>;
+  textbook:authorizedYear "2019"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/小学校\/2019, textbook:catalogue\/小学校\/2020, textbook:catalogue\/小学校\/2021, textbook:catalogue\/小学校\/2022;
+  textbook:curriculum curriculum:小学校\/2020;
+  textbook:grade 3, 4;
+  textbook:item [
+    nier:callNumber "K170.49||G7||2019";
+    nier:recordID "EB20080529";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "A224|810-34|H31/R2";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "120190223";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "A224|810-34|H31/R2";
+    textbook-rc:recordID "120190223";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/小学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/小学校/2020/体育/保健>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/小学校/2020/体育>;
-  <https://w3id.org/jp-textbook/textbookNumber> "305";
-  <https://w3id.org/jp-textbook/textbookSymbol> "保健";
-  <https://w3id.org/jp-textbook/usageYear> "2020"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2020-2023".
-<https://w3id.org/jp-textbook/AA100000005073> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/保健/305>
+  textbook:school textbook:school\/小学校;
+  textbook:subject curriculum:小学校\/2020\/体育\/保健;
+  textbook:subjectArea curriculum:小学校\/2020\/体育;
+  textbook:textbookNumber "305";
+  textbook:textbookSymbol "保健";
+  textbook:usageYear "2020"^^xsd:gYear, "2021"^^xsd:gYear, "2022"^^xsd:gYear, "2023"^^xsd:gYear;
+  textbook:usageYearRange "2020-2023".
+textbook:AC100000000165 textbook:textbook textbook:小学校\/2019\/保健\/305.
+textbook:AB100000000484 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/保健\/305;
+    schema:numberOfPages 0.5;
+    schema:pagination "10";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000005074> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/保健/305>
+textbook:AB100000000485 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/保健\/305;
+    schema:numberOfPages 0.5;
+    schema:pagination "16";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000005075> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/保健/305>
+textbook:AB100000000486 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/保健\/305;
+    schema:numberOfPages 1;
+    schema:pagination "23";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000005076> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/保健/305>
+textbook:AB100000000487 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/保健\/305;
+    schema:numberOfPages 0.5;
+    schema:pagination "29";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000005077> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/保健/305>
+textbook:AB100000000488 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/保健\/305;
+    schema:numberOfPages 0.5;
+    schema:pagination "33";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000005078> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/保健/305>
+textbook:AB100000000489 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/保健\/305;
+    schema:numberOfPages 1;
+    schema:pagination "35";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000005079> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/保健/305>
+textbook:AB100000000490 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/保健\/305;
+    schema:numberOfPages 1;
+    schema:pagination "36";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000005080> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/保健/305>
+textbook:AA100000005073 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/保健\/305;
+    schema:pagination "p.6～7";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000000484> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/保健/305>
+textbook:AA100000005074 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/保健\/305;
+    schema:pagination "p.8～11";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000000485> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/保健/305>
+textbook:AA100000005075 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/保健\/305;
+    schema:pagination "p.12～13";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000000486> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/保健/305>
+textbook:AA100000005076 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/保健\/305;
+    schema:pagination "p.14～17";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000000487> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/保健/305>
+textbook:AA100000005077 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/保健\/305;
+    schema:pagination "p.20～23";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000000488> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/保健/305>
+textbook:AA100000005078 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/保健\/305;
+    schema:pagination "p.24～25";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000000489> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/保健/305>
+textbook:AA100000005079 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/保健\/305;
+    schema:pagination "p.26～29";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000000490> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/保健/305>
+textbook:AA100000005080 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/保健\/305;
+    schema:pagination "p.30～33";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000165> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/小学校/2019/保健/305>.

@@ -1,63 +1,95 @@
-<https://w3id.org/jp-textbook/高等学校/2021/数A/708>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "138";
-  <http://purl.org/dc/terms/bibliographicCitation> "「高校数学A」, 高等学校, 数A|708 (実教) 2021年検定";
-  <http://schema.org/editor> "岡本 和夫 ピーター・フランクル ほか11名";
-  <http://schema.org/isbn> "9784407204865";
-  <http://schema.org/name> "高校数学A";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2021/実教>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/032455302>, <http://id.ndl.go.jp/jpno/23761398>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2021>, <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.41||J3||2021I";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20081995";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2021\/数A\/708
+  bf:dimensions "B5";
+  bf:extent "138";
+  dct:bibliographicCitation "「高校数学A」, 高等学校, 数A|708 (実教) 2021年検定";
+  schema:editor "岡本 和夫 ピーター・フランクル ほか11名";
+  schema:isbn "9784407204865";
+  schema:name "高校数学A";
+  schema:publisher textbook:publisher\/2021\/実教;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/032455302>, <http://id.ndl.go.jp/jpno/23761398>;
+  textbook:authorizedYear "2021"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2021, textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.41||J3||2021I";
+    nier:recordID "EB20081995";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C007|300c|R03/04";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320210112";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C007|300c|R03/04";
+    textbook-rc:recordID "320210112";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/数学/数学A>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/数学>;
-  <https://w3id.org/jp-textbook/textbookNumber> "708";
-  <https://w3id.org/jp-textbook/textbookSymbol> "数A";
-  <https://w3id.org/jp-textbook/usageYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2022-".
-<https://w3id.org/jp-textbook/AA100000027994> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数A/708>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/数学\/数学A;
+  textbook:subjectArea curriculum:高等学校\/2022\/数学;
+  textbook:textbookNumber "708";
+  textbook:textbookSymbol "数A";
+  textbook:usageYear "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2022-".
+textbook:AC100000000671 textbook:textbook textbook:高等学校\/2021\/数A\/708.
+textbook:AA100000027994 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数A\/708;
+    schema:pagination "p.6～28";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027995> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数A/708>
+textbook:AA100000027995 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数A\/708;
+    schema:pagination "p.29～50";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027996> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数A/708>
+textbook:AA100000027996 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数A\/708;
+    schema:pagination "p.51";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027997> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数A/708>
+textbook:AA100000027997 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数A\/708;
+    schema:pagination "p.54～64";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027998> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数A/708>
+textbook:AA100000027998 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数A\/708;
+    schema:pagination "p.65～73";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027999> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数A/708>
+textbook:AA100000027999 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数A\/708;
+    schema:pagination "p.74～79";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028000> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数A/708>
+textbook:AA100000028000 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数A\/708;
+    schema:pagination "p.80～85";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028001> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数A/708>
+textbook:AA100000028001 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数A\/708;
+    schema:pagination "p.88～103";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028002> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数A/708>
+textbook:AA100000028002 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数A\/708;
+    schema:pagination "p.104～114";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028003> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数A/708>
+textbook:AA100000028003 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数A\/708;
+    schema:pagination "p.115";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028004> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数A/708>
+textbook:AA100000028004 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数A\/708;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000671> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2021/数A/708>.

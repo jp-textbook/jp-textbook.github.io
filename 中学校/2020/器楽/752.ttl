@@ -1,115 +1,181 @@
-<https://w3id.org/jp-textbook/中学校/2020/器楽/752>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "A4 変型";
-  <http://id.loc.gov/ontologies/bibframe/extent> "106";
-  <http://purl.org/dc/terms/bibliographicCitation> "「中学生の器楽」, 中学校1,2,3年, 器楽|752 (教芸) 2020年検定";
-  <http://schema.org/editor> "小原光一 ほか18名";
-  <http://schema.org/isbn> "9784877888534";
-  <http://schema.org/name> "中学生の器楽";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2020/教芸>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/031626613>, <http://id.ndl.go.jp/jpno/23580395>, <https://ci.nii.ac.jp/ncid/BB31649046>, <https://ci.nii.ac.jp/ncid/BC0692922X>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2020"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/中学校/2020>, <https://w3id.org/jp-textbook/catalogue/中学校/2021>, <https://w3id.org/jp-textbook/catalogue/中学校/2022>, <https://w3id.org/jp-textbook/catalogue/中学校/2023>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/中学校/2021>;
-  <https://w3id.org/jp-textbook/grade> 1, 2, 3;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K260.76||K12||2020";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20080769";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:中学校\/2020\/器楽\/752
+  bf:dimensions "A4 変型";
+  bf:extent "106";
+  dct:bibliographicCitation "「中学生の器楽」, 中学校1,2,3年, 器楽|752 (教芸) 2020年検定";
+  schema:editor "小原光一 ほか18名";
+  schema:isbn "9784877888534";
+  schema:name "中学生の器楽";
+  schema:publisher textbook:publisher\/2020\/教芸;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/031626613>, <http://id.ndl.go.jp/jpno/23580395>, <https://ci.nii.ac.jp/ncid/BB31649046>, <https://ci.nii.ac.jp/ncid/BC0692922X>;
+  textbook:authorizedYear "2020"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/中学校\/2020, textbook:catalogue\/中学校\/2021, textbook:catalogue\/中学校\/2022, textbook:catalogue\/中学校\/2023;
+  textbook:curriculum curriculum:中学校\/2021;
+  textbook:grade 1, 2, 3;
+  textbook:item [
+    nier:callNumber "K260.76||K12||2020";
+    nier:recordID "EB20080769";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "B027|510|R02/03";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "220200109";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "B027|510|R02/03";
+    textbook-rc:recordID "220200109";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/中学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/中学校/2021/音楽/音楽(器楽合奏)>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/中学校/2021/音楽>;
-  <https://w3id.org/jp-textbook/textbookNumber> "752";
-  <https://w3id.org/jp-textbook/textbookSymbol> "器楽";
-  <https://w3id.org/jp-textbook/usageYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2021-2024".
-<https://w3id.org/jp-textbook/AA100000018584> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+  textbook:school textbook:school\/中学校;
+  textbook:subject curriculum:中学校\/2021\/音楽\/音楽\(器楽合奏\);
+  textbook:subjectArea curriculum:中学校\/2021\/音楽;
+  textbook:textbookNumber "752";
+  textbook:textbookSymbol "器楽";
+  textbook:usageYear "2021"^^xsd:gYear, "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear;
+  textbook:usageYearRange "2021-2024".
+textbook:AC100000000305 textbook:textbook textbook:中学校\/2020\/器楽\/752.
+textbook:AA100000018584 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "10";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018585> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018585 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "12";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018586> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018586 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "14";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018587> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018587 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "16〜31";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018588> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018588 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "32〜39";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018589> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018589 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "40〜48";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018590> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018590 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "49";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018591> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018591 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "50〜55";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018592> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018592 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "56〜61";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018593> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018593 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "62〜65";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018594> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018594 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "66〜69";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018595> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018595 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "70〜74";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018596> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018596 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "76";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018597> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018597 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "77";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018598> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018598 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "78";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018599> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018599 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "79";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018600> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018600 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "80";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018601> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018601 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "81";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018602> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018602 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "82";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018603> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018603 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "83";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018604> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018604 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "84";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018605> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018605 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "86";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018606> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018606 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "87";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018607> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018607 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "88";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018608> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018608 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "90";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018609> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018609 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "92";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018610> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018610 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "94";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018611> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>
+textbook:AA100000018611 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/器楽\/752;
+    schema:pagination "96〜99";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000305> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/中学校/2020/器楽/752>.

@@ -1,20 +1,28 @@
-<https://w3id.org/jp-textbook/AB100000000645>
-  <http://purl.org/dc/terms/source> <https://w3id.org/jp-textbook/AC100000000440>;
-  <http://purl.org/linked-data/cube#order> 645;
-  <http://schema.org/name> "学びをいかそうやってみよう";
-  <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2023/算数/520>;
-    <http://schema.org/numberOfPages> 0.75;
-    <http://schema.org/pagination> "113";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Chapter>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix qb: <http://purl.org/linked-data/cube#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix cs: <https://w3id.org/jp-cos/>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+textbook:AB100000000645
+  dct:source textbook:AC100000000440;
+  qb:order 645;
+  schema:name "学びをいかそうやってみよう";
+  schema:workExample [
+    schema:isPartOf textbook:小学校\/2023\/算数\/520;
+    schema:numberOfPages 0.75;
+    schema:pagination "113";
+    rdf:type schema:Chapter
   ];
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/TeachingUnit>;
-  <https://w3id.org/jp-cos/cosItem> <https://w3id.org/jp-cos/8250253111200000>, <https://w3id.org/jp-cos/8250253112000000>, <https://w3id.org/jp-cos/8250253112100000>;
-  <https://w3id.org/jp-cos/originalCosItem> <https://w3id.org/jp-cos/8250253111200000>, <https://w3id.org/jp-cos/8250253112100000>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/cosMappingDescription> "A（1）ア（イ）イ（ア）（約数及び観点を決めて整数を類別する仕方を考えることに関連して、素数の用語を扱います。）";
-  <https://w3id.org/jp-textbook/grade> 5;
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/小学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/小学校/2020/算数/算数>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/小学校/2020/算数>;
-  <https://w3id.org/jp-textbook/teachingUnitType> <https://w3id.org/jp-textbook/curriculum/UpperGrade>.
+  rdf:type textbook:TeachingUnit;
+  cs:cosItem cs:8250253111200000, cs:8250253112000000, cs:8250253112100000;
+  cs:originalCosItem cs:8250253111200000, cs:8250253112100000;
+  textbook:authorizedYear "2023"^^xsd:gYear;
+  textbook:cosMappingDescription "A（1）ア（イ）イ（ア）（約数及び観点を決めて整数を類別する仕方を考えることに関連して、素数の用語を扱います。）";
+  textbook:grade 5;
+  textbook:school textbook:school\/小学校;
+  textbook:subject curriculum:小学校\/2020\/算数\/算数;
+  textbook:subjectArea curriculum:小学校\/2020\/算数;
+  textbook:teachingUnitType curriculum:UpperGrade.

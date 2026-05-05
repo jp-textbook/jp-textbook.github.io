@@ -1,154 +1,247 @@
-<https://w3id.org/jp-textbook/小学校/2019/音楽/501>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "A4変型";
-  <http://id.loc.gov/ontologies/bibframe/extent> "86";
-  <http://purl.org/dc/terms/bibliographicCitation> "「小学音楽　 音楽のおくりもの　５」, 小学校5年, 音楽|501 (教出) 2019年検定";
-  <http://schema.org/editor> "新実　徳英 ほか21名";
-  <http://schema.org/isbn> "9784316204017";
-  <http://schema.org/name> "小学音楽　 音楽のおくりもの　５";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2019/教出>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/030622648>, <http://id.ndl.go.jp/jpno/23436169>, <https://ci.nii.ac.jp/ncid/BB28287184>, <https://ci.nii.ac.jp/ncid/BB29766524>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2019"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/小学校/2019>, <https://w3id.org/jp-textbook/catalogue/小学校/2020>, <https://w3id.org/jp-textbook/catalogue/小学校/2021>, <https://w3id.org/jp-textbook/catalogue/小学校/2022>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/小学校/2020>;
-  <https://w3id.org/jp-textbook/grade> 5;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K170.76||K10||2019";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20080499";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:小学校\/2019\/音楽\/501
+  bf:dimensions "A4変型";
+  bf:extent "86";
+  dct:bibliographicCitation "「小学音楽　 音楽のおくりもの　５」, 小学校5年, 音楽|501 (教出) 2019年検定";
+  schema:editor "新実　徳英 ほか21名";
+  schema:isbn "9784316204017";
+  schema:name "小学音楽　 音楽のおくりもの　５";
+  schema:publisher textbook:publisher\/2019\/教出;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/030622648>, <http://id.ndl.go.jp/jpno/23436169>, <https://ci.nii.ac.jp/ncid/BB28287184>, <https://ci.nii.ac.jp/ncid/BB29766524>;
+  textbook:authorizedYear "2019"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/小学校\/2019, textbook:catalogue\/小学校\/2020, textbook:catalogue\/小学校\/2021, textbook:catalogue\/小学校\/2022;
+  textbook:curriculum curriculum:小学校\/2020;
+  textbook:grade 5;
+  textbook:item [
+    nier:callNumber "K170.76||K10||2019";
+    nier:recordID "EB20080499";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "A017|505|H31/R2";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "120190193";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "A017|505|H31/R2";
+    textbook-rc:recordID "120190193";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/小学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/小学校/2020/音楽/音楽>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/小学校/2020/音楽>;
-  <https://w3id.org/jp-textbook/textbookNumber> "501";
-  <https://w3id.org/jp-textbook/textbookSymbol> "音楽";
-  <https://w3id.org/jp-textbook/usageYear> "2020"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2020-2023".
-<https://w3id.org/jp-textbook/AA100000004259> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+  textbook:school textbook:school\/小学校;
+  textbook:subject curriculum:小学校\/2020\/音楽\/音楽;
+  textbook:subjectArea curriculum:小学校\/2020\/音楽;
+  textbook:textbookNumber "501";
+  textbook:textbookSymbol "音楽";
+  textbook:usageYear "2020"^^xsd:gYear, "2021"^^xsd:gYear, "2022"^^xsd:gYear, "2023"^^xsd:gYear;
+  textbook:usageYearRange "2020-2023".
+textbook:AC100000000141 textbook:textbook textbook:小学校\/2019\/音楽\/501.
+textbook:AB100000000385 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:numberOfPages 0.25;
+    schema:pagination "25";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004260> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004259 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004261> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004260 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004262> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004261 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004263> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004262 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004264> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004263 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004265> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004264 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004266> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004265 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004267> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004266 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004268> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004267 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004269> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004268 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004270> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004269 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004271> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004270 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004272> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004271 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004273> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004272 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004274> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004273 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004275> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004274 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004276> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004275 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004277> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004276 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004278> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004277 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004279> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004278 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004280> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004279 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004281> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004280 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004282> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004281 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004283> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004282 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004284> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004283 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004285> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004284 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004286> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004285 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004287> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004286 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004288> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004287 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004289> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004288 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004290> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004289 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004291> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004290 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004292> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004291 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004293> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004292 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004294> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004293 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004295> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004294 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004296> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004295 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004297> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004296 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004298> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004297 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000000385> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>
+textbook:AA100000004298 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/音楽\/501;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000141> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/小学校/2019/音楽/501>.

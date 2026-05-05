@@ -1,15 +1,40 @@
-<https://w3id.org/jp-textbook/subject>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
-  <http://www.w3.org/2000/01/rdf-schema#comment> "対応する種目を表現するプロパティ"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#label> "Subject"@en, "種目"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/jp-textbook/curriculum/Subject>.
-<https://w3id.org/jp-textbook/CompilingProspectusShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/subject>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+textbook:subject
+  rdf:type rdf:Property;
+  rdfs:comment "対応する種目を表現するプロパティ"@ja;
+  rdfs:domain textbook:Textbook;
+  rdfs:label "Subject"@en, "種目"@ja;
+  rdfs:range curriculum:Subject.
+textbook:CompilingProspectusShape sh:property [
+    skos:example <textbook:curriculum/小学校/2020/生活/生活>;
+    sh:class curriculum:Subject;
+    sh:description "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科</var>/<var>科目</var></code>として示される種目（科目）リソースと関連付ける。"@ja, "Link to the subject resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var>/<var>subject</var></code>."@en;
+    sh:maxCount 1;
+    sh:name "Subject"@en, "種目（科目）"@ja;
+    sh:order 5;
+    sh:path textbook:subject
   ].
-<https://w3id.org/jp-textbook/TeachingUnitShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/subject>
+textbook:TeachingUnitShape sh:property [
+    skos:example <textbook:curriculum/中学校/2021/保健体育/保健体育>;
+    sh:class curriculum:Subject;
+    sh:description "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科</var>/<var>科目</var></code>として示される種目（科目）リソースと関連付ける。"@ja, "Link to the subject resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var>/<var>subject</var></code>. "@en;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Subject"@en, "種目（科目）"@ja;
+    sh:order 9;
+    sh:path textbook:subject
   ].
-<https://w3id.org/jp-textbook/TextbookShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/subject>
+textbook:TextbookShape sh:property [
+    skos:example <textbook:curriculum/中学校/2002/外国語/英語>;
+    sh:class curriculum:Subject;
+    sh:description "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科</var>/<var>科目</var></code>として示される種目（科目）リソースと関連付ける。専門教科 (<code>textbook:subjectType = Special</code>) の場合、少数の例外を除いて、機械的に書名と種目名との一致により種目を類推して追加したものであり、教育図書館が追加したデータではないことに注意。最長一致で解決できない例外は、江草・高久によって追加。"@ja, "Link to the subject resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var>/<var>subject</var></code>. Note that if the type of the subject is Special (<code>textbook:subjectType</code>), the subject is deternmined automatically by the longest match of the Subject name from the title of the textbook, and it does not added by the Library of Education. Some exceptional data is resolved by Drs. Egusa and Takaku."@en;
+    sh:maxCount 1;
+    sh:name "Subject"@en, "種目（科目）"@ja;
+    sh:order 15;
+    sh:path textbook:subject
   ].

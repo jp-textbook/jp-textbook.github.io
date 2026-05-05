@@ -1,29 +1,39 @@
-<https://w3id.org/jp-textbook/高等学校/2013/音II/306>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "A4変型";
-  <http://id.loc.gov/ontologies/bibframe/extent> "114";
-  <http://purl.org/dc/terms/bibliographicCitation> "「ON!2」, 高等学校, 音II|306 (友社) 2013年検定";
-  <http://schema.org/editor> "山本文茂 ほか5名";
-  <http://schema.org/isbn> "978-4-276-90636-5";
-  <http://schema.org/name> "ON!2";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2013/友社>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/025505686>, <http://id.ndl.go.jp/jpno/22449561>, <https://ci.nii.ac.jp/ncid/BB1542549X>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2013"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2013>, <https://w3id.org/jp-textbook/catalogue/高等学校/2014>, <https://w3id.org/jp-textbook/catalogue/高等学校/2015>, <https://w3id.org/jp-textbook/catalogue/高等学校/2016>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2013>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.76||O3||2013B";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20036585";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2013\/音II\/306
+  bf:dimensions "A4変型";
+  bf:extent "114";
+  dct:bibliographicCitation "「ON!2」, 高等学校, 音II|306 (友社) 2013年検定";
+  schema:editor "山本文茂 ほか5名";
+  schema:isbn "978-4-276-90636-5";
+  schema:name "ON!2";
+  schema:publisher textbook:publisher\/2013\/友社;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/025505686>, <http://id.ndl.go.jp/jpno/22449561>, <https://ci.nii.ac.jp/ncid/BB1542549X>;
+  textbook:authorizedYear "2013"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2013, textbook:catalogue\/高等学校\/2014, textbook:catalogue\/高等学校\/2015, textbook:catalogue\/高等学校\/2016;
+  textbook:curriculum curriculum:高等学校\/2013;
+  textbook:item [
+    nier:callNumber "K280.76||O3||2013B";
+    nier:recordID "EB20036585";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C089|610b|H25/26";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320130093";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C089|610b|H25/26";
+    textbook-rc:recordID "320130093";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2013/芸術/音楽II>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2013/芸術>;
-  <https://w3id.org/jp-textbook/textbookNumber> "306";
-  <https://w3id.org/jp-textbook/textbookSymbol> "音II";
-  <https://w3id.org/jp-textbook/usageYear> "2014"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2015"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2016"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2017"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2014-2017".
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2013\/芸術\/音楽II;
+  textbook:subjectArea curriculum:高等学校\/2013\/芸術;
+  textbook:textbookNumber "306";
+  textbook:textbookSymbol "音II";
+  textbook:usageYear "2014"^^xsd:gYear, "2015"^^xsd:gYear, "2016"^^xsd:gYear, "2017"^^xsd:gYear;
+  textbook:usageYearRange "2014-2017".

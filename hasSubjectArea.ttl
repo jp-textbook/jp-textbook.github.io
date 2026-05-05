@@ -1,9 +1,20 @@
-<https://w3id.org/jp-textbook/hasSubjectArea>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
-  <http://www.w3.org/2000/01/rdf-schema#comment> "対応する教科を表現するプロパティ"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/jp-textbook/CurriculumGuideline>;
-  <http://www.w3.org/2000/01/rdf-schema#label> "has subject area(s)"@en, "教科をもつ"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/jp-textbook/curriculum/SubjectArea>.
-<https://w3id.org/jp-textbook/CurriculumGuidelineShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/hasSubjectArea>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+textbook:hasSubjectArea
+  rdf:type rdf:Property;
+  rdfs:comment "対応する教科を表現するプロパティ"@ja;
+  rdfs:domain textbook:CurriculumGuideline;
+  rdfs:label "has subject area(s)"@en, "教科をもつ"@ja;
+  rdfs:range curriculum:SubjectArea.
+textbook:CurriculumGuidelineShape sh:property [
+    skos:example <textbook:curriculum/高等学校/1994/国語>;
+    sh:class curriculum:SubjectArea;
+    sh:minCount 1;
+    sh:name "has a subject area"@en, "教科がある"@ja;
+    sh:order 2;
+    sh:path textbook:hasSubjectArea
   ].

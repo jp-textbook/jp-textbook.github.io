@@ -1,29 +1,39 @@
-<https://w3id.org/jp-textbook/高等学校/2007/古典/031>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "A5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "152";
-  <http://purl.org/dc/terms/bibliographicCitation> "「高等学校古典 漢文編 改訂版」, 高等学校, 古典|031 (三省堂) 2007年検定";
-  <http://schema.org/editor> "柴田武 金谷治 ほか16名";
-  <http://schema.org/isbn> "978-4-385-72674-8";
-  <http://schema.org/name> "高等学校古典 漢文編 改訂版";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2007/三省堂>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/000009370490>, <http://id.ndl.go.jp/jpno/21434577>, <https://ci.nii.ac.jp/ncid/BA8581741X>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2007"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2007>, <https://w3id.org/jp-textbook/catalogue/高等学校/2008>, <https://w3id.org/jp-textbook/catalogue/高等学校/2009>, <https://w3id.org/jp-textbook/catalogue/高等学校/2010>, <https://w3id.org/jp-textbook/catalogue/高等学校/2011>, <https://w3id.org/jp-textbook/catalogue/高等学校/2012>, <https://w3id.org/jp-textbook/catalogue/高等学校/2013>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2003>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.82||S12||2007B";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB10026822";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2007\/古典\/031
+  bf:dimensions "A5";
+  bf:extent "152";
+  dct:bibliographicCitation "「高等学校古典 漢文編 改訂版」, 高等学校, 古典|031 (三省堂) 2007年検定";
+  schema:editor "柴田武 金谷治 ほか16名";
+  schema:isbn "978-4-385-72674-8";
+  schema:name "高等学校古典 漢文編 改訂版";
+  schema:publisher textbook:publisher\/2007\/三省堂;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/000009370490>, <http://id.ndl.go.jp/jpno/21434577>, <https://ci.nii.ac.jp/ncid/BA8581741X>;
+  textbook:authorizedYear "2007"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2007, textbook:catalogue\/高等学校\/2008, textbook:catalogue\/高等学校\/2009, textbook:catalogue\/高等学校\/2010, textbook:catalogue\/高等学校\/2011, textbook:catalogue\/高等学校\/2012, textbook:catalogue\/高等学校\/2013;
+  textbook:curriculum curriculum:高等学校\/2003;
+  textbook:item [
+    nier:callNumber "K280.82||S12||2007B";
+    nier:recordID "EB10026822";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C015|120|H19/20";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320070030";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C015|120|H19/20";
+    textbook-rc:recordID "320070030";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2003/国語/古典>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2003/国語>;
-  <https://w3id.org/jp-textbook/textbookNumber> "031";
-  <https://w3id.org/jp-textbook/textbookSymbol> "古典";
-  <https://w3id.org/jp-textbook/usageYear> "2008"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2009"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2010"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2011"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2012"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2013"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2014"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2008-2014".
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2003\/国語\/古典;
+  textbook:subjectArea curriculum:高等学校\/2003\/国語;
+  textbook:textbookNumber "031";
+  textbook:textbookSymbol "古典";
+  textbook:usageYear "2008"^^xsd:gYear, "2009"^^xsd:gYear, "2010"^^xsd:gYear, "2011"^^xsd:gYear, "2012"^^xsd:gYear, "2013"^^xsd:gYear, "2014"^^xsd:gYear;
+  textbook:usageYearRange "2008-2014".

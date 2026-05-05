@@ -1,116 +1,183 @@
-<https://w3id.org/jp-textbook/高等学校/2022/日探/704>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "302";
-  <http://purl.org/dc/terms/bibliographicCitation> "「高等学校　日本史探究」, 高等学校, 日探|704 (清水) 2022年検定";
-  <http://schema.org/editor> "伊藤　純郎 ほか12名";
-  <http://schema.org/isbn> "9784389600488";
-  <http://schema.org/name> "高等学校　日本史探究";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2022/清水>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.32||S15||2022";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20082406";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2022\/日探\/704
+  bf:dimensions "B5";
+  bf:extent "302";
+  dct:bibliographicCitation "「高等学校　日本史探究」, 高等学校, 日探|704 (清水) 2022年検定";
+  schema:editor "伊藤　純郎 ほか12名";
+  schema:isbn "9784389600488";
+  schema:name "高等学校　日本史探究";
+  schema:publisher textbook:publisher\/2022\/清水;
+  rdf:type textbook:Textbook;
+  textbook:authorizedYear "2022"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.32||S15||2022";
+    nier:recordID "EB20082406";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C035|230|R04/05";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320220055";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C035|230|R04/05";
+    textbook-rc:recordID "320220055";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/地理歴史/日本史探究>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/地理歴史>;
-  <https://w3id.org/jp-textbook/textbookNumber> "704";
-  <https://w3id.org/jp-textbook/textbookSymbol> "日探";
-  <https://w3id.org/jp-textbook/usageYear> "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2023-".
-<https://w3id.org/jp-textbook/AA100000039637> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/地理歴史\/日本史探究;
+  textbook:subjectArea curriculum:高等学校\/2022\/地理歴史;
+  textbook:textbookNumber "704";
+  textbook:textbookSymbol "日探";
+  textbook:usageYear "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2023-".
+textbook:AC100000000914 textbook:textbook textbook:高等学校\/2022\/日探\/704.
+textbook:AA100000039637 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "6～9ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039638> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039638 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "10～47ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039639> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039639 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "12～17ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039640> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039640 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "18～19ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039641> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039641 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "20～47ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039642> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039642 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "20～37ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039643> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039643 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "38～47ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039644> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039644 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "48～95ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039645> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039645 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "50～57ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039646> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039646 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "58～59ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039647> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039647 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "60～95ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039648> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039648 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "60～73ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039649> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039649 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "74～95ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039650> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039650 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "96～145ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039651> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039651 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "98～107ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039652> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039652 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "108～109ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039653> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039653 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "110～145ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039654> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039654 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "110～129ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039655> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039655 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "130～145ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039656> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039656 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "146～273ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039657> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039657 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "148～155ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039658> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039658 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "156～157ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039659> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039659 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "158～267ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039660> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039660 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "158～197ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039661> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039661 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "198～213ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039662> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039662 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "214～235ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039663> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039663 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "236～267ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039664> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039664 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "268～269ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000039665> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>
+textbook:AA100000039665 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/日探\/704;
+    schema:pagination "270～277ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000914> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2022/日探/704>.

@@ -1,27 +1,36 @@
-<https://w3id.org/jp-textbook/高等学校/2013/倫理/307>
-  <http://purl.org/dc/terms/bibliographicCitation> "「高等学校 現代倫理 最新版」, 高等学校, 倫理|307 (清水) 2013年検定";
-  <http://schema.org/editor> "村上隆夫 金岡秀郎 田坂さつき 辻大介 ほか5名";
-  <http://schema.org/isbn> "978-4-389-60028-0";
-  <http://schema.org/name> "高等学校 現代倫理 最新版";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2013/清水>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/025505657>, <http://id.ndl.go.jp/jpno/22448165>, <https://ci.nii.ac.jp/ncid/BB15417345>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2013"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2013>, <https://w3id.org/jp-textbook/catalogue/高等学校/2014>, <https://w3id.org/jp-textbook/catalogue/高等学校/2015>, <https://w3id.org/jp-textbook/catalogue/高等学校/2016>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2013>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.31||S15||2013";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB16240874";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2013\/倫理\/307
+  dct:bibliographicCitation "「高等学校 現代倫理 最新版」, 高等学校, 倫理|307 (清水) 2013年検定";
+  schema:editor "村上隆夫 金岡秀郎 田坂さつき 辻大介 ほか5名";
+  schema:isbn "978-4-389-60028-0";
+  schema:name "高等学校 現代倫理 最新版";
+  schema:publisher textbook:publisher\/2013\/清水;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/025505657>, <http://id.ndl.go.jp/jpno/22448165>, <https://ci.nii.ac.jp/ncid/BB15417345>;
+  textbook:authorizedYear "2013"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2013, textbook:catalogue\/高等学校\/2014, textbook:catalogue\/高等学校\/2015, textbook:catalogue\/高等学校\/2016;
+  textbook:curriculum curriculum:高等学校\/2013;
+  textbook:item [
+    nier:callNumber "K280.31||S15||2013";
+    nier:recordID "EB16240874";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C035|210|H25/26";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320130075";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C035|210|H25/26";
+    textbook-rc:recordID "320130075";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2013/公民/倫理>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2013/公民>;
-  <https://w3id.org/jp-textbook/textbookNumber> "307";
-  <https://w3id.org/jp-textbook/textbookSymbol> "倫理";
-  <https://w3id.org/jp-textbook/usageYear> "2014"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2015"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2016"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2017"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2014-2017".
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2013\/公民\/倫理;
+  textbook:subjectArea curriculum:高等学校\/2013\/公民;
+  textbook:textbookNumber "307";
+  textbook:textbookSymbol "倫理";
+  textbook:usageYear "2014"^^xsd:gYear, "2015"^^xsd:gYear, "2016"^^xsd:gYear, "2017"^^xsd:gYear;
+  textbook:usageYearRange "2014-2017".

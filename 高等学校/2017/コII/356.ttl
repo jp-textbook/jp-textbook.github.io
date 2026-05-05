@@ -1,29 +1,39 @@
-<https://w3id.org/jp-textbook/高等学校/2017/コII/356>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "170";
-  <http://purl.org/dc/terms/bibliographicCitation> "「ATLANTIS Hybrid」, 高等学校, コII|356 (チアーズ) 2017年検定";
-  <http://schema.org/editor> "Steven Mitchell Steve Beacall ほか2名";
-  <http://schema.org/isbn> "978-4-907148-68-3";
-  <http://schema.org/name> "ATLANTIS Hybrid";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2017/チアーズ>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://ci.nii.ac.jp/ncid/BB25970733>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2017"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2017>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2013>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.91||C13||2017B";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20059456";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2017\/コII\/356
+  bf:dimensions "B5";
+  bf:extent "170";
+  dct:bibliographicCitation "「ATLANTIS Hybrid」, 高等学校, コII|356 (チアーズ) 2017年検定";
+  schema:editor "Steven Mitchell Steve Beacall ほか2名";
+  schema:isbn "978-4-907148-68-3";
+  schema:name "ATLANTIS Hybrid";
+  schema:publisher textbook:publisher\/2017\/チアーズ;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <https://ci.nii.ac.jp/ncid/BB25970733>;
+  textbook:authorizedYear "2017"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2017;
+  textbook:curriculum curriculum:高等学校\/2013;
+  textbook:item [
+    nier:callNumber "K280.91||C13||2017B";
+    nier:recordID "EB20059456";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C226|740b|H29/30";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320170207";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C226|740b|H29/30";
+    textbook-rc:recordID "320170207";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2013/外国語/コミュニケーション英語II>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2013/外国語>;
-  <https://w3id.org/jp-textbook/textbookNumber> "356";
-  <https://w3id.org/jp-textbook/textbookSymbol> "コII";
-  <https://w3id.org/jp-textbook/usageYear> "2018"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2018".
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2013\/外国語\/コミュニケーション英語II;
+  textbook:subjectArea curriculum:高等学校\/2013\/外国語;
+  textbook:textbookNumber "356";
+  textbook:textbookSymbol "コII";
+  textbook:usageYear "2018"^^xsd:gYear;
+  textbook:usageYearRange "2018".

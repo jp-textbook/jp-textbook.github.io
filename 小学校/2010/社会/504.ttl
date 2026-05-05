@@ -1,30 +1,40 @@
-<https://w3id.org/jp-textbook/小学校/2010/社会/504>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "AB";
-  <http://id.loc.gov/ontologies/bibframe/extent> "72";
-  <http://purl.org/dc/terms/bibliographicCitation> "「小学社会 5下」, 小学校5年, 社会|504 (教出) 2010年検定";
-  <http://schema.org/editor> "有田和正 石弘光 ほか41名";
-  <http://schema.org/isbn> "978-4-316-20183-2";
-  <http://schema.org/name> "小学社会 5下";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2010/教出>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/000011273362>, <http://id.ndl.go.jp/jpno/21986104>, <https://ci.nii.ac.jp/ncid/BB03026453>, <https://ci.nii.ac.jp/ncid/BB05459815>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2010"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/小学校/2010>, <https://w3id.org/jp-textbook/catalogue/小学校/2011>, <https://w3id.org/jp-textbook/catalogue/小学校/2012>, <https://w3id.org/jp-textbook/catalogue/小学校/2013>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/小学校/2011>;
-  <https://w3id.org/jp-textbook/grade> 5;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K170.3||K10||2010";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB16209103";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:小学校\/2010\/社会\/504
+  bf:dimensions "AB";
+  bf:extent "72";
+  dct:bibliographicCitation "「小学社会 5下」, 小学校5年, 社会|504 (教出) 2010年検定";
+  schema:editor "有田和正 石弘光 ほか41名";
+  schema:isbn "978-4-316-20183-2";
+  schema:name "小学社会 5下";
+  schema:publisher textbook:publisher\/2010\/教出;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/000011273362>, <http://id.ndl.go.jp/jpno/21986104>, <https://ci.nii.ac.jp/ncid/BB03026453>, <https://ci.nii.ac.jp/ncid/BB05459815>;
+  textbook:authorizedYear "2010"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/小学校\/2010, textbook:catalogue\/小学校\/2011, textbook:catalogue\/小学校\/2012, textbook:catalogue\/小学校\/2013;
+  textbook:curriculum curriculum:小学校\/2011;
+  textbook:grade 5;
+  textbook:item [
+    nier:callNumber "K170.3||K10||2010";
+    nier:recordID "EB16209103";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "A017|215|H22/23";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "120100104";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "A017|215|H22/23";
+    textbook-rc:recordID "120100104";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/小学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/小学校/2011/社会/社会>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/小学校/2011/社会>;
-  <https://w3id.org/jp-textbook/textbookNumber> "504";
-  <https://w3id.org/jp-textbook/textbookSymbol> "社会";
-  <https://w3id.org/jp-textbook/usageYear> "2011"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2012"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2013"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2014"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2011-2014".
+  textbook:school textbook:school\/小学校;
+  textbook:subject curriculum:小学校\/2011\/社会\/社会;
+  textbook:subjectArea curriculum:小学校\/2011\/社会;
+  textbook:textbookNumber "504";
+  textbook:textbookSymbol "社会";
+  textbook:usageYear "2011"^^xsd:gYear, "2012"^^xsd:gYear, "2013"^^xsd:gYear, "2014"^^xsd:gYear;
+  textbook:usageYearRange "2011-2014".

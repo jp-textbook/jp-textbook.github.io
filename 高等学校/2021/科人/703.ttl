@@ -1,72 +1,112 @@
-<https://w3id.org/jp-textbook/高等学校/2021/科人/703>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "215";
-  <http://purl.org/dc/terms/bibliographicCitation> "「高等学校 科学と人間生活」, 高等学校, 科人|703 (啓林館) 2021年検定";
-  <http://schema.org/editor> "藤嶋 昭  赤坂 甲治 植松 恒夫 ほか29名";
-  <http://schema.org/isbn> "9784402025007";
-  <http://schema.org/name> "高等学校 科学と人間生活";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2021/啓林館>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/032455431>, <http://id.ndl.go.jp/jpno/23761343>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2021>, <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.44||S16||2021";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20082009";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2021\/科人\/703
+  bf:dimensions "B5";
+  bf:extent "215";
+  dct:bibliographicCitation "「高等学校 科学と人間生活」, 高等学校, 科人|703 (啓林館) 2021年検定";
+  schema:editor "藤嶋 昭  赤坂 甲治 植松 恒夫 ほか29名";
+  schema:isbn "9784402025007";
+  schema:name "高等学校 科学と人間生活";
+  schema:publisher textbook:publisher\/2021\/啓林館;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/032455431>, <http://id.ndl.go.jp/jpno/23761343>;
+  textbook:authorizedYear "2021"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2021, textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.44||S16||2021";
+    nier:recordID "EB20082009";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C061|400|R03/04";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320210126";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C061|400|R03/04";
+    textbook-rc:recordID "320210126";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/理科/科学と人間生活>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/理科>;
-  <https://w3id.org/jp-textbook/textbookNumber> "703";
-  <https://w3id.org/jp-textbook/textbookSymbol> "科人";
-  <https://w3id.org/jp-textbook/usageYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2022-".
-<https://w3id.org/jp-textbook/AA100000028103> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/科人/703>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/理科\/科学と人間生活;
+  textbook:subjectArea curriculum:高等学校\/2022\/理科;
+  textbook:textbookNumber "703";
+  textbook:textbookSymbol "科人";
+  textbook:usageYear "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2022-".
+textbook:AC100000000684 textbook:textbook textbook:高等学校\/2021\/科人\/703.
+textbook:AB100000002329 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/科人\/703;
+    schema:numberOfPages 0.25;
+    schema:pagination "31";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028104> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/科人/703>
+textbook:AB100000002330 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/科人\/703;
+    schema:numberOfPages 0.5;
+    schema:pagination "53";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028105> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/科人/703>
+textbook:AA100000028103 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/科人\/703;
+    schema:pagination "①，p.1，4～12";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028106> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/科人/703>
+textbook:AA100000028104 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/科人\/703;
+    schema:pagination "①，p.1，4～12";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028107> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/科人/703>
+textbook:AA100000028105 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/科人\/703;
+    schema:pagination "p.13～35";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028108> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/科人/703>
+textbook:AA100000028106 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/科人\/703;
+    schema:pagination "p.13，36～54";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028109> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/科人/703>
+textbook:AA100000028107 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/科人\/703;
+    schema:pagination "p.55～75";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028110> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/科人/703>
+textbook:AA100000028108 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/科人\/703;
+    schema:pagination "p.55，76～96";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028111> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/科人/703>
+textbook:AA100000028109 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/科人\/703;
+    schema:pagination "p.97～119";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028112> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/科人/703>
+textbook:AA100000028110 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/科人\/703;
+    schema:pagination "p.97，120～138";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028113> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/科人/703>
+textbook:AA100000028111 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/科人\/703;
+    schema:pagination "p.139～159";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028114> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/科人/703>
+textbook:AA100000028112 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/科人\/703;
+    schema:pagination "p.139，160～180";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002329> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/科人/703>
+textbook:AA100000028113 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/科人\/703;
+    schema:pagination "p.181～192，③～④";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002330> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/科人/703>
+textbook:AA100000028114 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/科人\/703;
+    schema:pagination "p.193～207，付録①～②，②";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000684> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2021/科人/703>.

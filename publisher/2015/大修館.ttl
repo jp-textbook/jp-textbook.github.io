@@ -1,9 +1,14 @@
-<https://w3id.org/jp-textbook/publisher/2015/大修館>
-  <http://schema.org/name> "Kabushiki Gaisha Taishukan Shoten"@ja-latn, "かぶしき がいしゃ たいしゅうかん しょてん"@ja-hira, "株式会社 大修館書店"@ja;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Publisher>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://ja.dbpedia.org/resource/大修館書店>, <https://id.ndl.go.jp/auth/ndlna/00304062>, <https://info.gbiz.go.jp/hojin/ichiran?hojinBango=6010001021872>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/中学校/2015>;
-  <https://w3id.org/jp-textbook/catalogueYear> "2015"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/publisherAbbreviation> "大修館";
-  <https://w3id.org/jp-textbook/publisherNumber> "50".
-<https://w3id.org/jp-textbook/中学校/2015/保体/727> <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2015/大修館>.
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+textbook:publisher\/2015\/大修館
+  schema:name "Kabushiki Gaisha Taishukan Shoten"@ja-latn, "かぶしき がいしゃ たいしゅうかん しょてん"@ja-hira, "株式会社 大修館書店"@ja;
+  rdf:type textbook:Publisher;
+  rdfs:seeAlso <http://ja.dbpedia.org/resource/大修館書店>, <https://id.ndl.go.jp/auth/ndlna/00304062>, <https://info.gbiz.go.jp/hojin/ichiran?hojinBango=6010001021872>;
+  textbook:catalogue textbook:catalogue\/中学校\/2015;
+  textbook:catalogueYear "2015"^^xsd:gYear;
+  textbook:publisherAbbreviation "大修館";
+  textbook:publisherNumber "50".
+textbook:中学校\/2015\/保体\/727 schema:publisher textbook:publisher\/2015\/大修館.

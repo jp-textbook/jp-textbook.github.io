@@ -1,29 +1,39 @@
-<https://w3id.org/jp-textbook/高等学校/2011/オII/011>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "230";
-  <http://purl.org/dc/terms/bibliographicCitation> "「ATLANTIS Oral Communication II」, 高等学校, オII|011 (チアーズ) 2011年検定";
-  <http://schema.org/editor> "Steven Mitchell Steve Beacall 千葉仁美 金田ひとみ";
-  <http://schema.org/isbn> "978-4-9905169-2-5";
-  <http://schema.org/name> "ATLANTIS Oral Communication II";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2011/チアーズ>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://ci.nii.ac.jp/ncid/BB08938982>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2011"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2011>, <https://w3id.org/jp-textbook/catalogue/高等学校/2012>, <https://w3id.org/jp-textbook/catalogue/高等学校/2013>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2003>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.911||C13||2011";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB16209503";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2011\/オII\/011
+  bf:dimensions "B5";
+  bf:extent "230";
+  dct:bibliographicCitation "「ATLANTIS Oral Communication II」, 高等学校, オII|011 (チアーズ) 2011年検定";
+  schema:editor "Steven Mitchell Steve Beacall 千葉仁美 金田ひとみ";
+  schema:isbn "978-4-9905169-2-5";
+  schema:name "ATLANTIS Oral Communication II";
+  schema:publisher textbook:publisher\/2011\/チアーズ;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <https://ci.nii.ac.jp/ncid/BB08938982>;
+  textbook:authorizedYear "2011"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2011, textbook:catalogue\/高等学校\/2012, textbook:catalogue\/高等学校\/2013;
+  textbook:curriculum curriculum:高等学校\/2003;
+  textbook:item [
+    nier:callNumber "K280.911||C13||2011";
+    nier:recordID "EB16209503";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C226|760|H23/24";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320110088";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C226|760|H23/24";
+    textbook-rc:recordID "320110088";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2003/外国語/オーラル・コミュニケーションII>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2003/外国語>;
-  <https://w3id.org/jp-textbook/textbookNumber> "011";
-  <https://w3id.org/jp-textbook/textbookSymbol> "オII";
-  <https://w3id.org/jp-textbook/usageYear> "2012"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2013"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2014"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2012-2014".
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2003\/外国語\/オーラル・コミュニケーションII;
+  textbook:subjectArea curriculum:高等学校\/2003\/外国語;
+  textbook:textbookNumber "011";
+  textbook:textbookSymbol "オII";
+  textbook:usageYear "2012"^^xsd:gYear, "2013"^^xsd:gYear, "2014"^^xsd:gYear;
+  textbook:usageYearRange "2012-2014".

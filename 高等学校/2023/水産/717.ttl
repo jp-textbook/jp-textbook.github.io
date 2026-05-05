@@ -1,23 +1,31 @@
-<https://w3id.org/jp-textbook/高等学校/2023/水産/717>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "296";
-  <http://purl.org/dc/terms/bibliographicCitation> "「海洋環境」, 高等学校, 水産|717 (海文堂) 2023年検定";
-  <http://schema.org/editor> "文部科学省";
-  <http://schema.org/name> "海洋環境";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2023/海文堂>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.66||K25||2023C";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20082729";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+textbook:高等学校\/2023\/水産\/717
+  bf:dimensions "B5";
+  bf:extent "296";
+  dct:bibliographicCitation "「海洋環境」, 高等学校, 水産|717 (海文堂) 2023年検定";
+  schema:editor "文部科学省";
+  schema:name "海洋環境";
+  schema:publisher textbook:publisher\/2023\/海文堂;
+  rdf:type textbook:Textbook;
+  textbook:authorizedYear "2023"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.66||K25||2023C";
+    nier:recordID "EB20082729";
+    rdf:type textbook:ItemNIER
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/水産/海洋環境>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/水産>;
-  <https://w3id.org/jp-textbook/textbookNumber> "717";
-  <https://w3id.org/jp-textbook/textbookSymbol> "水産";
-  <https://w3id.org/jp-textbook/usageYear> "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2024-".
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/水産\/海洋環境;
+  textbook:subjectArea curriculum:高等学校\/2022\/水産;
+  textbook:textbookNumber "717";
+  textbook:textbookSymbol "水産";
+  textbook:usageYear "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2024-".

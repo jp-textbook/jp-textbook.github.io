@@ -1,30 +1,40 @@
-<https://w3id.org/jp-textbook/高等学校/2016/日A/309>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "230";
-  <http://purl.org/dc/terms/bibliographicCitation> "「高校日本史A 新訂版」, 高等学校, 日A|309 (実教) 2016年検定";
-  <http://schema.org/editor> "君島和彦 加藤公明 ほか14名";
-  <http://schema.org/isbn> "9784407203592";
-  <http://schema.org/name> "高校日本史A 新訂版";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2016/実教>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/028504462>, <http://id.ndl.go.jp/jpno/22970428>, <https://ci.nii.ac.jp/ncid/BB21754791>, <https://ci.nii.ac.jp/ncid/BB23495774>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2016"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2016>, <https://w3id.org/jp-textbook/catalogue/高等学校/2017>, <https://w3id.org/jp-textbook/catalogue/高等学校/2018>, <https://w3id.org/jp-textbook/catalogue/高等学校/2019>, <https://w3id.org/jp-textbook/catalogue/高等学校/2020>, <https://w3id.org/jp-textbook/catalogue/高等学校/2021>, <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2013>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.32||J3||2016";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20036349";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2016\/日A\/309
+  bf:dimensions "B5";
+  bf:extent "230";
+  dct:bibliographicCitation "「高校日本史A 新訂版」, 高等学校, 日A|309 (実教) 2016年検定";
+  schema:editor "君島和彦 加藤公明 ほか14名";
+  schema:isbn "9784407203592";
+  schema:name "高校日本史A 新訂版";
+  schema:publisher textbook:publisher\/2016\/実教;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/028504462>, <http://id.ndl.go.jp/jpno/22970428>, <https://ci.nii.ac.jp/ncid/BB21754791>, <https://ci.nii.ac.jp/ncid/BB23495774>;
+  textbook:authorizedYear "2016"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2016, textbook:catalogue\/高等学校\/2017, textbook:catalogue\/高等学校\/2018, textbook:catalogue\/高等学校\/2019, textbook:catalogue\/高等学校\/2020, textbook:catalogue\/高等学校\/2021, textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023;
+  textbook:curriculum curriculum:高等学校\/2013;
+  textbook:item [
+    nier:callNumber "K280.32||J3||2016";
+    nier:recordID "EB20036349";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C007|230|H28/29";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320160051";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C007|230|H28/29";
+    textbook-rc:recordID "320160051";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2013/地理歴史/日本史A>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2013/地理歴史>;
-  <https://w3id.org/jp-textbook/textbookNumber> "309";
-  <https://w3id.org/jp-textbook/textbookSymbol> "日A";
-  <https://w3id.org/jp-textbook/usageYear> "2017"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2018"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2019"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2020"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2017-2024".
-<https://w3id.org/jp-textbook/AC100000001527> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2016/日A/309>.
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2013\/地理歴史\/日本史A;
+  textbook:subjectArea curriculum:高等学校\/2013\/地理歴史;
+  textbook:textbookNumber "309";
+  textbook:textbookSymbol "日A";
+  textbook:usageYear "2017"^^xsd:gYear, "2018"^^xsd:gYear, "2019"^^xsd:gYear, "2020"^^xsd:gYear, "2021"^^xsd:gYear, "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear;
+  textbook:usageYearRange "2017-2024".
+textbook:AC100000001527 textbook:textbook textbook:高等学校\/2016\/日A\/309.

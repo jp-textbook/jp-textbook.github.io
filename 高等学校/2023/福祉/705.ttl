@@ -1,48 +1,69 @@
-<https://w3id.org/jp-textbook/高等学校/2023/福祉/705>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "150";
-  <http://id.loc.gov/ontologies/bibframe/note> "検定用見本";
-  <http://purl.org/dc/terms/bibliographicCitation> "「コミュニケーション技術」, 高等学校, 福祉|705 (実教) 2023年検定";
-  <http://schema.org/editor> "川井 太加子  井上 善行  ほか7名";
-  <http://schema.org/isbn> "9784407205794";
-  <http://schema.org/name> "コミュニケーション技術";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2023/実教>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.63||J3||2023A";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20082732";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2023\/福祉\/705
+  bf:dimensions "B5";
+  bf:extent "150";
+  bf:note "検定用見本";
+  dct:bibliographicCitation "「コミュニケーション技術」, 高等学校, 福祉|705 (実教) 2023年検定";
+  schema:editor "川井 太加子  井上 善行  ほか7名";
+  schema:isbn "9784407205794";
+  schema:name "コミュニケーション技術";
+  schema:publisher textbook:publisher\/2023\/実教;
+  rdf:type textbook:Textbook;
+  textbook:authorizedYear "2023"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.63||J3||2023A";
+    nier:recordID "EB20082732";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C007|970a|R05/06";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320230089";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C007|970a|R05/06";
+    textbook-rc:recordID "320230089";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/福祉/コミュニケーション技術>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/福祉>;
-  <https://w3id.org/jp-textbook/textbookNumber> "705";
-  <https://w3id.org/jp-textbook/textbookSymbol> "福祉";
-  <https://w3id.org/jp-textbook/usageYear> "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2024-".
-<https://w3id.org/jp-textbook/AA100000033530> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2023/福祉/705>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/福祉\/コミュニケーション技術;
+  textbook:subjectArea curriculum:高等学校\/2022\/福祉;
+  textbook:textbookNumber "705";
+  textbook:textbookSymbol "福祉";
+  textbook:usageYear "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2024-".
+textbook:AC100000001173 textbook:textbook textbook:高等学校\/2023\/福祉\/705.
+textbook:AA100000033530 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2023\/福祉\/705;
+    schema:pagination "p.8-17";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000033531> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2023/福祉/705>
+textbook:AA100000033531 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2023\/福祉\/705;
+    schema:pagination "p.18-43";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000033532> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2023/福祉/705>
+textbook:AA100000033532 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2023\/福祉\/705;
+    schema:pagination "p.46-53";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000033533> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2023/福祉/705>
+textbook:AA100000033533 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2023\/福祉\/705;
+    schema:pagination "p.54-111";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000033534> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2023/福祉/705>
+textbook:AA100000033534 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2023\/福祉\/705;
+    schema:pagination "p.114-125";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000033535> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2023/福祉/705>
+textbook:AA100000033535 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2023\/福祉\/705;
+    schema:pagination "p.126-133";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000001173> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2023/福祉/705>.

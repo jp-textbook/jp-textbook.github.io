@@ -1,51 +1,75 @@
-<https://w3id.org/jp-textbook/高等学校/2021/地総/702>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "AB";
-  <http://id.loc.gov/ontologies/bibframe/extent> "244";
-  <http://purl.org/dc/terms/bibliographicCitation> "「地理総合」, 高等学校, 地総|702 (実教) 2021年検定";
-  <http://schema.org/editor> "吉田 圭一郎   ほか17名";
-  <http://schema.org/isbn> "9784407204773";
-  <http://schema.org/name> "地理総合";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2021/実教>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/032455288>, <http://id.ndl.go.jp/jpno/23758140>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2021>, <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.37||J3||2021";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20081919";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2021\/地総\/702
+  bf:dimensions "AB";
+  bf:extent "244";
+  dct:bibliographicCitation "「地理総合」, 高等学校, 地総|702 (実教) 2021年検定";
+  schema:editor "吉田 圭一郎   ほか17名";
+  schema:isbn "9784407204773";
+  schema:name "地理総合";
+  schema:publisher textbook:publisher\/2021\/実教;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/032455288>, <http://id.ndl.go.jp/jpno/23758140>;
+  textbook:authorizedYear "2021"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2021, textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.37||J3||2021";
+    nier:recordID "EB20081919";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C007|270|R03/04";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320210036";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C007|270|R03/04";
+    textbook-rc:recordID "320210036";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/地理歴史/地理総合>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/地理歴史>;
-  <https://w3id.org/jp-textbook/textbookNumber> "702";
-  <https://w3id.org/jp-textbook/textbookSymbol> "地総";
-  <https://w3id.org/jp-textbook/usageYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2022-".
-<https://w3id.org/jp-textbook/AA100000026250> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/地総/702>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/地理歴史\/地理総合;
+  textbook:subjectArea curriculum:高等学校\/2022\/地理歴史;
+  textbook:textbookNumber "702";
+  textbook:textbookSymbol "地総";
+  textbook:usageYear "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2022-".
+textbook:AC100000000599 textbook:textbook textbook:高等学校\/2021\/地総\/702.
+textbook:AA100000026250 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/地総\/702;
+    schema:pagination "p.6-25";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026251> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/地総/702>
+textbook:AA100000026251 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/地総\/702;
+    schema:pagination "p.26-173";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026252> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/地総/702>
+textbook:AA100000026252 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/地総\/702;
+    schema:pagination "p.26-149";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026253> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/地総/702>
+textbook:AA100000026253 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/地総\/702;
+    schema:pagination "p.150-173";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026254> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/地総/702>
+textbook:AA100000026254 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/地総\/702;
+    schema:pagination "p.174-205";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026255> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/地総/702>
+textbook:AA100000026255 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/地総\/702;
+    schema:pagination "p.174-195";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026256> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/地総/702>
+textbook:AA100000026256 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/地総\/702;
+    schema:pagination "p.196-205";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000599> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2021/地総/702>.

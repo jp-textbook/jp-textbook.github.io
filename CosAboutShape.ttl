@@ -1,12 +1,24 @@
-<https://w3id.org/jp-textbook/CosAboutShape>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape>;
-  <http://www.w3.org/ns/shacl#or> [
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/jp-cos/SubjectShape>;
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> [
-      <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/jp-cos/SubjectAreaShape>;
-      <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix cs: <https://w3id.org/jp-cos/>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix schema: <http://schema.org/>.
+textbook:CosAboutShape
+  rdf:type sh:NodeShape;
+  sh:or [
+    rdf:first cs:SubjectShape;
+    rdf:rest [
+      rdf:first cs:SubjectAreaShape;
+      rdf:rest rdf:nil
     ]
   ].
-<https://w3id.org/jp-textbook/curriculum/SubjectShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#node> <https://w3id.org/jp-textbook/CosAboutShape>
+curriculum:SubjectShape sh:property [
+    skos:example cs:UpperSecondary\/2009\/国語\/国語総合;
+    sh:maxCount 1;
+    sh:name "Target subject or subject area"@en, "対象とする科目もしくは教科"@ja;
+    sh:node textbook:CosAboutShape;
+    sh:order 4;
+    sh:path schema:about
   ].

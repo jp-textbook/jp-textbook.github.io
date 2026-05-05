@@ -1,14 +1,24 @@
-<https://w3id.org/jp-textbook/ChapterType>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class>;
-  <http://www.w3.org/2000/01/rdf-schema#comment> "Resource for the type of compiling prospectus chapter (standard or advanced). URIs for the resources are represented as follows:<br><code>https://w3id.org/jp-textbook/curriculum/<var>type of chapter</var></code>"@en, "編修趣意書の章の種別を表現するクラス（標準、発展的な内容）。以下のようなURIにより表現されます。<br><code>https://w3id.org/jp-textbook/curriculum/<var>章種別</var></code>"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#label> "Chapter Type"@en, "章種別"@ja.
-<https://w3id.org/jp-textbook/CPMappingACBody> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ChapterType>.
-<https://w3id.org/jp-textbook/CPMappingACTable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ChapterType>.
-<https://w3id.org/jp-textbook/CPMappingLawOfEducation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ChapterType>.
-<https://w3id.org/jp-textbook/CPMappingTUBody> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ChapterType>.
-<https://w3id.org/jp-textbook/CPMappingTUTable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ChapterType>.
-<https://w3id.org/jp-textbook/ChapterCPShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/ChapterType>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+textbook:ChapterType
+  rdf:type rdfs:Class;
+  rdfs:comment "Resource for the type of compiling prospectus chapter (standard or advanced). URIs for the resources are represented as follows:<br><code>https://w3id.org/jp-textbook/curriculum/<var>type of chapter</var></code>"@en, "編修趣意書の章の種別を表現するクラス（標準、発展的な内容）。以下のようなURIにより表現されます。<br><code>https://w3id.org/jp-textbook/curriculum/<var>章種別</var></code>"@ja;
+  rdfs:label "Chapter Type"@en, "章種別"@ja.
+textbook:CPMappingACBody rdf:type textbook:ChapterType.
+textbook:CPMappingACTable rdf:type textbook:ChapterType.
+textbook:CPMappingLawOfEducation rdf:type textbook:ChapterType.
+textbook:CPMappingTUBody rdf:type textbook:ChapterType.
+textbook:ChapterCPShape sh:property [
+    skos:example textbook:CPMappingTUTable;
+    sh:class textbook:ChapterType;
+    sh:description "CPMappingLawOfEducation, CPMappingTUBody, CPMappingTUTable, CPMappingACBody, CPMappingACTable のいずれかの値をとる。"@ja, "CPMappingLawOfEducation, CPMappingTUBody, CPMappingTUTable, CPMappingACBody, CPMappingACTable."@en;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Compiling Prospectus Type"@en, "趣意書種別"@ja;
+    sh:order 1;
+    sh:path textbook:chapterType
   ].
-<https://w3id.org/jp-textbook/ChapterTypeShape> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/jp-textbook/ChapterType>.
-<https://w3id.org/jp-textbook/chapterType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/jp-textbook/ChapterType>.
+textbook:ChapterTypeShape sh:targetClass textbook:ChapterType.

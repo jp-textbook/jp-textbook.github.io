@@ -1,61 +1,91 @@
-<https://w3id.org/jp-textbook/小学校/2019/社会/304>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "AB";
-  <http://id.loc.gov/ontologies/bibframe/extent> "160";
-  <http://purl.org/dc/terms/bibliographicCitation> "「小学社会　３年」, 小学校3年, 社会|304 (日文) 2019年検定";
-  <http://schema.org/editor> "池野 範男 的場 正美 安野 功  ほか53名";
-  <http://schema.org/isbn> "9784536181372";
-  <http://schema.org/name> "小学社会　３年";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2019/日文>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/030622897>, <http://id.ndl.go.jp/jpno/23428928>, <https://ci.nii.ac.jp/ncid/BB28269499>, <https://ci.nii.ac.jp/ncid/BB29903818>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2019"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/小学校/2019>, <https://w3id.org/jp-textbook/catalogue/小学校/2020>, <https://w3id.org/jp-textbook/catalogue/小学校/2021>, <https://w3id.org/jp-textbook/catalogue/小学校/2022>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/小学校/2020>;
-  <https://w3id.org/jp-textbook/grade> 3;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K170.3||N13||2019";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20080391";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:小学校\/2019\/社会\/304
+  bf:dimensions "AB";
+  bf:extent "160";
+  dct:bibliographicCitation "「小学社会　３年」, 小学校3年, 社会|304 (日文) 2019年検定";
+  schema:editor "池野 範男 的場 正美 安野 功  ほか53名";
+  schema:isbn "9784536181372";
+  schema:name "小学社会　３年";
+  schema:publisher textbook:publisher\/2019\/日文;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/030622897>, <http://id.ndl.go.jp/jpno/23428928>, <https://ci.nii.ac.jp/ncid/BB28269499>, <https://ci.nii.ac.jp/ncid/BB29903818>;
+  textbook:authorizedYear "2019"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/小学校\/2019, textbook:catalogue\/小学校\/2020, textbook:catalogue\/小学校\/2021, textbook:catalogue\/小学校\/2022;
+  textbook:curriculum curriculum:小学校\/2020;
+  textbook:grade 3;
+  textbook:item [
+    nier:callNumber "K170.3||N13||2019";
+    nier:recordID "EB20080391";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "A116|213|H31/R2";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "120190085";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "A116|213|H31/R2";
+    textbook-rc:recordID "120190085";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/小学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/小学校/2020/社会/社会>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/小学校/2020/社会>;
-  <https://w3id.org/jp-textbook/textbookNumber> "304";
-  <https://w3id.org/jp-textbook/textbookSymbol> "社会";
-  <https://w3id.org/jp-textbook/usageYear> "2020"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2020-2023".
-<https://w3id.org/jp-textbook/AA100000002122> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/304>
+  textbook:school textbook:school\/小学校;
+  textbook:subject curriculum:小学校\/2020\/社会\/社会;
+  textbook:subjectArea curriculum:小学校\/2020\/社会;
+  textbook:textbookNumber "304";
+  textbook:textbookSymbol "社会";
+  textbook:usageYear "2020"^^xsd:gYear, "2021"^^xsd:gYear, "2022"^^xsd:gYear, "2023"^^xsd:gYear;
+  textbook:usageYearRange "2020-2023".
+textbook:AC100000000063 textbook:textbook textbook:小学校\/2019\/社会\/304.
+textbook:AA100000002122 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/304;
+    schema:pagination "p.8～11";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002123> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/304>
+textbook:AA100000002123 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/304;
+    schema:pagination "p.12～39";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002124> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/304>
+textbook:AA100000002124 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/304;
+    schema:pagination "p.42～45";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002125> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/304>
+textbook:AA100000002125 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/304;
+    schema:pagination "p.46～55";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002126> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/304>
+textbook:AA100000002126 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/304;
+    schema:pagination "p.56～65";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002127> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/304>
+textbook:AA100000002127 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/304;
+    schema:pagination "p.66～87";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002128> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/304>
+textbook:AA100000002128 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/304;
+    schema:pagination "p.90～91";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002129> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/304>
+textbook:AA100000002129 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/304;
+    schema:pagination "p.92～121";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002130> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/304>
+textbook:AA100000002130 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/304;
+    schema:pagination "p.124～125";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002131> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/304>
+textbook:AA100000002131 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/304;
+    schema:pagination "p.126～153";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000063> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/小学校/2019/社会/304>.

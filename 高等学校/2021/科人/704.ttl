@@ -1,60 +1,90 @@
-<https://w3id.org/jp-textbook/高等学校/2021/科人/704>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "AB";
-  <http://id.loc.gov/ontologies/bibframe/extent> "232";
-  <http://purl.org/dc/terms/bibliographicCitation> "「科学と人間生活」, 高等学校, 科人|704 (数研) 2021年検定";
-  <http://schema.org/editor> "河本 敏郎  尾池 秀章 川村 教一  中島 春紫  ほか7名";
-  <http://schema.org/isbn> "9784410811869";
-  <http://schema.org/name> "科学と人間生活";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2021/数研>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/032455476>, <http://id.ndl.go.jp/jpno/23761416>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2021>, <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.44||S19||2021";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20082010";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2021\/科人\/704
+  bf:dimensions "AB";
+  bf:extent "232";
+  dct:bibliographicCitation "「科学と人間生活」, 高等学校, 科人|704 (数研) 2021年検定";
+  schema:editor "河本 敏郎  尾池 秀章 川村 教一  中島 春紫  ほか7名";
+  schema:isbn "9784410811869";
+  schema:name "科学と人間生活";
+  schema:publisher textbook:publisher\/2021\/数研;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/032455476>, <http://id.ndl.go.jp/jpno/23761416>;
+  textbook:authorizedYear "2021"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2021, textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.44||S19||2021";
+    nier:recordID "EB20082010";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C104|400|R03/04";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320210127";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C104|400|R03/04";
+    textbook-rc:recordID "320210127";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/理科/科学と人間生活>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/理科>;
-  <https://w3id.org/jp-textbook/textbookNumber> "704";
-  <https://w3id.org/jp-textbook/textbookSymbol> "科人";
-  <https://w3id.org/jp-textbook/usageYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2022-".
-<https://w3id.org/jp-textbook/AA100000028115> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/科人/704>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/理科\/科学と人間生活;
+  textbook:subjectArea curriculum:高等学校\/2022\/理科;
+  textbook:textbookNumber "704";
+  textbook:textbookSymbol "科人";
+  textbook:usageYear "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2022-".
+textbook:AC100000000685 textbook:textbook textbook:高等学校\/2021\/科人\/704.
+textbook:AA100000028115 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/科人\/704;
+    schema:pagination "p.3～13";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028116> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/科人/704>
+textbook:AA100000028116 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/科人\/704;
+    schema:pagination "p.14～37";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028117> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/科人/704>
+textbook:AA100000028117 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/科人\/704;
+    schema:pagination "p.38～63";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028118> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/科人/704>
+textbook:AA100000028118 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/科人\/704;
+    schema:pagination "p.64～87";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028119> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/科人/704>
+textbook:AA100000028119 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/科人\/704;
+    schema:pagination "p.88～111";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028120> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/科人/704>
+textbook:AA100000028120 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/科人\/704;
+    schema:pagination "p.112～135";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028121> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/科人/704>
+textbook:AA100000028121 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/科人\/704;
+    schema:pagination "p.136～159";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028122> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/科人/704>
+textbook:AA100000028122 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/科人\/704;
+    schema:pagination "p.160～183";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028123> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/科人/704>
+textbook:AA100000028123 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/科人\/704;
+    schema:pagination "p.184～207";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000028124> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/科人/704>
+textbook:AA100000028124 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/科人\/704;
+    schema:pagination "p.208～217";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000685> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2021/科人/704>.

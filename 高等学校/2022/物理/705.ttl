@@ -1,62 +1,96 @@
-<https://w3id.org/jp-textbook/高等学校/2022/物理/705>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "A5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "266";
-  <http://purl.org/dc/terms/bibliographicCitation> "「高等学校 総合物理２　 電気と磁気　原子・分子の世界」, 高等学校, 物理|705 (啓林館) 2022年検定";
-  <http://schema.org/editor> "植松 恒夫  酒井 啓司 下田 正 ほか22名";
-  <http://schema.org/isbn> "9784402030032";
-  <http://schema.org/name> "高等学校 総合物理２　 電気と磁気　原子・分子の世界";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2022/啓林館>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.42||S16||2022C";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20082479";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2022\/物理\/705
+  bf:dimensions "A5";
+  bf:extent "266";
+  dct:bibliographicCitation "「高等学校 総合物理２　 電気と磁気　原子・分子の世界」, 高等学校, 物理|705 (啓林館) 2022年検定";
+  schema:editor "植松 恒夫  酒井 啓司 下田 正 ほか22名";
+  schema:isbn "9784402030032";
+  schema:name "高等学校 総合物理２　 電気と磁気　原子・分子の世界";
+  schema:publisher textbook:publisher\/2022\/啓林館;
+  rdf:type textbook:Textbook;
+  textbook:authorizedYear "2022"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.42||S16||2022C";
+    nier:recordID "EB20082479";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C061|420b|R04/05";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320220128";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C061|420b|R04/05";
+    textbook-rc:recordID "320220128";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/理科/物理>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/理科>;
-  <https://w3id.org/jp-textbook/textbookNumber> "705";
-  <https://w3id.org/jp-textbook/textbookSymbol> "物理";
-  <https://w3id.org/jp-textbook/usageYear> "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2023-".
-<https://w3id.org/jp-textbook/AA100000041016> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/物理/705>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/理科\/物理;
+  textbook:subjectArea curriculum:高等学校\/2022\/理科;
+  textbook:textbookNumber "705";
+  textbook:textbookSymbol "物理";
+  textbook:usageYear "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2023-".
+textbook:AC100000000990 textbook:textbook textbook:高等学校\/2022\/物理\/705.
+textbook:AB100000003394 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/物理\/705;
+    schema:numberOfPages 0.5;
+    schema:pagination "下巻　135";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000041017> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/物理/705>
+textbook:AB100000003395 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/物理\/705;
+    schema:numberOfPages 0.5;
+    schema:pagination "下巻　199";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000041018> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/物理/705>
+textbook:AB100000003396 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/物理\/705;
+    schema:numberOfPages 6;
+    schema:pagination "下巻　246-251";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000041019> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/物理/705>
+textbook:AA100000041016 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/物理\/705;
+    schema:pagination "p.6～43";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000041020> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/物理/705>
+textbook:AA100000041017 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/物理\/705;
+    schema:pagination "p.44～71";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000041021> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/物理/705>
+textbook:AA100000041018 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/物理\/705;
+    schema:pagination "p.72～95";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000041022> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/物理/705>
+textbook:AA100000041019 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/物理\/705;
+    schema:pagination "p.96～146";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000041023> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/物理/705>
+textbook:AA100000041020 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/物理\/705;
+    schema:pagination "p.150～171";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000003394> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/物理/705>
+textbook:AA100000041021 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/物理\/705;
+    schema:pagination "p.172～218";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000003395> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/物理/705>
+textbook:AA100000041022 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/物理\/705;
+    schema:pagination "p.219～229";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000003396> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/物理/705>
+textbook:AA100000041023 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/物理\/705;
+    schema:pagination "p.230～261,p.263,264,②";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000990> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2022/物理/705>.

@@ -1,87 +1,135 @@
-<https://w3id.org/jp-textbook/高等学校/2021/歴総/704>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "AB";
-  <http://id.loc.gov/ontologies/bibframe/extent> "222";
-  <http://purl.org/dc/terms/bibliographicCitation> "「歴史総合」, 高等学校, 歴総|704 (実教) 2021年検定";
-  <http://schema.org/editor> "木畑 洋一　成田 龍一   ほか20名";
-  <http://schema.org/isbn> "9784407204797";
-  <http://schema.org/name> "歴史総合";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2021/実教>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/032455290>, <http://id.ndl.go.jp/jpno/23758133>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2021>, <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.34||J3||2021B";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20081927";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2021\/歴総\/704
+  bf:dimensions "AB";
+  bf:extent "222";
+  dct:bibliographicCitation "「歴史総合」, 高等学校, 歴総|704 (実教) 2021年検定";
+  schema:editor "木畑 洋一　成田 龍一   ほか20名";
+  schema:isbn "9784407204797";
+  schema:name "歴史総合";
+  schema:publisher textbook:publisher\/2021\/実教;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/032455290>, <http://id.ndl.go.jp/jpno/23758133>;
+  textbook:authorizedYear "2021"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2021, textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.34||J3||2021B";
+    nier:recordID "EB20081927";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C007|250b|R03/04";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320210044";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C007|250b|R03/04";
+    textbook-rc:recordID "320210044";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/地理歴史/歴史総合>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/地理歴史>;
-  <https://w3id.org/jp-textbook/textbookNumber> "704";
-  <https://w3id.org/jp-textbook/textbookSymbol> "歴総";
-  <https://w3id.org/jp-textbook/usageYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2022-".
-<https://w3id.org/jp-textbook/AA100000026466> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/歴総/704>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/地理歴史\/歴史総合;
+  textbook:subjectArea curriculum:高等学校\/2022\/地理歴史;
+  textbook:textbookNumber "704";
+  textbook:textbookSymbol "歴総";
+  textbook:usageYear "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2022-".
+textbook:AC100000000607 textbook:textbook textbook:高等学校\/2021\/歴総\/704.
+textbook:AA100000026466 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/歴総\/704;
+    schema:pagination "p.10～12";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026467> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/歴総/704>
+textbook:AA100000026467 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/歴総\/704;
+    schema:pagination "p.13～15";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026468> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/歴総/704>
+textbook:AA100000026468 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/歴総\/704;
+    schema:pagination "p.42～43";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026469> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/歴総/704>
+textbook:AA100000026469 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/歴総\/704;
+    schema:pagination "p.124～125";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026470> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/歴総/704>
+textbook:AA100000026470 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/歴総\/704;
+    schema:pagination "p.16～19";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026471> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/歴総/704>
+textbook:AA100000026471 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/歴総\/704;
+    schema:pagination "p.20～33";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026472> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/歴総/704>
+textbook:AA100000026472 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/歴総\/704;
+    schema:pagination "p.34～57";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026473> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/歴総/704>
+textbook:AA100000026473 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/歴総\/704;
+    schema:pagination "p.58～71";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026474> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/歴総/704>
+textbook:AA100000026474 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/歴総\/704;
+    schema:pagination "p.72～89";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026475> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/歴総/704>
+textbook:AA100000026475 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/歴総\/704;
+    schema:pagination "p.90～91";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026476> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/歴総/704>
+textbook:AA100000026476 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/歴総\/704;
+    schema:pagination "p.92～95";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026477> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/歴総/704>
+textbook:AA100000026477 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/歴総\/704;
+    schema:pagination "p.96～117";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026478> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/歴総/704>
+textbook:AA100000026478 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/歴総\/704;
+    schema:pagination "p.118～147";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026479> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/歴総/704>
+textbook:AA100000026479 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/歴総\/704;
+    schema:pagination "p.148～149";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026480> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/歴総/704>
+textbook:AA100000026480 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/歴総\/704;
+    schema:pagination "p.150～153";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026481> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/歴総/704>
+textbook:AA100000026481 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/歴総\/704;
+    schema:pagination "p.154～167";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026482> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/歴総/704>
+textbook:AA100000026482 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/歴総\/704;
+    schema:pagination "p.168～179";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026483> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/歴総/704>
+textbook:AA100000026483 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/歴総\/704;
+    schema:pagination "p.180～189";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026484> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/歴総/704>
+textbook:AA100000026484 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/歴総\/704;
+    schema:pagination "p.190～195";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000607> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2021/歴総/704>.

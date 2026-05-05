@@ -1,60 +1,90 @@
-<https://w3id.org/jp-textbook/小学校/2023/生活/130>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "AB";
-  <http://id.loc.gov/ontologies/bibframe/extent> "138";
-  <http://purl.org/dc/terms/bibliographicCitation> "「いきいき　せいかつ下」, 小学校1,2年, 生活|130 (啓林館) 2023年検定";
-  <http://schema.org/editor> "中野 真志 田中 博之 ほか87名";
-  <http://schema.org/isbn> "9784402047498";
-  <http://schema.org/name> "いきいき　せいかつ下";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2023/啓林館>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/小学校/2023>, <https://w3id.org/jp-textbook/catalogue/小学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/小学校/2020>;
-  <https://w3id.org/jp-textbook/grade> 1, 2;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K170.33||S16||2023";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20082896";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:小学校\/2023\/生活\/130
+  bf:dimensions "AB";
+  bf:extent "138";
+  dct:bibliographicCitation "「いきいき　せいかつ下」, 小学校1,2年, 生活|130 (啓林館) 2023年検定";
+  schema:editor "中野 真志 田中 博之 ほか87名";
+  schema:isbn "9784402047498";
+  schema:name "いきいき　せいかつ下";
+  schema:publisher textbook:publisher\/2023\/啓林館;
+  rdf:type textbook:Textbook;
+  textbook:authorizedYear "2023"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/小学校\/2023, textbook:catalogue\/小学校\/2024;
+  textbook:curriculum curriculum:小学校\/2020;
+  textbook:grade 1, 2;
+  textbook:item [
+    nier:callNumber "K170.33||S16||2023";
+    nier:recordID "EB20082896";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "A061|020-12|R05/06";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "120230163";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "A061|020-12|R05/06";
+    textbook-rc:recordID "120230163";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/小学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/小学校/2020/生活/生活>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/小学校/2020/生活>;
-  <https://w3id.org/jp-textbook/textbookNumber> "130";
-  <https://w3id.org/jp-textbook/textbookSymbol> "生活";
-  <https://w3id.org/jp-textbook/usageYear> "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2024-".
-<https://w3id.org/jp-textbook/AA100000010969> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2023/生活/130>
+  textbook:school textbook:school\/小学校;
+  textbook:subject curriculum:小学校\/2020\/生活\/生活;
+  textbook:subjectArea curriculum:小学校\/2020\/生活;
+  textbook:textbookNumber "130";
+  textbook:textbookSymbol "生活";
+  textbook:usageYear "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2024-".
+textbook:AC100000000478 textbook:textbook textbook:小学校\/2023\/生活\/130.
+textbook:AB100000000890 schema:workExample [
+    schema:isPartOf textbook:小学校\/2023\/生活\/130;
+    schema:numberOfPages 2;
+    schema:pagination "<下巻>114-115";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000010970> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2023/生活/130>
+textbook:AA100000010969 schema:workExample [
+    schema:isPartOf textbook:小学校\/2023\/生活\/130;
+    schema:pagination "p.3-9";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000010971> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2023/生活/130>
+textbook:AA100000010970 schema:workExample [
+    schema:isPartOf textbook:小学校\/2023\/生活\/130;
+    schema:pagination "p.12-27";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000010972> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2023/生活/130>
+textbook:AA100000010971 schema:workExample [
+    schema:isPartOf textbook:小学校\/2023\/生活\/130;
+    schema:pagination "p.28-43";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000010973> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2023/生活/130>
+textbook:AA100000010972 schema:workExample [
+    schema:isPartOf textbook:小学校\/2023\/生活\/130;
+    schema:pagination "p.44-57";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000010974> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2023/生活/130>
+textbook:AA100000010973 schema:workExample [
+    schema:isPartOf textbook:小学校\/2023\/生活\/130;
+    schema:pagination "p.60-73";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000010975> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2023/生活/130>
+textbook:AA100000010974 schema:workExample [
+    schema:isPartOf textbook:小学校\/2023\/生活\/130;
+    schema:pagination "p.76-87";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000010976> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2023/生活/130>
+textbook:AA100000010975 schema:workExample [
+    schema:isPartOf textbook:小学校\/2023\/生活\/130;
+    schema:pagination "p.88-97";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000010977> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2023/生活/130>
+textbook:AA100000010976 schema:workExample [
+    schema:isPartOf textbook:小学校\/2023\/生活\/130;
+    schema:pagination "p.100-109";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000000890> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2023/生活/130>
+textbook:AA100000010977 schema:workExample [
+    schema:isPartOf textbook:小学校\/2023\/生活\/130;
+    schema:pagination "( 小寸)p.1-7";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000478> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/小学校/2023/生活/130>.

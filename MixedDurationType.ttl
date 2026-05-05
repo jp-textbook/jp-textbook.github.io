@@ -1,11 +1,21 @@
-<https://w3id.org/jp-textbook/MixedDurationType>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Class>;
-  <http://www.w3.org/2000/01/rdf-schema#comment> "A class that represents the type of time allocation. It consists of one of the following: 'Combined', or 'Selected'."@en, "複合型の配当時数の種類を表現するクラス。「複合 (Combined)」「選択 (Selected)」のいずれかからなる。"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#label> "Duration type"@en, "複合型の配当時数種別"@ja.
-<https://w3id.org/jp-textbook/DurationLUShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/MixedDurationType>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+textbook:MixedDurationType
+  rdf:type rdf:Class;
+  rdfs:comment "A class that represents the type of time allocation. It consists of one of the following: 'Combined', or 'Selected'."@en, "複合型の配当時数の種類を表現するクラス。「複合 (Combined)」「選択 (Selected)」のいずれかからなる。"@ja;
+  rdfs:label "Duration type"@en, "複合型の配当時数種別"@ja.
+textbook:DurationLUShape sh:property [
+    skos:example <textbook:mixedDurationType/Selected>;
+    sh:class textbook:MixedDurationType;
+    sh:description "Indicates the type of mixed duration: Combined or Selected."@en, "複数単元の類型を示す。Combined（複合）,Selected（選択）の２つのどちらかをとる。"@ja;
+    sh:maxCount 1;
+    sh:name "Mixed duration type"@en, "複数単元種別"@ja;
+    sh:order 7;
+    sh:path textbook:mixedDurationType
   ].
-<https://w3id.org/jp-textbook/MixedDurationTypeShape> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/jp-textbook/MixedDurationType>.
-<https://w3id.org/jp-textbook/mixedDurationType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/jp-textbook/MixedDurationType>.
-<https://w3id.org/jp-textbook/mixedDurationType/Combined> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/MixedDurationType>.
-<https://w3id.org/jp-textbook/mixedDurationType/Selected> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/MixedDurationType>.
+textbook:MixedDurationTypeShape sh:targetClass textbook:MixedDurationType.
+textbook:mixedDurationType\/Combined rdf:type textbook:MixedDurationType.
+textbook:mixedDurationType\/Selected rdf:type textbook:MixedDurationType.

@@ -1,52 +1,76 @@
-<https://w3id.org/jp-textbook/高等学校/2021/工業/713>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "196";
-  <http://id.loc.gov/ontologies/bibframe/note> "検定用見本";
-  <http://purl.org/dc/terms/bibliographicCitation> "「自動車工学２」, 高等学校, 工業|713 (実教) 2021年検定";
-  <http://schema.org/editor> "全国自動車教育研究会";
-  <http://schema.org/isbn> "9784407204476";
-  <http://schema.org/name> "自動車工学２";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2021/実教>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/032455341>, <http://id.ndl.go.jp/jpno/23768081>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2021>, <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.53||J3||2021F";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20082159";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2021\/工業\/713
+  bf:dimensions "B5";
+  bf:extent "196";
+  bf:note "検定用見本";
+  dct:bibliographicCitation "「自動車工学２」, 高等学校, 工業|713 (実教) 2021年検定";
+  schema:editor "全国自動車教育研究会";
+  schema:isbn "9784407204476";
+  schema:name "自動車工学２";
+  schema:publisher textbook:publisher\/2021\/実教;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/032455341>, <http://id.ndl.go.jp/jpno/23768081>;
+  textbook:authorizedYear "2021"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2021, textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.53||J3||2021F";
+    nier:recordID "EB20082159";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C007|920j|R03/04";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320210276";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C007|920j|R03/04";
+    textbook-rc:recordID "320210276";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/工業/自動車工学>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/工業>;
-  <https://w3id.org/jp-textbook/textbookNumber> "713";
-  <https://w3id.org/jp-textbook/textbookSymbol> "工業";
-  <https://w3id.org/jp-textbook/usageYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2022-".
-<https://w3id.org/jp-textbook/AA100000034320> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/713>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/工業\/自動車工学;
+  textbook:subjectArea curriculum:高等学校\/2022\/工業;
+  textbook:textbookNumber "713";
+  textbook:textbookSymbol "工業";
+  textbook:usageYear "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2022-".
+textbook:AC100000000825 textbook:textbook textbook:高等学校\/2021\/工業\/713.
+textbook:AA100000034320 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/713;
+    schema:pagination "[2]p.6～82";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034321> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/713>
+textbook:AA100000034321 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/713;
+    schema:pagination "[2]p.84～90";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034322> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/713>
+textbook:AA100000034322 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/713;
+    schema:pagination "[2]p.92～114";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034323> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/713>
+textbook:AA100000034323 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/713;
+    schema:pagination "[2]p.116～151";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034324> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/713>
+textbook:AA100000034324 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/713;
+    schema:pagination "[2]p.152～172";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034325> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/713>
+textbook:AA100000034325 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/713;
+    schema:pagination "[2]p.174～181";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034326> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/713>
+textbook:AA100000034326 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/713;
+    schema:pagination "[2]p.182～186";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000825> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2021/工業/713>.

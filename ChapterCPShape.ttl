@@ -1,24 +1,38 @@
-<https://w3id.org/jp-textbook/ChapterCPShape>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape>;
-  <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/2004/02/skos/core#example> <https://w3id.org/jp-textbook/CPMappingTUTable>;
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/ChapterType>;
-    <http://www.w3.org/ns/shacl#description> "CPMappingLawOfEducation, CPMappingTUBody, CPMappingTUTable, CPMappingACBody, CPMappingACTable のいずれかの値をとる。"@ja, "CPMappingLawOfEducation, CPMappingTUBody, CPMappingTUTable, CPMappingACBody, CPMappingACTable."@en;
-    <http://www.w3.org/ns/shacl#maxCount> 1;
-    <http://www.w3.org/ns/shacl#minCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Compiling Prospectus Type"@en, "趣意書種別"@ja;
-    <http://www.w3.org/ns/shacl#order> 1;
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/chapterType>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix schema: <http://schema.org/>.
+textbook:ChapterCPShape
+  rdf:type sh:NodeShape;
+  sh:property [
+    skos:example textbook:CPMappingTUTable;
+    sh:class textbook:ChapterType;
+    sh:description "CPMappingLawOfEducation, CPMappingTUBody, CPMappingTUTable, CPMappingACBody, CPMappingACTable のいずれかの値をとる。"@ja, "CPMappingLawOfEducation, CPMappingTUBody, CPMappingTUTable, CPMappingACBody, CPMappingACTable."@en;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Compiling Prospectus Type"@en, "趣意書種別"@ja;
+    sh:order 1;
+    sh:path textbook:chapterType
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> "10";
-    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string>;
-    <http://www.w3.org/ns/shacl#maxCount> 1;
-    <http://www.w3.org/ns/shacl#minCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Page"@en, "ページ"@ja;
-    <http://www.w3.org/ns/shacl#order> 2;
-    <http://www.w3.org/ns/shacl#path> <http://schema.org/pagination>
+    skos:example "10";
+    sh:datatype xsd:string;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Page"@en, "ページ"@ja;
+    sh:order 2;
+    sh:path schema:pagination
   ];
-  <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/jp-textbook/CompilingProspectusChapter>.
-<https://w3id.org/jp-textbook/CompilingProspectusShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#node> <https://w3id.org/jp-textbook/ChapterCPShape>
+  sh:targetClass textbook:CompilingProspectusChapter.
+textbook:CompilingProspectusShape sh:property [
+    sh:class textbook:CompilingProspectusChapter;
+    sh:description "<code>textbook:CPtype</code>と<code>schema:name</code>と<code>schema:pagination</code>の3つのプロパティを持つ。繰り返される。"@ja, "Link to the blank node resource(s), which consist of properties <code>textbook:CPtype</code>, <code>schema:name</code>, and <code>schema:pagination</code>. This property values are repeated."@en;
+    sh:maxCount 5;
+    sh:minCount 3;
+    sh:name "Page of Each Table"@en, "各対照表のページ数"@ja;
+    sh:node textbook:ChapterCPShape;
+    sh:nodeKind sh:BlankNode;
+    sh:order 10;
+    sh:path schema:hasPart
   ].

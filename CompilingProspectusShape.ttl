@@ -1,103 +1,111 @@
-<https://w3id.org/jp-textbook/CompilingProspectusShape>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape>;
-  <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/2004/02/skos/core#example> "小学校1,2年生活(教出)2019年検定教科書編修趣意書";
-    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string>;
-    <http://www.w3.org/ns/shacl#maxCount> 1;
-    <http://www.w3.org/ns/shacl#minCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Title"@en, "タイトル"@ja;
-    <http://www.w3.org/ns/shacl#order> 1;
-    <http://www.w3.org/ns/shacl#path> <http://schema.org/name>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix schema: <http://schema.org/>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix qb: <http://purl.org/linked-data/cube#>.
+textbook:CompilingProspectusShape
+  rdf:type sh:NodeShape;
+  sh:property [
+    skos:example "小学校1,2年生活(教出)2019年検定教科書編修趣意書";
+    sh:datatype xsd:string;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Title"@en, "タイトル"@ja;
+    sh:order 1;
+    sh:path schema:name
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> <textbook:school/小学校>;
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/School>;
-    <http://www.w3.org/ns/shacl#description> "Link to the type resource of schools, represented as <code>textbook:school/<var>type of school</var></code>."@en, "対応する学校種別を<code>textbook:school/<var>学校種別</var></code> として示される学校リソースと関連付ける"@ja;
-    <http://www.w3.org/ns/shacl#maxCount> 1;
-    <http://www.w3.org/ns/shacl#minCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Type of schools"@en, "学校種別"@ja;
-    <http://www.w3.org/ns/shacl#order> 2;
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/school>
+    skos:example <textbook:school/小学校>;
+    sh:class textbook:School;
+    sh:description "Link to the type resource of schools, represented as <code>textbook:school/<var>type of school</var></code>."@en, "対応する学校種別を<code>textbook:school/<var>学校種別</var></code> として示される学校リソースと関連付ける"@ja;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Type of schools"@en, "学校種別"@ja;
+    sh:order 2;
+    sh:path textbook:school
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> "\"2001\""^^<http://www.w3.org/2001/XMLSchema#gYear>;
-    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#gYear>;
-    <http://www.w3.org/ns/shacl#name> "Authorized year"@en, "検定年"@ja;
-    <http://www.w3.org/ns/shacl#order> 3;
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/authorizedYear>
+    skos:example "\"2001\""^^xsd:gYear;
+    sh:datatype xsd:gYear;
+    sh:name "Authorized year"@en, "検定年"@ja;
+    sh:order 3;
+    sh:path textbook:authorizedYear
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> <textbook:curriculum/小学校/2020/生活>;
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/curriculum/SubjectArea>;
-    <http://www.w3.org/ns/shacl#description> "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科</var></code>として示される科目リソースと関連付ける"@ja, "Link to the subject area resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var></code>."@en;
-    <http://www.w3.org/ns/shacl#maxCount> 1;
-    <http://www.w3.org/ns/shacl#minCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Subject area"@en, "教科"@ja;
-    <http://www.w3.org/ns/shacl#order> 4;
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/subjectArea>
+    skos:example <textbook:curriculum/小学校/2020/生活>;
+    sh:class curriculum:SubjectArea;
+    sh:description "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科</var></code>として示される科目リソースと関連付ける"@ja, "Link to the subject area resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var></code>."@en;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Subject area"@en, "教科"@ja;
+    sh:order 4;
+    sh:path textbook:subjectArea
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> <textbook:curriculum/小学校/2020/生活/生活>;
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/curriculum/Subject>;
-    <http://www.w3.org/ns/shacl#description> "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科</var>/<var>科目</var></code>として示される種目（科目）リソースと関連付ける。"@ja, "Link to the subject resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var>/<var>subject</var></code>."@en;
-    <http://www.w3.org/ns/shacl#maxCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Subject"@en, "種目（科目）"@ja;
-    <http://www.w3.org/ns/shacl#order> 5;
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/subject>
+    skos:example <textbook:curriculum/小学校/2020/生活/生活>;
+    sh:class curriculum:Subject;
+    sh:description "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科</var>/<var>科目</var></code>として示される種目（科目）リソースと関連付ける。"@ja, "Link to the subject resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var>/<var>subject</var></code>."@en;
+    sh:maxCount 1;
+    sh:name "Subject"@en, "種目（科目）"@ja;
+    sh:order 5;
+    sh:path textbook:subject
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> "1, 2";
-    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#integer>;
-    <http://www.w3.org/ns/shacl#maxCount> 6;
-    <http://www.w3.org/ns/shacl#name> "Target grade"@en, "対象学年"@ja;
-    <http://www.w3.org/ns/shacl#order> 6;
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/grade>
+    skos:example "1, 2";
+    sh:datatype xsd:integer;
+    sh:maxCount 6;
+    sh:name "Target grade"@en, "対象学年"@ja;
+    sh:order 6;
+    sh:path textbook:grade
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> "教出";
-    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string>;
-    <http://www.w3.org/ns/shacl#maxCount> 1;
-    <http://www.w3.org/ns/shacl#minCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Abbreviation for the publisher"@en, "発行者略称"@ja;
-    <http://www.w3.org/ns/shacl#order> 7;
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/publisherAbbreviation>
+    skos:example "教出";
+    sh:datatype xsd:string;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Abbreviation for the publisher"@en, "発行者略称"@ja;
+    sh:order 7;
+    sh:path textbook:publisherAbbreviation
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> <textbook:小学校/2019/生活/108>;
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/Textbook>;
-    <http://www.w3.org/ns/shacl#description> "<code>textbook:<var>学校種別</var>/<var>検定年</var>/<var>教科書記号</var>/<var>教科書番号</var></code>として示される教科書リソースと関連付ける。複数の教科書がある場合、繰り返される。"@ja, "Link to the textbook resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>authorized year</var>/<var>textbook symbol</var>/<var>textbook number</var></code>. If there are multiple textbooks, this property values are repeated according to the number of textbooks times."@en;
-    <http://www.w3.org/ns/shacl#maxCount> 6;
-    <http://www.w3.org/ns/shacl#minCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Textbook"@en, "教科書"@ja;
-    <http://www.w3.org/ns/shacl#order> 8;
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/textbook>
+    skos:example <textbook:小学校/2019/生活/108>;
+    sh:class textbook:Textbook;
+    sh:description "<code>textbook:<var>学校種別</var>/<var>検定年</var>/<var>教科書記号</var>/<var>教科書番号</var></code>として示される教科書リソースと関連付ける。複数の教科書がある場合、繰り返される。"@ja, "Link to the textbook resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>authorized year</var>/<var>textbook symbol</var>/<var>textbook number</var></code>. If there are multiple textbooks, this property values are repeated according to the number of textbooks times."@en;
+    sh:maxCount 6;
+    sh:minCount 1;
+    sh:name "Textbook"@en, "教科書"@ja;
+    sh:order 8;
+    sh:path textbook:textbook
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> <https://www.mext.go.jp/component/a_menu/education/micro_detail/__icsFiles/afieldfile/2019/05/14/1416507_004.pdf>;
-    <http://www.w3.org/ns/shacl#description> "Link to the fulltext possibly at the MEXT website."@en, "本文へのリンク。文部科学省のウェブサイトへのリンク。"@ja;
-    <http://www.w3.org/ns/shacl#maxCount> 1;
-    <http://www.w3.org/ns/shacl#minCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Fulltext URL"@en, "本文URL"@ja;
-    <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI>;
-    <http://www.w3.org/ns/shacl#order> 9;
-    <http://www.w3.org/ns/shacl#path> <http://schema.org/url>
+    skos:example <https://www.mext.go.jp/component/a_menu/education/micro_detail/__icsFiles/afieldfile/2019/05/14/1416507_004.pdf>;
+    sh:description "Link to the fulltext possibly at the MEXT website."@en, "本文へのリンク。文部科学省のウェブサイトへのリンク。"@ja;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Fulltext URL"@en, "本文URL"@ja;
+    sh:nodeKind sh:IRI;
+    sh:order 9;
+    sh:path schema:url
   ], [
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/CompilingProspectusChapter>;
-    <http://www.w3.org/ns/shacl#description> "<code>textbook:CPtype</code>と<code>schema:name</code>と<code>schema:pagination</code>の3つのプロパティを持つ。繰り返される。"@ja, "Link to the blank node resource(s), which consist of properties <code>textbook:CPtype</code>, <code>schema:name</code>, and <code>schema:pagination</code>. This property values are repeated."@en;
-    <http://www.w3.org/ns/shacl#maxCount> 5;
-    <http://www.w3.org/ns/shacl#minCount> 3;
-    <http://www.w3.org/ns/shacl#name> "Page of Each Table"@en, "各対照表のページ数"@ja;
-    <http://www.w3.org/ns/shacl#node> <https://w3id.org/jp-textbook/ChapterCPShape>;
-    <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#BlankNode>;
-    <http://www.w3.org/ns/shacl#order> 10;
-    <http://www.w3.org/ns/shacl#path> <http://schema.org/hasPart>
+    sh:class textbook:CompilingProspectusChapter;
+    sh:description "<code>textbook:CPtype</code>と<code>schema:name</code>と<code>schema:pagination</code>の3つのプロパティを持つ。繰り返される。"@ja, "Link to the blank node resource(s), which consist of properties <code>textbook:CPtype</code>, <code>schema:name</code>, and <code>schema:pagination</code>. This property values are repeated."@en;
+    sh:maxCount 5;
+    sh:minCount 3;
+    sh:name "Page of Each Table"@en, "各対照表のページ数"@ja;
+    sh:node textbook:ChapterCPShape;
+    sh:nodeKind sh:BlankNode;
+    sh:order 10;
+    sh:path schema:hasPart
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> "30-165";
-    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string>;
-    <http://www.w3.org/ns/shacl#maxCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Compiling Prospectus Receipt Number"@en, "編修趣意書受理番号"@ja;
-    <http://www.w3.org/ns/shacl#order> 11;
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/CPreceiptNumber>
+    skos:example "30-165";
+    sh:datatype xsd:string;
+    sh:maxCount 1;
+    sh:name "Compiling Prospectus Receipt Number"@en, "編修趣意書受理番号"@ja;
+    sh:order 11;
+    sh:path textbook:CPreceiptNumber
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> "1";
-    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#integer>;
-    <http://www.w3.org/ns/shacl#description> "Used in display orders"@en, "表示順を決める場合などで利用"@ja;
-    <http://www.w3.org/ns/shacl#maxCount> 1;
-    <http://www.w3.org/ns/shacl#minCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Listing order"@en, "ソート順"@ja;
-    <http://www.w3.org/ns/shacl#order> 12;
-    <http://www.w3.org/ns/shacl#path> <http://purl.org/linked-data/cube#order>
+    skos:example "1";
+    sh:datatype xsd:integer;
+    sh:description "Used in display orders"@en, "表示順を決める場合などで利用"@ja;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Listing order"@en, "ソート順"@ja;
+    sh:order 12;
+    sh:path qb:order
   ];
-  <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/jp-textbook/CompilingProspectus>.
+  sh:targetClass textbook:CompilingProspectus.

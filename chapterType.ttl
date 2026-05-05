@@ -1,9 +1,21 @@
-<https://w3id.org/jp-textbook/chapterType>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
-  <http://www.w3.org/2000/01/rdf-schema#comment> "章種別を示すプロパティ"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/jp-textbook/CompilingProspectus>;
-  <http://www.w3.org/2000/01/rdf-schema#label> "Chapter Type"@en, "章種別"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/jp-textbook/ChapterType>.
-<https://w3id.org/jp-textbook/ChapterCPShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/chapterType>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+textbook:chapterType
+  rdf:type rdf:Property;
+  rdfs:comment "章種別を示すプロパティ"@ja;
+  rdfs:domain textbook:CompilingProspectus;
+  rdfs:label "Chapter Type"@en, "章種別"@ja;
+  rdfs:range textbook:ChapterType.
+textbook:ChapterCPShape sh:property [
+    skos:example textbook:CPMappingTUTable;
+    sh:class textbook:ChapterType;
+    sh:description "CPMappingLawOfEducation, CPMappingTUBody, CPMappingTUTable, CPMappingACBody, CPMappingACTable のいずれかの値をとる。"@ja, "CPMappingLawOfEducation, CPMappingTUBody, CPMappingTUTable, CPMappingACBody, CPMappingACTable."@en;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Compiling Prospectus Type"@en, "趣意書種別"@ja;
+    sh:order 1;
+    sh:path textbook:chapterType
   ].

@@ -1,30 +1,40 @@
-<https://w3id.org/jp-textbook/中学校/2011/地理/724>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "312";
-  <http://purl.org/dc/terms/bibliographicCitation> "「中学社会 地理的分野」, 中学校1,2年, 地理|724 (日文) 2011年検定";
-  <http://schema.org/editor> "金田章裕 ほか12名";
-  <http://schema.org/isbn> "978-4-536-18072-6";
-  <http://schema.org/name> "中学社会 地理的分野";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2011/日文>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/023680883>, <http://id.ndl.go.jp/jpno/22099669>, <https://ci.nii.ac.jp/ncid/BB06602936>, <https://ci.nii.ac.jp/ncid/BB08867512>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2011"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/中学校/2011>, <https://w3id.org/jp-textbook/catalogue/中学校/2012>, <https://w3id.org/jp-textbook/catalogue/中学校/2013>, <https://w3id.org/jp-textbook/catalogue/中学校/2014>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/中学校/2012>;
-  <https://w3id.org/jp-textbook/grade> 1, 2;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K260.3||N13||2011";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB16209316";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:中学校\/2011\/地理\/724
+  bf:dimensions "B5";
+  bf:extent "312";
+  dct:bibliographicCitation "「中学社会 地理的分野」, 中学校1,2年, 地理|724 (日文) 2011年検定";
+  schema:editor "金田章裕 ほか12名";
+  schema:isbn "978-4-536-18072-6";
+  schema:name "中学社会 地理的分野";
+  schema:publisher textbook:publisher\/2011\/日文;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/023680883>, <http://id.ndl.go.jp/jpno/22099669>, <https://ci.nii.ac.jp/ncid/BB06602936>, <https://ci.nii.ac.jp/ncid/BB08867512>;
+  textbook:authorizedYear "2011"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/中学校\/2011, textbook:catalogue\/中学校\/2012, textbook:catalogue\/中学校\/2013, textbook:catalogue\/中学校\/2014;
+  textbook:curriculum curriculum:中学校\/2012;
+  textbook:grade 1, 2;
+  textbook:item [
+    nier:callNumber "K260.3||N13||2011";
+    nier:recordID "EB16209316";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "B116|210-12|H23/24";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "220110032";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "B116|210-12|H23/24";
+    textbook-rc:recordID "220110032";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/中学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/中学校/2012/社会/社会(地理的分野)>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/中学校/2012/社会>;
-  <https://w3id.org/jp-textbook/textbookNumber> "724";
-  <https://w3id.org/jp-textbook/textbookSymbol> "地理";
-  <https://w3id.org/jp-textbook/usageYear> "2012"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2013"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2014"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2015"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2012-2015".
+  textbook:school textbook:school\/中学校;
+  textbook:subject curriculum:中学校\/2012\/社会\/社会\(地理的分野\);
+  textbook:subjectArea curriculum:中学校\/2012\/社会;
+  textbook:textbookNumber "724";
+  textbook:textbookSymbol "地理";
+  textbook:usageYear "2012"^^xsd:gYear, "2013"^^xsd:gYear, "2014"^^xsd:gYear, "2015"^^xsd:gYear;
+  textbook:usageYearRange "2012-2015".

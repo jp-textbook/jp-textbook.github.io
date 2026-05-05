@@ -1,17 +1,24 @@
-<https://w3id.org/jp-textbook/AA100000032070>
-  <http://purl.org/dc/terms/source> <https://w3id.org/jp-textbook/AC100000000801>;
-  <http://purl.org/linked-data/cube#order> 32070;
-  <http://schema.org/duration> <https://w3id.org/jp-textbook/AC100000000801/Time006>;
-  <http://schema.org/name> "実習編";
-  <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/情I/702>;
-    <http://schema.org/pagination> "137-169ページ";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Chapter>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix qb: <http://purl.org/linked-data/cube#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+textbook:AA100000032070
+  dct:source textbook:AC100000000801;
+  qb:order 32070;
+  schema:duration textbook:AC100000000801\/Time006;
+  schema:name "実習編";
+  schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/情I\/702;
+    schema:pagination "137-169ページ";
+    rdf:type schema:Chapter
   ];
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/TeachingUnit>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/cosMappingDescription> "";
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/情報/情報I>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/情報>;
-  <https://w3id.org/jp-textbook/teachingUnitType> <https://w3id.org/jp-textbook/curriculum/Standard>.
+  rdf:type textbook:TeachingUnit;
+  textbook:authorizedYear "2021"^^xsd:gYear;
+  textbook:cosMappingDescription "";
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/情報\/情報I;
+  textbook:subjectArea curriculum:高等学校\/2022\/情報;
+  textbook:teachingUnitType curriculum:Standard.

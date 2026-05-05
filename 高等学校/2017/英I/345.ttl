@@ -1,29 +1,39 @@
-<https://w3id.org/jp-textbook/高等学校/2017/英I/345>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "150";
-  <http://purl.org/dc/terms/bibliographicCitation> "「ATLANTIS Higher Learning」, 高等学校, 英I|345 (チアーズ) 2017年検定";
-  <http://schema.org/editor> "Steven Mitchell Steve Beacall ほか2名";
-  <http://schema.org/isbn> "978-4-907148-70-6";
-  <http://schema.org/name> "ATLANTIS Higher Learning";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2017/チアーズ>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://ci.nii.ac.jp/ncid/BB25971634>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2017"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2017>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2013>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.911||C13||2017A";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20059461";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2017\/英I\/345
+  bf:dimensions "B5";
+  bf:extent "150";
+  dct:bibliographicCitation "「ATLANTIS Higher Learning」, 高等学校, 英I|345 (チアーズ) 2017年検定";
+  schema:editor "Steven Mitchell Steve Beacall ほか2名";
+  schema:isbn "978-4-907148-70-6";
+  schema:name "ATLANTIS Higher Learning";
+  schema:publisher textbook:publisher\/2017\/チアーズ;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <https://ci.nii.ac.jp/ncid/BB25971634>;
+  textbook:authorizedYear "2017"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2017;
+  textbook:curriculum curriculum:高等学校\/2013;
+  textbook:item [
+    nier:callNumber "K280.911||C13||2017A";
+    nier:recordID "EB20059461";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C226|700a|H29/30";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320170160";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C226|700a|H29/30";
+    textbook-rc:recordID "320170160";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2013/外国語/英語表現I>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2013/外国語>;
-  <https://w3id.org/jp-textbook/textbookNumber> "345";
-  <https://w3id.org/jp-textbook/textbookSymbol> "英I";
-  <https://w3id.org/jp-textbook/usageYear> "2018"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2018".
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2013\/外国語\/英語表現I;
+  textbook:subjectArea curriculum:高等学校\/2013\/外国語;
+  textbook:textbookNumber "345";
+  textbook:textbookSymbol "英I";
+  textbook:usageYear "2018"^^xsd:gYear;
+  textbook:usageYearRange "2018".

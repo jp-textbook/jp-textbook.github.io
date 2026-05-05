@@ -1,57 +1,85 @@
-<https://w3id.org/jp-textbook/高等学校/2021/地図/703>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "A4";
-  <http://id.loc.gov/ontologies/bibframe/extent> "172";
-  <http://purl.org/dc/terms/bibliographicCitation> "「標準高等地図」, 高等学校, 地図|703 (帝国) 2021年検定";
-  <http://schema.org/editor> "帝国書院編集部 代表者　佐藤 清 ほか6名";
-  <http://schema.org/isbn> "9784807165346";
-  <http://schema.org/name> "標準高等地図";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2021/帝国>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/032455408>, <http://id.ndl.go.jp/jpno/23757930>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2021>, <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.39||T9||2021B";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20081938";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2021\/地図\/703
+  bf:dimensions "A4";
+  bf:extent "172";
+  dct:bibliographicCitation "「標準高等地図」, 高等学校, 地図|703 (帝国) 2021年検定";
+  schema:editor "帝国書院編集部 代表者　佐藤 清 ほか6名";
+  schema:isbn "9784807165346";
+  schema:name "標準高等地図";
+  schema:publisher textbook:publisher\/2021\/帝国;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/032455408>, <http://id.ndl.go.jp/jpno/23757930>;
+  textbook:authorizedYear "2021"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2021, textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.39||T9||2021B";
+    nier:recordID "EB20081938";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C046|280b|R03/04";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320210055";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C046|280b|R03/04";
+    textbook-rc:recordID "320210055";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/地理歴史/地図>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/地理歴史>;
-  <https://w3id.org/jp-textbook/textbookNumber> "703";
-  <https://w3id.org/jp-textbook/textbookSymbol> "地図";
-  <https://w3id.org/jp-textbook/usageYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2022-".
-<https://w3id.org/jp-textbook/AA100000026936> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/地図/703>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/地理歴史\/地図;
+  textbook:subjectArea curriculum:高等学校\/2022\/地理歴史;
+  textbook:textbookNumber "703";
+  textbook:textbookSymbol "地図";
+  textbook:usageYear "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2022-".
+textbook:AC100000000618 textbook:textbook textbook:高等学校\/2021\/地図\/703.
+textbook:AA100000026936 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/地図\/703;
+    schema:pagination "p.1-3";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026937> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/地図/703>
+textbook:AA100000026937 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/地図\/703;
+    schema:pagination "p.4-5";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026938> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/地図/703>
+textbook:AA100000026938 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/地図\/703;
+    schema:pagination "p.7-12，15-31，33-38，41-64，67-82";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026939> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/地図/703>
+textbook:AA100000026939 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/地図\/703;
+    schema:pagination "p.13-14，32，39-40，50，65-66，70，71";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026940> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/地図/703>
+textbook:AA100000026940 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/地図\/703;
+    schema:pagination "p.83-112";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026941> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/地図/703>
+textbook:AA100000026941 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/地図\/703;
+    schema:pagination "p.113-146";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026942> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/地図/703>
+textbook:AA100000026942 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/地図\/703;
+    schema:pagination "p.147-158";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026943> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/地図/703>
+textbook:AA100000026943 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/地図\/703;
+    schema:pagination "p.159-160";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000026944> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/地図/703>
+textbook:AA100000026944 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/地図\/703;
+    schema:pagination "p.170，p.171-172";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000618> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2021/地図/703>.

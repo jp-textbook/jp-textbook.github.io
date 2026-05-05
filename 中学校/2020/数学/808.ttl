@@ -1,55 +1,83 @@
-<https://w3id.org/jp-textbook/中学校/2020/数学/808>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "254";
-  <http://purl.org/dc/terms/bibliographicCitation> "「中学数学２」, 中学校2年, 数学|808 (日文) 2020年検定";
-  <http://schema.org/editor> "重松敬一 小山正孝 飯田慎司　ほか38名";
-  <http://schema.org/isbn> "9784536181686";
-  <http://schema.org/name> "中学数学２";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2020/日文>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/031626649>, <http://id.ndl.go.jp/jpno/23577998>, <https://ci.nii.ac.jp/ncid/BB31342134>, <https://ci.nii.ac.jp/ncid/BC06714959>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2020"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/中学校/2020>, <https://w3id.org/jp-textbook/catalogue/中学校/2021>, <https://w3id.org/jp-textbook/catalogue/中学校/2022>, <https://w3id.org/jp-textbook/catalogue/中学校/2023>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/中学校/2021>;
-  <https://w3id.org/jp-textbook/grade> 2;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K260.41||N13||2020";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20080745";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:中学校\/2020\/数学\/808
+  bf:dimensions "B5";
+  bf:extent "254";
+  dct:bibliographicCitation "「中学数学２」, 中学校2年, 数学|808 (日文) 2020年検定";
+  schema:editor "重松敬一 小山正孝 飯田慎司　ほか38名";
+  schema:isbn "9784536181686";
+  schema:name "中学数学２";
+  schema:publisher textbook:publisher\/2020\/日文;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/031626649>, <http://id.ndl.go.jp/jpno/23577998>, <https://ci.nii.ac.jp/ncid/BB31342134>, <https://ci.nii.ac.jp/ncid/BC06714959>;
+  textbook:authorizedYear "2020"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/中学校\/2020, textbook:catalogue\/中学校\/2021, textbook:catalogue\/中学校\/2022, textbook:catalogue\/中学校\/2023;
+  textbook:curriculum curriculum:中学校\/2021;
+  textbook:grade 2;
+  textbook:item [
+    nier:callNumber "K260.41||N13||2020";
+    nier:recordID "EB20080745";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "B116|302|R02/03";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "220200085";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "B116|302|R02/03";
+    textbook-rc:recordID "220200085";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/中学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/中学校/2021/数学/数学>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/中学校/2021/数学>;
-  <https://w3id.org/jp-textbook/textbookNumber> "808";
-  <https://w3id.org/jp-textbook/textbookSymbol> "数学";
-  <https://w3id.org/jp-textbook/usageYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2021-2024".
-<https://w3id.org/jp-textbook/AA100000015294> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/808>
+  textbook:school textbook:school\/中学校;
+  textbook:subject curriculum:中学校\/2021\/数学\/数学;
+  textbook:subjectArea curriculum:中学校\/2021\/数学;
+  textbook:textbookNumber "808";
+  textbook:textbookSymbol "数学";
+  textbook:usageYear "2021"^^xsd:gYear, "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear;
+  textbook:usageYearRange "2021-2024".
+textbook:AC100000000283 textbook:textbook textbook:中学校\/2020\/数学\/808.
+textbook:AB100000001089 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/808;
+    schema:numberOfPages 1;
+    schema:pagination "49";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015295> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/808>
+textbook:AB100000001090 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/808;
+    schema:numberOfPages 1;
+    schema:pagination "187";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015296> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/808>
+textbook:AA100000015294 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/808;
+    schema:pagination "p.9～34";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015297> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/808>
+textbook:AA100000015295 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/808;
+    schema:pagination "p.35～58";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015298> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/808>
+textbook:AA100000015296 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/808;
+    schema:pagination "p.59～94";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015299> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/808>
+textbook:AA100000015297 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/808;
+    schema:pagination "p.95～130";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001089> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/808>
+textbook:AA100000015298 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/808;
+    schema:pagination "p.131～160";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001090> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/数学/808>
+textbook:AA100000015299 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/数学\/808;
+    schema:pagination "p.161～190";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000283> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/中学校/2020/数学/808>.

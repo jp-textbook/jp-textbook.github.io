@@ -1,20 +1,28 @@
-<https://w3id.org/jp-textbook/AA100000023196>
-  <http://purl.org/dc/terms/source> <https://w3id.org/jp-textbook/AC100000001209>;
-  <http://purl.org/linked-data/cube#order> 23196;
-  <http://schema.org/duration> <https://w3id.org/jp-textbook/AC100000001209/Time001>;
-  <http://schema.org/name> "この教科書で学ぶにあたって";
-  <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2024/公民/225-92>;
-    <http://schema.org/pagination> "ⅷ～ⅸ頁";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Chapter>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix qb: <http://purl.org/linked-data/cube#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix cs: <https://w3id.org/jp-cos/>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+textbook:AA100000023196
+  dct:source textbook:AC100000001209;
+  qb:order 23196;
+  schema:duration textbook:AC100000001209\/Time001;
+  schema:name "この教科書で学ぶにあたって";
+  schema:workExample [
+    schema:isPartOf textbook:中学校\/2024\/公民\/225-92;
+    schema:pagination "ⅷ～ⅸ頁";
+    rdf:type schema:Chapter
   ];
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/TeachingUnit>;
-  <https://w3id.org/jp-cos/cosItem> <https://w3id.org/jp-cos/8323232200000000>;
-  <https://w3id.org/jp-cos/originalCosItem> <https://w3id.org/jp-cos/8323232200000000>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/cosMappingDescription> "目標(2)社会的事象の意味や意義，特色や相互の関連 を現代の社会生活と関連付けて多面的・多角的に考察 したり，現代社会に見られる課題について公正に判断 したりする力，思考・判断したことを説明したり，そ れらを基に議論したりする力を養う";
-  <https://w3id.org/jp-textbook/grade> 3;
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/中学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/中学校/2021/社会/社会(公民的分野)>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/中学校/2021/社会>;
-  <https://w3id.org/jp-textbook/teachingUnitType> <https://w3id.org/jp-textbook/curriculum/Standard>.
+  rdf:type textbook:TeachingUnit;
+  cs:cosItem cs:8323232200000000;
+  cs:originalCosItem cs:8323232200000000;
+  textbook:authorizedYear "2024"^^xsd:gYear;
+  textbook:cosMappingDescription "目標(2)社会的事象の意味や意義，特色や相互の関連 を現代の社会生活と関連付けて多面的・多角的に考察 したり，現代社会に見られる課題について公正に判断 したりする力，思考・判断したことを説明したり，そ れらを基に議論したりする力を養う";
+  textbook:grade 3;
+  textbook:school textbook:school\/中学校;
+  textbook:subject curriculum:中学校\/2021\/社会\/社会\(公民的分野\);
+  textbook:subjectArea curriculum:中学校\/2021\/社会;
+  textbook:teachingUnitType curriculum:Standard.

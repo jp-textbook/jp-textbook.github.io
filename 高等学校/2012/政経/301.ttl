@@ -1,29 +1,39 @@
-<https://w3id.org/jp-textbook/高等学校/2012/政経/301>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "A5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "246";
-  <http://purl.org/dc/terms/bibliographicCitation> "「高等学校 政治・経済」, 高等学校, 政経|301 (第一) 2012年検定";
-  <http://schema.org/editor> "三浦軍三 ほか11名";
-  <http://schema.org/isbn> "978-4-8040-0645-1";
-  <http://schema.org/name> "高等学校 政治・経済";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2012/第一>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/024610724>, <http://id.ndl.go.jp/jpno/22283172>, <https://ci.nii.ac.jp/ncid/BB12282079>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2012"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2012>, <https://w3id.org/jp-textbook/catalogue/高等学校/2013>, <https://w3id.org/jp-textbook/catalogue/高等学校/2014>, <https://w3id.org/jp-textbook/catalogue/高等学校/2015>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2013>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.35||D7||2012";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB16220280";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2012\/政経\/301
+  bf:dimensions "A5";
+  bf:extent "246";
+  dct:bibliographicCitation "「高等学校 政治・経済」, 高等学校, 政経|301 (第一) 2012年検定";
+  schema:editor "三浦軍三 ほか11名";
+  schema:isbn "978-4-8040-0645-1";
+  schema:name "高等学校 政治・経済";
+  schema:publisher textbook:publisher\/2012\/第一;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/024610724>, <http://id.ndl.go.jp/jpno/22283172>, <https://ci.nii.ac.jp/ncid/BB12282079>;
+  textbook:authorizedYear "2012"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2012, textbook:catalogue\/高等学校\/2013, textbook:catalogue\/高等学校\/2014, textbook:catalogue\/高等学校\/2015;
+  textbook:curriculum curriculum:高等学校\/2013;
+  textbook:item [
+    nier:callNumber "K280.35||D7||2012";
+    nier:recordID "EB16220280";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C183|220|H24/25";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320120081";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C183|220|H24/25";
+    textbook-rc:recordID "320120081";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2013/公民/政治・経済>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2013/公民>;
-  <https://w3id.org/jp-textbook/textbookNumber> "301";
-  <https://w3id.org/jp-textbook/textbookSymbol> "政経";
-  <https://w3id.org/jp-textbook/usageYear> "2013"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2014"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2015"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2016"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2013-2016".
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2013\/公民\/政治・経済;
+  textbook:subjectArea curriculum:高等学校\/2013\/公民;
+  textbook:textbookNumber "301";
+  textbook:textbookSymbol "政経";
+  textbook:usageYear "2013"^^xsd:gYear, "2014"^^xsd:gYear, "2015"^^xsd:gYear, "2016"^^xsd:gYear;
+  textbook:usageYearRange "2013-2016".

@@ -1,9 +1,21 @@
-<https://w3id.org/jp-textbook/publisherNumber>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
-  <http://www.w3.org/2000/01/rdf-schema#comment> "発行者番号を示すプロパティ"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/jp-textbook/Publisher>;
-  <http://www.w3.org/2000/01/rdf-schema#label> "Publisher number"@en, "発行者番号"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal>.
-<https://w3id.org/jp-textbook/PublisherShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/publisherNumber>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+textbook:publisherNumber
+  rdf:type rdf:Property;
+  rdfs:comment "発行者番号を示すプロパティ"@ja;
+  rdfs:domain textbook:Publisher;
+  rdfs:label "Publisher number"@en, "発行者番号"@ja;
+  rdfs:range rdfs:Literal.
+textbook:PublisherShape sh:property [
+    skos:example "89";
+    sh:datatype xsd:string;
+    sh:description "Repeatable. ex. <a href=\"https://w3id.org/jp-textbook/publisher/2009/日文\">textbook:publisher/2009/日文</a>."@en, "繰り返しあり。（例：<a href=\"https://w3id.org/jp-textbook/publisher/2009/日文\">textbook:publisher/2009/日文</a>）"@ja;
+    sh:minCount 1;
+    sh:name "Publisher number"@en, "発行者番号"@ja;
+    sh:order 6;
+    sh:path textbook:publisherNumber
   ].

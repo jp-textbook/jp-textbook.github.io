@@ -1,24 +1,32 @@
-<https://w3id.org/jp-textbook/小学校/1991/算数/608>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "A5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "104";
-  <http://purl.org/dc/terms/bibliographicCitation> "「小学校算数6年下」, 小学校6年, 算数|608 (学図) 1991年検定";
-  <http://schema.org/editor> "川口 廷,一松 信,ほか31名";
-  <http://schema.org/name> "小学校算数6年下";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/1991/学図>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <https://w3id.org/jp-textbook/authorizedYear> "1991"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/小学校/1991>, <https://w3id.org/jp-textbook/catalogue/小学校/1992>, <https://w3id.org/jp-textbook/catalogue/小学校/1993>, <https://w3id.org/jp-textbook/catalogue/小学校/1994>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/小学校/1992>;
-  <https://w3id.org/jp-textbook/grade> 6;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K170.41||G3N||91/92";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB10000793";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+textbook:小学校\/1991\/算数\/608
+  bf:dimensions "A5";
+  bf:extent "104";
+  dct:bibliographicCitation "「小学校算数6年下」, 小学校6年, 算数|608 (学図) 1991年検定";
+  schema:editor "川口 廷,一松 信,ほか31名";
+  schema:name "小学校算数6年下";
+  schema:publisher textbook:publisher\/1991\/学図;
+  rdf:type textbook:Textbook;
+  textbook:authorizedYear "1991"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/小学校\/1991, textbook:catalogue\/小学校\/1992, textbook:catalogue\/小学校\/1993, textbook:catalogue\/小学校\/1994;
+  textbook:curriculum curriculum:小学校\/1992;
+  textbook:grade 6;
+  textbook:item [
+    nier:callNumber "K170.41||G3N||91/92";
+    nier:recordID "EB10000793";
+    rdf:type textbook:ItemNIER
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/小学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/小学校/1992/算数/算数>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/小学校/1992/算数>;
-  <https://w3id.org/jp-textbook/textbookNumber> "608";
-  <https://w3id.org/jp-textbook/textbookSymbol> "算数";
-  <https://w3id.org/jp-textbook/usageYear> "1992"^^<http://www.w3.org/2001/XMLSchema#gYear>, "1993"^^<http://www.w3.org/2001/XMLSchema#gYear>, "1994"^^<http://www.w3.org/2001/XMLSchema#gYear>, "1995"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "1992-1995".
+  textbook:school textbook:school\/小学校;
+  textbook:subject curriculum:小学校\/1992\/算数\/算数;
+  textbook:subjectArea curriculum:小学校\/1992\/算数;
+  textbook:textbookNumber "608";
+  textbook:textbookSymbol "算数";
+  textbook:usageYear "1992"^^xsd:gYear, "1993"^^xsd:gYear, "1994"^^xsd:gYear, "1995"^^xsd:gYear;
+  textbook:usageYearRange "1992-1995".

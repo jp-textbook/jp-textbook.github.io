@@ -1,23 +1,31 @@
-<https://w3id.org/jp-textbook/高等学校/2002/書I/004>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "100";
-  <http://purl.org/dc/terms/bibliographicCitation> "「書法芸術 1」, 高等学校, 書I|004 (中教) 2002年検定";
-  <http://schema.org/editor> "江原 利津子 幕田 隆 ほか27名";
-  <http://schema.org/name> "書法芸術 1";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2002/中教>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2002"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2002>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2003>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.72||C7||02B";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB10025716";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+textbook:高等学校\/2002\/書I\/004
+  bf:dimensions "B5";
+  bf:extent "100";
+  dct:bibliographicCitation "「書法芸術 1」, 高等学校, 書I|004 (中教) 2002年検定";
+  schema:editor "江原 利津子 幕田 隆 ほか27名";
+  schema:name "書法芸術 1";
+  schema:publisher textbook:publisher\/2002\/中教;
+  rdf:type textbook:Textbook;
+  textbook:authorizedYear "2002"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2002;
+  textbook:curriculum curriculum:高等学校\/2003;
+  textbook:item [
+    nier:callNumber "K280.72||C7||02B";
+    nier:recordID "EB10025716";
+    rdf:type textbook:ItemNIER
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2003/芸術/書道I>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2003/芸術>;
-  <https://w3id.org/jp-textbook/textbookNumber> "004";
-  <https://w3id.org/jp-textbook/textbookSymbol> "書I";
-  <https://w3id.org/jp-textbook/usageYear> "2003"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2003".
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2003\/芸術\/書道I;
+  textbook:subjectArea curriculum:高等学校\/2003\/芸術;
+  textbook:textbookNumber "004";
+  textbook:textbookSymbol "書I";
+  textbook:usageYear "2003"^^xsd:gYear;
+  textbook:usageYearRange "2003".

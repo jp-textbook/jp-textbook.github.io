@@ -1,29 +1,39 @@
-<https://w3id.org/jp-textbook/中学校/2024/道徳/116-84>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "42；B5";
-  <http://purl.org/dc/terms/bibliographicCitation> "「中学道徳　あすを生きる　２　 道徳ノート」, 中学校, 道徳|116-84 (日文) 2024年検定";
-  <http://schema.org/editor> "越智 貢 島 恒生 吉澤 良保 ほか49名";
-  <http://schema.org/isbn> "9784536182171";
-  <http://schema.org/name> "中学道徳　あすを生きる　２　 道徳ノート";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2024/日文>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>, <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://ci.nii.ac.jp/ncid/BD08514834>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/中学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/中学校/2021>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K260.31||N13||2024";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20083372";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:中学校\/2024\/道徳\/116-84
+  bf:dimensions "42；B5";
+  dct:bibliographicCitation "「中学道徳　あすを生きる　２　 道徳ノート」, 中学校, 道徳|116-84 (日文) 2024年検定";
+  schema:editor "越智 貢 島 恒生 吉澤 良保 ほか49名";
+  schema:isbn "9784536182171";
+  schema:name "中学道徳　あすを生きる　２　 道徳ノート";
+  schema:publisher textbook:publisher\/2024\/日文;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <https://ci.nii.ac.jp/ncid/BD08514834>;
+  textbook:authorizedYear "2024"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/中学校\/2024;
+  textbook:curriculum curriculum:中学校\/2021;
+  textbook:item [
+    nier:callNumber "K260.31||N13||2024";
+    nier:recordID "EB20083372";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "B116|012|R06/07";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "220240124";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.loc.gov/ontologies/bibframe/Item>
+    textbook-rc:callNumber "B116|012|R06/07";
+    textbook-rc:recordID "220240124";
+    rdf:type bf:Item
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/中学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/中学校/2021/道徳/道徳>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/中学校/2021/道徳>;
-  <https://w3id.org/jp-textbook/textbookNumber> "116-84";
-  <https://w3id.org/jp-textbook/textbookSymbol> "道徳";
-  <https://w3id.org/jp-textbook/usageYear> "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2025-".
-<https://w3id.org/jp-textbook/AC100000001298> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/中学校/2024/道徳/116-84>.
+  textbook:school textbook:school\/中学校;
+  textbook:subject curriculum:中学校\/2021\/道徳\/道徳;
+  textbook:subjectArea curriculum:中学校\/2021\/道徳;
+  textbook:textbookNumber "116-84";
+  textbook:textbookSymbol "道徳";
+  textbook:usageYear "2025"^^xsd:gYear;
+  textbook:usageYearRange "2025-".
+textbook:AC100000001298 textbook:textbook textbook:中学校\/2024\/道徳\/116-84.

@@ -1,12 +1,29 @@
-<https://w3id.org/jp-textbook/catalogue>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
-  <http://www.w3.org/2000/01/rdf-schema#comment> "教科書が掲載された教科書目録を表現するプロパティ"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#label> "Textbook catalogue(s)"@en, "教科書目録"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/jp-textbook/Catalogue>.
-<https://w3id.org/jp-textbook/PublisherShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/catalogue>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+textbook:catalogue
+  rdf:type rdf:Property;
+  rdfs:comment "教科書が掲載された教科書目録を表現するプロパティ"@ja;
+  rdfs:domain textbook:Textbook;
+  rdfs:label "Textbook catalogue(s)"@en, "教科書目録"@ja;
+  rdfs:range textbook:Catalogue.
+textbook:PublisherShape sh:property [
+    skos:example <textbook:catalogue/高等学校/2017>;
+    sh:class textbook:Catalogue;
+    sh:description "Repeatable. Add link to the textbook catalogue resource represented as <code>textbook:catalogue/<var>type of schools</var>/<var>catalogue publication year</var></code>"@en, "繰り返しあり。<code>textbook:catalogue/<var>学校種別</var>/<var>教科書目録発行年</var></code>として示される教科書目録リソースと関連付ける"@ja;
+    sh:minCount 1;
+    sh:name "Textbook catalogue listed"@en, "掲載教科書目録"@ja;
+    sh:order 4;
+    sh:path textbook:catalogue
   ].
-<https://w3id.org/jp-textbook/TextbookShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/catalogue>
+textbook:TextbookShape sh:property [
+    skos:example <textbook:catalogue/中学校/2004>;
+    sh:class textbook:Catalogue;
+    sh:description "<code>textbook:catalogue/<var>学校種別</var>/<var>教科書目録発行年</var></code>として示される教科書目録リソースと関連付ける。繰り返される（バージョン11.0より、初出だけでなく当該教科書が掲載されている全ての教科書目録を繰り返しで表現するように変更）。"@ja, "Link to the catalogue resources, represented as <code>textbook:catalogue/<var>type of school</var>/<var>first published year</var></code>. Since version 11.0, this property has changed to link to all the related catalogues."@en;
+    sh:minCount 1;
+    sh:name "Textbook catalogue"@en, "掲載教科書目録"@ja;
+    sh:order 10;
+    sh:path textbook:catalogue
   ].

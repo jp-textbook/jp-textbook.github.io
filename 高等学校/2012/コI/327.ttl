@@ -1,29 +1,39 @@
-<https://w3id.org/jp-textbook/高等学校/2012/コI/327>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "298";
-  <http://purl.org/dc/terms/bibliographicCitation> "「ATLANTIS English Communication I」, 高等学校, コI|327 (チアーズ) 2012年検定";
-  <http://schema.org/editor> "Steven Mitchell Steve Beacall 千葉仁美 金田ひとみ";
-  <http://schema.org/isbn> "978-4-9905169-6-3";
-  <http://schema.org/name> "ATLANTIS English Communication I";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2012/チアーズ>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://ci.nii.ac.jp/ncid/BB12340925>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2012"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2012>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2013>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.91||C13||2012";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB16220372";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2012\/コI\/327
+  bf:dimensions "B5";
+  bf:extent "298";
+  dct:bibliographicCitation "「ATLANTIS English Communication I」, 高等学校, コI|327 (チアーズ) 2012年検定";
+  schema:editor "Steven Mitchell Steve Beacall 千葉仁美 金田ひとみ";
+  schema:isbn "978-4-9905169-6-3";
+  schema:name "ATLANTIS English Communication I";
+  schema:publisher textbook:publisher\/2012\/チアーズ;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <https://ci.nii.ac.jp/ncid/BB12340925>;
+  textbook:authorizedYear "2012"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2012;
+  textbook:curriculum curriculum:高等学校\/2013;
+  textbook:item [
+    nier:callNumber "K280.91||C13||2012";
+    nier:recordID "EB16220372";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C226|740|H24/25";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320120175";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C226|740|H24/25";
+    textbook-rc:recordID "320120175";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2013/外国語/コミュニケーション英語I>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2013/外国語>;
-  <https://w3id.org/jp-textbook/textbookNumber> "327";
-  <https://w3id.org/jp-textbook/textbookSymbol> "コI";
-  <https://w3id.org/jp-textbook/usageYear> "2013"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2013".
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2013\/外国語\/コミュニケーション英語I;
+  textbook:subjectArea curriculum:高等学校\/2013\/外国語;
+  textbook:textbookNumber "327";
+  textbook:textbookSymbol "コI";
+  textbook:usageYear "2013"^^xsd:gYear;
+  textbook:usageYearRange "2013".

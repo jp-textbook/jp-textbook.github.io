@@ -1,97 +1,151 @@
-<https://w3id.org/jp-textbook/中学校/2020/道徳/709>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "194";
-  <http://purl.org/dc/terms/bibliographicCitation> "「道徳　中学１　生き方から学ぶ」, 中学校1年, 道徳|709 (日科) 2020年検定";
-  <http://schema.org/editor> "白木みどり　ほか２１名";
-  <http://schema.org/isbn> "9784909669162";
-  <http://schema.org/name> "道徳　中学１　生き方から学ぶ";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2020/日科>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/031626674>, <http://id.ndl.go.jp/jpno/23582714>, <https://ci.nii.ac.jp/ncid/BB31425967>, <https://ci.nii.ac.jp/ncid/BC06944562>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2020"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/中学校/2020>, <https://w3id.org/jp-textbook/catalogue/中学校/2021>, <https://w3id.org/jp-textbook/catalogue/中学校/2022>, <https://w3id.org/jp-textbook/catalogue/中学校/2023>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/中学校/2021>;
-  <https://w3id.org/jp-textbook/grade> 1;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K260.31||N24||2020";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20080830";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:中学校\/2020\/道徳\/709
+  bf:dimensions "B5";
+  bf:extent "194";
+  dct:bibliographicCitation "「道徳　中学１　生き方から学ぶ」, 中学校1年, 道徳|709 (日科) 2020年検定";
+  schema:editor "白木みどり　ほか２１名";
+  schema:isbn "9784909669162";
+  schema:name "道徳　中学１　生き方から学ぶ";
+  schema:publisher textbook:publisher\/2020\/日科;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/031626674>, <http://id.ndl.go.jp/jpno/23582714>, <https://ci.nii.ac.jp/ncid/BB31425967>, <https://ci.nii.ac.jp/ncid/BC06944562>;
+  textbook:authorizedYear "2020"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/中学校\/2020, textbook:catalogue\/中学校\/2021, textbook:catalogue\/中学校\/2022, textbook:catalogue\/中学校\/2023;
+  textbook:curriculum curriculum:中学校\/2021;
+  textbook:grade 1;
+  textbook:item [
+    nier:callNumber "K260.31||N24||2020";
+    nier:recordID "EB20080830";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "B233|011|R02/03";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "220200025";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "B233|011|R02/03";
+    textbook-rc:recordID "220200025";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/中学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/中学校/2021/道徳/道徳>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/中学校/2021/道徳>;
-  <https://w3id.org/jp-textbook/textbookNumber> "709";
-  <https://w3id.org/jp-textbook/textbookSymbol> "道徳";
-  <https://w3id.org/jp-textbook/usageYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2021-2024".
-<https://w3id.org/jp-textbook/AA100000018518> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/道徳/709>
+  textbook:school textbook:school\/中学校;
+  textbook:subject curriculum:中学校\/2021\/道徳\/道徳;
+  textbook:subjectArea curriculum:中学校\/2021\/道徳;
+  textbook:textbookNumber "709";
+  textbook:textbookSymbol "道徳";
+  textbook:usageYear "2021"^^xsd:gYear, "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear;
+  textbook:usageYearRange "2021-2024".
+textbook:AC100000000358 textbook:textbook textbook:中学校\/2020\/道徳\/709.
+textbook:AA100000018518 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/道徳\/709;
+    schema:pagination "p.8-12";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018519> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/道徳/709>
+textbook:AA100000018519 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/道徳\/709;
+    schema:pagination "p.13-15";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018520> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/道徳/709>
+textbook:AA100000018520 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/道徳\/709;
+    schema:pagination "p.16-25";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018521> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/道徳/709>
+textbook:AA100000018521 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/道徳\/709;
+    schema:pagination "p.26-29";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018522> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/道徳/709>
+textbook:AA100000018522 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/道徳\/709;
+    schema:pagination "p.30-35";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018523> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/道徳/709>
+textbook:AA100000018523 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/道徳\/709;
+    schema:pagination "p.38-43";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018524> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/道徳/709>
+textbook:AA100000018524 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/道徳\/709;
+    schema:pagination "p.44-46";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018525> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/道徳/709>
+textbook:AA100000018525 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/道徳\/709;
+    schema:pagination "p.47-65";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018526> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/道徳/709>
+textbook:AA100000018526 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/道徳\/709;
+    schema:pagination "p.66-71";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018527> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/道徳/709>
+textbook:AA100000018527 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/道徳\/709;
+    schema:pagination "p.74-85";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018528> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/道徳/709>
+textbook:AA100000018528 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/道徳\/709;
+    schema:pagination "p.86-103";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018529> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/道徳/709>
+textbook:AA100000018529 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/道徳\/709;
+    schema:pagination "p.104-119";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018530> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/道徳/709>
+textbook:AA100000018530 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/道徳\/709;
+    schema:pagination "p.120-124";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018531> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/道徳/709>
+textbook:AA100000018531 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/道徳\/709;
+    schema:pagination "p.125-135";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018532> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/道徳/709>
+textbook:AA100000018532 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/道徳\/709;
+    schema:pagination "p.136-140";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018533> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/道徳/709>
+textbook:AA100000018533 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/道徳\/709;
+    schema:pagination "p.141-147";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018534> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/道徳/709>
+textbook:AA100000018534 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/道徳\/709;
+    schema:pagination "p.148-152";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018535> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/道徳/709>
+textbook:AA100000018535 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/道徳\/709;
+    schema:pagination "p.153-160";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018536> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/道徳/709>
+textbook:AA100000018536 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/道徳\/709;
+    schema:pagination "p.162-169";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018537> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/道徳/709>
+textbook:AA100000018537 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/道徳\/709;
+    schema:pagination "p.170-177";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018538> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/道徳/709>
+textbook:AA100000018538 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/道徳\/709;
+    schema:pagination "p.178-180";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000018539> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/道徳/709>
+textbook:AA100000018539 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/道徳\/709;
+    schema:pagination "p.181-189";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000358> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/中学校/2020/道徳/709>.

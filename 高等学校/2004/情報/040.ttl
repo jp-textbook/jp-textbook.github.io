@@ -1,29 +1,39 @@
-<https://w3id.org/jp-textbook/高等学校/2004/情報/040>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "112";
-  <http://purl.org/dc/terms/bibliographicCitation> "「改訂版 情報A ようこそ情報の世界へ」, 高等学校, 情報|040 (数研) 2004年検定";
-  <http://schema.org/editor> "坂村健 ほか15名";
-  <http://schema.org/isbn> "4-410-82101-6";
-  <http://schema.org/name> "改訂版 情報A ようこそ情報の世界へ";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2004/数研>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/000007732159>, <http://id.ndl.go.jp/jpno/20776504>, <https://ci.nii.ac.jp/ncid/BA72160505>, <https://ci.nii.ac.jp/ncid/BA80879023>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2004"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2004>, <https://w3id.org/jp-textbook/catalogue/高等学校/2005>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2003>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.69||S19||04A";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB10026335";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2004\/情報\/040
+  bf:dimensions "B5";
+  bf:extent "112";
+  dct:bibliographicCitation "「改訂版 情報A ようこそ情報の世界へ」, 高等学校, 情報|040 (数研) 2004年検定";
+  schema:editor "坂村健 ほか15名";
+  schema:isbn "4-410-82101-6";
+  schema:name "改訂版 情報A ようこそ情報の世界へ";
+  schema:publisher textbook:publisher\/2004\/数研;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/000007732159>, <http://id.ndl.go.jp/jpno/20776504>, <https://ci.nii.ac.jp/ncid/BA72160505>, <https://ci.nii.ac.jp/ncid/BA80879023>;
+  textbook:authorizedYear "2004"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2004, textbook:catalogue\/高等学校\/2005;
+  textbook:curriculum curriculum:高等学校\/2003;
+  textbook:item [
+    nier:callNumber "K280.69||S19||04A";
+    nier:recordID "EB10026335";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C104|890a|H16/17";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320040071";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C104|890a|H16/17";
+    textbook-rc:recordID "320040071";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2003/情報/情報A>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2003/情報>;
-  <https://w3id.org/jp-textbook/textbookNumber> "040";
-  <https://w3id.org/jp-textbook/textbookSymbol> "情報";
-  <https://w3id.org/jp-textbook/usageYear> "2005"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2006"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2005-2006".
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2003\/情報\/情報A;
+  textbook:subjectArea curriculum:高等学校\/2003\/情報;
+  textbook:textbookNumber "040";
+  textbook:textbookSymbol "情報";
+  textbook:usageYear "2005"^^xsd:gYear, "2006"^^xsd:gYear;
+  textbook:usageYearRange "2005-2006".

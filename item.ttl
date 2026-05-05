@@ -1,9 +1,21 @@
-<https://w3id.org/jp-textbook/item>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
-  <http://www.w3.org/2000/01/rdf-schema#comment> "所蔵資料を表現するプロパティ"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#label> "Holding item"@en, "所蔵資料"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#range> <http://id.loc.gov/ontologies/bibframe/Item>.
-<https://w3id.org/jp-textbook/TextbookShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/item>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+textbook:item
+  rdf:type rdf:Property;
+  rdfs:comment "所蔵資料を表現するプロパティ"@ja;
+  rdfs:domain textbook:Textbook;
+  rdfs:label "Holding item"@en, "所蔵資料"@ja;
+  rdfs:range bf:Item.
+textbook:TextbookShape sh:property [
+    sh:class bf:Item;
+    sh:description "<code>nier:recordID</code>と<code>nier:callNumber</code>、もしくは、<code>textbook-rc:recordID</code>と<code>textbook-rc:callNumber</code>の2つの所蔵情報用プロパティを持つ。複数の所蔵情報がある場合、所蔵情報の件数分、繰り返される。"@ja, "Link to the blank node resource(s), which consist of either of properties 1) <code>nier:recordID</code> and <code>nier:callNumber</code>, or 2) <code>textbook-rc:recordID</code> and <code>textbook-rc:callNumber</code>. If there are multiple holdings in a library, this property values are repeated according to the number of holdings times."@en;
+    sh:minCount 1;
+    sh:name "Holding item(s)"@en, "所蔵情報"@ja;
+    sh:node textbook:ItemShape;
+    sh:nodeKind sh:BlankNode;
+    sh:order 19;
+    sh:path textbook:item
   ].

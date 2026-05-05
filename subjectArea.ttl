@@ -1,15 +1,42 @@
-<https://w3id.org/jp-textbook/subjectArea>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
-  <http://www.w3.org/2000/01/rdf-schema#comment> "対応する教科を示すプロパティ"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#label> "Subject area"@en, "教科"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/jp-textbook/curriculum/SubjectArea>.
-<https://w3id.org/jp-textbook/CompilingProspectusShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/subjectArea>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+textbook:subjectArea
+  rdf:type rdf:Property;
+  rdfs:comment "対応する教科を示すプロパティ"@ja;
+  rdfs:domain textbook:Textbook;
+  rdfs:label "Subject area"@en, "教科"@ja;
+  rdfs:range curriculum:SubjectArea.
+textbook:CompilingProspectusShape sh:property [
+    skos:example <textbook:curriculum/小学校/2020/生活>;
+    sh:class curriculum:SubjectArea;
+    sh:description "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科</var></code>として示される科目リソースと関連付ける"@ja, "Link to the subject area resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var></code>."@en;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Subject area"@en, "教科"@ja;
+    sh:order 4;
+    sh:path textbook:subjectArea
   ].
-<https://w3id.org/jp-textbook/TeachingUnitShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/subjectArea>
+textbook:TeachingUnitShape sh:property [
+    skos:example <textbook:curriculum/中学校/2021/保健体育>;
+    sh:class curriculum:SubjectArea;
+    sh:description "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科</var></code>として示される科目リソースと関連付ける"@ja, "Link to the subject area resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var></code>."@en;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Subject area"@en, "教科"@ja;
+    sh:order 8;
+    sh:path textbook:subjectArea
   ].
-<https://w3id.org/jp-textbook/TextbookShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/subjectArea>
+textbook:TextbookShape sh:property [
+    skos:example <textbook:curriculum/中学校/2002/外国語>;
+    sh:class curriculum:SubjectArea;
+    sh:description "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var>/<var>教科</var></code>として示される科目リソースと関連付ける"@ja, "Link to the subject area resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var>/<var>subject area</var></code>."@en;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Subject area"@en, "教科"@ja;
+    sh:order 16;
+    sh:path textbook:subjectArea
   ].

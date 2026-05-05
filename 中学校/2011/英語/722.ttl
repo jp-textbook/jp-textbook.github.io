@@ -1,30 +1,40 @@
-<https://w3id.org/jp-textbook/中学校/2011/英語/722>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "AB";
-  <http://id.loc.gov/ontologies/bibframe/extent> "178";
-  <http://purl.org/dc/terms/bibliographicCitation> "「SUNSHINE ENGLISH COURSE 1」, 中学校1年, 英語|722 (開隆堂) 2011年検定";
-  <http://schema.org/editor> "新里眞男 ほか31名";
-  <http://schema.org/isbn> "978-4-304-08052-4";
-  <http://schema.org/name> "SUNSHINE ENGLISH COURSE 1";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2011/開隆堂>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/023680768>, <http://id.ndl.go.jp/jpno/22098269>, <https://ci.nii.ac.jp/ncid/BB06621704>, <https://ci.nii.ac.jp/ncid/BB08914044>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2011"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/中学校/2011>, <https://w3id.org/jp-textbook/catalogue/中学校/2012>, <https://w3id.org/jp-textbook/catalogue/中学校/2013>, <https://w3id.org/jp-textbook/catalogue/中学校/2014>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/中学校/2012>;
-  <https://w3id.org/jp-textbook/grade> 1;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K260.91||K9||2011";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB16209401";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:中学校\/2011\/英語\/722
+  bf:dimensions "AB";
+  bf:extent "178";
+  dct:bibliographicCitation "「SUNSHINE ENGLISH COURSE 1」, 中学校1年, 英語|722 (開隆堂) 2011年検定";
+  schema:editor "新里眞男 ほか31名";
+  schema:isbn "978-4-304-08052-4";
+  schema:name "SUNSHINE ENGLISH COURSE 1";
+  schema:publisher textbook:publisher\/2011\/開隆堂;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/023680768>, <http://id.ndl.go.jp/jpno/22098269>, <https://ci.nii.ac.jp/ncid/BB06621704>, <https://ci.nii.ac.jp/ncid/BB08914044>;
+  textbook:authorizedYear "2011"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/中学校\/2011, textbook:catalogue\/中学校\/2012, textbook:catalogue\/中学校\/2013, textbook:catalogue\/中学校\/2014;
+  textbook:curriculum curriculum:中学校\/2012;
+  textbook:grade 1;
+  textbook:item [
+    nier:callNumber "K260.91||K9||2011";
+    nier:recordID "EB16209401";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "B009|811|H23/24";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "220110117";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "B009|811|H23/24";
+    textbook-rc:recordID "220110117";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/中学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/中学校/2012/外国語/英語>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/中学校/2012/外国語>;
-  <https://w3id.org/jp-textbook/textbookNumber> "722";
-  <https://w3id.org/jp-textbook/textbookSymbol> "英語";
-  <https://w3id.org/jp-textbook/usageYear> "2012"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2013"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2014"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2015"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2012-2015".
+  textbook:school textbook:school\/中学校;
+  textbook:subject curriculum:中学校\/2012\/外国語\/英語;
+  textbook:subjectArea curriculum:中学校\/2012\/外国語;
+  textbook:textbookNumber "722";
+  textbook:textbookSymbol "英語";
+  textbook:usageYear "2012"^^xsd:gYear, "2013"^^xsd:gYear, "2014"^^xsd:gYear, "2015"^^xsd:gYear;
+  textbook:usageYearRange "2012-2015".

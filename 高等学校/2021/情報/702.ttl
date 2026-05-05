@@ -1,67 +1,101 @@
-<https://w3id.org/jp-textbook/高等学校/2021/情報/702>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "198";
-  <http://id.loc.gov/ontologies/bibframe/note> "検定用見本";
-  <http://purl.org/dc/terms/bibliographicCitation> "「情報の表現と管理」, 高等学校, 情報|702 (実教) 2021年検定";
-  <http://schema.org/editor> "伏見 正則   ほか6名";
-  <http://schema.org/isbn> "9784407204674";
-  <http://schema.org/name> "情報の表現と管理";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2021/実教>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/032455373>, <http://id.ndl.go.jp/jpno/23765322>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2021>, <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.69||J3||2021B";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20082209";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2021\/情報\/702
+  bf:dimensions "B5";
+  bf:extent "198";
+  bf:note "検定用見本";
+  dct:bibliographicCitation "「情報の表現と管理」, 高等学校, 情報|702 (実教) 2021年検定";
+  schema:editor "伏見 正則   ほか6名";
+  schema:isbn "9784407204674";
+  schema:name "情報の表現と管理";
+  schema:publisher textbook:publisher\/2021\/実教;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/032455373>, <http://id.ndl.go.jp/jpno/23765322>;
+  textbook:authorizedYear "2021"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2021, textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.69||J3||2021B";
+    nier:recordID "EB20082209";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C007|890f|R03/04";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320210325";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C007|890f|R03/04";
+    textbook-rc:recordID "320210325";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/情報(専門)/情報の表現と管理>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/情報(専門)>;
-  <https://w3id.org/jp-textbook/textbookNumber> "702";
-  <https://w3id.org/jp-textbook/textbookSymbol> "情報";
-  <https://w3id.org/jp-textbook/usageYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2022-".
-<https://w3id.org/jp-textbook/AA100000035558> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/情報/702>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/情報\(専門\)\/情報の表現と管理;
+  textbook:subjectArea curriculum:高等学校\/2022\/情報\(専門\);
+  textbook:textbookNumber "702";
+  textbook:textbookSymbol "情報";
+  textbook:usageYear "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2022-".
+textbook:AC100000000857 textbook:textbook textbook:高等学校\/2021\/情報\/702.
+textbook:AA100000035558 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/情報\/702;
+    schema:pagination "p.6～p.9";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000035559> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/情報/702>
+textbook:AA100000035559 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/情報\/702;
+    schema:pagination "p.10～p.15";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000035560> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/情報/702>
+textbook:AA100000035560 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/情報\/702;
+    schema:pagination "p.18～p.27";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000035561> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/情報/702>
+textbook:AA100000035561 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/情報\/702;
+    schema:pagination "p.28～p.39";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000035562> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/情報/702>
+textbook:AA100000035562 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/情報\/702;
+    schema:pagination "p.40～p.73";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000035563> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/情報/702>
+textbook:AA100000035563 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/情報\/702;
+    schema:pagination "p.74～p.85";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000035564> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/情報/702>
+textbook:AA100000035564 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/情報\/702;
+    schema:pagination "p.86～p.113";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000035565> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/情報/702>
+textbook:AA100000035565 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/情報\/702;
+    schema:pagination "p.114～p.137";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000035566> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/情報/702>
+textbook:AA100000035566 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/情報\/702;
+    schema:pagination "p.138～p.141";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000035567> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/情報/702>
+textbook:AA100000035567 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/情報\/702;
+    schema:pagination "p.144～p.159";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000035568> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/情報/702>
+textbook:AA100000035568 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/情報\/702;
+    schema:pagination "p.160～p.167";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000035569> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/情報/702>
+textbook:AA100000035569 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/情報\/702;
+    schema:pagination "p.166～p.181";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000857> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2021/情報/702>.

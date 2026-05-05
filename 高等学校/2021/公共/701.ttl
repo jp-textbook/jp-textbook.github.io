@@ -1,108 +1,170 @@
-<https://w3id.org/jp-textbook/高等学校/2021/公共/701>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "AB";
-  <http://id.loc.gov/ontologies/bibframe/extent> "246";
-  <http://purl.org/dc/terms/bibliographicCitation> "「公共」, 高等学校, 公共|701 (東書) 2021年検定";
-  <http://schema.org/editor> "間宮 陽介  ほか30名";
-  <http://schema.org/isbn> "9784487166008";
-  <http://schema.org/name> "公共";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2021/東書>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/032455249>, <http://id.ndl.go.jp/jpno/23759312>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2021>, <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.31||T8||2021";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20081942";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2021\/公共\/701
+  bf:dimensions "AB";
+  bf:extent "246";
+  dct:bibliographicCitation "「公共」, 高等学校, 公共|701 (東書) 2021年検定";
+  schema:editor "間宮 陽介  ほか30名";
+  schema:isbn "9784487166008";
+  schema:name "公共";
+  schema:publisher textbook:publisher\/2021\/東書;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/032455249>, <http://id.ndl.go.jp/jpno/23759312>;
+  textbook:authorizedYear "2021"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2021, textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.31||T8||2021";
+    nier:recordID "EB20081942";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C002|200|R03/04";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320210059";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C002|200|R03/04";
+    textbook-rc:recordID "320210059";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/公民/公共>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/公民>;
-  <https://w3id.org/jp-textbook/textbookNumber> "701";
-  <https://w3id.org/jp-textbook/textbookSymbol> "公共";
-  <https://w3id.org/jp-textbook/usageYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2022-".
-<https://w3id.org/jp-textbook/AA100000027023> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/公民\/公共;
+  textbook:subjectArea curriculum:高等学校\/2022\/公民;
+  textbook:textbookNumber "701";
+  textbook:textbookSymbol "公共";
+  textbook:usageYear "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2022-".
+textbook:AC100000000622 textbook:textbook textbook:高等学校\/2021\/公共\/701.
+textbook:AA100000027023 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "7～54ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027024> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+textbook:AA100000027024 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "10～21ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027025> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+textbook:AA100000027025 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "10～13ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027026> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+textbook:AA100000027026 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "14～21ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027027> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+textbook:AA100000027027 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "22～35ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027028> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+textbook:AA100000027028 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "36～53ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027029> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+textbook:AA100000027029 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "55～196ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027030> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+textbook:AA100000027030 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "58～83ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027031> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+textbook:AA100000027031 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "58～83ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027032> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+textbook:AA100000027032 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "84～111ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027033> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+textbook:AA100000027033 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "84～91ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027034> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+textbook:AA100000027034 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "92～101ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027035> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+textbook:AA100000027035 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "102～111ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027036> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+textbook:AA100000027036 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "112～145ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027037> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+textbook:AA100000027037 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "112～125ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027038> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+textbook:AA100000027038 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "126～133ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027039> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+textbook:AA100000027039 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "134～145ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027040> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+textbook:AA100000027040 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "146～157ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027041> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+textbook:AA100000027041 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "146～151ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027042> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+textbook:AA100000027042 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "152～157ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027043> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+textbook:AA100000027043 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "158～195ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027044> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+textbook:AA100000027044 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "158～165ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027045> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+textbook:AA100000027045 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "166～173ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027046> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+textbook:AA100000027046 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "174～181ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027047> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+textbook:AA100000027047 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "182～195ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027048> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>
+textbook:AA100000027048 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/公共\/701;
+    schema:pagination "197～212ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000622> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2021/公共/701>.

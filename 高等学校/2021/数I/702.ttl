@@ -1,63 +1,101 @@
-<https://w3id.org/jp-textbook/高等学校/2021/数I/702>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "A5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "230";
-  <http://purl.org/dc/terms/bibliographicCitation> "「数学I　Standard」, 高等学校, 数I|702 (東書) 2021年検定";
-  <http://schema.org/editor> "俣野 博 河野 俊丈 ほか53名";
-  <http://schema.org/isbn> "9784487166053";
-  <http://schema.org/name> "数学I　Standard";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2021/東書>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/032455251>, <http://id.ndl.go.jp/jpno/23758390>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2021>, <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.41||T8||2021B";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20081955";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2021\/数I\/702
+  bf:dimensions "A5";
+  bf:extent "230";
+  dct:bibliographicCitation "「数学I　Standard」, 高等学校, 数I|702 (東書) 2021年検定";
+  schema:editor "俣野 博 河野 俊丈 ほか53名";
+  schema:isbn "9784487166053";
+  schema:name "数学I　Standard";
+  schema:publisher textbook:publisher\/2021\/東書;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/032455251>, <http://id.ndl.go.jp/jpno/23758390>;
+  textbook:authorizedYear "2021"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2021, textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.41||T8||2021B";
+    nier:recordID "EB20081955";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C002|310b|R03/04";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320210072";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C002|310b|R03/04";
+    textbook-rc:recordID "320210072";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/数学/数学I>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/数学>;
-  <https://w3id.org/jp-textbook/textbookNumber> "702";
-  <https://w3id.org/jp-textbook/textbookSymbol> "数I";
-  <https://w3id.org/jp-textbook/usageYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2022-".
-<https://w3id.org/jp-textbook/AA100000027545> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数I/702>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/数学\/数学I;
+  textbook:subjectArea curriculum:高等学校\/2022\/数学;
+  textbook:textbookNumber "702";
+  textbook:textbookSymbol "数I";
+  textbook:usageYear "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2022-".
+textbook:AC100000000635 textbook:textbook textbook:高等学校\/2021\/数I\/702.
+textbook:AB100000002215 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数I\/702;
+    schema:numberOfPages 1;
+    schema:pagination "17";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027546> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数I/702>
+textbook:AB100000002216 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数I\/702;
+    schema:numberOfPages 0.5;
+    schema:pagination "24";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027547> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数I/702>
+textbook:AB100000002217 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数I\/702;
+    schema:numberOfPages 1;
+    schema:pagination "37";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027548> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数I/702>
+textbook:AB100000002218 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数I\/702;
+    schema:numberOfPages 1;
+    schema:pagination "117";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027549> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数I/702>
+textbook:AB100000002219 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数I\/702;
+    schema:numberOfPages 0.5;
+    schema:pagination "156";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002215> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数I/702>
+textbook:AB100000002220 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数I\/702;
+    schema:numberOfPages 1;
+    schema:pagination "217";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002216> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数I/702>
+textbook:AA100000027545 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数I\/702;
+    schema:pagination "26～35ページ，8～25ページ，38～45，47ページ，46ページ，52～53ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002217> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数I/702>
+textbook:AA100000027546 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数I\/702;
+    schema:pagination "54～74ページ，76～77ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002218> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数I/702>
+textbook:AA100000027547 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数I\/702;
+    schema:pagination "78～93，102～107ページ，94～98，100～101ページ，108～116，118～127ページ，99，130～131ページ，130～131ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002219> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数I/702>
+textbook:AA100000027548 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数I\/702;
+    schema:pagination "132～146ページ，147～156ページ，157～167，171ページ，168～170ページ，174～175ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000002220> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数I/702>
+textbook:AA100000027549 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数I\/702;
+    schema:pagination "176～189ページ，190～197ページ，198～199ページ，202～203ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000635> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2021/数I/702>.

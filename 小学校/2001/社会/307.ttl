@@ -1,24 +1,32 @@
-<https://w3id.org/jp-textbook/小学校/2001/社会/307>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "124";
-  <http://purl.org/dc/terms/bibliographicCitation> "「社会　３・４上」, 小学校3,4年, 社会|307 (光村) 2001年検定";
-  <http://schema.org/editor> "森隆夫 木村尚三郎 片岡徳雄 島田俊秀 ほか9名";
-  <http://schema.org/name> "社会　３・４上";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2001/光村>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2001"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/小学校/2001>, <https://w3id.org/jp-textbook/catalogue/小学校/2002>, <https://w3id.org/jp-textbook/catalogue/小学校/2003>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/小学校/2002>;
-  <https://w3id.org/jp-textbook/grade> 3, 4;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K170.3||M3D||01/02";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB10009883";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+textbook:小学校\/2001\/社会\/307
+  bf:dimensions "B5";
+  bf:extent "124";
+  dct:bibliographicCitation "「社会　３・４上」, 小学校3,4年, 社会|307 (光村) 2001年検定";
+  schema:editor "森隆夫 木村尚三郎 片岡徳雄 島田俊秀 ほか9名";
+  schema:name "社会　３・４上";
+  schema:publisher textbook:publisher\/2001\/光村;
+  rdf:type textbook:Textbook;
+  textbook:authorizedYear "2001"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/小学校\/2001, textbook:catalogue\/小学校\/2002, textbook:catalogue\/小学校\/2003;
+  textbook:curriculum curriculum:小学校\/2002;
+  textbook:grade 3, 4;
+  textbook:item [
+    nier:callNumber "K170.3||M3D||01/02";
+    nier:recordID "EB10009883";
+    rdf:type textbook:ItemNIER
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/小学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/小学校/2002/社会/社会>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/小学校/2002/社会>;
-  <https://w3id.org/jp-textbook/textbookNumber> "307";
-  <https://w3id.org/jp-textbook/textbookSymbol> "社会";
-  <https://w3id.org/jp-textbook/usageYear> "2002"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2003"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2004"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2002-2004".
+  textbook:school textbook:school\/小学校;
+  textbook:subject curriculum:小学校\/2002\/社会\/社会;
+  textbook:subjectArea curriculum:小学校\/2002\/社会;
+  textbook:textbookNumber "307";
+  textbook:textbookSymbol "社会";
+  textbook:usageYear "2002"^^xsd:gYear, "2003"^^xsd:gYear, "2004"^^xsd:gYear;
+  textbook:usageYearRange "2002-2004".

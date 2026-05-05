@@ -1,9 +1,20 @@
-<https://w3id.org/jp-textbook/CPreceiptNumber>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
-  <http://www.w3.org/2000/01/rdf-schema#comment> "教科書編修趣意書受理番号を表現するプロパティ"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/jp-textbook/CompilingProspectus>;
-  <http://www.w3.org/2000/01/rdf-schema#label> "CP Receipt Number"@en, "教科書編修趣意書受理番号"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal>.
-<https://w3id.org/jp-textbook/CompilingProspectusShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/CPreceiptNumber>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+textbook:CPreceiptNumber
+  rdf:type rdf:Property;
+  rdfs:comment "教科書編修趣意書受理番号を表現するプロパティ"@ja;
+  rdfs:domain textbook:CompilingProspectus;
+  rdfs:label "CP Receipt Number"@en, "教科書編修趣意書受理番号"@ja;
+  rdfs:range rdf:Literal.
+textbook:CompilingProspectusShape sh:property [
+    skos:example "30-165";
+    sh:datatype xsd:string;
+    sh:maxCount 1;
+    sh:name "Compiling Prospectus Receipt Number"@en, "編修趣意書受理番号"@ja;
+    sh:order 11;
+    sh:path textbook:CPreceiptNumber
   ].

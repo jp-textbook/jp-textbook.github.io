@@ -1,24 +1,32 @@
-<https://w3id.org/jp-textbook/中学校/1996/音楽/707>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "72";
-  <http://purl.org/dc/terms/bibliographicCitation> "「中学音楽1」, 中学校1年, 音楽|707 (教出) 1996年検定";
-  <http://schema.org/editor> "三善 晃，ほか１６名";
-  <http://schema.org/name> "中学音楽1";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/1996/教出>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <https://w3id.org/jp-textbook/authorizedYear> "1996"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/中学校/1996>, <https://w3id.org/jp-textbook/catalogue/中学校/1997>, <https://w3id.org/jp-textbook/catalogue/中学校/1998>, <https://w3id.org/jp-textbook/catalogue/中学校/1999>, <https://w3id.org/jp-textbook/catalogue/中学校/2000>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/中学校/1993>;
-  <https://w3id.org/jp-textbook/grade> 1;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K260.76||K10C1||96/97";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB10013875";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+textbook:中学校\/1996\/音楽\/707
+  bf:dimensions "B5";
+  bf:extent "72";
+  dct:bibliographicCitation "「中学音楽1」, 中学校1年, 音楽|707 (教出) 1996年検定";
+  schema:editor "三善 晃，ほか１６名";
+  schema:name "中学音楽1";
+  schema:publisher textbook:publisher\/1996\/教出;
+  rdf:type textbook:Textbook;
+  textbook:authorizedYear "1996"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/中学校\/1996, textbook:catalogue\/中学校\/1997, textbook:catalogue\/中学校\/1998, textbook:catalogue\/中学校\/1999, textbook:catalogue\/中学校\/2000;
+  textbook:curriculum curriculum:中学校\/1993;
+  textbook:grade 1;
+  textbook:item [
+    nier:callNumber "K260.76||K10C1||96/97";
+    nier:recordID "EB10013875";
+    rdf:type textbook:ItemNIER
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/中学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/中学校/1993/音楽/音楽(一般)>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/中学校/1993/音楽>;
-  <https://w3id.org/jp-textbook/textbookNumber> "707";
-  <https://w3id.org/jp-textbook/textbookSymbol> "音楽";
-  <https://w3id.org/jp-textbook/usageYear> "1997"^^<http://www.w3.org/2001/XMLSchema#gYear>, "1998"^^<http://www.w3.org/2001/XMLSchema#gYear>, "1999"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2000"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2001"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "1997-2001".
+  textbook:school textbook:school\/中学校;
+  textbook:subject curriculum:中学校\/1993\/音楽\/音楽\(一般\);
+  textbook:subjectArea curriculum:中学校\/1993\/音楽;
+  textbook:textbookNumber "707";
+  textbook:textbookSymbol "音楽";
+  textbook:usageYear "1997"^^xsd:gYear, "1998"^^xsd:gYear, "1999"^^xsd:gYear, "2000"^^xsd:gYear, "2001"^^xsd:gYear;
+  textbook:usageYearRange "1997-2001".

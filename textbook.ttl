@@ -1,9 +1,21 @@
-<https://w3id.org/jp-textbook/textbook>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
-  <http://www.w3.org/2000/01/rdf-schema#comment> "教科書を示すプロパティ"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/jp-textbook/CompilingProspectus>;
-  <http://www.w3.org/2000/01/rdf-schema#label> "教科書"@ja, "教科書"@en;
-  <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/jp-textbook/Textbook>.
-<https://w3id.org/jp-textbook/CompilingProspectusShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/textbook>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+textbook:textbook
+  rdf:type rdf:Property;
+  rdfs:comment "教科書を示すプロパティ"@ja;
+  rdfs:domain textbook:CompilingProspectus;
+  rdfs:label "教科書"@ja, "教科書"@en;
+  rdfs:range textbook:Textbook.
+textbook:CompilingProspectusShape sh:property [
+    skos:example <textbook:小学校/2019/生活/108>;
+    sh:class textbook:Textbook;
+    sh:description "<code>textbook:<var>学校種別</var>/<var>検定年</var>/<var>教科書記号</var>/<var>教科書番号</var></code>として示される教科書リソースと関連付ける。複数の教科書がある場合、繰り返される。"@ja, "Link to the textbook resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>authorized year</var>/<var>textbook symbol</var>/<var>textbook number</var></code>. If there are multiple textbooks, this property values are repeated according to the number of textbooks times."@en;
+    sh:maxCount 6;
+    sh:minCount 1;
+    sh:name "Textbook"@en, "教科書"@ja;
+    sh:order 8;
+    sh:path textbook:textbook
   ].

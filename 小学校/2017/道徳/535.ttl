@@ -1,30 +1,40 @@
-<https://w3id.org/jp-textbook/小学校/2017/道徳/535>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "197";
-  <http://purl.org/dc/terms/bibliographicCitation> "「道徳 5 きみが いちばん ひかるとき」, 小学校5年, 道徳|535 (光村) 2017年検定";
-  <http://schema.org/editor> "朝倉 喩美子 杉中 康平 田沼 茂紀 ほか14名";
-  <http://schema.org/isbn> "978-4-89528-990-0";
-  <http://schema.org/name> "道徳 5 きみが いちばん ひかるとき";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2017/光村>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/029068211>, <http://id.ndl.go.jp/jpno/23074114>, <https://ci.nii.ac.jp/ncid/BB25912599>, <https://ci.nii.ac.jp/ncid/BB25930353>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2017"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/小学校/2017>, <https://w3id.org/jp-textbook/catalogue/小学校/2018>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/小学校/2011>;
-  <https://w3id.org/jp-textbook/grade> 5;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K170.31||M3||2017";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20059524";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:小学校\/2017\/道徳\/535
+  bf:dimensions "B5";
+  bf:extent "197";
+  dct:bibliographicCitation "「道徳 5 きみが いちばん ひかるとき」, 小学校5年, 道徳|535 (光村) 2017年検定";
+  schema:editor "朝倉 喩美子 杉中 康平 田沼 茂紀 ほか14名";
+  schema:isbn "978-4-89528-990-0";
+  schema:name "道徳 5 きみが いちばん ひかるとき";
+  schema:publisher textbook:publisher\/2017\/光村;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/029068211>, <http://id.ndl.go.jp/jpno/23074114>, <https://ci.nii.ac.jp/ncid/BB25912599>, <https://ci.nii.ac.jp/ncid/BB25930353>;
+  textbook:authorizedYear "2017"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/小学校\/2017, textbook:catalogue\/小学校\/2018;
+  textbook:curriculum curriculum:小学校\/2011;
+  textbook:grade 5;
+  textbook:item [
+    nier:callNumber "K170.31||M3||2017";
+    nier:recordID "EB20059524";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "A038|015|H29/30";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "120170029";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "A038|015|H29/30";
+    textbook-rc:recordID "120170029";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/小学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/小学校/2011/道徳/道徳>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/小学校/2011/道徳>;
-  <https://w3id.org/jp-textbook/textbookNumber> "535";
-  <https://w3id.org/jp-textbook/textbookSymbol> "道徳";
-  <https://w3id.org/jp-textbook/usageYear> "2018"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2019"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2018-2019".
+  textbook:school textbook:school\/小学校;
+  textbook:subject curriculum:小学校\/2011\/道徳\/道徳;
+  textbook:subjectArea curriculum:小学校\/2011\/道徳;
+  textbook:textbookNumber "535";
+  textbook:textbookSymbol "道徳";
+  textbook:usageYear "2018"^^xsd:gYear, "2019"^^xsd:gYear;
+  textbook:usageYearRange "2018-2019".

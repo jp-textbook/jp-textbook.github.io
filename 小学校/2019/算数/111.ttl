@@ -1,67 +1,101 @@
-<https://w3id.org/jp-textbook/小学校/2019/算数/111>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "96";
-  <http://purl.org/dc/terms/bibliographicCitation> "「しょうがく　さんすう　１ねん下」, 小学校1年, 算数|111 (日文) 2019年検定";
-  <http://schema.org/editor> "小山 正孝 飯田 慎司 ほか30名";
-  <http://schema.org/isbn> "9784536181426";
-  <http://schema.org/name> "しょうがく　さんすう　１ねん下";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2019/日文>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/030628658>, <http://id.ndl.go.jp/jpno/23461545>, <https://ci.nii.ac.jp/ncid/BB28269557>, <https://ci.nii.ac.jp/ncid/BC02624854>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2019"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/小学校/2019>, <https://w3id.org/jp-textbook/catalogue/小学校/2020>, <https://w3id.org/jp-textbook/catalogue/小学校/2021>, <https://w3id.org/jp-textbook/catalogue/小学校/2022>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/小学校/2020>;
-  <https://w3id.org/jp-textbook/grade> 1;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K170.41||N13||2019";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20080445";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:小学校\/2019\/算数\/111
+  bf:dimensions "B5";
+  bf:extent "96";
+  dct:bibliographicCitation "「しょうがく　さんすう　１ねん下」, 小学校1年, 算数|111 (日文) 2019年検定";
+  schema:editor "小山 正孝 飯田 慎司 ほか30名";
+  schema:isbn "9784536181426";
+  schema:name "しょうがく　さんすう　１ねん下";
+  schema:publisher textbook:publisher\/2019\/日文;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/030628658>, <http://id.ndl.go.jp/jpno/23461545>, <https://ci.nii.ac.jp/ncid/BB28269557>, <https://ci.nii.ac.jp/ncid/BC02624854>;
+  textbook:authorizedYear "2019"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/小学校\/2019, textbook:catalogue\/小学校\/2020, textbook:catalogue\/小学校\/2021, textbook:catalogue\/小学校\/2022;
+  textbook:curriculum curriculum:小学校\/2020;
+  textbook:grade 1;
+  textbook:item [
+    nier:callNumber "K170.41||N13||2019";
+    nier:recordID "EB20080445";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "A116|301|H31/R2";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "120190139";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "A116|301|H31/R2";
+    textbook-rc:recordID "120190139";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/小学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/小学校/2020/算数/算数>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/小学校/2020/算数>;
-  <https://w3id.org/jp-textbook/textbookNumber> "111";
-  <https://w3id.org/jp-textbook/textbookSymbol> "算数";
-  <https://w3id.org/jp-textbook/usageYear> "2020"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2020-2023".
-<https://w3id.org/jp-textbook/AA100000003114> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/算数/111>
+  textbook:school textbook:school\/小学校;
+  textbook:subject curriculum:小学校\/2020\/算数\/算数;
+  textbook:subjectArea curriculum:小学校\/2020\/算数;
+  textbook:textbookNumber "111";
+  textbook:textbookSymbol "算数";
+  textbook:usageYear "2020"^^xsd:gYear, "2021"^^xsd:gYear, "2022"^^xsd:gYear, "2023"^^xsd:gYear;
+  textbook:usageYearRange "2020-2023".
+textbook:AC100000000099 textbook:textbook textbook:小学校\/2019\/算数\/111.
+textbook:AA100000003114 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/算数\/111;
+    schema:pagination "p4～17";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003115> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/算数/111>
+textbook:AA100000003115 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/算数\/111;
+    schema:pagination "p18～22";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003116> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/算数/111>
+textbook:AA100000003116 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/算数\/111;
+    schema:pagination "p24～35";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003117> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/算数/111>
+textbook:AA100000003117 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/算数\/111;
+    schema:pagination "p36～37";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003118> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/算数/111>
+textbook:AA100000003118 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/算数\/111;
+    schema:pagination "p38～43";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003119> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/算数/111>
+textbook:AA100000003119 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/算数\/111;
+    schema:pagination "p47～59";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003120> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/算数/111>
+textbook:AA100000003120 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/算数\/111;
+    schema:pagination "p62～65";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003121> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/算数/111>
+textbook:AA100000003121 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/算数\/111;
+    schema:pagination "p67～71";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003122> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/算数/111>
+textbook:AA100000003122 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/算数\/111;
+    schema:pagination "p73～81";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003123> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/算数/111>
+textbook:AA100000003123 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/算数\/111;
+    schema:pagination "p82～85";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003124> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/算数/111>
+textbook:AA100000003124 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/算数\/111;
+    schema:pagination "p86～87";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003125> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/算数/111>
+textbook:AA100000003125 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/算数\/111;
+    schema:pagination "p89～92";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000099> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/小学校/2019/算数/111>.

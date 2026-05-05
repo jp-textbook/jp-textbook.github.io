@@ -1,9 +1,23 @@
-<https://w3id.org/jp-textbook/usageYearRange>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
-  <http://www.w3.org/2000/01/rdf-schema#comment> "教科書の使用年の区間を表現するプロパティ"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#label> "Range of usage years"@en, "使用年の区間"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal>.
-<https://w3id.org/jp-textbook/TextbookShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/usageYearRange>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+textbook:usageYearRange
+  rdf:type rdf:Property;
+  rdfs:comment "教科書の使用年の区間を表現するプロパティ"@ja;
+  rdfs:domain textbook:Textbook;
+  rdfs:label "Range of usage years"@en, "使用年の区間"@ja;
+  rdfs:range rdf:Literal.
+textbook:TextbookShape sh:property [
+    skos:example "2005-2005";
+    sh:datatype xsd:string;
+    sh:description "\"yyyy-yyyy\" もしくは \"yyyy-\" となる。\"yyyy-\" の場合は、終了年が未定のことを示す。"@ja, "Either of \"yyyy-yyyy\" or \"yyyy-\". The value ending with \"-\" like \"yyyy-\" means that the end year is undecided."@en;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Range of Usage years"@en, "使用年の区間"@ja;
+    sh:order 12;
+    sh:path textbook:usageYearRange;
+    sh:pattern "^(\\d\\d\\d\\d|\\d\\d\\d\\d-(\\d\\d\\d\\d)?)(, (\\d\\d\\d\\d|\\d\\d\\d\\d-(\\d\\d\\d\\d)?))*$"
   ].

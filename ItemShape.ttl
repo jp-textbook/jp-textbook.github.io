@@ -1,12 +1,23 @@
-<https://w3id.org/jp-textbook/ItemShape>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape>;
-  <http://www.w3.org/ns/shacl#or> [
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/jp-textbook/ItemNIERShape>;
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> [
-      <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/jp-textbook/ItemTextbookRCShape>;
-      <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+textbook:ItemShape
+  rdf:type sh:NodeShape;
+  sh:or [
+    rdf:first textbook:ItemNIERShape;
+    rdf:rest [
+      rdf:first textbook:ItemTextbookRCShape;
+      rdf:rest rdf:nil
     ]
   ].
-<https://w3id.org/jp-textbook/TextbookShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#node> <https://w3id.org/jp-textbook/ItemShape>
+textbook:TextbookShape sh:property [
+    sh:class bf:Item;
+    sh:description "<code>nier:recordID</code>と<code>nier:callNumber</code>、もしくは、<code>textbook-rc:recordID</code>と<code>textbook-rc:callNumber</code>の2つの所蔵情報用プロパティを持つ。複数の所蔵情報がある場合、所蔵情報の件数分、繰り返される。"@ja, "Link to the blank node resource(s), which consist of either of properties 1) <code>nier:recordID</code> and <code>nier:callNumber</code>, or 2) <code>textbook-rc:recordID</code> and <code>textbook-rc:callNumber</code>. If there are multiple holdings in a library, this property values are repeated according to the number of holdings times."@en;
+    sh:minCount 1;
+    sh:name "Holding item(s)"@en, "所蔵情報"@ja;
+    sh:node textbook:ItemShape;
+    sh:nodeKind sh:BlankNode;
+    sh:order 19;
+    sh:path textbook:item
   ].

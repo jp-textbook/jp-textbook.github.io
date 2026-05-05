@@ -1,103 +1,161 @@
-<https://w3id.org/jp-textbook/高等学校/2021/農業/703>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "218";
-  <http://id.loc.gov/ontologies/bibframe/note> "検定用見本";
-  <http://purl.org/dc/terms/bibliographicCitation> "「植物バイオテクノロジー」, 高等学校, 農業|703 (実教) 2021年検定";
-  <http://schema.org/editor> "三位 正洋   ほか11名";
-  <http://schema.org/isbn> "9784407204599";
-  <http://schema.org/name> "植物バイオテクノロジー";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2021/実教>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/032455323>, <http://id.ndl.go.jp/jpno/23764171>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2021>, <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.61||J3||2021C";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20082142";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2021\/農業\/703
+  bf:dimensions "B5";
+  bf:extent "218";
+  bf:note "検定用見本";
+  dct:bibliographicCitation "「植物バイオテクノロジー」, 高等学校, 農業|703 (実教) 2021年検定";
+  schema:editor "三位 正洋   ほか11名";
+  schema:isbn "9784407204599";
+  schema:name "植物バイオテクノロジー";
+  schema:publisher textbook:publisher\/2021\/実教;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/032455323>, <http://id.ndl.go.jp/jpno/23764171>;
+  textbook:authorizedYear "2021"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2021, textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.61||J3||2021C";
+    nier:recordID "EB20082142";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C007|910c|R03/04";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320210259";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C007|910c|R03/04";
+    textbook-rc:recordID "320210259";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/農業/植物バイオテクノロジー>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/農業>;
-  <https://w3id.org/jp-textbook/textbookNumber> "703";
-  <https://w3id.org/jp-textbook/textbookSymbol> "農業";
-  <https://w3id.org/jp-textbook/usageYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2022-".
-<https://w3id.org/jp-textbook/AA100000034040> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/703>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/農業\/植物バイオテクノロジー;
+  textbook:subjectArea curriculum:高等学校\/2022\/農業;
+  textbook:textbookNumber "703";
+  textbook:textbookSymbol "農業";
+  textbook:usageYear "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2022-".
+textbook:AC100000000814 textbook:textbook textbook:高等学校\/2021\/農業\/703.
+textbook:AA100000034040 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/703;
+    schema:pagination "p.8-12";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034041> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/703>
+textbook:AA100000034041 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/703;
+    schema:pagination "p.13-18";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034042> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/703>
+textbook:AA100000034042 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/703;
+    schema:pagination "p.19-22";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034043> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/703>
+textbook:AA100000034043 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/703;
+    schema:pagination "p.24-25";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034044> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/703>
+textbook:AA100000034044 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/703;
+    schema:pagination "p.26-27";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034045> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/703>
+textbook:AA100000034045 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/703;
+    schema:pagination "p.28-32";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034046> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/703>
+textbook:AA100000034046 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/703;
+    schema:pagination "p.33-40";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034047> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/703>
+textbook:AA100000034047 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/703;
+    schema:pagination "p.42-49";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034048> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/703>
+textbook:AA100000034048 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/703;
+    schema:pagination "p.50-69";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034049> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/703>
+textbook:AA100000034049 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/703;
+    schema:pagination "p.70-79";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034050> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/703>
+textbook:AA100000034050 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/703;
+    schema:pagination "p.80-81";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034051> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/703>
+textbook:AA100000034051 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/703;
+    schema:pagination "p.82-84";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034052> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/703>
+textbook:AA100000034052 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/703;
+    schema:pagination "p.86-101";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034053> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/703>
+textbook:AA100000034053 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/703;
+    schema:pagination "p.102-131";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034054> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/703>
+textbook:AA100000034054 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/703;
+    schema:pagination "p.132-140";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034055> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/703>
+textbook:AA100000034055 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/703;
+    schema:pagination "p.141-146";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034056> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/703>
+textbook:AA100000034056 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/703;
+    schema:pagination "p.147-150";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034057> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/703>
+textbook:AA100000034057 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/703;
+    schema:pagination "p.152-156";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034058> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/703>
+textbook:AA100000034058 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/703;
+    schema:pagination "p.157-164";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034059> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/703>
+textbook:AA100000034059 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/703;
+    schema:pagination "p.166-171";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034060> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/703>
+textbook:AA100000034060 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/703;
+    schema:pagination "p.172-176";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034061> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/703>
+textbook:AA100000034061 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/703;
+    schema:pagination "p.178-182";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034062> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/703>
+textbook:AA100000034062 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/703;
+    schema:pagination "p.183-186";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034063> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/703>
+textbook:AA100000034063 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/703;
+    schema:pagination "p.188-196";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000814> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2021/農業/703>.

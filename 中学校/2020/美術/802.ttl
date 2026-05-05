@@ -1,145 +1,231 @@
-<https://w3id.org/jp-textbook/中学校/2020/美術/802>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "A4";
-  <http://id.loc.gov/ontologies/bibframe/extent> "104";
-  <http://purl.org/dc/terms/bibliographicCitation> "「美 術 ２・３」, 中学校2,3年, 美術|802 (光村) 2020年検定";
-  <http://schema.org/editor> "酒井忠康 ほか32名";
-  <http://schema.org/isbn> "9784813801160";
-  <http://schema.org/name> "美 術 ２・３";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2020/光村>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/031626620>, <http://id.ndl.go.jp/jpno/23579839>, <https://ci.nii.ac.jp/ncid/BB31650293>, <https://ci.nii.ac.jp/ncid/BC06867494>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2020"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/中学校/2020>, <https://w3id.org/jp-textbook/catalogue/中学校/2021>, <https://w3id.org/jp-textbook/catalogue/中学校/2022>, <https://w3id.org/jp-textbook/catalogue/中学校/2023>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/中学校/2021>;
-  <https://w3id.org/jp-textbook/grade> 2, 3;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K260.71||M3||2020";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20080773";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:中学校\/2020\/美術\/802
+  bf:dimensions "A4";
+  bf:extent "104";
+  dct:bibliographicCitation "「美 術 ２・３」, 中学校2,3年, 美術|802 (光村) 2020年検定";
+  schema:editor "酒井忠康 ほか32名";
+  schema:isbn "9784813801160";
+  schema:name "美 術 ２・３";
+  schema:publisher textbook:publisher\/2020\/光村;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/031626620>, <http://id.ndl.go.jp/jpno/23579839>, <https://ci.nii.ac.jp/ncid/BB31650293>, <https://ci.nii.ac.jp/ncid/BC06867494>;
+  textbook:authorizedYear "2020"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/中学校\/2020, textbook:catalogue\/中学校\/2021, textbook:catalogue\/中学校\/2022, textbook:catalogue\/中学校\/2023;
+  textbook:curriculum curriculum:中学校\/2021;
+  textbook:grade 2, 3;
+  textbook:item [
+    nier:callNumber "K260.71||M3||2020";
+    nier:recordID "EB20080773";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "B038|520-23|R02/03";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "220200113";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "B038|520-23|R02/03";
+    textbook-rc:recordID "220200113";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/中学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/中学校/2021/美術/美術>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/中学校/2021/美術>;
-  <https://w3id.org/jp-textbook/textbookNumber> "802";
-  <https://w3id.org/jp-textbook/textbookSymbol> "美術";
-  <https://w3id.org/jp-textbook/usageYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2021-2024".
-<https://w3id.org/jp-textbook/AA100000016165> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+  textbook:school textbook:school\/中学校;
+  textbook:subject curriculum:中学校\/2021\/美術\/美術;
+  textbook:subjectArea curriculum:中学校\/2021\/美術;
+  textbook:textbookNumber "802";
+  textbook:textbookSymbol "美術";
+  textbook:usageYear "2021"^^xsd:gYear, "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear;
+  textbook:usageYearRange "2021-2024".
+textbook:AC100000000309 textbook:textbook textbook:中学校\/2020\/美術\/802.
+textbook:AA100000016165 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.2-4";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016166> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016166 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.6-9";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016167> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016167 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.10-15";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016168> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016168 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.16-17";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016169> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016169 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.18-19";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016170> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016170 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.20-21";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016171> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016171 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.22-23";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016172> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016172 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.24-31";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016173> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016173 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.32-33";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016174> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016174 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.34-35";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016175> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016175 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.36-39";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016176> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016176 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.40-41";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016177> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016177 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.42-43";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016178> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016178 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.44-47";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016179> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016179 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.48-55";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016180> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016180 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.56-59";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016181> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016181 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.60-61";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016182> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016182 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.62-63";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016183> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016183 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.64-65";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016184> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016184 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.66-67";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016185> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016185 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.68-69";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016186> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016186 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.70-73";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016187> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016187 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.74-75";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016188> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016188 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.76-77";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016189> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016189 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.78-79";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016190> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016190 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.80-81";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016191> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016191 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.82";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016192> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016192 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.83";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016193> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016193 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.84-85";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016194> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016194 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.86-87";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016195> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016195 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.88-89";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016196> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016196 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.90-93";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016197> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016197 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.94-96";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016198> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016198 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.97-99";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016199> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016199 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.100-101";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016200> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016200 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.102";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016201> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016201 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.103";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000016202> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/美術/802>
+textbook:AA100000016202 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/美術\/802;
+    schema:pagination "P.104-105";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000309> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/中学校/2020/美術/802>.

@@ -1,60 +1,89 @@
-<https://w3id.org/jp-textbook/高等学校/2022/家庭/705>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "218";
-  <http://id.loc.gov/ontologies/bibframe/note> "検定用見本";
-  <http://purl.org/dc/terms/bibliographicCitation> "「ファッション造形基礎」, 高等学校, 家庭|705 (実教) 2022年検定";
-  <http://schema.org/editor> "石垣 理子  ほか８名";
-  <http://schema.org/isbn> "9784407205268";
-  <http://schema.org/name> "ファッション造形基礎";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2022/実教>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.59||J3||2022C";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20082614";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2022\/家庭\/705
+  bf:dimensions "B5";
+  bf:extent "218";
+  bf:note "検定用見本";
+  dct:bibliographicCitation "「ファッション造形基礎」, 高等学校, 家庭|705 (実教) 2022年検定";
+  schema:editor "石垣 理子  ほか８名";
+  schema:isbn "9784407205268";
+  schema:name "ファッション造形基礎";
+  schema:publisher textbook:publisher\/2022\/実教;
+  rdf:type textbook:Textbook;
+  textbook:authorizedYear "2022"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.59||J3||2022C";
+    nier:recordID "EB20082614";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C007|800c|R04/05";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320220264";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C007|800c|R04/05";
+    textbook-rc:recordID "320220264";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/家庭(専門)/ファッション造形基礎>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/家庭(専門)>;
-  <https://w3id.org/jp-textbook/textbookNumber> "705";
-  <https://w3id.org/jp-textbook/textbookSymbol> "家庭";
-  <https://w3id.org/jp-textbook/usageYear> "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2023-".
-<https://w3id.org/jp-textbook/AA100000044458> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/家庭/705>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/家庭\(専門\)\/ファッション造形基礎;
+  textbook:subjectArea curriculum:高等学校\/2022\/家庭\(専門\);
+  textbook:textbookNumber "705";
+  textbook:textbookSymbol "家庭";
+  textbook:usageYear "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2023-".
+textbook:AC100000001091 textbook:textbook textbook:高等学校\/2022\/家庭\/705.
+textbook:AA100000044458 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/家庭\/705;
+    schema:pagination "p.6～19";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000044459> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/家庭/705>
+textbook:AA100000044459 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/家庭\/705;
+    schema:pagination "p.20～22";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000044460> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/家庭/705>
+textbook:AA100000044460 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/家庭\/705;
+    schema:pagination "p.24～37";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000044461> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/家庭/705>
+textbook:AA100000044461 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/家庭\/705;
+    schema:pagination "p.38～46";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000044462> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/家庭/705>
+textbook:AA100000044462 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/家庭\/705;
+    schema:pagination "p.48～79";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000044463> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/家庭/705>
+textbook:AA100000044463 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/家庭\/705;
+    schema:pagination "p.80～143";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000044464> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/家庭/705>
+textbook:AA100000044464 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/家庭\/705;
+    schema:pagination "p.144～154";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000044465> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/家庭/705>
+textbook:AA100000044465 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/家庭\/705;
+    schema:pagination "p.156～162";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000044466> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/家庭/705>
+textbook:AA100000044466 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/家庭\/705;
+    schema:pagination "p.163～198";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000044467> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/家庭/705>
+textbook:AA100000044467 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/家庭\/705;
+    schema:pagination "p.199～205";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000001091> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2022/家庭/705>.

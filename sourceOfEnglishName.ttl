@@ -1,12 +1,31 @@
-<https://w3id.org/jp-textbook/sourceOfEnglishName>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
-  <http://www.w3.org/2000/01/rdf-schema#comment> "英語表記名称の出典を示すプロパティ"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/jp-textbook/curriculum/Subject>, <https://w3id.org/jp-textbook/curriculum/SubjectArea>;
-  <http://www.w3.org/2000/01/rdf-schema#label> "Source of English name"@en, "英表記出典"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/source>.
-<https://w3id.org/jp-textbook/curriculum/SubjectAreaShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/sourceOfEnglishName>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+textbook:sourceOfEnglishName
+  rdf:type rdf:Property;
+  rdfs:comment "英語表記名称の出典を示すプロパティ"@ja;
+  rdfs:domain curriculum:Subject, curriculum:SubjectArea;
+  rdfs:label "Source of English name"@en, "英表記出典"@ja;
+  rdfs:subPropertyOf dct:source.
+curriculum:SubjectAreaShape sh:property [
+    skos:example textbook:source\/Elementary-2008;
+    sh:class textbook:SourceOfEnglishName;
+    sh:description "To provide the source information that serves as the basis for the English notation."@en, "英語表記の根拠となる出典情報を表す。"@ja;
+    sh:maxCount 1;
+    sh:name "Source of English name"@en, "英語表記出典"@ja;
+    sh:order 7;
+    sh:path textbook:sourceOfEnglishName
   ].
-<https://w3id.org/jp-textbook/curriculum/SubjectShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/sourceOfEnglishName>
+curriculum:SubjectShape sh:property [
+    skos:example textbook:source\/Elementary-2008;
+    sh:class textbook:SourceOfEnglishName;
+    sh:description "To provide the source information that serves as the basis for the English notation."@en, "英語表記の根拠となる出典情報を表す。"@ja;
+    sh:maxCount 1;
+    sh:name "Source of English name"@en, "英語表記出典"@ja;
+    sh:order 9;
+    sh:path textbook:sourceOfEnglishName
   ].

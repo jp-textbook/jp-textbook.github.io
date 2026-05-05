@@ -1,211 +1,341 @@
-<https://w3id.org/jp-textbook/小学校/2019/生活/110>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "AB";
-  <http://id.loc.gov/ontologies/bibframe/extent> "104";
-  <http://purl.org/dc/terms/bibliographicCitation> "「せいかつ　下　そよかぜ」, 小学校1,2年, 生活|110 (信教) 2019年検定";
-  <http://schema.org/editor> "前田 好文";
-  <http://schema.org/isbn> "9784783912620";
-  <http://schema.org/name> "せいかつ　下　そよかぜ";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2019/信教>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/030628639>, <http://id.ndl.go.jp/jpno/23463476>, <https://ci.nii.ac.jp/ncid/BC00136780>, <https://ci.nii.ac.jp/ncid/BC02684368>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2019"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/小学校/2019>, <https://w3id.org/jp-textbook/catalogue/小学校/2020>, <https://w3id.org/jp-textbook/catalogue/小学校/2021>, <https://w3id.org/jp-textbook/catalogue/小学校/2022>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/小学校/2020>;
-  <https://w3id.org/jp-textbook/grade> 1, 2;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K170.33||S14||2019";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20080488";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:小学校\/2019\/生活\/110
+  bf:dimensions "AB";
+  bf:extent "104";
+  dct:bibliographicCitation "「せいかつ　下　そよかぜ」, 小学校1,2年, 生活|110 (信教) 2019年検定";
+  schema:editor "前田 好文";
+  schema:isbn "9784783912620";
+  schema:name "せいかつ　下　そよかぜ";
+  schema:publisher textbook:publisher\/2019\/信教;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/030628639>, <http://id.ndl.go.jp/jpno/23463476>, <https://ci.nii.ac.jp/ncid/BC00136780>, <https://ci.nii.ac.jp/ncid/BC02684368>;
+  textbook:authorizedYear "2019"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/小学校\/2019, textbook:catalogue\/小学校\/2020, textbook:catalogue\/小学校\/2021, textbook:catalogue\/小学校\/2022;
+  textbook:curriculum curriculum:小学校\/2020;
+  textbook:grade 1, 2;
+  textbook:item [
+    nier:callNumber "K170.33||S14||2019";
+    nier:recordID "EB20080488";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "A026|020-12|H31/R2";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "120190182";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "A026|020-12|H31/R2";
+    textbook-rc:recordID "120190182";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/小学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/小学校/2020/生活/生活>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/小学校/2020/生活>;
-  <https://w3id.org/jp-textbook/textbookNumber> "110";
-  <https://w3id.org/jp-textbook/textbookSymbol> "生活";
-  <https://w3id.org/jp-textbook/usageYear> "2020"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2020-2023".
-<https://w3id.org/jp-textbook/AA100000003978> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+  textbook:school textbook:school\/小学校;
+  textbook:subject curriculum:小学校\/2020\/生活\/生活;
+  textbook:subjectArea curriculum:小学校\/2020\/生活;
+  textbook:textbookNumber "110";
+  textbook:textbookSymbol "生活";
+  textbook:usageYear "2020"^^xsd:gYear, "2021"^^xsd:gYear, "2022"^^xsd:gYear, "2023"^^xsd:gYear;
+  textbook:usageYearRange "2020-2023".
+textbook:AC100000000133 textbook:textbook textbook:小学校\/2019\/生活\/110.
+textbook:AA100000003978 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "表2～1頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003979> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000003979 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "4～5頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003980> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000003980 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "6頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003981> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000003981 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "7頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003982> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000003982 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "8～9頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003983> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000003983 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "10～11頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003984> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000003984 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "12～13頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003985> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000003985 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "13頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003986> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000003986 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "14～15頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003987> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000003987 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "16～17頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003988> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000003988 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "18～19頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003989> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000003989 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "20～21頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003990> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000003990 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "22頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003991> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000003991 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "23頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003992> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000003992 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "24頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003993> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000003993 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "25頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003994> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000003994 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "26～27頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003995> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000003995 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "28～29頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003996> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000003996 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "30～31頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003997> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000003997 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "32～33頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003998> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000003998 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "34頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003999> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000003999 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "35頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004000> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004000 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "36頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004001> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004001 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "37頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004002> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004002 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "38～39頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004003> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004003 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "40頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004004> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004004 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "41頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004005> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004005 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "42頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004006> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004006 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "43頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004007> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004007 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "44頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004008> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004008 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "45頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004009> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004009 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "46～47頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004010> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004010 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "48～49頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004011> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004011 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "50～51頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004012> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004012 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "52頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004013> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004013 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "53頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004014> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004014 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "54～55頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004015> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004015 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "56～57頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004016> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004016 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "58～59頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004017> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004017 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "60～61頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004018> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004018 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "62～63頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004019> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004019 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "64～65頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004020> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004020 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "66頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004021> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004021 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "67～68頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004022> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004022 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "69～73頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004023> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004023 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "74～75頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004024> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004024 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "76頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004025> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004025 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "77頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004026> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004026 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "78頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004027> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004027 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "79頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004028> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004028 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "79～81頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004029> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004029 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "82～87頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004030> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004030 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "88～91頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004031> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004031 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "92頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004032> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004032 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "93頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004033> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004033 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "94～95頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004034> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004034 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "96～97頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004035> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004035 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "98～99頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004036> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004036 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "100～101頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000004037> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/110>
+textbook:AA100000004037 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/110;
+    schema:pagination "102～104頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000133> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/小学校/2019/生活/110>.

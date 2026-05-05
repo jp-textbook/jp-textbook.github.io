@@ -1,9 +1,22 @@
-<https://w3id.org/jp-textbook/durationType>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
-  <http://www.w3.org/2000/01/rdf-schema#comment> "A property used to indicate the type of a duration."@en, "配当時数の種類を示すためのプロパティ。"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.org/Duration>;
-  <http://www.w3.org/2000/01/rdf-schema#label> "Duration type"@en, "配当時数種別"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/jp-textbook/DurationType>.
-<https://w3id.org/jp-textbook/DurationLUShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/durationType>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix schema: <http://schema.org/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+textbook:durationType
+  rdf:type rdf:Property;
+  rdfs:comment "A property used to indicate the type of a duration."@en, "配当時数の種類を示すためのプロパティ。"@ja;
+  rdfs:domain schema:Duration;
+  rdfs:label "Duration type"@en, "配当時数種別"@ja;
+  rdfs:range textbook:DurationType.
+textbook:DurationLUShape sh:property [
+    skos:example <textbook:durationType/Standard>;
+    sh:class textbook:DurationType;
+    sh:description "Indicates the type of duration: Standard, Flexible, Optional, or  Spare."@en, "配当時数の類型を示す。 Standard（標準）, Flexible（適宜や随時）, Optional（オプション）,  Spare（予備） のどれかをとる。"@ja;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Duration type"@en, "時数種別"@ja;
+    sh:order 8;
+    sh:path textbook:durationType
   ].

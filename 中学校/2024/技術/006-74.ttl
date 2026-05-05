@@ -1,41 +1,59 @@
-<https://w3id.org/jp-textbook/中学校/2024/技術/006-74>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "42；A4 変型";
-  <http://purl.org/dc/terms/bibliographicCitation> "「新　技術・家庭　技術分野　 明日を創造する　スキルアシスト」, 中学校, 技術|006-74 (教図) 2024年検定";
-  <http://schema.org/editor> "中村 祐治 古川 稔 尾﨑 誠 太田 達郎 長南 裕志 ほか54名";
-  <http://schema.org/isbn> "9784877304935";
-  <http://schema.org/name> "新　技術・家庭　技術分野　 明日を創造する　スキルアシスト";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2024/教図>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>, <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://ci.nii.ac.jp/ncid/BD09663341>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/中学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/中学校/2021>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K260.58||K8||2024";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20083337";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:中学校\/2024\/技術\/006-74
+  bf:dimensions "42；A4 変型";
+  dct:bibliographicCitation "「新　技術・家庭　技術分野　 明日を創造する　スキルアシスト」, 中学校, 技術|006-74 (教図) 2024年検定";
+  schema:editor "中村 祐治 古川 稔 尾﨑 誠 太田 達郎 長南 裕志 ほか54名";
+  schema:isbn "9784877304935";
+  schema:name "新　技術・家庭　技術分野　 明日を創造する　スキルアシスト";
+  schema:publisher textbook:publisher\/2024\/教図;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <https://ci.nii.ac.jp/ncid/BD09663341>;
+  textbook:authorizedYear "2024"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/中学校\/2024;
+  textbook:curriculum curriculum:中学校\/2021;
+  textbook:item [
+    nier:callNumber "K260.58||K8||2024";
+    nier:recordID "EB20083337";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "B006|740|R06/07";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "220240089";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.loc.gov/ontologies/bibframe/Item>
+    textbook-rc:callNumber "B006|740|R06/07";
+    textbook-rc:recordID "220240089";
+    rdf:type bf:Item
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/中学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/中学校/2021/技術・家庭/技術・家庭(技術分野)>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/中学校/2021/技術・家庭>;
-  <https://w3id.org/jp-textbook/textbookNumber> "006-74";
-  <https://w3id.org/jp-textbook/textbookSymbol> "技術";
-  <https://w3id.org/jp-textbook/usageYear> "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2025-".
-<https://w3id.org/jp-textbook/AA100000021629> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2024/技術/006-74>
+  textbook:school textbook:school\/中学校;
+  textbook:subject curriculum:中学校\/2021\/技術・家庭\/技術・家庭\(技術分野\);
+  textbook:subjectArea curriculum:中学校\/2021\/技術・家庭;
+  textbook:textbookNumber "006-74";
+  textbook:textbookSymbol "技術";
+  textbook:usageYear "2025"^^xsd:gYear;
+  textbook:usageYearRange "2025-".
+textbook:AC100000001259 textbook:textbook textbook:中学校\/2024\/技術\/006-74.
+textbook:AA100000021629 schema:workExample [
+    schema:isPartOf textbook:中学校\/2024\/技術\/006-74;
+    schema:pagination "2-13";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000021630> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2024/技術/006-74>
+textbook:AA100000021630 schema:workExample [
+    schema:isPartOf textbook:中学校\/2024\/技術\/006-74;
+    schema:pagination "14-24";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000021631> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2024/技術/006-74>
+textbook:AA100000021631 schema:workExample [
+    schema:isPartOf textbook:中学校\/2024\/技術\/006-74;
+    schema:pagination "25-29";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000021632> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2024/技術/006-74>
+textbook:AA100000021632 schema:workExample [
+    schema:isPartOf textbook:中学校\/2024\/技術\/006-74;
+    schema:pagination "30-39";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000001259> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/中学校/2024/技術/006-74>.

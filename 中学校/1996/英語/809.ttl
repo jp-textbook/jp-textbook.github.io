@@ -1,24 +1,32 @@
-<https://w3id.org/jp-textbook/中学校/1996/英語/809>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "120";
-  <http://purl.org/dc/terms/bibliographicCitation> "「EVERYDAY ENGLISH 2」, 中学校2年, 英語|809 (中教) 1996年検定";
-  <http://schema.org/editor> "上田 明子，ほか１９名";
-  <http://schema.org/name> "EVERYDAY ENGLISH 2";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/1996/中教>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <https://w3id.org/jp-textbook/authorizedYear> "1996"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/中学校/1996>, <https://w3id.org/jp-textbook/catalogue/中学校/1997>, <https://w3id.org/jp-textbook/catalogue/中学校/1998>, <https://w3id.org/jp-textbook/catalogue/中学校/1999>, <https://w3id.org/jp-textbook/catalogue/中学校/2000>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/中学校/1993>;
-  <https://w3id.org/jp-textbook/grade> 2;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K260.91||C7P||96/97";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB10014850";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+textbook:中学校\/1996\/英語\/809
+  bf:dimensions "B5";
+  bf:extent "120";
+  dct:bibliographicCitation "「EVERYDAY ENGLISH 2」, 中学校2年, 英語|809 (中教) 1996年検定";
+  schema:editor "上田 明子，ほか１９名";
+  schema:name "EVERYDAY ENGLISH 2";
+  schema:publisher textbook:publisher\/1996\/中教;
+  rdf:type textbook:Textbook;
+  textbook:authorizedYear "1996"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/中学校\/1996, textbook:catalogue\/中学校\/1997, textbook:catalogue\/中学校\/1998, textbook:catalogue\/中学校\/1999, textbook:catalogue\/中学校\/2000;
+  textbook:curriculum curriculum:中学校\/1993;
+  textbook:grade 2;
+  textbook:item [
+    nier:callNumber "K260.91||C7P||96/97";
+    nier:recordID "EB10014850";
+    rdf:type textbook:ItemNIER
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/中学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/中学校/1993/外国語/英語>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/中学校/1993/外国語>;
-  <https://w3id.org/jp-textbook/textbookNumber> "809";
-  <https://w3id.org/jp-textbook/textbookSymbol> "英語";
-  <https://w3id.org/jp-textbook/usageYear> "1997"^^<http://www.w3.org/2001/XMLSchema#gYear>, "1998"^^<http://www.w3.org/2001/XMLSchema#gYear>, "1999"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2000"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2001"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "1997-2001".
+  textbook:school textbook:school\/中学校;
+  textbook:subject curriculum:中学校\/1993\/外国語\/英語;
+  textbook:subjectArea curriculum:中学校\/1993\/外国語;
+  textbook:textbookNumber "809";
+  textbook:textbookSymbol "英語";
+  textbook:usageYear "1997"^^xsd:gYear, "1998"^^xsd:gYear, "1999"^^xsd:gYear, "2000"^^xsd:gYear, "2001"^^xsd:gYear;
+  textbook:usageYearRange "1997-2001".

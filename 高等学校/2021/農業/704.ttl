@@ -1,115 +1,181 @@
-<https://w3id.org/jp-textbook/高等学校/2021/農業/704>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "264";
-  <http://id.loc.gov/ontologies/bibframe/note> "検定用見本";
-  <http://purl.org/dc/terms/bibliographicCitation> "「食品製造」, 高等学校, 農業|704 (実教) 2021年検定";
-  <http://schema.org/editor> "髙野 克己　中西 載慶   ほか10名";
-  <http://schema.org/isbn> "9784407204582";
-  <http://schema.org/name> "食品製造";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2021/実教>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/032455324>, <http://id.ndl.go.jp/jpno/23764173>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2021>, <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.61||J3||2021D";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20082143";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2021\/農業\/704
+  bf:dimensions "B5";
+  bf:extent "264";
+  bf:note "検定用見本";
+  dct:bibliographicCitation "「食品製造」, 高等学校, 農業|704 (実教) 2021年検定";
+  schema:editor "髙野 克己　中西 載慶   ほか10名";
+  schema:isbn "9784407204582";
+  schema:name "食品製造";
+  schema:publisher textbook:publisher\/2021\/実教;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/032455324>, <http://id.ndl.go.jp/jpno/23764173>;
+  textbook:authorizedYear "2021"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2021, textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.61||J3||2021D";
+    nier:recordID "EB20082143";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C007|910d|R03/04";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320210260";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C007|910d|R03/04";
+    textbook-rc:recordID "320210260";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/農業/食品製造>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/農業>;
-  <https://w3id.org/jp-textbook/textbookNumber> "704";
-  <https://w3id.org/jp-textbook/textbookSymbol> "農業";
-  <https://w3id.org/jp-textbook/usageYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2022-".
-<https://w3id.org/jp-textbook/AA100000034064> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/農業\/食品製造;
+  textbook:subjectArea curriculum:高等学校\/2022\/農業;
+  textbook:textbookNumber "704";
+  textbook:textbookSymbol "農業";
+  textbook:usageYear "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2022-".
+textbook:AC100000000815 textbook:textbook textbook:高等学校\/2021\/農業\/704.
+textbook:AA100000034064 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.6-8";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034065> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034065 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.9-12";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034066> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034066 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.13-16";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034067> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034067 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.18-23";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034068> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034068 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.19-36";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034069> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034069 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.38-40";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034070> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034070 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.41-50";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034071> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034071 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.52-55";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034072> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034072 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.56-60";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034073> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034073 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.61-67";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034074> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034074 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.68-70";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034075> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034075 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.72-79";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034076> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034076 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.80-82";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034077> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034077 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.83-111";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034078> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034078 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.112-118";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034079> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034079 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.119-121";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034080> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034080 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.122-136";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034081> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034081 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.137-156";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034082> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034082 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.158-173";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034083> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034083 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.174-195";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034084> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034084 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.196-200";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034085> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034085 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.202-205";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034086> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034086 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.206-215";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034087> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034087 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.216-222";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034088> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034088 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.224-230";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034089> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034089 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.231-234";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034090> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034090 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.235-237";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000034091> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>
+textbook:AA100000034091 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/農業\/704;
+    schema:pagination "p.238-245";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000815> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2021/農業/704>.

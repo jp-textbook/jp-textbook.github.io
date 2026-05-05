@@ -1,20 +1,37 @@
-<https://w3id.org/jp-textbook/SourceOfEnglishName>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class>;
-  <http://www.w3.org/2000/01/rdf-schema#comment> "Class for representing source information in English name notation."@en, "英語名称表記の出典情報を表現するクラス。"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#label> "Source Of English Name"@en, "英語名称表記の出典情報"@ja.
-<https://w3id.org/jp-textbook/SourceOfEnglishNameShape> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/jp-textbook/SourceOfEnglishName>.
-<https://w3id.org/jp-textbook/curriculum/SubjectAreaShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/SourceOfEnglishName>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+textbook:SourceOfEnglishName
+  rdf:type rdfs:Class;
+  rdfs:comment "Class for representing source information in English name notation."@en, "英語名称表記の出典情報を表現するクラス。"@ja;
+  rdfs:label "Source Of English Name"@en, "英語名称表記の出典情報"@ja.
+textbook:SourceOfEnglishNameShape sh:targetClass textbook:SourceOfEnglishName.
+curriculum:SubjectAreaShape sh:property [
+    skos:example textbook:source\/Elementary-2008;
+    sh:class textbook:SourceOfEnglishName;
+    sh:description "To provide the source information that serves as the basis for the English notation."@en, "英語表記の根拠となる出典情報を表す。"@ja;
+    sh:maxCount 1;
+    sh:name "Source of English name"@en, "英語表記出典"@ja;
+    sh:order 7;
+    sh:path textbook:sourceOfEnglishName
   ].
-<https://w3id.org/jp-textbook/curriculum/SubjectShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/SourceOfEnglishName>
+curriculum:SubjectShape sh:property [
+    skos:example textbook:source\/Elementary-2008;
+    sh:class textbook:SourceOfEnglishName;
+    sh:description "To provide the source information that serves as the basis for the English notation."@en, "英語表記の根拠となる出典情報を表す。"@ja;
+    sh:maxCount 1;
+    sh:name "Source of English name"@en, "英語表記出典"@ja;
+    sh:order 9;
+    sh:path textbook:sourceOfEnglishName
   ].
-<https://w3id.org/jp-textbook/source/EducationInJapan-2000> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/SourceOfEnglishName>.
-<https://w3id.org/jp-textbook/source/Elementary-2008> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/SourceOfEnglishName>.
-<https://w3id.org/jp-textbook/source/Elementary-2017> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/SourceOfEnglishName>.
-<https://w3id.org/jp-textbook/source/LowerSecondary-2008> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/SourceOfEnglishName>.
-<https://w3id.org/jp-textbook/source/LowerSecondary-2017> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/SourceOfEnglishName>.
-<https://w3id.org/jp-textbook/source/Report-2008> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/SourceOfEnglishName>.
-<https://w3id.org/jp-textbook/source/UpperSecondary-2009> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/SourceOfEnglishName>.
-<https://w3id.org/jp-textbook/source/UpperSecondary-2018> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/SourceOfEnglishName>.
-<https://w3id.org/jp-textbook/source/WhitePaper-2013> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/SourceOfEnglishName>.
+textbook:source\/EducationInJapan-2000 rdf:type textbook:SourceOfEnglishName.
+textbook:source\/Elementary-2017 rdf:type textbook:SourceOfEnglishName.
+textbook:source\/LowerSecondary-2008 rdf:type textbook:SourceOfEnglishName.
+textbook:source\/LowerSecondary-2017 rdf:type textbook:SourceOfEnglishName.
+textbook:source\/Report-2008 rdf:type textbook:SourceOfEnglishName.
+textbook:source\/UpperSecondary-2009 rdf:type textbook:SourceOfEnglishName.
+textbook:source\/UpperSecondary-2018 rdf:type textbook:SourceOfEnglishName.
+textbook:source\/WhitePaper-2013 rdf:type textbook:SourceOfEnglishName.

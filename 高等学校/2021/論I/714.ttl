@@ -1,87 +1,135 @@
-<https://w3id.org/jp-textbook/高等学校/2021/論I/714>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "200";
-  <http://purl.org/dc/terms/bibliographicCitation> "「FACTBOOK English Logic and Expression I」, 高等学校, 論I|714 (桐原) 2021年検定";
-  <http://schema.org/editor> "長沼 君主   ほか4名";
-  <http://schema.org/isbn> "9784342042867";
-  <http://schema.org/name> "FACTBOOK English Logic and Expression I";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2021/桐原>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/032455561>, <http://id.ndl.go.jp/jpno/23764878>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2021>, <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.911||K26||2021";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20082104";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2021\/論I\/714
+  bf:dimensions "B5";
+  bf:extent "200";
+  dct:bibliographicCitation "「FACTBOOK English Logic and Expression I」, 高等学校, 論I|714 (桐原) 2021年検定";
+  schema:editor "長沼 君主   ほか4名";
+  schema:isbn "9784342042867";
+  schema:name "FACTBOOK English Logic and Expression I";
+  schema:publisher textbook:publisher\/2021\/桐原;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/032455561>, <http://id.ndl.go.jp/jpno/23764878>;
+  textbook:authorizedYear "2021"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2021, textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.911||K26||2021";
+    nier:recordID "EB20082104";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C212|700|R03/04";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320210221";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C212|700|R03/04";
+    textbook-rc:recordID "320210221";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/外国語/論理・表現I>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/外国語>;
-  <https://w3id.org/jp-textbook/textbookNumber> "714";
-  <https://w3id.org/jp-textbook/textbookSymbol> "論I";
-  <https://w3id.org/jp-textbook/usageYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2022-".
-<https://w3id.org/jp-textbook/AA100000030977> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/論I/714>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/外国語\/論理・表現I;
+  textbook:subjectArea curriculum:高等学校\/2022\/外国語;
+  textbook:textbookNumber "714";
+  textbook:textbookSymbol "論I";
+  textbook:usageYear "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2022-".
+textbook:AC100000000776 textbook:textbook textbook:高等学校\/2021\/論I\/714.
+textbook:AA100000030977 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/論I\/714;
+    schema:pagination "pp.8-18";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000030978> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/論I/714>
+textbook:AA100000030978 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/論I\/714;
+    schema:pagination "pp.20-29";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000030979> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/論I/714>
+textbook:AA100000030979 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/論I\/714;
+    schema:pagination "pp.30-39";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000030980> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/論I/714>
+textbook:AA100000030980 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/論I\/714;
+    schema:pagination "pp.40-44";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000030981> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/論I/714>
+textbook:AA100000030981 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/論I\/714;
+    schema:pagination "pp.45-46";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000030982> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/論I/714>
+textbook:AA100000030982 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/論I\/714;
+    schema:pagination "pp.48-59";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000030983> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/論I/714>
+textbook:AA100000030983 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/論I\/714;
+    schema:pagination "pp.60-69";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000030984> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/論I/714>
+textbook:AA100000030984 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/論I\/714;
+    schema:pagination "pp.70-74";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000030985> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/論I/714>
+textbook:AA100000030985 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/論I\/714;
+    schema:pagination "pp.75-76";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000030986> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/論I/714>
+textbook:AA100000030986 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/論I\/714;
+    schema:pagination "pp.78-89";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000030987> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/論I/714>
+textbook:AA100000030987 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/論I\/714;
+    schema:pagination "pp.90-99";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000030988> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/論I/714>
+textbook:AA100000030988 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/論I\/714;
+    schema:pagination "pp.100-104";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000030989> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/論I/714>
+textbook:AA100000030989 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/論I\/714;
+    schema:pagination "pp.105-106";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000030990> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/論I/714>
+textbook:AA100000030990 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/論I\/714;
+    schema:pagination "pp.108-117";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000030991> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/論I/714>
+textbook:AA100000030991 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/論I\/714;
+    schema:pagination "pp.118-127";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000030992> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/論I/714>
+textbook:AA100000030992 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/論I\/714;
+    schema:pagination "pp.128-134";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000030993> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/論I/714>
+textbook:AA100000030993 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/論I\/714;
+    schema:pagination "pp.136-147";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000030994> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/論I/714>
+textbook:AA100000030994 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/論I\/714;
+    schema:pagination "pp.148-157";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000030995> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/論I/714>
+textbook:AA100000030995 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/論I\/714;
+    schema:pagination "pp.158-164";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000776> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2021/論I/714>.

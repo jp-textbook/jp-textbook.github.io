@@ -1,23 +1,31 @@
-<https://w3id.org/jp-textbook/高等学校/1995/美III/509>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "A4";
-  <http://id.loc.gov/ontologies/bibframe/extent> "32";
-  <http://purl.org/dc/terms/bibliographicCitation> "「高校美術3」, 高等学校, 美III|509 (日文) 1995年検定";
-  <http://schema.org/editor> "永井 一正，木島 俊介，ほか5名";
-  <http://schema.org/name> "高校美術3";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/1995/日文>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <https://w3id.org/jp-textbook/authorizedYear> "1995"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/1995>, <https://w3id.org/jp-textbook/catalogue/高等学校/1996>, <https://w3id.org/jp-textbook/catalogue/高等学校/1997>, <https://w3id.org/jp-textbook/catalogue/高等学校/1998>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/1994>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.71||N13P||95/96";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB10021532";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+textbook:高等学校\/1995\/美III\/509
+  bf:dimensions "A4";
+  bf:extent "32";
+  dct:bibliographicCitation "「高校美術3」, 高等学校, 美III|509 (日文) 1995年検定";
+  schema:editor "永井 一正，木島 俊介，ほか5名";
+  schema:name "高校美術3";
+  schema:publisher textbook:publisher\/1995\/日文;
+  rdf:type textbook:Textbook;
+  textbook:authorizedYear "1995"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/1995, textbook:catalogue\/高等学校\/1996, textbook:catalogue\/高等学校\/1997, textbook:catalogue\/高等学校\/1998;
+  textbook:curriculum curriculum:高等学校\/1994;
+  textbook:item [
+    nier:callNumber "K280.71||N13P||95/96";
+    nier:recordID "EB10021532";
+    rdf:type textbook:ItemNIER
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/1994/芸術/美術III>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/1994/芸術>;
-  <https://w3id.org/jp-textbook/textbookNumber> "509";
-  <https://w3id.org/jp-textbook/textbookSymbol> "美III";
-  <https://w3id.org/jp-textbook/usageYear> "1996"^^<http://www.w3.org/2001/XMLSchema#gYear>, "1997"^^<http://www.w3.org/2001/XMLSchema#gYear>, "1998"^^<http://www.w3.org/2001/XMLSchema#gYear>, "1999"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "1996-1999".
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/1994\/芸術\/美術III;
+  textbook:subjectArea curriculum:高等学校\/1994\/芸術;
+  textbook:textbookNumber "509";
+  textbook:textbookSymbol "美III";
+  textbook:usageYear "1996"^^xsd:gYear, "1997"^^xsd:gYear, "1998"^^xsd:gYear, "1999"^^xsd:gYear;
+  textbook:usageYearRange "1996-1999".

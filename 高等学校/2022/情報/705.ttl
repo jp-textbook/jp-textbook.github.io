@@ -1,57 +1,84 @@
-<https://w3id.org/jp-textbook/高等学校/2022/情報/705>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "166";
-  <http://id.loc.gov/ontologies/bibframe/note> "検定用見本";
-  <http://purl.org/dc/terms/bibliographicCitation> "「情報デザイン」, 高等学校, 情報|705 (実教) 2022年検定";
-  <http://schema.org/editor> "中川 憲造  西野 和典  ほか４名";
-  <http://schema.org/isbn> "9784407205305";
-  <http://schema.org/name> "情報デザイン";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2022/実教>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.69||J3||2022C";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20082621";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2022\/情報\/705
+  bf:dimensions "B5";
+  bf:extent "166";
+  bf:note "検定用見本";
+  dct:bibliographicCitation "「情報デザイン」, 高等学校, 情報|705 (実教) 2022年検定";
+  schema:editor "中川 憲造  西野 和典  ほか４名";
+  schema:isbn "9784407205305";
+  schema:name "情報デザイン";
+  schema:publisher textbook:publisher\/2022\/実教;
+  rdf:type textbook:Textbook;
+  textbook:authorizedYear "2022"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.69||J3||2022C";
+    nier:recordID "EB20082621";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C007|890c|R04/05";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320220271";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C007|890c|R04/05";
+    textbook-rc:recordID "320220271";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/情報(専門)/情報デザイン>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/情報(専門)>;
-  <https://w3id.org/jp-textbook/textbookNumber> "705";
-  <https://w3id.org/jp-textbook/textbookSymbol> "情報";
-  <https://w3id.org/jp-textbook/usageYear> "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2023-".
-<https://w3id.org/jp-textbook/AA100000044522> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/情報/705>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/情報\(専門\)\/情報デザイン;
+  textbook:subjectArea curriculum:高等学校\/2022\/情報\(専門\);
+  textbook:textbookNumber "705";
+  textbook:textbookSymbol "情報";
+  textbook:usageYear "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2023-".
+textbook:AC100000001095 textbook:textbook textbook:高等学校\/2022\/情報\/705.
+textbook:AA100000044522 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/情報\/705;
+    schema:pagination "p.6～p.15";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000044523> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/情報/705>
+textbook:AA100000044523 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/情報\/705;
+    schema:pagination "p.16～p.28";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000044524> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/情報/705>
+textbook:AA100000044524 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/情報\/705;
+    schema:pagination "p.30～p.53";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000044525> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/情報/705>
+textbook:AA100000044525 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/情報\/705;
+    schema:pagination "p.54～p.67";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000044526> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/情報/705>
+textbook:AA100000044526 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/情報\/705;
+    schema:pagination "p.68～p.84";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000044527> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/情報/705>
+textbook:AA100000044527 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/情報\/705;
+    schema:pagination "p.86～p.111";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000044528> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/情報/705>
+textbook:AA100000044528 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/情報\/705;
+    schema:pagination "p.112～p.131";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000044529> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/情報/705>
+textbook:AA100000044529 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/情報\/705;
+    schema:pagination "p.132～p.141";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000044530> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/情報/705>
+textbook:AA100000044530 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/情報\/705;
+    schema:pagination "p.142～p.149";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000001095> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2022/情報/705>.

@@ -1,106 +1,166 @@
-<https://w3id.org/jp-textbook/中学校/2020/地理/701>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "AB";
-  <http://id.loc.gov/ontologies/bibframe/extent> "302";
-  <http://purl.org/dc/terms/bibliographicCitation> "「新しい社会　地理」, 中学校1,2年, 地理|701 (東書) 2020年検定";
-  <http://schema.org/editor> "矢ケ﨑典隆 坂上康俊　谷口将紀 ほか108名";
-  <http://schema.org/isbn> "9784487123315";
-  <http://schema.org/name> "新しい社会　地理";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2020/東書>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/031626531>, <http://id.ndl.go.jp/jpno/23577846>, <https://ci.nii.ac.jp/ncid/BB31327913>, <https://ci.nii.ac.jp/ncid/BC06810271>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2020"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/中学校/2020>, <https://w3id.org/jp-textbook/catalogue/中学校/2021>, <https://w3id.org/jp-textbook/catalogue/中学校/2022>, <https://w3id.org/jp-textbook/catalogue/中学校/2023>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/中学校/2021>;
-  <https://w3id.org/jp-textbook/grade> 1, 2;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K260.3||T8||2020";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20080704";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:中学校\/2020\/地理\/701
+  bf:dimensions "AB";
+  bf:extent "302";
+  dct:bibliographicCitation "「新しい社会　地理」, 中学校1,2年, 地理|701 (東書) 2020年検定";
+  schema:editor "矢ケ﨑典隆 坂上康俊　谷口将紀 ほか108名";
+  schema:isbn "9784487123315";
+  schema:name "新しい社会　地理";
+  schema:publisher textbook:publisher\/2020\/東書;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/031626531>, <http://id.ndl.go.jp/jpno/23577846>, <https://ci.nii.ac.jp/ncid/BB31327913>, <https://ci.nii.ac.jp/ncid/BC06810271>;
+  textbook:authorizedYear "2020"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/中学校\/2020, textbook:catalogue\/中学校\/2021, textbook:catalogue\/中学校\/2022, textbook:catalogue\/中学校\/2023;
+  textbook:curriculum curriculum:中学校\/2021;
+  textbook:grade 1, 2;
+  textbook:item [
+    nier:callNumber "K260.3||T8||2020";
+    nier:recordID "EB20080704";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "B002|210-12|R02/03";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "220200044";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "B002|210-12|R02/03";
+    textbook-rc:recordID "220200044";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/中学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/中学校/2021/社会/社会(地理的分野)>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/中学校/2021/社会>;
-  <https://w3id.org/jp-textbook/textbookNumber> "701";
-  <https://w3id.org/jp-textbook/textbookSymbol> "地理";
-  <https://w3id.org/jp-textbook/usageYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2021-2024".
-<https://w3id.org/jp-textbook/AA100000013801> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/地理/701>
+  textbook:school textbook:school\/中学校;
+  textbook:subject curriculum:中学校\/2021\/社会\/社会\(地理的分野\);
+  textbook:subjectArea curriculum:中学校\/2021\/社会;
+  textbook:textbookNumber "701";
+  textbook:textbookSymbol "地理";
+  textbook:usageYear "2021"^^xsd:gYear, "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear;
+  textbook:usageYearRange "2021-2024".
+textbook:AC100000000245 textbook:textbook textbook:中学校\/2020\/地理\/701.
+textbook:AA100000013801 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/地理\/701;
+    schema:pagination "巻頭3-1ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013802> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/地理/701>
+textbook:AA100000013802 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/地理\/701;
+    schema:pagination "6-32ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013803> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/地理/701>
+textbook:AA100000013803 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/地理\/701;
+    schema:pagination "6-19ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013804> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/地理/701>
+textbook:AA100000013804 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/地理\/701;
+    schema:pagination "20-32ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013805> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/地理/701>
+textbook:AA100000013805 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/地理\/701;
+    schema:pagination "33-139ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013806> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/地理/701>
+textbook:AA100000013806 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/地理\/701;
+    schema:pagination "33-53ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013807> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/地理/701>
+textbook:AA100000013807 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/地理\/701;
+    schema:pagination "54-139ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013808> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/地理/701>
+textbook:AA100000013808 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/地理\/701;
+    schema:pagination "56-73ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013809> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/地理/701>
+textbook:AA100000013809 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/地理\/701;
+    schema:pagination "74-87ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013810> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/地理/701>
+textbook:AA100000013810 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/地理\/701;
+    schema:pagination "88-99ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013811> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/地理/701>
+textbook:AA100000013811 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/地理\/701;
+    schema:pagination "100-113ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013812> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/地理/701>
+textbook:AA100000013812 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/地理\/701;
+    schema:pagination "114-125ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013813> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/地理/701>
+textbook:AA100000013813 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/地理\/701;
+    schema:pagination "126-137ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013814> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/地理/701>
+textbook:AA100000013814 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/地理\/701;
+    schema:pagination "140-281ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013815> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/地理/701>
+textbook:AA100000013815 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/地理\/701;
+    schema:pagination "140-155ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013816> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/地理/701>
+textbook:AA100000013816 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/地理\/701;
+    schema:pagination "156-182ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013817> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/地理/701>
+textbook:AA100000013817 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/地理\/701;
+    schema:pagination "183-269ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013818> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/地理/701>
+textbook:AA100000013818 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/地理\/701;
+    schema:pagination "185-196ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013819> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/地理/701>
+textbook:AA100000013819 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/地理\/701;
+    schema:pagination "197-208ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013820> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/地理/701>
+textbook:AA100000013820 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/地理\/701;
+    schema:pagination "209-220ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013821> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/地理/701>
+textbook:AA100000013821 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/地理\/701;
+    schema:pagination "221-232ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013822> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/地理/701>
+textbook:AA100000013822 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/地理\/701;
+    schema:pagination "233-244ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013823> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/地理/701>
+textbook:AA100000013823 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/地理\/701;
+    schema:pagination "245-256ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013824> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/地理/701>
+textbook:AA100000013824 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/地理\/701;
+    schema:pagination "257-268ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000013825> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/地理/701>
+textbook:AA100000013825 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/地理\/701;
+    schema:pagination "270-281ページ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000245> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/中学校/2020/地理/701>.

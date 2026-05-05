@@ -1,23 +1,31 @@
-<https://w3id.org/jp-textbook/高等学校/1995/数III/603>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "A5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "192";
-  <http://purl.org/dc/terms/bibliographicCitation> "「高等学校数学3」, 高等学校, 数III|603 (数研) 1995年検定";
-  <http://schema.org/editor> "永尾 汎，ほか8名";
-  <http://schema.org/name> "高等学校数学3";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/1995/数研>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <https://w3id.org/jp-textbook/authorizedYear> "1995"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/1995>, <https://w3id.org/jp-textbook/catalogue/高等学校/1996>, <https://w3id.org/jp-textbook/catalogue/高等学校/1997>, <https://w3id.org/jp-textbook/catalogue/高等学校/1998>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/1994>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.41||S19S2||95/96";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB10017720";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+textbook:高等学校\/1995\/数III\/603
+  bf:dimensions "A5";
+  bf:extent "192";
+  dct:bibliographicCitation "「高等学校数学3」, 高等学校, 数III|603 (数研) 1995年検定";
+  schema:editor "永尾 汎，ほか8名";
+  schema:name "高等学校数学3";
+  schema:publisher textbook:publisher\/1995\/数研;
+  rdf:type textbook:Textbook;
+  textbook:authorizedYear "1995"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/1995, textbook:catalogue\/高等学校\/1996, textbook:catalogue\/高等学校\/1997, textbook:catalogue\/高等学校\/1998;
+  textbook:curriculum curriculum:高等学校\/1994;
+  textbook:item [
+    nier:callNumber "K280.41||S19S2||95/96";
+    nier:recordID "EB10017720";
+    rdf:type textbook:ItemNIER
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/1994/数学/数学III>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/1994/数学>;
-  <https://w3id.org/jp-textbook/textbookNumber> "603";
-  <https://w3id.org/jp-textbook/textbookSymbol> "数III";
-  <https://w3id.org/jp-textbook/usageYear> "1996"^^<http://www.w3.org/2001/XMLSchema#gYear>, "1997"^^<http://www.w3.org/2001/XMLSchema#gYear>, "1998"^^<http://www.w3.org/2001/XMLSchema#gYear>, "1999"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "1996-1999".
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/1994\/数学\/数学III;
+  textbook:subjectArea curriculum:高等学校\/1994\/数学;
+  textbook:textbookNumber "603";
+  textbook:textbookSymbol "数III";
+  textbook:usageYear "1996"^^xsd:gYear, "1997"^^xsd:gYear, "1998"^^xsd:gYear, "1999"^^xsd:gYear;
+  textbook:usageYearRange "1996-1999".

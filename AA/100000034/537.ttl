@@ -1,19 +1,27 @@
-<https://w3id.org/jp-textbook/AA100000034537>
-  <http://purl.org/dc/terms/source> <https://w3id.org/jp-textbook/AC100000000832>;
-  <http://purl.org/linked-data/cube#order> 34537;
-  <http://schema.org/duration> <https://w3id.org/jp-textbook/AC100000000832/Time006>;
-  <http://schema.org/name> "６章２節";
-  <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/工業/722>;
-    <http://schema.org/pagination> "p.188～195，p.206～207";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Chapter>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix qb: <http://purl.org/linked-data/cube#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix cs: <https://w3id.org/jp-cos/>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+textbook:AA100000034537
+  dct:source textbook:AC100000000832;
+  qb:order 34537;
+  schema:duration textbook:AC100000000832\/Time006;
+  schema:name "６章２節";
+  schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/工業\/722;
+    schema:pagination "p.188～195，p.206～207";
+    rdf:type schema:Chapter
   ];
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/TeachingUnit>;
-  <https://w3id.org/jp-cos/cosItem> <https://w3id.org/jp-cos/84QI503141000000>;
-  <https://w3id.org/jp-cos/originalCosItem> <https://w3id.org/jp-cos/84QI503141000000>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/cosMappingDescription> "(4)電気計測　ア　電気計器の原理と構造";
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/工業/電気回路>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/工業>;
-  <https://w3id.org/jp-textbook/teachingUnitType> <https://w3id.org/jp-textbook/curriculum/Standard>.
+  rdf:type textbook:TeachingUnit;
+  cs:cosItem cs:84QI503141000000;
+  cs:originalCosItem cs:84QI503141000000;
+  textbook:authorizedYear "2021"^^xsd:gYear;
+  textbook:cosMappingDescription "(4)電気計測　ア　電気計器の原理と構造";
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/工業\/電気回路;
+  textbook:subjectArea curriculum:高等学校\/2022\/工業;
+  textbook:teachingUnitType curriculum:Standard.

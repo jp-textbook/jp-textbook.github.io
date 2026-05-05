@@ -1,23 +1,31 @@
-<https://w3id.org/jp-textbook/高等学校/1995/商業/567>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "212";
-  <http://purl.org/dc/terms/bibliographicCitation> "「情報管理」, 高等学校, 商業|567 (実教) 1995年検定";
-  <http://schema.org/editor> "中沢 興起，鎌田 宗憲，ほか3名";
-  <http://schema.org/name> "情報管理";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/1995/実教>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <https://w3id.org/jp-textbook/authorizedYear> "1995"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/1995>, <https://w3id.org/jp-textbook/catalogue/高等学校/1996>, <https://w3id.org/jp-textbook/catalogue/高等学校/1997>, <https://w3id.org/jp-textbook/catalogue/高等学校/1998>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/1994>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.6701||J3J||95/96";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB10020726";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+textbook:高等学校\/1995\/商業\/567
+  bf:dimensions "B5";
+  bf:extent "212";
+  dct:bibliographicCitation "「情報管理」, 高等学校, 商業|567 (実教) 1995年検定";
+  schema:editor "中沢 興起，鎌田 宗憲，ほか3名";
+  schema:name "情報管理";
+  schema:publisher textbook:publisher\/1995\/実教;
+  rdf:type textbook:Textbook;
+  textbook:authorizedYear "1995"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/1995, textbook:catalogue\/高等学校\/1996, textbook:catalogue\/高等学校\/1997, textbook:catalogue\/高等学校\/1998;
+  textbook:curriculum curriculum:高等学校\/1994;
+  textbook:item [
+    nier:callNumber "K280.6701||J3J||95/96";
+    nier:recordID "EB10020726";
+    rdf:type textbook:ItemNIER
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/1994/商業/情報管理>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/1994/商業>;
-  <https://w3id.org/jp-textbook/textbookNumber> "567";
-  <https://w3id.org/jp-textbook/textbookSymbol> "商業";
-  <https://w3id.org/jp-textbook/usageYear> "1996"^^<http://www.w3.org/2001/XMLSchema#gYear>, "1997"^^<http://www.w3.org/2001/XMLSchema#gYear>, "1998"^^<http://www.w3.org/2001/XMLSchema#gYear>, "1999"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "1996-1999".
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/1994\/商業\/情報管理;
+  textbook:subjectArea curriculum:高等学校\/1994\/商業;
+  textbook:textbookNumber "567";
+  textbook:textbookSymbol "商業";
+  textbook:usageYear "1996"^^xsd:gYear, "1997"^^xsd:gYear, "1998"^^xsd:gYear, "1999"^^xsd:gYear;
+  textbook:usageYearRange "1996-1999".

@@ -1,190 +1,338 @@
-<https://w3id.org/jp-textbook/中学校/2020/公民/905>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "AB";
-  <http://id.loc.gov/ontologies/bibframe/extent> "256";
-  <http://purl.org/dc/terms/bibliographicCitation> "「新しい公民教科書」, 中学校3年, 公民|905 (自由社) 2020年検定";
-  <http://schema.org/editor> "小山常実 ほか10名";
-  <http://schema.org/isbn> "9784908979125";
-  <http://schema.org/name> "新しい公民教科書";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2020/自由社>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/031626664>, <http://id.ndl.go.jp/jpno/23578022>, <https://ci.nii.ac.jp/ncid/BB31330918>, <https://ci.nii.ac.jp/ncid/BC06753010>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2020"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/中学校/2020>, <https://w3id.org/jp-textbook/catalogue/中学校/2021>, <https://w3id.org/jp-textbook/catalogue/中学校/2022>, <https://w3id.org/jp-textbook/catalogue/中学校/2023>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/中学校/2021>;
-  <https://w3id.org/jp-textbook/grade> 3;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K260.3||J6||2020";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20080719";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:中学校\/2020\/公民\/905
+  bf:dimensions "AB";
+  bf:extent "256";
+  dct:bibliographicCitation "「新しい公民教科書」, 中学校3年, 公民|905 (自由社) 2020年検定";
+  schema:editor "小山常実 ほか10名";
+  schema:isbn "9784908979125";
+  schema:name "新しい公民教科書";
+  schema:publisher textbook:publisher\/2020\/自由社;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/031626664>, <http://id.ndl.go.jp/jpno/23578022>, <https://ci.nii.ac.jp/ncid/BB31330918>, <https://ci.nii.ac.jp/ncid/BC06753010>;
+  textbook:authorizedYear "2020"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/中学校\/2020, textbook:catalogue\/中学校\/2021, textbook:catalogue\/中学校\/2022, textbook:catalogue\/中学校\/2023;
+  textbook:curriculum curriculum:中学校\/2021;
+  textbook:grade 3;
+  textbook:item [
+    nier:callNumber "K260.3||J6||2020";
+    nier:recordID "EB20080719";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "B225|243|R02/03";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "220200061";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "B225|243|R02/03";
+    textbook-rc:recordID "220200061";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/中学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/中学校/2021/社会/社会(公民的分野)>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/中学校/2021/社会>;
-  <https://w3id.org/jp-textbook/textbookNumber> "905";
-  <https://w3id.org/jp-textbook/textbookSymbol> "公民";
-  <https://w3id.org/jp-textbook/usageYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2021-2024".
-<https://w3id.org/jp-textbook/AA100000015774> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+  textbook:school textbook:school\/中学校;
+  textbook:subject curriculum:中学校\/2021\/社会\/社会\(公民的分野\);
+  textbook:subjectArea curriculum:中学校\/2021\/社会;
+  textbook:textbookNumber "905";
+  textbook:textbookSymbol "公民";
+  textbook:usageYear "2021"^^xsd:gYear, "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear;
+  textbook:usageYearRange "2021-2024".
+textbook:AC100000000259 textbook:textbook textbook:中学校\/2020\/公民\/905.
+textbook:AB100000001099 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 2;
+    schema:pagination "12頁～13頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015775> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001100 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 2;
+    schema:pagination "14頁～15頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015776> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001101 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 2;
+    schema:pagination "16頁～17頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015777> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001102 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 2;
+    schema:pagination "18頁～19頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015778> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001103 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 2;
+    schema:pagination "46頁～47頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015779> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001104 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 2;
+    schema:pagination "52頁～53頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015780> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001105 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 2;
+    schema:pagination "64頁～65頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015781> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001106 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 1;
+    schema:pagination "74頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015782> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001107 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 1;
+    schema:pagination "75頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015783> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001108 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 2;
+    schema:pagination "80頁～81頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015784> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001109 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 2;
+    schema:pagination "86頁～87頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015785> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001110 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 2;
+    schema:pagination "104頁～105頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015786> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001111 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 2;
+    schema:pagination "110頁～111頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015787> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001112 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 2;
+    schema:pagination "126頁～127頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015788> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001113 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 2;
+    schema:pagination "146頁～147頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015789> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001114 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 2;
+    schema:pagination "156頁～157頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015790> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001115 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 2;
+    schema:pagination "158頁～159頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015791> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001116 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 2;
+    schema:pagination "162頁～163頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015792> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001117 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 2;
+    schema:pagination "166頁～167頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015793> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001118 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 2;
+    schema:pagination "174頁～175頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000015794> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001119 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 2;
+    schema:pagination "178頁～179頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001099> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001120 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 2;
+    schema:pagination "182頁～183頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001100> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001121 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 4;
+    schema:pagination "200頁～203頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001101> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001122 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 2;
+    schema:pagination "204頁～205頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001102> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001123 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 2;
+    schema:pagination "208頁～209頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001103> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001124 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 1;
+    schema:pagination "20頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001104> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001125 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 1;
+    schema:pagination "38頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001105> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001126 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 1;
+    schema:pagination "60頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001106> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001127 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 1;
+    schema:pagination "112頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001107> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001128 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 1;
+    schema:pagination "152頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001108> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001129 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 1;
+    schema:pagination "192頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001109> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AB100000001130 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:numberOfPages 1;
+    schema:pagination "210頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001110> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AA100000015774 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:pagination "2～9頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001111> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AA100000015775 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:pagination "10～19頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001112> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AA100000015776 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:pagination "22～25頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001113> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AA100000015777 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:pagination "26～31頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001114> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AA100000015778 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:pagination "32～39頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001115> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AA100000015779 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:pagination "40～43頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001116> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AA100000015780 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:pagination "42～49頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001117> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AA100000015781 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:pagination "50～53頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001118> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AA100000015782 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:pagination "62～81頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001119> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AA100000015783 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:pagination "82～91頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001120> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AA100000015784 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:pagination "92～105頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001121> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AA100000015785 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:pagination "106～111頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001122> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AA100000015786 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:pagination "114～137頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001123> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AA100000015787 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:pagination "132～137頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001124> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AA100000015788 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:pagination "138～151頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001125> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AA100000015789 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:pagination "154～163頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001126> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AA100000015790 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:pagination "164～175頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001127> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AA100000015791 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:pagination "176～185頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001128> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AA100000015792 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:pagination "186～191頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001129> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AA100000015793 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:pagination "194～199頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000001130> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/公民/905>
+textbook:AA100000015794 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/公民\/905;
+    schema:pagination "200～209頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000259> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/中学校/2020/公民/905>.

@@ -1,51 +1,76 @@
-<https://w3id.org/jp-textbook/高等学校/2021/書I/704>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "A4";
-  <http://id.loc.gov/ontologies/bibframe/extent> "158";
-  <http://purl.org/dc/terms/bibliographicCitation> "「書道I」, 高等学校, 書I|704 (教出) 2021年検定";
-  <http://schema.org/editor> "中村　伸夫  ほか１２名";
-  <http://schema.org/isbn> "9784316204611";
-  <http://schema.org/name> "書道I";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2021/教出>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/032455396>, <http://id.ndl.go.jp/jpno/23761381>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2021>, <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.72||K10||2021";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20082065";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2021\/書I\/704
+  bf:dimensions "A4";
+  bf:extent "158";
+  dct:bibliographicCitation "「書道I」, 高等学校, 書I|704 (教出) 2021年検定";
+  schema:editor "中村　伸夫  ほか１２名";
+  schema:isbn "9784316204611";
+  schema:name "書道I";
+  schema:publisher textbook:publisher\/2021\/教出;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/032455396>, <http://id.ndl.go.jp/jpno/23761381>;
+  textbook:authorizedYear "2021"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2021, textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.72||K10||2021";
+    nier:recordID "EB20082065";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C017|640|R03/04";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320210182";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C017|640|R03/04";
+    textbook-rc:recordID "320210182";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/芸術/書道I>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/芸術>;
-  <https://w3id.org/jp-textbook/textbookNumber> "704";
-  <https://w3id.org/jp-textbook/textbookSymbol> "書I";
-  <https://w3id.org/jp-textbook/usageYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2022-".
-<https://w3id.org/jp-textbook/AA100000029598> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/書I/704>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/芸術\/書道I;
+  textbook:subjectArea curriculum:高等学校\/2022\/芸術;
+  textbook:textbookNumber "704";
+  textbook:textbookSymbol "書I";
+  textbook:usageYear "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2022-".
+textbook:AC100000000738 textbook:textbook textbook:高等学校\/2021\/書I\/704.
+textbook:AB100000003097 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/書I\/704;
+    schema:numberOfPages 1;
+    schema:pagination "113";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000029599> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/書I/704>
+textbook:AA100000029598 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/書I\/704;
+    schema:pagination "7-79，別冊 2-13";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000029600> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/書I/704>
+textbook:AA100000029599 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/書I\/704;
+    schema:pagination "81-106，別冊 14-16";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000029601> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/書I/704>
+textbook:AA100000029600 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/書I\/704;
+    schema:pagination "107-123";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000029602> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/書I/704>
+textbook:AA100000029601 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/書I\/704;
+    schema:pagination "①-6，37，50，76-77，104，124-135";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000029603> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/書I/704>
+textbook:AA100000029602 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/書I\/704;
+    schema:pagination "①-6，37，50，76-77，104，124-135";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000003097> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/書I/704>
+textbook:AA100000029603 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/書I\/704;
+    schema:pagination "①-6，37，50，76-77，104，124-135";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000738> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2021/書I/704>.

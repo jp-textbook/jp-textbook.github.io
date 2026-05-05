@@ -1,21 +1,27 @@
-<https://w3id.org/jp-textbook/DurationTypeShape>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape>;
-  <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/2004/02/skos/core#example> "<ul><li>\"予備\"@ja;</li><li>\"Spare\"@en;</li></ul>";
-    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString>;
-    <http://www.w3.org/ns/shacl#description> "Using language tags, Japanese name and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name</dd><dt>@en</dt><dd>English name</dd></dl>"@en, "言語コードを用いて、名称に加え、英語名称を示します。言語コードとその意味は以下の通りです。<dl><dt>@ja</dt><dd>名称（日本語表記）</dd><dt>@en</dt><dd>英語名称</dd></dl>"@ja;
-    <http://www.w3.org/ns/shacl#languageIn> [
-      <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "ja";
-      <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> [
-        <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "en";
-        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix schema: <http://schema.org/>.
+textbook:DurationTypeShape
+  rdf:type sh:NodeShape;
+  sh:property [
+    skos:example "<ul><li>\"予備\"@ja;</li><li>\"Spare\"@en;</li></ul>";
+    sh:datatype rdf:langString;
+    sh:description "Using language tags, Japanese name and English name are shown. The meanings of language tags are as follows:<dl><dt>@ja</dt><dd>Japanese name</dd><dt>@en</dt><dd>English name</dd></dl>"@en, "言語コードを用いて、名称に加え、英語名称を示します。言語コードとその意味は以下の通りです。<dl><dt>@ja</dt><dd>名称（日本語表記）</dd><dt>@en</dt><dd>英語名称</dd></dl>"@ja;
+    sh:languageIn [
+      rdf:first "ja";
+      rdf:rest [
+        rdf:first "en";
+        rdf:rest rdf:nil
       ]
     ];
-    <http://www.w3.org/ns/shacl#maxCount> 2;
-    <http://www.w3.org/ns/shacl#minCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Name"@en, "名称"@ja;
-    <http://www.w3.org/ns/shacl#order> 1;
-    <http://www.w3.org/ns/shacl#path> <http://schema.org/name>;
-    <http://www.w3.org/ns/shacl#uniqueLang> true
+    sh:maxCount 2;
+    sh:minCount 1;
+    sh:name "Name"@en, "名称"@ja;
+    sh:order 1;
+    sh:path schema:name;
+    sh:uniqueLang true
   ];
-  <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/jp-textbook/DurationType>.
+  sh:targetClass textbook:DurationType.

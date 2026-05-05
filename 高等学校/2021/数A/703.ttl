@@ -1,39 +1,55 @@
-<https://w3id.org/jp-textbook/高等学校/2021/数A/703>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5 変型";
-  <http://id.loc.gov/ontologies/bibframe/extent> "146";
-  <http://purl.org/dc/terms/bibliographicCitation> "「数学A　Essence」, 高等学校, 数A|703 (東書) 2021年検定";
-  <http://schema.org/editor> "俣野 博 河野 俊丈 ほか43名";
-  <http://schema.org/isbn> "9784487166091";
-  <http://schema.org/name> "数学A　Essence";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2021/東書>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/032455260>, <http://id.ndl.go.jp/jpno/23761662>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2021>, <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.41||T8||2021I";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20081990";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2021\/数A\/703
+  bf:dimensions "B5 変型";
+  bf:extent "146";
+  dct:bibliographicCitation "「数学A　Essence」, 高等学校, 数A|703 (東書) 2021年検定";
+  schema:editor "俣野 博 河野 俊丈 ほか43名";
+  schema:isbn "9784487166091";
+  schema:name "数学A　Essence";
+  schema:publisher textbook:publisher\/2021\/東書;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/032455260>, <http://id.ndl.go.jp/jpno/23761662>;
+  textbook:authorizedYear "2021"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2021, textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.41||T8||2021I";
+    nier:recordID "EB20081990";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C002|300c|R03/04";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320210107";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C002|300c|R03/04";
+    textbook-rc:recordID "320210107";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/数学/数学A>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/数学>;
-  <https://w3id.org/jp-textbook/textbookNumber> "703";
-  <https://w3id.org/jp-textbook/textbookSymbol> "数A";
-  <https://w3id.org/jp-textbook/usageYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2022-".
-<https://w3id.org/jp-textbook/AA100000027968> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数A/703>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/数学\/数学A;
+  textbook:subjectArea curriculum:高等学校\/2022\/数学;
+  textbook:textbookNumber "703";
+  textbook:textbookSymbol "数A";
+  textbook:usageYear "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2022-".
+textbook:AC100000000667 textbook:textbook textbook:高等学校\/2021\/数A\/703.
+textbook:AA100000027968 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数A\/703;
+    schema:pagination "p.10～16，p.17～30，p.32～39，48～51，p.40～43，p.44～47，p.11，23，24，25，p.38，44，45，p.47，50，51";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027969> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数A/703>
+textbook:AA100000027969 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数A\/703;
+    schema:pagination "p.58～70，p.72～84，p.86～92，p.59，68，78，79，p.63，68，78，79，91，92";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000027970> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/数A/703>
+textbook:AA100000027970 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/数A\/703;
+    schema:pagination "p.96～116，p.96，97，103，109，117～124，p.97～102，113～116，p.117～124";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000667> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2021/数A/703>.

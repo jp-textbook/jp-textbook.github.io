@@ -1,23 +1,31 @@
-<https://w3id.org/jp-textbook/高等学校/2002/国I/005>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "146";
-  <http://purl.org/dc/terms/bibliographicCitation> "「高等学校国語表現1」, 高等学校, 国I|005 (旺文社) 2002年検定";
-  <http://schema.org/editor> "小松 寿雄， 国松 昭， 鈴木 英夫， 石田 仁志， 濱田 美枝子";
-  <http://schema.org/name> "高等学校国語表現1";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2002/旺文社>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2002"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2002>, <https://w3id.org/jp-textbook/catalogue/高等学校/2003>, <https://w3id.org/jp-textbook/catalogue/高等学校/2004>, <https://w3id.org/jp-textbook/catalogue/高等学校/2005>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2003>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.8||O8||02A";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB10025503";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+textbook:高等学校\/2002\/国I\/005
+  bf:dimensions "B5";
+  bf:extent "146";
+  dct:bibliographicCitation "「高等学校国語表現1」, 高等学校, 国I|005 (旺文社) 2002年検定";
+  schema:editor "小松 寿雄， 国松 昭， 鈴木 英夫， 石田 仁志， 濱田 美枝子";
+  schema:name "高等学校国語表現1";
+  schema:publisher textbook:publisher\/2002\/旺文社;
+  rdf:type textbook:Textbook;
+  textbook:authorizedYear "2002"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2002, textbook:catalogue\/高等学校\/2003, textbook:catalogue\/高等学校\/2004, textbook:catalogue\/高等学校\/2005;
+  textbook:curriculum curriculum:高等学校\/2003;
+  textbook:item [
+    nier:callNumber "K280.8||O8||02A";
+    nier:recordID "EB10025503";
+    rdf:type textbook:ItemNIER
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2003/国語/国語表現I>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2003/国語>;
-  <https://w3id.org/jp-textbook/textbookNumber> "005";
-  <https://w3id.org/jp-textbook/textbookSymbol> "国I";
-  <https://w3id.org/jp-textbook/usageYear> "2003"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2004"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2005"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2006"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2003-2006".
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2003\/国語\/国語表現I;
+  textbook:subjectArea curriculum:高等学校\/2003\/国語;
+  textbook:textbookNumber "005";
+  textbook:textbookSymbol "国I";
+  textbook:usageYear "2003"^^xsd:gYear, "2004"^^xsd:gYear, "2005"^^xsd:gYear, "2006"^^xsd:gYear;
+  textbook:usageYearRange "2003-2006".

@@ -1,30 +1,55 @@
-<https://w3id.org/jp-textbook/CurriculumGuideline>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class>;
-  <http://www.w3.org/2000/01/rdf-schema#comment> "URIs for the resources are represented as follows:<br><code>https://w3id.org/jp-textbook/curriculum/<var>type of schools</var>/<var>year of enforcement</var></code>"@en, "学習指導要領そのものを表現するクラス。以下のようなURIにより表現されます。<br><code>https://w3id.org/jp-textbook/curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var></code>"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#label> "Curriculum Guideline"@en, "学習指導要領"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://ja.dbpedia.org/resource/学習指導要領>;
-  <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/CreativeWork>.
-<https://w3id.org/jp-textbook/CurriculumGuidelineShape> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/jp-textbook/CurriculumGuideline>.
-<https://w3id.org/jp-textbook/SourceOfEnglishNameShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/CurriculumGuideline>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix schema: <http://schema.org/>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+textbook:CurriculumGuideline
+  rdf:type rdfs:Class;
+  rdfs:comment "URIs for the resources are represented as follows:<br><code>https://w3id.org/jp-textbook/curriculum/<var>type of schools</var>/<var>year of enforcement</var></code>"@en, "学習指導要領そのものを表現するクラス。以下のようなURIにより表現されます。<br><code>https://w3id.org/jp-textbook/curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var></code>"@ja;
+  rdfs:label "Curriculum Guideline"@en, "学習指導要領"@ja;
+  rdfs:seeAlso <http://ja.dbpedia.org/resource/学習指導要領>;
+  rdfs:subClassOf schema:CreativeWork.
+textbook:CurriculumGuidelineShape sh:targetClass textbook:CurriculumGuideline.
+textbook:SourceOfEnglishNameShape sh:property [
+    skos:example "curriculum/小学校/2012";
+    sh:class textbook:CurriculumGuideline;
+    sh:description "If the source is the English translation of the curriculum guideline, this property refer to the corresponding guideline."@en, "学習指導要領の仮訳が出典となっている場合は、対応する学習指導要領リソースのURIを示す。"@ja;
+    sh:maxCount 1;
+    sh:name "Reference to a curriculum guideline"@en, "対応学習指導要領"@ja;
+    sh:order 2;
+    sh:path textbook:curriculum
   ].
-<https://w3id.org/jp-textbook/SubjectTypeShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/CurriculumGuideline>
+textbook:SubjectTypeShape sh:property [
+    skos:example <textbook:curriculum/高等学校/2013>;
+    sh:class textbook:CurriculumGuideline;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Curriculum guideline"@en, "学習指導要領"@ja;
+    sh:order 3;
+    sh:path textbook:curriculum
   ].
-<https://w3id.org/jp-textbook/TextbookShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/CurriculumGuideline>
+textbook:TextbookShape sh:property [
+    skos:example <textbook:curriculum/中学校/2002>;
+    sh:class textbook:CurriculumGuideline;
+    sh:description "<code>textbook:curriculum/<var>学校種別</var>/<var>学習指導要領施行年</var></code>として示される学習指導要領リソースと関連付ける"@ja, "Link to the curriculum guideline resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>year of curriculum guideline</var></code>."@en;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Curriculum Guideline"@en, "対応する学習指導要領"@ja;
+    sh:order 17;
+    sh:path textbook:curriculum
   ].
-<https://w3id.org/jp-textbook/curriculum> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/jp-textbook/CurriculumGuideline>.
-<https://w3id.org/jp-textbook/curriculum/中学校/1993> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/CurriculumGuideline>.
-<https://w3id.org/jp-textbook/curriculum/中学校/2002> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/CurriculumGuideline>.
-<https://w3id.org/jp-textbook/curriculum/中学校/2012> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/CurriculumGuideline>.
-<https://w3id.org/jp-textbook/curriculum/中学校/2021> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/CurriculumGuideline>.
-<https://w3id.org/jp-textbook/curriculum/小学校/1992> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/CurriculumGuideline>.
-<https://w3id.org/jp-textbook/curriculum/小学校/2002> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/CurriculumGuideline>.
-<https://w3id.org/jp-textbook/curriculum/小学校/2011> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/CurriculumGuideline>.
-<https://w3id.org/jp-textbook/curriculum/小学校/2020> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/CurriculumGuideline>.
-<https://w3id.org/jp-textbook/curriculum/高等学校/1994> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/CurriculumGuideline>.
-<https://w3id.org/jp-textbook/curriculum/高等学校/2003> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/CurriculumGuideline>.
-<https://w3id.org/jp-textbook/curriculum/高等学校/2013> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/CurriculumGuideline>.
-<https://w3id.org/jp-textbook/curriculum/高等学校/2022> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/CurriculumGuideline>.
-<https://w3id.org/jp-textbook/hasSubjectArea> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/jp-textbook/CurriculumGuideline>.
+curriculum:中学校\/1993 rdf:type textbook:CurriculumGuideline.
+curriculum:中学校\/2002 rdf:type textbook:CurriculumGuideline.
+curriculum:中学校\/2012 rdf:type textbook:CurriculumGuideline.
+curriculum:中学校\/2021 rdf:type textbook:CurriculumGuideline.
+curriculum:小学校\/1992 rdf:type textbook:CurriculumGuideline.
+curriculum:小学校\/2002 rdf:type textbook:CurriculumGuideline.
+curriculum:小学校\/2011 rdf:type textbook:CurriculumGuideline.
+curriculum:小学校\/2020 rdf:type textbook:CurriculumGuideline.
+curriculum:高等学校\/1994 rdf:type textbook:CurriculumGuideline.
+curriculum:高等学校\/2003 rdf:type textbook:CurriculumGuideline.
+curriculum:高等学校\/2013 rdf:type textbook:CurriculumGuideline.
+curriculum:高等学校\/2022 rdf:type textbook:CurriculumGuideline.
+textbook:hasSubjectArea rdfs:domain textbook:CurriculumGuideline.

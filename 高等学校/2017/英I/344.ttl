@@ -1,31 +1,41 @@
-<https://w3id.org/jp-textbook/高等学校/2017/英I/344>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "A4";
-  <http://id.loc.gov/ontologies/bibframe/extent> "146";
-  <http://id.loc.gov/ontologies/bibframe/note> "R3年度：発行中止";
-  <http://purl.org/dc/terms/bibliographicCitation> "「PRODUCER English Expression I」, 高等学校, 英I|344 (スクリ) 2017年検定";
-  <http://schema.org/editor> "井上 雅紀 ほか15名";
-  <http://schema.org/isbn> "978-4-89407-576-4";
-  <http://schema.org/name> "PRODUCER English Expression I";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2017/スクリ>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/029206453>, <http://id.ndl.go.jp/jpno/23115368>, <https://ci.nii.ac.jp/ncid/BB25972852>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2017"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2017>, <https://w3id.org/jp-textbook/catalogue/高等学校/2018>, <https://w3id.org/jp-textbook/catalogue/高等学校/2019>, <https://w3id.org/jp-textbook/catalogue/高等学校/2020>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2013>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.911||S29||2017";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20059460";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2017\/英I\/344
+  bf:dimensions "A4";
+  bf:extent "146";
+  bf:note "R3年度：発行中止";
+  dct:bibliographicCitation "「PRODUCER English Expression I」, 高等学校, 英I|344 (スクリ) 2017年検定";
+  schema:editor "井上 雅紀 ほか15名";
+  schema:isbn "978-4-89407-576-4";
+  schema:name "PRODUCER English Expression I";
+  schema:publisher textbook:publisher\/2017\/スクリ;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/029206453>, <http://id.ndl.go.jp/jpno/23115368>, <https://ci.nii.ac.jp/ncid/BB25972852>;
+  textbook:authorizedYear "2017"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2017, textbook:catalogue\/高等学校\/2018, textbook:catalogue\/高等学校\/2019, textbook:catalogue\/高等学校\/2020;
+  textbook:curriculum curriculum:高等学校\/2013;
+  textbook:item [
+    nier:callNumber "K280.911||S29||2017";
+    nier:recordID "EB20059460";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C220|700|H29/30";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320170159";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C220|700|H29/30";
+    textbook-rc:recordID "320170159";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2013/外国語/英語表現I>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2013/外国語>;
-  <https://w3id.org/jp-textbook/textbookNumber> "344";
-  <https://w3id.org/jp-textbook/textbookSymbol> "英I";
-  <https://w3id.org/jp-textbook/usageYear> "2018"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2019"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2020"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2018-2021".
-<https://w3id.org/jp-textbook/AC100000001869> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2017/英I/344>.
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2013\/外国語\/英語表現I;
+  textbook:subjectArea curriculum:高等学校\/2013\/外国語;
+  textbook:textbookNumber "344";
+  textbook:textbookSymbol "英I";
+  textbook:usageYear "2018"^^xsd:gYear, "2019"^^xsd:gYear, "2020"^^xsd:gYear, "2021"^^xsd:gYear;
+  textbook:usageYearRange "2018-2021".
+textbook:AC100000001869 textbook:textbook textbook:高等学校\/2017\/英I\/344.

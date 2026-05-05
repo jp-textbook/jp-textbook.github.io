@@ -1,77 +1,118 @@
-<https://w3id.org/jp-textbook/高等学校/2022/数III/706>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "A5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "194";
-  <http://purl.org/dc/terms/bibliographicCitation> "「新編数学Ⅲ」, 高等学校, 数III|706 (啓林館) 2022年検定";
-  <http://schema.org/editor> "中本 敦浩  ほか41名";
-  <http://schema.org/isbn> "9784402030483";
-  <http://schema.org/name> "新編数学Ⅲ";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2022/啓林館>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.41||S16||2022B";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20082439";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2022\/数III\/706
+  bf:dimensions "A5";
+  bf:extent "194";
+  dct:bibliographicCitation "「新編数学Ⅲ」, 高等学校, 数III|706 (啓林館) 2022年検定";
+  schema:editor "中本 敦浩  ほか41名";
+  schema:isbn "9784402030483";
+  schema:name "新編数学Ⅲ";
+  schema:publisher textbook:publisher\/2022\/啓林館;
+  rdf:type textbook:Textbook;
+  textbook:authorizedYear "2022"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.41||S16||2022B";
+    nier:recordID "EB20082439";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C061|350b|R04/05";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320220088";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C061|350b|R04/05";
+    textbook-rc:recordID "320220088";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/数学/数学III>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/数学>;
-  <https://w3id.org/jp-textbook/textbookNumber> "706";
-  <https://w3id.org/jp-textbook/textbookSymbol> "数III";
-  <https://w3id.org/jp-textbook/usageYear> "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2023-".
-<https://w3id.org/jp-textbook/AA100000040324> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/数III/706>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/数学\/数学III;
+  textbook:subjectArea curriculum:高等学校\/2022\/数学;
+  textbook:textbookNumber "706";
+  textbook:textbookSymbol "数III";
+  textbook:usageYear "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2023-".
+textbook:AC100000000938 textbook:textbook textbook:高等学校\/2022\/数III\/706.
+textbook:AA100000040324 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/数III\/706;
+    schema:pagination "p.6-31";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040325> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/数III/706>
+textbook:AA100000040325 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/数III\/706;
+    schema:pagination "p.8-20";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040326> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/数III/706>
+textbook:AA100000040326 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/数III\/706;
+    schema:pagination "p.21-29";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040327> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/数III/706>
+textbook:AA100000040327 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/数III\/706;
+    schema:pagination "p.32-65";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040328> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/数III/706>
+textbook:AA100000040328 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/数III\/706;
+    schema:pagination "p.34-45";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040329> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/数III/706>
+textbook:AA100000040329 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/数III\/706;
+    schema:pagination "p.46-63";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040330> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/数III/706>
+textbook:AA100000040330 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/数III\/706;
+    schema:pagination "p.66-117";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040331> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/数III/706>
+textbook:AA100000040331 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/数III\/706;
+    schema:pagination "p.68-81";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040332> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/数III/706>
+textbook:AA100000040332 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/数III\/706;
+    schema:pagination "p.82-90";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040333> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/数III/706>
+textbook:AA100000040333 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/数III\/706;
+    schema:pagination "p.91-105";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040334> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/数III/706>
+textbook:AA100000040334 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/数III\/706;
+    schema:pagination "p.106-115";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040335> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/数III/706>
+textbook:AA100000040335 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/数III\/706;
+    schema:pagination "p.118-166";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040336> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/数III/706>
+textbook:AA100000040336 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/数III\/706;
+    schema:pagination "p.120-133";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040337> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/数III/706>
+textbook:AA100000040337 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/数III\/706;
+    schema:pagination "p.134-143";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040338> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/数III/706>
+textbook:AA100000040338 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/数III\/706;
+    schema:pagination "p.144-163";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000040339> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/数III/706>
+textbook:AA100000040339 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/数III\/706;
+    schema:pagination "p.167-173";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000938> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2022/数III/706>.

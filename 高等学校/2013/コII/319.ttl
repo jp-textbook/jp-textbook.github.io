@@ -1,29 +1,39 @@
-<https://w3id.org/jp-textbook/高等学校/2013/コII/319>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5変型";
-  <http://id.loc.gov/ontologies/bibframe/extent> "229";
-  <http://purl.org/dc/terms/bibliographicCitation> "「Grove English CommunicationII」, 高等学校, コII|319 (文英堂) 2013年検定";
-  <http://schema.org/editor> "倉持三郎 川端一男 ほか7名";
-  <http://schema.org/isbn> "978-4-578-28102-3";
-  <http://schema.org/name> "Grove English CommunicationII";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2013/文英堂>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/025505700>, <http://id.ndl.go.jp/jpno/22449326>, <https://ci.nii.ac.jp/ncid/BB15415510>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2013"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2013>, <https://w3id.org/jp-textbook/catalogue/高等学校/2014>, <https://w3id.org/jp-textbook/catalogue/高等学校/2015>, <https://w3id.org/jp-textbook/catalogue/高等学校/2016>, <https://w3id.org/jp-textbook/catalogue/高等学校/2017>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2013>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.91||B2||2013B";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20036611";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2013\/コII\/319
+  bf:dimensions "B5変型";
+  bf:extent "229";
+  dct:bibliographicCitation "「Grove English CommunicationII」, 高等学校, コII|319 (文英堂) 2013年検定";
+  schema:editor "倉持三郎 川端一男 ほか7名";
+  schema:isbn "978-4-578-28102-3";
+  schema:name "Grove English CommunicationII";
+  schema:publisher textbook:publisher\/2013\/文英堂;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/025505700>, <http://id.ndl.go.jp/jpno/22449326>, <https://ci.nii.ac.jp/ncid/BB15415510>;
+  textbook:authorizedYear "2013"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2013, textbook:catalogue\/高等学校\/2014, textbook:catalogue\/高等学校\/2015, textbook:catalogue\/高等学校\/2016, textbook:catalogue\/高等学校\/2017;
+  textbook:curriculum curriculum:高等学校\/2013;
+  textbook:item [
+    nier:callNumber "K280.91||B2||2013B";
+    nier:recordID "EB20036611";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C109|740b|H25/26";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320130119";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C109|740b|H25/26";
+    textbook-rc:recordID "320130119";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2013/外国語/コミュニケーション英語II>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2013/外国語>;
-  <https://w3id.org/jp-textbook/textbookNumber> "319";
-  <https://w3id.org/jp-textbook/textbookSymbol> "コII";
-  <https://w3id.org/jp-textbook/usageYear> "2014"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2015"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2016"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2017"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2018"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2014-2018".
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2013\/外国語\/コミュニケーション英語II;
+  textbook:subjectArea curriculum:高等学校\/2013\/外国語;
+  textbook:textbookNumber "319";
+  textbook:textbookSymbol "コII";
+  textbook:usageYear "2014"^^xsd:gYear, "2015"^^xsd:gYear, "2016"^^xsd:gYear, "2017"^^xsd:gYear, "2018"^^xsd:gYear;
+  textbook:usageYearRange "2014-2018".

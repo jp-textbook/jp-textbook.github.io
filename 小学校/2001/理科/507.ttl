@@ -1,24 +1,32 @@
-<https://w3id.org/jp-textbook/小学校/2001/理科/507>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "58";
-  <http://purl.org/dc/terms/bibliographicCitation> "「小学理科　5上」, 小学校5年, 理科|507 (教出) 2001年検定";
-  <http://schema.org/editor> "永野重史 養老孟司 ほか22名";
-  <http://schema.org/name> "小学理科　5上";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2001/教出>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2001"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/小学校/2001>, <https://w3id.org/jp-textbook/catalogue/小学校/2002>, <https://w3id.org/jp-textbook/catalogue/小学校/2003>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/小学校/2002>;
-  <https://w3id.org/jp-textbook/grade> 5;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K170.42||K10O||01/02";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB10009987";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+textbook:小学校\/2001\/理科\/507
+  bf:dimensions "B5";
+  bf:extent "58";
+  dct:bibliographicCitation "「小学理科　5上」, 小学校5年, 理科|507 (教出) 2001年検定";
+  schema:editor "永野重史 養老孟司 ほか22名";
+  schema:name "小学理科　5上";
+  schema:publisher textbook:publisher\/2001\/教出;
+  rdf:type textbook:Textbook;
+  textbook:authorizedYear "2001"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/小学校\/2001, textbook:catalogue\/小学校\/2002, textbook:catalogue\/小学校\/2003;
+  textbook:curriculum curriculum:小学校\/2002;
+  textbook:grade 5;
+  textbook:item [
+    nier:callNumber "K170.42||K10O||01/02";
+    nier:recordID "EB10009987";
+    rdf:type textbook:ItemNIER
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/小学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/小学校/2002/理科/理科>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/小学校/2002/理科>;
-  <https://w3id.org/jp-textbook/textbookNumber> "507";
-  <https://w3id.org/jp-textbook/textbookSymbol> "理科";
-  <https://w3id.org/jp-textbook/usageYear> "2002"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2003"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2004"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2002-2004".
+  textbook:school textbook:school\/小学校;
+  textbook:subject curriculum:小学校\/2002\/理科\/理科;
+  textbook:subjectArea curriculum:小学校\/2002\/理科;
+  textbook:textbookNumber "507";
+  textbook:textbookSymbol "理科";
+  textbook:usageYear "2002"^^xsd:gYear, "2003"^^xsd:gYear, "2004"^^xsd:gYear;
+  textbook:usageYearRange "2002-2004".

@@ -1,20 +1,28 @@
-<https://w3id.org/jp-textbook/AA100000009850>
-  <http://purl.org/dc/terms/source> <https://w3id.org/jp-textbook/AC100000000434>;
-  <http://purl.org/linked-data/cube#order> 9850;
-  <http://schema.org/duration> <https://w3id.org/jp-textbook/AC100000000434/Time016>;
-  <http://schema.org/name> "■　九九の表を調べよう";
-  <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2023/算数/518>;
-    <http://schema.org/pagination> "p.172";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Chapter>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix qb: <http://purl.org/linked-data/cube#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix cs: <https://w3id.org/jp-cos/>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+textbook:AA100000009850
+  dct:source textbook:AC100000000434;
+  qb:order 9850;
+  schema:duration textbook:AC100000000434\/Time016;
+  schema:name "■　九九の表を調べよう";
+  schema:workExample [
+    schema:isPartOf textbook:小学校\/2023\/算数\/518;
+    schema:pagination "p.172";
+    rdf:type schema:Chapter
   ];
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/TeachingUnit>;
-  <https://w3id.org/jp-cos/cosItem> <https://w3id.org/jp-cos/8250253421000000>, <https://w3id.org/jp-cos/8250253421100000>;
-  <https://w3id.org/jp-cos/originalCosItem> <https://w3id.org/jp-cos/8250253421100000>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/cosMappingDescription> "D(2)ア(ア)";
-  <https://w3id.org/jp-textbook/grade> 5;
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/小学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/小学校/2020/算数/算数>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/小学校/2020/算数>;
-  <https://w3id.org/jp-textbook/teachingUnitType> <https://w3id.org/jp-textbook/curriculum/Standard>.
+  rdf:type textbook:TeachingUnit;
+  cs:cosItem cs:8250253421000000, cs:8250253421100000;
+  cs:originalCosItem cs:8250253421100000;
+  textbook:authorizedYear "2023"^^xsd:gYear;
+  textbook:cosMappingDescription "D(2)ア(ア)";
+  textbook:grade 5;
+  textbook:school textbook:school\/小学校;
+  textbook:subject curriculum:小学校\/2020\/算数\/算数;
+  textbook:subjectArea curriculum:小学校\/2020\/算数;
+  textbook:teachingUnitType curriculum:Standard.

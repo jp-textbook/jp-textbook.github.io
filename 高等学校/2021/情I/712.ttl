@@ -1,60 +1,90 @@
-<https://w3id.org/jp-textbook/高等学校/2021/情I/712>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5 変型";
-  <http://id.loc.gov/ontologies/bibframe/extent> "101";
-  <http://purl.org/dc/terms/bibliographicCitation> "「情報I図解と実習－実習編」, 高等学校, 情I|712 (日文) 2021年検定";
-  <http://schema.org/editor> "黒上 晴夫  堀田 龍也 村井 純  ほか54名";
-  <http://schema.org/isbn> "9784536107143";
-  <http://schema.org/name> "情報I図解と実習－実習編";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2021/日文>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/032455502>, <http://id.ndl.go.jp/jpno/23764412>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2021>, <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.69||N13||2021B";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20082136";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2021\/情I\/712
+  bf:dimensions "B5 変型";
+  bf:extent "101";
+  dct:bibliographicCitation "「情報I図解と実習－実習編」, 高等学校, 情I|712 (日文) 2021年検定";
+  schema:editor "黒上 晴夫  堀田 龍也 村井 純  ほか54名";
+  schema:isbn "9784536107143";
+  schema:name "情報I図解と実習－実習編";
+  schema:publisher textbook:publisher\/2021\/日文;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/032455502>, <http://id.ndl.go.jp/jpno/23764412>;
+  textbook:authorizedYear "2021"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2021, textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.69||N13||2021B";
+    nier:recordID "EB20082136";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C116|890b|R03/04";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320210253";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C116|890b|R03/04";
+    textbook-rc:recordID "320210253";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/情報/情報I>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/情報>;
-  <https://w3id.org/jp-textbook/textbookNumber> "712";
-  <https://w3id.org/jp-textbook/textbookSymbol> "情I";
-  <https://w3id.org/jp-textbook/usageYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2022-".
-<https://w3id.org/jp-textbook/AA100000032354> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/情I/712>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/情報\/情報I;
+  textbook:subjectArea curriculum:高等学校\/2022\/情報;
+  textbook:textbookNumber "712";
+  textbook:textbookSymbol "情I";
+  textbook:usageYear "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2022-".
+textbook:AC100000000810 textbook:textbook textbook:高等学校\/2021\/情I\/712.
+textbook:AA100000032354 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/情I\/712;
+    schema:pagination "p4-13";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000032355> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/情I/712>
+textbook:AA100000032355 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/情I\/712;
+    schema:pagination "p14-43";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000032356> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/情I/712>
+textbook:AA100000032356 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/情I\/712;
+    schema:pagination "p44-51";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000032357> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/情I/712>
+textbook:AA100000032357 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/情I\/712;
+    schema:pagination "p52-57";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000032358> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/情I/712>
+textbook:AA100000032358 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/情I\/712;
+    schema:pagination "p58-67";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000032359> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/情I/712>
+textbook:AA100000032359 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/情I\/712;
+    schema:pagination "p68-75";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000032360> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/情I/712>
+textbook:AA100000032360 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/情I\/712;
+    schema:pagination "p76-81";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000032361> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/情I/712>
+textbook:AA100000032361 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/情I\/712;
+    schema:pagination "p82-83";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000032362> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/情I/712>
+textbook:AA100000032362 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/情I\/712;
+    schema:pagination "p.84-87";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000032363> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2021/情I/712>
+textbook:AA100000032363 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2021\/情I\/712;
+    schema:pagination "p88-99";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000810> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2021/情I/712>.

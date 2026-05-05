@@ -1,172 +1,276 @@
-<https://w3id.org/jp-textbook/中学校/2020/国語/701>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "342";
-  <http://purl.org/dc/terms/bibliographicCitation> "「新しい国語　１」, 中学校1年, 国語|701 (東書) 2020年検定";
-  <http://schema.org/editor> "相澤秀夫　野矢茂樹　ほか76名";
-  <http://schema.org/isbn> "9784487123117";
-  <http://schema.org/name> "新しい国語　１";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2020/東書>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/031626527>, <http://id.ndl.go.jp/jpno/23578407>, <https://ci.nii.ac.jp/ncid/BB3120056X>, <https://ci.nii.ac.jp/ncid/BC06717061>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2020"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/中学校/2020>, <https://w3id.org/jp-textbook/catalogue/中学校/2021>, <https://w3id.org/jp-textbook/catalogue/中学校/2022>, <https://w3id.org/jp-textbook/catalogue/中学校/2023>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/中学校/2021>;
-  <https://w3id.org/jp-textbook/grade> 1;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K260.8||T8||2020";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20080688";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:中学校\/2020\/国語\/701
+  bf:dimensions "B5";
+  bf:extent "342";
+  dct:bibliographicCitation "「新しい国語　１」, 中学校1年, 国語|701 (東書) 2020年検定";
+  schema:editor "相澤秀夫　野矢茂樹　ほか76名";
+  schema:isbn "9784487123117";
+  schema:name "新しい国語　１";
+  schema:publisher textbook:publisher\/2020\/東書;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/031626527>, <http://id.ndl.go.jp/jpno/23578407>, <https://ci.nii.ac.jp/ncid/BB3120056X>, <https://ci.nii.ac.jp/ncid/BC06717061>;
+  textbook:authorizedYear "2020"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/中学校\/2020, textbook:catalogue\/中学校\/2021, textbook:catalogue\/中学校\/2022, textbook:catalogue\/中学校\/2023;
+  textbook:curriculum curriculum:中学校\/2021;
+  textbook:grade 1;
+  textbook:item [
+    nier:callNumber "K260.8||T8||2020";
+    nier:recordID "EB20080688";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "B002|111|R02/03";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "220200028";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "B002|111|R02/03";
+    textbook-rc:recordID "220200028";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/中学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/中学校/2021/国語/国語>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/中学校/2021/国語>;
-  <https://w3id.org/jp-textbook/textbookNumber> "701";
-  <https://w3id.org/jp-textbook/textbookSymbol> "国語";
-  <https://w3id.org/jp-textbook/usageYear> "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2021-2024".
-<https://w3id.org/jp-textbook/AA100000014603> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+  textbook:school textbook:school\/中学校;
+  textbook:subject curriculum:中学校\/2021\/国語\/国語;
+  textbook:subjectArea curriculum:中学校\/2021\/国語;
+  textbook:textbookNumber "701";
+  textbook:textbookSymbol "国語";
+  textbook:usageYear "2021"^^xsd:gYear, "2022"^^xsd:gYear, "2023"^^xsd:gYear, "2024"^^xsd:gYear;
+  textbook:usageYearRange "2021-2024".
+textbook:AC100000000229 textbook:textbook textbook:中学校\/2020\/国語\/701.
+textbook:AA100000014603 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "巻頭";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014604> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014604 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "14";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014605> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014605 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "22";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014606> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014606 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "24 ／巻頭";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014607> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014607 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "29 ／ 242";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014608> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014608 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "30";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014609> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014609 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "32 ／ 250";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014610> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014610 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "33";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014611> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014611 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "36";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014612> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014612 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "41 ／ 238";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014613> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014613 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "42";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014614> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014614 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "54 ／ 246";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014615> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014615 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "55";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014616> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014616 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "58";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014617> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014617 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "62";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014618> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014618 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "70";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014619> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014619 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "77 ／ 253";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014620> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014620 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "78";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014621> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014621 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "80";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014622> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014622 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "96 ／ 230";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014623> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014623 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "97";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014624> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014624 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "106 ／ 234";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014625> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014625 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "107";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014626> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014626 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "112";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014627> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014627 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "118";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014628> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014628 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "120";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014629> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014629 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "122";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014630> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014630 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "126";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014631> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014631 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "130";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014632> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014632 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "135";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014633> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014633 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "144";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014634> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014634 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "148";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014635> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014635 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "150";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014636> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014636 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "152 ／ 258";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014637> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014637 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "154";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014638> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014638 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "169";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014639> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014639 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "170 ／ 262";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014640> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014640 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "171";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014641> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014641 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "172";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014642> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014642 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "184";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014643> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014643 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "192 ／ 226";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014644> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014644 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "193";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014645> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014645 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "199";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014646> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014646 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "205 ／ 264";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014647> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014647 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "206";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014648> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014648 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "208";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000014649> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/中学校/2020/国語/701>
+textbook:AA100000014649 schema:workExample [
+    schema:isPartOf textbook:中学校\/2020\/国語\/701;
+    schema:pagination "210";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000229> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/中学校/2020/国語/701>.

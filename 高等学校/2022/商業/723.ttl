@@ -1,87 +1,136 @@
-<https://w3id.org/jp-textbook/高等学校/2022/商業/723>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "368";
-  <http://id.loc.gov/ontologies/bibframe/note> "検定用見本";
-  <http://purl.org/dc/terms/bibliographicCitation> "「原価計算」, 高等学校, 商業|723 (TAC) 2022年検定";
-  <http://schema.org/editor> "TAC株式会社";
-  <http://schema.org/isbn> "9784813275282";
-  <http://schema.org/name> "原価計算";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2022/TAC>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/高等学校/2022>, <https://w3id.org/jp-textbook/catalogue/高等学校/2023>, <https://w3id.org/jp-textbook/catalogue/高等学校/2024>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/高等学校/2022>;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K280.679||T17||2022B";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20082598";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:高等学校\/2022\/商業\/723
+  bf:dimensions "B5";
+  bf:extent "368";
+  bf:note "検定用見本";
+  dct:bibliographicCitation "「原価計算」, 高等学校, 商業|723 (TAC) 2022年検定";
+  schema:editor "TAC株式会社";
+  schema:isbn "9784813275282";
+  schema:name "原価計算";
+  schema:publisher textbook:publisher\/2022\/TAC;
+  rdf:type textbook:Textbook;
+  textbook:authorizedYear "2022"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/高等学校\/2022, textbook:catalogue\/高等学校\/2023, textbook:catalogue\/高等学校\/2024;
+  textbook:curriculum curriculum:高等学校\/2022;
+  textbook:item [
+    nier:callNumber "K280.679||T17||2022B";
+    nier:recordID "EB20082598";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "C234|930b|R04/05";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "320220248";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "C234|930b|R04/05";
+    textbook-rc:recordID "320220248";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/高等学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/商業/原価計算>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/高等学校/2022/商業>;
-  <https://w3id.org/jp-textbook/textbookNumber> "723";
-  <https://w3id.org/jp-textbook/textbookSymbol> "商業";
-  <https://w3id.org/jp-textbook/usageYear> "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2024"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2025"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2023-".
-<https://w3id.org/jp-textbook/AA100000043799> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/商業/723>
+  textbook:school textbook:school\/高等学校;
+  textbook:subject curriculum:高等学校\/2022\/商業\/原価計算;
+  textbook:subjectArea curriculum:高等学校\/2022\/商業;
+  textbook:textbookNumber "723";
+  textbook:textbookSymbol "商業";
+  textbook:usageYear "2023"^^xsd:gYear, "2024"^^xsd:gYear, "2025"^^xsd:gYear;
+  textbook:usageYearRange "2023-".
+textbook:AC100000001075 textbook:textbook textbook:高等学校\/2022\/商業\/723.
+textbook:AB100000003419 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/商業\/723;
+    schema:numberOfPages 2;
+    schema:pagination "314頁～315頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000043800> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/商業/723>
+textbook:AB100000003420 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/商業\/723;
+    schema:numberOfPages 2;
+    schema:pagination "316頁～317頁";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000043801> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/商業/723>
+textbook:AA100000043799 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/商業\/723;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000043802> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/商業/723>
+textbook:AA100000043800 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/商業\/723;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000043803> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/商業/723>
+textbook:AA100000043801 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/商業\/723;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000043804> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/商業/723>
+textbook:AA100000043802 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/商業\/723;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000043805> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/商業/723>
+textbook:AA100000043803 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/商業\/723;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000043806> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/商業/723>
+textbook:AA100000043804 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/商業\/723;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000043807> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/商業/723>
+textbook:AA100000043805 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/商業\/723;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000043808> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/商業/723>
+textbook:AA100000043806 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/商業\/723;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000043809> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/商業/723>
+textbook:AA100000043807 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/商業\/723;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000043810> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/商業/723>
+textbook:AA100000043808 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/商業\/723;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000043811> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/商業/723>
+textbook:AA100000043809 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/商業\/723;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000043812> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/商業/723>
+textbook:AA100000043810 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/商業\/723;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000043813> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/商業/723>
+textbook:AA100000043811 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/商業\/723;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000043814> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/商業/723>
+textbook:AA100000043812 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/商業\/723;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000043815> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/商業/723>
+textbook:AA100000043813 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/商業\/723;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000003419> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/商業/723>
+textbook:AA100000043814 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/商業\/723;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000003420> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/高等学校/2022/商業/723>
+textbook:AA100000043815 schema:workExample [
+    schema:isPartOf textbook:高等学校\/2022\/商業\/723;
+    schema:pagination "";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000001075> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/高等学校/2022/商業/723>.

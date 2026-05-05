@@ -1,31 +1,44 @@
-<https://w3id.org/jp-textbook/ChapterLUShape>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape>;
-  <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/2004/02/skos/core#example> <textbook:小学校/2019/生活/108>;
-    <http://www.w3.org/ns/shacl#class> <https://w3id.org/jp-textbook/Textbook>;
-    <http://www.w3.org/ns/shacl#description> "<code>textbook:<var>学校種別</var>/<var>検定年</var>/<var>教科書記号</var>/<var>教科書番号</var></code>として示される教科書リソースと関連付ける。"@ja, "Link to the textbook resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>authorized year</var>/<var>textbook symbol</var>/<var>textbook number</var></code>. "@en;
-    <http://www.w3.org/ns/shacl#maxCount> 1;
-    <http://www.w3.org/ns/shacl#minCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Textbook"@en, "教科書"@ja;
-    <http://www.w3.org/ns/shacl#order> 1;
-    <http://www.w3.org/ns/shacl#path> <http://schema.org/isPartOf>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix schema: <http://schema.org/>.
+textbook:ChapterLUShape
+  rdf:type sh:NodeShape;
+  sh:property [
+    skos:example <textbook:小学校/2019/生活/108>;
+    sh:class textbook:Textbook;
+    sh:description "<code>textbook:<var>学校種別</var>/<var>検定年</var>/<var>教科書記号</var>/<var>教科書番号</var></code>として示される教科書リソースと関連付ける。"@ja, "Link to the textbook resource, represented as <code>textbook:curriculum/<var>type of school</var>/<var>authorized year</var>/<var>textbook symbol</var>/<var>textbook number</var></code>. "@en;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Textbook"@en, "教科書"@ja;
+    sh:order 1;
+    sh:path schema:isPartOf
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> "p.24〜45";
-    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string>;
-    <http://www.w3.org/ns/shacl#maxCount> 1;
-    <http://www.w3.org/ns/shacl#minCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Page"@en, "ページ"@ja;
-    <http://www.w3.org/ns/shacl#order> 2;
-    <http://www.w3.org/ns/shacl#path> <http://schema.org/pagination>
+    skos:example "p.24〜45";
+    sh:datatype xsd:string;
+    sh:maxCount 1;
+    sh:minCount 1;
+    sh:name "Page"@en, "ページ"@ja;
+    sh:order 2;
+    sh:path schema:pagination
   ], [
-    <http://www.w3.org/2004/02/skos/core#example> "0.25";
-    <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#decimal>;
-    <http://www.w3.org/ns/shacl#maxCount> 1;
-    <http://www.w3.org/ns/shacl#name> "Number Of Pages"@en, "ページ数"@ja;
-    <http://www.w3.org/ns/shacl#order> 3;
-    <http://www.w3.org/ns/shacl#path> <http://schema.org/numberOfPages>
+    skos:example "0.25";
+    sh:datatype xsd:decimal;
+    sh:maxCount 1;
+    sh:name "Number Of Pages"@en, "ページ数"@ja;
+    sh:order 3;
+    sh:path schema:numberOfPages
   ];
-  <http://www.w3.org/ns/shacl#targetClass> <http://schema.org/Chapter>.
-<https://w3id.org/jp-textbook/TeachingUnitShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#node> <https://w3id.org/jp-textbook/ChapterLUShape>
+  sh:targetClass schema:Chapter.
+textbook:TeachingUnitShape sh:property [
+    sh:class schema:Chapter;
+    sh:description "<code>schema:isPartOf</code>と<code>schema:pagination</code>の2つのプロパティを持つ。複数の教科書がある場合、繰り返される。"@ja, "Link to the blank node resource(s), which consist of properties <code>schema:isPartOf</code> and <code>schema:pagination</code>. If there are multiple textbooks, this property values are repeated according to the number of textbooks times."@en;
+    sh:minCount 1;
+    sh:name "Page of Textbook"@en, "教科書の該当ページ"@ja;
+    sh:node textbook:ChapterLUShape;
+    sh:nodeKind sh:BlankNode;
+    sh:order 11;
+    sh:path schema:workExample
   ].

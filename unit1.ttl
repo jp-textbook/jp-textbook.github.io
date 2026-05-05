@@ -1,10 +1,22 @@
-<https://w3id.org/jp-textbook/unit1>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#domain> <https://w3id.org/jp-textbook/TeachingUnit>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
-  <http://www.w3.org/2000/01/rdf-schema#comment> "A property divides a unit name into hierarchical units and describes it. This property represents the unit name of the largest unit."@en, "単元名を階層ごとに分割して記述するためのプロパティ。一番大きい単位の単元名を表現する。"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#label> "Unit Title Level 1"@en, "ユニット単元名レベル1"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/name>.
-<https://w3id.org/jp-textbook/TeachingUnitShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/unit1>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix schema: <http://schema.org/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+textbook:unit1
+  rdf:domain textbook:TeachingUnit;
+  rdf:range rdf:Literal;
+  rdf:type rdf:Property;
+  rdfs:comment "A property divides a unit name into hierarchical units and describes it. This property represents the unit name of the largest unit."@en, "単元名を階層ごとに分割して記述するためのプロパティ。一番大きい単位の単元名を表現する。"@ja;
+  rdfs:label "Unit Title Level 1"@en, "ユニット単元名レベル1"@ja;
+  rdfs:subPropertyOf schema:name.
+textbook:TeachingUnitShape sh:property [
+    skos:example "第1学年";
+    sh:datatype xsd:string;
+    sh:maxCount 1;
+    sh:name "Unit Title Level 1"@en, "単元名レベル1"@ja;
+    sh:order 2;
+    sh:path textbook:unit1
   ].

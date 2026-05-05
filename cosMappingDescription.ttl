@@ -1,9 +1,20 @@
-<https://w3id.org/jp-textbook/cosMappingDescription>
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
-  <http://www.w3.org/2000/01/rdf-schema#comment> "学習指導要領の細目のラベルを示すプロパティ"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/jp-textbook/TeachingUnit>;
-  <http://www.w3.org/2000/01/rdf-schema#label> "Course Of Study Item (Label)"@en, "学習指導要領の細目（ラベル）"@ja;
-  <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal>.
-<https://w3id.org/jp-textbook/TeachingUnitShape> <http://www.w3.org/ns/shacl#property> [
-    <http://www.w3.org/ns/shacl#path> <https://w3id.org/jp-textbook/cosMappingDescription>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+textbook:cosMappingDescription
+  rdf:type rdf:Property;
+  rdfs:comment "学習指導要領の細目のラベルを示すプロパティ"@ja;
+  rdfs:domain textbook:TeachingUnit;
+  rdfs:label "Course Of Study Item (Label)"@en, "学習指導要領の細目（ラベル）"@ja;
+  rdfs:range rdf:Literal.
+textbook:TeachingUnitShape sh:property [
+    skos:example "体育分野 ２−Ｈ 第１学年及び第２学年（1）ア（ウ）,イ,ウ";
+    sh:datatype xsd:string;
+    sh:description "This property refers to the section numbers of the corresponding courses of study items described in the compiling prospectus. This is a transcription of the information written in the compiling prospectus."@en, "編修趣意書に記述された単元に対応する学習指導要領の細目についての情報。原則、編修趣意書に記述されたまま転記したもの。"@ja;
+    sh:name "Section numbers of Course of Study Item from Compiling Prospectus"@en, "転記した学習指導要領の細目（文字列）"@ja;
+    sh:order 13;
+    sh:path textbook:cosMappingDescription
   ].

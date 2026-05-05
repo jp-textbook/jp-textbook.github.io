@@ -1,67 +1,102 @@
-<https://w3id.org/jp-textbook/小学校/2019/生活/107>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "AB";
-  <http://id.loc.gov/ontologies/bibframe/extent> "138";
-  <http://purl.org/dc/terms/bibliographicCitation> "「せいかつ上  みんな なかよし」, 小学校1,2年, 生活|107 (教出) 2019年検定";
-  <http://schema.org/editor> "養老　孟司 藤井　千惠子 ほか25名";
-  <http://schema.org/isbn> "9784316203966";
-  <http://schema.org/name> "せいかつ上  みんな なかよし";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2019/教出>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/030622643>, <http://id.ndl.go.jp/jpno/23433504>, <https://ci.nii.ac.jp/ncid/BB28286920>, <https://ci.nii.ac.jp/ncid/BB29847524>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2019"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/小学校/2019>, <https://w3id.org/jp-textbook/catalogue/小学校/2020>, <https://w3id.org/jp-textbook/catalogue/小学校/2021>, <https://w3id.org/jp-textbook/catalogue/小学校/2022>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/小学校/2020>;
-  <https://w3id.org/jp-textbook/grade> 1, 2;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K170.33||K10||2019";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20080485";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:小学校\/2019\/生活\/107
+  bf:dimensions "AB";
+  bf:extent "138";
+  dct:bibliographicCitation "「せいかつ上  みんな なかよし」, 小学校1,2年, 生活|107 (教出) 2019年検定";
+  schema:editor "養老　孟司 藤井　千惠子 ほか25名";
+  schema:isbn "9784316203966";
+  schema:name "せいかつ上  みんな なかよし";
+  schema:publisher textbook:publisher\/2019\/教出;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/030622643>, <http://id.ndl.go.jp/jpno/23433504>, <https://ci.nii.ac.jp/ncid/BB28286920>, <https://ci.nii.ac.jp/ncid/BB29847524>;
+  textbook:authorizedYear "2019"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/小学校\/2019, textbook:catalogue\/小学校\/2020, textbook:catalogue\/小学校\/2021, textbook:catalogue\/小学校\/2022;
+  textbook:curriculum curriculum:小学校\/2020;
+  textbook:grade 1, 2;
+  textbook:item [
+    nier:callNumber "K170.33||K10||2019";
+    nier:recordID "EB20080485";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "A017|020-12|H31/R2";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "120190179";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "A017|020-12|H31/R2";
+    textbook-rc:recordID "120190179";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/小学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/小学校/2020/生活/生活>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/小学校/2020/生活>;
-  <https://w3id.org/jp-textbook/textbookNumber> "107";
-  <https://w3id.org/jp-textbook/textbookSymbol> "生活";
-  <https://w3id.org/jp-textbook/usageYear> "2020"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2020-2023".
-<https://w3id.org/jp-textbook/AA100000003883> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/107>
+  textbook:school textbook:school\/小学校;
+  textbook:subject curriculum:小学校\/2020\/生活\/生活;
+  textbook:subjectArea curriculum:小学校\/2020\/生活;
+  textbook:textbookNumber "107";
+  textbook:textbookSymbol "生活";
+  textbook:usageYear "2020"^^xsd:gYear, "2021"^^xsd:gYear, "2022"^^xsd:gYear, "2023"^^xsd:gYear;
+  textbook:usageYearRange "2020-2023".
+textbook:AC100000000132 textbook:textbook textbook:小学校\/2019\/生活\/107.
+textbook:AB100000000375 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/107;
+    schema:numberOfPages 0.25;
+    schema:pagination "上11";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003884> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/107>
+textbook:AA100000003883 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/107;
+    schema:pagination "表紙裏〜7";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003885> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/107>
+textbook:AA100000003884 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/107;
+    schema:pagination "表紙裏〜7";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003886> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/107>
+textbook:AA100000003885 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/107;
+    schema:pagination "p.8〜13";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003887> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/107>
+textbook:AA100000003886 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/107;
+    schema:pagination "p.14〜29";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003888> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/107>
+textbook:AA100000003887 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/107;
+    schema:pagination "p.30〜45";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003889> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/107>
+textbook:AA100000003888 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/107;
+    schema:pagination "p.46〜61";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003890> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/107>
+textbook:AA100000003889 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/107;
+    schema:pagination "p.62〜71";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003891> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/107>
+textbook:AA100000003890 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/107;
+    schema:pagination "p.72〜91";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003892> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/107>
+textbook:AA100000003891 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/107;
+    schema:pagination "p.92〜103";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000003893> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/107>
+textbook:AA100000003892 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/107;
+    schema:pagination "p.104〜117";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AB100000000375> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/生活/107>
+textbook:AA100000003893 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/生活\/107;
+    schema:pagination "p.118〜126";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000132> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/小学校/2019/生活/107>.

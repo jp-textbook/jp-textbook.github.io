@@ -1,20 +1,28 @@
-<https://w3id.org/jp-textbook/AB100000000083>
-  <http://purl.org/dc/terms/source> <https://w3id.org/jp-textbook/AC100000000086>;
-  <http://purl.org/linked-data/cube#order> 83;
-  <http://schema.org/name> "データ分析";
-  <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/算数/605>;
-    <http://schema.org/numberOfPages> 4;
-    <http://schema.org/pagination> "P.45 ～ 48";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Chapter>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix qb: <http://purl.org/linked-data/cube#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix cs: <https://w3id.org/jp-cos/>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+textbook:AB100000000083
+  dct:source textbook:AC100000000086;
+  qb:order 83;
+  schema:name "データ分析";
+  schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/算数\/605;
+    schema:numberOfPages 4;
+    schema:pagination "P.45 ～ 48";
+    rdf:type schema:Chapter
   ];
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/TeachingUnit>;
-  <https://w3id.org/jp-cos/cosItem> <https://w3id.org/jp-cos/8250263412000000>, <https://w3id.org/jp-cos/8250263412100000>;
-  <https://w3id.org/jp-cos/originalCosItem> <https://w3id.org/jp-cos/8250263412100000>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2019"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/cosMappingDescription> "D ⑴　イ（ア） 目的に応じてデータを集めて分類整理し，データの特徴や傾向に着目し，代表値などを用いて問題の結論について判断するとともに，その妥当性について批判的に考察すること。";
-  <https://w3id.org/jp-textbook/grade> 6;
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/小学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/小学校/2020/算数/算数>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/小学校/2020/算数>;
-  <https://w3id.org/jp-textbook/teachingUnitType> <https://w3id.org/jp-textbook/curriculum/OutOfCos>.
+  rdf:type textbook:TeachingUnit;
+  cs:cosItem cs:8250263412000000, cs:8250263412100000;
+  cs:originalCosItem cs:8250263412100000;
+  textbook:authorizedYear "2019"^^xsd:gYear;
+  textbook:cosMappingDescription "D ⑴　イ（ア） 目的に応じてデータを集めて分類整理し，データの特徴や傾向に着目し，代表値などを用いて問題の結論について判断するとともに，その妥当性について批判的に考察すること。";
+  textbook:grade 6;
+  textbook:school textbook:school\/小学校;
+  textbook:subject curriculum:小学校\/2020\/算数\/算数;
+  textbook:subjectArea curriculum:小学校\/2020\/算数;
+  textbook:teachingUnitType curriculum:OutOfCos.

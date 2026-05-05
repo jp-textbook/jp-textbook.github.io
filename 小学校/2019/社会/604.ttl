@@ -1,94 +1,146 @@
-<https://w3id.org/jp-textbook/小学校/2019/社会/604>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "AB";
-  <http://id.loc.gov/ontologies/bibframe/extent> "278";
-  <http://purl.org/dc/terms/bibliographicCitation> "「小学社会　６年」, 小学校6年, 社会|604 (日文) 2019年検定";
-  <http://schema.org/editor> "池野 範男 的場 正美 安野 功  ほか53名";
-  <http://schema.org/isbn> "9784536181402";
-  <http://schema.org/name> "小学社会　６年";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/2019/日文>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://id.ndl.go.jp/bib/030493847>, <http://id.ndl.go.jp/jpno/23428935>, <https://ci.nii.ac.jp/ncid/BB28269499>, <https://ci.nii.ac.jp/ncid/BB29903818>;
-  <https://w3id.org/jp-textbook/authorizedYear> "2019"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/小学校/2019>, <https://w3id.org/jp-textbook/catalogue/小学校/2020>, <https://w3id.org/jp-textbook/catalogue/小学校/2021>, <https://w3id.org/jp-textbook/catalogue/小学校/2022>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/小学校/2020>;
-  <https://w3id.org/jp-textbook/grade> 6;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K170.3||N13||2019";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB20080394";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+@prefix textbook-rc: <http://dl.nier.go.jp/library/vocab/textbook-rc/>.
+textbook:小学校\/2019\/社会\/604
+  bf:dimensions "AB";
+  bf:extent "278";
+  dct:bibliographicCitation "「小学社会　６年」, 小学校6年, 社会|604 (日文) 2019年検定";
+  schema:editor "池野 範男 的場 正美 安野 功  ほか53名";
+  schema:isbn "9784536181402";
+  schema:name "小学社会　６年";
+  schema:publisher textbook:publisher\/2019\/日文;
+  rdf:type textbook:Textbook;
+  rdfs:seeAlso <http://id.ndl.go.jp/bib/030493847>, <http://id.ndl.go.jp/jpno/23428935>, <https://ci.nii.ac.jp/ncid/BB28269499>, <https://ci.nii.ac.jp/ncid/BB29903818>;
+  textbook:authorizedYear "2019"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/小学校\/2019, textbook:catalogue\/小学校\/2020, textbook:catalogue\/小学校\/2021, textbook:catalogue\/小学校\/2022;
+  textbook:curriculum curriculum:小学校\/2020;
+  textbook:grade 6;
+  textbook:item [
+    nier:callNumber "K170.3||N13||2019";
+    nier:recordID "EB20080394";
+    rdf:type textbook:ItemNIER
   ], [
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/callNumber> "A116|216|H31/R2";
-    <http://dl.nier.go.jp/library/vocab/textbook-rc/recordID> "120190088";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemTextbookRC>
+    textbook-rc:callNumber "A116|216|H31/R2";
+    textbook-rc:recordID "120190088";
+    rdf:type textbook:ItemTextbookRC
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/小学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/小学校/2020/社会/社会>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/小学校/2020/社会>;
-  <https://w3id.org/jp-textbook/textbookNumber> "604";
-  <https://w3id.org/jp-textbook/textbookSymbol> "社会";
-  <https://w3id.org/jp-textbook/usageYear> "2020"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2021"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2020-2023".
-<https://w3id.org/jp-textbook/AA100000002194> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/604>
+  textbook:school textbook:school\/小学校;
+  textbook:subject curriculum:小学校\/2020\/社会\/社会;
+  textbook:subjectArea curriculum:小学校\/2020\/社会;
+  textbook:textbookNumber "604";
+  textbook:textbookSymbol "社会";
+  textbook:usageYear "2020"^^xsd:gYear, "2021"^^xsd:gYear, "2022"^^xsd:gYear, "2023"^^xsd:gYear;
+  textbook:usageYearRange "2020-2023".
+textbook:AC100000000066 textbook:textbook textbook:小学校\/2019\/社会\/604.
+textbook:AA100000002194 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/604;
+    schema:pagination "p.6～p.7";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002195> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/604>
+textbook:AA100000002195 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/604;
+    schema:pagination "p.8～p.27";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002196> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/604>
+textbook:AA100000002196 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/604;
+    schema:pagination "p.28～p.37 ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002197> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/604>
+textbook:AA100000002197 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/604;
+    schema:pagination "p.38～p.43 ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002198> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/604>
+textbook:AA100000002198 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/604;
+    schema:pagination "p.44～p.47";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002199> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/604>
+textbook:AA100000002199 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/604;
+    schema:pagination "p.50～p.53 ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002200> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/604>
+textbook:AA100000002200 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/604;
+    schema:pagination "p.54～p.69 ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002201> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/604>
+textbook:AA100000002201 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/604;
+    schema:pagination "p.70～p.85";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002202> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/604>
+textbook:AA100000002202 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/604;
+    schema:pagination "p.86～p.93 ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002203> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/604>
+textbook:AA100000002203 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/604;
+    schema:pagination "p.96～p.107";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002204> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/604>
+textbook:AA100000002204 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/604;
+    schema:pagination "p.108～p.119";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002205> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/604>
+textbook:AA100000002205 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/604;
+    schema:pagination "p.122～p.131";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002206> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/604>
+textbook:AA100000002206 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/604;
+    schema:pagination "p.132～p.143";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002207> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/604>
+textbook:AA100000002207 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/604;
+    schema:pagination "p.144～p.157";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002208> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/604>
+textbook:AA100000002208 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/604;
+    schema:pagination "p.160～p.173 ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002209> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/604>
+textbook:AA100000002209 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/604;
+    schema:pagination "p.174～p.191 ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002210> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/604>
+textbook:AA100000002210 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/604;
+    schema:pagination "p.194～p.209";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002211> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/604>
+textbook:AA100000002211 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/604;
+    schema:pagination "p.210～p.227";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002212> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/604>
+textbook:AA100000002212 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/604;
+    schema:pagination "p.230～p.231 ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002213> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/604>
+textbook:AA100000002213 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/604;
+    schema:pagination "p.232～p.253 ";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AA100000002214> <http://schema.org/workExample> [
-    <http://schema.org/isPartOf> <https://w3id.org/jp-textbook/小学校/2019/社会/604>
+textbook:AA100000002214 schema:workExample [
+    schema:isPartOf textbook:小学校\/2019\/社会\/604;
+    schema:pagination "p.254～p.265";
+    rdf:type schema:Chapter
   ].
-<https://w3id.org/jp-textbook/AC100000000066> <https://w3id.org/jp-textbook/textbook> <https://w3id.org/jp-textbook/小学校/2019/社会/604>.

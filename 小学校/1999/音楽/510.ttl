@@ -1,24 +1,32 @@
-<https://w3id.org/jp-textbook/小学校/1999/音楽/510>
-  <http://id.loc.gov/ontologies/bibframe/dimensions> "B5";
-  <http://id.loc.gov/ontologies/bibframe/extent> "56";
-  <http://purl.org/dc/terms/bibliographicCitation> "「小学生の音楽5」, 小学校5年, 音楽|510 (教芸) 1999年検定";
-  <http://schema.org/editor> "畑中 良輔,ほか9名";
-  <http://schema.org/name> "小学生の音楽5";
-  <http://schema.org/publisher> <https://w3id.org/jp-textbook/publisher/1999/教芸>;
-  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/Textbook>;
-  <https://w3id.org/jp-textbook/authorizedYear> "1999"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/catalogue> <https://w3id.org/jp-textbook/catalogue/小学校/1999>, <https://w3id.org/jp-textbook/catalogue/小学校/2000>;
-  <https://w3id.org/jp-textbook/curriculum> <https://w3id.org/jp-textbook/curriculum/小学校/1992>;
-  <https://w3id.org/jp-textbook/grade> 5;
-  <https://w3id.org/jp-textbook/item> [
-    <http://dl.nier.go.jp/library/vocab/callNumber> "K170.76||K12P||99/00";
-    <http://dl.nier.go.jp/library/vocab/recordID> "EB10006403";
-    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/jp-textbook/ItemNIER>
+@prefix textbook: <https://w3id.org/jp-textbook/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix curriculum: <https://w3id.org/jp-textbook/curriculum/>.
+@prefix nier: <http://dl.nier.go.jp/library/vocab/>.
+textbook:小学校\/1999\/音楽\/510
+  bf:dimensions "B5";
+  bf:extent "56";
+  dct:bibliographicCitation "「小学生の音楽5」, 小学校5年, 音楽|510 (教芸) 1999年検定";
+  schema:editor "畑中 良輔,ほか9名";
+  schema:name "小学生の音楽5";
+  schema:publisher textbook:publisher\/1999\/教芸;
+  rdf:type textbook:Textbook;
+  textbook:authorizedYear "1999"^^xsd:gYear;
+  textbook:catalogue textbook:catalogue\/小学校\/1999, textbook:catalogue\/小学校\/2000;
+  textbook:curriculum curriculum:小学校\/1992;
+  textbook:grade 5;
+  textbook:item [
+    nier:callNumber "K170.76||K12P||99/00";
+    nier:recordID "EB10006403";
+    rdf:type textbook:ItemNIER
   ];
-  <https://w3id.org/jp-textbook/school> <https://w3id.org/jp-textbook/school/小学校>;
-  <https://w3id.org/jp-textbook/subject> <https://w3id.org/jp-textbook/curriculum/小学校/1992/音楽/音楽>;
-  <https://w3id.org/jp-textbook/subjectArea> <https://w3id.org/jp-textbook/curriculum/小学校/1992/音楽>;
-  <https://w3id.org/jp-textbook/textbookNumber> "510";
-  <https://w3id.org/jp-textbook/textbookSymbol> "音楽";
-  <https://w3id.org/jp-textbook/usageYear> "2000"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2001"^^<http://www.w3.org/2001/XMLSchema#gYear>;
-  <https://w3id.org/jp-textbook/usageYearRange> "2000-2001".
+  textbook:school textbook:school\/小学校;
+  textbook:subject curriculum:小学校\/1992\/音楽\/音楽;
+  textbook:subjectArea curriculum:小学校\/1992\/音楽;
+  textbook:textbookNumber "510";
+  textbook:textbookSymbol "音楽";
+  textbook:usageYear "2000"^^xsd:gYear, "2001"^^xsd:gYear;
+  textbook:usageYearRange "2000-2001".
