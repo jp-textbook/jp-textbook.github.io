@@ -3,7 +3,7 @@
 require "ttl2html"
 require_relative "util.rb"
 
-if $0 == __FILE__
+if File.expand_path($0) == File.expand_path(__FILE__)
   include Textbook
   data = {}
   ttl2html = TTL2HTML::App.new

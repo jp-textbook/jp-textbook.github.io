@@ -57,7 +57,8 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
   notified_year = row["/ODATE#1"].to_i
   next if notified_year < 1989
   textbook_symbol = row["/TXSIGN#1"].gsub(/[　 ]\Z/, "")
-  uri = "#{BASE_URI}#{school}/#{row["/ADATE#1"]}/#{textbook_symbol}/#{row["/TXC#1"]}"
+  textbook_number = row["/TXC#1"].gsub(/ー/, "-")
+  uri = "#{BASE_URI}#{school}/#{row["/ADATE#1"]}/#{textbook_symbol}/#{textbook_number}"
   curriculum = case school
                when "小学校"
                  case notified_year
@@ -159,11 +160,11 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
     "textbook:usageYearRange" => usage_year_str,
     "textbook:usageYear" => usage_years.to_a.map{|e| "#{e}^^xsd:gYear" },
     "textbook:textbookSymbol" => textbook_symbol,
-    "textbook:textbookNumber" => row["/TXC#1"],
+    "textbook:textbookNumber" => textbook_number,
     "bf:extent" => extent,
     "bf:dimensions" => dimensions,
     "bf:note" => [],
-    "dct:bibliographicCitation" => "「#{row["/TITLE#1"]}」#{row["/EDITION#1"] if row["/EDITION#1"]}, #{school}#{grades.join(",")+"年" unless grades.empty?}, #{textbook_symbol}|#{row["/TXC#1"]} (#{row["/PUA#1"]}) #{row["/ADATE#1"]}年検定",
+    "dct:bibliographicCitation" => "「#{row["/TITLE#1"]}」#{row["/EDITION#1"] if row["/EDITION#1"]}, #{school}#{grades.join(",")+"年" unless grades.empty?}, #{textbook_symbol}|#{textbook_number} (#{row["/PUA#1"]}) #{row["/ADATE#1"]}年検定",
   }
   data.delete("textbook:subject") if subject.empty?
   data["bf:note"] << row["/NOTE#1"] if row["/NOTE#1"]
