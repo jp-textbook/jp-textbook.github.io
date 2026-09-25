@@ -138,7 +138,7 @@ CSV.foreach(tempfile, col_sep: "\t", headers: true) do |row|
                    else
                      [usage_year_start, usage_year_end].join("-")
                    end
-  logger.warn "#{uri}: catalogue and usage year mismatch (#{row["/PDATE#1"]} vs #{row["/SDATE#1"]})" if usage_year_start and row["/PDATE#1"].to_i != usage_year_start-1
+  logger.warn "#{uri}: catalogue and usage year mismatch (#{row["/ADATE#1"]} vs #{row["/SDATE#1"]})" if usage_year_start and row["/ADATE#1"].to_i != usage_year_start-1
   logger.warn "#{uri}: usage year possible typo (#{row["/SDATE#1"]}-#{row["/EDATE#1"]})" if usage_year_start and usage_year_end and usage_year_start > usage_year_end
   data = {
     "schema:name" => row["/TITLE#1"],
