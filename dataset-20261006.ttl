@@ -1662,3 +1662,59 @@ _:v31.0 a void:Dataset;
     void:subset _:all-textbook-20260926, _:all-teachingUnit-20260407;
 	pav:previousVersion _:v30.0 .
 _:toplevel pav:hasCurrentVersion _:v31.0 .
+
+_:dataset-20261006 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/dataset-20261006.ttl>.
+_:all-textbook-20261006 a void:Dataset;
+	void:triples 354800;
+	dcat:byteSize 824211;
+	dct:license _:cczero;
+	void:dataDump <https://w3id.org/jp-textbook/all-textbook-20261006.ttl.gz>;
+	void:subset
+		_:textbook-20260925,
+		_:textbook-rc-20260504,
+		_:curriculum-20260402,
+		_:curriculum-versions-20220814,
+		_:catalogue-20260925,
+		_:subject-20260403,
+		_:subjectArea-20260402,
+		_:subjectType-20250207,
+		_:school-20180713,
+		_:publisher-20260925,
+		_:schema-20260403,
+		_:shape-20260405,
+		_:dataset-20261006,
+		_:source-20241221 .
+_:compilingProspectus-20260927 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/compilingProspectus-20260927.ttl>.
+_:teachingUnit-AA-body-20261006 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/teachingUnit-AA-body-20261006.ttl>.
+_:teachingUnit-AB-20260927 a void:Dataset;
+	void:dataDump <https://w3id.org/jp-textbook/teachingUnit-AB-20260927.ttl>.
+_:all-teachingUnit-20261006 a void:Dataset;
+	void:triples 1934074;
+	dcat:byteSize 4510284;
+	dct:license _:ccby;
+    prov:wasDerivedFrom _:derivedfrom_compilingprospectus;
+	void:dataDump <https://w3id.org/jp-textbook/all-teachingUnit-20261006.ttl.gz>;
+	void:subset
+		_:chapterType-20220617,
+		_:compilingProspectus-20260927,
+		_:durationType-20260330,
+		_:mixedDurationType-20260330,
+		_:teachingUnit-AA-body-20261006,
+		_:teachingUnit-AA-duration-20260407,
+		_:teachingUnit-AB-20260927,
+		_:teachingUnitType-20220617 .
+_:v31.1 a void:Dataset;
+	dct:issued "2026-10-06"^^xsd:date;
+	pav:version "31.1";
+	prov:qualifiedRevision [
+		a prov:Revision;
+		rdfs:comment "SPARQLエンドポイントのRDFストアをGraphDBに変え、接続先URLを変更しました。一部の教科書URIの指定誤りを修正しました。"@ja;
+		rdfs:comment "Switched the SPARQL endpoint's RDF store to GraphDB and updated the access URL. Fixed errors in the references of some textbook URIs."@en;
+		rdfs:seeAlso <https://github.com/jp-textbook/jp-textbook.github.io/milestone/55?closed=1>
+	];
+    void:subset _:all-textbook-20261006, _:all-teachingUnit-20261006;
+	pav:previousVersion _:v31.0 .
+_:toplevel pav:hasCurrentVersion _:v31.1 .
