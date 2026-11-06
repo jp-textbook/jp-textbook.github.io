@@ -135,7 +135,7 @@ async function get_nhk4school(cscode, page = 1) {
                   escapeHtml(item.description)
                 }</p>
                 <a
-                  class="btn btn-outline-light"
+                  class="btn btn-light"
                   href="${escapeHtml(item.url)}"
                 >
                   ${t.watchVideo}
@@ -207,6 +207,14 @@ async function fetch_jp_cos(url, elem) {
           escapeHtml(sectionText)
         }</span>
       `);
+
+      // RDFから取得した本文などは、すべての対象リンクに表示
+      // NHKの検索ボタンは cs:cosItem のリンクだけに追加
+      if (!elem.parentElement.matches(
+        'dd[itemprop~="https://w3id.org/jp-cos/cosItem"]'
+      )) {
+        continue;
+      }
 
       switch (cos) {
         case "https://w3id.org/jp-cos/Elementary/2017":
